@@ -1,0 +1,11 @@
+[user]
+	name = vogler
+	email = ralf.vogler@gmail.com
+[credential]
+	helper = cache --timeout=3600
+[core]
+	editor = nano -w
+[push]
+	default = current
+[color]
+	ui = auto
