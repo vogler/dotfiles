@@ -29,6 +29,7 @@ alias ll='ls -lAh'
 alias grep='grep -n --color=auto'
 alias v='vim'
 alias p='sudo pacman -S'
+alias packer='packer --noedit'
 
 # Enable aliases to be sudo’ed
 alias sudo='sudo '

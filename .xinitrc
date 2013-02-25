@@ -9,7 +9,7 @@ setxkbmap -layout 'us(altgr-intl),de(nodeadkeys)' \
   -option 'grp:alt_shift_toggle,compose:menu'
 
 # map multimedia keys (see .xbindkeysrc)
-xbindkeys
+#xbindkeys
 
 # touchpad (circular starts on right edge)
 synclient HorizTwoFingerScroll=1
@@ -32,8 +32,12 @@ sh ~/xrandr.sh
 # start additions if running inside VirtualBox
 sh ~/vbox.sh
 
+# start pulseaudio systray
+#pasystray&
+
 # exec gnome-session
 # exec startkde
 # exec startxfce4
 # ...or the Window Manager of your choice
-exec awesome >> ~/.cache/awesome/stdout 2>> ~/.cache/awesome/stderr
+#exec awesome >> ~/.cache/awesome/stdout 2>> ~/.cache/awesome/stderr
+exec gnome-session

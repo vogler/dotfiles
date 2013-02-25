@@ -39,19 +39,23 @@
 #"urxvt"
 #   Control + b:2 + Release
 
-"amixer sset Master 2+"
+#"amixer -c 0 sset Master 2+"
+"pactl set-sink-volume +10%"
    Control + Shift + b:4
 
-"amixer sset Master 2-"
+#"amixer -c 0 sset Master 2-"
+"pactl set-sink-volume -10%"
    Control + Shift + b:5
 
-"amixer sset Master 2+"
+#"amixer -c 0 sset Master 2+"
+"pactl set-sink-volume +10%"
    XF86AudioRaiseVolume
 
-"amixer sset Master 2-"
+#"amixer -c 0 sset Master 2-"
+"pactl set-sink-volume -10%"
    XF86AudioLowerVolume
 
-"amixer sset Master toggle"
+"amixer -c 0 sset Master toggle"
    XF86AudioMute
 
 "sudo /usr/sbin/pm-suspend"
