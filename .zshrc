@@ -14,3 +14,6 @@ fi
 alias v='vim'
 alias packer='packer --noedit'
 alias ocaml='rlwrap -H /home/ralf/.ocaml_history -D 2 -i -s 10000 ocaml'
+
+# OPAM configuration
+. /home/ralf/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true

@@ -1,7 +1,15 @@
-filetype plugin on
-filetype indent on
+" https://github.com/tpope/vim-pathogen
+execute pathogen#infect()
 
-set mouse=a
+" https://github.com/tpope/vim-sensible
+
+" https://github.com/altercation/vim-colors-solarized
+syntax enable
+set background=dark
+let g:solarized_termtrans=1
+let g:solarized_termcolors=256
+colorscheme solarized
+
 
 " http://chneukirchen.org/dotfiles/.vimrc
 " a selects everything in visual selection mode
@@ -31,3 +39,4 @@ let g:mapleader = ","
 " Fast saving
 nmap <leader>w :w!<cr>
 nmap <leader>q :q!<cr>
+

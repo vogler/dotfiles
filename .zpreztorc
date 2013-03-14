@@ -23,7 +23,9 @@ zstyle ':prezto:*:*' color 'yes'
 
 # Set the Prezto modules to load (browse modules).
 # The order matters.
-# My stuff added after prompt.
+# My stuff added after completion.
+# prompt moved to end, syntax-highlighting should be second to last.
+# Using fasd instead of z.
 zstyle ':prezto:load' pmodule \
   'environment' \
   'terminal' \
@@ -33,11 +35,11 @@ zstyle ':prezto:load' pmodule \
   'spectrum' \
   'utility' \
   'completion' \
-  'prompt' \
-  'syntax-highlighting' \
   'git' \
   'archive' \
-  'fasd'
+  'fasd' \
+  'syntax-highlighting' \
+  'prompt'
 #  'z'
 
 #
@@ -110,12 +112,12 @@ zstyle ':prezto:module:prompt' theme 'sorin'
 
 # Set syntax highlighters.
 # By default main, brackets, and cursor are enabled.
-# zstyle ':prezto:module:syntax-highlighting' highlighters \
-#   'main' \
-#   'brackets' \
-#   'pattern' \
-#   'cursor' \
-#   'root'
+zstyle ':prezto:module:syntax-highlighting' highlighters \
+  'main' \
+  'brackets' \
+  'pattern' \
+  'cursor' \
+  'root'
 
 #
 # Terminal
