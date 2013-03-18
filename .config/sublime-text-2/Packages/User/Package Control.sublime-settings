@@ -1,0 +1,13 @@
+{
+	"auto_upgrade_last_run": null,
+	"installed_packages":
+	[
+		"AdvancedNewFile",
+		"Edit History",
+		"Git",
+		"LiveReload",
+		"Navigation History",
+		"Package Control",
+		"SplitScreen-Resizer"
+	]
+}
