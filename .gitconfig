@@ -2,9 +2,10 @@
 	name = vogler
 	email = ralf.vogler@gmail.com
 [credential]
-	helper = cache
+	helper = cache --timeout=3600
 [core]
 	editor = nano -w
+	excludesfile = ~/.gitignore_global
 [push]
 	default = current
 [color]
