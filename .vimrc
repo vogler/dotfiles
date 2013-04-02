@@ -39,4 +39,76 @@ let g:mapleader = ","
 " Fast saving
 nmap <leader>w :w!<cr>
 nmap <leader>q :q!<cr>
+"map <C-s> :w!<cr>
+"map <C-w> :q!<cr>
+
+
+" https://github.com/nihathrael/configs/blob/master/.vimrc
+set viminfo+=!          " support for yanking
+set mouse=a             " enable mouse
+
+"set nocompatible        " no vi compatibility
+
+"set novisualbell        " no visual beeping
+"set noerrorbells        " no noise
+
+set tabstop=4           " 1 tab = 4 spaces
+set shiftwidth=4
+set softtabstop=4
+set expandtab           " tab --> spaces
+set autoindent          " indent when starting new line
+set smartindent         " smart indent when starting new line
+" don't mess up the hashes, e.g. in perl comments
+inoremap # X^H#
+
+set number              " show line numbers
+set ruler               " show line,col numbers
+set showmatch           " highlight matching braces
+set nowrap              " don't wrap lines
+set incsearch           " show matches from search immediately
+set hlsearch            " actually do show any matches at all
+
+set foldenable          " do fold
+set foldmethod=marker   " fold with markers
+
+set wildmenu            " show completion menu in :e with <C-d>
+
+
+""""""""" Show superfluos spaces """""""""
+:highlight ExtraWhitespace ctermbg=darkred guibg=darkred
+:autocmd Syntax * syn match ExtraWhitespace /\s\+$\| \+\ze\t/ containedin=ALL
+
+
+""""""""" tn = :tabnew """""""""""""""""""
+nmap tn :tabnew<CR>
+
+
+""""""""" ü = :shell """""""""""""""""""""
+nmap ü :shell<cr>
+
+
+""""""""" buffer magic """""""""""""""""""
+nmap bn :bn!<cr>
+nmap bp :bp!<cr>
+nmap bd :bd<cr>
+
+
+""""""""" Y,ö = y/p with clipboard """""""""
+nmap Y "+y
+vmap Y "+y
+nmap ö "+gP
+vmap ö "+gP
+
+
+""""""""" gp = select pasted text """"""""
+nnoremap gp `[v`]
+
+
+" tab navigation
+:map <C-j> :tabprevious<CR>
+:map <C-k> :tabnext<CR>
+:imap <C-j> <Esc>:tabprevious<CR>i
+:imap <C-k> <Esc>:tabnext<CR>i
+:map <C-t> :tabnew<Space>
+:imap <C-t> <Esc>:tabnew<Space>
 
