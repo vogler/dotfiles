@@ -13,7 +13,7 @@ colorscheme solarized
 
 " http://chneukirchen.org/dotfiles/.vimrc
 " a selects everything in visual selection mode
-vmap a ggVG
+vmap a <esc>ggVG
 
 " background, even in insert mode
 map! <C-Z> <C-O>:stop<C-M>
@@ -59,7 +59,7 @@ set expandtab           " tab --> spaces
 set autoindent          " indent when starting new line
 set smartindent         " smart indent when starting new line
 " don't mess up the hashes, e.g. in perl comments
-inoremap # X^H#
+"inoremap # X^H#
 
 set number              " show line numbers
 set ruler               " show line,col numbers
@@ -93,11 +93,10 @@ nmap bp :bp!<cr>
 nmap bd :bd<cr>
 
 
-""""""""" Y,ö = y/p with clipboard """""""""
-nmap Y "+y
-vmap Y "+y
-nmap ö "+gP
-vmap ö "+gP
+""""""""" ó,ö = y/p with clipboard """""""""
+vmap ó "+y
+nmap ó viwó             " Y already used in normal mode
+map ö "+gP
 
 
 """"""""" gp = select pasted text """"""""
@@ -112,3 +111,5 @@ nnoremap gp `[v`]
 :map <C-t> :tabnew<Space>
 :imap <C-t> <Esc>:tabnew<Space>
 
+
+"map <M-o> O<ESC>
