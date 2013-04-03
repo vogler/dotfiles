@@ -21,6 +21,11 @@ alias topm='top -o %MEM'
 function psmem(){ # e.g. psmem chrome
     top -bn 1 | grep $1 | cut -c32-36 - | awk '{s+=$1} END {print s}'
 }
+function archive(){ # save file(s) as (encrypted) archive to dropbox
+    dst=~/Dropbox/$1.7z
+    rm -f $dst
+    7z a -mhe=on -p -l $dst $* # if a password is given, the header will also be encrypted. resolves symlinks.
+}
 
 
 # Credits to npm's. Awesome completion utility.
