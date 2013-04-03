@@ -14,6 +14,8 @@ fi
 alias v='vim'
 alias packer='packer --noedit'
 alias ocaml='rlwrap -H ~/.ocaml_history -D 2 -i -s 10000 ocaml'
+alias lh='ls -ad .*'
+alias lah='ls -lhad .*'
 alias topm='top -o %MEM'
 
 
