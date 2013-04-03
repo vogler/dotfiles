@@ -14,8 +14,9 @@ fi
 alias v='vim'
 alias packer='packer --noedit'
 alias ocaml='rlwrap -H ~/.ocaml_history -D 2 -i -s 10000 ocaml'
-alias lh='ls -ad .*'
-alias lah='ls -lhad .*'
+function cwdsh(){ if [[ -z $2 ]]; then eval $1; else pu $2; eval $1; po; fi }
+alias lh='cwdsh "ls -d .*"'
+alias lah='cwdsh "ls -lhd .*"'
 unalias top # prezto aliases it to htop if it's installed
 alias topm='top -o %MEM'
 function psmem(){ # e.g. psmem chrome
