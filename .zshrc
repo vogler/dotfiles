@@ -16,7 +16,11 @@ alias packer='packer --noedit'
 alias ocaml='rlwrap -H ~/.ocaml_history -D 2 -i -s 10000 ocaml'
 alias lh='ls -ad .*'
 alias lah='ls -lhad .*'
+unalias top # prezto aliases it to htop if it's installed
 alias topm='top -o %MEM'
+function psmem(){ # e.g. psmem chrome
+    top -bn 1 | grep $1 | cut -c32-36 - | awk '{s+=$1} END {print s}'
+}
 
 
 # Credits to npm's. Awesome completion utility.
