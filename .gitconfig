@@ -1,5 +1,5 @@
 [user]
-	name = vogler
+	name = Ralf Vogler
 	email = ralf.vogler@gmail.com
 [credential]
 	helper = cache --timeout=3600

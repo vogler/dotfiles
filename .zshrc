@@ -14,7 +14,7 @@ fi
 alias v='vim'
 alias packer='packer --noedit'
 alias ocaml='rlwrap -H ~/.ocaml_history -D 2 -i -s 10000 ocaml'
-
+alias topm='top -o %MEM'
 
 
 # Credits to npm's. Awesome completion utility.
