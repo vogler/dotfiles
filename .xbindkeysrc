@@ -35,31 +35,33 @@
 
 
 
-## Control + mouse button 2 release event starts rxvt
-#"urxvt"
-#   Control + b:2 + Release
+# switch between first two  pulseaudio sinks (e.g. headphones/speakers)
+"~/paSwitch.sh"
+    m:0x41 + c:39
+    Shift+Mod4 + s
 
 #"amixer -c 0 sset Master 2+"
-"pactl -- set-sink-volume 1 +10%"
+"pamixer --increase 10"
    Control + Shift + b:4
 
 #"amixer -c 0 sset Master 2-"
-"pactl -- set-sink-volume 1 -10%"
+"pamixer --decrease 10"
    Control + Shift + b:5
 
 #"amixer -c 0 sset Master 2+"
-"pactl -- set-sink-volume 1 +10%"
+"pamixer --increase 10"
    XF86AudioRaiseVolume
 
 #"amixer -c 0 sset Master 2-"
-"pactl -- set-sink-volume 1 -10%"
+"pamixer --decrease 10"
    XF86AudioLowerVolume
 
-"amixer -D pulse sset Master toggle"
+#"amixer -D pulse sset Master toggle"
+"pamixer --toggle-mute"
    XF86AudioMute
 
 "sudo /usr/sbin/pm-suspend"
-  XF86Sleep
+   XF86Sleep
 
 #
 # End of xbindkeys configuration
