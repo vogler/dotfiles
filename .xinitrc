@@ -3,13 +3,13 @@
 # ~/.xinitrc
 #
 # Executed by startx (run your window manager from here)
+wm=${1-"awesome"}
 
 # http://chneukirchen.org/dotfiles/.xsession
 setxkbmap -layout 'us(altgr-intl),de(nodeadkeys)' \
   -option 'grp:alt_shift_toggle,compose:menu'
-
-# map multimedia keys (see .xbindkeysrc)
-#xbindkeys
+# map caps lock to escape
+setxkbmap -option caps:escape
 
 # touchpad (circular starts on right edge)
 synclient HorizTwoFingerScroll=1
@@ -32,12 +32,19 @@ sh ~/xrandr.sh
 # start additions if running inside VirtualBox
 sh ~/vbox.sh
 
-# start pulseaudio systray
-#pasystray&
 
 # exec gnome-session
 # exec startkde
 # exec startxfce4
 # ...or the Window Manager of your choice
-#exec awesome >> ~/.cache/awesome/stdout 2>> ~/.cache/awesome/stderr
-exec gnome-session
+case "$wm" in
+    awesome)
+        xbindkeys # map multimedia keys (see .xbindkeysrc)
+        pulseaudio&
+        #pasystray& # start pulseaudio systray
+        exec awesome >> ~/.cache/awesome/stdout 2>> ~/.cache/awesome/stderr
+    ;;
+    gnome)
+        exec gnome-session
+    ;;
+esac
