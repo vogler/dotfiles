@@ -38,6 +38,7 @@ zstyle ':prezto:load' pmodule \
   'git' \
   'archive' \
   'fasd' \
+  'pacman' \
   'syntax-highlighting' \
   'prompt'
 #  'z'

@@ -3,11 +3,16 @@
 	"installed_packages":
 	[
 		"AdvancedNewFile",
+		"Bower",
+		"CoffeeScript",
 		"Edit History",
 		"Git",
+		"GitGutter",
+		"Jade",
 		"LiveReload",
 		"Navigation History",
 		"Package Control",
-		"SplitScreen-Resizer"
+		"SplitScreen-Resizer",
+		"Stylus"
 	]
 }

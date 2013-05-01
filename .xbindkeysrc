@@ -41,19 +41,19 @@
     Shift+Mod4 + s
 
 #"amixer -c 0 sset Master 2+"
-"pamixer --increase 10"
+"pamixer --increase 3"
    Control + Shift + b:4
 
 #"amixer -c 0 sset Master 2-"
-"pamixer --decrease 10"
+"pamixer --decrease 3"
    Control + Shift + b:5
 
 #"amixer -c 0 sset Master 2+"
-"pamixer --increase 10"
+"pamixer --increase 3"
    XF86AudioRaiseVolume
 
 #"amixer -c 0 sset Master 2-"
-"pamixer --decrease 10"
+"pamixer --decrease 3"
    XF86AudioLowerVolume
 
 #"amixer -D pulse sset Master toggle"

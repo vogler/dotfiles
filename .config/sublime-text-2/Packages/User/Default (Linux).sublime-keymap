@@ -3,5 +3,6 @@
     { "keys": ["ctrl+alt+left"], "command": "previous_edit"},
     { "keys": ["ctrl+alt+right"], "command": "next_edit"},
     { "keys": ["alt+left"], "command": "navigation_history_back"},
-    { "keys": ["alt+right"], "command": "navigation_history_forward"}
+    { "keys": ["alt+right"], "command": "navigation_history_forward"},
+    { "keys": ["ctrl+alt+s"], "command": "save_all" }
 ]
