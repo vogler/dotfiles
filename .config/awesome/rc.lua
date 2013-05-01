@@ -48,7 +48,7 @@ beautiful.init("/usr/share/awesome/themes/zenburn/theme.lua")
 --terminal = "xfce4-terminal"
 terminal = "terminator"
 editor = os.getenv("EDITOR") or "nano"
-function cmd(x) return terminal .. ' -e "' .. x .. '"' end
+function cmd(x) return terminal .. ' -x ' .. x end
 function edit(x) return cmd(editor .. " " .. x) end
 
 -- Default modkey.
@@ -127,17 +127,6 @@ local color_bg = "#3F3F3F"
 local color_fg = "#1E2320"
 -- separator
 local separator = wibox.widget.textbox('<span color="#666666">|</span>')
--- battery
-local batwidget = wibox.widget.textbox()
--- vicious.register(batwidget, vicious.widgets.bat, " $1$2% ($3) ", 61, "BAT0")
-vicious.register(batwidget, vicious.widgets.bat, function (widget, args)
-        if args[1]=="-" or args[1]=="+" then -- discharging or charging
-            return string.format(" %s%s (%s)", args[1], args[2], args[3])
-        else
-            return string.format(" %s", args[1]) -- power sign == full
-        end
-    end, 61, "BAT0")
-batwidget:buttons(awful.button({ }, 1, function() awful.util.spawn("gnome-power-statistics", false) end))
 -- cpu
 local cpuwidget = awful.widget.graph()
 cpuwidget:set_width(40)
@@ -158,6 +147,21 @@ memwidget:set_color({ type = "linear", from = { 0, 0 }, to = { 0,10 }, stops = {
                     {0, "#FF5656"}}})
 vicious.register(memwidget, vicious.widgets.mem, "$1")
 memwidget:buttons(awful.button({ }, 1, function() awful.util.spawn(cmd("top -o %MEM")) end))
+-- file system
+local fswidget = wibox.widget.textbox()
+vicious.register(fswidget, vicious.widgets.fs, " ${/ avail_gb}G", 13)
+fswidget:buttons(awful.button({ }, 1, function() awful.util.spawn("baobab", false) end))
+-- battery
+local batwidget = wibox.widget.textbox()
+-- vicious.register(batwidget, vicious.widgets.bat, " $1$2% ($3) ", 61, "BAT0")
+vicious.register(batwidget, vicious.widgets.bat, function (widget, args)
+        if args[1]=="-" or args[1]=="+" then -- discharging or charging
+            return string.format(" %s%s (%s)", args[1], args[2], args[3])
+        else
+            return string.format(" %s", args[1]) -- power sign == full
+        end
+    end, 61, "BAT0")
+batwidget:buttons(awful.button({ }, 1, function() awful.util.spawn("gnome-power-statistics", false) end))
 -- volume
 local volwidget = wibox.widget.textbox()
 vicious.register(volwidget, vicious.widgets.volume,
@@ -179,6 +183,7 @@ volwidget:buttons(awful.util.table.join(
 local vicious_widgets = wibox.layout.fixed.horizontal()
 vicious_widgets:add(cpuwidget)
 vicious_widgets:add(memwidget)
+vicious_widgets:add(fswidget)
 vicious_widgets:add(batwidget)
 vicious_widgets:add(volwidget)
 
