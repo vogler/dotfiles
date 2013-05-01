@@ -11,6 +11,9 @@ local beautiful = require("beautiful")
 local naughty = require("naughty")
 local menubar = require("menubar")
 
+-- vicious
+local vicious = require("vicious")
+
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
 -- another config (This code will only ever execute for the fallback config)
@@ -119,6 +122,66 @@ menubar.utils.terminal = terminal -- Set the terminal for applications that requ
 -- Create a textclock widget
 mytextclock = awful.widget.textclock()
 
+-- Create Vicious widgets
+local color_bg = "#3F3F3F"
+local color_fg = "#1E2320"
+-- separator
+local separator = wibox.widget.textbox('<span color="#666666">|</span>')
+-- battery
+local batwidget = wibox.widget.textbox()
+-- vicious.register(batwidget, vicious.widgets.bat, " $1$2% ($3) ", 61, "BAT0")
+vicious.register(batwidget, vicious.widgets.bat, function (widget, args)
+        if args[1]=="-" or args[1]=="+" then -- discharging or charging
+            return string.format(" %s%s (%s)", args[1], args[2], args[3])
+        else
+            return string.format(" %s", args[1]) -- power sign == full
+        end
+    end, 61, "BAT0")
+batwidget:buttons(awful.button({ }, 1, function() awful.util.spawn("gnome-power-statistics", false) end))
+-- cpu
+local cpuwidget = awful.widget.graph()
+cpuwidget:set_width(40)
+cpuwidget:set_background_color(color_bg)
+cpuwidget:set_border_color(color_fg)
+cpuwidget:set_color({ type = "linear", from = { 0, 0 }, to = { 10,0 }, stops = { {0, "#FF5656"}, {0.5, "#88A175"}, 
+                    {1, "#AECF96" }}})
+vicious.register(cpuwidget, vicious.widgets.cpu, "$1")
+cpuwidget:buttons(awful.button({ }, 1, function() awful.util.spawn(cmd("htop")) end))
+-- memory
+local memwidget = awful.widget.progressbar()
+memwidget:set_width(8)
+-- memwidget:set_height(10)
+memwidget:set_vertical(true)
+memwidget:set_background_color(color_bg)
+memwidget:set_border_color(color_fg)
+memwidget:set_color({ type = "linear", from = { 0, 0 }, to = { 0,10 }, stops = { {1, "#AECF96"}, {0.5, "#88A175"}, 
+                    {0, "#FF5656"}}})
+vicious.register(memwidget, vicious.widgets.mem, "$1")
+memwidget:buttons(awful.button({ }, 1, function() awful.util.spawn(cmd("top -o %MEM")) end))
+-- volume
+local volwidget = wibox.widget.textbox()
+vicious.register(volwidget, vicious.widgets.volume,
+		 ' <span font="Terminus 8" color="#AAAAAA">$2$1</span> ',
+		2, "Master")
+local volume = {}
+volume.switch = function () os.execute("~/paSwitch.sh", false); vicious.force({volwidget}) end
+volume.mixer = function() awful.util.spawn("pavucontrol", false) end
+volume.toggle = function () os.execute("pamixer --toggle-mute", false); vicious.force({volwidget}) end
+volume.increase = function () os.execute("pamixer --increase 3", false); vicious.force({volwidget}) end
+volume.decrease = function () os.execute("pamixer --decrease 3", false); vicious.force({volwidget}) end
+volwidget:buttons(awful.util.table.join(
+		     awful.button({ }, 1, volume.switch),
+		     awful.button({ }, 2, volume.mixer),
+		     awful.button({ }, 3, volume.toggle),
+		     awful.button({ }, 4, volume.increase),
+		     awful.button({ }, 5, volume.decrease)))
+-- add widgets in the desired order
+local vicious_widgets = wibox.layout.fixed.horizontal()
+vicious_widgets:add(cpuwidget)
+vicious_widgets:add(memwidget)
+vicious_widgets:add(batwidget)
+vicious_widgets:add(volwidget)
+
 -- Create a wibox for each screen and add it
 mywibox = {}
 mypromptbox = {}
@@ -196,6 +259,7 @@ for s = 1, screen.count() do
     -- Widgets that are aligned to the right
     local right_layout = wibox.layout.fixed.horizontal()
     if s == 1 then right_layout:add(wibox.widget.systray()) end
+    right_layout:add(vicious_widgets)
     right_layout:add(mytextclock)
     right_layout:add(mylayoutbox[s])
 
