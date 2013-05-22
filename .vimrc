@@ -113,3 +113,8 @@ nnoremap gp `[v`]
 
 
 "map <M-o> O<ESC>
+
+" Vim as a Python IDE - Martin Brockhaus
+" keep selection on indentation
+vnoremap < <gv
+vnoremap > >gv
