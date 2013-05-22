@@ -3,6 +3,14 @@
 	email = ralf.vogler@gmail.com
 [credential]
 	helper = cache --timeout=3600
+[credential "https://github.com"]
+    username = vogler
+[credential "https://bitbucket.org"]
+    username = vogler
+[github]
+    user = vogler
+[hub]
+    protocol = https
 [core]
 	editor = nano -w
 	excludesfile = ~/.gitignore_global
