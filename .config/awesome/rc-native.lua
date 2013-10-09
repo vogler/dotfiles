@@ -89,7 +89,7 @@ end
 tags = {}
 for s = 1, screen.count() do
     -- Each screen has its own tag table.
-    tags[s] = awful.tag({ 1, 2, 3, 4, 5 }, s, layouts[2])
+    tags[s] = awful.tag({ 1, 2, 3, 4 }, s, layouts[2])
 end
 -- }}}
 
@@ -103,9 +103,11 @@ myawesomemenu = {
 }
 
 mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
+                                    { "MA", "sh -c ~/ma.sh" },
                                     { "home", "thunar" },
-                                    { "terminal", terminal },
-                                    { "reboot", "reboot" }
+                                    { "open terminal", terminal },
+				    { "mount Win", "sh -c ~/mount.sh && thunar /media/win7/Users/Ralf" }, 
+				    { "reboot Win", "sh -c ~/rebootWin.sh" }
                                   }
                         })
 
