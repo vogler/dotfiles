@@ -2,6 +2,8 @@
 execute pathogen#infect()
 
 " https://github.com/tpope/vim-sensible
+set undodir^=~/.vim/undo
+"set backupdir=~/.vim/backup
 
 " https://github.com/altercation/vim-colors-solarized
 syntax enable
@@ -47,7 +49,7 @@ nmap <leader>q :q!<cr>
 set viminfo+=!          " support for yanking
 set mouse=a             " enable mouse
 
-"set nocompatible        " no vi compatibility
+set nocompatible        " no vi compatibility
 
 "set novisualbell        " no visual beeping
 "set noerrorbells        " no noise
@@ -72,6 +74,51 @@ set foldenable          " do fold
 set foldmethod=marker   " fold with markers
 
 set wildmenu            " show completion menu in :e with <C-d>
+
+" http://stevelosh.com/blog/2010/09/coming-home-to-vim/#why-i-came-back-to-vim
+set encoding=utf-8
+set scrolloff=3
+"set autoindent
+set showmode
+set showcmd
+set hidden
+set wildmenu
+set wildmode=list:longest
+set visualbell
+set cursorline
+set ttyfast
+"set ruler
+set backspace=indent,eol,start
+set laststatus=2
+set relativenumber
+"set undofile
+
+nnoremap / /\v
+vnoremap / /\v
+set ignorecase
+set smartcase
+set gdefault
+set incsearch
+set showmatch
+set hlsearch
+nnoremap <leader><space> :noh<cr>
+nnoremap <tab> %
+vnoremap <tab> %
+
+set wrap
+set textwidth=79
+set formatoptions=qrn1
+set colorcolumn=85
+
+"set list
+"set listchars=tab:▸\ ,eol:¬
+
+inoremap <F1> <ESC>
+nnoremap <F1> <ESC>
+vnoremap <F1> <ESC>
+nnoremap ; :
+"au FocusLost * :wa
+inoremap jj <ESC>
 
 
 """"""""" Show superfluos spaces """""""""
@@ -118,3 +165,7 @@ nnoremap gp `[v`]
 " keep selection on indentation
 vnoremap < <gv
 vnoremap > >gv
+
+set grepprg=grep\ -nH\ $*
+let g:tex_flavor = "latex"
+
