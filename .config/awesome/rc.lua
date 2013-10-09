@@ -216,6 +216,13 @@ mytasklist.buttons = awful.util.table.join(
                                                   c:raise()
                                               end
                                           end),
+                     awful.button({ modkey }, 1, function (c) -- toggle maximized
+                                              c.maximized_horizontal = not c.maximized_horizontal
+                                              c.maximized_vertical   = not c.maximized_vertical
+                                              if c.maximized_horizontal then
+                                                  c:raise()
+                                              end
+                                          end),
                      awful.button({ }, 3, function ()
                                               if instance then
                                                   instance:hide()
