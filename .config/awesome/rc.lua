@@ -166,13 +166,13 @@ vicious.register(volwidget, vicious.widgets.volume,
 		 ' <span font="Terminus 8" color="#AAAAAA">$2$1</span> ',
 		2, "Master")
 local volume = {}
-volume.switch = function () os.execute("~/paSwitch.sh", false); vicious.force({volwidget}) end
-volume.mixer = function() awful.util.spawn("pavucontrol", false) end
-volume.toggle = function () os.execute("pamixer --toggle-mute", false); vicious.force({volwidget}) end
-volume.increase = function () os.execute("pamixer --increase 3", false); vicious.force({volwidget}) end
-volume.decrease = function () os.execute("pamixer --decrease 3", false); vicious.force({volwidget}) end
+-- volume.switch = function () os.execute("~/paSwitch.sh", false); vicious.force({volwidget}) end
+volume.mixer = function() awful.util.spawn("alsamixer", false) end
+volume.toggle = function () os.execute("amixer sset Master toggle", false); vicious.force({volwidget}) end
+volume.increase = function () os.execute("amixer sset Master 2+", false); vicious.force({volwidget}) end
+volume.decrease = function () os.execute("amixer sset Master 2-", false); vicious.force({volwidget}) end
 volwidget:buttons(awful.util.table.join(
-		     awful.button({ }, 1, volume.switch),
+		     awful.button({ }, 1, volume.toggle),
 		     awful.button({ }, 2, volume.mixer),
 		     awful.button({ }, 3, volume.toggle),
 		     awful.button({ }, 4, volume.increase),
