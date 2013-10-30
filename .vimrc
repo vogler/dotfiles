@@ -1,16 +1,50 @@
-" https://github.com/tpope/vim-pathogen
-execute pathogen#infect()
+" use vundle instead of vim-pathogen
+" https://github.com/gmarik/vundle
+set nocompatible               " be iMproved
+filetype off                   " required!
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+Bundle 'gmarik/vundle'
 
-" https://github.com/tpope/vim-sensible
+" somehow these need to be exactly here
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'digitaltoad/vim-jade'
+
+syntax enable
+filetype plugin indent on     " required!
+
+" original repos on github
+Bundle 'tpope/vim-sensible'
 set undodir^=~/.vim/undo
 "set backupdir=~/.vim/backup
 
-" https://github.com/altercation/vim-colors-solarized
-syntax enable
+Bundle 'altercation/vim-colors-solarized'
 set background=dark
 let g:solarized_termtrans=1
 let g:solarized_termcolors=256
 colorscheme solarized
+
+Bundle 'bling/vim-airline'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
+
+Bundle 'airblade/vim-gitgutter'
+"Bundle 'mhinz/vim-signify'
+"highlight clear SignColumn
+
+Bundle 'kien/ctrlp.vim'
+let g:ctrlp_map = '<c-p>'
+
+Bundle 'Lokaltog/vim-easymotion'
+Bundle 'rking/ag.vim'
+Bundle 'tpope/vim-fugitive'
+Bundle 'scrooloose/syntastic'
+
+" :BundleList          - list configured bundles
+" :BundleInstall(!)    - install(update) bundles
+" :BundleSearch(!) foo - search(or refresh cache first) for foo
+" :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
+" see :h vundle for more details or wiki for FAQ
 
 
 " http://chneukirchen.org/dotfiles/.vimrc
@@ -93,8 +127,8 @@ set laststatus=2
 set relativenumber
 "set undofile
 
-nnoremap / /\v
-vnoremap / /\v
+"nnoremap / /\v
+"vnoremap / /\v
 set ignorecase
 set smartcase
 set gdefault
@@ -127,7 +161,7 @@ inoremap jj <ESC>
 
 
 """"""""" tn = :tabnew """""""""""""""""""
-nmap tn :tabnew<CR>
+"nmap tn :tabnew<CR>
 
 
 """"""""" ü = :shell """""""""""""""""""""
@@ -135,9 +169,9 @@ nmap ü :shell<cr>
 
 
 """"""""" buffer magic """""""""""""""""""
-nmap bn :bn!<cr>
-nmap bp :bp!<cr>
-nmap bd :bd<cr>
+"nmap bn :bn!<cr>
+"nmap bp :bp!<cr>
+"nmap bd :bd<cr>
 
 
 """"""""" ó,ö = y/p with clipboard """""""""
