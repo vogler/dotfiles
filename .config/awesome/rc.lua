@@ -293,7 +293,8 @@ root.buttons(awful.util.table.join(
 
 -- {{{ Key bindings
 globalkeys = awful.util.table.join(
-    awful.key({                   }, "Print",  function () awful.util.spawn("scrot -e 'mv $f ~/Pictures/ 2>/dev/null'") end),
+    awful.key({                   }, "Print",  function () awful.util.spawn("xfce4-screenshooter") end),
+    awful.key({         "Shift"   }, "Print",  function () awful.util.spawn("scrot -e 'mv $f ~/Pictures/ 2>/dev/null'") end),
     awful.key({                   }, "XF86Display", function () os.execute("~/xrandr.sh", false) end),
     awful.key({ modkey,           }, "Left",   awful.tag.viewprev       ),
     awful.key({ modkey,           }, "Right",  awful.tag.viewnext       ),

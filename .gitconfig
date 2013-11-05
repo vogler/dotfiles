@@ -12,7 +12,7 @@
 [hub]
     protocol = https
 [core]
-	editor = nano -w
+	editor = vim
 	excludesfile = ~/.gitignore_global
 [push]
 	default = current

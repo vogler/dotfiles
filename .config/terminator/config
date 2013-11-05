@@ -1,0 +1,29 @@
+[global_config]
+  enabled_plugins = ,
+  focus = mouse
+  inactive_color_offset = 0.88
+  borderless = True
+[keybindings]
+  next_tab = <Alt>o
+  prev_tab = <Alt>i
+[profiles]
+  [[default]]
+    background_image = None
+    background_darkness = 0.87
+    background_type = transparent
+    foreground_color = "#839496"
+    scroll_on_output = False
+    show_titlebar = False
+    font = DejaVu Sans Mono 11
+    background_color = "#002b36"
+    scrollback_infinite = True
+[layouts]
+  [[default]]
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+      profile = default
+    [[[window0]]]
+      type = Window
+      parent = ""
+[plugins]

@@ -6,5 +6,6 @@
 		"SplitScreen-Resizer",
 		"LiveReload"
 	],
-	"scroll_speed": 0
+	"scroll_speed": 0,
+	"vintage_start_in_command_mode": true
 }
