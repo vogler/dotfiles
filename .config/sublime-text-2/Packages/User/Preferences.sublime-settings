@@ -7,5 +7,14 @@
 		"LiveReload"
 	],
 	"scroll_speed": 0,
-	"vintage_start_in_command_mode": true
+	"vintage_start_in_command_mode": true,
+	"todo": {
+		"folder_exclude_patterns": [
+			"_build",
+			"obj",
+			"tmp",
+			".vagrant",
+			"node_modules"
+		]
+	}
 }
