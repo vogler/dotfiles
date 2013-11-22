@@ -179,9 +179,10 @@ nmap ü :shell<cr>
 
 
 """"""""" ó,ö = y/p with clipboard """""""""
-vmap ó "+y
-nmap ó viwó             " Y already used in normal mode
-map ö "+gP
+" vmap ó "+y
+" nmap ó viwó             " Y already used in normal mode
+" map ö "+gP
+set clipboard=unnamedplus
 
 
 """"""""" gp = select pasted text """"""""
