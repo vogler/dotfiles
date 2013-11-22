@@ -35,10 +35,14 @@ Bundle 'airblade/vim-gitgutter'
 Bundle 'kien/ctrlp.vim'
 let g:ctrlp_map = '<c-p>'
 
+Bundle 'tpope/vim-commentary'
+autocmd FileType ocaml set commentstring=(*\ %s\ *)
+
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'rking/ag.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'scrooloose/syntastic'
+Bundle 'tpope/vim-endwise'
 
 " :BundleList          - list configured bundles
 " :BundleInstall(!)    - install(update) bundles
