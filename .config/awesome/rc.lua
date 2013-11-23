@@ -42,7 +42,7 @@ end
 -- {{{ Variable definitions
 -- Themes define colours, icons, and wallpapers
 --beautiful.init("/usr/share/awesome/themes/default/theme.lua")
-beautiful.init("/usr/share/awesome/themes/zenburn/theme.lua")
+beautiful.init("/home/ralf/.config/awesome/themes/zenburn/theme.lua") -- abs. path needed :(
 
 -- This is used later as the default terminal and editor to run.
 --terminal = "xfce4-terminal"
