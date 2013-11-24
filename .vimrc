@@ -51,12 +51,14 @@ Bundle 'tpope/vim-endwise'
 " see :h vundle for more details or wiki for FAQ
 
 " OCaml
-" setup merlin
-let s:ocamlmerlin=substitute(system('opam config var share'),'\n$','','''') .  "/ocamlmerlin"
+" setup merlin, syntastic and ocp-indent
+let opam_share=substitute(system('opam config var share'),'\n$','','''')
+let s:ocamlmerlin=opam_share . "/ocamlmerlin"
 execute "set rtp+=".s:ocamlmerlin."/vim"
 execute "set rtp+=".s:ocamlmerlin."/vimbufsync"
 let g:syntastic_ocaml_checkers = ['merlin']
 nnoremap <localleader> :Locate<cr>
+execute 'autocmd FileType ocaml source' opam_share . "/typerex/ocp-indent/ocp-indent.vim"
 
 " http://chneukirchen.org/dotfiles/.vimrc
 " a selects everything in visual selection mode
