@@ -18,14 +18,16 @@ theme.font      = "sans 8"
 theme.fg_normal  = "#DCDCCC"
 theme.fg_focus   = "#F0DFAF"
 theme.fg_urgent  = "#CC9393"
+theme.fg_minimize = "#666666"
 theme.bg_normal  = "#3F3F3F"
 theme.bg_focus   = "#1E2320"
 theme.bg_urgent  = "#3F3F3F"
+theme.bg_minimize = "#3F3F3F"
 theme.bg_systray = theme.bg_normal
 -- }}}
 
 -- {{{ Borders
-theme.border_width  = 2
+theme.border_width  = 0 -- border obstructs scrolling if cursor is at the edge
 theme.border_normal = "#3F3F3F"
 theme.border_focus  = "#6F6F6F"
 theme.border_marked = "#CC9393"
@@ -120,6 +122,10 @@ theme.titlebar_maximized_button_focus_active  = "/usr/share/awesome/themes/zenbu
 theme.titlebar_maximized_button_normal_active = "/usr/share/awesome/themes/zenburn/titlebar/maximized_normal_active.png"
 theme.titlebar_maximized_button_focus_inactive  = "/usr/share/awesome/themes/zenburn/titlebar/maximized_focus_inactive.png"
 theme.titlebar_maximized_button_normal_inactive = "/usr/share/awesome/themes/zenburn/titlebar/maximized_normal_inactive.png"
+-- }}}
+
+-- {{{ Tasklist
+theme.bg_image_minimize           = "/home/ralf/.config/awesome/themes/zenburn/bg_minimize.png"
 -- }}}
 -- }}}
 

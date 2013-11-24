@@ -121,10 +121,10 @@ menubar.utils.terminal = terminal -- Set the terminal for applications that requ
 mytextclock = awful.widget.textclock()
 
 -- Create Vicious widgets
-local color_bg = "#3F3F3F"
-local color_fg = "#1E2320"
+local color_bg = beautiful.bg_normal
+local color_fg = beautiful.bg_focus
 -- separator
-local separator = wibox.widget.textbox('<span color="#666666">|</span>')
+local separator = wibox.widget.textbox('<span color="'..beautiful.border_focus..'">|</span>')
 -- cpu
 local cpuwidget = awful.widget.graph()
 cpuwidget:set_width(40)
