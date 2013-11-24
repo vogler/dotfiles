@@ -50,6 +50,13 @@ Bundle 'tpope/vim-endwise'
 " :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
 " see :h vundle for more details or wiki for FAQ
 
+" OCaml
+" setup merlin
+let s:ocamlmerlin=substitute(system('opam config var share'),'\n$','','''') .  "/ocamlmerlin"
+execute "set rtp+=".s:ocamlmerlin."/vim"
+execute "set rtp+=".s:ocamlmerlin."/vimbufsync"
+let g:syntastic_ocaml_checkers = ['merlin']
+nnoremap <localleader> :Locate<cr>
 
 " http://chneukirchen.org/dotfiles/.vimrc
 " a selects everything in visual selection mode
