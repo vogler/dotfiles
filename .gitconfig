@@ -18,3 +18,5 @@
 	default = current
 [color]
 	ui = auto
+[merge]
+	tool = meld
