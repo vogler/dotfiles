@@ -4,6 +4,7 @@
 	"ignored_packages":
 	[
 		"SplitScreen-Resizer",
+		"GitGutter",
 		"LiveReload"
 	],
 	"scroll_speed": 0,
