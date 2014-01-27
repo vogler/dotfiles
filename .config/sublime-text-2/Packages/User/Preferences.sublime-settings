@@ -1,6 +1,7 @@
 {
 	"color_scheme": "Packages/Color Scheme - Default/Solarized (Dark).tmTheme",
 	"font_size": 10,
+	"word_wrap": "true",
 	"ignored_packages":
 	[
 		"SplitScreen-Resizer",

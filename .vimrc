@@ -43,6 +43,7 @@ Bundle 'rking/ag.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'scrooloose/syntastic'
 Bundle 'tpope/vim-endwise'
+Bundle 'IndexedSearch'
 
 " :BundleList          - list configured bundles
 " :BundleInstall(!)    - install(update) bundles
