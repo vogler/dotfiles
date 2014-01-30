@@ -1,7 +1,6 @@
 {
 	"color_scheme": "Packages/Color Scheme - Default/Solarized (Dark).tmTheme",
 	"font_size": 10,
-	"word_wrap": "true",
 	"ignored_packages":
 	[
 		"SplitScreen-Resizer",
@@ -20,5 +19,6 @@
 			"node_modules"
 		]
 	},
-	"vintage_start_in_command_mode": true
+	"vintage_start_in_command_mode": true,
+	"word_wrap": "true"
 }
