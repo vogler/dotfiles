@@ -59,7 +59,7 @@ execute "set rtp+=".s:ocamlmerlin."/vim"
 execute "set rtp+=".s:ocamlmerlin."/vimbufsync"
 let g:syntastic_ocaml_checkers = ['merlin']
 nnoremap <localleader> :Locate<cr>
-execute 'autocmd FileType ocaml source' opam_share . "/typerex/ocp-indent/ocp-indent.vim"
+execute 'autocmd FileType ocaml source' opam_share . "/vim/syntax/ocp-indent.vim"
 
 " http://chneukirchen.org/dotfiles/.vimrc
 " a selects everything in visual selection mode
