@@ -138,7 +138,19 @@ set ttyfast
 "set ruler
 set backspace=indent,eol,start
 set laststatus=2
-set relativenumber
+" FocusLost only works with gvim -> don't use relativenumber in terminal
+if has("gui-running")
+    set relativenumber
+    "http://jeffkreeftmeijer.com/2012/relative-line-numbers-in-vim-for-super-fast-movement/
+    "http://learnvimscriptthehardway.stevelosh.com/chapters/14.html
+    augroup relnum
+        autocmd!
+        autocmd FocusLost * :set norelativenumber
+        autocmd FocusGained * :set relativenumber
+        autocmd InsertEnter * :set norelativenumber
+        autocmd InsertLeave * :set relativenumber
+    augroup END
+endif
 "set undofile
 
 "nnoremap / /\v

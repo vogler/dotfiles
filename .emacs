@@ -23,3 +23,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+(setq auto-mode-alist (cons '("\\.ml[iylp]?\\'" . tuareg-mode) auto-mode-alist))
+(autoload 'tuareg-mode "tuareg" "Major mode for editing Caml code" t)
+(autoload 'ocamldebug "ocamldebug" "Run the Caml debugger" t)
