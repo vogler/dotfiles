@@ -42,6 +42,7 @@ Bundle 'Lokaltog/vim-easymotion'
 Bundle 'rking/ag.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'scrooloose/syntastic'
+Bundle 'Twinside/vim-hoogle'
 Bundle 'tpope/vim-endwise'
 Bundle 'IndexedSearch'
 
