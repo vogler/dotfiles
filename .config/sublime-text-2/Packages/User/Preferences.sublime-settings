@@ -5,7 +5,9 @@
 	[
 		"SplitScreen-Resizer",
 		"GitGutter",
-		"LiveReload"
+		"LiveReload",
+		"OCaml Autocompletion",
+		"PyV8"
 	],
 	"scroll_speed": 0,
 	"todo":

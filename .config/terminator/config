@@ -8,12 +8,13 @@
   prev_tab = <Alt>i
 [profiles]
   [[default]]
-    background_image = None
+    use_system_font = False
     background_darkness = 0.87
     background_type = transparent
+    background_image = None
     foreground_color = "#839496"
     scroll_on_output = False
-    font = DejaVu Sans Mono 11
+    font = DejaVu Sans Mono 12
     background_color = "#002b36"
     scrollback_infinite = True
 [layouts]
