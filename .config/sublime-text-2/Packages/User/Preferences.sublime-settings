@@ -3,10 +3,10 @@
 	"ignored_packages":
 	[
 		"SplitScreen-Resizer",
-		"GitGutter",
-		"LiveReload",
 		"OCaml Autocompletion",
-		"PyV8"
+		"GitGutter",
+		"PyV8",
+		"LiveReload"
 	],
 	"scroll_speed": 0,
 	"todo":

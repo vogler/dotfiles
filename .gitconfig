@@ -24,3 +24,9 @@
 	tool = meld
 [rebase]
     autostash = true
+#This will add the fixup command to git
+#git fixup $commit will use your current index to fixup the specified commit
+#This is done by doing git commit --fixup $commit and then using rebase with autosquash
+#Based upon http://stackoverflow.com/a/21148981/460564
+[alias]
+    fixup = "!sh -c '(git diff-files --quiet || (echo Unstaged changes, please commit or stash with --keep-index; exit 1)) && COMMIT=$(git rev-parse $1) && git commit --fixup=$COMMIT && git rebase -i --autosquash $COMMIT~1' -"

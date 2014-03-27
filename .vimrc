@@ -39,6 +39,11 @@ Bundle 'tpope/vim-commentary'
 autocmd FileType ocaml set commentstring=(*\ %s\ *)
 
 Bundle 'Lokaltog/vim-easymotion'
+map <Leader> <Plug>(easymotion-prefix)
+let g:EasyMotion_smartcase = 1
+let g:EasyMotion_startofline = 0 " keep cursor colum when JK motion
+map <Leader>h <Plug>(easymotion-linebackward)
+map <Leader>l <Plug>(easymotion-lineforward)
 Bundle 'rking/ag.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'scrooloose/syntastic'
@@ -59,7 +64,7 @@ let s:ocamlmerlin=opam_share . "/ocamlmerlin"
 execute "set rtp+=".s:ocamlmerlin."/vim"
 execute "set rtp+=".s:ocamlmerlin."/vimbufsync"
 let g:syntastic_ocaml_checkers = ['merlin']
-nnoremap <localleader> :Locate<cr>
+" nnoremap <localleader> :Locate<cr>
 execute 'autocmd FileType ocaml source' opam_share . "/vim/syntax/ocp-indent.vim"
 
 " http://chneukirchen.org/dotfiles/.vimrc
