@@ -184,7 +184,7 @@ nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
 nnoremap ; :
 "au FocusLost * :wa
-inoremap jj <ESC>
+"inoremap jj <ESC>
 
 
 """"""""" Show superfluos spaces """""""""
@@ -204,6 +204,7 @@ nmap ü :shell<cr>
 "nmap bn :bn!<cr>
 "nmap bp :bp!<cr>
 "nmap bd :bd<cr>
+noremap <M-k> :bn!<cr>
 
 
 """"""""" ó,ö = y/p with clipboard """""""""
@@ -218,12 +219,12 @@ nnoremap gp `[v`]
 
 
 " tab navigation
-:map <C-j> :tabprevious<CR>
-:map <C-k> :tabnext<CR>
-:imap <C-j> <Esc>:tabprevious<CR>i
-:imap <C-k> <Esc>:tabnext<CR>i
-:map <C-t> :tabnew<Space>
-:imap <C-t> <Esc>:tabnew<Space>
+map <C-j> :tabprevious<CR>
+map <C-k> :tabnext<CR>
+imap <C-j> <Esc>:tabprevious<CR>i
+imap <C-k> <Esc>:tabnext<CR>i
+map <C-t> :tabnew<Space>
+imap <C-t> <Esc>:tabnew<Space>
 
 
 "map <M-o> O<ESC>
@@ -240,3 +241,10 @@ let g:tex_flavor = "latex"
 if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
+
+
+" CamelCase move
+" nnoremap <silent><C-Left> :<C-u>call search('\<\<Bar>\U\@<=\u\<Bar>\u\ze\%(\U\&\>\@!\)\<Bar>\%^','bW')<CR>
+" nnoremap <silent><C-Right> :<C-u>call search('\<\<Bar>\U\@<=\u\<Bar>\u\ze\%(\U\&\>\@!\)\<Bar>\%$','W')<CR>
+" inoremap <silent><C-Left> <C-o>:call search('\<\<Bar>\U\@<=\u\<Bar>\u\ze\%(\U\&\>\@!\)\<Bar>\%^','bW')<CR>
+" inoremap <silent><C-Right> <C-o>:call search('\<\<Bar>\U\@<=\u\<Bar>\u\ze\%(\U\&\>\@!\)\<Bar>\%$','W')<CR>

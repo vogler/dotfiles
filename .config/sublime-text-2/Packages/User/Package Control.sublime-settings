@@ -10,6 +10,7 @@
 		"GitGutter",
 		"Jade",
 		"LiveReload",
+		"Markdown Preview",
 		"Modific",
 		"Navigation History",
 		"OCaml",
@@ -18,6 +19,8 @@
 		"PlainTasks",
 		"SplitScreen-Resizer",
 		"Stylus",
-		"TrailingSpaces"
+		"Surround",
+		"TrailingSpaces",
+		"Vintage Surround"
 	]
 }
