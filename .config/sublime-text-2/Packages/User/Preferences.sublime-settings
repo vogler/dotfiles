@@ -1,13 +1,14 @@
 {
 	"color_scheme": "Packages/Color Scheme - Default/Solarized (Dark).tmTheme",
-	"font_size": 11,
+	"font_size": 12,
 	"ignored_packages":
 	[
-		"SplitScreen-Resizer",
 		"OCaml Autocompletion",
+		"LiveReload",
 		"GitGutter",
-		"PyV8",
-		"LiveReload"
+		"TrailingSpaces",
+		"SplitScreen-Resizer",
+		"PyV8"
 	],
 	"scroll_speed": 0,
 	"todo":

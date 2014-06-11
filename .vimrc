@@ -20,9 +20,10 @@ set undodir^=~/.vim/undo
 
 Bundle 'altercation/vim-colors-solarized'
 set background=dark
-let g:solarized_termtrans=1
-let g:solarized_termcolors=256
+" let g:solarized_termtrans=1
+" let g:solarized_termcolors=256
 colorscheme solarized
+call togglebg#map("<F5>")
 
 Bundle 'bling/vim-airline'
 let g:airline#extensions#tabline#enabled = 1
