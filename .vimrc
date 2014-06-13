@@ -2,28 +2,23 @@
 " https://github.com/gmarik/vundle
 set nocompatible               " be iMproved
 filetype off                   " required!
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-Bundle 'gmarik/vundle'
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Bundle 'gmarik/Vundle.vim'
 
 " somehow these need to be exactly here
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'digitaltoad/vim-jade'
 
-syntax enable
-filetype plugin indent on     " required!
+" syntax enable
+" filetype plugin indent on     " required!
 
 " original repos on github
 Bundle 'tpope/vim-sensible'
 set undodir^=~/.vim/undo
 "set backupdir=~/.vim/backup
 
-Bundle 'altercation/vim-colors-solarized'
-set background=dark
-" let g:solarized_termtrans=1
-" let g:solarized_termcolors=256
-colorscheme solarized
-call togglebg#map("<F5>")
+Plugin 'altercation/vim-colors-solarized'
 
 Bundle 'bling/vim-airline'
 let g:airline#extensions#tabline#enabled = 1
@@ -52,11 +47,21 @@ Bundle 'Twinside/vim-hoogle'
 Bundle 'tpope/vim-endwise'
 Bundle 'IndexedSearch'
 
+call vundle#end()
+filetype plugin indent on
+
 " :BundleList          - list configured bundles
 " :BundleInstall(!)    - install(update) bundles
 " :BundleSearch(!) foo - search(or refresh cache first) for foo
 " :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
 " see :h vundle for more details or wiki for FAQ
+
+syntax enable
+set background=dark
+" let g:solarized_termtrans=1
+" let g:solarized_termcolors=256
+colorscheme solarized
+call togglebg#map("<F5>")
 
 " OCaml
 " setup merlin, syntastic and ocp-indent
@@ -172,10 +177,14 @@ nnoremap <leader><space> :noh<cr>
 nnoremap <tab> %
 vnoremap <tab> %
 
-set wrap
-set textwidth=79
-set formatoptions=qrn1
-set colorcolumn=85
+" set wrap
+" set textwidth=79
+" set formatoptions=qrn1
+" set colorcolumn=85
+
+" don't add newline at the end of files
+" set binary
+" set noeol
 
 "set list
 "set listchars=tab:▸\ ,eol:¬
@@ -202,17 +211,17 @@ nmap ü :shell<cr>
 
 
 """"""""" buffer magic """""""""""""""""""
-"nmap bn :bn!<cr>
-"nmap bp :bp!<cr>
-"nmap bd :bd<cr>
-noremap <M-k> :bn!<cr>
+" <M-k> doesn't work in gnome-terminal, but typing ctrl-v alt-k works
+nnoremap k :bn!<cr>
+nnoremap j :bp!<cr>
+nnoremap d :bd!<cr>
 
 
 """"""""" ó,ö = y/p with clipboard """""""""
 " vmap ó "+y
 " nmap ó viwó             " Y already used in normal mode
 " map ö "+gP
-set clipboard=unnamedplus
+set clipboard=unnamedplus " use the system clipboard per default (must be compiled with +clipboard, if not try gvim -v)
 
 
 """"""""" gp = select pasted text """"""""
