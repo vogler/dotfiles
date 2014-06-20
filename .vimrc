@@ -70,7 +70,7 @@ let s:ocamlmerlin=opam_share . "/ocamlmerlin"
 execute "set rtp+=".s:ocamlmerlin."/vim"
 execute "set rtp+=".s:ocamlmerlin."/vimbufsync"
 let g:syntastic_ocaml_checkers = ['merlin']
-" nnoremap <localleader> :Locate<cr>
+nnoremap <localleader>l :Locate<cr>
 execute 'autocmd FileType ocaml source' opam_share . "/vim/syntax/ocp-indent.vim"
 
 " http://chneukirchen.org/dotfiles/.vimrc
@@ -126,7 +126,7 @@ set smartindent         " smart indent when starting new line
 set number              " show line numbers
 set ruler               " show line,col numbers
 set showmatch           " highlight matching braces
-set nowrap              " don't wrap lines
+" set nowrap              " don't wrap lines
 set incsearch           " show matches from search immediately
 set hlsearch            " actually do show any matches at all
 
@@ -181,6 +181,12 @@ vnoremap <tab> %
 " set textwidth=79
 " set formatoptions=qrn1
 " set colorcolumn=85
+set wrap
+set linebreak
+set nolist
+set textwidth=0
+set wrapmargin=0
+set formatoptions+=l
 
 " don't add newline at the end of files
 " set binary
@@ -254,7 +260,9 @@ endif
 
 
 " CamelCase move
-" nnoremap <silent><C-Left> :<C-u>call search('\<\<Bar>\U\@<=\u\<Bar>\u\ze\%(\U\&\>\@!\)\<Bar>\%^','bW')<CR>
-" nnoremap <silent><C-Right> :<C-u>call search('\<\<Bar>\U\@<=\u\<Bar>\u\ze\%(\U\&\>\@!\)\<Bar>\%$','W')<CR>
-" inoremap <silent><C-Left> <C-o>:call search('\<\<Bar>\U\@<=\u\<Bar>\u\ze\%(\U\&\>\@!\)\<Bar>\%^','bW')<CR>
-" inoremap <silent><C-Right> <C-o>:call search('\<\<Bar>\U\@<=\u\<Bar>\u\ze\%(\U\&\>\@!\)\<Bar>\%$','W')<CR>
+nnoremap <silent><C-Left> :<C-u>call search('\<\<Bar>\U\@<=\u\<Bar>\u\ze\%(\U\&\>\@!\)\<Bar>\%^','bW')<CR>
+nnoremap <silent><C-Right> :<C-u>call search('\<\<Bar>\U\@<=\u\<Bar>\u\ze\%(\U\&\>\@!\)\<Bar>\%$','W')<CR>
+nnoremap <silent><C-b> :<C-u>call search('\<\<Bar>\U\@<=\u\<Bar>\u\ze\%(\U\&\>\@!\)\<Bar>\%^','bW')<CR>
+nnoremap <silent><C-w> :<C-u>call search('\<\<Bar>\U\@<=\u\<Bar>\u\ze\%(\U\&\>\@!\)\<Bar>\%$','W')<CR>
+inoremap <silent><C-Left> <C-o>:call search('\<\<Bar>\U\@<=\u\<Bar>\u\ze\%(\U\&\>\@!\)\<Bar>\%^','bW')<CR>
+inoremap <silent><C-Right> <C-o>:call search('\<\<Bar>\U\@<=\u\<Bar>\u\ze\%(\U\&\>\@!\)\<Bar>\%$','W')<CR>
