@@ -17,6 +17,16 @@ Bundle 'digitaltoad/vim-jade'
 Bundle 'tpope/vim-sensible'
 set undodir^=~/.vim/undo
 "set backupdir=~/.vim/backup
+Bundle 'tpope/vim-commentary'
+autocmd FileType ocaml set commentstring=(*\ %s\ *)
+" toggle comment with C-/
+nmap  gcc
+imap  <esc>gcc
+vmap  gcgv
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-endwise'
+Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-repeat'
 
 Plugin 'altercation/vim-colors-solarized'
 
@@ -31,9 +41,6 @@ Bundle 'airblade/vim-gitgutter'
 Bundle 'kien/ctrlp.vim'
 let g:ctrlp_map = '<c-p>'
 
-Bundle 'tpope/vim-commentary'
-autocmd FileType ocaml set commentstring=(*\ %s\ *)
-
 Bundle 'Lokaltog/vim-easymotion'
 map <Leader> <Plug>(easymotion-prefix)
 let g:EasyMotion_smartcase = 1
@@ -41,10 +48,8 @@ let g:EasyMotion_startofline = 0 " keep cursor colum when JK motion
 map <Leader>h <Plug>(easymotion-linebackward)
 map <Leader>l <Plug>(easymotion-lineforward)
 Bundle 'rking/ag.vim'
-Bundle 'tpope/vim-fugitive'
 Bundle 'scrooloose/syntastic'
 Bundle 'Twinside/vim-hoogle'
-Bundle 'tpope/vim-endwise'
 Bundle 'IndexedSearch'
 
 call vundle#end()
@@ -198,7 +203,7 @@ set formatoptions+=l
 inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
-nnoremap ; :
+" nnoremap ; :
 "au FocusLost * :wa
 "inoremap jj <ESC>
 
@@ -262,7 +267,7 @@ endif
 " CamelCase move
 nnoremap <silent><C-Left> :<C-u>call search('\<\<Bar>\U\@<=\u\<Bar>\u\ze\%(\U\&\>\@!\)\<Bar>\%^','bW')<CR>
 nnoremap <silent><C-Right> :<C-u>call search('\<\<Bar>\U\@<=\u\<Bar>\u\ze\%(\U\&\>\@!\)\<Bar>\%$','W')<CR>
-nnoremap <silent><C-b> :<C-u>call search('\<\<Bar>\U\@<=\u\<Bar>\u\ze\%(\U\&\>\@!\)\<Bar>\%^','bW')<CR>
-nnoremap <silent><C-w> :<C-u>call search('\<\<Bar>\U\@<=\u\<Bar>\u\ze\%(\U\&\>\@!\)\<Bar>\%$','W')<CR>
+" nnoremap <silent><C-b> :<C-u>call search('\<\<Bar>\U\@<=\u\<Bar>\u\ze\%(\U\&\>\@!\)\<Bar>\%^','bW')<CR>
+" nnoremap <silent><C-w> :<C-u>call search('\<\<Bar>\U\@<=\u\<Bar>\u\ze\%(\U\&\>\@!\)\<Bar>\%$','W')<CR>
 inoremap <silent><C-Left> <C-o>:call search('\<\<Bar>\U\@<=\u\<Bar>\u\ze\%(\U\&\>\@!\)\<Bar>\%^','bW')<CR>
 inoremap <silent><C-Right> <C-o>:call search('\<\<Bar>\U\@<=\u\<Bar>\u\ze\%(\U\&\>\@!\)\<Bar>\%$','W')<CR>
