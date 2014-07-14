@@ -11,10 +11,9 @@ case $1 in
             fi
             ;;
     diff|save)
-            git reset . # unstage everything
-            git add -N . # --intend-to-add: this makes untracked files appear in the diff
-            git diff > $file
-            git reset . # unstage intend-to-add files again (otherwise stash won't work)
+            git add . # add everything (including untracked files) to the index
+            git diff --cached > $file
+            git reset . # unstage files again
             echo "diff saved to $file"
             ;;
     *)      echo "usage: save or apply";;
