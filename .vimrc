@@ -273,5 +273,5 @@ inoremap <silent><C-Left> <C-o>:call search('\<\<Bar>\U\@<=\u\<Bar>\u\ze\%(\U\&\
 inoremap <silent><C-Right> <C-o>:call search('\<\<Bar>\U\@<=\u\<Bar>\u\ze\%(\U\&\>\@!\)\<Bar>\%$','W')<CR>
 
 " insert lines and stay in normal mode
-nmap  O<Esc>
+" nmap  O<Esc>
 nmap <CR> o<Esc>

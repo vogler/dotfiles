@@ -15,6 +15,16 @@ case $1 in
             git diff --cached > $file
             git reset . # unstage files again
             echo "diff saved to $file"
+            # wait for dropbox to sync
+            while true
+            do
+                stat=`dropbox status`
+                echo "dropbox status: $stat"
+                if [ "$stat" = "Up to date" ]; then
+                    exit
+                fi
+                sleep 5
+            done
             ;;
     *)      echo "usage: save or apply";;
 esac;
