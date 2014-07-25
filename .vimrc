@@ -32,6 +32,7 @@ let g:airline_powerline_fonts = 1
 
 Plugin 'airblade/vim-gitgutter'
 
+Plugin 'terryma/vim-multiple-cursors'
 Plugin 'kien/ctrlp.vim'
 let g:ctrlp_map = '<c-p>'
 
@@ -96,7 +97,7 @@ set mouse=a             " enable mouse
 set number              " show line numbers
 
 " http://stevelosh.com/blog/2010/09/coming-home-to-vim/#why-i-came-back-to-vim
-
+set cursorline
 " FocusLost only works with gvim -> don't use relativenumber in terminal
 " if has("gui-running")
 "     set relativenumber
