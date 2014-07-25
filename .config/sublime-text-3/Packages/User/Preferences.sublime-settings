@@ -5,7 +5,8 @@
 	"ignored_packages":
 	[
 		"SublimeREPL",
-		"OCaml Autocompletion"
+		"OCaml Autocompletion",
+		"SublimeHaskell"
 	],
 	"vintage_start_in_command_mode": true,
 	"word_wrap": true
