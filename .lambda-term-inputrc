@@ -1,0 +1,4 @@
+[read-line]
+M-k: complete-bar-prev
+M-j: complete-bar-next
+tab: complete-bar
