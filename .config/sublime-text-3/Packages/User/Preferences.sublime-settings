@@ -5,9 +5,9 @@
 	"highlight_line": true,
 	"ignored_packages":
 	[
+		"SublimeREPL",
 		"OCaml Autocompletion",
-		"SublimeHaskell",
-		"SublimeREPL"
+		"SublimeHaskell"
 	],
 	"vintage_start_in_command_mode": true,
 	"word_wrap": true

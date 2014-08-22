@@ -1,6 +1,7 @@
 path=~/Dropbox/github
 mkdir -p $path
-repo=$(git remote show origin | grep -P -o "[^/]+/[^/]+$" | uniq | sed 's/\.git$//' | sed 's/\//:/g')
+remote=${2-"origin"}
+repo=$(git remote show $remote | grep -P -o "github.com/.+$" | uniq | sed 's/github.com\///' | sed 's/\.git$//' | sed 's/\//:/g')
 branch=$(git branch | grep "*" | cut -c3-)
 file=$path/$repo:$branch.diff
 case $1 in
