@@ -11,6 +11,9 @@ local beautiful = require("beautiful")
 local naughty = require("naughty")
 local menubar = require("menubar")
 
+-- vicious
+local vicious = require("vicious")
+
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
 -- another config (This code will only ever execute for the fallback config)
@@ -38,12 +41,15 @@ end
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
-beautiful.init("/usr/share/awesome/themes/default/theme.lua")
+beautiful.init("/usr/share/awesome/themes/zenburn/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "xterm"
+terminal = "gnome-terminal"
+terminal_cmd = terminal .. " -x "
+function cmd(x) return terminal_cmd .. x end
 editor = os.getenv("EDITOR") or "vi"
-editor_cmd = terminal .. " -e " .. editor
+editor_cmd = terminal_cmd .. editor
+os.execute("setxkbmap -option caps:escape", false)
 
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.
@@ -83,21 +89,24 @@ end
 tags = {}
 for s = 1, screen.count() do
     -- Each screen has its own tag table.
-    tags[s] = awful.tag({ 1, 2, 3, 4, 5, 6, 7, 8, 9 }, s, layouts[1])
+    tags[s] = awful.tag({ 1, 2, 3, 4, 5, 6, 7, 8, 9 }, s, layouts[2])
 end
 -- }}}
 
 -- {{{ Menu
 -- Create a laucher widget and a main menu
 myawesomemenu = {
-   { "manual", terminal .. " -e man awesome" },
+   { "manual", terminal_cmd .. "man awesome" },
    { "edit config", editor_cmd .. " " .. awesome.conffile },
    { "restart", awesome.restart },
    { "quit", awesome.quit }
 }
 
 mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
-                                    { "open terminal", terminal }
+                                    { "terminal", terminal },
+                                    { "home", "nautilus" },
+                                    { "suspend", terminal_cmd .. "sudo pm-suspend" },
+                                    { "reboot", "reboot" }
                                   }
                         })
 
@@ -111,6 +120,59 @@ menubar.utils.terminal = terminal -- Set the terminal for applications that requ
 -- {{{ Wibox
 -- Create a textclock widget
 mytextclock = awful.widget.textclock()
+
+-- Create Vicious widgets
+local color_bg = beautiful.bg_normal
+local color_fg = beautiful.bg_focus
+-- separator
+local separator = wibox.widget.textbox('<span color="'..beautiful.border_focus..'">|</span>')
+-- cpu
+local cpuwidget = awful.widget.graph()
+cpuwidget:set_width(40)
+cpuwidget:set_background_color(color_bg)
+cpuwidget:set_border_color(color_fg)
+cpuwidget:set_color({ type = "linear", from = { 0, 0 }, to = { 10,0 }, stops = { {0, "#FF5656"}, {0.5, "#88A175"},
+                    {1, "#AECF96" }}})
+vicious.register(cpuwidget, vicious.widgets.cpu, "$1")
+cpuwidget:buttons(awful.button({ }, 1, function() awful.util.spawn(cmd("htop")) end))
+-- memory
+local memwidget = awful.widget.progressbar()
+memwidget:set_width(8)
+-- memwidget:set_height(10)
+memwidget:set_vertical(true)
+memwidget:set_background_color(color_bg)
+memwidget:set_border_color(color_fg)
+memwidget:set_color({ type = "linear", from = { 0, 0 }, to = { 0,10 }, stops = { {1, "#AECF96"}, {0.5, "#88A175"},
+                    {0, "#FF5656"}}})
+vicious.register(memwidget, vicious.widgets.mem, "$1")
+memwidget:buttons(awful.button({ }, 1, function() awful.util.spawn(cmd("top -o %MEM")) end))
+-- file system
+local fswidget = wibox.widget.textbox()
+vicious.register(fswidget, vicious.widgets.fs, " ${/ avail_gb}G", 13)
+fswidget:buttons(awful.button({ }, 1, function() awful.util.spawn("baobab", false) end))
+-- volume
+local volwidget = wibox.widget.textbox()
+vicious.register(volwidget, vicious.widgets.volume,
+		' <span font="Terminus 8" color="#AAAAAA">$2$1</span> ',
+		2, "Master")
+local volume = {}
+-- volume.switch = function () os.execute("~/paSwitch.sh", false); vicious.force({volwidget}) end
+volume.mixer = function() awful.util.spawn("alsamixer", false) end
+volume.toggle = function () os.execute("amixer sset Master toggle", false); vicious.force({volwidget}) end
+volume.increase = function () os.execute("amixer sset Master 2+", false); vicious.force({volwidget}) end
+volume.decrease = function () os.execute("amixer sset Master 2-", false); vicious.force({volwidget}) end
+volwidget:buttons(awful.util.table.join(
+                     awful.button({ }, 1, volume.toggle),
+                     awful.button({ }, 2, volume.mixer),
+                     awful.button({ }, 3, volume.toggle),
+                     awful.button({ }, 4, volume.increase),
+                     awful.button({ }, 5, volume.decrease)))
+-- add widgets in the desired order
+local vicious_widgets = wibox.layout.fixed.horizontal()
+vicious_widgets:add(cpuwidget)
+vicious_widgets:add(memwidget)
+vicious_widgets:add(fswidget)
+vicious_widgets:add(volwidget)
 
 -- Create a wibox for each screen and add it
 mywibox = {}
@@ -191,6 +253,7 @@ for s = 1, screen.count() do
     -- Widgets that are aligned to the right
     local right_layout = wibox.layout.fixed.horizontal()
     if s == 1 then right_layout:add(wibox.widget.systray()) end
+    right_layout:add(vicious_widgets)
     right_layout:add(mytextclock)
     right_layout:add(mylayoutbox[s])
 
@@ -214,6 +277,9 @@ root.buttons(awful.util.table.join(
 
 -- {{{ Key bindings
 globalkeys = awful.util.table.join(
+    awful.key({                   }, "Print",  function () awful.util.spawn("gnome-screenshot") end),
+    awful.key({         "Shift"   }, "Print",  function () awful.util.spawn("gnome-screenshot -i") end),
+    awful.key({ modkey,           }, "e",      function () awful.util.spawn("nautilus") end),
     awful.key({ modkey,           }, "Left",   awful.tag.viewprev       ),
     awful.key({ modkey,           }, "Right",  awful.tag.viewnext       ),
     awful.key({ modkey,           }, "Escape", awful.tag.history.restore),
@@ -227,6 +293,11 @@ globalkeys = awful.util.table.join(
         function ()
             awful.client.focus.byidx(-1)
             if client.focus then client.focus:raise() end
+        end),
+    awful.key({ modkey            }, "q",
+        function ()
+            -- awful.menu.menu_keys.down = { "Down", "Alt_L" }
+            awful.menu.clients({theme = { width = 250 }}, { keygrabber=true, coords={x=525, y=330} })
         end),
     awful.key({ modkey,           }, "w", function () mymainmenu:show() end),
 
@@ -275,8 +346,10 @@ globalkeys = awful.util.table.join(
 )
 
 clientkeys = awful.util.table.join(
+    awful.key({ modkey, "Shift"   }, "t",      awful.titlebar.toggle),
     awful.key({ modkey,           }, "f",      function (c) c.fullscreen = not c.fullscreen  end),
     awful.key({ modkey, "Shift"   }, "c",      function (c) c:kill()                         end),
+    awful.key({         "Mod1"    }, "F4",     function (c) c:kill()                         end),
     awful.key({ modkey, "Control" }, "space",  awful.client.floating.toggle                     ),
     awful.key({ modkey, "Control" }, "Return", function (c) c:swap(awful.client.getmaster()) end),
     awful.key({ modkey,           }, "o",      awful.client.movetoscreen                        ),
@@ -394,7 +467,8 @@ client.connect_signal("manage", function (c, startup)
         end
     end
 
-    local titlebars_enabled = false
+    local titlebars_enabled = true
+    local titlebars_hidden  = true
     if titlebars_enabled and (c.type == "normal" or c.type == "dialog") then
         -- buttons for the titlebar
         local buttons = awful.util.table.join(
@@ -437,6 +511,9 @@ client.connect_signal("manage", function (c, startup)
         layout:set_middle(middle_layout)
 
         awful.titlebar(c):set_widget(layout)
+        if titlebars_hidden then
+           awful.titlebar.hide(c)
+        end
     end
 end)
 
