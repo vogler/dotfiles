@@ -33,12 +33,13 @@ let g:airline_powerline_fonts = 1
 Plugin 'airblade/vim-gitgutter'
 
 Plugin 'terryma/vim-multiple-cursors'
+Plugin 'godlygeek/tabular'
 Plugin 'kien/ctrlp.vim'
 let g:ctrlp_map = '<c-p>'
 
 Plugin 'Lokaltog/vim-easymotion'
 map <Leader> <Plug>(easymotion-prefix)
-let g:EasyMotion_smartcase = 1
+let g:EasyMotion_smartcase   = 1
 let g:EasyMotion_startofline = 0 " keep cursor colum when JK motion
 map <Leader>h <Plug>(easymotion-linebackward)
 map <Leader>l <Plug>(easymotion-lineforward)
@@ -70,13 +71,11 @@ autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
 " OCaml
 " setup merlin, syntastic and ocp-indent
-let opam_share=substitute(system('opam config var share'),'\n$','','''')
-let s:ocamlmerlin=opam_share . "/ocamlmerlin"
-execute "set rtp+=".s:ocamlmerlin."/vim"
-execute "set rtp+=".s:ocamlmerlin."/vimbufsync"
+let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
+execute "set rtp+=" . g:opamshare . "/merlin/vim"
 let g:syntastic_ocaml_checkers = ['merlin']
 nnoremap <localleader>l :Locate<cr>
-execute 'autocmd FileType ocaml source' opam_share . "/vim/syntax/ocp-indent.vim"
+execute 'autocmd FileType ocaml source' g:opamshare . "/vim/syntax/ocp-indent.vim"
 
 " http://chneukirchen.org/dotfiles/.vimrc
 " a selects everything in visual selection mode

@@ -44,7 +44,7 @@ end
 beautiful.init("/usr/share/awesome/themes/zenburn/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "gnome-terminal"
+terminal = "terminator"
 terminal_cmd = terminal .. " -x "
 function cmd(x) return terminal_cmd .. x end
 editor = os.getenv("EDITOR") or "vi"
@@ -159,8 +159,8 @@ local volume = {}
 -- volume.switch = function () os.execute("~/paSwitch.sh", false); vicious.force({volwidget}) end
 volume.mixer = function() awful.util.spawn("alsamixer", false) end
 volume.toggle = function () os.execute("amixer sset Master toggle", false); vicious.force({volwidget}) end
-volume.increase = function () os.execute("amixer sset Master 2+", false); vicious.force({volwidget}) end
-volume.decrease = function () os.execute("amixer sset Master 2-", false); vicious.force({volwidget}) end
+volume.increase = function () os.execute("amixer sset Master 2%+", false); vicious.force({volwidget}) end
+volume.decrease = function () os.execute("amixer sset Master 2%-", false); vicious.force({volwidget}) end
 volwidget:buttons(awful.util.table.join(
                      awful.button({ }, 1, volume.toggle),
                      awful.button({ }, 2, volume.mixer),
