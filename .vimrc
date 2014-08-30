@@ -31,6 +31,7 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 
 Plugin 'airblade/vim-gitgutter'
+set updatetime=750 " terminal vim might have highlighting glitches for low times...
 
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'godlygeek/tabular'
@@ -47,6 +48,7 @@ map <Leader>l <Plug>(easymotion-lineforward)
 Plugin 'rking/ag.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'IndexedSearch'
+Plugin 'majutsushi/tagbar'
 
 Plugin 'Twinside/vim-hoogle'
 Plugin 'kchmck/vim-coffee-script'
@@ -110,6 +112,13 @@ set cursorline
 "         autocmd InsertLeave * :set relativenumber
 "     augroup END
 " endif
+
+" http://choorucode.com/2014/01/24/how-to-enable-case-insensitive-filename-completion-in-vim/
+set wildignorecase
+augroup AutoReloadVimRC
+  au!
+  au BufWritePost $MYVIMRC so $MYVIMRC " load new .vimrc on save (only adds :/)
+augroup END
 
 set ignorecase
 set smartcase
