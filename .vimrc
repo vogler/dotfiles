@@ -9,12 +9,9 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'tpope/vim-sensible'
 set undodir^=~/.vim/undo
 " set backupdir=~/.vim/backup
-Plugin 'tpope/vim-commentary'
-autocmd FileType ocaml set commentstring=(*\ %s\ *)
-" toggle comment with C-/
-nmap  gcc
-imap  <esc>gcc
-vmap  gcgv
+"Plugin 'tpope/vim-commentary'
+"autocmd FileType ocaml set commentstring=(*\ %s\ *)
+Plugin 'scrooloose/nerdcommenter'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-surround'
@@ -92,6 +89,11 @@ let g:mapleader = ","
 nmap <leader>w :w!<cr>
 nmap <leader>q :q!<cr>
 
+" toggle comment with C-/
+nmap  <leader>ci
+imap  <esc><leader>ci
+vmap  <leader>ci " cs does multipart if available, but does not toggle :(
+
 " https://github.com/nihathrael/configs/blob/master/.vimrc
 set viminfo+=!          " support for yanking
 set mouse=a             " enable mouse
@@ -156,6 +158,7 @@ nmap ü :shell<cr>
 nnoremap k :bn!<cr>
 nnoremap j :bp!<cr>
 nnoremap d :bd!<cr>
+set hidden " allows switching to another buffer with unsaved buffer open
 
 """"""""" ó,ö = y/p with clipboard """""""""
 " vmap ó "+y
@@ -165,6 +168,8 @@ set clipboard=unnamedplus " use the system clipboard per default (must be compil
 
 """"""""" gp = select pasted text """"""""
 nnoremap gp `[v`]
+
+set pastetoggle=<F12>
 
 " tab navigation
 " map <C-j> :tabprevious<CR>
@@ -199,3 +204,6 @@ inoremap <silent><C-Right> <C-o>:call search('\<\<Bar>\U\@<=\u\<Bar>\u\ze\%(\U\&
 " insert lines and stay in normal mode
 " nmap  O<Esc>
 nmap <CR> o<Esc>
+
+" this needs to be at the end since it's (re)set when compatible is (re)set
+autocmd BufNewFile,BufRead * setlocal formatoptions-=o " disable comment continuation for o/O (use enter)
