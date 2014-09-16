@@ -6,10 +6,12 @@
 	"highlight_line": true,
 	"ignored_packages":
 	[
-		"SublimeHaskell",
 		"OCaml Autocompletion",
+		"SublimeREPL",
+		"SublimeHaskell",
+		"Markdown",
 		"sublime-text-merlin",
-		"Markdown"
+		"sublime-text-merlin2"
 	],
 	"show_encoding": true,
 	"show_line_endings": true,

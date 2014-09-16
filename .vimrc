@@ -22,6 +22,7 @@ Plugin 'tpope/vim-rsi'
 Plugin 'tpope/vim-sleuth'
 Plugin 'tpope/vim-vinegar'
 
+Plugin 'flazz/vim-colorschemes'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'bling/vim-airline'
 let g:airline#extensions#tabline#enabled = 1
@@ -34,6 +35,7 @@ Plugin 'terryma/vim-multiple-cursors'
 Plugin 'godlygeek/tabular'
 Plugin 'kien/ctrlp.vim'
 let g:ctrlp_map = '<c-p>'
+Plugin 'sjl/gundo.vim'
 
 Plugin 'Lokaltog/vim-easymotion'
 map <Leader> <Plug>(easymotion-prefix)
@@ -45,7 +47,7 @@ map <Leader>l <Plug>(easymotion-lineforward)
 Plugin 'rking/ag.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'IndexedSearch'
-Plugin 'majutsushi/tagbar'
+"Plugin 'majutsushi/tagbar'
 
 Plugin 'Twinside/vim-hoogle'
 Plugin 'kchmck/vim-coffee-script'
