@@ -56,6 +56,7 @@ Plugin 'IndexedSearch'
 Plugin 'Twinside/vim-hoogle'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'digitaltoad/vim-jade'
+Plugin 'jcf/vim-latex'
 
 call vundle#end()
 filetype plugin indent on
@@ -78,13 +79,21 @@ autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 " setup merlin, syntastic and ocp-indent
 let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
 execute "set rtp+=" . g:opamshare . "/merlin/vim"
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_aggregate_errors = 1
+let g:syntastic_error_symbol = "✗"
+let g:syntastic_warning_symbol = "⚠"
+"let g:syntastic_auto_jump = 2
 let g:syntastic_ocaml_checkers = ['merlin']
+nnoremap <localleader>o :TypeOf<cr>
 nnoremap <localleader>l :Locate<cr>
 execute 'autocmd FileType ocaml source' g:opamshare . "/vim/syntax/ocp-indent.vim"
 
 " http://chneukirchen.org/dotfiles/.vimrc
 " a selects everything in visual selection mode
-vmap a <esc>ggVG
+"vmap a <esc>ggVG
 " background, even in insert mode
 map! <C-Z> <C-O>:stop<C-M>
 
