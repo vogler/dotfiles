@@ -7,6 +7,8 @@
     username = vogler
 [credential "https://bitbucket.org"]
     username = vogler
+[credential "https://versioncontrolseidl.in.tum.de"]
+    username = vogler
 [github]
     user = vogler
 [hub]
