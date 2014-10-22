@@ -1,8 +1,8 @@
 set -e
-path=~/Dropbox/github
+path=~/Dropbox/gitdrop
 mkdir -p $path
 remote=${2-"origin"}
-repo=$(git remote show $remote | grep -P -o "github.com/.+$" | uniq | sed 's/github.com\///' | sed 's/\.git$//' | sed 's/\//:/g')
+repo=$(git remote show $remote | grep -P -o "//.+$" | uniq | sed 's/\/\///' | sed 's/\.git$//' | sed 's/\//:/g')
 branch=$(git branch | grep "*" | cut -c3-)
 file=$path/$repo:$branch.diff
 function git_dirty {
