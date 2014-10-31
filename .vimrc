@@ -132,6 +132,7 @@ set cursorline
 
 " http://choorucode.com/2014/01/24/how-to-enable-case-insensitive-filename-completion-in-vim/
 set wildignorecase
+set wildmode=list:longest,full
 augroup AutoReloadVimRC
   au!
   au BufWritePost $MYVIMRC so $MYVIMRC " load new .vimrc on save (only adds :/)
