@@ -87,7 +87,7 @@ let g:syntastic_error_symbol = "✗"
 let g:syntastic_warning_symbol = "⚠"
 "let g:syntastic_auto_jump = 2
 let g:syntastic_ocaml_checkers = ['merlin']
-nnoremap <localleader>o :TypeOf<cr>
+"nnoremap <localleader>o :TypeOf<cr> " default is t
 nnoremap <localleader>l :Locate<cr>
 execute 'autocmd FileType ocaml source' g:opamshare . "/vim/syntax/ocp-indent.vim"
 
@@ -220,6 +220,7 @@ inoremap <silent><C-Right> <C-o>:call search('\<\<Bar>\U\@<=\u\<Bar>\u\ze\%(\U\&
 " insert lines and stay in normal mode
 " nmap  O<Esc>
 nmap <CR> o<Esc>
+nnoremap K i<CR><Esc>
 
 " this needs to be at the end since it's (re)set when compatible is (re)set
 autocmd BufNewFile,BufRead * setlocal formatoptions-=o " disable comment continuation for o/O (use enter)
