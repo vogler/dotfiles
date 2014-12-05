@@ -2,7 +2,7 @@
 " Maintainer:   Paul Meng <mno2.csie@gmail.com>
 " Version:      1.0
 
-" Install in ~/.vim/after/syntax (Linux/Mac OS X/BSD) or ~/vimfiles/after/syntax folder (Windows) 
+" Install in ~/.vim/after/syntax (Linux/Mac OS X/BSD) or ~/vimfiles/after/syntax folder (Windows)
 "
 " :set foldmethod=marker
 if exists('g:no_ocaml_conceal') || !has('conceal') || &enc != 'utf-8'
@@ -20,7 +20,7 @@ syntax match ocamlNiceOperator "\<==\>" conceal cchar=≡
 syntax match ocamlNiceOperator "<>" conceal cchar=≠
 "syntax match ocamlNiceOperator "||" conceal cchar=∨
 "syntax match ocamlNiceOperator "@" conceal cchar=⊕
-syntax match ocamlNiceOperator "*" conceal cchar=×
+"syntax match ocamlNiceOperator "*" conceal cchar=×
 "syntax match ocamlNiceOperator ";;" conceal cchar=♢
 syntax match ocamlNiceOperator "|>" conceal cchar=▷
 
@@ -50,6 +50,7 @@ if s:extraConceal
     syntax match ocamlNiceOperator "++" conceal cchar=⧺
     syntax match ocamlNiceOperator "\<for_all\>" conceal cchar=∀
     syntax match ocamlNiceOperator "[^%]\zs%" conceal cchar=∘
+    syntax match ocamlNiceOperator "(\zs \* \ze)" conceal cchar=*
 endif
 
 hi link ocamlNiceOperator Operator
