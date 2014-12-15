@@ -105,7 +105,8 @@ myawesomemenu = {
 mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
                                     { "home", "thunar" },
                                     { "terminal", terminal },
-                                    { "reboot", "reboot" }
+                                    { "reboot", "reboot" },
+                                    { "shutdown", "shutdown now" },
                                   }
                         })
 
