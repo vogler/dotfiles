@@ -36,3 +36,5 @@
     exec = "!exec "
 #[help]
 #	autocorrect = 1
+[web]
+	browser = xdg-open
