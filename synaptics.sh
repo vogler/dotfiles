@@ -1,0 +1,2 @@
+synclient HorizTwoFingerScroll=1
+synclient TrackstickSpeed=150

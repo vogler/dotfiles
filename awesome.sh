@@ -1,0 +1,3 @@
+pulseaudio &
+pasystray &
+xbindkeys &
