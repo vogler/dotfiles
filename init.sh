@@ -11,8 +11,8 @@
 #####
 # https://github.com/gmarik/vundle
 mkdir -p ~/.vim/bundle
-git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
-vim +BundleInstall +qall
+git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/Vundle.vim
+vim +PluginInstall +qall
 
 # https://github.com/tpope/vim-sensible
 # otherwise it puts the files in the current directory
