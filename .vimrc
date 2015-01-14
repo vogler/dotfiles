@@ -11,7 +11,8 @@ set undodir^=~/.vim/undo
 " set backupdir=~/.vim/backup
 "Plugin 'tpope/vim-commentary'
 "autocmd FileType ocaml set commentstring=(*\ %s\ *)
-Plugin 'scrooloose/nerdcommenter'
+"Plugin 'scrooloose/nerdcommenter'
+Plugin 'tomtom/tcomment_vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-endwise'
 Plugin 'tpope/vim-surround'
@@ -106,9 +107,9 @@ nmap <leader>s :w!<cr>
 nmap <leader>q :q!<cr>
 
 " toggle comment with C-/
-nmap  <leader>ci
-imap  <esc><leader>ci
-vmap  <leader>ci " cs does multipart if available, but does not toggle :(
+"nmap  <leader>ci
+"imap  <esc><leader>ci
+"vmap  <leader>ci " cs does multipart if available, but does not toggle :(
 
 " https://github.com/nihathrael/configs/blob/master/.vimrc
 set viminfo+=!          " support for yanking
