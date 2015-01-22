@@ -90,7 +90,7 @@ let g:syntastic_warning_symbol = "⚠"
 "let g:syntastic_auto_jump = 2
 let g:syntastic_ocaml_checkers = ['merlin']
 "nnoremap <localleader>o :TypeOf<cr> " default is t
-nnoremap <localleader>l :Locate<cr>
+au FileType ocaml nnoremap <localleader>l :Locate<cr>
 execute 'autocmd FileType ocaml source' g:opamshare . "/vim/syntax/ocp-indent.vim"
 
 " http://chneukirchen.org/dotfiles/.vimrc
