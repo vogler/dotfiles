@@ -227,5 +227,8 @@ nnoremap K i<CR><Esc>
 " load changed files automatically
 au CursorHold * if getcmdwintype() == '' | checktime | endif
 
+" persistent undo
+set undofile
+
 " this needs to be at the end since it's (re)set when compatible is (re)set
 autocmd BufNewFile,BufRead * setlocal formatoptions-=o " disable comment continuation for o/O (use enter)
