@@ -44,11 +44,11 @@ Plugin 'sjl/gundo.vim'
 Plugin 'bkad/CamelCaseMotion'
 
 Plugin 'Lokaltog/vim-easymotion'
-map <Leader> <Plug>(easymotion-prefix)
+" map <Leader> <Plug>(easymotion-prefix) " default is <Leader><Leader> to avoid conflicts with other plugins
 let g:EasyMotion_smartcase   = 1
 let g:EasyMotion_startofline = 0 " keep cursor colum when JK motion
-map <Leader>h <Plug>(easymotion-linebackward)
-map <Leader>l <Plug>(easymotion-lineforward)
+" map <Leader>h <Plug>(easymotion-linebackward)
+" map <Leader>l <Plug>(easymotion-lineforward)
 
 Plugin 'rking/ag.vim'
 Plugin 'scrooloose/syntastic'
