@@ -113,7 +113,9 @@
 		// See README or third-party documentation
 
 		// (built-ins): true shows the log of each command in the output panel
-		"display_log" : false,	
+		"display_log" : false,
+
+		"command": ["latexmk", "-cd", "-e", "$pdflatex = '%E -shell-escape -interaction=nonstopmode -synctex=1 %S %O'", "-f", "-pdf"],
 
 		// Platform-specific settings:
 		"osx" : {
@@ -126,6 +128,7 @@
 
 		"linux" : {
 			// See README or third-party documentation
+
 		}
 	},
 
