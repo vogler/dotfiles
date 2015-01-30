@@ -1,6 +1,7 @@
 {
 	"in_process_packages":
 	[
+		"LaTeXTools"
 	],
 	"installed_dependencies":
 	[
@@ -16,6 +17,8 @@
 		"Git",
 		"GitGutter",
 		"Jade",
+		"LaTeX-cwl",
+		"LaTeXing",
 		"LaTeXTools",
 		"MarkdownEditing",
 		"Modific",
@@ -28,6 +31,7 @@
 		"SublimeREPL",
 		"Surround",
 		"Theme - Soda",
+		"TikZ",
 		"Vintage Escape",
 		"Vintage Surround"
 	]
