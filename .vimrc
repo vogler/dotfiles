@@ -233,5 +233,16 @@ au CursorHold * if getcmdwintype() == '' | checktime | endif
 " persistent undo
 set undofile
 
+" compile & run
+au FileType c setlocal makeprg=clang\ %
+au FileType cpp setlocal makeprg=clang\ %
+" autocmd QuickfixCmdPost make call AfterMakeC()
+function! AfterMakeC()
+    if len(getqflist()) == 0
+        !./a.out
+    endif
+endfunction
+map <F7> :w<CR> :make<CR> :call AfterMakeC()<CR>
+
 " this needs to be at the end since it's (re)set when compatible is (re)set
 autocmd BufNewFile,BufRead * setlocal formatoptions-=o " disable comment continuation for o/O (use enter)
