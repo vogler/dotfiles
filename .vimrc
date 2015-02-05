@@ -59,6 +59,8 @@ Plugin 'Twinside/vim-hoogle'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'digitaltoad/vim-jade'
 Plugin 'jcf/vim-latex'
+Plugin 'idris-hackers/idris-vim'
+Plugin 'lambdatoast/elm.vim'
 
 call vundle#end()
 filetype plugin indent on
