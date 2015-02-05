@@ -1,3 +1,4 @@
+set -e
 # PACKAGES
 ##########
 # https://wiki.archlinux.org/index.php/Pacman_Tips#Backing_up_and_retrieving_a_list_of_installed_packages
@@ -6,15 +7,34 @@
 # restore
 #pacman -S --needed $(comm -12 <(pacman -Slq|sort) <(sort badpkdlist) )
 
+# get submodules
+git submodule update --init --recursive
+
+# ZSH
+ln -sf `pwd`/.zprezto ~
+cat << EOT | zsh
+setopt EXENDED_GLOB
+for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
+  ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
+done
+EOT
+if [ $SHELL != "/bin/zsh" ]; then
+        chsh -s /bin/zsh
+fi
 
 # VIM
 #####
+ln -sf `pwd`/.vimrc ~
 # https://github.com/gmarik/vundle
 mkdir -p ~/.vim/bundle
-git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/Vundle.vim
+dst=~/.vim/bundle/Vundle.vim
+if [ -e $dst ]; then
+        echo "Vundle exists already."
+else
+        git clone https://github.com/gmarik/vundle.git $dst
+fi
 vim +PluginInstall +qall
 
 # https://github.com/tpope/vim-sensible
 # otherwise it puts the files in the current directory
 mkdir -p ~/.local/share/vim/{swap,backup,undo}
-
