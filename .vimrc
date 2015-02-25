@@ -53,7 +53,10 @@ let g:EasyMotion_startofline = 0 " keep cursor colum when JK motion
 Plugin 'rking/ag.vim'
 Plugin 'scrooloose/syntastic'
 Plugin 'IndexedSearch'
-"Plugin 'majutsushi/tagbar'
+autocmd BufReadPre * if getfsize(@%) > 100000 | let b:tagbar_ignore = 1 | endif
+Plugin 'majutsushi/tagbar'
+nmap <F8> :TagbarToggle<CR>
+let g:tagbar_compact = 1
 
 Plugin 'Twinside/vim-hoogle'
 Plugin 'kchmck/vim-coffee-script'
