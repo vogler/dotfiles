@@ -148,7 +148,7 @@ vicious.register(memwidget, vicious.widgets.mem, "$1")
 memwidget:buttons(awful.button({ }, 1, function() awful.util.spawn(cmd("top -o %MEM")) end))
 -- file system
 local fswidget = wibox.widget.textbox()
-vicious.register(fswidget, vicious.widgets.fs, " ${/ avail_gb}G", 13)
+vicious.register(fswidget, vicious.widgets.fs, " ${/home avail_gb}G", 13)
 fswidget:buttons(awful.button({ }, 1, function() awful.util.spawn("baobab", false) end))
 -- volume
 local volwidget = wibox.widget.textbox()
