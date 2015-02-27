@@ -221,7 +221,7 @@ endif
 
 " insert lines and stay in normal mode
 " nmap  O<Esc>
-nmap <CR> o<Esc>
+" nmap <CR> o<Esc>
 nnoremap K i<CR><Esc>
 
 " load changed files automatically
