@@ -233,7 +233,7 @@ nmap <CR> o<Esc>
 nnoremap K i<CR><Esc>
 
 " load changed files automatically
-au CursorHold * if getcmdwintype() == '' | checktime | endif
+au CursorHold,CursorHoldI * silent! checktime
 
 " persistent undo
 set undofile
