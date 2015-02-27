@@ -187,7 +187,7 @@ set hidden " allows switching to another buffer with unsaved buffer open
 " vmap ó "+y
 " nmap ó viwó             " Y already used in normal mode
 " map ö "+gP
-set clipboard=unnamedplus " use the system clipboard per default (must be compiled with +clipboard, if not try gvim -v)
+set clipboard=unnamed " use the system clipboard per default (must be compiled with +clipboard, if not try gvim -v)
 
 """"""""" gp = select pasted text """"""""
 nnoremap gp `[v`]
