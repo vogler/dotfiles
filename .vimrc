@@ -7,8 +7,9 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 Plugin 'tpope/vim-sensible'
-set undodir^=~/.vim/undo
-" set backupdir=~/.vim/backup
+set backupdir=~/.vim/backup//
+set directory=~/.vim/swap//
+set undodir=~/.vim/undo//
 "Plugin 'tpope/vim-commentary'
 "autocmd FileType ocaml set commentstring=(*\ %s\ *)
 "Plugin 'scrooloose/nerdcommenter'

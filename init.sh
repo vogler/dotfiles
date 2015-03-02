@@ -37,4 +37,4 @@ vim +PluginInstall +qall
 
 # https://github.com/tpope/vim-sensible
 # otherwise it puts the files in the current directory
-mkdir -p ~/.local/share/vim/{swap,backup,undo}
+mkdir -p ~/.vim/{swap,backup,undo}
