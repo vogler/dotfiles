@@ -49,6 +49,8 @@ let g:ctrlp_custom_ignore = {
   \ 'file': '\v\.(exe|so|dll)$',
   \ }
 let g:ctrlp_clear_cache_on_exit = 0
+Plugin 'ervandew/supertab'
+let g:SuperTabDefaultCompletionType = "context"
 Plugin 'sjl/gundo.vim'
 Plugin 'bkad/CamelCaseMotion'
 
