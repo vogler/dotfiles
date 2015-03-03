@@ -87,7 +87,7 @@ filetype plugin indent on
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
-set background=dark
+set background=light
 colorscheme solarized
 call togglebg#map("<F5>")
 
