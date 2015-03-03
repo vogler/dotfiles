@@ -94,9 +94,24 @@ call togglebg#map("<F5>")
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
 " OCaml
-" setup merlin, syntastic and ocp-indent
+" merlin
 let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
 execute "set rtp+=" . g:opamshare . "/merlin/vim"
+function SetupOCaml()
+  nnoremap <leader>t :TypeOf<cr> " default is ll-t
+  vnoremap <leader>t :TypeOfSel<cr> " default is ll-t
+  nnoremap <leader>f :Locate<cr>
+  nnoremap <leader>d :Destruct<cr>
+  nmap <leader>*  <Plug>(MerlinSearchOccurencesForward)
+  nmap <leader>#  <Plug>(MerlinSearchOccurencesBackward)
+  nmap <leader>r  <Plug>(MerlinRename)
+  nmap <leader>R  <Plug>(MerlinRenameAppend)
+  call SuperTabSetDefaultCompletionType("<c-x><c-o>")
+endfunction
+au FileType ocaml call SetupOCaml()
+" ocp-indent
+execute 'autocmd FileType ocaml source' g:opamshare . "/vim/syntax/ocp-indent.vim"
+" syntastic
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
@@ -105,9 +120,6 @@ let g:syntastic_error_symbol = "✗"
 let g:syntastic_warning_symbol = "⚠"
 "let g:syntastic_auto_jump = 2
 let g:syntastic_ocaml_checkers = ['merlin']
-au FileType ocaml nnoremap <leader>t :TypeOf<cr> " default is t
-au FileType ocaml nnoremap <leader>f :Locate<cr>
-execute 'autocmd FileType ocaml source' g:opamshare . "/vim/syntax/ocp-indent.vim"
 
 " http://chneukirchen.org/dotfiles/.vimrc
 " a selects everything in visual selection mode
