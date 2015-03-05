@@ -237,11 +237,6 @@ let g:Tex_CompileRule_pdf = 'latexmk -pdf -shell-escape $*'
 let g:Tex_DefaultTargetFormat = 'pdf'
 let g:Tex_UseMakefile = 0
 
-" jump to the last position when reopening a file
-if has("autocmd")
-  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
-endif
-
 " insert lines and stay in normal mode
 " nmap  O<Esc>
 " nmap <CR> o<Esc>
@@ -263,6 +258,16 @@ function! AfterMakeC()
     endif
 endfunction
 map <F7> :w<CR> :make<CR> :call AfterMakeC()<CR>
+
+" save and restore position, folds, etc.
+au BufWinLeave ?* mkview
+au BufWinEnter ?* silent loadview
+
+" jump to the last position when reopening a file and center it
+if has("autocmd")
+  " au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif " restore last position at the top
+  au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! zz" | endif " center line somehow doesn't work :(
+endif
 
 " this needs to be at the end since it's (re)set when compatible is (re)set
 autocmd BufNewFile,BufRead * setlocal formatoptions-=o " disable comment continuation for o/O (use enter)
