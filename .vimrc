@@ -260,8 +260,8 @@ endfunction
 map <F7> :w<CR> :make<CR> :call AfterMakeC()<CR>
 
 " save and restore position, folds, etc.
-au BufWinLeave ?* mkview
-au BufWinEnter ?* silent loadview
+au BufWinLeave *.* mkview
+au BufWinEnter *.* silent loadview
 
 " jump to the last position when reopening a file and center it
 if has("autocmd")
