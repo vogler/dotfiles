@@ -269,5 +269,9 @@ if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! zz" | endif " center line somehow doesn't work :(
 endif
 
+set cursorcolumn
+autocmd WinEnter * setlocal cursorcolumn
+autocmd WinLeave * setlocal nocursorcolumn
+
 " this needs to be at the end since it's (re)set when compatible is (re)set
 autocmd BufNewFile,BufRead * setlocal formatoptions-=o " disable comment continuation for o/O (use enter)
