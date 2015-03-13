@@ -62,6 +62,7 @@ let g:EasyMotion_startofline = 0 " keep cursor colum when JK motion
 " map <Leader>l <Plug>(easymotion-lineforward)
 
 Plugin 'rking/ag.vim'
+" let g:agprg="ag --nogroup --nocolor --column"
 Plugin 'scrooloose/syntastic'
 Plugin 'IndexedSearch'
 autocmd BufReadPre * if getfsize(@%) > 100000 | let b:tagbar_ignore = 1 | endif
@@ -97,7 +98,7 @@ autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 " merlin
 let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
 execute "set rtp+=" . g:opamshare . "/merlin/vim"
-function SetupOCaml()
+function! SetupOCaml()
   nnoremap <leader>t :TypeOf<cr> " default is ll-t
   vnoremap <leader>t :TypeOfSel<cr> " default is ll-t
   nnoremap <leader>f :Locate<cr>
@@ -118,6 +119,8 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_aggregate_errors = 1
 let g:syntastic_error_symbol = "✗"
 let g:syntastic_warning_symbol = "⚠"
+let g:syntastic_style_error_symbol = "❌"
+let g:syntastic_style_warning_symbol = "⚠️ "
 "let g:syntastic_auto_jump = 2
 let g:syntastic_ocaml_checkers = ['merlin']
 
