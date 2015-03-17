@@ -103,8 +103,8 @@ function! SetupOCaml()
   vnoremap <leader>t :TypeOfSel<cr> " default is ll-t
   nnoremap <leader>f :Locate<cr>
   nnoremap <leader>d :Destruct<cr>
-  nmap <leader>*  <Plug>(MerlinSearchOccurencesForward)
-  nmap <leader>#  <Plug>(MerlinSearchOccurencesBackward)
+  nmap <leader>n  <Plug>(MerlinSearchOccurrencesForward)
+  nmap <leader>N  <Plug>(MerlinSearchOccurrencesBackward)
   nmap <leader>r  <Plug>(MerlinRename)
   nmap <leader>R  <Plug>(MerlinRenameAppend)
   call SuperTabSetDefaultCompletionType("<c-x><c-o>")
@@ -136,6 +136,9 @@ let g:mapleader = ","
 " Fast saving
 nmap <leader>s :w!<cr>
 nmap <leader>q :q!<cr>
+
+nmap <leader>a :Ag <cword><cr>
+nmap <leader>A :AgBuffer <cword><cr>
 
 " toggle comment with C-/
 "nmap  <leader>ci
