@@ -76,6 +76,7 @@ Plugin 'digitaltoad/vim-jade'
 Plugin 'jcf/vim-latex'
 Plugin 'idris-hackers/idris-vim'
 Plugin 'lambdatoast/elm.vim'
+" Plugin 'vim-ocaml-conceal'
 
 call vundle#end()
 filetype plugin indent on
@@ -109,6 +110,9 @@ function! SetupOCaml()
   nmap <leader>R  <Plug>(MerlinRenameAppend)
   call SuperTabSetDefaultCompletionType("<c-x><c-o>")
 endfunction
+" somehow this can't be inside the function...
+let g:merlin_textobject_grow   = 'm'
+let g:merlin_textobject_shrink = 'M'
 au FileType ocaml call SetupOCaml()
 " ocp-indent
 execute 'autocmd FileType ocaml source' g:opamshare . "/vim/syntax/ocp-indent.vim"
