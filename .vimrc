@@ -100,10 +100,10 @@ autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
 execute "set rtp+=" . g:opamshare . "/merlin/vim"
 function! SetupOCaml()
-  nnoremap <leader>t :TypeOf<cr> " default is ll-t
-  vnoremap <leader>t :TypeOfSel<cr> " default is ll-t
-  nnoremap <leader>f :Locate<cr>
-  nnoremap <leader>d :Destruct<cr>
+  nnoremap <leader>t :MerlinTypeOf<cr>
+  vnoremap <leader>t :MerlinTypeOfSel<cr>
+  nnoremap <leader>f :MerlinLocate<cr>
+  nnoremap <leader>d :MerlinDestruct<cr>
   nmap <leader>n  <Plug>(MerlinSearchOccurrencesForward)
   nmap <leader>N  <Plug>(MerlinSearchOccurrencesBackward)
   nmap <leader>r  <Plug>(MerlinRename)
