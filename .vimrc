@@ -77,6 +77,7 @@ Plugin 'jcf/vim-latex'
 Plugin 'idris-hackers/idris-vim'
 Plugin 'lambdatoast/elm.vim'
 " Plugin 'vim-ocaml-conceal'
+" Plugin 'MLstate/opalang', {'rtp': 'tools/editors/vim/'} " just copy to .vim/ since this rtp option doesn't seem to work, also the repo is huge
 
 call vundle#end()
 filetype plugin indent on
@@ -94,6 +95,7 @@ colorscheme solarized
 call togglebg#map("<F5>")
 
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+autocmd BufNewFile,BufReadPost *.opa set filetype=opa
 
 " OCaml
 " merlin
