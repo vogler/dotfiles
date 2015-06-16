@@ -13,6 +13,10 @@ set undodir=~/.vim/undo//
 "Plugin 'tpope/vim-commentary'
 "autocmd FileType ocaml set commentstring=(*\ %s\ *)
 "Plugin 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/nerdtree'
+map <C-l> :NERDTreeFind<CR>
+let NERDTreeMinimalUI=1
+Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-endwise'
