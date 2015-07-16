@@ -96,6 +96,7 @@ NeoBundle 'idris-hackers/idris-vim'
 NeoBundle 'lambdatoast/elm.vim'
 " NeoBundle 'vim-ocaml-conceal'
 " NeoBundle 'MLstate/opalang', {'rtp': 'tools/editors/vim/'} " just copy to .vim/ since this rtp option doesn't seem to work, also the repo is huge
+NeoBundle 'typedebugger' " see http://pllab.is.ocha.ac.jp/~asai/TypeDebugger/
 
  call neobundle#end()
  filetype plugin indent on
