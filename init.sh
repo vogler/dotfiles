@@ -27,11 +27,11 @@ fi
 ln -sf `pwd`/.vimrc ~
 # https://github.com/gmarik/vundle
 mkdir -p ~/.vim/bundle
-dst=~/.vim/bundle/Vundle.vim
+dst=~/.vim/bundle/neobundle.vim
 if [ -e $dst ]; then
-        echo "Vundle exists already."
+        echo "neobundle.vim exists already."
 else
-        git clone https://github.com/gmarik/vundle.git $dst
+        git clone https://github.com/Shougo/neobundle.vim $dst
 fi
 vim +PluginInstall +qall
 

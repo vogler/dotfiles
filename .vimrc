@@ -1,49 +1,63 @@
-" use vundle instead of vim-pathogen
-" https://github.com/gmarik/vundle
-set nocompatible               " be iMproved
-filetype off                   " required!
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'gmarik/Vundle.vim'
+" use neobundle instead of vundle instead of vim-pathogen
+" https://github.com/Shougo/neobundle.vim
+if 0 | endif " Note: Skip initialization for vim-tiny or vim-small.
+if has('vim_starting')
+  if &compatible
+    set nocompatible               " Be iMproved
+  endif
+  set runtimepath+=~/.vim/bundle/neobundle.vim/
+endif
+call neobundle#begin(expand('~/.vim/bundle/'))
+NeoBundleFetch 'Shougo/neobundle.vim' " Let NeoBundle manage NeoBundle
 
-Plugin 'tpope/vim-sensible'
+" My Bundles here:
+NeoBundle 'Shougo/vimproc.vim', {
+  \ 'build' : {
+  \     'windows' : 'tools\\update-dll-mingw',
+  \     'cygwin' : 'make -f make_cygwin.mak',
+  \     'mac' : 'make -f make_mac.mak',
+  \     'linux' : 'make',
+  \     'unix' : 'gmake',
+  \    },
+  \ }
+NeoBundle 'tpope/vim-sensible'
 set backupdir=~/.vim/backup//
 set directory=~/.vim/swap//
 set undodir=~/.vim/undo//
-"Plugin 'tpope/vim-commentary'
+"NeoBundle 'tpope/vim-commentary'
 "autocmd FileType ocaml set commentstring=(*\ %s\ *)
-"Plugin 'scrooloose/nerdcommenter'
-Plugin 'scrooloose/nerdtree'
+"NeoBundle 'scrooloose/nerdcommenter'
+NeoBundle 'scrooloose/nerdtree'
 map <C-l> :NERDTreeFind<CR>
 let NERDTreeMinimalUI=1
-Plugin 'Xuyuanp/nerdtree-git-plugin'
-Plugin 'tomtom/tcomment_vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-endwise'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-eunuch'
-Plugin 'tpope/vim-unimpaired'
-Plugin 'tpope/vim-rsi'
-Plugin 'tpope/vim-sleuth'
-Plugin 'tpope/vim-vinegar'
-Plugin 'tpope/vim-characterize'
-Plugin 'tpope/vim-speeddating'
-Plugin 'tpope/vim-jdaddy'
+NeoBundle 'Xuyuanp/nerdtree-git-plugin'
+NeoBundle 'tomtom/tcomment_vim'
+NeoBundle 'tpope/vim-fugitive'
+NeoBundle 'tpope/vim-endwise'
+NeoBundle 'tpope/vim-surround'
+NeoBundle 'tpope/vim-repeat'
+NeoBundle 'tpope/vim-eunuch'
+NeoBundle 'tpope/vim-unimpaired'
+NeoBundle 'tpope/vim-rsi'
+NeoBundle 'tpope/vim-sleuth'
+NeoBundle 'tpope/vim-vinegar'
+NeoBundle 'tpope/vim-characterize'
+NeoBundle 'tpope/vim-speeddating'
+NeoBundle 'tpope/vim-jdaddy'
 
-Plugin 'mhinz/vim-startify'
-Plugin 'flazz/vim-colorschemes'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'bling/vim-airline'
+NeoBundle 'mhinz/vim-startify'
+NeoBundle 'flazz/vim-colorschemes'
+NeoBundle 'altercation/vim-colors-solarized'
+NeoBundle 'bling/vim-airline'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 
-Plugin 'airblade/vim-gitgutter'
+NeoBundle 'airblade/vim-gitgutter'
 set updatetime=750 " terminal vim might have highlighting glitches for low times...
 
-Plugin 'terryma/vim-multiple-cursors'
-Plugin 'godlygeek/tabular'
-Plugin 'kien/ctrlp.vim'
+NeoBundle 'terryma/vim-multiple-cursors'
+NeoBundle 'godlygeek/tabular'
+NeoBundle 'kien/ctrlp.vim'
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlPMixed'
 let g:ctrlp_by_filename = 1
@@ -53,45 +67,47 @@ let g:ctrlp_custom_ignore = {
   \ 'file': '\v\.(exe|so|dll)$',
   \ }
 let g:ctrlp_clear_cache_on_exit = 0
-Plugin 'ervandew/supertab'
+NeoBundle 'ervandew/supertab'
 let g:SuperTabDefaultCompletionType = "context"
-Plugin 'sjl/gundo.vim'
-Plugin 'bkad/CamelCaseMotion'
+NeoBundle 'sjl/gundo.vim'
+NeoBundle 'bkad/CamelCaseMotion'
 
-Plugin 'Lokaltog/vim-easymotion'
+NeoBundle 'Lokaltog/vim-easymotion'
 " map <Leader> <Plug>(easymotion-prefix) " default is <Leader><Leader> to avoid conflicts with other plugins
 let g:EasyMotion_smartcase   = 1
 let g:EasyMotion_startofline = 0 " keep cursor colum when JK motion
 " map <Leader>h <Plug>(easymotion-linebackward)
 " map <Leader>l <Plug>(easymotion-lineforward)
 
-Plugin 'rking/ag.vim'
+NeoBundle 'rking/ag.vim'
 " let g:agprg="ag --nogroup --nocolor --column"
-Plugin 'scrooloose/syntastic'
-Plugin 'IndexedSearch'
+NeoBundle 'scrooloose/syntastic'
+NeoBundle 'IndexedSearch'
 autocmd BufReadPre * if getfsize(@%) > 100000 | let b:tagbar_ignore = 1 | endif
-Plugin 'majutsushi/tagbar'
+NeoBundle 'majutsushi/tagbar'
 nmap <F8> :TagbarToggle<CR>
 let g:tagbar_compact = 1
 
-Plugin 'Twinside/vim-hoogle'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'digitaltoad/vim-jade'
-Plugin 'jcf/vim-latex'
-Plugin 'idris-hackers/idris-vim'
-Plugin 'lambdatoast/elm.vim'
-" Plugin 'vim-ocaml-conceal'
-" Plugin 'MLstate/opalang', {'rtp': 'tools/editors/vim/'} " just copy to .vim/ since this rtp option doesn't seem to work, also the repo is huge
+NeoBundle 'Twinside/vim-hoogle'
+NeoBundle 'kchmck/vim-coffee-script'
+NeoBundle 'digitaltoad/vim-jade'
+NeoBundle 'jcf/vim-latex'
+NeoBundle 'idris-hackers/idris-vim'
+NeoBundle 'lambdatoast/elm.vim'
+" NeoBundle 'vim-ocaml-conceal'
+" NeoBundle 'MLstate/opalang', {'rtp': 'tools/editors/vim/'} " just copy to .vim/ since this rtp option doesn't seem to work, also the repo is huge
 
-call vundle#end()
-filetype plugin indent on
+ call neobundle#end()
+ filetype plugin indent on
+ " If there are uninstalled bundles found on startup,
+ " this will conveniently prompt you to install them.
+ NeoBundleCheck
 
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+" :NeoBundleList       - lists configured plugins
+" :NeoBundleInstall    - installs plugins; append `!` to update or just :NeoBundleUpdate
+" :NeoBundleSearch foo - searches for foo; append `!` to refresh local cache
+" :NeoBundleClean      - confirms removal of unused plugins; append `!` to auto-approve removal
 "
-" see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
 set background=light
