@@ -178,7 +178,6 @@ set mouse=a             " enable mouse
 set number              " show line numbers
 
 " http://stevelosh.com/blog/2010/09/coming-home-to-vim/#why-i-came-back-to-vim
-set cursorline
 " FocusLost only works with gvim -> don't use relativenumber in terminal
 " if has("gui-running")
 "     set relativenumber
@@ -192,6 +191,7 @@ set cursorline
 "         autocmd InsertLeave * :set relativenumber
 "     augroup END
 " endif
+set cpo+=J " http://stevelosh.com/blog/2012/10/why-i-two-space/
 
 " http://choorucode.com/2014/01/24/how-to-enable-case-insensitive-filename-completion-in-vim/
 set wildignorecase
@@ -216,13 +216,14 @@ set linebreak
 set nolist
 set textwidth=0
 set wrapmargin=0
-set formatoptions+=l
+set 	formatoptions+=l
 
 " don't add newline at the end of files
 " set binary
 " set noeol
 
-"set list
+set list
+set listchars=tab:▸\ ,trail:💀
 "set listchars=tab:▸\ ,eol:¬
 
 """"""""" Show superfluos spaces """""""""
@@ -302,9 +303,10 @@ if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! zz" | endif " center line somehow doesn't work :(
 endif
 
-set cursorcolumn
-autocmd WinEnter * setlocal cursorcolumn
-autocmd WinLeave * setlocal nocursorcolumn
+" set cursorline
+" set cursorcolumn
+" autocmd WinEnter * setlocal cursorcolumn
+" autocmd WinLeave * setlocal nocursorcolumn
 
 " this needs to be at the end since it's (re)set when compatible is (re)set
 autocmd BufNewFile,BufRead * setlocal formatoptions-=o " disable comment continuation for o/O (use enter)
