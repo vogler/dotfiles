@@ -127,6 +127,9 @@ function! SetupOCaml()
   vnoremap <leader>t :MerlinTypeOfSel<cr>
   nnoremap <leader>f :MerlinLocate<cr>
   nnoremap <leader>d :MerlinDestruct<cr>
+  nnoremap <leader>o :MerlinOccurrences<cr>
+  nnoremap <leader>O :MerlinOutline<cr>
+  nnoremap <leader>l :MerlinILocate<cr>
   nmap <leader>n  <Plug>(MerlinSearchOccurrencesForward)
   nmap <leader>N  <Plug>(MerlinSearchOccurrencesBackward)
   nmap <leader>r  <Plug>(MerlinRename)
