@@ -141,7 +141,7 @@ let g:merlin_textobject_grow   = 'm'
 let g:merlin_textobject_shrink = 'M'
 au FileType ocaml call SetupOCaml()
 " ocp-indent
-execute 'autocmd FileType ocaml source' g:opamshare . "/vim/syntax/ocp-indent.vim"
+execute 'autocmd FileType ocaml source' g:opamshare . "/ocp-indent/vim/indent/ocaml.vim"
 " syntastic
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_check_on_open = 1
