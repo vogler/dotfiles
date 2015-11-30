@@ -36,5 +36,9 @@
     exec = "!exec "
 #[help]
 #	autocorrect = 1
-[web]
-	browser = xdg-open
+# [web]
+# 	browser = xdg-open
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true

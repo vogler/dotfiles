@@ -226,7 +226,8 @@ set 	formatoptions+=l
 " set noeol
 
 set list
-set listchars=tab:▸\ ,trail:💀
+set listchars=tab:▸\ 
+" set listchars=tab:▸\ ,trail:💀
 "set listchars=tab:▸\ ,eol:¬
 
 """"""""" Show superfluos spaces """""""""
