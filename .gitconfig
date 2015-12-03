@@ -2,7 +2,7 @@
 	name = Ralf Vogler
 	email = ralf.vogler@gmail.com
 [credential]
-	helper = cache --timeout=3600
+	helper = osxkeychain
 [credential "https://github.com"]
     username = vogler
 [credential "https://bitbucket.org"]
