@@ -91,7 +91,7 @@ let g:tagbar_compact = 1
 NeoBundle 'Twinside/vim-hoogle'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'digitaltoad/vim-jade'
-NeoBundle 'jcf/vim-latex'
+" NeoBundle 'jcf/vim-latex'
 NeoBundle 'idris-hackers/idris-vim'
 NeoBundle 'lambdatoast/elm.vim'
 " NeoBundle 'vim-ocaml-conceal'
@@ -295,6 +295,10 @@ function! AfterMakeC()
 endfunction
 map <F7> :w<CR> :make<CR> :call AfterMakeC()<CR>
 
+" no folds by default!, use zi to toggle
+set nofoldenable
+set foldlevel=99
+" set viewoptions-=folds
 " save and restore position, folds, etc.
 au BufWinLeave *.* mkview
 au BufWinEnter *.* silent loadview
