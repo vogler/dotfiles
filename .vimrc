@@ -147,10 +147,10 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_aggregate_errors = 1
-let g:syntastic_error_symbol = "✗"
-let g:syntastic_warning_symbol = "⚠"
-let g:syntastic_style_error_symbol = "❌"
-let g:syntastic_style_warning_symbol = "⚠️ "
+let g:syntastic_error_symbol = "x"
+let g:syntastic_warning_symbol = "!"
+let g:syntastic_style_error_symbol = "x"
+let g:syntastic_style_warning_symbol = "!"
 "let g:syntastic_auto_jump = 2
 let g:syntastic_ocaml_checkers = ['merlin']
 
@@ -226,13 +226,11 @@ set 	formatoptions+=l
 " set noeol
 
 set list
-set listchars=tab:▸\ 
-" set listchars=tab:▸\ ,trail:💀
-"set listchars=tab:▸\ ,eol:¬
+set listchars=tab:▸\ ,trail:\ 
 
 """"""""" Show superfluos spaces """""""""
 :highlight ExtraWhitespace ctermbg=darkred guibg=darkred
-:autocmd Syntax * syn match ExtraWhitespace /\s\+$\| \+\ze\t/ containedin=ALL
+" :autocmd Syntax * syn match ExtraWhitespace /\s\+$\| \+\ze\t/ containedin=ALL
 
 """"""""" ü = :shell """""""""""""""""""""
 nmap ü :shell<cr>
