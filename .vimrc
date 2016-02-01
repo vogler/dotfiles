@@ -51,6 +51,7 @@ NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'bling/vim-airline'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
+NeoBundle 'vim-airline/vim-airline-themes'
 
 NeoBundle 'airblade/vim-gitgutter'
 set updatetime=750 " terminal vim might have highlighting glitches for low times...
@@ -66,7 +67,8 @@ let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/](\.(git|hg|svn)|_build|node_modules)$',
   \ 'file': '\v\.(exe|so|dll)$',
   \ }
-let g:ctrlp_clear_cache_on_exit = 0
+" let g:ctrlp_clear_cache_on_exit = 0
+let g:ctrlp_user_command = ['.git', 'cd %s && {git ls-files & git ls-files -o --exclude-standard;} | cat', 'find %s -type f']
 NeoBundle 'ervandew/supertab'
 let g:SuperTabDefaultCompletionType = "context"
 NeoBundle 'sjl/gundo.vim'
