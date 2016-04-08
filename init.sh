@@ -33,7 +33,7 @@ if [ -e $dst ]; then
 else
         git clone https://github.com/Shougo/neobundle.vim $dst
 fi
-vim +PluginInstall +qall
+vim +NeoBundleInstall +qall
 
 # https://github.com/tpope/vim-sensible
 # otherwise it puts the files in the current directory
