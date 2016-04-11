@@ -49,9 +49,24 @@ NeoBundle 'mhinz/vim-startify'
 NeoBundle 'flazz/vim-colorschemes'
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'bling/vim-airline'
+let g:airline_mode_map = {
+    \ '__' : '-',
+    \ 'n'  : 'N',
+    \ 'i'  : 'I',
+    \ 'R'  : 'R',
+    \ 'c'  : 'C',
+    \ 'v'  : 'V',
+    \ 'V'  : 'V',
+    \ '' : 'V',
+    \ 's'  : 'S',
+    \ 'S'  : 'S',
+    \ '' : 'S',
+    \ }
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
+set guifont=Inconsolata\ for\ Powerline:h18'
 NeoBundle 'vim-airline/vim-airline-themes'
+" NeoBundle 'bling/vim-bufferline'
 
 NeoBundle 'airblade/vim-gitgutter'
 set updatetime=750 " terminal vim might have highlighting glitches for low times...
@@ -196,7 +211,7 @@ set number              " show line numbers
 "         autocmd InsertLeave * :set relativenumber
 "     augroup END
 " endif
-set cpo+=J " http://stevelosh.com/blog/2012/10/why-i-two-space/
+" set cpo+=J " http://stevelosh.com/blog/2012/10/why-i-two-space/
 
 " http://choorucode.com/2014/01/24/how-to-enable-case-insensitive-filename-completion-in-vim/
 set wildignorecase
@@ -281,6 +296,7 @@ let g:Tex_UseMakefile = 0
 nnoremap K i<CR><Esc>
 
 " load changed files automatically
+" set autoread " only works for gui
 au CursorHold,CursorHoldI * silent! checktime
 
 " persistent undo
