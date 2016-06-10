@@ -18,10 +18,20 @@
 	excludesfile = ~/.gitignore_global
 	autocrlf = input
 	safecrlf = true
+	# pager = diff-so-fancy | less --tabs=4 -RFX --pattern='^(added|deleted|modified): '
+[pager]
+    # log = diff-so-fancy | less --tabs=4 -RFX --pattern='^Commit: '
+    log = diff-so-fancy | less --tabs=4 -RFX
+    # diff = diff-so-fancy | less --tabs=4 -RFX --pattern='^(added|deleted|modified): '
+    diff = diff-so-fancy | less --tabs=4 -RFX
+    show = diff-so-fancy | less --tabs=4 -RFX
 [push]
 	default = current
 [color]
 	ui = auto
+[color "diff-highlight"]
+    oldHighlight = "124 208"
+    newHighlight = "29 148"
 [merge]
 	tool = meld
 [rebase]
