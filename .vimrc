@@ -39,11 +39,17 @@ NeoBundle 'tpope/vim-repeat'
 NeoBundle 'tpope/vim-eunuch'
 NeoBundle 'tpope/vim-unimpaired'
 NeoBundle 'tpope/vim-rsi'
-NeoBundle 'tpope/vim-sleuth'
+" NeoBundle 'tpope/vim-sleuth'
+set expandtab
+set shiftwidth=2
+set softtabstop=2
+set autoindent
+" set cindent
 NeoBundle 'tpope/vim-vinegar'
 NeoBundle 'tpope/vim-characterize'
 NeoBundle 'tpope/vim-speeddating'
 NeoBundle 'tpope/vim-jdaddy'
+NeoBundle 'tpope/vim-markdown'
 
 NeoBundle 'mhinz/vim-startify'
 NeoBundle 'flazz/vim-colorschemes'
@@ -134,6 +140,7 @@ call togglebg#map("<F5>")
 
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 autocmd BufNewFile,BufReadPost *.opa set filetype=opa
+autocmd FileType make set noexpandtab shiftwidth=8 softtabstop=0
 
 " OCaml
 " merlin
@@ -183,6 +190,9 @@ let g:mapleader = ","
 " Fast saving
 nmap <leader>s :w!<cr>
 nmap <leader>q :q!<cr>
+
+" nmap <C-X> :w!<cr>
+" imap <C-X> <esc>:w!<cr>i
 
 nmap <leader>a :Ag <cword><cr>
 nmap <leader>A :AgBuffer <cword><cr>
