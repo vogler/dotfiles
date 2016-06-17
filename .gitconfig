@@ -50,3 +50,11 @@
 	clean = git-lfs clean %f
 	smudge = git-lfs smudge %f
 	required = true
+[interactive]
+	singleKey = true
+	diffFilter = diff-so-fancy
+# https://github.com/blog/2188-git-2-9-has-been-released
+[diff]
+	compactionHeuristic = true
+[submodule]
+	fetchJobs = 0
