@@ -55,6 +55,8 @@ NeoBundle 'mhinz/vim-startify'
 NeoBundle 'flazz/vim-colorschemes'
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'bling/vim-airline'
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
 let g:airline_mode_map = {
     \ '__' : '-',
     \ 'n'  : 'N',
@@ -68,8 +70,11 @@ let g:airline_mode_map = {
     \ 'S'  : 'S',
     \ '' : 'S',
     \ }
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_powerline_fonts = 1
+let g:airline#extensions#hunks#non_zero_only = 1
+let g:airline#extensions#branch#format = 'CustomBranchName'
+function! CustomBranchName(name)
+  if a:name == 'master' | return 'm' | else | return a:name | endif
+endfunction
 set guifont=Inconsolata\ for\ Powerline:h18'
 NeoBundle 'vim-airline/vim-airline-themes'
 " NeoBundle 'bling/vim-bufferline'
