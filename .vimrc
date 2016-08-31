@@ -51,6 +51,7 @@ NeoBundle 'tpope/vim-speeddating'
 NeoBundle 'tpope/vim-jdaddy'
 NeoBundle 'tpope/vim-markdown'
 
+NeoBundle 'wellle/targets.vim'
 NeoBundle 'mhinz/vim-startify'
 NeoBundle 'flazz/vim-colorschemes'
 NeoBundle 'altercation/vim-colors-solarized'
@@ -350,6 +351,10 @@ endif
 " http://stackoverflow.com/questions/15968880/vim-cursor-position-on-new-split-window
 set splitbelow
 set splitright
+
+" we'd like to keep our horizontal cursor position when duplicating lines...
+nmap [d mzyyP`zk
+nmap ]d mzyyp`zj
 
 " this needs to be at the end since it's (re)set when compatible is (re)set
 autocmd BufNewFile,BufRead * setlocal formatoptions-=o " disable comment continuation for o/O (use enter)
