@@ -1,6 +1,7 @@
 [user]
 	name = Ralf Vogler
 	email = ralf.vogler@gmail.com
+	username = vogler
 [credential]
 	helper = osxkeychain
 [credential "https://github.com"]
@@ -30,7 +31,9 @@
 [color]
 	ui = auto
 [color "diff-highlight"]
+    oldNormal = red
     oldHighlight = "124 208"
+    newNormal = green
     newHighlight = "29 148"
 [merge]
 	tool = meld
