@@ -356,5 +356,9 @@ set splitright
 nmap [d mzyyP`zk
 nmap ]d mzyyp`zj
 
+" MacVim startup is too slow...
+let g:did_install_default_menus = 1
+let g:did_menu_trans = 1
+
 " this needs to be at the end since it's (re)set when compatible is (re)set
 autocmd BufNewFile,BufRead * setlocal formatoptions-=o " disable comment continuation for o/O (use enter)
