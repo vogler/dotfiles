@@ -1,9 +1,9 @@
 [user]
-	name = Ralf Vogler
-	email = ralf.vogler@gmail.com
-	username = vogler
+    name = Ralf Vogler
+    email = ralf.vogler@gmail.com
+    username = vogler
 [credential]
-	helper = osxkeychain
+    helper = osxkeychain
 [credential "https://github.com"]
     username = vogler
 [credential "https://bitbucket.org"]
@@ -15,12 +15,12 @@
 [hub]
     protocol = https
 [core]
-	editor = vim
-	excludesfile = ~/.gitignore_global
-	autocrlf = input
-	safecrlf = true
-	ignorecase = true
-	# pager = diff-so-fancy | less --tabs=4 -RFX --pattern='^(added|deleted|modified): '
+    editor = vim
+    excludesfile = ~/.gitignore_global
+    autocrlf = input
+    safecrlf = true
+    ignorecase = true
+    # pager = diff-so-fancy | less --tabs=4 -RFX --pattern='^(added|deleted|modified): '
 [pager]
     # log = diff-so-fancy | less --tabs=4 -RFX --pattern='^Commit: '
     log = diff-so-fancy | less --tabs=4 -RFX
@@ -28,16 +28,16 @@
     diff = diff-so-fancy | less --tabs=4 -RFX
     show = diff-so-fancy | less --tabs=4 -RFX
 [push]
-	default = current
+    default = current
 [color]
-	ui = auto
+    ui = auto
 [color "diff-highlight"]
     oldNormal = red
     oldHighlight = "124 208"
     newNormal = green
     newHighlight = "29 148"
 [merge]
-	tool = meld
+    tool = meld
 [rebase]
     autostash = true
 #This will add the fixup command to git
@@ -51,16 +51,16 @@
     stash-rename = "!_() { rev=$(git rev-parse $1) && git stash drop $1 || exit 1 ; git stash store -m \"$2\" $rev; }; _"
     jump = !/usr/local/opt/git/share/git-core/contrib/git-jump/git-jump
 [filter "lfs"]
-	clean = git-lfs clean %f
-	smudge = git-lfs smudge %f
-	required = true
+    clean = git-lfs clean %f
+    smudge = git-lfs smudge %f
+    required = true
 [interactive]
-	singleKey = true
-	diffFilter = diff-so-fancy
+    singleKey = true
+    diffFilter = diff-so-fancy
 # https://github.com/blog/2188-git-2-9-has-been-released
 [diff]
-	compactionHeuristic = true
-	submodule = log
-	indentHeuristic = true
+    compactionHeuristic = true
+    submodule = log
+    indentHeuristic = true
 [submodule]
-	fetchJobs = 0
+    fetchJobs = 0
