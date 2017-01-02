@@ -135,6 +135,7 @@ function! AirlineInit()
   endif
 endfunction
 autocmd User AirlineAfterInit call AirlineInit()
+NeoBundle 'wakatime/vim-wakatime'
 
  call neobundle#end()
  filetype plugin indent on
