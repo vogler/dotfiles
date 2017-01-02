@@ -126,6 +126,15 @@ NeoBundle 'lambdatoast/elm.vim'
 " NeoBundle 'vim-ocaml-conceal'
 " NeoBundle 'MLstate/opalang', {'rtp': 'tools/editors/vim/'} " just copy to .vim/ since this rtp option doesn't seem to work, also the repo is huge
 " NeoBundle 'typedebugger' " see http://pllab.is.ocha.ac.jp/~asai/TypeDebugger/
+NeoBundle 'git-time-metric/gtm-vim-plugin'
+let g:gtm_plugin_status_enabled = 1
+function! AirlineInit()
+  if exists('*GTMStatusline')
+    call airline#parts#define_function('gtmstatus', 'GTMStatusline')
+    let g:airline_section_b = airline#section#create([g:airline_section_b, ' ', '[', 'gtmstatus', ']'])
+  endif
+endfunction
+autocmd User AirlineAfterInit call AirlineInit()
 
  call neobundle#end()
  filetype plugin indent on
