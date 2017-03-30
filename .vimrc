@@ -50,6 +50,7 @@ NeoBundle 'tpope/vim-characterize'
 NeoBundle 'tpope/vim-speeddating'
 NeoBundle 'tpope/vim-jdaddy'
 NeoBundle 'tpope/vim-markdown'
+NeoBundle 'tpope/vim-dispatch'
 
 NeoBundle 'wellle/targets.vim'
 NeoBundle 'mhinz/vim-startify'
@@ -369,6 +370,11 @@ nmap ]d mzyyp`zj
 " MacVim startup is too slow...
 let g:did_install_default_menus = 1
 let g:did_menu_trans = 1
+
+" nnoremap <leader>m :silent make\|redraw!\|cc<CR>
+" via vim-dispatch:
+autocmd FileType java let b:dispatch = 'javac %'
+nnoremap <leader>d :w<cr>:Dispatch!<cr>
 
 " this needs to be at the end since it's (re)set when compatible is (re)set
 autocmd BufNewFile,BufRead * setlocal formatoptions-=o " disable comment continuation for o/O (use enter)
