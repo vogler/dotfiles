@@ -12,8 +12,8 @@ git submodule update --init --recursive
 
 # ZSH
 ln -sf `pwd`/.zprezto ~
-cat << EOT | zsh
-setopt EXENDED_GLOB
+cat <<EOT | zsh
+setopt EXTENDED_GLOB
 for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
   ln -s "$rcfile" "${ZDOTDIR:-$HOME}/.${rcfile:t}"
 done
