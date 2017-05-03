@@ -109,7 +109,8 @@ let g:EasyMotion_startofline = 0 " keep cursor colum when JK motion
 " map <Leader>h <Plug>(easymotion-linebackward)
 " map <Leader>l <Plug>(easymotion-lineforward)
 
-NeoBundle 'rking/ag.vim'
+" deprecated: https://github.com/rking/ag.vim/issues/124#issuecomment-227038003
+NeoBundle 'rking/ag.vim' " try mileszs/ack.vim, mhinz/vim-grepper, jremmen/vim-ripgrep
 " let g:agprg="ag --nogroup --nocolor --column"
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'IndexedSearch'
@@ -167,7 +168,7 @@ function! SetupOCaml()
   nnoremap <leader>t :MerlinTypeOf<cr>
   vnoremap <leader>t :MerlinTypeOfSel<cr>
   nnoremap <leader>f :MerlinLocate<cr>
-  nnoremap <leader>d :MerlinDestruct<cr>
+  " nnoremap <leader>d :MerlinDestruct<cr>
   nnoremap <leader>o :MerlinOccurrences<cr>
   nnoremap <leader>O :MerlinOutline<cr>
   nnoremap <leader>l :MerlinILocate<cr>
