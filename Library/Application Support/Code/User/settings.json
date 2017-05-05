@@ -17,7 +17,7 @@
   "workbench.statusBar.visible": false,
   "vsicons.dontShowNewVersionMessage": true,
   "editor.renderLineHighlight": "gutter",
-  "window.zoomLevel": 1,
+  "window.zoomLevel": 0,
   "files.hotExit": "onExitAndWindowClose",
   "window.reopenFolders": "all",
   // "editor.formatOnPaste": false,
@@ -62,5 +62,6 @@
   "editor.renderControlCharacters": false,
   "editor.renderWhitespace": "all",
   "editor.tabSize": 2,
-  "editor.detectIndentation": false
+  "editor.detectIndentation": false,
+  "editor.fontSize": 14
 }
