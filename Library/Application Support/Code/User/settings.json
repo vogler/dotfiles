@@ -54,6 +54,7 @@
   },
   "editor.selectionHighlight": true,
   "editor.occurrencesHighlight": true,
+  "workbench.colorTheme": "Solarized Light",
   "latex-workshop.linter": true,
   "vim.leader": ",",
   "vim.easymotion": true,

@@ -152,7 +152,7 @@ NeoBundle 'wakatime/vim-wakatime'
 "
 " Put your non-Plugin stuff after this line
 
-set background=dark
+set background=light
 colorscheme solarized
 call togglebg#map("<F5>")
 
