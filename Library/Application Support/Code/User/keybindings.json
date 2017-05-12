@@ -1,0 +1,41 @@
+// Place your key bindings in this file to overwrite the defaults
+[
+    {
+        "key": "alt+k",
+        "command": "workbench.action.nextEditor"
+    },
+    {
+        "key": "alt+j",
+        "command": "workbench.action.previousEditor"
+    },
+    {
+        "key": "shift+alt+k",
+        "command": "workbench.action.moveEditorRightInGroup"
+    },
+    {
+        "key": "shift+alt+j",
+        "command": "workbench.action.moveEditorLeftInGroup"
+    },
+    {
+        "key": "cmd+=",
+        "command": "workbench.action.zoomReset"
+    },
+    {
+        "key": "cmd+m cmd+d",
+        "command": "workbench.action.git.globalOpenChange",
+        "when": "!textCompareEditorVisible"
+    },
+    {
+        "key": "cmd+m cmd+d",
+        "command": "workbench.action.git.globalOpenFile",
+        "when": "textCompareEditorVisible"
+    },
+    {
+        "key": "cmd+m cmd+j",
+        "command": "workbench.action.compareEditor.nextChange"
+    },
+    {
+        "key": "cmd+m cmd+k",
+        "command": "workbench.action.compareEditor.previousChange"
+    }
+]
