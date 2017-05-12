@@ -37,5 +37,15 @@
     {
         "key": "cmd+m cmd+k",
         "command": "workbench.action.compareEditor.previousChange"
+    },
+    {
+        "key": "shift+cmd+j",
+        "command": "workbench.action.focusPanel",
+        "when": "editorFocus"
+    },
+    {
+        "key": "shift+cmd+j",
+        "command": "workbench.action.focusActiveEditorGroup",
+        "when": "!editorFocus"
     }
 ]
