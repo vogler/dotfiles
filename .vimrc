@@ -100,7 +100,9 @@ let g:ctrlp_user_command = ['.git', 'cd %s && {git ls-files & git ls-files -o --
 NeoBundle 'ervandew/supertab'
 let g:SuperTabDefaultCompletionType = "context"
 NeoBundle 'sjl/gundo.vim'
-NeoBundle 'bkad/CamelCaseMotion'
+" NeoBundle 'bkad/CamelCaseMotion'
+NeoBundle 'chaoren/vim-wordmotion'
+let g:wordmotion_prefix = '<Leader>'
 
 NeoBundle 'Lokaltog/vim-easymotion'
 " map <Leader> <Plug>(easymotion-prefix) " default is <Leader><Leader> to avoid conflicts with other plugins
