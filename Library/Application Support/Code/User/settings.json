@@ -19,7 +19,8 @@
   "editor.renderLineHighlight": "gutter",
   "window.zoomLevel": 1,
   "files.hotExit": "onExitAndWindowClose",
-  "window.reopenFolders": "all",
+  "window.restoreWindows": "all",
+  "editor.autoIndent": true,
   // "editor.formatOnPaste": false,
   // "editor.formatOnType": false,
   "typescript.referencesCodeLens.enabled": true,
@@ -58,5 +59,10 @@
   "editor.tabSize": 2,
   "editor.detectIndentation": false,
   "editor.fontSize": 14,
-  "editor.autoClosingBrackets": false
+  "editor.autoClosingBrackets": false,
+  "editor.minimap.showSlider": "always",
+  // "gitlens.stashExplorer.enabled": true,
+  "gitlens.blame.line.enabled": false,
+  "gitlens.codeLens.enabled": false,
+  "gitlens.stashExplorer.enabled": true
 }
