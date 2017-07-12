@@ -22,12 +22,12 @@
     },
     {
         "key": "cmd+m cmd+d",
-        "command": "workbench.action.git.globalOpenChange",
+        "command": "git.openChange",
         "when": "!textCompareEditorVisible"
     },
     {
         "key": "cmd+m cmd+d",
-        "command": "workbench.action.git.globalOpenFile",
+        "command": "git.openFile",
         "when": "textCompareEditorVisible"
     },
     {

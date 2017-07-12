@@ -63,9 +63,10 @@
     stash-rename = "!_() { rev=$(git rev-parse $1) && git stash drop $1 || exit 1 ; git stash store -m \"$2\" $rev; }; _"
     jump = !/usr/local/opt/git/share/git-core/contrib/git-jump/git-jump
 [filter "lfs"]
-    clean = git-lfs clean %f
-    smudge = git-lfs smudge %f
     required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
 [interactive]
     singleKey = true
     diffFilter = diff-so-fancy

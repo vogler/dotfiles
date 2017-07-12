@@ -17,7 +17,7 @@
   "workbench.statusBar.visible": false,
   "vsicons.dontShowNewVersionMessage": true,
   "editor.renderLineHighlight": "gutter",
-  "window.zoomLevel": 0,
+  "window.zoomLevel": 1,
   "files.hotExit": "onExitAndWindowClose",
   "window.reopenFolders": "all",
   // "editor.formatOnPaste": false,
@@ -43,14 +43,8 @@
   "window.title": "${activeEditorMedium}${separator}${rootName}",
   "workbench.editor.tabCloseButton": "off",
   "git.confirmSync": false,
-  // "vim.handleKeys": {
-  //     "<D-d>": false // allows for cmd+d in insert mode
-  // },
-  "[cpp]": {
-    "editor.quickSuggestions": false
-  },
-  "[c]": {
-    "editor.quickSuggestions": false
+  "vim.handleKeys": {
+      "<D-d>": false // allows for cmd+d in insert mode
   },
   "editor.selectionHighlight": true,
   "editor.occurrencesHighlight": true,
@@ -60,8 +54,9 @@
   "vim.easymotion": true,
   "vim.easymotionChangeBackgroundColor": true,
   "editor.renderControlCharacters": false,
-  "editor.renderWhitespace": "all",
+  "editor.renderWhitespace": "none",
   "editor.tabSize": 2,
   "editor.detectIndentation": false,
-  "editor.fontSize": 14
+  "editor.fontSize": 14,
+  "editor.autoClosingBrackets": false
 }
