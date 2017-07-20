@@ -64,5 +64,6 @@
   // "gitlens.stashExplorer.enabled": true,
   "gitlens.blame.line.enabled": false,
   "gitlens.codeLens.enabled": false,
-  "gitlens.stashExplorer.enabled": true
+  "gitlens.stashExplorer.enabled": false,
+  "git.enableSmartCommit": true
 }
