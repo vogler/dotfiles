@@ -179,6 +179,12 @@ function! SetupOCaml()
   nmap <leader>N  <Plug>(MerlinSearchOccurrencesBackward)
   nmap <leader>r  <Plug>(MerlinRename)
   nmap <leader>R  <Plug>(MerlinRenameAppend)
+
+  " Load topkg in Merlin when editing pkg/pkg.ml
+  if expand("%:p") =~# "pkg\/pkg\.ml$"
+    call merlin#Use("topkg")
+  endif
+
   call SuperTabSetDefaultCompletionType("<c-x><c-o>")
 endfunction
 " somehow this can't be inside the function...
@@ -187,6 +193,7 @@ let g:merlin_textobject_shrink = 'M'
 au FileType ocaml call SetupOCaml()
 " ocp-indent
 execute 'autocmd FileType ocaml source' g:opamshare . "/ocp-indent/vim/indent/ocaml.vim"
+autocmd BufNewFile,BufRead jbuild setlocal filetype=scheme
 " syntastic
 " let g:syntastic_always_populate_loc_list = 1
 " let g:syntastic_check_on_open = 1
