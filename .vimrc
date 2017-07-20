@@ -114,7 +114,8 @@ let g:EasyMotion_startofline = 0 " keep cursor colum when JK motion
 " deprecated: https://github.com/rking/ag.vim/issues/124#issuecomment-227038003
 NeoBundle 'rking/ag.vim' " try mileszs/ack.vim, mhinz/vim-grepper, jremmen/vim-ripgrep
 " let g:agprg="ag --nogroup --nocolor --column"
-NeoBundle 'scrooloose/syntastic'
+" NeoBundle 'scrooloose/syntastic'
+NeoBundle 'w0rp/ale'
 NeoBundle 'IndexedSearch'
 autocmd BufReadPre * if getfsize(@%) > 100000 | let b:tagbar_ignore = 1 | endif
 NeoBundle 'majutsushi/tagbar'
@@ -187,16 +188,16 @@ au FileType ocaml call SetupOCaml()
 " ocp-indent
 execute 'autocmd FileType ocaml source' g:opamshare . "/ocp-indent/vim/indent/ocaml.vim"
 " syntastic
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_aggregate_errors = 1
-let g:syntastic_error_symbol = "x"
-let g:syntastic_warning_symbol = "!"
-let g:syntastic_style_error_symbol = "x"
-let g:syntastic_style_warning_symbol = "!"
-"let g:syntastic_auto_jump = 2
-let g:syntastic_ocaml_checkers = ['merlin']
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
+" let g:syntastic_aggregate_errors = 1
+" let g:syntastic_error_symbol = "x"
+" let g:syntastic_warning_symbol = "!"
+" let g:syntastic_style_error_symbol = "x"
+" let g:syntastic_style_warning_symbol = "!"
+" "let g:syntastic_auto_jump = 2
+" let g:syntastic_ocaml_checkers = ['merlin']
 
 " http://chneukirchen.org/dotfiles/.vimrc
 " a selects everything in visual selection mode
