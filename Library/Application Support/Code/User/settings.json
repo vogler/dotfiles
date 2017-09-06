@@ -17,7 +17,7 @@
   "workbench.statusBar.visible": false,
   "vsicons.dontShowNewVersionMessage": true,
   "editor.renderLineHighlight": "gutter",
-  "window.zoomLevel": 1,
+  "window.zoomLevel": 0,
   "files.hotExit": "onExitAndWindowClose",
   "window.restoreWindows": "all",
   "editor.autoIndent": true,
@@ -49,7 +49,7 @@
   },
   "editor.selectionHighlight": true,
   "editor.occurrencesHighlight": true,
-  "workbench.colorTheme": "Solarized Light",
+  "workbench.colorTheme": "One Dark Pro",
   "latex-workshop.linter": true,
   "vim.leader": ",",
   "vim.easymotion": true,
@@ -58,12 +58,13 @@
   "editor.renderWhitespace": "none",
   "editor.tabSize": 2,
   "editor.detectIndentation": false,
-  "editor.fontSize": 14,
+  "editor.fontSize": 16,
   "editor.autoClosingBrackets": false,
   "editor.minimap.showSlider": "always",
   // "gitlens.stashExplorer.enabled": true,
   "gitlens.blame.line.enabled": false,
   "gitlens.codeLens.enabled": false,
   "gitlens.stashExplorer.enabled": false,
-  "git.enableSmartCommit": true
+  "git.enableSmartCommit": true,
+  "terminal.integrated.fontSize": 14
 }
