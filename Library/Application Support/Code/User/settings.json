@@ -17,7 +17,7 @@
   "workbench.statusBar.visible": false,
   "vsicons.dontShowNewVersionMessage": true,
   "editor.renderLineHighlight": "gutter",
-  "window.zoomLevel": 0,
+  "window.zoomLevel": 1,
   "files.hotExit": "onExitAndWindowClose",
   "window.restoreWindows": "all",
   "editor.autoIndent": true,
@@ -49,7 +49,7 @@
   },
   "editor.selectionHighlight": true,
   "editor.occurrencesHighlight": true,
-  "workbench.colorTheme": "One Dark Pro",
+  "workbench.colorTheme": "Solarized Light",
   "latex-workshop.linter": true,
   "vim.leader": ",",
   "vim.easymotion": true,
@@ -66,5 +66,9 @@
   "gitlens.codeLens.enabled": false,
   "gitlens.stashExplorer.enabled": false,
   "git.enableSmartCommit": true,
-  "terminal.integrated.fontSize": 14
+  "terminal.integrated.fontSize": 14,
+  "typescript.tsserver.log": "verbose",
+  "workbench.panel.location": "bottom",
+  "search.useIgnoreFilesByDefault": true,
+  "search.useIgnoreFiles": true
 }

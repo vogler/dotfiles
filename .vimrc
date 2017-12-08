@@ -127,6 +127,7 @@ NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'digitaltoad/vim-jade'
 " NeoBundle 'jcf/vim-latex'
 NeoBundle 'idris-hackers/idris-vim'
+NeoBundle 'FStarLang/VimFStar', {'for': 'fstar'}
 NeoBundle 'lambdatoast/elm.vim'
 " NeoBundle 'vim-ocaml-conceal'
 " NeoBundle 'MLstate/opalang', {'rtp': 'tools/editors/vim/'} " just copy to .vim/ since this rtp option doesn't seem to work, also the repo is huge
@@ -142,6 +143,7 @@ NeoBundle 'lambdatoast/elm.vim'
 " endfunction
 " autocmd User AirlineAfterInit call AirlineInit()
 NeoBundle 'wakatime/vim-wakatime'
+NeoBundle 'DeleteTrailingWhitespace'
 
  call neobundle#end()
  filetype plugin indent on
