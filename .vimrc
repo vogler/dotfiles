@@ -129,6 +129,8 @@ NeoBundle 'digitaltoad/vim-jade'
 NeoBundle 'idris-hackers/idris-vim'
 NeoBundle 'FStarLang/VimFStar', {'for': 'fstar'}
 NeoBundle 'lambdatoast/elm.vim'
+NeoBundle 'let-def/vimbufsync'
+NeoBundle 'the-lambda-church/coquille'
 " NeoBundle 'vim-ocaml-conceal'
 " NeoBundle 'MLstate/opalang', {'rtp': 'tools/editors/vim/'} " just copy to .vim/ since this rtp option doesn't seem to work, also the repo is huge
 " NeoBundle 'typedebugger' " see http://pllab.is.ocha.ac.jp/~asai/TypeDebugger/
@@ -272,11 +274,11 @@ nnoremap <leader><space> :noh<cr>
 " nnoremap <tab> %
 " vnoremap <tab> %
 
-set wrap
+" set wrap
 set linebreak
-set nolist
-set textwidth=0
-set wrapmargin=0
+" set nolist
+" set textwidth=0
+" set wrapmargin=0
 set 	formatoptions+=l
 
 " don't add newline at the end of files

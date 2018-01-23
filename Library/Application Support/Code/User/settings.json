@@ -70,5 +70,6 @@
   "typescript.tsserver.log": "verbose",
   "workbench.panel.location": "bottom",
   "search.useIgnoreFilesByDefault": true,
-  "search.useIgnoreFiles": true
+  "search.useIgnoreFiles": true,
+  "explorer.confirmDelete": false
 }
