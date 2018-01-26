@@ -146,6 +146,8 @@ NeoBundle 'the-lambda-church/coquille'
 " autocmd User AirlineAfterInit call AirlineInit()
 NeoBundle 'wakatime/vim-wakatime'
 NeoBundle 'DeleteTrailingWhitespace'
+NeoBundle 'lervag/vimtex'
+" w/o vimtex, autoindent is a bit annoying https://vi.stackexchange.com/questions/2906/how-can-i-fix-the-auto-indentation-in-latex
 
  call neobundle#end()
  filetype plugin indent on
