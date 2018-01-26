@@ -27,9 +27,9 @@ set undodir=~/.vim/undo//
 "NeoBundle 'tpope/vim-commentary'
 "autocmd FileType ocaml set commentstring=(*\ %s\ *)
 "NeoBundle 'scrooloose/nerdcommenter'
-NeoBundle 'scrooloose/nerdtree'
-map <C-l> :NERDTreeFind<CR>
-let NERDTreeMinimalUI=1
+" NeoBundle 'scrooloose/nerdtree'
+" map <C-l> :NERDTreeFind<CR>
+" let NERDTreeMinimalUI=1
 NeoBundle 'Xuyuanp/nerdtree-git-plugin'
 NeoBundle 'tomtom/tcomment_vim'
 NeoBundle 'tpope/vim-fugitive'
