@@ -164,7 +164,7 @@ NeoBundle 'lervag/vimtex'
 
 set background=light
 colorscheme solarized
-call togglebg#map("<F5>")
+" call togglebg#map("<F5>") " seldomly used -> use ToggleBG instead
 
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 autocmd BufNewFile,BufReadPost *.opa set filetype=opa
@@ -212,6 +212,14 @@ let g:syntastic_style_error_symbol = "x"
 let g:syntastic_style_warning_symbol = "!"
 "let g:syntastic_auto_jump = 2
 let g:syntastic_ocaml_checkers = ['merlin']
+
+" latex
+function! SetupLatex()
+  " https://tex.stackexchange.com/questions/62182/shortcut-for-inserting-matching-endsomething-in-vim
+  " put \begin{} and \end{} tags around the current word
+  map! <C-B> <ESC>YpI\end{<ESC>A}<ESC>kI\begin{<ESC>A}<esc>o
+endfunction
+au FileType tex call SetupLatex()
 
 " http://chneukirchen.org/dotfiles/.vimrc
 " a selects everything in visual selection mode
