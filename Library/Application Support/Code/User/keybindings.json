@@ -30,22 +30,29 @@
         "command": "git.openFile",
         "when": "textCompareEditorVisible"
     },
-    // {
-    //   "key": "cmd+m cmd+d",
-    //   "command": "toggle.diff.editorMode"
-    // },
-
-    // comment in once these actions land in stable version
-    // see https://github.com/Microsoft/vscode/issues/7717#issuecomment-364458083
+    {
+      "key": "cmd+m cmd+m",
+      "command": "toggle.diff.editorMode"
+    },
     {
         "key": "cmd+m cmd+j",
-        "command": "workbench.action.compareEditor.nextChange"
-        // "command": "workbench.action.editor.nextChange"
+        "command": "workbench.action.compareEditor.nextChange",
+        "when": "textCompareEditorVisible"
     },
     {
         "key": "cmd+m cmd+k",
-        "command": "workbench.action.compareEditor.previousChange"
-        // "command": "workbench.action.editor.previousChange"
+        "command": "workbench.action.compareEditor.previousChange",
+        "when": "textCompareEditorVisible"
+    },
+    {
+        "key": "cmd+m cmd+j",
+        "command": "workbench.action.editor.nextChange",
+        "when": "!textCompareEditorVisible"
+    },
+    {
+        "key": "cmd+m cmd+k",
+        "command": "workbench.action.editor.previousChange",
+        "when": "!textCompareEditorVisible"
     },
     {
         "key": "shift+cmd+j",
