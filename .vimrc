@@ -103,6 +103,8 @@ NeoBundle 'sjl/gundo.vim'
 " NeoBundle 'bkad/CamelCaseMotion'
 NeoBundle 'chaoren/vim-wordmotion'
 let g:wordmotion_prefix = '<Leader>'
+NeoBundle 'unblevable/quick-scope'
+let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 
 NeoBundle 'Lokaltog/vim-easymotion'
 " map <Leader> <Plug>(easymotion-prefix) " default is <Leader><Leader> to avoid conflicts with other plugins
