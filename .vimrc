@@ -32,6 +32,7 @@ set undodir=~/.vim/undo//
 " let NERDTreeMinimalUI=1
 NeoBundle 'Xuyuanp/nerdtree-git-plugin'
 NeoBundle 'tomtom/tcomment_vim'
+let g:tcomment#commentstring_c = '// %s'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'tpope/vim-endwise'
 NeoBundle 'tpope/vim-surround'
