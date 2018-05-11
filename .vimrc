@@ -236,7 +236,7 @@ let g:mapleader = ","
 " Fast saving
 nmap <leader>s :w!<cr>
 nmap <leader>q :q!<cr>
-nmap <leader>c :w!<cr>:Gcommit % --quiet<cr>
+nmap <leader>c :w!<cr>:Gcommit %:p -v --quiet<cr>
 
 " nmap <C-X> :w!<cr>
 " imap <C-X> <esc>:w!<cr>i
