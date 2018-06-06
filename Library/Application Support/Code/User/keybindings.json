@@ -63,5 +63,9 @@
         "key": "shift+cmd+j",
         "command": "workbench.action.focusActiveEditorGroup",
         "when": "!editorFocus"
+    },
+    {
+      "key": "cmd+g cmd+s",
+      "command": "git.stageSelectedRanges"
     }
-]
+  ]

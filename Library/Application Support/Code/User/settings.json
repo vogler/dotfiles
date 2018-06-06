@@ -15,7 +15,7 @@
   "editor.cursorBlinking": "solid",
   "extensions.autoUpdate": true,
   "workbench.quickOpen.closeOnFocusLost": false,
-  "workbench.statusBar.visible": false,
+  "workbench.statusBar.visible": true,
   "vsicons.dontShowNewVersionMessage": true,
   "editor.renderLineHighlight": "gutter",
   "window.zoomLevel": 1,
@@ -75,5 +75,7 @@
   "search.useIgnoreFiles": true,
   "explorer.confirmDelete": false,
   "search.smartCase": true,
-  "terminal.integrated.macOptionIsMeta": true
+  "terminal.integrated.macOptionIsMeta": true,
+  "latex-workshop.message.update.show": false,
+  "git.autofetch": true
 }
