@@ -18,7 +18,7 @@
   "workbench.statusBar.visible": true,
   "vsicons.dontShowNewVersionMessage": true,
   "editor.renderLineHighlight": "gutter",
-  "window.zoomLevel": 1,
+  "window.zoomLevel": 0,
   "files.hotExit": "onExitAndWindowClose",
   "window.restoreWindows": "all",
   "editor.autoIndent": true,

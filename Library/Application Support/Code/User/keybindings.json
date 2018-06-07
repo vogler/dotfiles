@@ -67,5 +67,10 @@
     {
       "key": "cmd+g cmd+s",
       "command": "git.stageSelectedRanges"
-    }
+    },
+    { "key": "shift+cmd+=",         "command": "editor.action.fontZoomIn" },
+    { "key": "cmd+=",               "command": "editor.action.fontZoomIn" },
+    { "key": "shift+cmd+-",         "command": "editor.action.fontZoomOut" },
+    { "key": "cmd+-",               "command": "editor.action.fontZoomOut" },
+    { "key": "cmd+0",               "command": "editor.action.fontZoomReset" },
   ]
