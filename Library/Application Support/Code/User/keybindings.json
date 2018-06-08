@@ -65,7 +65,7 @@
         "when": "!editorFocus"
     },
     {
-      "key": "cmd+g cmd+s",
+      "key": "cmd+m cmd+s",
       "command": "git.stageSelectedRanges"
     },
     { "key": "shift+cmd+=",         "command": "editor.action.fontZoomIn" },
