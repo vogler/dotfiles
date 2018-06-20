@@ -77,5 +77,6 @@
   "search.smartCase": true,
   "terminal.integrated.macOptionIsMeta": true,
   "latex-workshop.message.update.show": false,
-  "git.autofetch": true
+  "git.autofetch": true,
+  "diffEditor.ignoreTrimWhitespace": false
 }
