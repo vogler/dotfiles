@@ -80,3 +80,5 @@
     indentHeuristic = true
 [submodule]
     fetchJobs = 0
+[ghi]
+	token = !security find-internet-password -a vogler -s github.com -l 'ghi token' -w

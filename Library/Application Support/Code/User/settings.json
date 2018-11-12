@@ -15,7 +15,7 @@
   "editor.cursorBlinking": "solid",
   "extensions.autoUpdate": true,
   "workbench.quickOpen.closeOnFocusLost": false,
-  "workbench.statusBar.visible": true,
+  "workbench.statusBar.visible": false,
   "vsicons.dontShowNewVersionMessage": true,
   "editor.renderLineHighlight": "gutter",
   "window.zoomLevel": 0,
@@ -39,7 +39,6 @@
       "url": "http://json.schemastore.org/package"
     }
   ],
-  "workbench.iconTheme": "vscode-icons",
   "editor.minimap.enabled": true,
   // "editor.dragAndDrop": true,
   "window.title": "${activeEditorMedium}${separator}${rootName}",
@@ -50,7 +49,6 @@
   },
   "editor.selectionHighlight": true,
   "editor.occurrencesHighlight": true,
-  "workbench.colorTheme": "Solarized Light",
   // "latex-workshop.linter": true,
   "vim.leader": ",",
   "vim.easymotion": true,
@@ -76,7 +74,19 @@
   "explorer.confirmDelete": false,
   "search.smartCase": true,
   "terminal.integrated.macOptionIsMeta": true,
-  "latex-workshop.message.update.show": false,
   "git.autofetch": true,
-  "diffEditor.ignoreTrimWhitespace": false
+  "diffEditor.ignoreTrimWhitespace": false,
+  "latex-workshop.message.update.show": false,
+  "latex-workshop.chktex.enabled": true,
+  "latex-workshop.chktex.args.active": [
+    "-wall",
+    "-n22",
+    "-n30",
+    "-e16",
+    "-q",
+    "-n21",
+    "-n46",
+  ],
+  "workbench.colorTheme": "One Dark Pro",
+  // "reason.codelens.enabled": true
 }
