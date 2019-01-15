@@ -44,9 +44,6 @@
   "window.title": "${activeEditorMedium}${separator}${rootName}",
   "workbench.editor.tabCloseButton": "off",
   "git.confirmSync": false,
-  "vim.handleKeys": {
-      "<D-d>": false // allows for cmd+d in insert mode
-  },
   "editor.selectionHighlight": true,
   "editor.occurrencesHighlight": true,
   // "latex-workshop.linter": true,
@@ -88,5 +85,7 @@
     "-n46",
   ],
   "workbench.colorTheme": "One Dark Pro",
+  "vim.changeWordIncludesWhitespace": true,
+  "editor.mouseWheelZoom": true,
   // "reason.codelens.enabled": true
 }
