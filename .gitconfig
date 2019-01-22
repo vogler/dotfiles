@@ -72,7 +72,8 @@
 	process = git-lfs filter-process
 [interactive]
     singleKey = true
-    diffFilter = diff-so-fancy
+    # diffFilter = diff-so-fancy
+    diffFilter = "diff-highlight | less -FRX --tabs=4"
 # https://github.com/blog/2188-git-2-9-has-been-released
 [diff]
     compactionHeuristic = true
