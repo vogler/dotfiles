@@ -376,7 +376,7 @@ set foldlevel=99
 " set viewoptions-=folds
 " save and restore position, folds, etc.
 au BufWinLeave *.* mkview
-au BufWinEnter *.* silent loadview
+au BufWinEnter *.* silent! loadview
 
 " jump to the last position when reopening a file and center it
 if has("autocmd")
