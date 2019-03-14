@@ -109,7 +109,7 @@ Plug 'rking/ag.vim' " try mileszs/ack.vim, mhinz/vim-grepper, jremmen/vim-ripgre
 " let g:agprg="ag --nogroup --nocolor --column"
 Plug 'scrooloose/syntastic'
 " Plug 'w0rp/ale'
-Plug 'vim-scripts/IndexedSearch'
+Plug 'google/vim-searchindex'
 autocmd BufReadPre * if getfsize(@%) > 100000 | let b:tagbar_ignore = 1 | endif
 Plug 'majutsushi/tagbar'
 nmap <F8> :TagbarToggle<CR>
