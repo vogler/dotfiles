@@ -1,63 +1,53 @@
-" use neobundle instead of vundle instead of vim-pathogen
-" https://github.com/Shougo/neobundle.vim
 if 0 | endif " Note: Skip initialization for vim-tiny or vim-small.
-if has('vim_starting')
-  if &compatible
-    set nocompatible               " Be iMproved
-  endif
-  set runtimepath+=~/.vim/bundle/neobundle.vim/
-endif
-call neobundle#begin(expand('~/.vim/bundle/'))
-NeoBundleFetch 'Shougo/neobundle.vim' " Let NeoBundle manage NeoBundle
 
-" My Bundles here:
-NeoBundle 'Shougo/vimproc.vim', {
-  \ 'build' : {
-  \     'windows' : 'tools\\update-dll-mingw',
-  \     'cygwin' : 'make -f make_cygwin.mak',
-  \     'mac' : 'make -f make_mac.mak',
-  \     'linux' : 'make',
-  \     'unix' : 'gmake',
-  \    },
-  \ }
-NeoBundle 'tpope/vim-sensible'
+" use vim-plug instead of neobundle, vundle, vim-pathogen
+" https://github.com/junegunn/vim-plug
+if empty(glob('~/.vim/autoload/plug.vim')) " automatic setup
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+call plug#begin('~/.vim/bundle')
+
+Plug 'tpope/vim-sensible'
 set backupdir=~/.vim/backup//
 set directory=~/.vim/swap//
 set undodir=~/.vim/undo//
-"NeoBundle 'tpope/vim-commentary'
+"Plug 'tpope/vim-commentary'
 "autocmd FileType ocaml set commentstring=(*\ %s\ *)
-"NeoBundle 'scrooloose/nerdcommenter'
-" NeoBundle 'scrooloose/nerdtree'
+"Plug 'scrooloose/nerdcommenter'
+" Plug 'scrooloose/nerdtree'
 " map <C-l> :NERDTreeFind<CR>
 " let NERDTreeMinimalUI=1
-NeoBundle 'Xuyuanp/nerdtree-git-plugin'
-NeoBundle 'tomtom/tcomment_vim'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'tomtom/tcomment_vim'
 let g:tcomment#commentstring_c = '// %s'
-NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'tpope/vim-endwise'
-NeoBundle 'tpope/vim-surround'
-NeoBundle 'tpope/vim-repeat'
-NeoBundle 'tpope/vim-eunuch'
-NeoBundle 'tpope/vim-unimpaired'
-NeoBundle 'tpope/vim-rsi'
-" NeoBundle 'tpope/vim-sleuth'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-rsi'
+" Plug 'tpope/vim-sleuth'
 set expandtab
 set shiftwidth=2
 set softtabstop=2
 set autoindent
 " set cindent
-NeoBundle 'tpope/vim-vinegar'
-NeoBundle 'tpope/vim-characterize'
-NeoBundle 'tpope/vim-speeddating'
-NeoBundle 'tpope/vim-jdaddy'
-NeoBundle 'tpope/vim-markdown'
-NeoBundle 'tpope/vim-dispatch'
+Plug 'tpope/vim-vinegar'
+Plug 'tpope/vim-characterize'
+Plug 'tpope/vim-speeddating'
+Plug 'tpope/vim-jdaddy'
+Plug 'tpope/vim-markdown'
+Plug 'tpope/vim-dispatch'
 
-NeoBundle 'wellle/targets.vim'
-NeoBundle 'mhinz/vim-startify'
-NeoBundle 'flazz/vim-colorschemes'
-NeoBundle 'altercation/vim-colors-solarized'
-NeoBundle 'bling/vim-airline'
+Plug 'wellle/targets.vim'
+Plug 'mhinz/vim-startify'
+Plug 'flazz/vim-colorschemes'
+Plug 'altercation/vim-colors-solarized'
+Plug 'bling/vim-airline'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_mode_map = {
@@ -79,15 +69,15 @@ function! CustomBranchName(name)
   if a:name == 'master' | return 'm' | else | return a:name | endif
 endfunction
 set guifont=Inconsolata\ for\ Powerline:h18'
-NeoBundle 'vim-airline/vim-airline-themes'
-" NeoBundle 'bling/vim-bufferline'
+Plug 'vim-airline/vim-airline-themes'
+" Plug 'bling/vim-bufferline'
 
-NeoBundle 'airblade/vim-gitgutter'
+Plug 'airblade/vim-gitgutter'
 set updatetime=750 " terminal vim might have highlighting glitches for low times...
 
-NeoBundle 'terryma/vim-multiple-cursors'
-NeoBundle 'godlygeek/tabular'
-NeoBundle 'kien/ctrlp.vim'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'godlygeek/tabular'
+Plug 'kien/ctrlp.vim'
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlPMixed'
 let g:ctrlp_by_filename = 1
@@ -98,16 +88,16 @@ let g:ctrlp_custom_ignore = {
   \ }
 " let g:ctrlp_clear_cache_on_exit = 0
 let g:ctrlp_user_command = ['.git', 'cd %s && {git ls-files & git ls-files -o --exclude-standard;} | cat', 'find %s -type f']
-NeoBundle 'ervandew/supertab'
+Plug 'ervandew/supertab'
 let g:SuperTabDefaultCompletionType = "context"
-NeoBundle 'sjl/gundo.vim'
-" NeoBundle 'bkad/CamelCaseMotion'
-NeoBundle 'chaoren/vim-wordmotion'
+Plug 'sjl/gundo.vim'
+" Plug 'bkad/CamelCaseMotion'
+Plug 'chaoren/vim-wordmotion'
 let g:wordmotion_prefix = '<Leader>'
-NeoBundle 'unblevable/quick-scope'
+Plug 'unblevable/quick-scope'
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 
-NeoBundle 'Lokaltog/vim-easymotion'
+Plug 'Lokaltog/vim-easymotion'
 " map <Leader> <Plug>(easymotion-prefix) " default is <Leader><Leader> to avoid conflicts with other plugins
 let g:EasyMotion_smartcase   = 1
 let g:EasyMotion_startofline = 0 " keep cursor colum when JK motion
@@ -115,33 +105,33 @@ let g:EasyMotion_startofline = 0 " keep cursor colum when JK motion
 " map <Leader>l <Plug>(easymotion-lineforward)
 
 " deprecated: https://github.com/rking/ag.vim/issues/124#issuecomment-227038003
-NeoBundle 'rking/ag.vim' " try mileszs/ack.vim, mhinz/vim-grepper, jremmen/vim-ripgrep
+Plug 'rking/ag.vim' " try mileszs/ack.vim, mhinz/vim-grepper, jremmen/vim-ripgrep
 " let g:agprg="ag --nogroup --nocolor --column"
-NeoBundle 'scrooloose/syntastic'
-" NeoBundle 'w0rp/ale'
-NeoBundle 'IndexedSearch'
+Plug 'scrooloose/syntastic'
+" Plug 'w0rp/ale'
+Plug 'vim-scripts/IndexedSearch'
 autocmd BufReadPre * if getfsize(@%) > 100000 | let b:tagbar_ignore = 1 | endif
-NeoBundle 'majutsushi/tagbar'
+Plug 'majutsushi/tagbar'
 nmap <F8> :TagbarToggle<CR>
 let g:tagbar_compact = 1
 if !has('nvim')
-  NeoBundle 'vogler/vim-fixkey', 'alt-numbers' " allows vim to bind <A-j> (like nvim) instead of having to use j or <Esc>j
+  Plug 'vogler/vim-fixkey', {'branch': 'alt-numbers'} " allows vim to bind <A-j> (like nvim) instead of having to use j or <Esc>j
 endif
 
-NeoBundle 'Twinside/vim-hoogle'
-NeoBundle 'kchmck/vim-coffee-script'
-NeoBundle 'digitaltoad/vim-jade'
-" NeoBundle 'jcf/vim-latex'
-NeoBundle 'idris-hackers/idris-vim'
-NeoBundle 'FStarLang/VimFStar', {'for': 'fstar'}
-NeoBundle 'lambdatoast/elm.vim'
-NeoBundle 'let-def/vimbufsync'
-NeoBundle 'the-lambda-church/coquille'
-" NeoBundle 'vim-ocaml-conceal'
-" NeoBundle 'MLstate/opalang', {'rtp': 'tools/editors/vim/'} " just copy to .vim/ since this rtp option doesn't seem to work, also the repo is huge
-" NeoBundle 'typedebugger' " see http://pllab.is.ocha.ac.jp/~asai/TypeDebugger/
+Plug 'Twinside/vim-hoogle'
+Plug 'kchmck/vim-coffee-script'
+Plug 'digitaltoad/vim-jade'
+" Plug 'jcf/vim-latex'
+Plug 'idris-hackers/idris-vim'
+Plug 'FStarLang/VimFStar', {'for': 'fstar'}
+Plug 'lambdatoast/elm.vim'
+Plug 'let-def/vimbufsync'
+Plug 'the-lambda-church/coquille'
+" Plug 'vim-ocaml-conceal'
+" Plug 'MLstate/opalang', {'rtp': 'tools/editors/vim/'} " just copy to .vim/ since this rtp option doesn't seem to work, also the repo is huge
+" Plug 'typedebugger' " see http://pllab.is.ocha.ac.jp/~asai/TypeDebugger/
 
-" NeoBundle 'git-time-metric/gtm-vim-plugin'
+" Plug 'git-time-metric/gtm-vim-plugin'
 " let g:gtm_plugin_status_enabled = 1
 " function! AirlineInit()
 "   if exists('*GTMStatusline')
@@ -150,23 +140,13 @@ NeoBundle 'the-lambda-church/coquille'
 "   endif
 " endfunction
 " autocmd User AirlineAfterInit call AirlineInit()
-NeoBundle 'wakatime/vim-wakatime'
-NeoBundle 'DeleteTrailingWhitespace'
-NeoBundle 'lervag/vimtex'
+Plug 'wakatime/vim-wakatime'
+Plug 'vim-scripts/DeleteTrailingWhitespace'
+Plug 'lervag/vimtex'
 " w/o vimtex, autoindent is a bit annoying https://vi.stackexchange.com/questions/2906/how-can-i-fix-the-auto-indentation-in-latex
 
- call neobundle#end()
- filetype plugin indent on
- " If there are uninstalled bundles found on startup,
- " this will conveniently prompt you to install them.
- NeoBundleCheck
+call plug#end()
 
-" :NeoBundleList       - lists configured plugins
-" :NeoBundleInstall    - installs plugins; append `!` to update or just :NeoBundleUpdate
-" :NeoBundleSearch foo - searches for foo; append `!` to refresh local cache
-" :NeoBundleClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" Put your non-Plugin stuff after this line
 
 set background=light
 colorscheme solarized

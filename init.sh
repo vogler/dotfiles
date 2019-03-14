@@ -25,15 +25,8 @@ fi
 # VIM
 #####
 ln -sf `pwd`/.vimrc ~
-# https://github.com/gmarik/vundle
-mkdir -p ~/.vim/bundle
-dst=~/.vim/bundle/neobundle.vim
-if [ -e $dst ]; then
-        echo "neobundle.vim exists already."
-else
-        git clone https://github.com/Shougo/neobundle.vim $dst
-fi
-vim +NeoBundleInstall +qall
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+vim +PlugInstall +qall
 
 # https://github.com/tpope/vim-sensible
 # otherwise it puts the files in the current directory
