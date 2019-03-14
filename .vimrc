@@ -110,6 +110,8 @@ Plug 'rking/ag.vim' " try mileszs/ack.vim, mhinz/vim-grepper, jremmen/vim-ripgre
 Plug 'scrooloose/syntastic'
 " Plug 'w0rp/ale'
 Plug 'google/vim-searchindex'
+Plug 'junegunn/vim-slash'
+noremap <plug>(slash-after) zz
 autocmd BufReadPre * if getfsize(@%) > 100000 | let b:tagbar_ignore = 1 | endif
 Plug 'majutsushi/tagbar'
 nmap <F8> :TagbarToggle<CR>
