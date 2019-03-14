@@ -124,6 +124,9 @@ autocmd BufReadPre * if getfsize(@%) > 100000 | let b:tagbar_ignore = 1 | endif
 NeoBundle 'majutsushi/tagbar'
 nmap <F8> :TagbarToggle<CR>
 let g:tagbar_compact = 1
+if !has('nvim')
+  NeoBundle 'drmikehenry/vim-fixkey' " allows vim to bind <A-j> (like nvim) instead of having to use j or <Esc>j
+endif
 
 NeoBundle 'Twinside/vim-hoogle'
 NeoBundle 'kchmck/vim-coffee-script'
@@ -311,9 +314,9 @@ nmap ü :shell<cr>
 
 """"""""" buffer magic """""""""""""""""""
 " <M-k> doesn't work in gnome-terminal, but typing ctrl-v alt-k works
-nnoremap k :bn!<cr>
-nnoremap j :bp!<cr>
-nnoremap d :bd!<cr>
+nnoremap <A-k> :bn!<cr>
+nnoremap <A-j> :bp!<cr>
+nnoremap <A-d> :bd!<cr>
 set hidden " allows switching to another buffer with unsaved buffer open
 
 """"""""" ó,ö = y/p with clipboard """""""""
