@@ -121,14 +121,14 @@ if !has('nvim')
 endif
 
 Plug 'Twinside/vim-hoogle'
-Plug 'kchmck/vim-coffee-script'
+Plug 'kchmck/vim-coffee-script', {'for': 'coffee'}
 Plug 'digitaltoad/vim-jade'
 " Plug 'jcf/vim-latex'
-Plug 'idris-hackers/idris-vim'
+Plug 'idris-hackers/idris-vim', {'for': 'idris'}
 Plug 'FStarLang/VimFStar', {'for': 'fstar'}
-Plug 'lambdatoast/elm.vim'
+Plug 'lambdatoast/elm.vim', {'for': 'elm'}
 Plug 'let-def/vimbufsync'
-Plug 'the-lambda-church/coquille'
+Plug 'the-lambda-church/coquille', {'for': 'coq'}
 " Plug 'vim-ocaml-conceal'
 " Plug 'MLstate/opalang', {'rtp': 'tools/editors/vim/'} " just copy to .vim/ since this rtp option doesn't seem to work, also the repo is huge
 " Plug 'typedebugger' " see http://pllab.is.ocha.ac.jp/~asai/TypeDebugger/
@@ -144,7 +144,7 @@ Plug 'the-lambda-church/coquille'
 " autocmd User AirlineAfterInit call AirlineInit()
 Plug 'wakatime/vim-wakatime'
 Plug 'vim-scripts/DeleteTrailingWhitespace'
-Plug 'lervag/vimtex'
+Plug 'lervag/vimtex', {'for': 'tex'}
 " w/o vimtex, autoindent is a bit annoying https://vi.stackexchange.com/questions/2906/how-can-i-fix-the-auto-indentation-in-latex
 
 call plug#end()
