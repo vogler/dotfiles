@@ -92,6 +92,7 @@ autocmd! User GoyoLeave Limelight!
 Plug 'junegunn/gv.vim', {'on': 'GV'}
 Plug 'junegunn/rainbow_parentheses.vim', {'on': 'RainbowParentheses'}
 " Plug 'junegunn/vim-emoji'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 Plug 'kien/ctrlp.vim'
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlPMixed'
