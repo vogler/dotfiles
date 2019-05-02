@@ -76,7 +76,12 @@ Plug 'airblade/vim-gitgutter'
 set updatetime=750 " terminal vim might have highlighting glitches for low times...
 
 Plug 'terryma/vim-multiple-cursors'
-Plug 'godlygeek/tabular'
+" Plug 'godlygeek/tabular'
+Plug 'junegunn/vim-easy-align'
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
 Plug 'kien/ctrlp.vim'
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlPMixed'
