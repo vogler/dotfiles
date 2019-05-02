@@ -132,7 +132,7 @@ Plug 'majutsushi/tagbar'
 nmap <F8> :TagbarToggle<CR>
 let g:tagbar_compact = 1
 if !has('nvim')
-  Plug 'vogler/vim-fixkey', {'branch': 'alt-numbers'} " allows vim to bind <A-j> (like nvim) instead of having to use j or <Esc>j
+  Plug 'drmikehenry/vim-fixkey' " allows vim to bind <A-j> (like nvim) instead of having to use j or <Esc>j
 endif
 
 Plug 'Twinside/vim-hoogle'
