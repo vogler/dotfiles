@@ -24,6 +24,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'tomtom/tcomment_vim'
 let g:tcomment#commentstring_c = '// %s'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
@@ -88,6 +89,7 @@ Plug 'junegunn/limelight.vim', {'on': 'Limelight'}
 let g:limelight_conceal_ctermfg = 'gray'
 autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
+Plug 'junegunn/gv.vim', {'on': 'GV'}
 Plug 'kien/ctrlp.vim'
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlPMixed'
