@@ -144,7 +144,10 @@ Plug 'idris-hackers/idris-vim', {'for': 'idris'}
 Plug 'FStarLang/VimFStar', {'for': 'fstar'}
 Plug 'lambdatoast/elm.vim', {'for': 'elm'}
 Plug 'let-def/vimbufsync'
-Plug 'the-lambda-church/coquille', {'for': 'coq'}
+" Plug 'the-lambda-church/coquille', {'for': 'coq'}
+" Plug 'https://manu@framagit.org/manu/coq-au-vim.git', {'for': 'coq'} " only works with vim, not nvim, no syntax
+" Plug 'jvoorhis/coq.vim', {'for': 'coq'} " syntax
+Plug 'https://framagit.org/tyreunom/coquille.git', {'for': 'coq', 'do': ':UpdateRemotePlugins'} " fork for neovim and coq 8.9, contains syntax
 " Plug 'vim-ocaml-conceal'
 " Plug 'MLstate/opalang', {'rtp': 'tools/editors/vim/'} " just copy to .vim/ since this rtp option doesn't seem to work, also the repo is huge
 " Plug 'typedebugger' " see http://pllab.is.ocha.ac.jp/~asai/TypeDebugger/
@@ -172,6 +175,7 @@ colorscheme solarized
 
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 autocmd BufNewFile,BufReadPost *.opa set filetype=opa
+autocmd BufNewFile,BufReadPost *.v set filetype=coq
 autocmd FileType make set noexpandtab shiftwidth=8 softtabstop=0
 
 " OCaml
