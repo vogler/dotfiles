@@ -123,8 +123,20 @@ let g:EasyMotion_startofline = 0 " keep cursor colum when JK motion
 " deprecated: https://github.com/rking/ag.vim/issues/124#issuecomment-227038003
 Plug 'rking/ag.vim' " try mileszs/ack.vim, mhinz/vim-grepper, jremmen/vim-ripgrep
 " let g:agprg="ag --nogroup --nocolor --column"
-Plug 'scrooloose/syntastic'
-" Plug 'w0rp/ale'
+" Plug 'scrooloose/syntastic'
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
+" let g:syntastic_aggregate_errors = 1
+" let g:syntastic_error_symbol = "x"
+" let g:syntastic_warning_symbol = "!"
+" let g:syntastic_style_error_symbol = "x"
+" let g:syntastic_style_warning_symbol = "!"
+" "let g:syntastic_auto_jump = 2
+" let g:syntastic_ocaml_checkers = ['merlin']
+Plug 'w0rp/ale'
+let g:ale_sign_error = 'x'
+let g:ale_sign_warning = '!'
 Plug 'google/vim-searchindex'
 " Plug 'junegunn/vim-slash'
 noremap <plug>(slash-after) zz
@@ -209,17 +221,6 @@ au FileType ocaml call SetupOCaml()
 " ocp-indent
 execute 'autocmd FileType ocaml source' g:opamshare . "/ocp-indent/vim/indent/ocaml.vim"
 autocmd BufNewFile,BufRead jbuild setlocal filetype=scheme
-" syntastic
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_aggregate_errors = 1
-let g:syntastic_error_symbol = "x"
-let g:syntastic_warning_symbol = "!"
-let g:syntastic_style_error_symbol = "x"
-let g:syntastic_style_warning_symbol = "!"
-"let g:syntastic_auto_jump = 2
-let g:syntastic_ocaml_checkers = ['merlin']
 
 " latex
 function! SetupLatex()
