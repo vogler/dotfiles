@@ -104,8 +104,19 @@ let g:ctrlp_custom_ignore = {
   \ }
 " let g:ctrlp_clear_cache_on_exit = 0
 let g:ctrlp_user_command = ['.git', 'cd %s && {git ls-files & git ls-files -o --exclude-standard;} | cat', 'find %s -type f']
-Plug 'ervandew/supertab'
-let g:SuperTabDefaultCompletionType = "context"
+" Plug 'ervandew/supertab'
+" let g:SuperTabDefaultCompletionType = "context"
+" let g:SuperTabLongestEnhanced = 1
+" let g:SuperTabLongestHighlight = 1
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
+let g:deoplete#enable_at_startup = 1
+Plug 'copy/deoplete-ocaml'
 Plug 'sjl/gundo.vim'
 " Plug 'bkad/CamelCaseMotion'
 Plug 'chaoren/vim-wordmotion'
@@ -212,7 +223,7 @@ function! SetupOCaml()
     call merlin#Use("topkg")
   endif
 
-  call SuperTabSetDefaultCompletionType("<c-x><c-o>")
+  " call SuperTabSetDefaultCompletionType("<c-x><c-o>")
 endfunction
 " somehow this can't be inside the function...
 let g:merlin_textobject_grow   = 'm'
