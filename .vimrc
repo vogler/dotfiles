@@ -192,6 +192,8 @@ Plug 'wakatime/vim-wakatime'
 Plug 'vim-scripts/DeleteTrailingWhitespace'
 Plug 'lervag/vimtex', {'for': 'tex'}
 " w/o vimtex, autoindent is a bit annoying https://vi.stackexchange.com/questions/2906/how-can-i-fix-the-auto-indentation-in-latex
+" Plug 'xuhdev/vim-latex-live-preview', {'for': 'tex'}
+" let g:livepreview_engine = 'latexmk' . ' -pdf -shell-escape'
 
 call plug#end()
 
