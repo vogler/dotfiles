@@ -91,7 +91,6 @@ autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
 Plug 'junegunn/gv.vim', {'on': 'GV'}
 Plug 'junegunn/rainbow_parentheses.vim', {'on': 'RainbowParentheses'}
-" Plug 'junegunn/vim-emoji'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app & yarn install'  }
 Plug 'kien/ctrlp.vim'
 let g:ctrlp_map = '<c-p>'
@@ -104,10 +103,10 @@ let g:ctrlp_custom_ignore = {
   \ }
 " let g:ctrlp_clear_cache_on_exit = 0
 let g:ctrlp_user_command = ['.git', 'cd %s && {git ls-files & git ls-files -o --exclude-standard;} | cat', 'find %s -type f']
-" Plug 'ervandew/supertab'
-" let g:SuperTabDefaultCompletionType = "context"
-" let g:SuperTabLongestEnhanced = 1
-" let g:SuperTabLongestHighlight = 1
+Plug 'ervandew/supertab'
+let g:SuperTabDefaultCompletionType = "context"
+let g:SuperTabLongestEnhanced = 1
+let g:SuperTabLongestHighlight = 1
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 else
@@ -117,6 +116,11 @@ else
 endif
 let g:deoplete#enable_at_startup = 1
 Plug 'copy/deoplete-ocaml'
+" let g:deoplete#ignore_sources.ocaml = ['buffer', 'around', 'member', 'tag']
+Plug 'Shougo/neco-vim'
+Plug 'deoplete-plugins/deoplete-jedi'
+Plug 'fszymanski/deoplete-emoji'
+Plug 'tbodt/deoplete-tabnine', { 'do': './install.sh' }
 Plug 'sjl/gundo.vim'
 " Plug 'bkad/CamelCaseMotion'
 Plug 'chaoren/vim-wordmotion'
@@ -191,6 +195,10 @@ Plug 'lervag/vimtex', {'for': 'tex'}
 
 call plug#end()
 
+
+call deoplete#custom#option('camel_case', v:true)
+call deoplete#custom#source('emoji', 'converters', ['converter_emoji'])
+" call deoplete#custom#source('emoji', 'filetypes', ['rst']) " Default: ['gitcommit', 'markdown']
 
 set background=light
 colorscheme solarized
