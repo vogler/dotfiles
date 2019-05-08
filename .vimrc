@@ -152,6 +152,7 @@ Plug 'rking/ag.vim' " try mileszs/ack.vim, mhinz/vim-grepper, jremmen/vim-ripgre
 Plug 'w0rp/ale'
 let g:ale_sign_error = 'x'
 let g:ale_sign_warning = '!'
+let g:ale_linters_ignore = ['writegood', 'proselint'] " proselint
 Plug 'google/vim-searchindex'
 " Plug 'junegunn/vim-slash'
 noremap <plug>(slash-after) zz
