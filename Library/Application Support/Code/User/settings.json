@@ -87,5 +87,8 @@
   "workbench.colorTheme": "One Dark Pro",
   "vim.changeWordIncludesWhitespace": true,
   "editor.mouseWheelZoom": true,
+  "editor.suggest.filteredTypes": {
+    "keyword": false
+  }
   // "reason.codelens.enabled": true
 }
