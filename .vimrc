@@ -14,6 +14,7 @@ Plug 'tpope/vim-sensible'
 set backupdir=~/.vim/backup//
 set directory=~/.vim/swap//
 set undodir=~/.vim/undo//
+set shortmess+=A " don't give the "ATTENTION" message when an existing swap file is found
 "Plug 'tpope/vim-commentary'
 "autocmd FileType ocaml set commentstring=(*\ %s\ *)
 "Plug 'scrooloose/nerdcommenter'
