@@ -137,7 +137,10 @@ let g:EasyMotion_startofline = 0 " keep cursor colum when JK motion
 " map <Leader>l <Plug>(easymotion-lineforward)
 
 " deprecated: https://github.com/rking/ag.vim/issues/124#issuecomment-227038003
-Plug 'rking/ag.vim' " try mileszs/ack.vim, mhinz/vim-grepper, jremmen/vim-ripgrep
+" Plug 'rking/ag.vim' " try mileszs/ack.vim, mhinz/vim-grepper, jremmen/vim-ripgrep
+Plug 'mileszs/ack.vim'
+let g:ackprg = 'ag --vimgrep --smart-case'
+" let g:ackpreview = 1
 " let g:agprg="ag --nogroup --nocolor --column"
 " Plug 'scrooloose/syntastic'
 " let g:syntastic_always_populate_loc_list = 1
@@ -270,8 +273,8 @@ nmap <leader>c :w!<cr>:Gcommit %:p -v --quiet<cr>
 " nmap <C-X> :w!<cr>
 " imap <C-X> <esc>:w!<cr>i
 
-nmap <leader>a :Ag <cword><cr>
-nmap <leader>A :AgBuffer <cword><cr>
+nmap <leader>a :Ack <cword><cr>
+nmap <leader>A :AckWindow <cword><cr>
 
 " toggle comment with C-/
 "nmap  <leader>ci
