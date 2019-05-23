@@ -269,6 +269,7 @@ let g:mapleader = ","
 nmap <leader>s :w!<cr>
 nmap <leader>q :q!<cr>
 nmap <leader>c :Gwrite<cr>:Gcommit -v --quiet<cr>
+nmap <leader>p ggVGp
 
 " nmap <C-X> :w!<cr>
 " imap <C-X> <esc>:w!<cr>i
