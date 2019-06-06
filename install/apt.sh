@@ -1,0 +1,2 @@
+# apt list --installed
+# TODO
