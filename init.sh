@@ -31,3 +31,6 @@ vim +PlugInstall +qall
 # https://github.com/tpope/vim-sensible
 # otherwise it puts the files in the current directory
 mkdir -p ~/.vim/{swap,backup,undo}
+
+# tmux plugin manager
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm

@@ -33,6 +33,7 @@ Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-rsi'
 " Plug 'tpope/vim-sleuth'
+Plug 'tpope/vim-obsession'
 set expandtab
 set shiftwidth=2
 set softtabstop=2
