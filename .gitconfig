@@ -3,7 +3,9 @@
     email = ralf.vogler@gmail.com
     username = vogler
 [credential]
-    helper = osxkeychain
+    # helper = osxkeychain
+    # helper = cache --timeout=604800
+    # Set this using `git config --system --add credential.helper ...` since I want keychain on macos but on other ssh linux boxes I'm stuck with cache (store is plaintext), and this global config would overwrite the system one.
 [credential "https://github.com"]
     username = vogler
 [credential "https://bitbucket.org"]
