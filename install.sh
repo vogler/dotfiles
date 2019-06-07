@@ -45,10 +45,11 @@ fi
 
 echo ">> Link vim"
 ln -sf `pwd`/.vimrc ~
+ln -sf `pwd`/.vimrc ~/.config/nvim/init.vim
 echo ">> Install vim-plug"
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 echo ">> Install vim plugins"
-vim +PlugInstall +qall
+nvim +PlugInstall +qall
 
 # https://github.com/tpope/vim-sensible
 # otherwise it puts the files in the current directory
