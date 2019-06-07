@@ -7,5 +7,6 @@ tolink=$( find -H "$BASEDIR" -name '*.symlink' )
 for file in $tolink ; do
     target=$(echo $file | sed 's/\.symlink$//' | sed 's/\/dotfiles//')
     echo "ln -s $file $target"
+    mkdir -p $(dirname $target)
     ln -sf $file $target
 done

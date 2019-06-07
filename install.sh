@@ -39,6 +39,9 @@ fi
 # restore
 #pacman -S --needed $(comm -12 <(pacman -Slq|sort) <(sort badpkdlist) )
 
+echo ">> Link *.symlink"
+source install/link.sh
+
 echo ">> Link prezto for zsh"
 ln -sf `pwd`/.zprezto ~
 cat <<EOT | zsh
