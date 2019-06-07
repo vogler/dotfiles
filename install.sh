@@ -21,8 +21,17 @@ if [ "$(uname)" == "Darwin" ]; then
 else
   echo ">> [Running Linux]"
 
+  if test ! $(which brew); then
+      echo ">> Install linuxbrew"
+      sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
+  fi
+
   echo ">> apt install ..."
   source install/apt.sh
+  echo ">> brew tap ..."
+  source install/brew-tap.sh
+  echo ">> brew install ..."
+  source install/brew.sh
 fi
 # https://wiki.archlinux.org/index.php/Pacman_Tips#Backing_up_and_retrieving_a_list_of_installed_packages
 # backup installed packages (alternatively use aura -B and auro -Br)
