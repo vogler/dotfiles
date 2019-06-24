@@ -76,9 +76,9 @@
     {
       "key": "ctrl+cmd+/",
       "command": "macros.commentDown"
-    }
+    },
     {
       "key": "cmd+;",
-      "command": "macros.rerunTerminalCommand"
-    }
+      "command": "workbench.action.terminal.sendSequence", "args": {"text": "!!\u0009\u000a"} // TAB, LF. see https://code.visualstudio.com/docs/editor/integrated-terminal#_send-text-from-a-keybinding
+    },
   ]
