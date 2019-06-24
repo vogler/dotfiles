@@ -73,4 +73,12 @@
     { "key": "shift+cmd+-",         "command": "editor.action.fontZoomOut" },
     { "key": "cmd+-",               "command": "editor.action.fontZoomOut" },
     { "key": "cmd+0",               "command": "editor.action.fontZoomReset" },
+    {
+      "key": "ctrl+cmd+/",
+      "command": "macros.commentDown"
+    }
+    {
+      "key": "cmd+;",
+      "command": "macros.rerunTerminalCommand"
+    }
   ]

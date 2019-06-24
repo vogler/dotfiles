@@ -88,6 +88,20 @@
   "editor.mouseWheelZoom": true,
   "editor.suggest.filteredTypes": {
     "keyword": false
+  },
+  // "reason.codelens.enabled": true,
+  "macros": {
+    "commentDown": [
+        "editor.action.copyLinesDownAction",
+        "cursorUp",
+        "editor.action.addCommentLine",
+        "cursorDown"
+    ],
+    "rerunTerminalCommand": [
+        // "workbench.action.terminal.focus",
+        // {"command": "type", "args": {"text": "!!\n"}} // this does not work
+        // "workbench.action.focusActiveEditorGroup"
+        {"command": "workbench.action.terminal.sendSequence", "args": {"text": "!!\u0009\u000a"}}, // TAB, LF. see https://code.visualstudio.com/docs/editor/integrated-terminal#_send-text-from-a-keybinding
+    ]
   }
-  // "reason.codelens.enabled": true
 }
