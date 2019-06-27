@@ -124,7 +124,8 @@ endif
 let g:deoplete#enable_at_startup = 1
 Plug 'copy/deoplete-ocaml'
 " let g:deoplete#ignore_sources.ocaml = ['buffer', 'around', 'member', 'tag']
-Plug 'Shougo/neco-vim'
+Plug 'Shougo/deoplete-clangx'
+Plug 'Shougo/neco-vim' " vim source for deoplete
 Plug 'deoplete-plugins/deoplete-jedi'
 Plug 'fszymanski/deoplete-emoji'
 Plug 'tbodt/deoplete-tabnine', { 'do': './install.sh' }
