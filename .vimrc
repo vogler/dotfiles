@@ -253,7 +253,7 @@ let g:merlin_textobject_shrink = 'M'
 au FileType ocaml call SetupOCaml()
 " ocp-indent
 execute 'autocmd FileType ocaml source' g:opamshare . "/ocp-indent/vim/indent/ocaml.vim"
-autocmd BufNewFile,BufRead jbuild setlocal filetype=scheme
+autocmd BufNewFile,BufRead dune* setlocal filetype=lisp
 
 " latex
 function! SetupLatex()
