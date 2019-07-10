@@ -214,7 +214,7 @@ call deoplete#custom#option('camel_case', v:true)
 call deoplete#custom#source('emoji', 'converters', ['converter_emoji'])
 " call deoplete#custom#source('emoji', 'filetypes', ['rst']) " Default: ['gitcommit', 'markdown']
 
-set background=light
+set background=dark
 colorscheme solarized
 " call togglebg#map("<F5>") " seldomly used -> use ToggleBG instead
 
