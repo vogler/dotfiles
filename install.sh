@@ -18,6 +18,11 @@ if [ "$(uname)" == "Darwin" ]; then
   source install/brew.sh
   echo ">> brew cask install ..."
   source install/brew-cask.sh
+
+  # Specify the preferences directory
+  defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "~/dotfiles/iterm2"
+  # Tell iTerm2 to use the custom preferences in the directory
+  defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
 else
   echo ">> [Running Linux]"
 
