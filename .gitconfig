@@ -28,10 +28,16 @@
 [pager]
     # log = diff-so-fancy | less --tabs=4 -RFX --pattern='^Commit: '
     # diff-so-fancy got slow on larger inputs, had to `brew install --HEAD diff-so-fancy`. maybe next release will fix this...
-    log = diff-so-fancy | less --tabs=4 -RFX
-    # diff = diff-so-fancy | less --tabs=4 -RFX --pattern='^(added|deleted|modified): '
-    diff = diff-so-fancy | less --tabs=4 -RFX
-    show = diff-so-fancy | less --tabs=4 -RFX
+    log = diff-so-fancy | less --tabs=4 -RFX -+S
+    # diff = diff-so-fancy | less --tabs=4 -RFX --pattern='^(added|deleted|modified): ' # the problem with this is that it also jumps directly to the first match and fills rest of screen with ~ for empty lines.
+    # less:
+      # -+S Wrap lines instead of the default chop-long-lines which breaks mouse select & copy in terminal (also, horizontal scrolling is annoying).
+      # -F Quit if entire file fits on first screen.
+      # -E Quit at end of file.
+      # -R Output "raw" control characters.
+      # -X Don't use init/deinit strings.
+    diff = diff-so-fancy | less --tabs=4 -RXFE -+S
+    show = diff-so-fancy | less --tabs=4 -RXFE -+S
 [push]
     default = current
 [color]
@@ -85,3 +91,9 @@
     fetchJobs = 0
 [ghi]
 	token = !security find-internet-password -a vogler -s github.com -l 'ghi token' -w
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
