@@ -11,7 +11,6 @@
   },
   "editor.wordWrap": "on",
   // "editor.cursorStyle": "block-outline",
-  // "vim.useSolidBlockCursor": true,
   "editor.cursorBlinking": "solid",
   "extensions.autoUpdate": true,
   "workbench.quickOpen.closeOnFocusLost": false,
@@ -46,13 +45,31 @@
   "editor.selectionHighlight": true,
   "editor.occurrencesHighlight": true,
   // "latex-workshop.linter": true,
+
   "vim.leader": ",",
+  "vim.useSystemClipboard": true,
+  "vim.overrideCopy": false, // otherwise cmd-c doesn't copy
+  "vim.highlightedyank.enable": true,
+  // "vim.handleKeys": { "<C-d>": false},
+  "vim.changeWordIncludesWhitespace": true,
+  // vim.surround: d s <existing char>, c s <existing char> <desired char>, y s <motion> <desired char>, S <desired char> (visual mode)
+  // vim-indent-object: <op>ii this indentation level, <op>ai ..and line above, <op>aI ..and line after
+  "vim.camelCaseMotion.enable": true,
   "vim.easymotion": true,
   "vim.easymotionMarkerYOffset": 5,
   "vim.easymotionMarkerHeight": 20,
   "vim.easymotionMarkerWidthPerChar": 10,
   "vim.easymotionMarkerFontSize": "16",
   "vim.easymotionMarkerFontFamily": "Menlo",
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+        "before": [":"],
+        "commands": [
+            "workbench.action.showCommands",
+        ]
+    }
+]
+
   "editor.renderControlCharacters": false,
   "editor.renderWhitespace": "none",
   "editor.tabSize": 2,
@@ -84,7 +101,6 @@
     "-n46",
   ],
   "workbench.colorTheme": "One Dark Pro",
-  "vim.changeWordIncludesWhitespace": true,
   "editor.mouseWheelZoom": true,
   "editor.suggest.filteredTypes": {
     "keyword": false
