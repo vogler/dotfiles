@@ -80,6 +80,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'
 set updatetime=750 " terminal vim might have highlighting glitches for low times...
 
+Plug 'michaeljsmith/vim-indent-object'
 Plug 'terryma/vim-multiple-cursors'
 " https://vi.stackexchange.com/questions/609/swap-function-arguments
 Plug 'AndrewRadev/sideways.vim'
