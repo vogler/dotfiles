@@ -255,6 +255,7 @@ au FileType ocaml call SetupOCaml()
 " ocp-indent
 execute 'autocmd FileType ocaml source' g:opamshare . "/ocp-indent/vim/indent/ocaml.vim"
 autocmd BufNewFile,BufRead dune* setlocal filetype=lisp
+autocmd BufNewFile,BufRead *opam* setlocal filetype=yaml
 
 " latex
 function! SetupLatex()
