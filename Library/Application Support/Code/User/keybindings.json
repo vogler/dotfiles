@@ -81,4 +81,6 @@
       "key": "cmd+;",
       "command": "workbench.action.terminal.sendSequence", "args": {"text": "!!\u0009\u000a"} // TAB, LF. see https://code.visualstudio.com/docs/editor/integrated-terminal#_send-text-from-a-keybinding
     },
+    { "key": "alt+cmd+j", "command": "bookmarks.jumpToPrevious", "when": "editorTextFocus" },
+    { "key": "alt+cmd+l", "command": "bookmarks.jumpToNext", "when": "editorTextFocus" },
   ]
