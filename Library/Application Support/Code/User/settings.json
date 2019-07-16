@@ -103,6 +103,7 @@
   "workbench.colorTheme": "One Dark Pro",
   // default terminal colors looked ugly in vim
   // https://glitchbone.github.io/vscode-base16-term/#/onedark
+  // used the above and changed terminal.ansiBrightBlack (vim background)
   "workbench.colorCustomizations": {
     "terminal.background":"#282C34",
     "terminal.foreground":"#ABB2BF",
@@ -110,7 +111,7 @@
     "terminalCursor.foreground":"#ABB2BF",
     "terminal.ansiBlack":"#282C34",
     "terminal.ansiBlue":"#61AFEF",
-    "terminal.ansiBrightBlack":"#545862",
+    "terminal.ansiBrightBlack":"#21252b",
     "terminal.ansiBrightBlue":"#61AFEF",
     "terminal.ansiBrightCyan":"#56B6C2",
     "terminal.ansiBrightGreen":"#98C379",
