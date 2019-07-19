@@ -78,7 +78,7 @@ Plug 'vim-airline/vim-airline-themes'
 " Plug 'bling/vim-bufferline'
 
 Plug 'airblade/vim-gitgutter'
-set updatetime=750 " terminal vim might have highlighting glitches for low times...
+set updatetime=250 " terminal vim might have highlighting glitches for low times...
 
 Plug 'michaeljsmith/vim-indent-object'
 Plug 'terryma/vim-multiple-cursors'
