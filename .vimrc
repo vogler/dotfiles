@@ -176,6 +176,7 @@ if !has('nvim')
   Plug 'drmikehenry/vim-fixkey' " allows vim to bind <A-j> (like nvim) instead of having to use j or <Esc>j
 endif
 
+" Plug 'sheerun/vim-polyglot' " 144 language packs
 Plug 'Twinside/vim-hoogle'
 Plug 'kchmck/vim-coffee-script', {'for': 'coffee'}
 Plug 'digitaltoad/vim-jade'
