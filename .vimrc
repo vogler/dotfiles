@@ -175,6 +175,7 @@ let g:tagbar_compact = 1
 if !has('nvim')
   Plug 'drmikehenry/vim-fixkey' " allows vim to bind <A-j> (like nvim) instead of having to use j or <Esc>j
 endif
+Plug 'thaerkh/vim-indentguides'
 
 " Plug 'sheerun/vim-polyglot' " 144 language packs
 Plug 'Twinside/vim-hoogle'
