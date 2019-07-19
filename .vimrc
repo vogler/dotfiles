@@ -55,6 +55,8 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'bling/vim-airline'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
+let g:airline#extensions#tagbar#flags = 'f'  " show full tag hierarchy
 let g:airline_mode_map = {
     \ '__' : '-',
     \ 'n'  : 'N',
