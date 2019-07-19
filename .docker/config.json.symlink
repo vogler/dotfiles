@@ -5,6 +5,7 @@
 
     }
   },
-  "credsStore" : "osxkeychain"
+  "credsStore" : "osxkeychain",
+  "detachKeys": "ctrl-e,e"
 }
 
