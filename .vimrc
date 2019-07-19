@@ -130,7 +130,8 @@ Plug 'Shougo/neco-vim' " vim source for deoplete
 Plug 'deoplete-plugins/deoplete-jedi'
 Plug 'fszymanski/deoplete-emoji'
 Plug 'tbodt/deoplete-tabnine', { 'do': './install.sh' }
-Plug 'sjl/gundo.vim'
+" Plug 'sjl/gundo.vim'
+Plug 'simnalamburt/vim-mundo'
 " Plug 'bkad/CamelCaseMotion'
 Plug 'chaoren/vim-wordmotion'
 let g:wordmotion_prefix = '<Leader>'
