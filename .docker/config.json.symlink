@@ -1,0 +1,10 @@
+{
+  "credSstore" : "osxkeychain",
+  "auths" : {
+    "https://index.docker.io/v1/" : {
+
+    }
+  },
+  "credsStore" : "osxkeychain"
+}
+
