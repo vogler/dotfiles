@@ -45,7 +45,8 @@ Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-characterize'
 Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-jdaddy'
-Plug 'tpope/vim-markdown'
+" Plug 'tpope/vim-markdown'
+Plug 'gabrielelana/vim-markdown'
 Plug 'tpope/vim-dispatch'
 
 Plug 'wellle/targets.vim'
@@ -224,7 +225,6 @@ set background=dark
 colorscheme solarized
 " call togglebg#map("<F5>") " seldomly used -> use ToggleBG instead
 
-autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 autocmd BufNewFile,BufReadPost *.opa set filetype=opa
 autocmd BufNewFile,BufReadPost *.v set filetype=coq
 autocmd FileType make set noexpandtab shiftwidth=8 softtabstop=0
