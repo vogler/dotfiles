@@ -169,6 +169,8 @@ Plug 'w0rp/ale'
 let g:ale_sign_error = 'x'
 let g:ale_sign_warning = '!'
 let g:ale_linters_ignore = ['writegood', 'proselint'] " proselint
+let g:ale_javascript_eslint_suppress_missing_config = 1
+let g:ale_linters = {'javascript': ['prettier', 'eslint']}
 Plug 'google/vim-searchindex'
 " Plug 'junegunn/vim-slash'
 noremap <plug>(slash-after) zz
