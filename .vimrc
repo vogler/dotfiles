@@ -187,6 +187,8 @@ Plug 'thaerkh/vim-indentguides'
 Plug 'Twinside/vim-hoogle'
 Plug 'kchmck/vim-coffee-script', {'for': 'coffee'}
 Plug 'digitaltoad/vim-jade'
+Plug 'leafgarland/typescript-vim'
+Plug 'Quramy/tsuquyomi'
 " Plug 'jcf/vim-latex'
 Plug 'idris-hackers/idris-vim', {'for': 'idris'}
 Plug 'FStarLang/VimFStar', {'for': 'fstar'}
