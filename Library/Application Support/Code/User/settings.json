@@ -68,14 +68,13 @@
             "workbench.action.showCommands",
         ]
     }
-]
-
+  ],
   "editor.renderControlCharacters": false,
   "editor.renderWhitespace": "none",
   "editor.tabSize": 2,
   "editor.detectIndentation": false,
   "editor.fontSize": 16,
-  "editor.autoClosingBrackets": false,
+  "editor.autoClosingBrackets": "languageDefined",
   "editor.minimap.showSlider": "always",
   // "gitlens.stashExplorer.enabled": true,
   // "gitlens.blame.line.enabled": false,
