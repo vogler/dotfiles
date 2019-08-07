@@ -214,6 +214,10 @@ autocmd User AirlineAfterInit call AirlineInit()
 Plug 'wakatime/vim-wakatime'
 Plug 'vim-scripts/DeleteTrailingWhitespace'
 Plug 'lervag/vimtex', {'for': 'tex'}
+" Somehow for tex (even with the following lines), it sets conceallevel=2 and concealcursor=inc which hides things like textit. Use tex_conceal to disable.
+" set conceallevel=0
+" set concealcursor=""
+let g:tex_conceal = ""
 " w/o vimtex, autoindent is a bit annoying https://vi.stackexchange.com/questions/2906/how-can-i-fix-the-auto-indentation-in-latex
 " Plug 'xuhdev/vim-latex-live-preview', {'for': 'tex'}
 " let g:livepreview_engine = 'latexmk' . ' -pdf -shell-escape'
