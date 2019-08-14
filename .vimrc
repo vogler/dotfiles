@@ -181,7 +181,9 @@ let g:tagbar_compact = 1
 if !has('nvim')
   Plug 'drmikehenry/vim-fixkey' " allows vim to bind <A-j> (like nvim) instead of having to use j or <Esc>j
 endif
-Plug 'thaerkh/vim-indentguides'
+" Plug 'thaerkh/vim-indentguides' " sets conceallevel=2, see https://github.com/thaerkh/vim-indentguides/issues/17
+" set conceallevel=0
+" set concealcursor=""
 
 " Plug 'sheerun/vim-polyglot' " 144 language packs
 Plug 'Twinside/vim-hoogle'
@@ -214,10 +216,7 @@ autocmd User AirlineAfterInit call AirlineInit()
 Plug 'wakatime/vim-wakatime'
 Plug 'vim-scripts/DeleteTrailingWhitespace'
 Plug 'lervag/vimtex', {'for': 'tex'}
-" Somehow for tex (even with the following lines), it sets conceallevel=2 and concealcursor=inc which hides things like textit. Use tex_conceal to disable.
-" set conceallevel=0
-" set concealcursor=""
-let g:tex_conceal = ""
+" let g:tex_conceal = "" " fix for vim-indentguides' conceallevel=2
 " w/o vimtex, autoindent is a bit annoying https://vi.stackexchange.com/questions/2906/how-can-i-fix-the-auto-indentation-in-latex
 " Plug 'xuhdev/vim-latex-live-preview', {'for': 'tex'}
 " let g:livepreview_engine = 'latexmk' . ' -pdf -shell-escape'
