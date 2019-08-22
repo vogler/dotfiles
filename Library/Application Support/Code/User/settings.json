@@ -10,6 +10,8 @@
     "**/_build": true // ocamlbuild
   },
   "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "files.trimTrailingWhitespace": true,
   "editor.wordWrap": "on",
   // "editor.cursorStyle": "block-outline",
   "editor.cursorBlinking": "solid",
