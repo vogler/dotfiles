@@ -9,6 +9,7 @@
     "**/.gtm": true, // git time metrics
     "**/_build": true // ocamlbuild
   },
+  "files.insertFinalNewline": true,
   "editor.wordWrap": "on",
   // "editor.cursorStyle": "block-outline",
   "editor.cursorBlinking": "solid",
