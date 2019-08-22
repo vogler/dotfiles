@@ -139,5 +139,6 @@
     ],
   },
   "sync.gist": "4e2e7c219f8055bec087c8897372d80f",
-  "sync.autoUpload": true
+  "sync.autoUpload": true,
+  "vsicons.dontShowNewVersionMessage": true
 }
