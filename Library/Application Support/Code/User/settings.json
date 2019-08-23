@@ -130,7 +130,7 @@
   },
   "editor.mouseWheelZoom": true,
   "editor.suggest.filteredTypes": {
-    "keyword": false
+    // "keyword": false // used this for OCaml, but is annoying with TypeScript since primitive types are registered as keywords, such that e.g. string gets corrected to String when typing ; or , with editor.acceptSuggestionOnCommitCharacter.
   },
   // "reason.codelens.enabled": true,
   "macros": {
