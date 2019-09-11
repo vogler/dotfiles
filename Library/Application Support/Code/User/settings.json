@@ -148,4 +148,5 @@
   "sync.forceUpload": true,
   "typescript.updateImportsOnFileMove.enabled": "always",
   "gitlens.currentLine.scrollable": false,
+  "gitlens.blame.ignoreWhitespace": true,
 }
