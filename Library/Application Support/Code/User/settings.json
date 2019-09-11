@@ -145,5 +145,6 @@
   "sync.autoUpload": true,
   "vsicons.dontShowNewVersionMessage": true,
   "diffEditor.renderSideBySide": false,
-  "sync.forceUpload": true
+  "sync.forceUpload": true,
+  "typescript.updateImportsOnFileMove.enabled": "always"
 }
