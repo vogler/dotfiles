@@ -75,6 +75,7 @@
     jump = !/usr/local/opt/git/share/git-core/contrib/git-jump/git-jump
     bwd = !git checkout HEAD^
     fwd = !git log --reverse --pretty=%H master | grep -A 1 $(git rev-parse HEAD) | tail -n1 | xargs git checkout
+    addnw=!sh -c 'git diff -U0 -w --no-color "$@" | git apply --cached --ignore-whitespace --unidiff-zero -'
 [filter "lfs"]
     required = true
 	clean = git-lfs clean -- %f
