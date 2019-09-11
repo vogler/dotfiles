@@ -146,5 +146,6 @@
   "vsicons.dontShowNewVersionMessage": true,
   "diffEditor.renderSideBySide": false,
   "sync.forceUpload": true,
-  "typescript.updateImportsOnFileMove.enabled": "always"
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "gitlens.currentLine.scrollable": false,
 }
