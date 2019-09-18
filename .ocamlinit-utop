@@ -16,6 +16,6 @@ let toggle_semi =
 (* Include this line to not require ;; by default *)
 toggle_semi ();;
 
-#require "nosetup";;
+(* #require "nosetup";; *)
 
 (* open Batteries *)
