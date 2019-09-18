@@ -3,19 +3,3 @@ let () =
   try Topdirs.dir_directory (Sys.getenv "OCAML_TOPLEVEL_PATH")
   with Not_found -> ()
 ;;
-
-(* https://github.com/diml/utop/issues/131#issuecomment-100926579 *)
-let toggle_semi =
-  let original = !UTop.parse_toplevel_phrase in
-  let no_semi str eos_is_error = original (str ^ ";;") eos_is_error in
-  let semi = ref true in
-  fun () ->
-    UTop.parse_toplevel_phrase := if !semi then no_semi else original;
-    semi := not !semi
-;;
-(* Include this line to not require ;; by default *)
-toggle_semi ();;
-
-#require "nosetup";;
-
-(* open Batteries *)
