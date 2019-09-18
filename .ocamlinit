@@ -3,3 +3,7 @@ let () =
   try Topdirs.dir_directory (Sys.getenv "OCAML_TOPLEVEL_PATH")
   with Not_found -> ()
 ;;
+
+(* https://github.com/dbuenzli/down *)
+(* line edition, history, session support and identifier completion and documentation *)
+#use "down.top"
