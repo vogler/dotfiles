@@ -171,6 +171,7 @@ let g:ale_sign_warning = '!'
 let g:ale_linters_ignore = ['writegood', 'proselint'] " proselint
 let g:ale_javascript_eslint_suppress_missing_config = 1
 let g:ale_linters = {'javascript': ['prettier', 'eslint']}
+command YankStatusMsg let @+ = v:statusmsg " for copying error messages
 Plug 'google/vim-searchindex'
 " Plug 'junegunn/vim-slash'
 noremap <plug>(slash-after) zz
