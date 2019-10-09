@@ -150,4 +150,7 @@
   "typescript.updateImportsOnFileMove.enabled": "always",
   "gitlens.currentLine.scrollable": false,
   "gitlens.blame.ignoreWhitespace": true,
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
 }
