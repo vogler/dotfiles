@@ -31615,7 +31615,7 @@
 			<key>Automatically Log</key>
 			<false/>
 			<key>BM Growl</key>
-			<true/>
+			<false/>
 			<key>Background Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -32438,7 +32438,7 @@
 			<key>Automatically Log</key>
 			<false/>
 			<key>BM Growl</key>
-			<true/>
+			<false/>
 			<key>Background Color</key>
 			<dict>
 				<key>Blue Component</key>
@@ -33094,7 +33094,7 @@
 		<key>screenFrame</key>
 		<string>{{0, 0}, {1920, 1200}}</string>
 		<key>topLeft</key>
-		<string>{268, 693}</string>
+		<string>{269, 822}</string>
 	</dict>
 	<key>NoSyncHaveShownPromoWithId_4</key>
 	<true/>
@@ -33846,10 +33846,16 @@
 	</dict>
 	<key>NoSyncSearchHistory2</key>
 	<array>
-		<string>tags are equal</string>
-		<string>batteris</string>
-		<string>ocamlfind</string>
-		<string>unix</string>
+		<string>assign Var\(g</string>
+		<string>assign Var(g</string>
+		<string>system</string>
+		<string>actual True</string>
+		<string>actul</string>
+		<string>timeout</string>
+		<string>track</string>
+		<string>type</string>
+		<string>redec</string>
+		<string>\^X</string>
 	</array>
 	<key>NoSyncSecureCopyConnectionFailedWarning</key>
 	<true/>
