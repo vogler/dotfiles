@@ -43,7 +43,7 @@
   ],
   "editor.minimap.enabled": true,
   // "editor.dragAndDrop": true,
-  "window.title": "${activeEditorMedium}${separator}${rootName}",
+  "window.title": "${rootPath}${separator}${activeEditorMedium}",
   "workbench.editor.tabCloseButton": "off",
   "git.confirmSync": false,
   "editor.selectionHighlight": true,
