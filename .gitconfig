@@ -19,7 +19,7 @@
 [hub]
     protocol = https
 [core]
-    editor = vim
+    editor = nvim
     excludesfile = ~/.gitignore_global
     autocrlf = input
     safecrlf = true
