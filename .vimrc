@@ -221,6 +221,10 @@ Plug 'lervag/vimtex', {'for': 'tex'}
 " w/o vimtex, autoindent is a bit annoying https://vi.stackexchange.com/questions/2906/how-can-i-fix-the-auto-indentation-in-latex
 " Plug 'xuhdev/vim-latex-live-preview', {'for': 'tex'}
 " let g:livepreview_engine = 'latexmk' . ' -pdf -shell-escape'
+Plug 'chrisbra/csv.vim'
+let b:csv_arrange_align = 'l*' " :CSVArrangeColumn should left-align (default is right)
+let g:csv_autocmd_arrange = 1 " ArrangeColumn for all *.csv and only UnArrangeColumn for writing
+let g:csv_autocmd_arrange_size = 1024*1024 " only do it for files up to 1 MB (slow for big files)
 
 call plug#end()
 
