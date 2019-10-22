@@ -294,6 +294,7 @@ let g:mapleader = ","
 " Fast saving
 nmap <leader>s :w!<cr>
 nmap <leader>q :q!<cr>
+nmap <leader>x :x!<cr> " same as ZZ (only write if changes have been made)
 nmap <leader>c :Gwrite<cr>:Gcommit -v --quiet<cr>
 nmap <leader>C :Gcommit -v --quiet<cr>
 nmap <leader>p ggVGp
