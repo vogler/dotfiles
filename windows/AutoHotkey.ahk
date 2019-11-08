@@ -36,6 +36,20 @@ Return
 ;Capslock:: Send {Esc}
 
 
+; Apple Magic Keyboard
+; old A1314 needed no further config, driver: https://github.com/tuesdaysiren/WinA1314
+; new A1644 keyboard driver has some issues:
+; stuck with SwapFnCtrl :( https://github.com/samartzidis/WinAppleKey/issues/28
+; Media Keys don't work :( https://github.com/samartzidis/WinAppleKey/issues/29 (FN + F1-F12 don't fire)
+; from https://github.com/samartzidis/WinAppleKey/blob/master/MapMultimediaKeys.ahk
+F19::send {Media_Prev}
+F20::send {Media_Play_Pause}
+F21::send {Media_Next}
+F22::send {Volume_Mute}
+F23::send {Volume_Down}
+F24::send {Volume_Up}
+
+
 ; google: autohotkey deactivate fullscreen
 ; from: https://autohotkey.com/board/topic/70690-disable-ahk-in-all-full-screen-apps-and-games/
 ; disables everything below for fullscreen apps. what about games with 1080p or lower?
