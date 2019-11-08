@@ -68,6 +68,10 @@
       "key": "cmd+m cmd+s",
       "command": "git.stageSelectedRanges"
     },
+    {
+      "key": "cmd+m cmd+c",
+      "command": "git.commit"
+    },
     { "key": "shift+cmd+=",         "command": "editor.action.fontZoomIn" },
     { "key": "cmd+=",               "command": "editor.action.fontZoomIn" },
     { "key": "shift+cmd+-",         "command": "editor.action.fontZoomOut" },
