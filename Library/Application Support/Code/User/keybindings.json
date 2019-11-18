@@ -87,4 +87,9 @@
     },
     { "key": "alt+cmd+j", "command": "bookmarks.jumpToPrevious", "when": "editorTextFocus" },
     { "key": "alt+cmd+l", "command": "bookmarks.jumpToNext", "when": "editorTextFocus" },
+    {
+      "key": "cmd+l cmd+l",
+      "command": "latex-workshop.synctex",
+      "when": "editorTextFocus && editorLangId == 'latex'"
+    }
   ]

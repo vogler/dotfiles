@@ -18,7 +18,7 @@
   "editor.cursorBlinking": "solid",
   "extensions.autoUpdate": true,
   "workbench.quickOpen.closeOnFocusLost": false,
-  "workbench.statusBar.visible": false,
+  "workbench.statusBar.visible": true,
   "editor.renderLineHighlight": "gutter",
   "window.zoomLevel": 0,
   "files.hotExit": "onExitAndWindowClose",
@@ -93,7 +93,6 @@
   "git.autofetch": true,
   "diffEditor.ignoreTrimWhitespace": false,
   "latex-workshop.message.update.show": false,
-  "latex-workshop.chktex.enabled": true,
   "latex-workshop.chktex.args.active": [
     "-wall",
     "-n22",
@@ -159,4 +158,6 @@
   "[json]": {
     "editor.defaultFormatter": "vscode.json-language-features"
   },
+  "latex-workshop.view.pdf.viewer": "tab",
+  "latex-workshop.chktex.enabled": true,
 }
