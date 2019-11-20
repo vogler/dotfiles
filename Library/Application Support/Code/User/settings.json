@@ -93,15 +93,6 @@
   "git.autofetch": true,
   "diffEditor.ignoreTrimWhitespace": false,
   "latex-workshop.message.update.show": false,
-  "latex-workshop.chktex.args.active": [
-    "-wall",
-    "-n22",
-    "-n30",
-    "-e16",
-    "-q",
-    "-n21",
-    "-n46",
-  ],
   "workbench.colorTheme": "One Dark Pro",
   // default terminal colors looked ugly in vim
   // https://glitchbone.github.io/vscode-base16-term/#/onedark
@@ -159,5 +150,6 @@
     "editor.defaultFormatter": "vscode.json-language-features"
   },
   "latex-workshop.view.pdf.viewer": "tab",
+  "latex-workshop.intellisense.package.enabled": true,
   "latex-workshop.chktex.enabled": true,
 }
