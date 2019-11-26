@@ -31559,7 +31559,7 @@
 	<key>NSWindow Frame SUStatusFrame</key>
 	<string>760 787 400 129 0 0 1920 1178 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>609 536 620 392 0 0 1920 1177 </string>
+	<string>963 187 620 622 0 0 1920 1177 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>564 211 606 469 0 0 3360 1867 </string>
 	<key>NSWindow Frame SharedPreferences</key>
@@ -33192,6 +33192,7 @@
 		<string>3.3.3beta2</string>
 		<string>3.1.beta.10</string>
 		<string>3.3.7beta4</string>
+		<string>3.3.8beta1</string>
 		<string>3.3.7beta3</string>
 	</array>
 	<key>NoSyncCommandHistoryHasEverBeenUsed</key>
@@ -33226,7 +33227,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>7906FF63-35F3-45C3-942A-DDA7D03C3807</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>6</integer>
+	<integer>7</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -33987,19 +33988,6 @@
 			</dict>
 		</array>
 	</dict>
-	<key>NoSyncSearchHistory2</key>
-	<array>
-		<string>header</string>
-		<string>include</string>
-		<string>init</string>
-		<string>backup</string>
-		<string>statts</string>
-		<string>sync</string>
-		<string>delete</string>
-		<string>partial</string>
-		<string>upgr</string>
-		<string>clea</string>
-	</array>
 	<key>NoSyncSecureCopyConnectionFailedWarning</key>
 	<true/>
 	<key>NoSyncSecureCopyConnectionFailedWarning_selection</key>
@@ -34092,7 +34080,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-11-14T14:38:28Z</date>
+	<date>2019-11-26T14:10:13Z</date>
 	<key>SUUpdateRelaunchingMarker</key>
 	<false/>
 	<key>SavePasteHistory</key>
@@ -34175,7 +34163,7 @@
 	<key>findRegex_iTerm</key>
 	<true/>
 	<key>iTerm Version</key>
-	<string>3.3.7beta4</string>
+	<string>3.3.8beta1</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
