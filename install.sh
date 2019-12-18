@@ -33,7 +33,7 @@ if [ "$(uname)" == "Darwin" ]; then
   # Tell iTerm2 to use the custom preferences in the directory
   defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
 else
-  echo ">> [Running Linux]"
+  echo ">> [Running Linux]" # current setup only for RPi or server (both via ssh)
 
   echo ">> apt install ..."
   source install/apt.sh
@@ -56,10 +56,16 @@ fi
 # TODO this needs to be rethought
 # echo ">> Link *.symlink"
 # source install/link.sh
-ln -sf `pwd`/.gitconfig ~
-ln -sf `pwd`/.gitignore_global ~
-ln -sf `pwd`/.tmux.conf ~
 
+# git
+ln -sf `pwd`/.gitconfig ~
+# no branching in .gitconfig -> set OS-specific config via commands:
+[ "$(uname)" == "Darwin" ] && sudo git config --system --add credential.helper osxkeychain
+[ "$(uname)" == "Linux" ] && sudo git config --system --add credential.helper 'cache --timeout=604800'
+ln -sf `pwd`/.gitignore_global ~
+sudo npm install -g diff-so-fancy
+
+# zsh
 echo ">> Link prezto for zsh"
 ln -sf `pwd`/.zprezto ~
 cat <<EOT | zsh
@@ -73,20 +79,20 @@ if [ $SHELL != "/bin/zsh" ]; then
     chsh -s /bin/zsh
 fi
 
+# tmux
+ln -sf `pwd`/.tmux.conf ~
+echo ">> Install Tmux Plugin Manager"
+git-get https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+
+# vim
 echo ">> Link vim"
 ln -sf `pwd`/.vimrc ~
 mkdir -p ~/.config/nvim
 ln -sf `pwd`/.config/nvim/init.vim ~/.config/nvim/
+mkdir -p ~/.vim/{swap,backup,undo} # otherwise https://github.com/tpope/vim-sensible puts the files in the current directory
 echo ">> Install vim-plug"
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 echo ">> Install vim plugins"
 nvim +PlugInstall +qall
-
-# https://github.com/tpope/vim-sensible
-# otherwise it puts the files in the current directory
-mkdir -p ~/.vim/{swap,backup,undo}
-
-echo ">> Install Tmux Plugin Manager"
-git-get https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 echo ">> Done"
