@@ -1,6 +1,7 @@
 #!/bin/bash
 
-BASEDIR="$(cd "$(dirname "$0")/.."; pwd)";
+# BASEDIR="$(cd "$(dirname "$0")/.."; pwd)";
+BASEDIR="$(pwd)"
 echo ">> Find *.symlink in $BASEDIR"
 
 tolink=$( find -H "$BASEDIR" -name '*.symlink' )
