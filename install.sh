@@ -48,6 +48,9 @@ fi
 # TODO this needs to be rethought
 # echo ">> Link *.symlink"
 # source install/link.sh
+ln -sf `pwd`/.gitconfig ~
+ln -sf `pwd`/.gitignore_global ~
+ln -sf `pwd`/.tmux.conf ~
 
 echo ">> Link prezto for zsh"
 ln -sf `pwd`/.zprezto ~
