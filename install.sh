@@ -64,7 +64,7 @@ fi
 echo ">> Link vim"
 ln -sf `pwd`/.vimrc ~
 mkdir -p ~/.config/nvim
-ln -sf `pwd`/.vimrc ~/.config/nvim/init.vim
+ln -sf `pwd`/.config/nvim/init.vim ~/.config/nvim/
 echo ">> Install vim-plug"
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 echo ">> Install vim plugins"
