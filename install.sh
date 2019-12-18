@@ -1,6 +1,10 @@
 #!/bin/bash
 set -e
 
+has(){ # check if a command is available
+  hash "$1" 2>/dev/null
+}
+
 echo ">> Get submodules"
 git submodule update --init --recursive
 
@@ -8,7 +12,7 @@ git submodule update --init --recursive
 if [ "$(uname)" == "Darwin" ]; then
   echo ">> [Running macOS]"
 
-  if test ! $(which brew); then
+  if ! has brew; then
       echo ">> Install homebrew"
       ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   fi
@@ -30,7 +34,7 @@ else
   echo ">> apt install ..."
   source install/apt.sh
 
-  # if test ! $(which brew); then
+  # if ! has brew; then
   #     echo ">> Install linuxbrew"
   #     sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
   # fi
