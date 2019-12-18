@@ -5,6 +5,10 @@ has(){ # check if a command is available
   hash "$1" 2>/dev/null
 }
 
+git-get(){ # as git clone, but skip instead of fail if target exists # TODO update if exists? lockfile for commit?
+  [ ! -d "$2" ] && git clone $1 $2
+}
+
 echo ">> Get submodules"
 git submodule update --init --recursive
 
@@ -83,6 +87,6 @@ nvim +PlugInstall +qall
 mkdir -p ~/.vim/{swap,backup,undo}
 
 echo ">> Install Tmux Plugin Manager"
-[ ! -d ~/.tmux/plugins/tpm ] && git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+git-get https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 echo ">> Done"
