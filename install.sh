@@ -51,6 +51,11 @@ else
   # source install/brew.sh
 fi
 
+# ocaml/opam
+echo | sh <(curl -sL https://raw.githubusercontent.com/ocaml/opam/master/shell/install.sh)
+opam init -y -a
+opam install utop
+
 # TODO this needs to be rethought
 # echo ">> Link *.symlink"
 # source install/link.sh
