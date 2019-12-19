@@ -11,3 +11,4 @@ agi neovim
 agi nodejs
 agi npm
 agi silversearcher-ag
+agi libterm-readkey-perl # needed for git config interactive.singleKey on Raspbian
