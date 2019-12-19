@@ -1,6 +1,9 @@
 #!/bin/bash
 set -e
 
+# This will setup my basic environment for macOS or Linux.
+# After that more specific extensions are handled.
+
 has(){ # check if a command is available
   hash "$1" 2>/dev/null
 }
@@ -12,7 +15,7 @@ git-get(){ # as git clone, but skip instead of fail if target exists # TODO upda
 echo ">> Get submodules"
 git submodule update --init --recursive
 
-# PACKAGES
+# system packages
 if [ "$(uname)" == "Darwin" ]; then
   echo ">> [Running macOS]"
 
@@ -47,11 +50,6 @@ else
   # echo ">> brew install ..."
   # source install/brew.sh
 fi
-# https://wiki.archlinux.org/index.php/Pacman_Tips#Backing_up_and_retrieving_a_list_of_installed_packages
-# backup installed packages (alternatively use aura -B and auro -Br)
-#comm -23 <(pacman -Qeq|sort) <(pacman -Qmq|sort) > pkglist.txt
-# restore
-#pacman -S --needed $(comm -12 <(pacman -Slq|sort) <(sort badpkdlist) )
 
 # TODO this needs to be rethought
 # echo ">> Link *.symlink"
@@ -96,5 +94,7 @@ echo ">> Install vim-plug"
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 echo ">> Install vim plugins"
 nvim +PlugInstall +qall
+
+# TODO check $@ what else to install: e.g. smart-home preset
 
 echo ">> Done"

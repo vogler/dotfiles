@@ -10,3 +10,4 @@ agi tmux
 agi neovim
 agi nodejs
 agi npm
+agi silversearcher-ag
