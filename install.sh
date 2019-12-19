@@ -60,6 +60,11 @@ ln -sf `pwd`/.gitconfig ~
 # no branching in .gitconfig -> set OS-specific config via commands:
 [ "$(uname)" == "Darwin" ] && sudo git config --system --add credential.helper osxkeychain
 [ "$(uname)" == "Linux" ] && sudo git config --system --add credential.helper 'cache --timeout=604800'
+if [ "$(uname)" == "Linux" ] && ! has diff-highlight; then # only needed because diff-so-fancy fails when used as interactive.diffFilter
+  # this is only a problem on Debian https://bugs.launchpad.net/ubuntu/+source/git/+bug/1713690
+  sudo make -B -C /usr/share/doc/git/contrib/diff-highlight diff-highlight
+  sudo ln -sf /usr/share/doc/git/contrib/diff-highlight/diff-highlight /usr/bin/;
+fi
 ln -sf `pwd`/.gitignore_global ~
 sudo npm install -g diff-so-fancy
 

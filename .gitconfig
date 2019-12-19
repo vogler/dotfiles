@@ -84,6 +84,7 @@
 [interactive]
     singleKey = true
     # diffFilter = diff-so-fancy
+    # https://github.com/so-fancy/diff-so-fancy/issues/35
     diffFilter = "diff-highlight | less -FRX --tabs=4"
 # https://github.com/blog/2188-git-2-9-has-been-released
 [diff]
