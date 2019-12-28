@@ -48,6 +48,13 @@ F21::send {Media_Next}
 F22::send {Volume_Mute}
 F23::send {Volume_Down}
 F24::send {Volume_Up}
+; use Win+FKeys instead
+#F7::send {Media_Prev}
+#F8::send {Media_Play_Pause}
+#F9::send {Media_Next}
+#F10::send {Volume_Mute}
+#F11::send {Volume_Down}
+#F12::send {Volume_Up}
 
 
 ; google: autohotkey deactivate fullscreen
