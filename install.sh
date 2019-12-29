@@ -105,6 +105,9 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.c
 echo ">> Install vim plugins"
 nvim +PlugInstall +qall
 
+# vim already asks for the WakaTime API-key, but still need pip package for zsh integration
+source wakatime.sh
+
 # TODO check $@ what else to install: e.g. smart-home preset
 
 echo ">> Done"
