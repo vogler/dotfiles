@@ -53,8 +53,15 @@ fi
 
 # ocaml/opam
 echo | sh <(curl -sL https://raw.githubusercontent.com/ocaml/opam/master/shell/install.sh)
-opam init -y -a
-opam install utop
+# don't use sandboxing/bubblewrap in WSL because it fails: https://github.com/ocaml/opam/issues/3505
+if [[ $(uname -r) =~ Microsoft$ ]]; then
+  opam init -y -a --disable-sandboxing
+  # there is no --disable-sandboxing for `opam install`, so we need to change the config... see https://github.com/ocaml/opam-repository/issues/12050#issuecomment-393478072
+  sed -i -E '/wrap-|sandbox.sh/d' ~/.opam/config
+else
+  opam init -y -a
+fi
+opam install -y utop
 
 # TODO this needs to be rethought
 # echo ">> Link *.symlink"

@@ -14,3 +14,4 @@ agi npm
 agi silversearcher-ag
 agi libterm-readkey-perl # needed for git config interactive.singleKey on Raspbian
 agi xclip # nvim startup on RPi4: sourcing clipboard.vim took 4s with default xsel, see https://github.com/neovim/neovim/issues/7237
+agi unzip bubblewrap m4 # required for opam (m4 only recommended since most packages rely on it)
