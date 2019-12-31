@@ -9,7 +9,7 @@ has(){ # check if a command is available
 }
 
 git-get(){ # as git clone, but skip instead of fail if target exists # TODO update if exists? lockfile for commit?
-  [ ! -d "$2" ] && git clone $1 $2
+  [ ! -d "$2" ] && git clone $1 $2 || true
 }
 
 echo ">> Get submodules"
