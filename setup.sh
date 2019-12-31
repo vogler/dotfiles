@@ -41,10 +41,13 @@ else
   echo ">> apt install ..."
   source install/apt.sh
 
-  # if ! has brew; then
-  #     echo ">> Install linuxbrew"
-  #     sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
-  # fi
+  if ! has brew; then
+      echo ">> Install linuxbrew"
+      CI=1 sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
+      eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+  fi
+  brew tap git-time-metric/gtm
+  brew install gtm
   # echo ">> brew tap ..."
   # source install/brew-tap.sh
   # echo ">> brew install ..."
