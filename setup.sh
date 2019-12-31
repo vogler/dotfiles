@@ -120,6 +120,8 @@ nvim +PlugInstall +qall
 # vim already asks for the WakaTime API-key, but still need pip package for zsh integration
 source wakatime.sh
 
+ln -sf `pwd`/.dir_colors ~
+
 # TODO check $@ what else to install: e.g. smart-home preset
 
 echo ">> Done"
