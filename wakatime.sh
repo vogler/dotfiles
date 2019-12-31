@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # https://wakatime.com/terminal Installing for zsh (with project detection)
-sudo pip install wakatime
-if grep --quiet api_key ~/.wakatime.cfg; then
+sudo pip3 install wakatime
+if grep --quiet 'api_key=.' ~/.wakatime.cfg; then
   echo "WakaTime API-key already configured."
 else
   echo
