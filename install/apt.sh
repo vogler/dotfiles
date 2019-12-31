@@ -1,7 +1,8 @@
 agi() {
-  sudo apt-get install -yy --fix-missing "$@"
+  # https://askubuntu.com/questions/258219/how-do-i-make-apt-get-install-less-noisy
+  sudo apt-get -y -qq install --fix-missing "$@"
 }
-sudo apt update
+sudo apt -qq update
 # apt list --installed | sed -e 's/\(.*\)\/.*/agi \1/' # TODO versions? do I really want all packages?
 
 # essentials
