@@ -25,11 +25,11 @@ if [ "$(uname)" == "Darwin" ]; then
   fi
 
   echo ">> brew tap ..."
-  source install/brew-tap.sh
+  source install/brew-tap.sh $*
   echo ">> brew install ..."
-  source install/brew.sh
+  source install/brew.sh $*
   echo ">> brew cask install ..."
-  source install/brew-cask.sh
+  source install/brew-cask.sh $*
 
   # Specify the preferences directory
   defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "~/dotfiles/iterm2"
@@ -39,20 +39,20 @@ else
   echo ">> [Running Linux]" # current setup only for RPi or server (both via ssh)
 
   echo ">> apt install ..."
-  source install/apt.sh
+  source install/apt.sh $*
 
   # only has binary packages for x86_64, https://docs.brew.sh/Homebrew-on-Linux#arm
   if ! has brew && [ "$(uname -m)" == "x86_64" ]; then
-      echo ">> Install linuxbrew"
-      CI=1 sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
-      eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+    echo ">> Install linuxbrew"
+    CI=1 sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
+    eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+    brew tap git-time-metric/gtm
+    brew install gtm
   fi
-  brew tap git-time-metric/gtm
-  brew install gtm
   # echo ">> brew tap ..."
-  # source install/brew-tap.sh
+  # source install/brew-tap.sh $*
   # echo ">> brew install ..."
-  # source install/brew.sh
+  # source install/brew.sh $*
 fi
 
 # ocaml/opam
@@ -71,7 +71,7 @@ fi
 
 # TODO this needs to be rethought
 # echo ">> Link *.symlink"
-# source install/link.sh
+# source install/link.sh $*
 
 # git
 ln -sf `pwd`/.gitconfig ~
@@ -123,6 +123,8 @@ source wakatime.sh
 
 ln -sf `pwd`/.dir_colors ~
 
-# TODO check $@ what else to install: e.g. smart-home preset
+if [[ "$*" == *smart-home* ]]; then
+  echo ">> smart-home"
+fi
 
 echo ">> Done"
