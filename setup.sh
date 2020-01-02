@@ -41,7 +41,8 @@ else
   echo ">> apt install ..."
   source install/apt.sh
 
-  if ! has brew; then
+  # only has binary packages for x86_64, https://docs.brew.sh/Homebrew-on-Linux#arm
+  if ! has brew && [ "$(uname -m)" == "x86_64" ]; then
       echo ">> Install linuxbrew"
       CI=1 sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
       eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
