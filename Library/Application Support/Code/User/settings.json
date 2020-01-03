@@ -153,4 +153,5 @@
   "latex-workshop.intellisense.package.enabled": true,
   "latex-workshop.chktex.enabled": true,
   "latex-workshop.view.pdf.tab.editorGroup": "left",
+  "problems.showCurrentInStatus": true,
 }
