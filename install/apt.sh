@@ -19,6 +19,7 @@ agi python3-pip
 # agi golang
 agi ruby
 agi inotify-tools
+# agi clang
 
 if [[ "$*" == *latex* ]]; then
   agi texlive-latex-extra
