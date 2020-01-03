@@ -23,7 +23,6 @@
   "window.zoomLevel": 0,
   "files.hotExit": "onExitAndWindowClose",
   "window.restoreWindows": "all",
-  "editor.autoIndent": true,
   // "editor.formatOnPaste": false,
   // "editor.formatOnType": false,
   "typescript.referencesCodeLens.enabled": true,
@@ -120,9 +119,9 @@
     "terminal.ansiYellow":"#E5C07B"
   },
   "editor.mouseWheelZoom": true,
-  "editor.suggest.filteredTypes": {
+  // "editor.suggest.filteredTypes": {
     // "keyword": false // used this for OCaml, but is annoying with TypeScript since primitive types are registered as keywords, such that e.g. string gets corrected to String when typing ; or , with editor.acceptSuggestionOnCommitCharacter.
-  },
+  // },
   // "reason.codelens.enabled": true,
   "macros": {
     "commentDown": [
