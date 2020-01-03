@@ -18,6 +18,7 @@ agi unzip bubblewrap m4 # required for opam (m4 only recommended since most pack
 agi python3-pip
 # agi golang
 agi ruby
+agi inotify-tools
 
 if [[ "$*" == *latex* ]]; then
   agi texlive-latex-extra

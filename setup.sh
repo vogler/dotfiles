@@ -72,6 +72,7 @@ fi
 # TODO this needs to be rethought
 # echo ">> Link *.symlink"
 # source install/link.sh $*
+ln -sf `pwd`/.dir_colors ~
 
 # git
 ln -sf `pwd`/.gitconfig ~
@@ -85,6 +86,7 @@ if [ "$(uname)" == "Linux" ] && ! has diff-highlight; then # only needed because
 fi
 ln -sf `pwd`/.gitignore_global ~
 sudo npm install -g diff-so-fancy
+sudo install install/repos/gitwatch/gitwatch.sh /usr/local/bin/gitwatch
 
 # zsh
 echo ">> Link prezto for zsh"
@@ -121,7 +123,6 @@ nvim +PlugInstall +qall
 # vim already asks for the WakaTime API-key, but still need pip package for zsh integration
 source wakatime.sh
 
-ln -sf `pwd`/.dir_colors ~
 
 if [[ "$*" == *smart-home* ]]; then
   echo ">> smart-home"
