@@ -123,7 +123,7 @@ ActiveHeight() {
   return h
 }
 
-^SPACE::  Winset, Alwaysontop, , A
+^+SPACE::  Winset, Alwaysontop, , A
 
 ; da ich Win-Key kaum nutze, w�re es vllt sinnvoll den auch auf Ctrl zu mappen, damit ich in zsh & vim nicht aus Versehen Win dr�cke, weil auf Mac da Ctrl ist
 ; LWin::LCtrl
