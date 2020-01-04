@@ -1,7 +1,9 @@
+// run with `node ctrl.js` under Windows (or WSL with alternative cmd below)
 const http = require('http')
 const port = 3000
 const { execSync } = require('child_process');
 const cmd = 'suspend.ahk' // DllCall via AutoHotkey. Find direct way to do this?
+// const cmd = '/mnt/c/Program\ Files/AutoHotkey/AutoHotkeyU64.exe suspend.ahk' // WSL does not know how to run .ahk files, so we need to add the path to AutoHotkey
 
 const requestHandler = (request, response) => {
   console.log(new Date().toLocaleString(), request.url)
