@@ -8,6 +8,7 @@ sudo apt -qq update
 # essentials
 agi zsh
 agi tmux
+agi tree
 agi neovim
 agi nodejs
 agi npm
