@@ -1,4 +1,5 @@
-// run with `node ctrl.js` on Windows or WSL
+// run with `node ctrl-server.js` on Windows or WSL
+// install Windows service with `qckwinsvc` (https://stackoverflow.com/questions/20445599/auto-start-node-js-server-on-boot)
 
 const http = require('http')
 const { execSync } = require('child_process')
