@@ -1,3 +1,7 @@
+; By default the AutoHotkey.exe in Autostart looks for AutoHotkey.ahk in ~/Documents if it's not supplied a script as a parameter.
+; After cloning, hard-link to the expected location like so:
+; mklink /H AutoHotkey.ahk C:\Users\Ralf\Documents\AutoHotkey.ahk
+
 ; switching displays via win+p is too cumbersome from the couch. sadly there's no way to switch between displays via keys without knowing whether the primary or secondary display is active.
 ; win+shift+p switches between two displays -> mapped to 'steam + >' on the controller
 ; TODO turn on TV and switch to input for PC or back to previous input
