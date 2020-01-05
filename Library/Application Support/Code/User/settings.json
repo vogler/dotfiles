@@ -48,7 +48,8 @@
   "editor.selectionHighlight": true,
   "editor.occurrencesHighlight": true,
   // "latex-workshop.linter": true,
-
+  // @sync os=windows
+  // "vim.useCtrlKeys": false,
   "vim.leader": ",",
   "vim.useSystemClipboard": true,
   "vim.overrideCopy": false, // otherwise cmd-c doesn't copy
@@ -132,10 +133,15 @@
     ],
   },
   "sync.gist": "4e2e7c219f8055bec087c8897372d80f",
-  "sync.autoUpload": true,
+  // https://github.com/shanalikhan/code-settings-sync/wiki/Sync-Pragmas
+  // @sync os=mac
+  "sync.autoUpload": true, // upload config on change
+  "sync.forceUpload": true,
+  // @sync os=windows
+  // "sync.autoDownload": false, // download config on startup
+  "sync.quietSync": true,
   "vsicons.dontShowNewVersionMessage": true,
   "diffEditor.renderSideBySide": false,
-  "sync.forceUpload": true,
   "typescript.updateImportsOnFileMove.enabled": "always",
   "gitlens.currentLine.scrollable": false,
   "gitlens.blame.ignoreWhitespace": true,
