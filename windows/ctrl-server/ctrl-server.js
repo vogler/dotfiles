@@ -1,5 +1,6 @@
 // run with `node ctrl-server.js` on Windows or WSL
 // install Windows service with `qckwinsvc` (https://stackoverflow.com/questions/20445599/auto-start-node-js-server-on-boot)
+// when running as a service display-off does nothing (but suspend still works)...
 
 const http = require('http')
 const { execSync } = require('child_process')
