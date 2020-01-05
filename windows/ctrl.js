@@ -18,7 +18,7 @@ const requestHandler = (request, response) => {
   console.log(new Date().toLocaleString(), request.url)
   response.end(`handled ${request.url}`) // should send some response before going into standby, otherwise the request in node-red errors with a timeout
   switch (request.url) {
-    case '/standby':
+    case '/suspend':
       execSync(cmds.suspend)
       break;
   }
