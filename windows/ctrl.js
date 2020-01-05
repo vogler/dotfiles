@@ -10,8 +10,9 @@ console.log('running on', os)
 const port = 3000
 // WSL does not know how to run .ahk files, so we need to prepend the path to AutoHotkey
 const ahk = (file) => (os == 'win32' ? '' : '/mnt/c/Program\\ Files/AutoHotkey/AutoHotkeyU64.exe ') + file + '.ahk'
+// http://www.nirsoft.net/utils/nircmd.html would need to be installed for `nircmd.exe standby`, `nircmd.exe monitor off`
 const cmds = {
-  'suspend': ahk('suspend'), // DllCall via AutoHotkey. Find direct way to do this?
+  'suspend': ahk('suspend'), // DllCall via AutoHotkey. Find direct way to do this? `rundll32.exe powrprof.dll,SetSuspendState 0,0,0` also works but shouldn't be used according to https://stackoverflow.com/questions/37031935/setting-windows-to-energy-save-mode-using-node-js
 }
 
 const requestHandler = (request, response) => {
