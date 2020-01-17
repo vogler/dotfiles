@@ -21,6 +21,7 @@ agi python3-pip
 agi ruby
 agi inotify-tools
 # agi clang
+agi jq
 
 if [[ "$*" == *latex* ]]; then
   agi texlive-latex-extra
