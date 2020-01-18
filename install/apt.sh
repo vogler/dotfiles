@@ -31,3 +31,28 @@ if [[ "$*" == *latex* ]]; then
   agi python3-pygments
   agi biber
 fi
+if [[ "$*" == *smart-home* ]]; then
+  agi mosquitto
+  agi mosquitto-clients
+  sudo npm install -g --unsafe-perm node-red
+
+  # https://docs.influxdata.com/influxdb/v1.7/introduction/installation/
+  wget -qO- https://repos.influxdata.com/influxdb.key | sudo apt-key add -
+  source /etc/os-release
+  echo "deb https://repos.influxdata.com/debian $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/influxdb.list
+  sudo apt-get update
+  agi influxdb telegraf chronograf
+  sudo systemctl unmask influxdb.service
+  echo 'rsync exisiting /var/lib/{influxdb,chronograf} and link configs from smart-home/etc/{influxdb,telegraf}'
+  sudo systemctl start influxdb telegraf chronograf
+
+  # https://grafana.com/docs/grafana/latest/installation/debian/
+  agi software-properties-common
+  wget -q -O - https://packages.grafana.com/gpg.key | sudo apt-key add -
+  echo "deb https://packages.grafana.com/oss/deb beta main" | sudo tee -a /etc/apt/sources.list.d/grafana.list
+  sudo apt-get update
+  agi grafana
+  sudo systemctl daemon-reload
+  sudo systemctl start grafana-server
+  sudo systemctl enable grafana-server
+fi
