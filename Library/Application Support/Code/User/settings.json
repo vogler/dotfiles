@@ -54,7 +54,11 @@
   "vim.useSystemClipboard": true,
   "vim.overrideCopy": false, // otherwise cmd-c doesn't copy
   "vim.highlightedyank.enable": true,
-  // "vim.handleKeys": { "<C-d>": false},
+  "vim.handleKeys": {
+    // "<C-d>": false,
+    "<C-a>": false,
+    "<C-e>": false, // don't use scroll down as much as readline's home/end
+  },
   "vim.changeWordIncludesWhitespace": true,
   // vim.surround: d s <existing char>, c s <existing char> <desired char>, y s <motion> <desired char>, S <desired char> (visual mode)
   // vim-indent-object: <op>ii this indentation level, <op>ai ..and line above, <op>aI ..and line after

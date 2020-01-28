@@ -31557,9 +31557,9 @@
 	<key>NSWindow Frame SUAutomaticUpdateAlert</key>
 	<string>1032 711 616 174 0 0 1920 1177 </string>
 	<key>NSWindow Frame SUStatusFrame</key>
-	<string>760 787 400 129 0 0 1920 1178 </string>
+	<string>1480 1303 400 129 0 0 3360 1867 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
-	<string>963 187 620 622 0 0 1920 1177 </string>
+	<string>1610 1136 620 622 0 0 3840 2137 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>564 211 606 469 0 0 3360 1867 </string>
 	<key>NSWindow Frame SharedPreferences</key>
@@ -31567,7 +31567,7 @@
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>155 594 592 584 0 0 1920 1178 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>0 0 1920 1177 0 0 1920 1177 </string>
+	<string>2050 0 1310 1339 0 0 3360 1867 </string>
 	<key>NeverWarnAboutShortLivedSessions_D110FD0B-D30B-4C5B-BA44-8F4708642981</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_E1F19F48-6C52-49BE-9002-A095F6E9A324</key>
@@ -32393,7 +32393,7 @@
 			<key>Vertical Spacing</key>
 			<real>1</real>
 			<key>Visual Bell</key>
-			<true/>
+			<false/>
 			<key>Window Type</key>
 			<integer>0</integer>
 			<key>Working Directory</key>
@@ -33194,6 +33194,7 @@
 		<string>3.3.7beta4</string>
 		<string>3.3.8beta1</string>
 		<string>3.3.7beta3</string>
+		<string>3.3.8beta4</string>
 	</array>
 	<key>NoSyncCommandHistoryHasEverBeenUsed</key>
 	<true/>
@@ -33210,9 +33211,9 @@
 	<key>NoSyncFrame_SharedPreferences</key>
 	<dict>
 		<key>screenFrame</key>
-		<string>{{0, 0}, {3360, 1890}}</string>
+		<string>{{0, 0}, {3840, 2160}}</string>
 		<key>topLeft</key>
-		<string>{269, 595}</string>
+		<string>{1124, 1559}</string>
 	</dict>
 	<key>NoSyncHaveShownPromoWithId_4</key>
 	<true/>
@@ -33227,7 +33228,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>7906FF63-35F3-45C3-942A-DDA7D03C3807</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>7</integer>
+	<integer>11</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -34070,7 +34071,7 @@
 	<key>RightOption</key>
 	<integer>3</integer>
 	<key>SUAutomaticallyUpdate</key>
-	<false/>
+	<true/>
 	<key>SUEnableAutomaticChecks</key>
 	<true/>
 	<key>SUFeedAlternateAppNameKey</key>
@@ -34080,7 +34081,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2019-11-26T14:10:13Z</date>
+	<date>2020-01-28T22:33:51Z</date>
 	<key>SUUpdateRelaunchingMarker</key>
 	<false/>
 	<key>SavePasteHistory</key>
@@ -34163,7 +34164,7 @@
 	<key>findRegex_iTerm</key>
 	<true/>
 	<key>iTerm Version</key>
-	<string>3.3.8beta1</string>
+	<string>3.3.8beta4</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
