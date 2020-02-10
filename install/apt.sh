@@ -22,6 +22,7 @@ agi ruby
 agi inotify-tools
 # agi clang
 agi jq
+agi moreutils
 
 if [[ "$*" == *latex* ]]; then
   agi texlive-latex-extra
