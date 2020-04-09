@@ -163,4 +163,6 @@
   "latex-workshop.chktex.enabled": true,
   "latex-workshop.view.pdf.tab.editorGroup": "left",
   "problems.showCurrentInStatus": true,
+  "spellright.notificationClass": "warning",
+  "latex-utilities.message.update.show": false,
 }

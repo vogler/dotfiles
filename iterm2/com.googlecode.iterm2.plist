@@ -10,6 +10,8 @@
 	<false/>
 	<key>AppleAntiAliasingThreshold</key>
 	<integer>1</integer>
+	<key>ApplePressAndHoldEnabled</key>
+	<false/>
 	<key>AppleScrollAnimationEnabled</key>
 	<integer>0</integer>
 	<key>AppleSmoothFixedFontsSizeThreshold</key>
@@ -31555,9 +31557,9 @@
 	<key>NSWindow Frame Preferences</key>
 	<string>195 509 606 456 0 0 1920 1177 </string>
 	<key>NSWindow Frame SUAutomaticUpdateAlert</key>
-	<string>1032 711 616 174 0 0 1920 1177 </string>
+	<string>1545 1462 616 174 0 0 3840 2137 </string>
 	<key>NSWindow Frame SUStatusFrame</key>
-	<string>1480 1303 400 129 0 0 3360 1867 </string>
+	<string>1720 1506 400 129 0 0 3840 2137 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>1610 1136 620 622 0 0 3840 2137 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
@@ -31567,7 +31569,7 @@
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>155 594 592 584 0 0 1920 1178 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>2050 0 1310 1339 0 0 3360 1867 </string>
+	<string>2488 164 1310 1833 0 0 3840 2137 </string>
 	<key>NeverWarnAboutShortLivedSessions_D110FD0B-D30B-4C5B-BA44-8F4708642981</key>
 	<true/>
 	<key>NeverWarnAboutShortLivedSessions_E1F19F48-6C52-49BE-9002-A095F6E9A324</key>
@@ -31783,7 +31785,7 @@
 			<key>Close Sessions On End</key>
 			<true/>
 			<key>Columns</key>
-			<integer>80</integer>
+			<integer>100</integer>
 			<key>Command</key>
 			<string></string>
 			<key>Cursor Boost</key>
@@ -32180,7 +32182,7 @@
 			<key>Right Option Key Sends</key>
 			<integer>0</integer>
 			<key>Rows</key>
-			<integer>25</integer>
+			<integer>50</integer>
 			<key>Screen</key>
 			<integer>-1</integer>
 			<key>Scrollback Lines</key>
@@ -32606,7 +32608,7 @@
 			<key>Close Sessions On End</key>
 			<true/>
 			<key>Columns</key>
-			<integer>80</integer>
+			<integer>100</integer>
 			<key>Command</key>
 			<string></string>
 			<key>Cursor Boost</key>
@@ -33003,7 +33005,7 @@
 			<key>Right Option Key Sends</key>
 			<integer>0</integer>
 			<key>Rows</key>
-			<integer>25</integer>
+			<integer>50</integer>
 			<key>Screen</key>
 			<integer>-1</integer>
 			<key>Scrollback Lines</key>
@@ -33189,12 +33191,17 @@
 	</array>
 	<key>NoSyncAllAppVersions</key>
 	<array>
-		<string>3.3.3beta2</string>
-		<string>3.1.beta.10</string>
-		<string>3.3.7beta4</string>
 		<string>3.3.8beta1</string>
+		<string>3.3.7beta4</string>
+		<string>3.3.10beta3</string>
 		<string>3.3.7beta3</string>
+		<string>3.3.8beta5</string>
+		<string>3.1.beta.10</string>
 		<string>3.3.8beta4</string>
+		<string>3.3.9beta1</string>
+		<string>3.3.10beta2</string>
+		<string>3.3.3beta2</string>
+		<string>3.3.10beta1</string>
 	</array>
 	<key>NoSyncCommandHistoryHasEverBeenUsed</key>
 	<true/>
@@ -33213,7 +33220,7 @@
 		<key>screenFrame</key>
 		<string>{{0, 0}, {3840, 2160}}</string>
 		<key>topLeft</key>
-		<string>{1124, 1559}</string>
+		<string>{1940, 1246}</string>
 	</dict>
 	<key>NoSyncHaveShownPromoWithId_4</key>
 	<true/>
@@ -33228,7 +33235,7 @@
 	<key>NoSyncInstallationId</key>
 	<string>7906FF63-35F3-45C3-942A-DDA7D03C3807</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>11</integer>
+	<integer>18</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
@@ -34081,7 +34088,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-01-28T22:33:51Z</date>
+	<date>2020-04-09T09:59:56Z</date>
 	<key>SUUpdateRelaunchingMarker</key>
 	<false/>
 	<key>SavePasteHistory</key>
@@ -34164,7 +34171,7 @@
 	<key>findRegex_iTerm</key>
 	<true/>
 	<key>iTerm Version</key>
-	<string>3.3.8beta4</string>
+	<string>3.3.10beta3</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>0</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
