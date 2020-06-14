@@ -63,9 +63,9 @@ F24::send {Volume_Up}
 
 ; google: autohotkey deactivate fullscreen
 ; from: https://autohotkey.com/board/topic/70690-disable-ahk-in-all-full-screen-apps-and-games/
-; disables everything below for fullscreen apps. what about games with 1080p or lower?
+; disables everything below for fullscreen apps (except Chrome). what about games with 1080p or lower?
 ; -> maybe also try: https://autohotkey.com/board/topic/102555-disable-hotkeys-if-game-ran-borderless-or-fullscreen-mode/
-#If ActiveWidth() != A_ScreenWidth and ActiveHeight() != A_ScreenHeight
+#If ActiveWidth() != A_ScreenWidth && ActiveHeight() != A_ScreenHeight || WinActive("ahk_exe chrome.exe")
 
 
 ; some bindings from awesome
