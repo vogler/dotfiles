@@ -48,6 +48,7 @@ Plug 'tpope/vim-jdaddy'
 " Plug 'tpope/vim-markdown'
 Plug 'gabrielelana/vim-markdown'
 Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-dadbod'
 
 Plug 'wellle/targets.vim'
 Plug 'mhinz/vim-startify'
