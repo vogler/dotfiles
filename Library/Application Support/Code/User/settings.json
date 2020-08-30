@@ -165,4 +165,6 @@
   "problems.showCurrentInStatus": true,
   "spellright.notificationClass": "warning",
   "latex-utilities.message.update.show": false,
+  "editor.acceptSuggestionOnEnter": "off",
+  "git.smartCommitChanges": "tracked",
 }
