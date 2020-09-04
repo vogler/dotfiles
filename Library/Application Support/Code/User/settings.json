@@ -102,6 +102,7 @@
   // https://glitchbone.github.io/vscode-base16-term/#/onedark
   // used the above and changed terminal.ansiBrightBlack (vim background)
   "workbench.colorCustomizations": {
+    "terminal.selectionBackground": "#ffff0044",
     "terminal.background":"#282C34",
     "terminal.foreground":"#ABB2BF",
     "terminalCursor.background":"#ABB2BF",
@@ -167,4 +168,6 @@
   "latex-utilities.message.update.show": false,
   "editor.acceptSuggestionOnEnter": "off",
   "git.smartCommitChanges": "tracked",
+  "workbench.sideBar.location": "right",
+  "latex-workshop.view.pdf.zoom": "page-width",
 }
