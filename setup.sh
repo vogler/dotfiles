@@ -107,6 +107,7 @@ ln -sf `pwd`/.tmux.conf ~
 echo ">> Install Tmux Plugin Manager"
 git-get https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 echo ">> Install Tmux plugins"
+tmux source-file ~/.tmux.conf # need to reload config before tpm can install plugins
 ~/.tmux/plugins/tpm/bin/install_plugins
 
 # vim
