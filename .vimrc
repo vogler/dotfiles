@@ -115,25 +115,48 @@ let g:ctrlp_custom_ignore = {
   \ }
 " let g:ctrlp_clear_cache_on_exit = 0
 let g:ctrlp_user_command = ['.git', 'cd %s && {git ls-files & git ls-files -o --exclude-standard;} | cat', 'find %s -type f']
-Plug 'ervandew/supertab'
-let g:SuperTabDefaultCompletionType = "context"
-let g:SuperTabLongestEnhanced = 1
-let g:SuperTabLongestHighlight = 1
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/deoplete.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
-let g:deoplete#enable_at_startup = 1
-Plug 'copy/deoplete-ocaml'
-" let g:deoplete#ignore_sources.ocaml = ['buffer', 'around', 'member', 'tag']
-Plug 'Shougo/deoplete-clangx'
-Plug 'Shougo/neco-vim' " vim source for deoplete
-Plug 'deoplete-plugins/deoplete-jedi'
-Plug 'fszymanski/deoplete-emoji'
-Plug 'tbodt/deoplete-tabnine', { 'do': './install.sh' }
+
+" completion
+  Plug 'ervandew/supertab'
+  let g:SuperTabDefaultCompletionType = "context"
+  let g:SuperTabLongestEnhanced = 1
+  let g:SuperTabLongestHighlight = 1
+  if has('nvim')
+    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+  else
+    Plug 'Shougo/deoplete.nvim'
+    Plug 'roxma/nvim-yarp'
+    Plug 'roxma/vim-hug-neovim-rpc'
+  endif
+  let g:deoplete#enable_at_startup = 1
+  Plug 'copy/deoplete-ocaml'
+  " let g:deoplete#ignore_sources.ocaml = ['buffer', 'around', 'member', 'tag']
+  Plug 'Shougo/deoplete-clangx'
+  Plug 'Shougo/neco-vim' " vim source for deoplete
+  Plug 'deoplete-plugins/deoplete-jedi'
+  Plug 'fszymanski/deoplete-emoji'
+  Plug 'tbodt/deoplete-tabnine', { 'do': './install.sh' }
+
+" linting / syntax checking
+  " Plug 'scrooloose/syntastic'
+  " let g:syntastic_always_populate_loc_list = 1
+  " let g:syntastic_check_on_open = 1
+  " let g:syntastic_check_on_wq = 0
+  " let g:syntastic_aggregate_errors = 1
+  " let g:syntastic_error_symbol = "x"
+  " let g:syntastic_warning_symbol = "!"
+  " let g:syntastic_style_error_symbol = "x"
+  " let g:syntastic_style_warning_symbol = "!"
+  " "let g:syntastic_auto_jump = 2
+  " let g:syntastic_ocaml_checkers = ['merlin']
+  let g:ale_disable_lsp = 1 " https://github.com/dense-analysis/ale#5iii-how-can-i-use-ale-and-cocnvim-together
+  Plug 'dense-analysis/ale'
+  let g:ale_sign_error = 'x'
+  let g:ale_sign_warning = '!'
+  let g:ale_linters_ignore = ['writegood', 'proselint'] " proselint
+  let g:ale_javascript_eslint_suppress_missing_config = 1
+  let g:ale_linters = {'javascript': ['prettier', 'eslint']}
+
 " Plug 'sjl/gundo.vim'
 Plug 'simnalamburt/vim-mundo'
 " Plug 'bkad/CamelCaseMotion'
@@ -141,7 +164,6 @@ Plug 'chaoren/vim-wordmotion'
 let g:wordmotion_prefix = '<Leader>'
 Plug 'unblevable/quick-scope'
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
-
 Plug 'Lokaltog/vim-easymotion'
 " map <Leader> <Plug>(easymotion-prefix) " default is <Leader><Leader> to avoid conflicts with other plugins
 let g:EasyMotion_smartcase   = 1
@@ -155,23 +177,7 @@ Plug 'mileszs/ack.vim'
 let g:ackprg = 'ag --vimgrep --smart-case'
 " let g:ackpreview = 1
 " let g:agprg="ag --nogroup --nocolor --column"
-" Plug 'scrooloose/syntastic'
-" let g:syntastic_always_populate_loc_list = 1
-" let g:syntastic_check_on_open = 1
-" let g:syntastic_check_on_wq = 0
-" let g:syntastic_aggregate_errors = 1
-" let g:syntastic_error_symbol = "x"
-" let g:syntastic_warning_symbol = "!"
-" let g:syntastic_style_error_symbol = "x"
-" let g:syntastic_style_warning_symbol = "!"
-" "let g:syntastic_auto_jump = 2
-" let g:syntastic_ocaml_checkers = ['merlin']
-Plug 'w0rp/ale'
-let g:ale_sign_error = 'x'
-let g:ale_sign_warning = '!'
-let g:ale_linters_ignore = ['writegood', 'proselint'] " proselint
-let g:ale_javascript_eslint_suppress_missing_config = 1
-let g:ale_linters = {'javascript': ['prettier', 'eslint']}
+
 command YankStatusMsg let @+ = v:statusmsg " for copying error messages
 Plug 'google/vim-searchindex'
 " Plug 'junegunn/vim-slash'
@@ -201,7 +207,7 @@ Plug 'let-def/vimbufsync'
 " Plug 'the-lambda-church/coquille', {'for': 'coq'}
 " Plug 'https://manu@framagit.org/manu/coq-au-vim.git', {'for': 'coq'} " only works with vim, not nvim, no syntax
 " Plug 'jvoorhis/coq.vim', {'for': 'coq'} " syntax
-Plug 'https://framagit.org/tyreunom/coquille.git', {'for': 'coq', 'do': ':UpdateRemotePlugins'} " fork for neovim and coq 8.9, contains syntax
+" Plug 'https://framagit.org/tyreunom/coquille.git', {'for': 'coq', 'do': ':UpdateRemotePlugins'} " fork for neovim and coq 8.9, contains syntax
 " Plug 'vim-ocaml-conceal'
 " Plug 'MLstate/opalang', {'rtp': 'tools/editors/vim/'} " just copy to .vim/ since this rtp option doesn't seem to work, also the repo is huge
 " Plug 'typedebugger' " see http://pllab.is.ocha.ac.jp/~asai/TypeDebugger/
