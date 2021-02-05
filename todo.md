@@ -1,0 +1,1 @@
+- https://osquery.io/ SQL powered operating system instrumentation, monitoring, and analytics.
