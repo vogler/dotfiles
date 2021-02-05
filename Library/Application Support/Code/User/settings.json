@@ -171,4 +171,5 @@
   "workbench.sideBar.location": "right",
   "latex-workshop.view.pdf.zoom": "page-width",
   "editor.suggest.insertMode": "replace",
+  "explorer.confirmDragAndDrop": false,
 }
