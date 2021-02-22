@@ -170,6 +170,9 @@
   "git.smartCommitChanges": "tracked",
   "workbench.sideBar.location": "right",
   "latex-workshop.view.pdf.zoom": "page-width",
-  "editor.suggest.insertMode": "replace",
   "explorer.confirmDragAndDrop": false,
+  "workbench.editor.wrapTabs": true,
+  "editor.glyphMargin": false,
+  "emmet.showSuggestionsAsSnippets": true,
+  "editor.snippetSuggestions": "bottom",
 }
