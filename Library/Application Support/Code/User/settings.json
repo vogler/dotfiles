@@ -175,4 +175,11 @@
   "editor.glyphMargin": false,
   "emmet.showSuggestionsAsSnippets": true,
   "editor.snippetSuggestions": "bottom",
+  "workbench.editorAssociations": [
+    {
+      "viewType": "jupyter.notebook.ipynb",
+      "filenamePattern": "*.ipynb"
+    }
+  ],
+  "python.showStartPage": false,
 }
