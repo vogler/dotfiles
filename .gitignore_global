@@ -3,7 +3,7 @@
 *.sublime-workspace
 .DS_Store
 a.out
-.vscode
+/* .vscode */
 /.gtm/
 .mypy_cache/
 __pycache__/
