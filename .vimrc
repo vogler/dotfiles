@@ -310,15 +310,15 @@ Plug 'let-def/vimbufsync'
 " Plug 'MLstate/opalang', {'rtp': 'tools/editors/vim/'} " just copy to .vim/ since this rtp option doesn't seem to work, also the repo is huge
 " Plug 'typedebugger' " see http://pllab.is.ocha.ac.jp/~asai/TypeDebugger/
 
-Plug 'git-time-metric/gtm-vim-plugin'
-let g:gtm_plugin_status_enabled = 1
-function! AirlineInit()
-  if exists('*GTMStatusline')
-    call airline#parts#define_function('gtmstatus', 'GTMStatusline')
-    let g:airline_section_b = airline#section#create([g:airline_section_b, ' ', '[', 'gtmstatus', ']'])
-  endif
-endfunction
-autocmd User AirlineAfterInit call AirlineInit()
+" Plug 'git-time-metric/gtm-vim-plugin'
+  " let g:gtm_plugin_status_enabled = 1
+  " function! AirlineInit()
+  "   if exists('*GTMStatusline')
+  "     call airline#parts#define_function('gtmstatus', 'GTMStatusline')
+  "     let g:airline_section_b = airline#section#create([g:airline_section_b, ' ', '[', 'gtmstatus', ']'])
+  "   endif
+  " endfunction
+  " autocmd User AirlineAfterInit call AirlineInit()
 Plug 'wakatime/vim-wakatime'
 Plug 'vim-scripts/DeleteTrailingWhitespace'
 Plug 'lervag/vimtex', {'for': 'tex'}
