@@ -118,6 +118,7 @@ let g:ctrlp_user_command = ['.git', 'cd %s && {git ls-files & git ls-files -o --
 
 " IDE features (completion, linting/checking, formatting) done by coc
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  let g:coc_disable_startup_warning = 1 " warning: coc.nvim works best on vim >= 8.1.1719 and neovim >= 0.4.0
   " from https://github.com/neoclide/coc.nvim#example-vim-configuration
   inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
