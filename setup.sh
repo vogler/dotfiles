@@ -127,7 +127,7 @@ source wakatime.sh
 
 
 if [[ "$*" == *smart-home* ]]; then
-  echo ">> smart-home"
+  # this is done in install/apt.sh for rpi3 and rpi4
 fi
 
 echo ">> Done"
