@@ -24,12 +24,13 @@ if [ "$(uname)" == "Darwin" ]; then
       ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   fi
 
-  echo ">> brew tap ..."
-  source install/brew-tap.sh $*
+  # echo ">> brew tap ..."
+  # source install/brew-tap.sh $*
   echo ">> brew install ..."
-  source install/brew.sh $*
-  echo ">> brew cask install ..."
-  source install/brew-cask.sh $*
+  # source install/brew.sh $*
+  source install/macos/brew.sh $*
+  # echo ">> brew cask install ..."
+  # source install/brew-cask.sh $*
 
   # Specify the preferences directory
   defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "~/dotfiles/iterm2"
@@ -87,7 +88,7 @@ if [ "$(uname)" == "Linux" ] && ! has diff-highlight; then # only needed because
 fi
 ln -sf `pwd`/.gitignore_global ~
 sudo npm install -g diff-so-fancy
-sudo install install/repos/gitwatch/gitwatch.sh /usr/local/bin/gitwatch
+# sudo install install/repos/gitwatch/gitwatch.sh /usr/local/bin/gitwatch
 
 # zsh
 echo ">> Link prezto for zsh"
