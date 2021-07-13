@@ -26,10 +26,14 @@ brew install iterm2
 brew install neovim
 brew install the_silver_searcher
 brew install fd
-brew install gitwatch
 brew install rlwrap
 # brew install coreutils # needed?
 brew install pkg-config
+
+# git
+brew install hub
+brew install gh # https://github.com/cli/cli/blob/trunk/docs/gh-vs-hub.md
+brew install gitwatch
 
 # PL
 brew install node # JS
