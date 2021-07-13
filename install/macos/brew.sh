@@ -28,6 +28,7 @@ brew install the_silver_searcher
 brew install fd
 brew install rlwrap
 # brew install coreutils # needed?
+brew install grep # outdated 2.5.1-FreeBSD vs. 3.6
 brew install pkg-config
 
 # git
