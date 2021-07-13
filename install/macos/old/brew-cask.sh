@@ -1,3 +1,4 @@
+# Deprecated! See Brewfile.
 # for e in $(brew cask ls); do echo "brew cask install $e"; done
 brew cask install adobe-acrobat-reader
 brew cask install amethyst

@@ -1,3 +1,4 @@
+# Deprecated! See Brewfile.
 # for e in $(brew tap); do echo "brew tap $e"; done
 brew tap git-time-metric/gtm
 brew tap homebrew/cask

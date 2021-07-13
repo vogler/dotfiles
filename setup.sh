@@ -49,10 +49,6 @@ else
     brew tap git-time-metric/gtm
     brew install gtm
   fi
-  # echo ">> brew tap ..."
-  # source install/brew-tap.sh $*
-  # echo ">> brew install ..."
-  # source install/brew.sh $*
 fi
 
 # ocaml/opam

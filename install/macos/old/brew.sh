@@ -1,3 +1,4 @@
+# Deprecated! See Brewfile.
 # for e in $(brew ls -tr); do echo "brew install $e"; done
 brew install xspin
 brew install autoconf
