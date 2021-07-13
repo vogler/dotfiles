@@ -1,9 +1,14 @@
 # Intel (Activity Montior > Kind) means it runs with Rosetta which is a bit slower and results in more memory pressure
 
 # OS tools
-brew install dockutil # for editing Dock in dock.sh
-# brew install sizeup # Intel
+brew install mas # CLI for macOS App Store
+brew install m-cli # CLI for macOS and stock apps
+brew install dockutil # edit Dock (used in dock.sh)
+
+# Desktop tools
+# brew install sizeup # Intel, unlimited trial
 brew install shiftit # Intel
+# mas install 967805235 # Paste - Clipboard Manager; need subscription now to actually use paste...
 
 # HW tools
 # brew install tg-pro # trial
@@ -23,6 +28,7 @@ brew install iina # media player
 
 # dev
 brew install iterm2
+brew install tmux
 brew install neovim
 brew install the_silver_searcher
 brew install fd
