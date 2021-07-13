@@ -27,7 +27,7 @@
     # pager = diff-so-fancy | less --tabs=4 -RFX --pattern='^(added|deleted|modified): '
 [pager]
     # log = diff-so-fancy | less --tabs=4 -RFX --pattern='^Commit: '
-    # diff-so-fancy got slow on larger inputs, had to `brew install --HEAD diff-so-fancy`. maybe next release will fix this...
+    # diff-so-fancy got slow on larger inputs, should be fixed by 1.4.1, brew installs 1.4.2
     log = diff-so-fancy | less --tabs=4 -RFX -+S
     # diff = diff-so-fancy | less --tabs=4 -RFX --pattern='^(added|deleted|modified): ' # the problem with this is that it also jumps directly to the first match and fills rest of screen with ~ for empty lines.
     # less:
