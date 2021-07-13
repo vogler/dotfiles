@@ -179,4 +179,6 @@
     "*.ipynb": "jupyter.notebook.ipynb"
   },
   "python.showStartPage": false,
+  "texlab.server.autoDownload": true,
+  "telemetry.enableTelemetry": false,
 }
