@@ -1,3 +1,6 @@
+# We could generate a Brewfile with `brew bundle dump` (even with cask & mas), but would lose format/comments every run.
+# So we just use a shell script to install each package. Also, sometimes there's some post-install linking to be done.
+
 # Intel (Activity Montior > Kind) means it runs with Rosetta which is a bit slower and results in more memory pressure
 
 # OS tools
@@ -26,7 +29,7 @@ brew install telegram
 brew install libreoffice
 brew install iina # media player
 
-# dev
+# dev tools
 brew install iterm2
 brew install tmux
 brew install neovim
@@ -43,7 +46,7 @@ brew install hub
 brew install gh # https://github.com/cli/cli/blob/trunk/docs/gh-vs-hub.md
 brew install gitwatch
 
-# PL
+# programming
 brew install node # JS
 brew install opam # OCaml
 # $HOMEBREW_PREFIX changed from /usr/local on Intel to /opt/homebrew on ARM
@@ -53,11 +56,11 @@ brew install java
 sudo ln -sfn /opt/homebrew/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk # For the system Java wrappers to find this JDK
 
 # goblint
-brew install gmp
-brew install gcc
-brew install ant
-brew install graphviz # needed?
+brew install gmp # needed to build deps
+brew install gcc # needed for pre-processing
+brew install ant # needed to build g2html
+brew install graphviz # needed for graphs in g2html?
 
 # LaTeX
-brew install mactex
+brew install mactex # brew info says 4.4GB but I think df reduced ~7GB
 brew install pygments # latex.minted uses pygmentize
