@@ -19,23 +19,22 @@ git submodule update --init --recursive
 if [ "$(uname)" == "Darwin" ]; then
   echo ">> [Running macOS]"
 
+  echo ">> install Command Line Tools of Xcode" # git, make, clang, gperf, m4, perl, svn, size, strip, strings, libtool, cpp, what...
+  xcode-select --install; echo "Press Enter when installed to continue."; read # TODO get rid of read and wait instead for it to finish or don't do anything if already installed
+
   if ! has brew; then
-      echo ">> Install homebrew"
-      ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    echo ">> Install homebrew"
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
   fi
 
-  # echo ">> brew tap ..."
-  # source install/brew-tap.sh $*
   echo ">> brew install ..."
-  # source install/brew.sh $*
   source install/macos/brew.sh $*
-  # echo ">> brew cask install ..."
-  # source install/brew-cask.sh $*
 
-  # Specify the preferences directory
-  defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "~/dotfiles/iterm2"
-  # Tell iTerm2 to use the custom preferences in the directory
-  defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
+  echo ">> set defaults"
+  source defaults.sh # TODO can we set defaults for apps before installing them?
+
+  echo ">> remove/add apps in dock"
+  source install/macos/dock.sh
 else
   echo ">> [Running Linux]" # current setup only for RPi or server (both via ssh)
 
