@@ -109,8 +109,13 @@ ln -sf `pwd`/.tmux.conf ~
 echo ">> Install Tmux Plugin Manager"
 git-get https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 echo ">> Install Tmux plugins"
-tmux source-file ~/.tmux.conf # need to reload config before tpm can install plugins
-~/.tmux/plugins/tpm/bin/install_plugins
+# `tmux source-file` fails if not in tmux with 'no server running on /private/tmp/tmux-501/default'
+if ! { [ "$TERM" = "screen" ] && [ -n "$TMUX" ]; } then
+  tmux source-file ~/.tmux.conf # need to reload config before tpm can install plugins
+  tpm_install ~/.tmux/plugins/tpm/bin/install_plugins
+else
+  tmux new-session -d -s tpm_install ~/.tmux/plugins/tpm/bin/install_plugins
+fi
 
 # vim
 echo ">> Link vim"
