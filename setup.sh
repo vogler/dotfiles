@@ -86,7 +86,7 @@ if [ "$(uname)" == "Linux" ] && ! has diff-highlight; then # only needed because
   sudo ln -sf /usr/share/doc/git/contrib/diff-highlight/diff-highlight /usr/bin/;
 fi
 ln -sf `pwd`/.gitignore_global ~
-sudo npm install -g diff-so-fancy
+[ "$(uname)" != "Darwin" ] && sudo npm install -g diff-so-fancy # brew's version is newer
 # sudo install install/repos/gitwatch/gitwatch.sh /usr/local/bin/gitwatch
 
 # zsh

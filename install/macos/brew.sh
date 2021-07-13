@@ -31,6 +31,7 @@ brew install rlwrap
 brew install pkg-config
 
 # git
+brew install diff-so-fancy
 brew install hub
 brew install gh # https://github.com/cli/cli/blob/trunk/docs/gh-vs-hub.md
 brew install gitwatch
