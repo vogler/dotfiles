@@ -51,7 +51,7 @@ brew install node # JS
 brew install opam # OCaml
 # $HOMEBREW_PREFIX changed from /usr/local on Intel to /opt/homebrew on ARM
 # Some opam packages don't consider this yet, so we link it back on ARM:
-[[ $(uname -m) == "arm64" ]] && sudo ln -s /opt/homebrew/{include,lib} /usr/local/
+[[ $(uname -m) == "arm64" ]] && sudo ln -sfn /opt/homebrew/{include,lib} /usr/local/
 brew install java
 sudo ln -sfn /opt/homebrew/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk # For the system Java wrappers to find this JDK
 
