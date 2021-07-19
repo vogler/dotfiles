@@ -19,19 +19,23 @@ git submodule update --init --recursive
 if [ "$(uname)" == "Darwin" ]; then
   echo ">> [Running macOS]"
 
-  echo ">> install Command Line Tools of Xcode" # git, make, clang, gperf, m4, perl, svn, size, strip, strings, libtool, cpp, what...
-  xcode-select --install; echo "Press Enter when installed to continue."; read # TODO get rid of read and wait instead for it to finish or don't do anything if already installed
+  if ! has git; then # TODO check if this really does not exist; think I could execute `git` but it would then install the Command Line Tools
+    echo ">> install Command Line Tools of Xcode" # git, make, clang, gperf, m4, perl, svn, size, strip, strings, libtool, cpp, what...
+    xcode-select --install; echo "Press Enter when installed to continue."; read # TODO get rid of read and wait instead for it to finish or don't do anything if already installed
+  fi
 
+  [[ -f /opt/homebrew/bin/brew ]] && eval "$(/opt/homebrew/bin/brew shellenv)"
   if ! has brew; then
     echo ">> Install homebrew"
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    [[ $(uname -m) == "arm64" ]] && eval "$(/opt/homebrew/bin/brew shellenv)"
   fi
 
   echo ">> brew install ..."
   source install/macos/brew.sh $*
 
   echo ">> set defaults"
-  source defaults.sh # TODO can we set defaults for apps before installing them?
+  source install/macos/defaults.sh # TODO can we set defaults for apps before installing them?
 
   echo ">> remove/add apps in dock"
   source install/macos/dock.sh
@@ -105,7 +109,7 @@ echo ">> Install Tmux Plugin Manager"
 git-get https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 echo ">> Install Tmux plugins"
 # `tmux source-file` fails if not in tmux with 'no server running on /private/tmp/tmux-501/default'
-if ! { [ "$TERM" = "screen" ] && [ -n "$TMUX" ]; } then
+if { [ "$TERM" = "screen" ] && [ -n "$TMUX" ]; } then
   tmux source-file ~/.tmux.conf # need to reload config before tpm can install plugins
   tpm_install ~/.tmux/plugins/tpm/bin/install_plugins
 else
@@ -126,9 +130,12 @@ nvim +PlugInstall +qall
 # vim already asks for the WakaTime API-key, but still need pip package for zsh integration
 source wakatime.sh
 
+# iTerm shell integration -> run from inside iTerm?
+# curl -L https://iterm2.com/shell_integration/install_shell_integration_and_utilities.sh | bash
 
 if [[ "$*" == *smart-home* ]]; then
   # this is done in install/apt.sh for rpi3 and rpi4
+  echo
 fi
 
 echo ">> Done"
