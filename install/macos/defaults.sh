@@ -42,18 +42,21 @@ defaults write NSGlobalDomain InitialKeyRepeat -int 10
 # System Preferences > Keyboard > Shortcuts > Use keyboard navigation to move focus between controls
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 
-# System Preferences > Trackpad > Point & Click > Tap to click
+# System Preferences > Trackpad > Point & Click > Tap to click # TODO did not work
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
 
-# System Preferences > Trackpad > Point & Click > Click: Light
+# System Preferences > Trackpad > Point & Click > Click: Light # TODO did not work
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad FirstClickThreshold -int 0
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad SecondClickThreshold -int 0
 
-# System Preferences > Trackpad > Point & Click > Tracking speed++
+# System Preferences > Trackpad > Point & Click > Tracking speed++ # TODO did not work
 defaults write .GlobalPreferences com.apple.trackpad.scaling -float 0.875
 
 # System Preferences > Trackpad > Scroll & Zoom > Scroll direction: Natural
 defaults write .GlobalPreferences com.apple.swipescrolldirection -bool false 
+
+# System Preferences > Trackpad > More Gestures > App Exposé
+defaults write com.apple.dock showAppExposeGestureEnabled -bool true
 
 # TODO System Preferences > Displays > Display > Resolution: Scaled: More Space (Looks like 1680 x 1050)
 # https://apple.stackexchange.com/questions/376448/how-can-i-set-a-scaled-display-resolution-from-the-command-line-in-macos-catalin

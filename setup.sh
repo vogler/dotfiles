@@ -35,7 +35,7 @@ if [ "$(uname)" == "Darwin" ]; then
   source install/macos/brew.sh $*
 
   echo ">> set defaults"
-  source install/macos/defaults.sh # TODO can we set defaults for apps before installing them?
+  source install/macos/defaults.sh # TODO can we set defaults for apps before installing them? TODO sourcing this seems not enough, after execute afterwards the defaults were set
 
   echo ">> remove/add apps in dock"
   source install/macos/dock.sh
