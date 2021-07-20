@@ -29,6 +29,15 @@ defaults write com.apple.dock autohide-time-modifier -float 0.2
 # System Preferences > Dock > Automatically hide and show the Dock (delay)
 defaults write com.apple.dock autohide-delay -float 0
 
+# System Preferences > Dock & Menu Bar > Bluetooth
+defaults write com.apple.controlcenter 'NSStatusItem Visible Bluetooth' -bool true
+
+# System Preferences > Dock & Menu Bar > Spotlight
+defaults write com.apple.controlcenter 'NSStatusItem Visible Item-0' -bool false
+
+# System Preferences > Dock & Menu Bar > Siri
+defaults write com.apple.siri StatusMenuVisible -bool false
+
 # System Preferences > Mission Control > Automatically rearrange Spaces based on most recent use
 defaults write com.apple.dock mru-spaces -bool false # makes it more predictable
 
