@@ -19,8 +19,8 @@
   "extensions.autoUpdate": true,
   "workbench.quickOpen.closeOnFocusLost": false,
   "workbench.statusBar.visible": true,
-  "editor.renderLineHighlight": "gutter",
-  "window.zoomLevel": 0,
+"editor.renderLineHighlight": "gutter",
+"window.zoomLevel": 0,
   "files.hotExit": "onExitAndWindowClose",
   "window.restoreWindows": "all",
   // "editor.formatOnPaste": false,
@@ -181,4 +181,6 @@
   "python.showStartPage": false,
   "texlab.server.autoDownload": true,
   "telemetry.enableTelemetry": false,
+  "security.workspace.trust.untrustedFiles": "open",
+  "tabnine.experimentalAutoImports": true,
 }
