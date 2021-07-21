@@ -1,8 +1,14 @@
 #!/bin/bash
 set -e
 
-# This will setup my basic environment for macOS or Linux.
-# After that more specific extensions are handled.
+echo "This will setup my basic environment for macOS or Linux."
+echo "Possible arguments for extended setup: smart-home"
+
+# Ask for the administrator password upfront. From https://mths.be/macos
+sudo -v
+
+# Keep-alive: update existing `sudo` time stamp until `.macos` has finished
+while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
 has(){ # check if a command is available
   hash "$1" 2>/dev/null

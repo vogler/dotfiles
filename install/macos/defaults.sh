@@ -1,6 +1,6 @@
 # https://github.com/pawelgrzybek/dotfiles/blob/master/setup-macos.sh
 # https://macos-defaults.com
-# https://github.com/mathiasbynens/dotfiles/blob/main/.macos
+# https://mths.be/macos (goes to https://github.com/mathiasbynens/dotfiles/blob/main/.macos)
 
 echo "The following settings have to be changed manually:" # TODO set some of these somehow? `defaults -currentHost read -g` shows changes to be written?
 echo "> System Preferences > Keyboard > Modifier Keys > Caps Lock Key: Escape"
@@ -9,13 +9,16 @@ echo "> System Preferences > Keyboard > Modifier Keys > Caps Lock Key: Escape"
 echo "> System Preferences > Displays > Display > Resolution: Scaled: More Space (Looks like 1680 x 1050)"
   # https://apple.stackexchange.com/questions/376448/how-can-i-set-a-scaled-display-resolution-from-the-command-line-in-macos-catalin
   # https://apple.stackexchange.com/questions/173866/how-can-i-set-the-display-settings-using-command-line
-echo"> System Preferences > Dock & Menu Bar > Battery > Show Percentage"
-
-
-# TODO disable boot sound
-# TODO Finder Preferences > Sidebar: remove AirDrop; add to sidebar Favorites: Documents (?), Screenshots; Locations: SSD
+echo "> System Preferences > Dock & Menu Bar > Battery > Show Percentage"
+echo "> Finder Preferences > Sidebar > remove: AirDrop; add: home, Screenshots, Hard disks"
 # TODO System Preferences > Keyboard > Keyboard > Press fn/globe to "Show Emoji & Symbols"
 
+
+# Disable the sound effects on boot
+sudo nvram SystemAudioVolume=" "
+
+# Close any open System Preferences panes, to prevent them from overriding settings we’re about to change
+osascript -e 'tell application "System Preferences" to quit'
 
 # Screenshot > Options > Save to
 defaults write com.apple.screencapture "location" -string "~/Screenshots" # && killall SystemUIServer
@@ -39,7 +42,7 @@ defaults write com.apple.dock mineffect -string "scale"
 defaults write com.apple.dock autohide -bool true
 
 # System Preferences > Dock > Automatically hide and show the Dock (duration)
-defaults write com.apple.dock autohide-time-modifier -float 0.2
+defaults write com.apple.dock autohide-time-modifier -float 0.1
 
 # System Preferences > Dock > Automatically hide and show the Dock (delay)
 defaults write com.apple.dock autohide-delay -float 0
@@ -55,6 +58,24 @@ defaults write com.apple.siri StatusMenuVisible -bool false
 
 # System Preferences > Mission Control > Automatically rearrange Spaces based on most recent use
 defaults write com.apple.dock mru-spaces -bool false # makes it more predictable
+
+# System Preferences > Mission Control > Hot Corners > top left: Mission Control, bottom left: Launchpad
+# Possible values (modifier = option):
+#  0: no-op
+#  2: Mission Control
+#  3: Show application windows
+#  4: Desktop
+#  5: Start screen saver
+#  6: Disable screen saver
+#  7: Dashboard
+# 10: Put display to sleep
+# 11: Launchpad
+# 12: Notification Center
+# 13: Lock Screen
+defaults write com.apple.dock wvous-tl-corner -int 2
+defaults write com.apple.dock wvous-tl-modifier -int 3 # TODO check if this works at the same time, before reboot it did not
+defaults write com.apple.dock wvous-bl-corner -int 11
+defaults write com.apple.dock wvous-bl-modifier -int 0
 
 # System Preferences > Keyboard > Keyboard > Key Repeat (Fast = 2) / Delay Until Repat (Short = 15)
 defaults write NSGlobalDomain KeyRepeat -int 1
@@ -73,8 +94,10 @@ defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
 # System Preferences > Keyboard > Shortcuts > Use keyboard navigation to move focus between controls
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 
-# System Preferences > Trackpad > Point & Click > Tap to click # TODO did not work
+# System Preferences > Trackpad > Point & Click > Tap to click (for this user and the login screen) # TODO did not work
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
+defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 
 # System Preferences > Trackpad > Point & Click > Click: Light # TODO did not work
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad FirstClickThreshold -int 0
@@ -104,6 +127,9 @@ defaults write com.apple.finder WarnOnEmptyTrash -bool false
 # Finder > Preferences > Advanced > When performing a search, Search the Current Folder
 defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
 
+# Finder > Preferences > Advanced > Keep folders on top: In windows when sorting by name
+defaults write com.apple.finder _FXSortFoldersFirst -bool true
+
 # Disable the “Are you sure you want to open this application?” dialog
 defaults write com.apple.LaunchServices LSQuarantine -bool false
 
@@ -119,6 +145,9 @@ defaults write com.apple.TimeMachine "DoNotOfferNewDisksForBackup" -bool "true"
 /usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
 /usr/libexec/PlistBuddy -c "Set :FK_StandardViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
 /usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
+
+# Speed up Mission Control animations
+defaults write com.apple.dock expose-animation-duration -float 0.1 # TODO check after reboot
 
 # Make Dock icons of hidden applications translucent
 defaults write com.apple.dock showhidden -bool true
