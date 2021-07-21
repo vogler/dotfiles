@@ -108,6 +108,8 @@ if [ $SHELL != "/bin/zsh" ]; then
     echo ">> Set zsh as default shell"
     chsh -s /bin/zsh
 fi
+# unlink .zlogout since it prints a useless message to stderr which makes Terminal.app not close a tab on ^d but only show this message without a prompt due to the default setting 'Profiles > Shell > Close if the shell exited cleanly'
+rm -f ~/.zlogout
 
 # tmux
 ln -sf `pwd`/.tmux.conf ~
