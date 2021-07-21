@@ -31,13 +31,15 @@ brew install iina # media player
 
 # dev tools
 brew install iterm2
+curl -L https://iterm2.com/shell_integration/install_shell_integration_and_utilities.sh | bash
 brew install tmux
 brew install neovim
 brew install the_silver_searcher
 brew install fd
+brew install coreutils # newer than macOS
+brew install grep # newer than macOS: 3.6 vs. 2.5.1-FreeBSD
+brew install htop
 brew install rlwrap
-# brew install coreutils # needed?
-brew install grep # outdated 2.5.1-FreeBSD vs. 3.6
 brew install pkg-config
 
 # git
@@ -47,7 +49,7 @@ brew install gh # https://github.com/cli/cli/blob/trunk/docs/gh-vs-hub.md
 brew install gitwatch
 
 # programming
-brew install node # JS
+brew install node # JavaScript
 brew install opam # OCaml
 # $HOMEBREW_PREFIX changed from /usr/local on Intel to /opt/homebrew on ARM
 # Some opam packages don't consider this yet, so we link it back on ARM:

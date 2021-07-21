@@ -130,9 +130,6 @@ nvim +PlugInstall +qall
 # vim already asks for the WakaTime API-key, but still need pip package for zsh integration
 source wakatime.sh
 
-# iTerm shell integration -> run from inside iTerm?
-# curl -L https://iterm2.com/shell_integration/install_shell_integration_and_utilities.sh | bash
-
 if [[ "$*" == *smart-home* ]]; then
   # this is done in install/apt.sh for rpi3 and rpi4
   echo

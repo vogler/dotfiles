@@ -2,6 +2,21 @@
 # https://macos-defaults.com
 # https://github.com/mathiasbynens/dotfiles/blob/main/.macos
 
+echo "The following settings have to be changed manually:" # TODO set some of these somehow? `defaults -currentHost read -g` shows changes to be written?
+echo "> System Preferences > Keyboard > Modifier Keys > Caps Lock Key: Escape"
+  # https://apple.stackexchange.com/questions/13598/updating-modifier-key-mappings-through-defaults-command-tool
+  # https://apple.stackexchange.com/questions/4813/changing-modifier-keys-from-the-command-line
+echo "> System Preferences > Displays > Display > Resolution: Scaled: More Space (Looks like 1680 x 1050)"
+  # https://apple.stackexchange.com/questions/376448/how-can-i-set-a-scaled-display-resolution-from-the-command-line-in-macos-catalin
+  # https://apple.stackexchange.com/questions/173866/how-can-i-set-the-display-settings-using-command-line
+echo"> System Preferences > Dock & Menu Bar > Battery > Show Percentage"
+
+
+# TODO disable boot sound
+# TODO Finder Preferences > Sidebar: remove AirDrop; add to sidebar Favorites: Documents (?), Screenshots; Locations: SSD
+# TODO System Preferences > Keyboard > Keyboard > Press fn/globe to "Show Emoji & Symbols"
+
+
 # Screenshot > Options > Save to
 defaults write com.apple.screencapture "location" -string "~/Screenshots" # && killall SystemUIServer
 
@@ -45,8 +60,15 @@ defaults write com.apple.dock mru-spaces -bool false # makes it more predictable
 defaults write NSGlobalDomain KeyRepeat -int 1
 defaults write NSGlobalDomain InitialKeyRepeat -int 10
 
-# TODO System Preferences > Keyboard > Keyboard > Press fn/globe to "Show Emoji & Symbols"
+# System Preferences > Keyboard > Text > Correct spelling automatically
+defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 
+# System Preferences > Keyboard > Text > Capitalise words automatically
+defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false
+
+# System Preferences > Keyboard > Text > Use smart quotes and dashes
+defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
+defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
 
 # System Preferences > Keyboard > Shortcuts > Use keyboard navigation to move focus between controls
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
@@ -66,10 +88,6 @@ defaults write .GlobalPreferences com.apple.swipescrolldirection -bool false
 
 # System Preferences > Trackpad > More Gestures > App Exposé
 defaults write com.apple.dock showAppExposeGestureEnabled -bool true
-
-# TODO System Preferences > Displays > Display > Resolution: Scaled: More Space (Looks like 1680 x 1050)
-# https://apple.stackexchange.com/questions/376448/how-can-i-set-a-scaled-display-resolution-from-the-command-line-in-macos-catalin
-# https://apple.stackexchange.com/questions/173866/how-can-i-set-the-display-settings-using-command-line
 
 # Finder > View > As List
 defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
@@ -117,11 +135,11 @@ defaults write com.apple.ActivityMonitor ShowCategory -int 0
 defaults write com.apple.ActivityMonitor SortColumn -string "CPUUsage"
 defaults write com.apple.ActivityMonitor SortDirection -int 0
 
-# iterm
+# iterm TODO jumping to marks only worked with the stock config after installing shell integration
 # Specify the preferences directory
-defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "~/dotfiles/iterm2"
+# defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "~/dotfiles/iterm2"
 # Tell iTerm2 to use the custom preferences in the directory
-defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
+# defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
 
 # https://github.com/VSCodeVim/Vim/#mac enable key-repeating in normal mode
 defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
