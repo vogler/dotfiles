@@ -75,7 +75,7 @@ defaults write com.apple.dock mru-spaces -bool false # makes it more predictable
 # 12: Notification Center
 # 13: Lock Screen
 defaults write com.apple.dock wvous-tl-corner -int 2
-defaults write com.apple.dock wvous-tl-modifier -int 3 # TODO check if this works at the same time, before reboot it did not
+defaults write com.apple.dock wvous-tl-modifier -int 0 # Tried to set this to 3 to 'show application windows' if option key is held (and Mission Control if not), but after connecting ext. display it did not work anymore (still showed 'Mission Control' in 'Hot Corners'). Reset it and `defaults read` diff then showed 0 - so it seems like it's either or.
 defaults write com.apple.dock wvous-bl-corner -int 11
 defaults write com.apple.dock wvous-bl-modifier -int 0
 
