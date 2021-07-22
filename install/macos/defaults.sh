@@ -192,6 +192,7 @@ defaults write com.apple.Terminal 'Startup Window Settings' -string SolarizedDar
 /usr/libexec/PlistBuddy -c "Add :'Window Settings':SolarizedDark:Bell bool false" ~/Library/Preferences/com.apple.Terminal.plist
 /usr/libexec/PlistBuddy -c "Add :'Window Settings':SolarizedLight:VisualBellOnlyWhenMuted bool false" ~/Library/Preferences/com.apple.Terminal.plist
 /usr/libexec/PlistBuddy -c "Add :'Window Settings':SolarizedDark:VisualBellOnlyWhenMuted bool false" ~/Library/Preferences/com.apple.Terminal.plist
+# TODO set font from Monaco 11 to Menlo 14 (stock) or DejaVu Sans Mono for Powerline 14 (brew). Font seems to be set as bytes. See `defaults read com.apple.Terminal`.
 
 # iterm TODO jumping to marks only worked with the stock config after installing shell integration
 # Specify the preferences directory

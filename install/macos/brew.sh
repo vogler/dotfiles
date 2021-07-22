@@ -71,3 +71,9 @@ brew install graphviz # needed for graphs in g2html?
 brew install mactex # brew info says 4.4GB but I think df reduced ~7GB
 brew install pygments # latex.minted uses pygmentize
 brew install skim # does not jump around as Preview.app on reload
+
+brew tap homebrew/cask-fonts
+brew install svn # needed for installing some fonts...
+brew install font-inconsolata font-open-sans font-source-code-pro font-source-sans-pro font-anonymous-pro
+brew install font-dejavu-sans-mono-for-powerline font-droid-sans-mono-for-powerline font-inconsolata-for-powerline font-inconsolata-for-powerline font-source-code-pro-for-powerline
+brew install font-consolas-for-powerline font-menlo-for-powerline font-meslo-for-powerline font-monofur-for-powerline font-noto-mono-for-powerline font-anonymice-powerline
