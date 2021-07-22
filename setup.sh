@@ -17,39 +17,40 @@ has(){ # check if a command is available
 git-get(){ # as git clone, but skip instead of fail if target exists # TODO update if exists? lockfile for commit?
   [ ! -d "$2" ] && git clone $1 $2 || true
 }
+echo_bold(){ echo -e '\033[1;32m'"$1"'\033[0m'; } # should be bold green, but is bold white. green somehow only works with 0 (regular) instead of 1 (bold).
 
 echo ">> Get submodules"
 git submodule update --init --recursive
 
 # system packages
 if [ "$(uname)" == "Darwin" ]; then
-  echo ">> [Running macOS]"
+  echo_bold ">> [Running macOS]"
 
   if ! has git; then # TODO check if this really does not exist; think I could execute `git` but it would then install the Command Line Tools
-    echo ">> install Command Line Tools of Xcode" # git, make, clang, gperf, m4, perl, svn, size, strip, strings, libtool, cpp, what...
+    echo_bold ">> install Command Line Tools of Xcode" # git, make, clang, gperf, m4, perl, svn, size, strip, strings, libtool, cpp, what...
     xcode-select --install; echo "Press Enter when installed to continue."; read # TODO get rid of read and wait instead for it to finish or don't do anything if already installed
   fi
 
   [[ -f /opt/homebrew/bin/brew ]] && eval "$(/opt/homebrew/bin/brew shellenv)"
   if ! has brew; then
-    echo ">> Install homebrew"
+    echo_bold ">> Install homebrew"
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     [[ $(uname -m) == "arm64" ]] && eval "$(/opt/homebrew/bin/brew shellenv)"
   fi
 
-  echo ">> brew install ..."
+  echo_bold ">> brew install ..."
   source install/macos/brew.sh $*
 
-  echo ">> set defaults"
+  echo_bold ">> set defaults"
   # can't change settings before installing an application! e.g. 'Couldn't find an application named "Skim"; defaults unchanged'
   source install/macos/defaults.sh # TODO sourcing this seems not enough, after execute afterwards the defaults were set
 
-  echo ">> remove/add apps in dock"
+  echo_bold ">> remove/add apps in dock"
   source install/macos/dock.sh
 else
-  echo ">> [Running Linux]" # current setup only for RPi or server (both via ssh)
+  echo_bold ">> [Running Linux]" # current setup only for RPi or server (both via ssh)
 
-  echo ">> apt install ..."
+  echo_bold ">> apt install ..."
   source install/apt.sh $*
 
   # only has binary packages for x86_64, https://docs.brew.sh/Homebrew-on-Linux#arm
@@ -77,7 +78,7 @@ if ! has opam; then
 fi
 
 # TODO this needs to be rethought
-# echo ">> Link *.symlink"
+# echo_bold ">> Link *.symlink"
 # source install/link.sh $*
 ln -sf `pwd`/.dir_colors ~
 
@@ -97,7 +98,7 @@ ln -sf `pwd`/.gitignore_global ~
 # sudo install install/repos/gitwatch/gitwatch.sh /usr/local/bin/gitwatch
 
 # zsh
-echo ">> Link prezto for zsh"
+echo_bold ">> Link prezto for zsh"
 ln -sf `pwd`/.zprezto ~
 cat <<EOT | zsh
 setopt EXTENDED_GLOB
@@ -106,7 +107,7 @@ for rcfile in "\${ZDOTDIR:-\$HOME}"/.zprezto/runcoms/^README.md(.N); do
 done
 EOT
 if [ $SHELL != "/bin/zsh" ]; then
-    echo ">> Set zsh as default shell"
+    echo_bold ">> Set zsh as default shell"
     chsh -s /bin/zsh
 fi
 # unlink .zlogout since it prints a useless message to stderr which makes Terminal.app not close a tab on ^d but only show this message without a prompt due to the default setting 'Profiles > Shell > Close if the shell exited cleanly'
@@ -114,9 +115,9 @@ rm -f ~/.zlogout
 
 # tmux
 ln -sf `pwd`/.tmux.conf ~
-echo ">> Install Tmux Plugin Manager"
+echo_bold ">> Install Tmux Plugin Manager"
 git-get https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-echo ">> Install Tmux plugins"
+echo_bold ">> Install Tmux plugins"
 # `tmux source-file` fails if not in tmux with 'no server running on /private/tmp/tmux-501/default'
 if { [ "$TERM" = "screen" ] && [ -n "$TMUX" ]; } then
   tmux source-file ~/.tmux.conf # need to reload config before tpm can install plugins
@@ -126,14 +127,14 @@ else
 fi
 
 # vim
-echo ">> Link vim"
+echo_bold ">> Link vim"
 ln -sf `pwd`/.vimrc ~
 mkdir -p ~/.config/nvim
 ln -sf `pwd`/.config/nvim/init.vim ~/.config/nvim/
 mkdir -p ~/.vim/{swap,backup,undo} # otherwise https://github.com/tpope/vim-sensible puts the files in the current directory
-echo ">> Install vim-plug"
+echo_bold ">> Install vim-plug"
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-echo ">> Install vim plugins"
+echo_bold ">> Install vim plugins"
 nvim +PlugInstall +qall
 
 # vim already asks for the WakaTime API-key, but still need pip package for zsh integration
@@ -144,4 +145,4 @@ if [[ "$*" == *smart-home* ]]; then
   echo
 fi
 
-echo ">> Done"
+echo_bold ">> Done"
