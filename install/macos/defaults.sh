@@ -1,6 +1,7 @@
 # https://github.com/pawelgrzybek/dotfiles/blob/master/setup-macos.sh
 # https://macos-defaults.com
 # https://mths.be/macos (goes to https://github.com/mathiasbynens/dotfiles/blob/main/.macos)
+# https://github.com/herrbischoff/awesome-macos-command-line
 
 echo "The following settings have to be changed manually:" # TODO set some of these somehow? `defaults -currentHost read -g` shows changes to be written?
 echo "> System Preferences > Keyboard > Modifier Keys > Caps Lock Key: Escape"
@@ -22,6 +23,7 @@ osascript -e 'tell application "System Preferences" to quit'
 
 # Screenshot > Options > Save to
 defaults write com.apple.screencapture "location" -string "~/Screenshots" # && killall SystemUIServer
+# Also append hostname/MBA/MBP? https://github.com/herrbischoff/awesome-macos-command-line#set-default-screenshot-name
 
 # System Preferences > General > Appearance
 defaults write -globalDomain AppleInterfaceStyleSwitchesAutomatically -bool true
@@ -107,7 +109,7 @@ defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad SecondClickThr
 defaults write .GlobalPreferences com.apple.trackpad.scaling -float 0.875
 
 # System Preferences > Trackpad > Scroll & Zoom > Scroll direction: Natural
-defaults write .GlobalPreferences com.apple.swipescrolldirection -bool false 
+defaults write .GlobalPreferences com.apple.swipescrolldirection -bool false
 
 # System Preferences > Trackpad > More Gestures > App Exposé
 defaults write com.apple.dock showAppExposeGestureEnabled -bool true
@@ -138,8 +140,10 @@ defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 
 # Prevent Time Machine from prompting to use newly connected storage as backup volumes.
-defaults write com.apple.TimeMachine "DoNotOfferNewDisksForBackup" -bool "true" 
+defaults write com.apple.TimeMachine "DoNotOfferNewDisksForBackup" -bool "true"
 
+# Disable local Time Machine backups while the Time Machine backup volume is not available
+# hash tmutil &> /dev/null && sudo tmutil disablelocal # disablelocal: Unrecognized verb. Can't be disabled anymore: https://github.com/herrbischoff/awesome-macos-command-line#local-backups
 
 # Enable snap-to-grid for icons on the desktop and in other icon views
 /usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
@@ -164,6 +168,30 @@ defaults write com.apple.ActivityMonitor ShowCategory -int 0
 defaults write com.apple.ActivityMonitor SortColumn -string "CPUUsage"
 defaults write com.apple.ActivityMonitor SortDirection -int 0
 
+# Terminal > Profiles > Colors
+# first tried the official files (both ansi and xterm-256color) in https://github.com/altercation/solarized/tree/master/osx-terminal.app-colors-solarized, but the colors were not set correctly such that vim was unreadable (also had some background transparency)
+# work fine: https://github.com/tomislav/osx-terminal.app-colors-solarized
+curl -L https://raw.githubusercontent.com/tomislav/osx-terminal.app-colors-solarized/master/Solarized%20Light.terminal -o /tmp/SolarizedLight.terminal
+open /tmp/SolarizedLight.terminal # will open a new terminal
+rm -f /tmp/SolarizedLight.terminal
+curl -L https://raw.githubusercontent.com/tomislav/osx-terminal.app-colors-solarized/master/Solarized%20Dark.terminal -o /tmp/SolarizedDark.terminal
+open /tmp/SolarizedDark.terminal # will open a new terminal
+rm -f /tmp/SolarizedDark.terminal
+defaults write com.apple.Terminal 'Default Window Settings' -string SolarizedDark
+defaults write com.apple.Terminal 'Startup Window Settings' -string SolarizedDark
+# ^ alternatively use osascript to change default profile: https://github.com/mathiasbynens/dotfiles/blob/66ba9b3cc0ca1b29f04b8e39f84e5b034fdb24b6/.macos#L628
+# nested dicts can't be easily set with defaults, https://superuser.com/questions/486630/reading-values-from-plist-nested-dictionaries-in-shell-script
+# no need for Save command in this direct/non-interactive mode
+# Set fails if key does not exist, Add fails if it does. UseBoldFonts already exists in the XML file.
+/usr/libexec/PlistBuddy -c "Set :'Window Settings':SolarizedLight:UseBoldFonts true" ~/Library/Preferences/com.apple.Terminal.plist
+/usr/libexec/PlistBuddy -c "Set :'Window Settings':SolarizedDark:UseBoldFonts true" ~/Library/Preferences/com.apple.Terminal.plist
+/usr/libexec/PlistBuddy -c "Add :'Window Settings':SolarizedLight:useOptionAsMetaKey bool true" ~/Library/Preferences/com.apple.Terminal.plist
+/usr/libexec/PlistBuddy -c "Add :'Window Settings':SolarizedDark:useOptionAsMetaKey bool true" ~/Library/Preferences/com.apple.Terminal.plist
+/usr/libexec/PlistBuddy -c "Add :'Window Settings':SolarizedLight:Bell bool false" ~/Library/Preferences/com.apple.Terminal.plist
+/usr/libexec/PlistBuddy -c "Add :'Window Settings':SolarizedDark:Bell bool false" ~/Library/Preferences/com.apple.Terminal.plist
+/usr/libexec/PlistBuddy -c "Add :'Window Settings':SolarizedLight:VisualBellOnlyWhenMuted bool false" ~/Library/Preferences/com.apple.Terminal.plist
+/usr/libexec/PlistBuddy -c "Add :'Window Settings':SolarizedDark:VisualBellOnlyWhenMuted bool false" ~/Library/Preferences/com.apple.Terminal.plist
+
 # iterm TODO jumping to marks only worked with the stock config after installing shell integration
 # Specify the preferences directory
 # defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "~/dotfiles/iterm2"
@@ -173,6 +201,8 @@ defaults write com.apple.ActivityMonitor SortDirection -int 0
 # https://github.com/VSCodeVim/Vim/#mac enable key-repeating in normal mode
 defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
 
+# Skim: auto reload by default instead of asking in dialog
+defaults write -app Skim SKAutoReloadFileUpdate -boolean true
 
 # Kill affected apps
 for app in "Dock" "Finder" "SystemUIServer"; do
