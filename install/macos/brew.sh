@@ -29,16 +29,19 @@ brew install telegram
 brew install libreoffice
 brew install iina # media player
 
-# dev tools
-brew install iterm2
-curl -L https://iterm2.com/shell_integration/install_shell_integration_and_utilities.sh | bash
-brew install tmux
-brew install neovim
-brew install the_silver_searcher
-brew install fd
+# sys tools
 brew install coreutils # newer than macOS
 brew install grep # newer than macOS: 3.6 vs. 2.5.1-FreeBSD
 brew install htop
+brew install wget
+
+# dev tools
+brew install neovim
+brew install iterm2
+curl -L https://iterm2.com/shell_integration/install_shell_integration_and_utilities.sh | bash
+brew install tmux
+brew install the_silver_searcher
+brew install fd
 brew install rlwrap
 brew install pkg-config
 
@@ -64,5 +67,7 @@ brew install ant # needed to build g2html
 brew install graphviz # needed for graphs in g2html?
 
 # LaTeX
+# https://sourabhbajaj.com/mac-setup/LaTeX/ with BasicTeX one would have to install packages with tlmgr
 brew install mactex # brew info says 4.4GB but I think df reduced ~7GB
 brew install pygments # latex.minted uses pygmentize
+brew install skim # does not jump around as Preview.app on reload
