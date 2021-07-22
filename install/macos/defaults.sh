@@ -15,9 +15,6 @@ echo "> Finder Preferences > Sidebar > remove: AirDrop; add: home, Screenshots, 
 # TODO System Preferences > Keyboard > Keyboard > Press fn/globe to "Show Emoji & Symbols"
 
 
-# Disable the sound effects on boot
-sudo nvram SystemAudioVolume=" "
-
 # Close any open System Preferences panes, to prevent them from overriding settings we’re about to change
 osascript -e 'tell application "System Preferences" to quit'
 
@@ -25,7 +22,7 @@ osascript -e 'tell application "System Preferences" to quit'
 defaults write com.apple.screencapture "location" -string "~/Screenshots" # && killall SystemUIServer
 # Also append hostname/MBA/MBP? https://github.com/herrbischoff/awesome-macos-command-line#set-default-screenshot-name
 
-# System Preferences > General > Appearance
+# System Preferences > General > Appearance: Auto
 defaults write -globalDomain AppleInterfaceStyleSwitchesAutomatically -bool true
 
 # System Preferences > General > Click in the scrollbar to: Jump to the spot that's clicked
@@ -34,7 +31,7 @@ defaults write -globalDomain AppleScrollerPagingBehavior -bool true
 # System Preferences > General > Close windows when quitting an app
 defaults write com.apple.systempreferences NSQuitAlwaysKeepsWindows -bool true
 
-# System Preferences > Dock > Size:
+# System Preferences > Dock > Size
 defaults write com.apple.dock tilesize -int 36
 
 # System Preferences > Dock > Minimize windows using: Scale effect
@@ -48,6 +45,9 @@ defaults write com.apple.dock autohide-time-modifier -float 0.1
 
 # System Preferences > Dock > Automatically hide and show the Dock (delay)
 defaults write com.apple.dock autohide-delay -float 0
+
+# Make Dock icons of hidden applications translucent
+defaults write com.apple.dock showhidden -bool true
 
 # System Preferences > Dock & Menu Bar > Bluetooth
 defaults write com.apple.controlcenter 'NSStatusItem Visible Bluetooth' -bool true
@@ -78,6 +78,15 @@ defaults write com.apple.dock wvous-tl-corner -int 2
 defaults write com.apple.dock wvous-tl-modifier -int 0 # Tried to set this to 3 to 'show application windows' if option key is held (and Mission Control if not), but after connecting ext. display it did not work anymore (still showed 'Mission Control' in 'Hot Corners'). Reset it and `defaults read` diff then showed 0 - so it seems like it's either or.
 defaults write com.apple.dock wvous-bl-corner -int 11
 defaults write com.apple.dock wvous-bl-modifier -int 0
+
+# Speed up Mission Control animations
+defaults write com.apple.dock expose-animation-duration -float 0.1 # TODO check after reboot
+
+# System Preferences > Sound > Sound Effects > Play sound on startup
+sudo nvram SystemAudioVolume=" " # no diff in defaults. 'Disable the sound effects on boot' from https://mths.be/macos
+
+# System Preferences > Sound > Sound Effects > Play user interface sound effects
+defaults write NSGlobalDomain com.apple.sound.uiaudio.enabled -bool false
 
 # System Preferences > Keyboard > Keyboard > Key Repeat (Fast = 2) / Delay Until Repat (Short = 15)
 defaults write NSGlobalDomain KeyRepeat -int 1
@@ -132,6 +141,11 @@ defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
 # Finder > Preferences > Advanced > Keep folders on top: In windows when sorting by name
 defaults write com.apple.finder _FXSortFoldersFirst -bool true
 
+# Enable snap-to-grid for icons on the desktop and in other icon views
+/usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
+/usr/libexec/PlistBuddy -c "Set :FK_StandardViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
+/usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
+
 # Disable the “Are you sure you want to open this application?” dialog
 defaults write com.apple.LaunchServices LSQuarantine -bool false
 
@@ -145,30 +159,17 @@ defaults write com.apple.TimeMachine "DoNotOfferNewDisksForBackup" -bool "true"
 # Disable local Time Machine backups while the Time Machine backup volume is not available
 # hash tmutil &> /dev/null && sudo tmutil disablelocal # disablelocal: Unrecognized verb. Can't be disabled anymore: https://github.com/herrbischoff/awesome-macos-command-line#local-backups
 
-# Enable snap-to-grid for icons on the desktop and in other icon views
-/usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
-/usr/libexec/PlistBuddy -c "Set :FK_StandardViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
-/usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
+# Activity Monitor > View > Dock Icon > Show CPU History
+defaults write com.apple.ActivityMonitor IconType -int 6
 
-# Speed up Mission Control animations
-defaults write com.apple.dock expose-animation-duration -float 0.1 # TODO check after reboot
-
-# Make Dock icons of hidden applications translucent
-defaults write com.apple.dock showhidden -bool true
-
-
-# Activity Monitor
-# Visualize CPU usage in the Activity Monitor Dock icon
-defaults write com.apple.ActivityMonitor IconType -int 5
-
-# Show all processes in Activity Monitor
+# Activity Monitor > View > All Processes
 defaults write com.apple.ActivityMonitor ShowCategory -int 0
 
-# Sort Activity Monitor results by CPU usage
+# Activity Monitor > CPU tab: Sort by % CPU
 defaults write com.apple.ActivityMonitor SortColumn -string "CPUUsage"
 defaults write com.apple.ActivityMonitor SortDirection -int 0
 
-# Terminal > Profiles > Colors
+# Terminal Preferences > Profiles > Add Solarized Light & Dark
 # first tried the official files (both ansi and xterm-256color) in https://github.com/altercation/solarized/tree/master/osx-terminal.app-colors-solarized, but the colors were not set correctly such that vim was unreadable (also had some background transparency)
 # work fine: https://github.com/tomislav/osx-terminal.app-colors-solarized
 curl -L https://raw.githubusercontent.com/tomislav/osx-terminal.app-colors-solarized/master/Solarized%20Light.terminal -o /tmp/SolarizedLight.terminal
