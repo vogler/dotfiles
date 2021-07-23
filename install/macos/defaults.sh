@@ -7,12 +7,13 @@ echo "The following settings have to be changed manually:" # TODO set some of th
 echo "> System Preferences > Keyboard > Modifier Keys > Caps Lock Key: Escape"
   # https://apple.stackexchange.com/questions/13598/updating-modifier-key-mappings-through-defaults-command-tool
   # https://apple.stackexchange.com/questions/4813/changing-modifier-keys-from-the-command-line
-echo "> System Preferences > Displays > Display > Resolution: Scaled: More Space (Looks like 1680 x 1050)"
+echo "> System Preferences > Displays > Display > Resolution: Scaled: More Space (Looks like 1680 x 1050); Default/native for 4K 32\""
   # https://apple.stackexchange.com/questions/376448/how-can-i-set-a-scaled-display-resolution-from-the-command-line-in-macos-catalin
   # https://apple.stackexchange.com/questions/173866/how-can-i-set-the-display-settings-using-command-line
 echo "> System Preferences > Dock & Menu Bar > Battery > Show Percentage"
 echo "> Finder Preferences > Sidebar > remove: AirDrop; add: home, Screenshots, Hard disks"
 # TODO System Preferences > Keyboard > Keyboard > Press fn/globe to "Show Emoji & Symbols"
+echo "> Chrome Preferences > Page zoom: 110%"
 
 
 # Close any open System Preferences panes, to prevent them from overriding settings we’re about to change

@@ -33,7 +33,10 @@ brew install iina # media player
 brew install coreutils # newer than macOS
 brew install grep # newer than macOS: 3.6 vs. 2.5.1-FreeBSD
 brew install htop
+
+# network
 brew install wget
+brew install mosquitto
 
 # dev tools
 brew install neovim
@@ -49,7 +52,7 @@ brew install pkg-config
 brew install diff-so-fancy
 brew install hub
 brew install gh # https://github.com/cli/cli/blob/trunk/docs/gh-vs-hub.md
-brew install gitwatch
+brew install gitwatch # use GitDoc in vscode instead? https://marketplace.visualstudio.com/items?itemName=vsls-contrib.gitdoc
 
 # programming
 brew install node # JavaScript
@@ -77,3 +80,7 @@ brew install svn # needed for installing some fonts...
 brew install font-inconsolata font-open-sans font-source-code-pro font-source-sans-pro font-anonymous-pro
 brew install font-dejavu-sans-mono-for-powerline font-droid-sans-mono-for-powerline font-inconsolata-for-powerline font-inconsolata-for-powerline font-source-code-pro-for-powerline
 brew install font-consolas-for-powerline font-menlo-for-powerline font-meslo-for-powerline font-monofur-for-powerline font-noto-mono-for-powerline font-anonymice-powerline
+
+# tracking
+# brew install rescuetime # Intel, fails because it requires Rosetta 2 (`sudo softwareupdate --install-rosetta`). Why did the other Intel apps work without installing this?
+# WhatPulse neither on brew or app store. Download from https://whatpulse.org
