@@ -19,7 +19,7 @@ brew install shiftit # Intel
 
 # browser/-based apps
 brew install google-chrome
-brew install spotify # Intel
+# brew install spotify # Intel, use Chrome App -> same (except no preferences & friends feed?) but more efficient
 brew install whatsapp # Intel
 brew install slack
 brew install visual-studio-code
