@@ -109,6 +109,9 @@ defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
 # System Preferences > Keyboard > Shortcuts > Use keyboard navigation to move focus between controls
 defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 
+# System Preferences > Keyboard > Shortcuts > Input Sources > disable Select the previous input source (using `bindkey '^ ' autosuggest-execute` in .zshrc, also the alternative ctrl+alt+space is immediate without UI for switching to the next input source)
+/usr/libexec/PlistBuddy -c "Set :AppleSymbolicHotKeys:60:enabled false" ~/Library/Preferences/com.apple.symbolichotkeys.plist
+
 # System Preferences > Trackpad > Point & Click > Tap to click (for this user and the login screen) # TODO did not work
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
 defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
