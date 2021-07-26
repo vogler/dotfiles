@@ -7,6 +7,7 @@
 brew install mas # CLI for macOS App Store
 brew install m-cli # CLI for macOS and stock apps
 brew install dockutil # edit Dock (used in dock.sh)
+# brew install cheatsheet # hold cmd key to show overlay with all shortcuts of current application
 brew install qlstephen qlimagesize qlvideo # https://github.com/sindresorhus/quick-look-plugins
 # Apple doc says quicklook generators are only called upon demand (so no overhead for mds?)
 # more: https://github.com/haokaiyang/Mac-QuickLook; macOS already handles: csv, stl; maybe interesting: quicklook-dot, QLMarkdownGFM (instead of qlmarkdown), QLPrettyPatch, QLMobi
@@ -58,17 +59,19 @@ brew install youtube-dl # download videos from many websites
 
 # dev tools
 brew install neovim
-brew install iterm2
+brew install iterm2 # https://sourabhbajaj.com/mac-setup/iTerm/
 curl -L https://iterm2.com/shell_integration/install_shell_integration_and_utilities.sh | bash
 brew install tmux
 brew install tokei # count code lines fast and by language
 brew install rlwrap # used in ocaml alias since it has no readline support; use utop for better REPL
 brew install pkg-config
+brew install heroku/brew/heroku
 
 # data processing
 brew install jq # JSON CLI processor
 brew install xsv # CSV CLI: cat count flatten frequency join search select slice sort split stats table
 brew install jid # Json incremental digger
+brew install postgresql # SQL DB; `brew services start postgresql` to enable start on login, `brew services run postgresql` to just start
 
 # git
 brew install diff-so-fancy
@@ -115,3 +118,4 @@ brew install --cask handbrake # video transcoder; also available as formula, but
 
 # for more see install/macos/old-MBP/Brewfile
 # Brewfile in https://github.com/lunaryorn/dotfiles/commit/2d8531881c2bc61f091d83bc2cf02ad6ebb680c6
+# https://sourabhbajaj.com/mac-setup/Apps/
