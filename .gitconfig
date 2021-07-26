@@ -42,11 +42,6 @@
     default = current
 [color]
     ui = auto
-[color "diff-highlight"]
-    oldNormal = red
-    oldHighlight = "124 208"
-    newNormal = green
-    newHighlight = "29 148"
 [diff]
     tool = meld
 [difftool]
@@ -84,12 +79,9 @@
 	process = git-lfs filter-process
 [interactive]
     singleKey = true
-    # diffFilter = diff-so-fancy
-    # https://github.com/so-fancy/diff-so-fancy/issues/35
-    diffFilter = "diff-highlight | less -FRX --tabs=4"
-# https://github.com/blog/2188-git-2-9-has-been-released
+    diffFilter = diff-so-fancy --patch # since 1.4.0, https://github.com/so-fancy/diff-so-fancy/issues/35#issuecomment-776870877
 [diff]
-    compactionHeuristic = true
+    compactionHeuristic = true # https://github.blog/2016-06-13-git-2-9-has-been-released/#beautiful-diffs
     submodule = log
     indentHeuristic = true
 [submodule]
