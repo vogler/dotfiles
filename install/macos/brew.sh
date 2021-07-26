@@ -1,6 +1,10 @@
 # We could generate a Brewfile with `brew bundle dump` (even with cask & mas), but would lose format/comments every run.
 # So we just use a shell script to install each package. Also, sometimes there's some post-install linking to be done.
 
+# $HOMEBREW_PREFIX changed from /usr/local on Intel to /opt/homebrew on ARM
+# Some opam packages don't consider this yet, so we link it back on ARM (share is not needed for opam but for zsh completions to load):
+[[ $(uname -m) == "arm64" ]] && sudo ln -sfn /opt/homebrew/{include,lib,share} /usr/local/
+
 # Intel (Activity Montior > Kind) means it runs with Rosetta which is a bit slower and results in more memory pressure
 
 # OS tools
@@ -83,9 +87,6 @@ brew install gitwatch # use GitDoc in vscode instead? https://marketplace.visual
 # programming
 brew install node # JavaScript
 brew install opam # OCaml
-# $HOMEBREW_PREFIX changed from /usr/local on Intel to /opt/homebrew on ARM
-# Some opam packages don't consider this yet, so we link it back on ARM:
-[[ $(uname -m) == "arm64" ]] && sudo ln -sfn /opt/homebrew/{include,lib} /usr/local/
 brew install java
 sudo ln -sfn /opt/homebrew/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk # For the system Java wrappers to find this JDK
 
