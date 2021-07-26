@@ -33,6 +33,7 @@ brew install iina # media player
 brew install coreutils # newer than macOS
 brew install grep # newer than macOS: 3.6 vs. 2.5.1-FreeBSD
 brew install htop
+brew install tree
 
 # network
 brew install wget
