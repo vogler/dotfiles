@@ -39,7 +39,10 @@ brew install visual-studio-code
 
 brew install telegram
 brew install libreoffice
+# mas install 1030461463 # PDFCombo: merge PDFs and preserve the TOC
+# https://outbankapp.com neither in brew nor mas (but finds outbank in App Store)
 brew install iina # media player
+brew install raspberry-pi-imager # install different OSes to microSD
 
 # sys tools
 brew install coreutils # newer than macOS
@@ -60,6 +63,8 @@ brew install wget # alt for curl
 brew install httpie # https://httpie.io User-friendly cURL replacement
 brew install mosquitto # MQTT pub/sub
 brew install youtube-dl # download videos from many websites
+brew install angry-ip-scanner
+# brew install insomnia # Intel, 337MB; HTTP and GraphQL Client
 
 # dev tools
 brew install neovim
@@ -81,6 +86,7 @@ brew install postgresql # SQL DB; `brew services start postgresql` to enable sta
 brew install diff-so-fancy
 brew install hub
 brew install gh # https://github.com/cli/cli/blob/trunk/docs/gh-vs-hub.md
+# brew install --cask sourcetree smartgit gitkraken gitup # tried but don't use
 brew install gitwatch # use GitDoc in vscode instead? https://marketplace.visualstudio.com/items?itemName=vsls-contrib.gitdoc
 # brew install git-recent # recent branches; use `git branchr` (alias in .gitconfig) which is based on `git branch` and accepts its options like -a to show remote branches
 
@@ -102,6 +108,7 @@ brew install mactex # brew info says 4.4GB but I think df reduced ~7GB
 brew install pygments # latex.minted uses pygmentize
 brew install skim # does not jump around as Preview.app on reload
 
+# fonts
 brew tap homebrew/cask-fonts
 brew install svn # needed for installing some fonts...
 brew install font-inconsolata font-open-sans font-source-code-pro font-source-sans-pro font-anonymous-pro
@@ -116,6 +123,9 @@ brew install font-consolas-for-powerline font-menlo-for-powerline font-meslo-for
 # brew install imagemagick
 # brew install ffmpeg
 brew install --cask handbrake # video transcoder; also available as formula, but: A full installation of Xcode.app 10.3 is required to compile
+# brew install kap # Intel, 353MB; screen recorder built with web technology
+# https://gifcap.dev creates gif from screen recording in the browser
+
 
 # for more see install/macos/old-MBP/Brewfile
 # Brewfile in https://github.com/lunaryorn/dotfiles/commit/2d8531881c2bc61f091d83bc2cf02ad6ebb680c6
