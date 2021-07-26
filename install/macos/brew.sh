@@ -7,9 +7,12 @@
 brew install mas # CLI for macOS App Store
 brew install m-cli # CLI for macOS and stock apps
 brew install dockutil # edit Dock (used in dock.sh)
-brew install qlcolorcode qlstephen qlmarkdown quicklook-json qlimagesize qlvideo # https://github.com/sindresorhus/quick-look-plugins
+brew install qlstephen qlimagesize qlvideo # https://github.com/sindresorhus/quick-look-plugins
 # Apple doc says quicklook generators are only called upon demand (so no overhead for mds?)
 # more: https://github.com/haokaiyang/Mac-QuickLook; macOS already handles: csv, stl; maybe interesting: quicklook-dot, QLMarkdownGFM (instead of qlmarkdown), QLPrettyPatch, QLMobi
+# qlcolorcode did not show text for .sh, .ml, etc. (stock macOS at least shows unhighlighted text); did not want to fiddle with content-types: https://github.com/anthonygelibert/QLColorCode#adding-language-types
+# glance highlights all those correctly, .ts can't be handled (.tsx, .js work): https://github.com/samuelmeuli/glance#faq, also said some .zip would be password-protected and did not show anything when it was not
+brew install glance # TODO discontinued; need to open Glance.app first; replaces qlcolorcode qlmarkdown quicklook-json
 xattr -d -r com.apple.quarantine ~/Library/QuickLook # remove plugins from quarantine
 
 # Desktop tools
