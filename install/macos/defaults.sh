@@ -11,6 +11,9 @@ echo "> System Preferences > Displays > Display > Resolution: Scaled: More Space
   # https://apple.stackexchange.com/questions/376448/how-can-i-set-a-scaled-display-resolution-from-the-command-line-in-macos-catalin
   # https://apple.stackexchange.com/questions/173866/how-can-i-set-the-display-settings-using-command-line
 echo "> System Preferences > Dock & Menu Bar > Battery > Show Percentage"
+echo "> System Preferences > Security & Privacy > General > Require password after sleep or screen saver begins: disable for when at home"
+echo "> System Preferences > Bluetooth > Advanced > disable Allow Bluetooth devices to wake this computer" # otherwise Bose QC35 turn on MBA if I want to use them on the phone...
+echo "> Notification Center widgets > size medium for Calendar, size large for Weather, Screen Time Daily Activity, Stocks Watchlist"
 echo "> Finder Preferences > Sidebar > remove: AirDrop; add: home, Screenshots, Hard disks"
 # TODO System Preferences > Keyboard > Keyboard > Press fn/globe to "Show Emoji & Symbols"
 echo "> Chrome Preferences > Page zoom: 110%"
