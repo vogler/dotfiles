@@ -203,7 +203,7 @@ defaults write com.apple.Terminal 'Startup Window Settings' -string SolarizedDar
 
 # iterm TODO jumping to marks only worked with the stock config after installing shell integration
 # Specify the preferences directory
-# defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "~/dotfiles/iterm2"
+# defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "~/dotfiles/macos/iterm2"
 # Tell iTerm2 to use the custom preferences in the directory
 # defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
 
