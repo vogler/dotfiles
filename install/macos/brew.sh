@@ -75,7 +75,7 @@ brew install diff-so-fancy
 brew install hub
 brew install gh # https://github.com/cli/cli/blob/trunk/docs/gh-vs-hub.md
 brew install gitwatch # use GitDoc in vscode instead? https://marketplace.visualstudio.com/items?itemName=vsls-contrib.gitdoc
-brew install git-recent # could use `git branch --sort=-committerdate`, but this has nice default format
+# brew install git-recent # recent branches; use `git branchr` (alias in .gitconfig) which is based on `git branch` and accepts its options like -a to show remote branches
 
 # programming
 brew install node # JavaScript
