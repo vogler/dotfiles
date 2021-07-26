@@ -47,6 +47,14 @@ if [ "$(uname)" == "Darwin" ]; then
 
   echo_bold ">> remove/add apps in dock"
   source install/macos/dock.sh
+
+  if [ ! -d ~/.ssh ]; then # only generate if it was not copied before
+    echo_bold ">> generate ssh key for this machine and copy it to rpi3/rpi4"
+    ssh-keygen -t ed25519
+    ssh-add -K ~/.ssh/id_ed25519
+    ssh-copy-id pi@rpi3
+    ssh-copy-id pi@rpi4
+  fi
 else
   echo_bold ">> [Running Linux]" # current setup only for RPi or server (both via ssh)
 
