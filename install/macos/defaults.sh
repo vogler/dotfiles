@@ -33,7 +33,7 @@ defaults write -globalDomain AppleInterfaceStyleSwitchesAutomatically -bool true
 defaults write -globalDomain AppleScrollerPagingBehavior -bool true
 
 # System Preferences > General > Close windows when quitting an app
-defaults write com.apple.systempreferences NSQuitAlwaysKeepsWindows -bool true
+defaults write NSGlobalDomain NSQuitAlwaysKeepsWindows -bool true # com.apple.systempreferences like on https://mths.be/macos did not work
 
 # System Preferences > Dock > Size
 defaults write com.apple.dock tilesize -int 36
@@ -203,9 +203,9 @@ defaults write com.apple.Terminal 'Startup Window Settings' -string SolarizedDar
 
 # iterm TODO jumping to marks only worked with the stock config after installing shell integration
 # Specify the preferences directory
-# defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "~/dotfiles/macos/iterm2"
+defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "~/dotfiles/macos/iterm2"
 # Tell iTerm2 to use the custom preferences in the directory
-# defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
+defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
 
 # https://github.com/VSCodeVim/Vim/#mac enable key-repeating in normal mode
 defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
