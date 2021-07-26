@@ -7,6 +7,10 @@
 brew install mas # CLI for macOS App Store
 brew install m-cli # CLI for macOS and stock apps
 brew install dockutil # edit Dock (used in dock.sh)
+brew install qlcolorcode qlstephen qlmarkdown quicklook-json qlimagesize qlvideo # https://github.com/sindresorhus/quick-look-plugins
+# Apple doc says quicklook generators are only called upon demand (so no overhead for mds?)
+# more: https://github.com/haokaiyang/Mac-QuickLook; macOS already handles: csv, stl; maybe interesting: quicklook-dot, QLMarkdownGFM (instead of qlmarkdown), QLPrettyPatch, QLMobi
+xattr -d -r com.apple.quarantine ~/Library/QuickLook # remove plugins from quarantine
 
 # Desktop tools
 # brew install sizeup # Intel, unlimited trial
