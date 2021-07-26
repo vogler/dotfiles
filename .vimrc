@@ -257,17 +257,19 @@ let g:ctrlp_user_command = ['.git', 'cd %s && {git ls-files & git ls-files -o --
 
 " Plug 'sjl/gundo.vim'
 Plug 'simnalamburt/vim-mundo'
+
+" motion plugins
 " Plug 'bkad/CamelCaseMotion'
 Plug 'chaoren/vim-wordmotion'
 let g:wordmotion_prefix = '<Leader>'
-Plug 'unblevable/quick-scope'
+Plug 'unblevable/quick-scope' " highlight unique character to find in each word
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 Plug 'Lokaltog/vim-easymotion'
 " map <Leader> <Plug>(easymotion-prefix) " default is <Leader><Leader> to avoid conflicts with other plugins
 let g:EasyMotion_smartcase   = 1
 let g:EasyMotion_startofline = 0 " keep cursor colum when JK motion
-" map <Leader>h <Plug>(easymotion-linebackward)
-" map <Leader>l <Plug>(easymotion-lineforward)
+" https://github.com/ggandor/lightspeed.nvim not my taste
+" https://github.com/phaazon/hop.nvim rewrite of EasyMotion for neovim which does not change buffer to annotate targes; but not as nice to use as EasyMotion
 
 " deprecated: https://github.com/rking/ag.vim/issues/124#issuecomment-227038003
 " Plug 'rking/ag.vim' " try mileszs/ack.vim, mhinz/vim-grepper, jremmen/vim-ripgrep
