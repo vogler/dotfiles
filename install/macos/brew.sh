@@ -75,6 +75,7 @@ brew install tmux
 brew install tokei # count code lines fast and by language
 brew install rlwrap # used in ocaml alias since it has no readline support; use utop for better REPL
 brew install pkg-config
+brew install autoconf automake # autotools
 brew install heroku/brew/heroku
 
 # data processing
