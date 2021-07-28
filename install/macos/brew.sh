@@ -109,6 +109,7 @@ brew install graphviz # needed for graphs in g2html?
 brew install mactex # brew info says 4.4GB but I think df reduced ~7GB
 brew install pygments # latex.minted uses pygmentize
 brew install skim # does not jump around as Preview.app on reload
+brew install qpdf # qpdf --show-npages; instead of pdfinfo from xpdf
 
 # fonts
 brew tap homebrew/cask-fonts
