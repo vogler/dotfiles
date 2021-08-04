@@ -33205,7 +33205,7 @@
 	<key>TabStyle</key>
 	<integer>1</integer>
 	<key>TabStyleWithAutomaticOption</key>
-	<integer>6</integer>
+	<integer>5</integer>
 	<key>TabTitlesUseSmartTruncation</key>
 	<true/>
 	<key>TabViewType</key>
