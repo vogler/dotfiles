@@ -346,7 +346,7 @@ autocmd FileType make set noexpandtab shiftwidth=8 softtabstop=0
 
 " OCaml
 " merlin -- replaced by ocaml-lsp in coc
-let g:opamshare = substitute(system('cd && opam config var share'),'\n$','','''')
+let g:opamshare = substitute(system('cd && opam var share'),'\n$','','''')
 " execute "set rtp+=" . g:opamshare . "/merlin/vim"
 " function! SetupOCaml()
 "   nnoremap <leader>t :MerlinTypeOf<cr>
