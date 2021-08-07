@@ -51,12 +51,13 @@ brew install gnu-sed # newer than macOS: 4.8 vs 2017 BSD?
 brew install less # newer than macOS: 590 vs 487
 brew install rsync # newer than macOS: 3.2.3 vs 2.6.9
 brew install htop
+brew install exa # Modern replacement for 'ls'
 brew install tree # `exa --tree --level=2` has colors and can show meta-data with --long
 brew install tldr # `tldr tar` shorter than `curl cheat.sh/tar` and works offline
 brew install bat # cat with syntax highlighting and Git integration
 brew install fd # Simple, fast and user-friendly alternative to find
 brew install the_silver_searcher # Code-search similar to ack, but faster
-brew install exa # Modern replacement for 'ls'
+brew install ncdu # NCurses Disk Usage
 brew install p7zip # 7z with support for Brotli, Fast LZMA2, LZ4, LZ5, Lizard and Zstd
 
 # network
