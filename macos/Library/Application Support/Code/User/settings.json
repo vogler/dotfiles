@@ -45,7 +45,7 @@
   "workbench.editor.tabCloseButton": "off",
   "git.confirmSync": false,
   "editor.selectionHighlight": true,
-  "editor.occurrencesHighlight": true,
+  "editor.occurrencesHighlight": false,
   // "latex-workshop.linter": true,
   // @sync os=windows
   // "vim.useCtrlKeys": false,
@@ -176,5 +176,6 @@
   "texlab.server.autoDownload": true,
   "telemetry.enableTelemetry": false,
   "security.workspace.trust.untrustedFiles": "open",
-  "tabnine.experimentalAutoImports": true
+  "tabnine.experimentalAutoImports": true,
+  "workbench.editor.highlightModifiedTabs": true
 }
