@@ -19,8 +19,7 @@
   "extensions.autoUpdate": true,
   "workbench.quickOpen.closeOnFocusLost": false,
   "workbench.statusBar.visible": true,
-"editor.renderLineHighlight": "gutter",
-"window.zoomLevel": 0,
+  "editor.renderLineHighlight": "gutter",
   "files.hotExit": "onExitAndWindowClose",
   "window.restoreWindows": "all",
   // "editor.formatOnPaste": false,
@@ -64,11 +63,6 @@
   // vim-indent-object: <op>ii this indentation level, <op>ai ..and line above, <op>aI ..and line after
   "vim.camelCaseMotion.enable": true,
   "vim.easymotion": true,
-  "vim.easymotionMarkerYOffset": 5,
-  "vim.easymotionMarkerHeight": 20,
-  "vim.easymotionMarkerWidthPerChar": 10,
-  "vim.easymotionMarkerFontSize": "16",
-  "vim.easymotionMarkerFontFamily": "Menlo",
   "vim.normalModeKeyBindingsNonRecursive": [
     {
         "before": [":"],
@@ -182,5 +176,5 @@
   "texlab.server.autoDownload": true,
   "telemetry.enableTelemetry": false,
   "security.workspace.trust.untrustedFiles": "open",
-  "tabnine.experimentalAutoImports": true,
+  "tabnine.experimentalAutoImports": true
 }
