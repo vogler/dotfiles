@@ -86,6 +86,9 @@ if ! has opam; then
   opam install -y utop
 fi
 
+# js/npm
+sudo npm install -g npm-check-updates
+
 # TODO this needs to be rethought
 # echo_bold ">> Link *.symlink"
 # source install/link.sh $*
