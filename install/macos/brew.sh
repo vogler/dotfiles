@@ -86,7 +86,9 @@ brew install jid # Json incremental digger
 brew install postgresql # SQL DB; `brew services start postgresql` to enable start on login, `brew services run postgresql` to just start
 
 # git
-brew install diff-so-fancy
+brew install diff-so-fancy # within-line highlights
+brew install git-delta # as diff-so-fancy but with language syntax highlighting, side-by-side, etc.
+brew install tig # Text interface for Git repositories
 brew install hub
 brew install gh # https://github.com/cli/cli/blob/trunk/docs/gh-vs-hub.md
 # brew install --cask sourcetree smartgit gitkraken gitup # tried but don't use
