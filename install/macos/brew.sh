@@ -133,6 +133,10 @@ brew install --cask handbrake # video transcoder; also available as formula, but
 # https://gifcap.dev creates gif from screen recording in the browser
 brew install calibre # 366MB
 
+# CAD, 3D printing, IOT
+brew install autodesk-fusion360 # 3.6 GB in ~/Library/Application\ Support/Autodesk/
+brew install ultimaker-cura # 617MB
+brew install arduino # 500MB, use vscode/PlatformIO instead, but this has a nice Serial Plotter for simple sensor sketches
 
 # for more see install/macos/old-MBP/Brewfile
 # Brewfile in https://github.com/lunaryorn/dotfiles/commit/2d8531881c2bc61f091d83bc2cf02ad6ebb680c6
