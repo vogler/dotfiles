@@ -6,13 +6,12 @@ sudo apt -qq update
 # apt list --installed | sed -e 's/\(.*\)\/.*/agi \1/' # TODO versions? do I really want all packages?
 
 # essentials
-agi zsh
-agi tmux
-agi tree
+agi zsh # better shell than bash
+agi tmux # terminal multiplexer
+agi tree # `exa --tree --level=2` has colors and can show meta-data with --long
 agi neovim
-agi nodejs
-agi npm
-agi silversearcher-ag
+agi nodejs # JavaScript
+agi npm # node package manager
 agi fd-find # Simple, fast and user-friendly alternative to find
 sudo ln -sf /usr/bin/fdfind /usr/bin/fd
 agi silversearcher-ag # Code-search similar to ack, but faster
@@ -22,11 +21,11 @@ agi xclip # nvim startup on RPi4: sourcing clipboard.vim took 4s with default xs
 agi unzip bubblewrap m4 # required for opam (m4 only recommended since most packages rely on it)
 agi python3-pip
 # agi golang
-agi ruby
+# agi ruby
 agi inotify-tools
 # agi clang
-agi jq
-agi moreutils
+agi jq # JSON CLI processor
+agi moreutils # use ts (timestamp standard input) in systemd services for mqtt subs
 
 if [[ "$*" == *latex* ]]; then
   agi texlive-latex-extra
@@ -43,8 +42,8 @@ if [[ "$*" == *smart-home* ]]; then
   cd smart-home
   git submodule update --init --recursive
   echo ">>> MQTT"
-  agi mosquitto
-  agi mosquitto-clients
+  agi mosquitto # MQTT server
+  agi mosquitto-clients # mosqitto_{pub,sub}
   if [[ $(hostname) == "rpi3" ]]; then
     echo ">>> node-red"
     if [ ! -d ~/.node-red ]; then
