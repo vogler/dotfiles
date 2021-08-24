@@ -13,6 +13,9 @@ agi neovim
 agi nodejs
 agi npm
 agi silversearcher-ag
+agi fd-find # Simple, fast and user-friendly alternative to find
+sudo ln -sf /usr/bin/fdfind /usr/bin/fd
+agi silversearcher-ag # Code-search similar to ack, but faster
 agi ncdu # NCurses Disk Usage
 agi libterm-readkey-perl # needed for git config interactive.singleKey on Raspbian
 agi xclip # nvim startup on RPi4: sourcing clipboard.vim took 4s with default xsel, see https://github.com/neovim/neovim/issues/7237
