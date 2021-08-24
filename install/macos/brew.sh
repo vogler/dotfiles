@@ -125,12 +125,13 @@ brew install font-consolas-for-powerline font-menlo-for-powerline font-meslo-for
 # brew install rescuetime # Intel, fails because it requires Rosetta 2 (`sudo softwareupdate --install-rosetta`). Why did the other Intel apps work without installing this?
 # WhatPulse neither on brew or app store. Download from https://whatpulse.org
 
-# image/video
+# image/video/books
 # brew install imagemagick
 # brew install ffmpeg
 brew install --cask handbrake # video transcoder; also available as formula, but: A full installation of Xcode.app 10.3 is required to compile
 # brew install kap # Intel, 353MB; screen recorder built with web technology
 # https://gifcap.dev creates gif from screen recording in the browser
+brew install calibre # 366MB
 
 
 # for more see install/macos/old-MBP/Brewfile
