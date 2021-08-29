@@ -96,7 +96,8 @@ brew install gitwatch # use GitDoc in vscode instead? https://marketplace.visual
 # brew install git-recent # recent branches; use `git branchr` (alias in .gitconfig) which is based on `git branch` and accepts its options like -a to show remote branches
 
 # programming
-brew install node # JavaScript
+# macOS ships ruby 2.6.3, python 2.7.16; python3 installed as dep; typescript via npm
+brew install node # JavaScript; includes npm
 brew install opam # OCaml
 brew install java
 sudo ln -sfn /opt/homebrew/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk # For the system Java wrappers to find this JDK
