@@ -59,6 +59,7 @@ brew install fd # Simple, fast and user-friendly alternative to find
 brew install the_silver_searcher # Code-search similar to ack, but faster
 brew install ncdu # NCurses Disk Usage
 brew install p7zip # 7z with support for Brotli, Fast LZMA2, LZ4, LZ5, Lizard and Zstd
+brew info the-unarchiver # unpack .rar
 
 # network
 brew install wget # alt for curl
