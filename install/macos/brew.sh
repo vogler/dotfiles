@@ -75,6 +75,7 @@ brew install iterm2 # https://sourabhbajaj.com/mac-setup/iTerm/
 curl -L https://iterm2.com/shell_integration/install_shell_integration_and_utilities.sh | bash
 brew install tmux
 brew install tokei # count code lines fast and by language
+brew install semgrep # semantic grep: lightweight static analysis for many languages
 brew install rlwrap # used in ocaml alias since it has no readline support; use utop for better REPL
 brew install pkg-config
 brew install autoconf automake # autotools
