@@ -45,6 +45,10 @@ brew install iina # media player
 brew install raspberry-pi-imager # install different OSes to microSD
 
 # sys tools
+brew install neovim # editor, no need for vim, config in .vimrc
+brew install iterm2 # better Terminal.app, https://sourabhbajaj.com/mac-setup/iTerm/
+curl -L https://iterm2.com/shell_integration/install_shell_integration_and_utilities.sh | bash
+brew install tmux # terminal multiplexer
 brew install coreutils # newer than macOS
 brew install grep # newer than macOS: 3.6 vs 2.5.1-FreeBSD
 brew install gnu-sed # newer than macOS: 4.8 vs 2017 BSD?
@@ -61,31 +65,20 @@ brew install ncdu # NCurses Disk Usage
 brew install p7zip # 7z with support for Brotli, Fast LZMA2, LZ4, LZ5, Lizard and Zstd
 brew info the-unarchiver # unpack .rar
 
-# network
-brew install wget # alt for curl
-brew install httpie # https://httpie.io User-friendly cURL replacement
-brew install mosquitto # MQTT pub/sub
-brew install youtube-dl # download videos from many websites
-brew install angry-ip-scanner
-# brew install insomnia # Intel, 337MB; HTTP and GraphQL Client
+# programming languages
+# macOS ships ruby 2.6.3, python 2.7.16; python3 installed as dep; typescript via npm
+brew install node # JavaScript; includes npm
+brew install opam # OCaml
+brew install java
+sudo ln -sfn /opt/homebrew/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk # For the system Java wrappers to find this JDK
 
 # dev tools
-brew install neovim
-brew install iterm2 # https://sourabhbajaj.com/mac-setup/iTerm/
-curl -L https://iterm2.com/shell_integration/install_shell_integration_and_utilities.sh | bash
-brew install tmux
 brew install tokei # count code lines fast and by language
 brew install semgrep # semantic grep: lightweight static analysis for many languages
 brew install rlwrap # used in ocaml alias since it has no readline support; use utop for better REPL
 brew install pkg-config
 brew install autoconf automake # autotools
 brew install heroku/brew/heroku
-
-# data processing
-brew install jq # JSON CLI processor
-brew install xsv # CSV CLI: cat count flatten frequency join search select slice sort split stats table
-brew install jid # Json incremental digger
-brew install postgresql # SQL DB; `brew services start postgresql` to enable start on login, `brew services run postgresql` to just start
 
 # git
 brew install diff-so-fancy # within-line highlights
@@ -97,12 +90,19 @@ brew install gh # https://github.com/cli/cli/blob/trunk/docs/gh-vs-hub.md
 brew install gitwatch # use GitDoc in vscode instead? https://marketplace.visualstudio.com/items?itemName=vsls-contrib.gitdoc
 # brew install git-recent # recent branches; use `git branchr` (alias in .gitconfig) which is based on `git branch` and accepts its options like -a to show remote branches
 
-# programming
-# macOS ships ruby 2.6.3, python 2.7.16; python3 installed as dep; typescript via npm
-brew install node # JavaScript; includes npm
-brew install opam # OCaml
-brew install java
-sudo ln -sfn /opt/homebrew/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk # For the system Java wrappers to find this JDK
+# data processing
+brew install jq # JSON CLI processor
+brew install xsv # CSV CLI: cat count flatten frequency join search select slice sort split stats table
+brew install jid # Json incremental digger
+brew install postgresql # SQL DB; `brew services start postgresql` to enable start on login, `brew services run postgresql` to just start
+
+# network
+brew install wget # alt for curl
+brew install httpie # https://httpie.io User-friendly cURL replacement
+brew install mosquitto # MQTT pub/sub
+brew install youtube-dl # download videos from many websites
+brew install angry-ip-scanner
+# brew install insomnia # Intel, 337MB; HTTP and GraphQL Client
 
 # goblint
 brew install gmp # needed to build deps
