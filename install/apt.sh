@@ -12,6 +12,7 @@ agi tree # `exa --tree --level=2` has colors and can show meta-data with --long
 agi neovim
 agi htop # nicer ncurses-based process viewer similar to top
 agi iotop # shows I/O usage
+agi iftop # shows network interface usage
 agi nodejs # JavaScript
 agi npm # node package manager
 agi fd-find # Simple, fast and user-friendly alternative to find
