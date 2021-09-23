@@ -10,6 +10,8 @@ agi zsh # better shell than bash
 agi tmux # terminal multiplexer
 agi tree # `exa --tree --level=2` has colors and can show meta-data with --long
 agi neovim
+agi htop # nicer ncurses-based process viewer similar to top
+agi iotop # shows I/O usage
 agi nodejs # JavaScript
 agi npm # node package manager
 agi fd-find # Simple, fast and user-friendly alternative to find
