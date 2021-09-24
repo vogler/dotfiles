@@ -32,7 +32,7 @@ brew install shiftit # Intel
 # browser/-based apps
 brew install google-chrome
 # brew install spotify # Intel, use Chrome App -> same (except no preferences & friends feed?) but more efficient
-brew install whatsapp # Intel
+brew install whatsapp # Intel, use Chrome App WhatsChrome
 brew install slack
 brew install visual-studio-code
 # brew install evernote # Intel; not worth the overhead, just use the web-app and eventually something nicer with history
