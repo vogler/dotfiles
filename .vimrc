@@ -342,6 +342,7 @@ call plug#end()
 
 set background=dark
 colorscheme solarized
+highlight! link SignColumn LineNr
 " call togglebg#map("<F5>") " seldomly used -> use ToggleBG instead
 
 autocmd BufNewFile,BufReadPost *.opa set filetype=opa
