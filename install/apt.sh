@@ -48,6 +48,7 @@ if [[ "$*" == *smart-home* ]]; then
   agi mosquitto # MQTT server
   agi mosquitto-clients # mosqitto_{pub,sub}
   if [[ $(hostname) == "rpi3" ]]; then
+    agi cec-utils # check/control TV via HDMI
     echo ">>> node-red"
     if [ ! -d ~/.node-red ]; then
       echo "Please restore ~/.node-red" # TODO restore everything but secrets from here
