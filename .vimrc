@@ -28,7 +28,7 @@ Plug 'tomtom/tcomment_vim'
 let g:tcomment#commentstring_c = '// %s'
 Plug 'tpope/vim-fugitive' " provides :G (:Git), :GMove, :GBrowse etc.
 Plug 'tpope/vim-rhubarb' " GitHub extension for fugitive.vim: :GBrowse, omni-complete issues etc. in commit messages
-" Plug 'tpope/vim-endwise' " end certain structures (if, do, etc.) automatically. Disabled because it remapped <cr> which is needed to accept multi-word suggetion in coc.nvim
+Plug 'tpope/vim-endwise' " end certain structures (if, do, etc.) automatically
 Plug 'tpope/vim-surround' " add/change/delete surrounding parentheses, brackets, quotes, XML tags
 Plug 'tpope/vim-repeat' " make . also repeat plugin maps instead of just native commands
 Plug 'tpope/vim-eunuch' " UNIX shell commands :Delete, :Move, :SudoWrite etc.
@@ -163,12 +163,13 @@ let g:ctrlp_user_command = ['.git', 'cd %s && {git ls-files & git ls-files -o --
     inoremap <silent><expr> <c-@> coc#refresh()
   endif
 
-  " Make <CR> auto-select the first completion item and notify coc.nvim to
-  " format on enter, <cr> could be remapped by other vim plugin!
-  " Check with :verbose imap <cr>
-  " Had to disable endwise.vim. https://github.com/neoclide/coc.nvim/issues/2576
-  inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
-                                \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+  " <tab> only completes the first word.
+  " Make <cr> confirm the whole entry. Default binding for confirm is <C-y>.
+  " :verbose imap <cr> showed that endwise.vim already remapped <cr> which broke coc's config.
+  " Fix below is a mix of https://github.com/neoclide/coc.nvim/issues/262#issuecomment-792331399 and https://github.com/neoclide/coc.nvim/wiki/Completion-with-sources#use-cr-to-confirm-completion
+  let g:endwise_no_mappings = v:true
+  inoremap <expr> <Plug>CustomCocCR complete_info(['selected'])['selected'] != -1 ? "\<C-y>" : "\<C-g>u\<CR>"
+  imap <CR> <Plug>CustomCocCR<Plug>DiscretionaryEnd
 
   " Use `[g` and `]g` to navigate diagnostics
   " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
