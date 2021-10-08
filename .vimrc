@@ -28,7 +28,7 @@ Plug 'tomtom/tcomment_vim'
 let g:tcomment#commentstring_c = '// %s'
 Plug 'tpope/vim-fugitive' " provides :G (:Git), :GMove, :GBrowse etc.
 Plug 'tpope/vim-rhubarb' " GitHub extension for fugitive.vim: :GBrowse, omni-complete issues etc. in commit messages
-Plug 'tpope/vim-endwise' " end certain structures (if, do, etc.) automatically
+" Plug 'tpope/vim-endwise' " end certain structures (if, do, etc.) automatically. Disabled because it remapped <cr> which is needed to accept multi-word suggetion in coc.nvim
 Plug 'tpope/vim-surround' " add/change/delete surrounding parentheses, brackets, quotes, XML tags
 Plug 'tpope/vim-repeat' " make . also repeat plugin maps instead of just native commands
 Plug 'tpope/vim-eunuch' " UNIX shell commands :Delete, :Move, :SudoWrite etc.
@@ -121,6 +121,15 @@ let g:ctrlp_user_command = ['.git', 'cd %s && {git ls-files & git ls-files -o --
 
 " IDE features (completion, linting/checking, formatting) done by coc
   Plug 'neoclide/coc.nvim', {'branch': 'release'} " Nodejs extension host for vim & neovim, load extensions like VSCode and host language servers. TODO move out the below default config...
+  " extensions :CocInstall coc-json coc-tsserver
+    let g:coc_global_extensions = ['coc-json', 'coc-tsserver', 'coc-explorer', 'coc-yank', 'coc-markdownlint', 'coc-sh', 'coc-word']
+    " https://github.com/weirongxu/coc-explorer better than nerdtree?
+    nnoremap <silent><nowait> <space>e <Cmd>CocCommand explorer --reveal-when-open<CR>
+    " https://github.com/neoclide/coc-yank
+    nnoremap <silent><nowait> <space>y  :<C-u>CocList -A --normal yank<cr>
+    " https://github.com/neoclide/coc-lists
+    " https://github.com/neoclide/coc-git
+
   let g:coc_disable_startup_warning = 1 " warning: coc.nvim works best on vim >= 8.1.1719 and neovim >= 0.4.0
 
   " from https://github.com/neoclide/coc.nvim#example-vim-configuration
@@ -155,7 +164,9 @@ let g:ctrlp_user_command = ['.git', 'cd %s && {git ls-files & git ls-files -o --
   endif
 
   " Make <CR> auto-select the first completion item and notify coc.nvim to
-  " format on enter, <cr> could be remapped by other vim plugin
+  " format on enter, <cr> could be remapped by other vim plugin!
+  " Check with :verbose imap <cr>
+  " Had to disable endwise.vim. https://github.com/neoclide/coc.nvim/issues/2576
   inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
                                 \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
@@ -255,7 +266,7 @@ let g:ctrlp_user_command = ['.git', 'cd %s && {git ls-files & git ls-files -o --
   " Show all diagnostics.
   nnoremap <silent><nowait> <space>a  :<C-u>CocList diagnostics<cr>
   " Manage extensions.
-  nnoremap <silent><nowait> <space>e  :<C-u>CocList extensions<cr>
+  nnoremap <silent><nowait> <space>x :<C-u>CocList extensions<cr>
   " Show commands.
   nnoremap <silent><nowait> <space>c  :<C-u>CocList commands<cr>
   " Find symbol of current document.
@@ -423,6 +434,7 @@ let g:mapleader = ","
 " Fast saving
 nmap <leader>s :w!<cr>
 nmap <leader>q :q!<cr>
+nnoremap <silent><nowait> <space>q :q!<cr>
 nmap <leader>x :x!<cr> " same as ZZ (only write if changes have been made)
 nmap <leader>c :Gwrite<cr>:Git commit -v --quiet<cr>
 nmap <leader>C :Git commit -v --quiet<cr>
