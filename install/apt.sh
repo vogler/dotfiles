@@ -47,6 +47,7 @@ if [[ "$*" == *smart-home* ]]; then
   echo ">>> MQTT"
   agi mosquitto # MQTT server
   agi mosquitto-clients # mosqitto_{pub,sub}
+  agi wakeonlan
   if [[ $(hostname) == "rpi3" ]]; then
     agi cec-utils # check/control TV via HDMI
     echo ">>> node-red"
