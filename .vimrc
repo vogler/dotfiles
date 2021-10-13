@@ -51,6 +51,7 @@ Plug 'gabrielelana/vim-markdown' " syntax highlighting for GitHub Markdown flavo
 Plug 'tpope/vim-dispatch' " Asynchronous build and test dispatcher :Make
 Plug 'tpope/vim-dadbod' " interface for many databases :DB postgresql:///foobar, :DB sqlite:myfile.sqlite3 select count(*) from widgets
 
+Plug 'matze/vim-move' " A-k/A-j move line/selection up/down; A-h/A-l move char/selection left/right
 Plug 'wellle/targets.vim' " text objects for pair, quote, separator, argument, tag
 Plug 'mhinz/vim-startify' " start screen (if opened without arg) instead of empty buffer with MRU, bookmarks, sessions
 Plug 'flazz/vim-colorschemes' " colorscheme pack including solarized
@@ -515,8 +516,8 @@ nmap ü :shell<cr>
 
 """"""""" buffer magic """""""""""""""""""
 " <M-k> doesn't work in gnome-terminal, but typing ctrl-v alt-k works
-nnoremap <A-k> :bn!<cr>
-nnoremap <A-j> :bp!<cr>
+nnoremap <A-s> :bn!<cr>
+nnoremap <A-a> :bp!<cr>
 nnoremap <A-d> :bd!<cr>
 nnoremap <A-1> :b 1<cr>
 nnoremap <A-2> :b 2<cr>
