@@ -122,7 +122,7 @@ let g:ctrlp_user_command = ['.git', 'cd %s && {git ls-files & git ls-files -o --
 " IDE features (completion, linting/checking, formatting) done by coc
   Plug 'neoclide/coc.nvim', {'branch': 'release'} " Nodejs extension host for vim & neovim, load extensions like VSCode and host language servers. TODO move out the below default config...
   " extensions :CocInstall coc-json coc-tsserver
-    let g:coc_global_extensions = ['coc-json', 'coc-tsserver', 'coc-explorer', 'coc-yank', 'coc-markdownlint', 'coc-sh', 'coc-word', 'coc-clangd']
+    let g:coc_global_extensions = ['coc-json', 'coc-tsserver', 'coc-explorer', 'coc-yank', 'coc-markdownlint', 'coc-sh', 'coc-word', 'coc-clangd', 'coc-pyright', 'coc-go', 'coc-solargraph'] " solargraph (ruby) requires `sudo gem install solargraph`
     " https://github.com/weirongxu/coc-explorer better than nerdtree?
     nnoremap <silent><nowait> <space>e <Cmd>CocCommand explorer --reveal-when-open<CR>
     " https://github.com/neoclide/coc-yank
