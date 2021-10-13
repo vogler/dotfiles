@@ -72,6 +72,9 @@ brew install node # JavaScript; includes npm
 brew install opam # OCaml
 brew install java
 sudo ln -sfn /opt/homebrew/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk # For the system Java wrappers to find this JDK
+# brew install cling # C++ REPL based on LLVM and Clang
+mkdir -p ~/.local/bin
+ln -sfn /Library/Developer/CommandLineTools/usr/bin/clangd ~/.local/bin/ # used for coc-clangd in nvim
 
 # dev tools
 brew install tokei # count code lines fast and by language

@@ -1,6 +1,6 @@
 {
- "explorer.file.showHiddenFiles": true,
- "markdownlint.config": { "line-length": false },
+  "explorer.file.showHiddenFiles": true,
+  "markdownlint.config": { "line-length": false },
   "languageserver": {
     "ocaml-lsp": {
       "command": "opam",
