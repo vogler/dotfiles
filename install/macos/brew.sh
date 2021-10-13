@@ -67,6 +67,7 @@ brew info the-unarchiver # unpack .rar
 
 # programming languages
 # macOS ships ruby 2.6.3, python 2.7.16; python3 installed as dep; typescript via npm
+brew install ptpython # better Python REPL
 brew install node # JavaScript; includes npm
 brew install opam # OCaml
 brew install java
