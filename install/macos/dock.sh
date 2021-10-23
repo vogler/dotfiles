@@ -14,3 +14,4 @@ dockutil --add ~/Applications/Chrome\ Apps.localized/Spotify.app --replacing Spo
 # dockutil --add /Applications/WhatsApp.app --replacing WhatsApp --position 6
 dockutil --add ~/Applications/Chrome\ Apps.localized/WhatsChrome.app --replacing WhatsChrome --position 6
 dockutil --add /Applications/Slack.app --replacing Slack --position 7
+dockutil --add ~/Applications/Autodesk\ Fusion\ 360.app --replacing 'Autodesk Fusion 360' --position 8
