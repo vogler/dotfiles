@@ -144,6 +144,7 @@ brew install calibre # 366MB
 brew install autodesk-fusion360 # 3.6 GB in ~/Library/Application\ Support/Autodesk/
 brew install openscad # 62MB
 brew install ultimaker-cura # 617MB
+brew install superslicer # 111MB, fork of PrusaSlicer
 brew install arduino # 500MB, use vscode/PlatformIO instead, but this has a nice Serial Plotter for simple sensor sketches
 
 # for more see install/macos/old-MBP/Brewfile
