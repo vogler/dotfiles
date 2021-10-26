@@ -516,8 +516,8 @@ nmap ü :shell<cr>
 
 """"""""" buffer magic """""""""""""""""""
 " <M-k> doesn't work in gnome-terminal, but typing ctrl-v alt-k works
-nnoremap <C-j> :bn!<cr>
-nnoremap <C-k> :bp!<cr>
+nnoremap <C-k> :bn!<cr>
+nnoremap <C-j> :bp!<cr>
 nnoremap <A-d> :bd!<cr>
 " nnoremap <A-1> :b 1<cr>
 " nnoremap <A-2> :b 2<cr>
