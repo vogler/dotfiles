@@ -519,16 +519,16 @@ nmap ü :shell<cr>
 nnoremap <C-j> :bn!<cr>
 nnoremap <C-k> :bp!<cr>
 nnoremap <A-d> :bd!<cr>
-nnoremap <A-1> :b 1<cr>
-nnoremap <A-2> :b 2<cr>
-nnoremap <A-3> :b 3<cr>
-nnoremap <A-4> :b 4<cr>
-nnoremap <A-5> :b 5<cr>
-nnoremap <A-6> :b 6<cr>
-nnoremap <A-7> :b 7<cr>
-nnoremap <A-8> :b 8<cr>
-nnoremap <A-9> :b 9<cr>
-nnoremap <A-0> :blast<cr>
+" nnoremap <A-1> :b 1<cr>
+" nnoremap <A-2> :b 2<cr>
+" nnoremap <A-3> :b 3<cr>
+" nnoremap <A-4> :b 4<cr>
+" nnoremap <A-5> :b 5<cr>
+" nnoremap <A-6> :b 6<cr>
+" nnoremap <A-7> :b 7<cr>
+" nnoremap <A-8> :b 8<cr>
+" nnoremap <A-9> :b 9<cr>
+" nnoremap <A-0> :blast<cr>
 set hidden " allows switching to another buffer with unsaved buffer open
 
 """"""""" ó,ö = y/p with clipboard """""""""
