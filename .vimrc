@@ -516,8 +516,8 @@ nmap ü :shell<cr>
 
 """"""""" buffer magic """""""""""""""""""
 " <M-k> doesn't work in gnome-terminal, but typing ctrl-v alt-k works
-nnoremap <A-s> :bn!<cr>
-nnoremap <A-a> :bp!<cr>
+nnoremap <C-j> :bn!<cr>
+nnoremap <C-k> :bp!<cr>
 nnoremap <A-d> :bd!<cr>
 nnoremap <A-1> :b 1<cr>
 nnoremap <A-2> :b 2<cr>
@@ -565,7 +565,7 @@ let g:Tex_UseMakefile = 0
 " insert lines and stay in normal mode
 " nmap  O<Esc>
 " nmap <CR> o<Esc>
-nnoremap <C-j> i<CR><Esc>
+nnoremap <A-i> i<CR><Esc>
 
 " load changed files automatically
 " set autoread " only works for gui
