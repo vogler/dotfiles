@@ -6,9 +6,12 @@
 ; win+shift+p switches between two displays -> mapped to 'steam + >' on the controller
 ; TODO turn on TV and switch to input for PC or back to previous input
 #+p::
-    SysGet, MonitorWorkArea, MonitorWorkArea
-    ; MsgBox, Right:`t%MonitorRight% (%MonitorWorkAreaRight% work right)
-    If (MonitorWorkAreaRight == 3840) {
+    ; SysGet, MonitorWorkArea, MonitorWorkArea
+    ; MsgBox, Right:`t%MonitorRight% (%MonitorWorkAreaRight% work right) %A_ScreenWidth%
+    ; MonitorWorkAreaRight was 2743 with 175% scaling on TV instead of 125% on Desktop, but not reliable since sometimes it's also 3840 on TV
+    ; https://superuser.com/questions/270718/get-display-resolution-from-windows-command-line -> wmic gave the same info no matter which monitor was active
+    ; tried PS: Get-WmiObject win32_desktopmonitor; Get-WmiObject win32_videocontroller; Get-CimInstance -Namespace root\wmi -ClassName WmiMonitorBasicDisplayParams
+    If (A_ScreenWidth== 3840) {
         Run, displayswitch /external
         ; switch TV to HDMI; works but if TV is already on PC-HDMI it will switch to RPi-HDMI :(
         ; Run, samsungctl --host 192.168.178.24 --method websocket KEY_HDMI
