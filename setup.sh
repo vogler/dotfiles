@@ -89,6 +89,10 @@ fi
 # js/npm
 sudo npm install -g npm-check-updates
 
+# python/pip
+mkdir -p ~/.config/ptpython
+ln -sf {`pwd`,~}/.config/ptpython/config.py
+
 # TODO this needs to be rethought
 # echo_bold ">> Link *.symlink"
 # source install/link.sh $*
