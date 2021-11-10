@@ -1,13 +1,11 @@
 // Place your settings in this file to overwrite the default settings
 {
   "files.associations": {
-    "*.pml": "c",
-    "*.ml": "ocaml",
-    "jbuild": "lisp"
+    "*.pml": "c"
   },
   "files.exclude": {
     "**/.gtm": true, // git time metrics
-    "**/_build": true // ocamlbuild
+    // "**/_build": true // ocamlbuild, dune
   },
   "files.insertFinalNewline": true,
   "files.trimFinalNewlines": true,
@@ -128,14 +126,6 @@
         "cursorDown"
     ],
   },
-  "sync.gist": "4e2e7c219f8055bec087c8897372d80f",
-  // https://github.com/shanalikhan/code-settings-sync/wiki/Sync-Pragmas
-  // @sync os=mac
-  "sync.autoUpload": true, // upload config on change
-  "sync.forceUpload": true,
-  // @sync os=windows
-  // "sync.autoDownload": false, // download config on startup
-  "sync.quietSync": true,
   "vsicons.dontShowNewVersionMessage": true,
   "diffEditor.renderSideBySide": false,
   "typescript.updateImportsOnFileMove.enabled": "always",
@@ -185,16 +175,12 @@
   "workbench.editorAssociations": {
     "*.ipynb": "jupyter.notebook.ipynb"
   },
-  "python.showStartPage": false,
-  "texlab.server.autoDownload": true,
-  "telemetry.enableTelemetry": false,
   "security.workspace.trust.untrustedFiles": "open",
-  "tabnine.experimentalAutoImports": true,
   "workbench.editor.highlightModifiedTabs": true,
   "editor.renderWhitespace": "trailing",
   "editor.renderLineHighlight": "gutter",
-  "editor.occurrencesHighlight": false,
-  "auto-build.defaultEnv.name": "mega2560",
+  "editor.occurrencesHighlight": true,
+  // "auto-build.defaultEnv.name": "mega2560", // Marlin env for MKS Gen L in Artillery Genius
   "editor.guides.bracketPairs": true,
   "editor.bracketPairColorization.enabled": true
 }
