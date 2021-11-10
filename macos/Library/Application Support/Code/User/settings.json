@@ -19,7 +19,6 @@
   "extensions.autoUpdate": true,
   "workbench.quickOpen.closeOnFocusLost": false,
   "workbench.statusBar.visible": true,
-  "editor.renderLineHighlight": "gutter",
   "files.hotExit": "onExitAndWindowClose",
   "window.restoreWindows": "all",
   // "editor.formatOnPaste": false,
@@ -45,7 +44,6 @@
   "workbench.editor.tabCloseButton": "off",
   "git.confirmSync": false,
   "editor.selectionHighlight": true,
-  "editor.occurrencesHighlight": false,
   // "latex-workshop.linter": true,
   // @sync os=windows
   // "vim.useCtrlKeys": false,
@@ -72,7 +70,6 @@
     }
   ],
   "editor.renderControlCharacters": false,
-  "editor.renderWhitespace": "none",
   "editor.tabSize": 2,
   "editor.detectIndentation": false,
   "editor.fontSize": 16,
@@ -153,6 +150,22 @@
   "[json]": {
     "editor.defaultFormatter": "vscode.json-language-features"
   },
+  "[ocaml]": {
+    "editor.language.brackets": [
+        ["[", "]"],
+        ["(", ")"],
+        ["then", "else"], // TODO wrong if there's an inner if w/o else
+        ["struct", "end"],
+        ["sig", "end"],
+        ["let", "in"],
+        ["let rec", "and"],
+        ["and", "and"],
+        ["and", "in"],
+    ],
+    "editor.language.colorizedBracketPairs": [
+        ["(", ")"]
+    ]
+},
   "latex-workshop.view.pdf.viewer": "tab",
   "latex-workshop.intellisense.package.enabled": true,
   "latex-workshop.chktex.enabled": true,
@@ -177,5 +190,11 @@
   "telemetry.enableTelemetry": false,
   "security.workspace.trust.untrustedFiles": "open",
   "tabnine.experimentalAutoImports": true,
-  "workbench.editor.highlightModifiedTabs": true
+  "workbench.editor.highlightModifiedTabs": true,
+  "editor.renderWhitespace": "trailing",
+  "editor.renderLineHighlight": "gutter",
+  "editor.occurrencesHighlight": false,
+  "auto-build.defaultEnv.name": "mega2560",
+  "editor.guides.bracketPairs": true,
+  "editor.bracketPairColorization.enabled": true
 }
