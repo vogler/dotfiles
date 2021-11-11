@@ -139,6 +139,7 @@ brew install font-consolas-for-powerline font-menlo-for-powerline font-meslo-for
 brew install --cask handbrake # video transcoder; also available as formula, but: A full installation of Xcode.app 10.3 is required to compile
 # brew install kap # Intel, 353MB; screen recorder built with web technology
 # https://gifcap.dev creates gif from screen recording in the browser
+# cmd+shift+5 can record screen or region and produces .mov
 brew install calibre # 366MB
 
 # CAD, 3D printing, IOT
