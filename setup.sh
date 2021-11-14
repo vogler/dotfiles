@@ -1,5 +1,5 @@
 #!/bin/bash
-set -e
+set -e # immediately exit if any command has a non-zero exit status
 
 echo "This will setup my basic environment for macOS or Linux."
 echo "Possible arguments for extended setup: smart-home"
@@ -22,9 +22,11 @@ echo_bold(){ echo -e '\033[1;32m'"$1"'\033[0m'; } # should be bold green, but is
 echo ">> Get submodules"
 git submodule update --init --recursive
 
+config=~/.config
 # system packages
 if [ "$(uname)" == "Darwin" ]; then
   echo_bold ">> [Running macOS]"
+  config=~/Library/Application\ Support
 
   if ! has git; then # TODO check if this really does not exist; think I could execute `git` but it would then install the Command Line Tools
     echo_bold ">> install Command Line Tools of Xcode" # git, make, clang, gperf, m4, perl, svn, size, strip, strings, libtool, cpp, what...
@@ -90,8 +92,9 @@ fi
 sudo npm install -g npm-check-updates
 
 # python/pip
-mkdir -p ~/.config/ptpython
-ln -sf {`pwd`,~}/.config/ptpython/config.py
+mkdir -p "$config/ptpython" # not .config on macOS...
+# ln -sf {`pwd`,~}/.config/ptpython/config.py
+ln -sf `pwd`/.config/ptpython/config.py "$config/ptpython"
 
 # TODO this needs to be rethought
 # echo_bold ">> Link *.symlink"
