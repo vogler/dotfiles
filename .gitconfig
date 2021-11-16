@@ -18,8 +18,6 @@
     user = vogler
 [hub] # https://hub.github.com - newer: https://cli.github.com
     # protocol = https
-[ghi] # TODO remove? https://github.com/stephencelis/ghi
-    token = !security find-internet-password -a vogler -s github.com -l 'ghi token' -w
 [core]
     editor = nvim
     excludesfile = ~/.gitignore_global
