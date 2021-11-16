@@ -19,7 +19,7 @@ git-get(){ # as git clone, but skip instead of fail if target exists # TODO upda
 }
 echo_bold(){ echo -e '\033[1;32m'"$1"'\033[0m'; } # should be bold green, but is bold white. green somehow only works with 0 (regular) instead of 1 (bold).
 
-echo ">> Get submodules"
+echo_bold ">> Get submodules"
 git submodule update --init --recursive
 
 config=~/.config
@@ -58,7 +58,7 @@ if [ "$(uname)" == "Darwin" ]; then
     ssh-copy-id pi@rpi3
     ssh-copy-id pi@rpi4
   fi
-else
+elif has apt; then
   echo_bold ">> [Running Linux]" # current setup only for RPi or server (both via ssh)
 
   echo_bold ">> apt install ..."
@@ -72,6 +72,9 @@ else
     brew tap git-time-metric/gtm
     brew install gtm
   fi
+else
+  echo "Unsupported system! I can only install packages for macOS or Linux with apt."
+  exit
 fi
 
 # ocaml/opam
