@@ -25,19 +25,18 @@
     safecrlf = true
     ignorecase = true
     # pager = diff-so-fancy | less --tabs=4 -RFX --pattern='^(added|deleted|modified): '
+# less:
+  # -+S Wrap lines instead of the default chop-long-lines which breaks mouse select & copy in terminal (also, horizontal scrolling is annoying).
+  # -F Quit if entire file fits on first screen.
+  # -E Quit at end of file.
+  # -R Output "raw" control characters.
+  # -X Don't use init/deinit strings.
 [pager]
-    # log = diff-so-fancy | less --tabs=4 -RFX --pattern='^Commit: '
-    # diff-so-fancy got slow on larger inputs, should be fixed by 1.4.1, brew installs 1.4.2
-    log = diff-so-fancy | less --tabs=4 -RFX -+S
     # diff = diff-so-fancy | less --tabs=4 -RFX --pattern='^(added|deleted|modified): ' # the problem with this is that it also jumps directly to the first match and fills rest of screen with ~ for empty lines.
-    # less:
-      # -+S Wrap lines instead of the default chop-long-lines which breaks mouse select & copy in terminal (also, horizontal scrolling is annoying).
-      # -F Quit if entire file fits on first screen.
-      # -E Quit at end of file.
-      # -R Output "raw" control characters.
-      # -X Don't use init/deinit strings.
     diff = diff-so-fancy | less --tabs=4 -RXFE -+S
     show = diff-so-fancy | less --tabs=4 -RXFE -+S
+    # log = diff-so-fancy | less --tabs=4 -RFX --pattern='^Commit: '
+    log = diff-so-fancy | less --tabs=4 -RFX -+S
 [push]
     default = current
 [color]
