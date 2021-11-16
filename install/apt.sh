@@ -9,6 +9,7 @@ sudo apt -qq update
 agi zsh # better shell than bash
 agi tmux # terminal multiplexer
 agi neovim # editor
+agi tig # Text interface for Git repositories
 agi tree # `exa --tree --level=2` has colors and can show meta-data with --long
 agi htop # nicer ncurses-based process viewer similar to top
 agi iotop # shows I/O usage
