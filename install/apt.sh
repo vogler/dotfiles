@@ -1,3 +1,4 @@
+#!/bin/bash
 agi() {
   # https://askubuntu.com/questions/258219/how-do-i-make-apt-get-install-less-noisy
   sudo apt-get -y -qq install --fix-missing "$@"
@@ -10,6 +11,8 @@ agi zsh # better shell than bash
 agi tmux # terminal multiplexer
 agi neovim # editor
 agi tig # Text interface for Git repositories
+arch=$([[ $(uname -m) == "x86_64" ]] && echo "x86_64" || echo "armhf")
+curl -fsSL https://github.com/dandavison/delta/releases/download/0.9.2/git-delta_0.9.2_$arch.deb -o /tmp/git-delta_$arch.deb && sudo dpkg -i /tmp/git-delta_$arch.deb # A syntax-highlighting pager for git and diff output; TODO watch for update: https://github.com/dandavison/delta#installation
 agi tree # `exa --tree --level=2` has colors and can show meta-data with --long
 agi htop # nicer ncurses-based process viewer similar to top
 agi iotop # shows I/O usage
