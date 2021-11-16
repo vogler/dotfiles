@@ -34,9 +34,34 @@
 [pager]
     # diff = diff-so-fancy | less --tabs=4 -RFX --pattern='^(added|deleted|modified): ' # the problem with this is that it also jumps directly to the first match and fills rest of screen with ~ for empty lines.
     diff = diff-so-fancy | less --tabs=4 -RXFE -+S
-    show = diff-so-fancy | less --tabs=4 -RXFE -+S
     # log = diff-so-fancy | less --tabs=4 -RFX --pattern='^Commit: '
     log = diff-so-fancy | less --tabs=4 -RFX -+S
+    show = diff-so-fancy | less --tabs=4 -RXFE -+S
+    # use delta instead of diff-so-fancy for syntax highlighting and more: https://github.com/dandavison/delta
+    diff = delta
+    log = delta
+    show = delta
+    blame = delta
+    reflog = delta
+[delta]
+    syntax-theme = Solarized (dark)
+    # line-numbers = true
+    # side-by-side = true
+    features = decorations navigate # navigate: n/N
+[delta "decorations"]
+    # file-style = omit
+    # file-style = bold yellow ul
+    # file-decoration-style = none
+    # hunk-header-decoration-style = yellow box
+    # hunk-header-file-style = red
+    # hunk-header-line-number-style = "#067a00"
+    # hunk-header-style = file line-number syntax
+[interactive]
+    singleKey = true
+    # diffFilter = diff-so-fancy --patch # since 1.4.0, https://github.com/so-fancy/diff-so-fancy/issues/35#issuecomment-776870877
+    diffFilter = delta --color-only --features=interactive
+[delta "interactive"]
+    keep-plus-minus-markers = false
 [push]
     default = current
 [color]
@@ -76,13 +101,11 @@
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
-[interactive]
-    singleKey = true
-    diffFilter = diff-so-fancy --patch # since 1.4.0, https://github.com/so-fancy/diff-so-fancy/issues/35#issuecomment-776870877
 [diff]
     compactionHeuristic = true # https://github.blog/2016-06-13-git-2-9-has-been-released/#beautiful-diffs
     submodule = log
     indentHeuristic = true
+    colorMoved = default
 [submodule]
     fetchJobs = 0
 [ghi]
