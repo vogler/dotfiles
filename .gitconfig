@@ -16,8 +16,10 @@
     username = gu95foc
 [github]
     user = vogler
-[hub]
-    protocol = https
+[hub] # https://hub.github.com - newer: https://cli.github.com
+    # protocol = https
+[ghi] # TODO remove? https://github.com/stephencelis/ghi
+    token = !security find-internet-password -a vogler -s github.com -l 'ghi token' -w
 [core]
     editor = nvim
     excludesfile = ~/.gitignore_global
@@ -52,9 +54,9 @@
     # file-style = omit
     # file-style = bold yellow ul
     # file-decoration-style = none
-    # hunk-header-decoration-style = yellow box
+    hunk-header-decoration-style = yellow box
     # hunk-header-file-style = red
-    # hunk-header-line-number-style = "#067a00"
+    hunk-header-line-number-style = yellow
     # hunk-header-style = file line-number syntax
 [interactive]
     singleKey = true
@@ -62,26 +64,29 @@
     diffFilter = delta --color-only --features=interactive
 [delta "interactive"]
     keep-plus-minus-markers = false
-[push]
-    default = current
 [color]
     ui = auto
-[diff]
-    tool = meld
-[difftool]
-    prompt = false
-[difftool "meld"]
-    trustExitCode = true
-    cmd = open -W -a Meld --args \"$LOCAL\" \"$PWD/$REMOTE\"
-[merge]
-    tool = meld
-[mergetool]
-    prompt = false
-[mergetool "meld"]
-    trustExitCode = true
-    cmd = open -W -a Meld --args --auto-merge \"$PWD/$LOCAL\" \"$PWD/$BASE\" \"$PWD/$REMOTE\" --output=\"$PWD/$MERGED\"
+[init]
+    defaultBranch = main
+[push]
+    default = current
+[pull]
+    rebase = true
 [rebase]
     autostash = true
+[diff]
+    compactionHeuristic = true # https://github.blog/2016-06-13-git-2-9-has-been-released/#beautiful-diffs
+    submodule = log
+    indentHeuristic = true
+    colorMoved = default
+[mergetool "nvim"]
+    cmd = nvim -f -c \"Gdiffsplit!\" \"$MERGED\"
+[merge]
+    tool = nvim # vimdiff; https://www.grzegorowski.com/using-vim-or-neovim-nvim-as-a-git-mergetool
+[mergetool]
+    prompt = false
+[submodule]
+    fetchJobs = 0
 #This will add the fixup command to git
 #git fixup $commit will use your current index to fixup the specified commit
 #This is done by doing git commit --fixup $commit and then using rebase with autosquash
@@ -96,27 +101,3 @@
     fwd = !git log --reverse --pretty=%H master | grep -A 1 $(git rev-parse HEAD) | tail -n1 | xargs git checkout
     addnw=!sh -c 'git diff -U0 -w --no-color "$@" | git apply --cached --ignore-whitespace --unidiff-zero -'
     branchr=branch --sort=-committerdate --format='%(HEAD) %(color:blue)%(refname:short)%(color:reset) %(color:green)%(committerdate:relative)%(color:reset) %(color:yellow)%(authorname)%(color:reset)\n  %(contents:subject)\n' # instead of `brew install git-recent`, this also accepts options for git branch like -a, edited from https://stackoverflow.com/questions/5188320/how-can-i-get-a-list-of-git-branches-ordered-by-most-recent-commit
-[filter "lfs"]
-    required = true
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-[diff]
-    compactionHeuristic = true # https://github.blog/2016-06-13-git-2-9-has-been-released/#beautiful-diffs
-    submodule = log
-    indentHeuristic = true
-    colorMoved = default
-[submodule]
-    fetchJobs = 0
-[ghi]
-	token = !security find-internet-password -a vogler -s github.com -l 'ghi token' -w
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
-[init]
-	defaultBranch = main
-[pull]
-	rebase = true
