@@ -440,8 +440,9 @@ nnoremap <silent><nowait> <space>q :q!<cr>
 nmap <leader>x :x!<cr> " same as ZZ (only write if changes have been made)
 nmap <leader>c :Gwrite<cr>:Git commit -v --quiet<cr>
 nmap <leader>C :Git commit -v --quiet<cr>
-nmap <leader>p ggVGp
-nmap <leader>y :%y+<cr>
+nmap <leader>P :Git push<cr>
+nmap <leader>y :%y+<cr> " yank whole buffer
+nmap <leader>p ggVGp " replace whole buffer by paste
 
 " nmap <C-X> :w!<cr>
 " imap <C-X> <esc>:w!<cr>i
