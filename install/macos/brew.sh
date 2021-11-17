@@ -38,7 +38,8 @@ brew install visual-studio-code
 # brew install evernote # Intel; not worth the overhead, just use the web-app and eventually something nicer with history
 
 brew install dropbox # only 9GB with free plan, moved Screenshots <2021 to PC TODO replace with self-hosted alternative on RPi
-brew install telegram
+brew install telegram # 152MB, 96MB RAM, Swift, narrow: chats>chat
+brew install telegram-desktop # 216MB, 340MB RAM, C++ webkit?, chats on side, can export chat data (settings > advanced)
 brew install libreoffice
 # mas install 1030461463 # PDFCombo: merge PDFs and preserve the TOC
 # https://outbankapp.com neither in brew nor mas (but finds outbank in App Store)
