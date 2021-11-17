@@ -371,6 +371,9 @@ let b:csv_arrange_align = 'l*' " :CSVArrangeColumn should left-align (default is
 let g:csv_autocmd_arrange = 1 " ArrangeColumn for all *.csv and only UnArrangeColumn for writing
 let g:csv_autocmd_arrange_size = 1024*1024 " only do it for files up to 1 MB (slow for big files)
 
+Plug 'ojroques/vim-oscyank' " SSH: also copy to client clipboard
+autocmd TextYankPost * if $SSH_CLIENT != '' && v:event.operator is 'y' && v:event.regname is '' | execute 'OSCYankReg "' | endif
+
 call plug#end()
 
 
