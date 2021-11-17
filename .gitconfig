@@ -78,7 +78,7 @@
     indentHeuristic = true
     colorMoved = default
 [mergetool "nvim"]
-    cmd = nvim -f -c \"Gdiffsplit!\" \"$MERGED\"
+    cmd = nvim -f -c \"Gvdiffsplit!\" \"$MERGED\"
 [merge]
     tool = nvim # vimdiff; https://www.grzegorowski.com/using-vim-or-neovim-nvim-as-a-git-mergetool
 [mergetool]
