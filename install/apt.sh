@@ -35,6 +35,7 @@ agi inotify-tools
 agi jq # JSON CLI processor
 agi moreutils # use ts (timestamp standard input) in systemd services for mqtt subs
 agi apt-file # which package provides a file? e.g. apt-file find libportaudio.so
+agi nq # lightweight job queue
 
 if [[ "$*" == *latex* ]]; then
   agi texlive-latex-extra
