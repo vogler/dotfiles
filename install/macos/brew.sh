@@ -36,6 +36,7 @@ brew install whatsapp # Intel, use Chrome App WhatsChrome
 brew install slack
 brew install visual-studio-code
 # brew install evernote # Intel; not worth the overhead, just use the web-app and eventually something nicer with history
+brew install tor-browser # 192MB
 
 brew install dropbox # only 9GB with free plan, moved Screenshots <2021 to PC TODO replace with self-hosted alternative on RPi
 brew install telegram # 152MB, 96MB RAM, Swift, narrow: chats>chat
