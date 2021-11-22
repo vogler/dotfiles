@@ -19,6 +19,7 @@ brew install qlstephen qlimagesize qlvideo # https://github.com/sindresorhus/qui
 # glance highlights all those correctly, .ts can't be handled (.tsx, .js work): https://github.com/samuelmeuli/glance#faq, also said some .zip would be password-protected and did not show anything when it was not
 brew install glance # TODO discontinued; need to open Glance.app first; replaces qlcolorcode qlmarkdown quicklook-json
 xattr -d -r com.apple.quarantine ~/Library/QuickLook # remove plugins from quarantine
+# brew install shortery # 6.9MB, triggers for Shortcuts, tried Sleep/Wake Up to log to file, but did not work
 
 # Desktop tools
 # brew install sizeup # Intel, unlimited trial
