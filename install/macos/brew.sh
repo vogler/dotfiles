@@ -111,6 +111,7 @@ brew install mosquitto # MQTT pub/sub
 brew install youtube-dl # download videos from many websites
 brew install angry-ip-scanner
 # brew install insomnia # Intel, 337MB; HTTP and GraphQL Client
+mas install 1451685025 # WireGuard VPN client; brew's wireguard-tools has no GUI
 
 # goblint
 brew install gmp # needed to build deps
