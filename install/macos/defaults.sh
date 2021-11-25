@@ -143,6 +143,16 @@ defaults write com.apple.dock showAppExposeGestureEnabled -bool true
 # Finder > View > As List
 defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
 
+# Finder > Preferences > General > New Finder windows show:
+# Computer     : `PfCm`
+# Volume       : `PfVo`
+# $HOME        : `PfHm`
+# Desktop      : `PfDe`
+# Documents    : `PfDo`
+# All My Files : `PfAF`
+# Other…       : `PfLo`
+defaults write com.apple.finder NewWindowTarget PfHm
+
 # Finder > Preferences > Advanced > Show all filename extensions
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 
