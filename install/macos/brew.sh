@@ -67,7 +67,7 @@ brew install fd # Simple, fast and user-friendly alternative to find
 brew install the_silver_searcher # Code-search similar to ack, but faster
 brew install ncdu # NCurses Disk Usage
 brew install p7zip # 7z with support for Brotli, Fast LZMA2, LZ4, LZ5, Lizard and Zstd
-brew info the-unarchiver # unpack .rar
+brew install the-unarchiver # unpack .rar
 
 # programming languages
 # macOS ships ruby 2.6.3, python 2.7.16; python3 installed as dep; typescript via npm
