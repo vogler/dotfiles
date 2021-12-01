@@ -58,7 +58,7 @@ brew install grep # newer than macOS: 3.6 vs 2.5.1-FreeBSD
 brew install gnu-sed # newer than macOS: 4.8 vs 2017 BSD?
 brew install less # newer than macOS: 590 vs 487
 brew install rsync # newer than macOS: 3.2.3 vs 2.6.9
-brew install htop
+brew install htop # improved top (interactive process viewer)
 brew install exa # Modern replacement for 'ls'
 brew install tree # `exa --tree --level=2` has colors and can show meta-data with --long
 brew install tldr # `tldr tar` shorter than `curl cheat.sh/tar` and works offline
