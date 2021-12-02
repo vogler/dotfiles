@@ -36,6 +36,7 @@ agi jq # JSON CLI processor
 agi moreutils # use ts (timestamp standard input) in systemd services for mqtt subs
 agi apt-file # which package provides a file? e.g. apt-file find libportaudio.so
 agi nq # lightweight job queue
+agi mosh # alternative for ssh, local echo, roaming, but UDP dyn. port alloc. 60000-61000
 
 if [[ "$*" == *latex* ]]; then
   agi texlive-latex-extra
