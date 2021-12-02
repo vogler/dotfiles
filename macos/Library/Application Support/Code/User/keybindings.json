@@ -17,10 +17,6 @@
         "command": "workbench.action.moveEditorLeftInGroup"
     },
     {
-        "key": "cmd+=",
-        "command": "workbench.action.zoomReset"
-    },
-    {
         "key": "cmd+m cmd+d",
         "command": "git.openChange",
         "when": "!textCompareEditorVisible"
