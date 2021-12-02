@@ -17,6 +17,13 @@ has(){ # check if a command is available
 git-get(){ # as git clone, but skip instead of fail if target exists # TODO update if exists? lockfile for commit?
   [ ! -d "$2" ] && git clone $1 $2 || true
 }
+
+lnsf(){ # make a symbolic link in home to dotfiles, create directories if needed
+  d=$(dirname "$@")
+  mkdir -p "~/$d"
+  ln -sf `pwd`/"$@" ~/"$@"
+}
+
 echo_bold(){ echo -e '\033[1;32m'"$1"'\033[0m'; } # should be bold green, but is bold white. green somehow only works with 0 (regular) instead of 1 (bold).
 
 echo_bold ">> Get submodules"
@@ -58,6 +65,12 @@ if [ "$(uname)" == "Darwin" ]; then
     ssh-copy-id pi@rpi3
     ssh-copy-id pi@rpi4
   fi
+
+  echo_bold ">> link vscode config"
+  cd macos
+  lnsf Library/Application\ Support/Code/User/settings.json
+  lnsf Library/Application\ Support/Code/User/keybindings.json
+  cd ..
 elif has apt; then
   echo_bold ">> [Running Linux]" # current setup only for RPi or server (both via ssh)
 
