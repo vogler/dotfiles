@@ -14,6 +14,9 @@ agi tig # Text interface for Git repositories
 arch=$([[ $(uname -m) == "x86_64" ]] && echo "x86_64" || echo "armhf")
 curl -fsSL https://github.com/dandavison/delta/releases/download/0.9.2/git-delta_0.9.2_$arch.deb -o /tmp/git-delta_$arch.deb && sudo dpkg -i /tmp/git-delta_$arch.deb # A syntax-highlighting pager for git and diff output; TODO watch for update: https://github.com/dandavison/delta#installation
 agi tree # `exa --tree --level=2` has colors and can show meta-data with --long
+# agi neovim # < v0.5.0 is too old for coc extension
+agi snapd
+sudo snap install nvim --classic
 agi htop # nicer ncurses-based process viewer similar to top
 agi iotop # shows I/O usage
 agi iftop # shows network interface usage
