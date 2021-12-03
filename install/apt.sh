@@ -11,8 +11,8 @@ agi zsh # better shell than bash
 agi tmux # terminal multiplexer
 agi neovim # editor
 agi tig # Text interface for Git repositories
-arch=$([[ $(uname -m) == "x86_64" ]] && echo "x86_64" || echo "armhf")
-curl -fsSL https://github.com/dandavison/delta/releases/download/0.9.2/git-delta_0.9.2_$arch.deb -o /tmp/git-delta_$arch.deb && sudo dpkg -i /tmp/git-delta_$arch.deb # A syntax-highlighting pager for git and diff output; TODO watch for update: https://github.com/dandavison/delta#installation
+arch=$([[ $(uname -m) == "x86_64" ]] && echo "amd64" || echo "armhf")
+curl -fsSL https://github.com/dandavison/delta/releases/download/0.10.2/git-delta_0.10.2_$arch.deb -o /tmp/git-delta_$arch.deb && sudo dpkg -i /tmp/git-delta_$arch.deb # A syntax-highlighting pager for git and diff output; TODO watch for update: https://github.com/dandavison/delta#installation
 agi tree # `exa --tree --level=2` has colors and can show meta-data with --long
 # agi neovim # < v0.5.0 is too old for coc extension
 agi snapd
