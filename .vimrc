@@ -603,7 +603,7 @@ if has("autocmd")
   au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! zz" | endif " center line somehow doesn't work :(
 endif
 
-" set cursorline
+set cursorline
 " set cursorcolumn
 " autocmd WinEnter * setlocal cursorcolumn
 " autocmd WinLeave * setlocal nocursorcolumn
