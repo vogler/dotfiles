@@ -446,6 +446,8 @@ nmap <leader>C :Git commit -v --quiet<cr>
 nmap <leader>P :Git push<cr><cr>
 nmap <leader>y :%y+<cr> " yank whole buffer
 nmap <leader>p ggVGp " replace whole buffer by paste
+:nnoremap <F5> :put =strftime('%F %H:%M:%S')<cr>A 
+:inoremap <F5> <esc>:put =strftime('%F %H:%M:%S')<cr>A 
 
 " nmap <C-X> :w!<cr>
 " imap <C-X> <esc>:w!<cr>i
