@@ -47,6 +47,7 @@ brew install libreoffice
 # https://outbankapp.com neither in brew nor mas (but finds outbank in App Store)
 brew install iina # media player
 brew install raspberry-pi-imager # install different OSes to microSD
+brew install numi # 49MB, calculator app with unit conversions and variables
 
 # sys tools
 brew install neovim # editor, no need for vim, config in .vimrc
