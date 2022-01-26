@@ -91,6 +91,7 @@ brew install rlwrap # used in ocaml alias since it has no readline support; use 
 brew install pkg-config
 brew install autoconf automake # autotools
 brew install heroku/brew/heroku
+# mas install 1388020431 # DevCleaner for Xcode: cleans cache files (none if not actually using Xcode)
 
 # git
 brew install diff-so-fancy # within-line highlights
