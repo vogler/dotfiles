@@ -4,8 +4,11 @@
     "*.pml": "c"
   },
   "files.exclude": {
-    "**/.gtm": true, // git time metrics
-    // "**/_build": true // ocamlbuild, dune
+    "**/.gtm": true,
+    "**/.classpath": true,
+    "**/.project": true,
+    "**/.settings": true,
+    "**/.factorypath": true
   },
   "files.insertFinalNewline": true,
   "files.trimFinalNewlines": true,
@@ -182,5 +185,7 @@
   "editor.occurrencesHighlight": true,
   // "auto-build.defaultEnv.name": "mega2560", // Marlin env for MKS Gen L in Artillery Genius
   "editor.guides.bracketPairs": true,
-  "editor.bracketPairColorization.enabled": true
+  "editor.bracketPairColorization.enabled": true,
+  "editor.suggestSelection": "first",
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue"
 }
