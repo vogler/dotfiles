@@ -46,8 +46,7 @@ Plug 'tpope/vim-vinegar' " file browser enhancements (- opens netrw), - goes up 
 " Plug 'tpope/vim-characterize' " Unicode character metadata (press ga on a character)
 Plug 'tpope/vim-speeddating' " increment (C-A) / decrement (C-X) for date/time formats
 Plug 'tpope/vim-jdaddy' " JSON text objects (aj, ij) and pretty printing (gqaj)
-" Plug 'tpope/vim-markdown'
-Plug 'gabrielelana/vim-markdown' " syntax highlighting for GitHub Markdown flavor
+" Plug 'tpope/vim-markdown' # better markdown plugins below
 Plug 'tpope/vim-dispatch' " Asynchronous build and test dispatcher :Make
 Plug 'tpope/vim-dadbod' " interface for many databases :DB postgresql:///foobar, :DB sqlite:myfile.sqlite3 select count(*) from widgets
 
@@ -92,7 +91,7 @@ Plug 'mg979/vim-visual-multi' " multiple cursors; add word with C-n, n/N next/pr
 " https://vi.stackexchange.com/questions/609/swap-function-arguments
 " Plug 'AndrewRadev/sideways.vim' " :SidewaysLeft/Right to move item (defined by delimiter) under the cursor left/right
 Plug 'machakann/vim-swap' " swap delimited items; g< left, g> right, gs interactive (h, l, j, k, 1-9, g/G group/ungroup, s sort, r reverse)
-" Plug 'godlygeek/tabular'
+" Plug 'godlygeek/tabular' " text filtering and alignment
 Plug 'junegunn/vim-easy-align' " ga EasyAlign, vipga= (visual inner paragraph align around =), gaii2& (align around 2nd & on inner indentation level)
 " Start interactive EasyAlign in visual mode (e.g. vipga)
 xmap ga <Plug>(EasyAlign)
@@ -107,7 +106,6 @@ autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
 Plug 'junegunn/gv.vim', {'on': 'GV'} " :GV opens git commit browser, :GV! only commits for current file, :GV? fills location list the revisions of current file, can be used in visual mode to work on jsut lines
 Plug 'junegunn/rainbow_parentheses.vim', {'on': 'RainbowParentheses'} " same color for same bracket pairs
-Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']} " :MarkdownPreview opens in browser with synchronized scrolling
 Plug 'kien/ctrlp.vim' " Fuzzy file, buffer, mru, tag, etc finder
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlPMixed'
@@ -119,6 +117,12 @@ let g:ctrlp_custom_ignore = {
   \ }
 " let g:ctrlp_clear_cache_on_exit = 0
 let g:ctrlp_user_command = ['.git', 'cd %s && {git ls-files & git ls-files -o --exclude-standard;} | cat', 'find %s -type f']
+
+" Markdown
+Plug 'gabrielelana/vim-markdown' " syntax highlighting for GitHub Markdown flavor
+" Plug 'preservim/vim-markdown' " syntax highlighting but not as nice as the above, folding, concealing; requires tabular?
+Plug 'SidOfc/mkdx' " functions for lists, checkboxes, code, shortcuts, headers, links
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']} " :MarkdownPreview opens in browser with synchronized scrolling - at some point did not open anything anymore, using `yarn install` instead of the above fixed it - https://github.com/iamcco/markdown-preview.nvim/issues/188
 
 " IDE features (completion, linting/checking, formatting) done by coc
   Plug 'neoclide/coc.nvim', {'branch': 'release'} " Nodejs extension host for vim & neovim, load extensions like VSCode and host language servers. TODO move out the below default config...
