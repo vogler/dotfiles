@@ -118,6 +118,7 @@ brew install angry-ip-scanner
 # brew install insomnia # Intel, 337MB; HTTP and GraphQL Client
 mas install 1451685025 # WireGuard VPN client; brew's wireguard-tools has no GUI
 brew install tunnelblick # needed for RBG ovpn profile
+brew install vnc-viewer # RealVNC viewer
 
 # goblint
 brew install gmp # needed to build deps
