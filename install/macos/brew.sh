@@ -133,6 +133,7 @@ brew install mactex # brew info says 4.4GB but I think df reduced ~7GB
 brew install pygments # latex.minted uses pygmentize
 brew install skim # does not jump around as Preview.app on reload
 brew install qpdf # qpdf --show-npages; instead of pdfinfo from xpdf
+# brew install hook # copy links to files, web pages, etc., deep links to text selection in PDF only supported for Skim, not Preview; 30d trial, afterwards only links to emails & web pages. Thought about this before and like the idea, but not its execution.
 
 # fonts
 brew tap homebrew/cask-fonts
