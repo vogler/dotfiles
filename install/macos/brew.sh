@@ -119,6 +119,7 @@ brew install angry-ip-scanner
 mas install 1451685025 # WireGuard VPN client; brew's wireguard-tools has no GUI
 brew install tunnelblick # needed for RBG ovpn profile
 brew install vnc-viewer # RealVNC viewer
+brew install cyberduck # client for FTP, SFTP, WebDAV, and cloud storage
 
 # goblint
 brew install gmp # needed to build deps
