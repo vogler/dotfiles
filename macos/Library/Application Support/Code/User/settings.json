@@ -187,5 +187,6 @@
   "editor.guides.bracketPairs": true,
   "editor.bracketPairColorization.enabled": true,
   "editor.suggestSelection": "first",
-  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue"
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "quokka.showStartViewOnFeatureRelease": false
 }
