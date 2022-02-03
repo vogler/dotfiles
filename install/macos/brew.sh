@@ -72,6 +72,7 @@ brew install the-unarchiver # unpack .rar
 brew install mosh # alternative for ssh, local echo, roaming, but UDP dyn. port alloc. 60000-61000
 brew install watch # Executes a program periodically, showing output fullscreen
 brew install mmv # move/copy/append/link multiple files by wildcard patterns
+brew install figlet # Banner-like program prints strings as ASCII art
 
 # programming languages
 # macOS ships ruby 2.6.3, python 2.7.16; python3 installed as dep; typescript via npm
