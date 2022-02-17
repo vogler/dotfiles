@@ -165,6 +165,7 @@
   "latex-workshop.view.pdf.tab.editorGroup": "left",
   "problems.showCurrentInStatus": true,
   "spellright.notificationClass": "warning",
+  "spellright.language": ["en", "de"],
   "latex-utilities.message.update.show": false,
   "editor.acceptSuggestionOnEnter": "off",
   "git.smartCommitChanges": "tracked",
