@@ -23,8 +23,9 @@ xattr -d -r com.apple.quarantine ~/Library/QuickLook # remove plugins from quara
 
 # Desktop tools
 # brew install sizeup # Intel, unlimited trial
-brew install shiftit # Intel
+brew install shiftit # Intel, not needed anymore since macOS offers move window to left/right, other display; shortcuts setup by defaults.sh
 # mas install 967805235 # Paste - Clipboard Manager; need subscription now to actually use paste...
+brew install hammerspoon # 39MB, automation, window management, key/mouse mapping - see .hammerspoon/init.lua
 
 # HW tools
 # brew install tg-pro # trial
