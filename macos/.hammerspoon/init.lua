@@ -13,6 +13,7 @@ hs.hotkey.bind({"cmd", "alt", "ctrl"}, "H", function()
 end)
 
 
+-- example for menubar entry
 caffeine = hs.menubar.new()
 function setCaffeineDisplay(state)
     if state then
@@ -32,13 +33,25 @@ if caffeine then
 end
 
 
+-- log system/display sleep/wake
+powerEvents = {} -- events are just constant ints from C enum - we want strings -> invert table
+for k,v in pairs(hs.caffeinate.watcher) do
+  powerEvents[v] = k
+end
+-- print(hs.inspect(powerEvents))
+function powerEvent(ev)
+  print('powerEvent: ', powerEvents[ev])
+end
+powerWatcher = hs.caffeinate.watcher.new(powerEvent):start()
+
+
 -- reload config manually with shortcut
 hs.hotkey.bind({"cmd", "alt", "ctrl"}, "R", function()
   hs.reload()
 end)
 
 -- reload config automatically on save
--- myWatcher = hs.pathwatcher.new(os.getenv("HOME") .. "/.hammerspoon/", reloadConfig):start()
-myWatcher = hs.pathwatcher.new("~/dotfiles/macos/.hammerspoon/", hs.reload):start()
+-- symbolic links don't change on write, need to watch target:
+configWatcher = hs.pathwatcher.new("~/dotfiles/macos/.hammerspoon/", hs.reload):start()
 
 hs.alert.show("Config loaded")
