@@ -1,5 +1,6 @@
 hs.hotkey.bind({"cmd", "alt", "ctrl"}, "W", function()
-  hs.alert.show("Hello World!")
+  -- hs.alert.show("Hello World!")
+  hs.alert.show(hs.configdir)
   -- hs.notify.new({title="Hammerspoon", informativeText="Hello World"}):send()
 end)
 
@@ -10,6 +11,7 @@ hs.hotkey.bind({"cmd", "alt", "ctrl"}, "H", function()
   f.x = f.x - 10
   win:setFrame(f)
 end)
+
 
 caffeine = hs.menubar.new()
 function setCaffeineDisplay(state)
@@ -29,24 +31,14 @@ if caffeine then
     setCaffeineDisplay(hs.caffeinate.get("displayIdle"))
 end
 
--- reload config with shortcut
+
+-- reload config manually with shortcut
 hs.hotkey.bind({"cmd", "alt", "ctrl"}, "R", function()
   hs.reload()
 end)
 
--- reload config on save
-function reloadConfig(files)
-    doReload = false
-    for _,file in pairs(files) do
-        if file:sub(-4) == ".lua" then
-            doReload = true
-        end
-    end
-    if doReload then
-        hs.reload()
-    end
-end
+-- reload config automatically on save
 -- myWatcher = hs.pathwatcher.new(os.getenv("HOME") .. "/.hammerspoon/", reloadConfig):start()
-myWatcher = hs.pathwatcher.new("~/dotfiles/.hammerspoon/", reloadConfig):start()
+myWatcher = hs.pathwatcher.new("~/dotfiles/macos/.hammerspoon/", hs.reload):start()
 
 hs.alert.show("Config loaded")
