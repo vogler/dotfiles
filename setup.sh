@@ -70,6 +70,8 @@ if [ "$(uname)" == "Darwin" ]; then
   cd macos
   lnsf Library/Application\ Support/Code/User/settings.json
   lnsf Library/Application\ Support/Code/User/keybindings.json
+  lnsf .hammerspoon/init.lua
+  lnsf .hammerspoon/Spoons
   cd ..
 elif has apt; then
   echo_bold ">> [Running Linux]" # current setup only for RPi or server (both via ssh)
