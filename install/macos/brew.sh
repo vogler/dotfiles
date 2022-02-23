@@ -26,6 +26,7 @@ xattr -d -r com.apple.quarantine ~/Library/QuickLook # remove plugins from quara
 brew install shiftit # Intel, not needed anymore since macOS offers move window to left/right, other display; shortcuts setup by defaults.sh
 # mas install 967805235 # Paste - Clipboard Manager; need subscription now to actually use paste...
 brew install hammerspoon # 39MB, automation, window management, key/mouse mapping - see .hammerspoon/init.lua
+# brew install usb-overdrive # 2.3MB, shareware, device driver for USB/Bluetooth input (mouse, keyboard, gamepad etc.) to configure globally or on a per-application, per-device basis - messed up left click..., per-application not good enough for Books.app
 
 # HW tools
 # brew install tg-pro # trial
