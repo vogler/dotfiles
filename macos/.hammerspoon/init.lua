@@ -17,6 +17,7 @@
 -- aliases
 bind = hs.hotkey.bind
 hyper = {'cmd', 'alt', 'ctrl'}
+fn = {'fn'}
 
 -- reload config manually
 bind(hyper, 'r', hs.reload)
@@ -35,36 +36,42 @@ bind(hyper, '.', hs.hints.windowHints)
 -- hs.hotkey.bind({"cmd", "alt", "ctrl"}, "/", function() spoon.HSKeybindings:show() end)
 hs.loadSpoon("KSheet") -- Keybindings cheatsheet for current application
 hs.hotkey.bind({"cmd", "alt", "ctrl"}, "/", function() spoon.KSheet:toggle() end)
--- hs.loadSpoon("FnMate") -- Use Fn + `h/l/j/k` as arrow keys, `y/u/i/o` as mouse wheel, `,/.` as left/right click. Does not work at all or sends keys to wrong window. Problem is likely that it only replaces keyDown events.
+-- hs.loadSpoon("FnMate") -- Use Fn + `h/l/j/k` as arrow keys, `y/u/i/o` as mouse wheel, `,/.` as left/right click. Does not work at all or sends keys to wrong window.
 
--- TODO try to fix it myself
+-- Fix FnMate myself
+-- Odd behavior for newKeyEvent that FnMate uses is mentioned in the notes: https://www.hammerspoon.org/docs/hs.eventtap.event.html#newKeyEvent - only sends keyDown which confuses many apps -> can use hs.eventtap.keyStroke or newKeyEventSequence instead.
 -- hs.hotkey.bind({'fn'}, 'k', function() hs.eventtap.event.newKeyEvent({}, "up", true) end) -- this will not cancel k
-local function catcher(event)
-    if event:getFlags()['fn'] and event:getCharacters() == "h" then
-        return true, {hs.eventtap.event.newKeyEvent({}, "left", true)}
-    elseif event:getFlags()['fn'] and event:getCharacters() == "l" then
-        return true, {hs.eventtap.event.newKeyEvent({}, "right", true)}
-    elseif event:getFlags()['fn'] and event:getCharacters() == "j" then
-        return true, {hs.eventtap.event.newKeyEvent({}, "down", true)}
-    elseif event:getFlags()['fn'] and event:getCharacters() == "k" then
-        return true, {hs.eventtap.event.newKeyEvent({}, "up", true)}
-    elseif event:getFlags()['fn'] and event:getCharacters() == "y" then
-        return true, {hs.eventtap.event.newScrollEvent({3, 0}, {}, "line")}
-    elseif event:getFlags()['fn'] and event:getCharacters() == "o" then
-        return true, {hs.eventtap.event.newScrollEvent({-3, 0}, {}, "line")}
-    elseif event:getFlags()['fn'] and event:getCharacters() == "u" then
-        return true, {hs.eventtap.event.newScrollEvent({0, -3}, {}, "line")}
-    elseif event:getFlags()['fn'] and event:getCharacters() == "i" then
-        return true, {hs.eventtap.event.newScrollEvent({0, 3}, {}, "line")}
-    elseif event:getFlags()['fn'] and event:getCharacters() == "," then
+local function FnMate(event)
+    local fn = event:getFlags()['fn']
+    local ch = event:getCharacters()
+    local ke = hs.eventtap.event.newKeyEventSequence
+    if not fn then return end
+    if ch == 'h' then
+        return true, ke({}, 'left')
+    elseif ch == 'l' then
+        return true, ke({}, 'right')
+    elseif ch == 'j' then
+        return true, ke({}, 'down')
+    elseif ch == 'k' then
+        return true, ke({}, 'up')
+    -- TODO this scrolls the window under the mouse instead of the focused window
+    elseif ch == 'y' then
+        return true, {hs.eventtap.event.newScrollEvent({3, 0}, {}, 'line')}
+    elseif ch == 'o' then
+        return true, {hs.eventtap.event.newScrollEvent({-3, 0}, {}, 'line')}
+    elseif ch == 'u' then
+        return true, {hs.eventtap.event.newScrollEvent({0, -3}, {}, 'line')}
+    elseif ch == 'i' then
+        return true, {hs.eventtap.event.newScrollEvent({0, 3}, {}, 'line')}
+    elseif ch == ',' then
         local currentpos = hs.mouse.getAbsolutePosition()
         return true, {hs.eventtap.leftClick(currentpos)}
-    elseif event:getFlags()['fn'] and event:getCharacters() == "." then
+    elseif ch == '.' then
         local currentpos = hs.mouse.getAbsolutePosition()
         return true, {hs.eventtap.rightClick(currentpos)}
     end
 end
-fn_tapper = hs.eventtap.new({hs.eventtap.event.types.keyDown}, catcher):start()
+fn_tapper = hs.eventtap.new({hs.eventtap.event.types.keyDown}, FnMate):start()
 
 
 -- example for showing a website
