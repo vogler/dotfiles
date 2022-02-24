@@ -46,6 +46,14 @@ local function FnMate(event)
     local ch = event:getCharacters()
     local ke = hs.eventtap.event.newKeyEventSequence
     if not fn then return end
+    -- Mouse scrolls window under cursor instead of focused window which is what I want when using the mouse, but not when scrolling via keyboard. So this function centers the mouse on the focused window which is hopefully a good position for scrolling.
+    local function centerMouse()
+      local f = hs.window.focusedWindow():frame()
+      -- only move mouse if it is outside the focused window - can be commented out to always center
+      if not hs.geometry(hs.mouse.absolutePosition()):inside(f) then
+        hs.mouse.absolutePosition(f.center)
+      end
+    end
     if ch == 'h' then
         return true, ke({}, 'left')
     elseif ch == 'l' then
@@ -54,21 +62,22 @@ local function FnMate(event)
         return true, ke({}, 'down')
     elseif ch == 'k' then
         return true, ke({}, 'up')
-    -- TODO this scrolls the window under the mouse instead of the focused window
     elseif ch == 'u' then
+        centerMouse()
         return true, {hs.eventtap.event.newScrollEvent({3, 0}, {}, 'line')}
     elseif ch == 'i' then
+        centerMouse()
         return true, {hs.eventtap.event.newScrollEvent({0, -3}, {}, 'line')}
     elseif ch == 'o' then
+        centerMouse()
         return true, {hs.eventtap.event.newScrollEvent({0, 3}, {}, 'line')}
     elseif ch == 'p' then
+        centerMouse()
         return true, {hs.eventtap.event.newScrollEvent({-3, 0}, {}, 'line')}
     elseif ch == ',' then
-        local currentpos = hs.mouse.getAbsolutePosition()
-        return true, {hs.eventtap.leftClick(currentpos)}
+        return true, {hs.eventtap.leftClick(hs.mouse.absolutePosition())}
     elseif ch == '.' then
-        local currentpos = hs.mouse.getAbsolutePosition()
-        return true, {hs.eventtap.rightClick(currentpos)}
+        return true, {hs.eventtap.rightClick(hs.mouse.absolutePosition())}
     end
 end
 fn_tapper = hs.eventtap.new({hs.eventtap.event.types.keyDown}, FnMate):start()
