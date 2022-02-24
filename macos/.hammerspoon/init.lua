@@ -38,7 +38,7 @@ hs.loadSpoon("KSheet") -- Keybindings cheatsheet for current application
 hs.hotkey.bind({"cmd", "alt", "ctrl"}, "/", function() spoon.KSheet:toggle() end)
 -- hs.loadSpoon("FnMate") -- Use Fn + `h/l/j/k` as arrow keys, `y/u/i/o` as mouse wheel, `,/.` as left/right click. Does not work at all or sends keys to wrong window.
 
--- Fix FnMate myself
+-- Fix FnMate (and shift right yuio to uiop)
 -- Odd behavior for newKeyEvent that FnMate uses is mentioned in the notes: https://www.hammerspoon.org/docs/hs.eventtap.event.html#newKeyEvent - only sends keyDown which confuses many apps -> can use hs.eventtap.keyStroke or newKeyEventSequence instead.
 -- hs.hotkey.bind({'fn'}, 'k', function() hs.eventtap.event.newKeyEvent({}, "up", true) end) -- this will not cancel k
 local function FnMate(event)
@@ -55,14 +55,14 @@ local function FnMate(event)
     elseif ch == 'k' then
         return true, ke({}, 'up')
     -- TODO this scrolls the window under the mouse instead of the focused window
-    elseif ch == 'y' then
-        return true, {hs.eventtap.event.newScrollEvent({3, 0}, {}, 'line')}
-    elseif ch == 'o' then
-        return true, {hs.eventtap.event.newScrollEvent({-3, 0}, {}, 'line')}
     elseif ch == 'u' then
-        return true, {hs.eventtap.event.newScrollEvent({0, -3}, {}, 'line')}
+        return true, {hs.eventtap.event.newScrollEvent({3, 0}, {}, 'line')}
     elseif ch == 'i' then
+        return true, {hs.eventtap.event.newScrollEvent({0, -3}, {}, 'line')}
+    elseif ch == 'o' then
         return true, {hs.eventtap.event.newScrollEvent({0, 3}, {}, 'line')}
+    elseif ch == 'p' then
+        return true, {hs.eventtap.event.newScrollEvent({-3, 0}, {}, 'line')}
     elseif ch == ',' then
         local currentpos = hs.mouse.getAbsolutePosition()
         return true, {hs.eventtap.leftClick(currentpos)}
