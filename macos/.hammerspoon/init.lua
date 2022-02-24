@@ -83,6 +83,33 @@ end
 fn_tapper = hs.eventtap.new({hs.eventtap.event.types.keyDown}, FnMate):start()
 
 
+-- Books.app: map scroll to left/right when focused
+booksScrollWatcher = hs.eventtap.new({hs.eventtap.event.types.scrollWheel}, function(event)
+    local w = hs.window.focusedWindow()
+    -- hs.alert.show(w:application():name())
+    -- note that this will not scroll the window under the cursor but always Books if focused
+    if w:application():name() == 'Books' and w:title() ~= 'Books' then -- don't remap the main Books window, but just opened Book windows which will have the title of the book
+      local direction = event:getProperty(hs.eventtap.event.properties.scrollWheelEventFixedPtDeltaAxis1)
+      if direction > 0 then
+        return true, hs.eventtap.event.newKeyEventSequence({}, 'left')
+      elseif direction < 0 then
+        return true, hs.eventtap.event.newKeyEventSequence({}, 'right')
+      end
+    end
+end)
+-- booksScrollWatcher:start() -- this will always watch, but we only need it if Books is active
+local booksWindowFilter = hs.window.filter.new('Books')
+-- TODO sometimes it triggers unfocus when switching between Books windows
+booksWindowFilter:subscribe(hs.window.filter.windowFocused, function()
+  hs.alert.show('books')
+  booksScrollWatcher:start()
+end)
+booksWindowFilter:subscribe(hs.window.filter.windowUnfocused, function()
+  hs.alert.show('unbooks')
+  booksScrollWatcher:stop()
+end)
+
+
 -- example for showing a website
 function showWebview()
     mousepoint = hs.mouse.absolutePosition()
