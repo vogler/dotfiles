@@ -38,7 +38,7 @@ hs.loadSpoon("KSheet") -- Keybindings cheatsheet for current application
 hs.hotkey.bind({"cmd", "alt", "ctrl"}, "/", function() spoon.KSheet:toggle() end)
 -- hs.loadSpoon("FnMate") -- Use Fn + `h/l/j/k` as arrow keys, `y/u/i/o` as mouse wheel, `,/.` as left/right click. Does not work at all or sends keys to wrong window.
 
--- Fix FnMate (and shift right yuio to uiop)
+-- Fix FnMate (and shift right yuio to uiop, add wasd as alternative for hjkl)
 -- Odd behavior for newKeyEvent that FnMate uses is mentioned in the notes: https://www.hammerspoon.org/docs/hs.eventtap.event.html#newKeyEvent - only sends keyDown which confuses many apps -> can use hs.eventtap.keyStroke or newKeyEventSequence instead.
 -- hs.hotkey.bind({'fn'}, 'k', function() hs.eventtap.event.newKeyEvent({}, "up", true) end) -- this will not cancel k
 local function FnMate(event)
@@ -54,13 +54,13 @@ local function FnMate(event)
         hs.mouse.absolutePosition(f.center)
       end
     end
-    if ch == 'h' then
+    if ch == 'h' or ch == 'a' then
         return true, ke({}, 'left')
-    elseif ch == 'l' then
+    elseif ch == 'l' or ch == 'd' then
         return true, ke({}, 'right')
-    elseif ch == 'j' then
+    elseif ch == 'j' or ch == 's' then
         return true, ke({}, 'down')
-    elseif ch == 'k' then
+    elseif ch == 'k' or ch == 'w' then
         return true, ke({}, 'up')
     elseif ch == 'u' then
         centerMouse()
