@@ -28,6 +28,7 @@ brew install shiftit # Intel, not needed anymore since macOS offers move window 
 # mas install 967805235 # Paste - Clipboard Manager; need subscription now to actually use paste...
 brew install hammerspoon # 39MB, automation, window management, key/mouse mapping - see .hammerspoon/init.lua
 # brew install usb-overdrive # 2.3MB, shareware, device driver for USB/Bluetooth input (mouse, keyboard, gamepad etc.) to configure globally or on a per-application, per-device basis - messed up left click..., per-application not good enough for Books.app
+brew install raycast # 75MB, better launcher than Spotlight, Alfred etc., good shortcuts, community extensions/scripts
 
 # HW tools
 # brew install tg-pro # trial
