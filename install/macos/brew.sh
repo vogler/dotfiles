@@ -149,8 +149,9 @@ brew install font-dejavu-sans-mono-for-powerline font-droid-sans-mono-for-powerl
 brew install font-consolas-for-powerline font-menlo-for-powerline font-meslo-for-powerline font-monofur-for-powerline font-noto-mono-for-powerline font-anonymice-powerline
 
 # tracking
-# brew install rescuetime # Intel, fails because it requires Rosetta 2 (`sudo softwareupdate --install-rosetta`). Why did the other Intel apps work without installing this?
+brew install rescuetime # Intel, fails because it requires Rosetta 2 (`sudo softwareupdate --install-rosetta`). Why did the other Intel apps work without installing this?
 # WhatPulse neither on brew or app store. Download from https://whatpulse.org
+brew install clockify # 95MB, better (& more free features) than Toggl
 
 # image/video/books
 # brew install imagemagick
