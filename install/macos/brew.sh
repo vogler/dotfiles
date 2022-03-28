@@ -59,6 +59,7 @@ brew install iterm2 # better Terminal.app, https://sourabhbajaj.com/mac-setup/iT
 curl -L https://iterm2.com/shell_integration/install_shell_integration_and_utilities.sh | bash
 brew install tmux # terminal multiplexer
 brew install coreutils # newer than macOS
+brew install moreutils # more tools: ts for prefixing timestamps, parallel, combine, sponge etc.
 brew install grep # newer than macOS: 3.6 vs 2.5.1-FreeBSD
 brew install gnu-sed # newer than macOS: 4.8 vs 2017 BSD?
 brew install less # newer than macOS: 590 vs 487
