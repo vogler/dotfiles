@@ -100,6 +100,7 @@ brew install heroku/brew/heroku
 # mas install 1388020431 # DevCleaner for Xcode: cleans cache files (none if not actually using Xcode)
 brew install devutils # 48MB, demo, GUI with converters for unix time, base64, URLs, regex, JSON, CSV, Markdown etc.
 brew install --cask docker # 1.5 GB, hate it, only gave in for avoiding captcha with headless playwright
+brew install dive # 10MB, explore layers in docker images
 
 # git
 brew install diff-so-fancy # within-line highlights
