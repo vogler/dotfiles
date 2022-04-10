@@ -14,7 +14,8 @@ agi neovim # editor - Ubuntu 20.04 only ships 0.4.3, but coc extension requires 
 agi snapd # more/newer packages, https://snapcraft.io
 sudo snap install nvim --classic || echo "Fallback to apt's neovim." # Virtuozzo/OpenVZ: https://community.letsencrypt.org/t/system-does-not-fully-support-snapd-cannot-mount-squashfs-image-using-squashfs/132689/2
 agi tig # Text interface for Git repositories
-arch=$([[ $(uname -m) == "x86_64" ]] && echo "amd64" || echo "armhf")
+# arch=$([[ $(uname -m) == "x86_64" ]] && echo "amd64" || echo "armhf")
+arch=$(dpkg --print-architecture)
 musl=$([[ $(lsb_release -r | cut -f2) == "20.04" ]] && echo "" || echo "-musl") # https://github.com/dandavison/delta/issues/504
 curl -fsSL https://github.com/dandavison/delta/releases/download/0.11.0/git-delta${musl}_0.11.0_$arch.deb -o /tmp/git-delta_$arch.deb && sudo dpkg -i /tmp/git-delta_$arch.deb # A syntax-highlighting pager for git and diff output; TODO watch for update: https://github.com/dandavison/delta#installation
 agi tree # `exa --tree --level=2` has colors and can show meta-data with --long
@@ -42,6 +43,11 @@ agi apt-file # which package provides a file? e.g. apt-file find libportaudio.so
 agi nq # lightweight job queue
 agi mosh # alternative for ssh, local echo, roaming, but UDP dyn. port alloc. 60000-61000
 agi mmv # move/copy/append/link multiple files by wildcard patterns
+
+# GitHub CLI: https://github.com/cli/cli/blob/trunk/docs/install_linux.md
+curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
+agi gh 
 
 if [[ "$*" == *latex* ]]; then
   agi texlive-latex-extra
