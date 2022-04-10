@@ -43,6 +43,7 @@ agi apt-file # which package provides a file? e.g. apt-file find libportaudio.so
 agi nq # lightweight job queue
 agi mosh # alternative for ssh, local echo, roaming, but UDP dyn. port alloc. 60000-61000
 agi mmv # move/copy/append/link multiple files by wildcard patterns
+agi sox # Swiss army knife of sound processing -> record noise (silence filter) with OctoPrint webcam on rpi4, small/cheap USB microphones were not sensitive enough, but webcam mic is with ~50% when talking at desk (100% gain in alsamixer)
 
 # GitHub CLI: https://github.com/cli/cli/blob/trunk/docs/install_linux.md
 curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg
