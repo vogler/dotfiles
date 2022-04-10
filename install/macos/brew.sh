@@ -57,7 +57,7 @@ brew install numi # 49MB, calculator app with unit conversions and variables
 brew install neovim # editor, no need for vim, config in .vimrc
 brew install iterm2 # 78MB, better Terminal.app, https://sourabhbajaj.com/mac-setup/iTerm/
 curl -L https://iterm2.com/shell_integration/install_shell_integration_and_utilities.sh | bash
-brew install warp # 147MB, fast rust-based terminal, bit more modern than iterm, but not much, TODO colors and font in vim are off
+brew install warp # 147MB, fast rust-based terminal, bit more modern than iterm, but pretty similar, TODO colors and font in vim are off
 brew install tmux # terminal multiplexer
 brew install coreutils # newer than macOS
 brew install moreutils # more tools: ts for prefixing timestamps, parallel, combine, sponge etc.
