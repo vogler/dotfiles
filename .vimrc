@@ -26,6 +26,7 @@ map <C-l> :NERDTreeFind<CR> " open sidebar on the left and focus current file
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'tomtom/tcomment_vim'
 let g:tcomment#commentstring_c = '// %s'
+noremap <C-/> :TComment<CR> " keycode changed on some zsh/prezto/vim update from <C-_>, before this was not needed since C-/ C-/ was the default of the tcomment plugin
 Plug 'tpope/vim-fugitive' " provides :G (:Git), :GMove, :GBrowse etc.
 Plug 'tpope/vim-rhubarb' " GitHub extension for fugitive.vim: :GBrowse, omni-complete issues etc. in commit messages
 Plug 'tpope/vim-endwise' " end certain structures (if, do, etc.) automatically
