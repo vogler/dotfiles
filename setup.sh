@@ -158,7 +158,7 @@ echo_bold ">> Install Tmux plugins"
 # `tmux source-file` fails if not in tmux with 'no server running on /private/tmp/tmux-501/default'
 if { [ "$TERM" = "screen" ] && [ -n "$TMUX" ]; } then
   tmux source-file ~/.tmux.conf # need to reload config before tpm can install plugins
-  tpm_install ~/.tmux/plugins/tpm/bin/install_plugins
+  ~/.tmux/plugins/tpm/bin/install_plugins
 else
   tmux new-session -d -s tpm_install ~/.tmux/plugins/tpm/bin/install_plugins
 fi
