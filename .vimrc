@@ -17,6 +17,7 @@ set backupdir=~/.vim/backup//
 set directory=~/.vim/swap//
 set undodir=~/.vim/undo//
 set shortmess+=A " don't give the "ATTENTION" message when an existing swap file is found
+set autochdir " https://vim.fandom.com/wiki/Set_working_directory_to_the_current_file
 "Plug 'tpope/vim-commentary'
 "autocmd FileType ocaml set commentstring=(*\ %s\ *)
 "Plug 'scrooloose/nerdcommenter'
