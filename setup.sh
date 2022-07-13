@@ -80,7 +80,7 @@ elif has apt; then
   source install/apt.sh $*
 
   # only has binary packages for x86_64, https://docs.brew.sh/Homebrew-on-Linux#arm
-  if ! has brew && [ "$(uname -m)" == "x86_64" ]; then
+  if [[ "$*" == *linuxbrew* ]] && ! has brew && [ "$(uname -m)" == "x86_64" ]; then
     echo ">> Install linuxbrew"
     CI=1 sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
     eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
@@ -93,17 +93,19 @@ else
 fi
 
 # ocaml/opam
-if ! has opam; then
-  echo | sh <(curl -sL https://raw.githubusercontent.com/ocaml/opam/master/shell/install.sh)
-  # don't use sandboxing/bubblewrap in WSL because it fails: https://github.com/ocaml/opam/issues/3505
-  if [[ $(uname -r) =~ Microsoft$ ]]; then
-    opam init -y -a --disable-sandboxing
-    # there is no --disable-sandboxing for `opam install`, so we need to change the config... see https://github.com/ocaml/opam-repository/issues/12050#issuecomment-393478072
-    sed -i -E '/wrap-|sandbox.sh/d' ~/.opam/config
-  else
-    opam init -y -a
+if [[ "$*" == *ocaml* ]]; then
+  if ! has opam; then
+    echo | sh <(curl -sL https://raw.githubusercontent.com/ocaml/opam/master/shell/install.sh)
+    # don't use sandboxing/bubblewrap in WSL because it fails: https://github.com/ocaml/opam/issues/3505
+    if [[ $(uname -r) =~ Microsoft$ ]]; then
+      opam init -y -a --disable-sandboxing
+      # there is no --disable-sandboxing for `opam install`, so we need to change the config... see https://github.com/ocaml/opam-repository/issues/12050#issuecomment-393478072
+      sed -i -E '/wrap-|sandbox.sh/d' ~/.opam/config
+    else
+      opam init -y -a
+    fi
+    opam install -y utop
   fi
-  opam install -y utop
 fi
 
 # js/npm
