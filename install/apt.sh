@@ -22,7 +22,7 @@ agi tree # `exa --tree --level=2` has colors and can show meta-data with --long
 agi htop # nicer ncurses-based process viewer similar to top
 agi iotop # shows I/O usage
 agi iftop # shows network interface usage
-curl -fsSL https://deb.nodesource.com/setup_17.x | sudo -E bash - # Debian's nodejs is too old: 10.24.0
+curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash - # Debian's nodejs is too old: 10.24.0
 agi nodejs # JavaScript
 # agi npm # node package manager; provided by nodejs from nodesource (8.1.2) vs. sep. package in Debian (5.8.0)
 agi fd-find # Simple, fast and user-friendly alternative to find
