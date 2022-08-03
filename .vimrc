@@ -490,8 +490,8 @@ nmap <leader>s :w!<cr>
 nmap <leader>q :q!<cr>
 nnoremap <silent><nowait> <space>q :q!<cr>
 nmap <leader>x :x!<cr> " same as ZZ (only write if changes have been made)
-nmap <leader>c :Gwrite<cr>:Git commit -v --quiet<cr>
-nmap <leader>C :Git commit -v --quiet<cr>
+nmap <leader>c :Gwrite<cr>:Git commit -v --quiet<cr> " stage file and commit
+nmap <leader>C :Git commit -v --quiet<cr> " just commit what is already staged
 nmap <leader>P :Git push<cr><cr>
 nmap <leader>y :%y+<cr> " yank whole buffer
 nmap <leader>p ggVGp " replace whole buffer by paste
