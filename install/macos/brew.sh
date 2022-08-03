@@ -72,7 +72,9 @@ brew install tree # `exa --tree --level=2` has colors and can show meta-data wit
 brew install tldr # `tldr tar` shorter than `curl cheat.sh/tar` and works offline
 brew install bat # cat with syntax highlighting and Git integration
 brew install fd # Simple, fast and user-friendly alternative to find
-brew install the_silver_searcher # Code-search similar to ack, but faster
+brew install the_silver_searcher # 172KB, ag: Code-search similar to ack, but faster [C]
+brew install ripgrep # 5.8MB, rg: Code-search similar to ag, but faster [Rust]
+brew install ugrep # 1.2MB, ug: grep with interactive TUI (-Q), fuzzy search, hexdump, search binary, archives, compressed files (-z), documents (PDF, pandoc, office, exif...), output as JSON, CSV...
 brew install ncdu # NCurses Disk Usage
 brew install p7zip # 7z with support for Brotli, Fast LZMA2, LZ4, LZ5, Lizard and Zstd
 brew install the-unarchiver # unpack .rar
