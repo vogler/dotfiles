@@ -32,8 +32,8 @@ agi ripgrep # rg: Code-search similar to ag, but faster [Rust]
 agi ugrep # ug: grep with interactive TUI (-Q), fuzzy search, hexdump, search binary, archives, compressed files (-z), documents (PDF, pandoc, office, exif...), output as JSON, CSV... - not available on Ubuntu 20.04, but Debian bullseye
 agi ncdu # NCurses Disk Usage
 agi libterm-readkey-perl # needed for git config interactive.singleKey on Raspbian
-agi xclip # nvim startup on RPi4: sourcing clipboard.vim took 4s with default xsel, see https://github.com/neovim/neovim/issues/7237
-agi unzip bubblewrap m4 # required for opam (m4 only recommended since most packages rely on it)
+# agi xclip # nvim startup on RPi4: sourcing clipboard.vim took 4s with default xsel, see https://github.com/neovim/neovim/issues/7237
+# agi unzip bubblewrap m4 # required for opam (m4 only recommended since most packages rely on it)
 agi python3-pip
 # agi golang
 # agi ruby
