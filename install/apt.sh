@@ -56,6 +56,12 @@ agi youtube-dl
 sudo curl -L https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -o /usr/local/bin/yt-dlp
 sudo chmod a+rx /usr/local/bin/yt-dlp
 
+# https://gitlab.com/volian/nala - nicer frontend around apt with pretty formatting, parallel downloads, `nala fetch` to select the fastest mirrors, and `nala history` to undo/redo
+echo "deb https://deb.volian.org/volian/ scar main" | sudo tee /etc/apt/sources.list.d/volian-archive-scar-unstable.list
+wget -qO - https://deb.volian.org/volian/scar.key | sudo tee /etc/apt/trusted.gpg.d/volian-archive-scar-unstable.gpg > /dev/null
+sudo apt update
+agi nala || agi nala-legacy
+
 if [[ "$*" == *latex* ]]; then
   agi texlive-latex-extra
   agi texlive-bibtex-extra
