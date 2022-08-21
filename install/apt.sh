@@ -64,7 +64,7 @@ sudo chmod a+rx /usr/local/bin/yt-dlp
 echo "deb https://deb.volian.org/volian/ scar main" | sudo tee /etc/apt/sources.list.d/volian-archive-scar-unstable.list
 wget -qO - https://deb.volian.org/volian/scar.key | sudo tee /etc/apt/trusted.gpg.d/volian-archive-scar-unstable.gpg > /dev/null
 sudo apt update -qq
-agi nala || agi nala-legacy # nala for Ubuntu 22.04 / Debian Sid, legacy for older
+agi nala 2>/dev/null || agi nala-legacy # nala for Ubuntu 22.04 / Debian Sid, legacy for older
 
 if [[ "$*" == *latex* ]]; then
   agi texlive-latex-extra
