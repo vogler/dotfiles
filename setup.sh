@@ -126,7 +126,7 @@ ln -sf `pwd`/.gitconfig ~
 # no branching in .gitconfig -> set OS-specific config via commands:
 [ "$(uname)" == "Darwin" ] && sudo git config --system --replace-all credential.helper osxkeychain
 # [ "$(uname)" == "Linux" ] && sudo git config --system --replace-all credential.helper 'cache --timeout=604800' # keep in memory for 7 days
-[ "$(uname)" == "Linux" ] && git config --system --replace-all credential.helper store # plain-text in ~/.git-credentials ! --global instead of --system sets it in ~/.gitconfig
+[ "$(uname)" == "Linux" ] && sudo git config --system --replace-all credential.helper store # plain-text in ~/.git-credentials ! --global instead of --system sets it in ~/.gitconfig
 ln -sf `pwd`/.gitignore_global ~
 # sudo install install/repos/gitwatch/gitwatch.sh /usr/local/bin/gitwatch
 
