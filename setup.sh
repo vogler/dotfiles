@@ -12,6 +12,8 @@ sudo -v
 # Keep-alive: update existing `sudo` time stamp until `.macos` has finished
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
+date
+
 has(){ # check if a command is available
   hash "$1" 2>/dev/null
 }
@@ -181,4 +183,5 @@ if [[ "$*" == *smart-home* ]]; then
   echo
 fi
 
+date
 echo_bold ">> Done"
