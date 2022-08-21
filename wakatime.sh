@@ -11,3 +11,5 @@ else
   read -p 'API-key: ' key
   echo -e "[settings]\napi_key=$key" >> ~/.wakatime.cfg
 fi
+mkdir -p ~/.wakatime
+chmod 700 ~/.wakatime
