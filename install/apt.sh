@@ -3,6 +3,7 @@ set -e # immediately exit if any command has a non-zero exit status
 
 agi() {
   # https://askubuntu.com/questions/258219/how-do-i-make-apt-get-install-less-noisy
+  echo "install $@"
   sudo apt-get -y -qq install --fix-missing "$@"
 }
 sudo apt -qq update && sudo apt -y -qq upgrade
