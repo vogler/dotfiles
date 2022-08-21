@@ -171,6 +171,7 @@ echo_bold ">> Install vim-plug"
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 echo_bold ">> Install vim plugins"
 nvim +PlugInstall +qall
+nvim +CocUpdateSync +qall
 
 # vim already asks for the WakaTime API-key, but still need pip package for zsh integration
 source wakatime.sh
