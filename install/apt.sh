@@ -14,6 +14,13 @@ agi zsh # better shell than bash
 agi tmux # terminal multiplexer
 agi neovim # editor - Ubuntu 20.04 only ships 0.4.3, but coc extension requires >=0.5.0, however no more startup errors with coc and 0.4.3
 agi snapd # more/newer packages, https://snapcraft.io
+# needed on Chrome OS: via https://cyldx.de/snap-anwendungen-im-linux-modus-von-chrome-os-nutzen-p/ https://medium.com/@eduard_faus/installing-snap-on-chrome-os-d9876bb369c1
+if [[ -d /mnt/chromeos ]]; then
+  sudo apt install libsquashfuse0 squashfuse fuse
+  echo "Right click on Terminal > Shut down Linux -- really needed?"
+  sudo systemctl enable --now snapd
+  # systemctl status snapd
+fi
 sudo snap install nvim --classic || echo "Fallback to apt's neovim." # Virtuozzo/OpenVZ: https://community.letsencrypt.org/t/system-does-not-fully-support-snapd-cannot-mount-squashfs-image-using-squashfs/132689/2
 agi tig # Text interface for Git repositories
 # arch=$([[ $(uname -m) == "x86_64" ]] && echo "amd64" || echo "armhf")
