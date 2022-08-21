@@ -1,6 +1,8 @@
 #!/bin/bash
 set -e # immediately exit if any command has a non-zero exit status
 
+trap 'echo "ERROR: $BASH_SOURCE:$LINENO $BASH_COMMAND" >&2' ERR
+
 echo "This will setup my basic environment for macOS or Linux."
 echo "Possible arguments for extended setup: smart-home"
 

@@ -1,5 +1,8 @@
 #!/bin/bash
 set -e # immediately exit if any command has a non-zero exit status
+# set -v # show input commands as well
+
+trap 'echo "ERROR: $BASH_SOURCE:$LINENO $BASH_COMMAND" >&2' ERR
 
 agi() {
   # https://askubuntu.com/questions/258219/how-do-i-make-apt-get-install-less-noisy
