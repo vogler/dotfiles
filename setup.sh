@@ -127,13 +127,7 @@ ln -sf `pwd`/.gitconfig ~
 [ "$(uname)" == "Darwin" ] && sudo git config --system --replace-all credential.helper osxkeychain
 # [ "$(uname)" == "Linux" ] && sudo git config --system --replace-all credential.helper 'cache --timeout=604800' # keep in memory for 7 days
 [ "$(uname)" == "Linux" ] && git config --system --replace-all credential.helper store # plain-text in ~/.git-credentials ! --global instead of --system sets it in ~/.gitconfig
-if [ "$(uname)" == "Linux" ] && ! has diff-highlight; then # only needed because diff-so-fancy fails when used as interactive.diffFilter
-  # this is only a problem on Debian https://bugs.launchpad.net/ubuntu/+source/git/+bug/1713690
-  sudo make -B -C /usr/share/doc/git/contrib/diff-highlight diff-highlight
-  sudo ln -sf /usr/share/doc/git/contrib/diff-highlight/diff-highlight /usr/bin/;
-fi
 ln -sf `pwd`/.gitignore_global ~
-[ "$(uname)" != "Darwin" ] && sudo npm install -g diff-so-fancy # brew's version is newer
 # sudo install install/repos/gitwatch/gitwatch.sh /usr/local/bin/gitwatch
 
 # zsh

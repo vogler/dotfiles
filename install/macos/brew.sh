@@ -107,7 +107,7 @@ brew install --cask docker # 1.5 GB, hate it, only gave in for avoiding captcha 
 brew install dive # 10MB, explore layers in docker images
 
 # git
-brew install diff-so-fancy # within-line highlights
+# brew install diff-so-fancy # within-line highlights
 brew install git-delta # as diff-so-fancy but with language syntax highlighting, side-by-side, etc.
 brew install tig # Text interface for Git repositories
 brew install hub
