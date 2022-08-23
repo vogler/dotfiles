@@ -29,8 +29,8 @@ sudo snap install nvim --classic # Virtuozzo/OpenVZ: https://community.letsencry
 agi tig # Text interface for Git repositories
 # arch=$([[ $(uname -m) == "x86_64" ]] && echo "amd64" || echo "armhf")
 arch=$(dpkg --print-architecture)
-musl=$([[ $(lsb_release -r | cut -f2) == "20.04" ]] && echo "" || echo "-musl") # https://github.com/dandavison/delta/issues/504
-curl -fsSL https://github.com/dandavison/delta/releases/download/0.11.0/git-delta${musl}_0.11.0_$arch.deb -o /tmp/git-delta_$arch.deb && sudo dpkg -i /tmp/git-delta_$arch.deb # A syntax-highlighting pager for git and diff output; TODO watch for update: https://github.com/dandavison/delta#installation
+musl=$([[ $(lsb_release -r | cut -f2) == "19.10" ]] && echo "-musl" || echo "") # https://github.com/dandavison/delta/issues/504#issuecomment-1164600484
+curl -fsSL https://github.com/dandavison/delta/releases/download/0.13.0/git-delta${musl}_0.13.0_$arch.deb -o /tmp/git-delta_$arch.deb && sudo dpkg -i /tmp/git-delta_$arch.deb # A syntax-highlighting pager for git and diff output; TODO watch for update: https://github.com/dandavison/delta#installation
 agi tree # `exa --tree --level=2` has colors and can show meta-data with --long
 agi htop # nicer ncurses-based process viewer similar to top
 agi iotop # shows I/O usage
