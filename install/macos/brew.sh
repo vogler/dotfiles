@@ -52,6 +52,7 @@ brew install libreoffice
 brew install iina # media player
 brew install raspberry-pi-imager # install different OSes to microSD
 brew install numi # 49MB, calculator app with unit conversions and variables
+brew install portfolioperformance # 168MB, Internal and True-Time Weighted Rate of Return, graphs etc., can import PDFs of transactions from ING, but needs manual work; probably works for degiro as well
 
 # sys tools
 brew install neovim # editor, no need for vim, config in .vimrc
