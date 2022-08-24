@@ -83,6 +83,7 @@ brew install mosh # alternative for ssh, local echo, roaming, but UDP dyn. port 
 brew install watch # Executes a program periodically, showing output fullscreen
 brew install mmv # move/copy/append/link multiple files by wildcard patterns
 brew install figlet # Banner-like program prints strings as ASCII art
+brew install gum # 25MB, fancy input for shell scripts: choose a b, input, write, confirm
 
 # programming languages
 # macOS ships ruby 2.6.3, python 2.7.16; python3 installed as dep; typescript via npm

@@ -4,7 +4,9 @@ set -e # immediately exit if any command has a non-zero exit status
 trap 'echo "ERROR: $BASH_SOURCE:$LINENO $BASH_COMMAND" >&2' ERR
 
 echo "This will setup my basic environment for macOS or Linux."
-echo "Possible arguments for extended setup: smart-home"
+echo "Possible arguments for extended setup: linuxbrew latex smart-home ocaml"
+# https://github.com/charmbracelet/gum - nice, but would need to install package first...
+# mods=$(gum choose --no-limit base linuxbrew latex smart-home ocaml)
 
 # Ask for the administrator password upfront. From https://mths.be/macos
 sudo -v
