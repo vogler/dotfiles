@@ -81,6 +81,10 @@ wget -qO - https://deb.volian.org/volian/scar.key | sudo tee /etc/apt/trusted.gp
 sudo apt update -qq
 agi nala 2>/dev/null || agi nala-legacy # nala for Ubuntu 22.04 / Debian Sid, legacy for older
 
+# https://github.com/charmbracelet/gum - fancy input for shell scripts: choose a b, input, write, confirm
+echo 'deb [trusted=yes] https://repo.charm.sh/apt/ /' | sudo tee /etc/apt/sources.list.d/charm.list
+sudo apt update && sudo apt install gum
+
 if [[ "$*" == *latex* ]]; then
   agi texlive-latex-extra
   agi texlive-bibtex-extra
