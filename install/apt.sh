@@ -25,6 +25,7 @@ if [[ -d /mnt/chromeos ]]; then
   sudo systemctl enable --now snapd
   # systemctl status snapd
   sudo snap install code --classic # Visual Studio Code
+  agi gnome-keyring # needed to stay signed in to GitHub in vscode
 fi
 sudo snap install nvim --classic # Virtuozzo/OpenVZ: https://community.letsencrypt.org/t/system-does-not-fully-support-snapd-cannot-mount-squashfs-image-using-squashfs/132689/2
 agi tig # Text interface for Git repositories
