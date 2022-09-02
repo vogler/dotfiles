@@ -190,5 +190,8 @@
   "editor.suggestSelection": "first",
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "quokka.showStartViewOnFeatureRelease": false,
-  "workbench.experimental.layoutControl.enabled": true
+  "workbench.experimental.layoutControl.enabled": true,
+  "trunk.trunkGrayOutNonBlockingIssues": false,
+  "window.titleBarStyle": "custom",
+  "editor.stickyScroll.enabled": true
 }
