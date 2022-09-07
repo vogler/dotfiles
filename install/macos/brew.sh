@@ -48,6 +48,7 @@ brew install telegram # 152MB, 96MB RAM, Swift, narrow: chats>chat
 brew install telegram-desktop # 216MB, 340MB RAM, C++ webkit?, chats on side, can export chat data (settings > advanced)
 brew install libreoffice
 # mas install 1030461463 # PDFCombo: merge PDFs and preserve the TOC
+brew install pdf-expert # 200MB, more features than Preview.app: annotations, edit text, merge, crop, clear, margins, OCR, better reduce file size export
 # https://outbankapp.com neither in brew nor mas (but finds outbank in App Store)
 brew install iina # media player
 brew install raspberry-pi-imager # install different OSes to microSD
