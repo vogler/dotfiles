@@ -35,7 +35,8 @@ brew install raycast # 75MB, better launcher than Spotlight, Alfred etc., good s
 # brew install sensei # trial
 
 # browser/-based apps
-brew install google-chrome
+brew install google-chrome # 922MB
+brew install firefox # 344MB, don't really use it, but good to have options
 # brew install spotify # Intel, use Chrome App -> same (except no preferences & friends feed?) but more efficient
 brew install whatsapp # Intel, use Chrome App WhatsChrome
 brew install slack
