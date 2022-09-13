@@ -136,7 +136,7 @@ ln -sf `pwd`/.gitconfig ~
 ln -sf `pwd`/.gitignore_global ~
 # sudo install install/repos/gitwatch/gitwatch.sh /usr/local/bin/gitwatch
 
-# zsh
+# zsh: fork of https://github.com/sorin-ionescu/prezto
 echo_bold ">> Link prezto for zsh"
 ln -sf `pwd`/.zprezto ~
 cat <<EOT | zsh
@@ -151,6 +151,8 @@ if [ $SHELL != "/bin/zsh" ]; then
 fi
 # unlink .zlogout since it prints a useless message to stderr which makes Terminal.app not close a tab on ^d but only show this message without a prompt due to the default setting 'Profiles > Shell > Close if the shell exited cleanly'
 rm -f ~/.zlogout
+# prompt for prezto: https://github.com/romkatv/powerlevel10k
+ln -sf `pwd`/.p10k.zsh ~
 
 # tmux
 ln -sf `pwd`/.tmux.conf ~
