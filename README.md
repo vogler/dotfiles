@@ -1,5 +1,7 @@
 # dotfiles
 
+![Screenshot 2022-09-16 at 00 55 08](https://user-images.githubusercontent.com/493741/190522650-8db76278-8e36-445d-9ba3-4fc699a14683.png)
+
 `./setup.sh` will install and configure the software I use. The core setup for terminal/ssh is the same for macOS and Linux.
 
 - System packages
