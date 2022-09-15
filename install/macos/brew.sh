@@ -164,6 +164,7 @@ brew install svn # needed for installing some fonts...
 brew install font-inconsolata font-open-sans font-source-code-pro font-source-sans-pro font-anonymous-pro
 brew install font-dejavu-sans-mono-for-powerline font-droid-sans-mono-for-powerline font-inconsolata-for-powerline font-inconsolata-for-powerline font-source-code-pro-for-powerline
 brew install font-consolas-for-powerline font-menlo-for-powerline font-meslo-for-powerline font-monofur-for-powerline font-noto-mono-for-powerline font-anonymice-powerline
+# brew install font-meslo-lg-nerd-font # relevant variants are downloaded via https://github.com/romkatv/powerlevel10k#fonts - see https://www.nerdfonts.com for glyphs
 
 # tracking
 brew install rescuetime # Intel, fails because it requires Rosetta 2 (`sudo softwareupdate --install-rosetta`). Why did the other Intel apps work without installing this?
