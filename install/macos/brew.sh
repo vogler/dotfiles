@@ -88,6 +88,7 @@ brew install watch # Executes a program periodically, showing output fullscreen
 brew install mmv # move/copy/append/link multiple files by wildcard patterns
 brew install figlet # Banner-like program prints strings as ASCII art
 brew install gum # 25MB, fancy input for shell scripts: choose a b, input, write, confirm
+brew install fzf # 2.7MB, Command-line fuzzy finder written in Go
 brew install neofetch # system information with OS + logo, host, kernel, uptime, packages, shell, resolution, DE, WM, terminal, CPU, memory
 
 # programming languages
