@@ -153,7 +153,6 @@ fi
 rm -f ~/.zlogout
 # prompt for prezto: https://github.com/romkatv/powerlevel10k
 ln -sf `pwd`/.p10k.zsh ~
-ln -sf `pwd`/.fzf.zsh ~
 
 # tmux
 ln -sf `pwd`/.tmux.conf ~

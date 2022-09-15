@@ -63,6 +63,7 @@ agi nq # lightweight job queue
 agi mosh # alternative for ssh, local echo, roaming, but UDP dyn. port alloc. 60000-61000
 agi mmv # move/copy/append/link multiple files by wildcard patterns
 agi neofetch # system information with OS + logo, host, kernel, uptime, packages, shell, resolution, DE, WM, terminal, CPU, memory
+agi fzf # Command-line fuzzy finder written in Go
 
 # GitHub CLI: https://github.com/cli/cli/blob/trunk/docs/install_linux.md
 curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg
