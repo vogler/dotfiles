@@ -35,8 +35,9 @@ echo_bold(){ echo -e '\033[1;32m'"$1"'\033[0m'; } # should be bold green, but is
 echo_bold ">> Get submodules"
 git submodule update --init --recursive
 
-config=~/.config
-# system packages
+config=~/.config # local config for Linux, overwritten below for macOS
+
+# install system packages
 if [ "$(uname)" == "Darwin" ]; then
   echo_bold ">> [Running macOS]"
   config=~/Library/Application\ Support
@@ -80,7 +81,7 @@ if [ "$(uname)" == "Darwin" ]; then
   lnsf .hammerspoon/Spoons
   cd ..
 elif has apt; then
-  echo_bold ">> [Running Linux]" # current setup only for RPi or server (both via ssh)
+  echo_bold ">> [Running apt-based Linux]" # current setup only for RPi or server (both via ssh)
 
   echo_bold ">> apt install ..."
   source install/apt.sh $*
