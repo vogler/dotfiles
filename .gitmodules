@@ -1,4 +1,0 @@
-[submodule ".zprezto"]
-	path = .zprezto
-	url = https://github.com/vogler/prezto.git
-	branch = master

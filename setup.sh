@@ -32,9 +32,6 @@ lnsf(){ # make a symbolic link in home to dotfiles, create directories if needed
 
 echo_bold(){ echo -e '\033[1;32m'"$1"'\033[0m'; } # should be bold green, but is bold white. green somehow only works with 0 (regular) instead of 1 (bold).
 
-echo_bold ">> Get submodules"
-git submodule update --init --recursive
-
 config=~/.config # local config for Linux, overwritten below for macOS
 
 # install system packages
@@ -138,8 +135,11 @@ ln -sf `pwd`/.gitignore_global ~
 # sudo install install/repos/gitwatch/gitwatch.sh /usr/local/bin/gitwatch # installed via brew
 
 # zsh: fork of https://github.com/sorin-ionescu/prezto
-echo_bold ">> Link prezto for zsh"
-ln -sf `pwd`/.zprezto ~
+echo_bold ">> Get submodules"
+echo_bold ">> zsh: clone fork of prezto to ~/.zprezto"
+git-get https://github.com/vogler/prezto ~/.zprezto
+git -C ~/.zprezto submodule update --init --recursive
+echo_bold ">> zsh: link config"
 cat <<EOT | zsh
 setopt EXTENDED_GLOB
 for rcfile in "\${ZDOTDIR:-\$HOME}"/.zprezto/runcoms/^README.md(.N); do
