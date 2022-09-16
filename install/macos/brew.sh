@@ -20,7 +20,7 @@ brew install qlstephen qlimagesize qlvideo # https://github.com/sindresorhus/qui
 brew install glance # TODO discontinued; need to open Glance.app first; replaces qlcolorcode qlmarkdown quicklook-json
 xattr -d -r com.apple.quarantine ~/Library/QuickLook # remove plugins from quarantine
 # brew install shortery # 6.9MB, triggers for Shortcuts, tried Sleep/Wake Up to log to file, but did not work
-brew install sound-control # 23MB, 14d trial, allows to lower volume of speakers connected to display via HDMI/DisplayPort (macOS can't, so volume would need to be changed on speakers (no problem on Windows))
+# brew install sound-control # 23MB, 14d trial, allows to lower volume of speakers connected to display via HDMI/DisplayPort (macOS can't, so volume would need to be changed on speakers (no problem on Windows)) - sometimes made videos hang on sound until clicked on menu icon
 
 # Desktop tools
 # brew install sizeup # Intel, unlimited trial
