@@ -134,7 +134,7 @@ ln -sf `pwd`/.gitconfig ~
 # [ "$(uname)" == "Linux" ] && sudo git config --system --replace-all credential.helper 'cache --timeout=604800' # keep in memory for 7 days
 [ "$(uname)" == "Linux" ] && sudo git config --system --replace-all credential.helper store # plain-text in ~/.git-credentials ! --global instead of --system sets it in ~/.gitconfig
 ln -sf `pwd`/.gitignore_global ~
-# sudo install install/repos/gitwatch/gitwatch.sh /usr/local/bin/gitwatch
+# sudo install install/repos/gitwatch/gitwatch.sh /usr/local/bin/gitwatch # installed via brew
 
 # zsh: fork of https://github.com/sorin-ionescu/prezto
 echo_bold ">> Link prezto for zsh"

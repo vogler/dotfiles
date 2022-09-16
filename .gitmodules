@@ -1,6 +1,3 @@
 [submodule ".zprezto"]
 	path = .zprezto
 	url = https://github.com/vogler/prezto.git
-[submodule "install/repos/gitwatch"]
-	path = install/repos/gitwatch
-	url = https://github.com/gitwatch/gitwatch.git
