@@ -47,6 +47,7 @@ brew install tor-browser # 192MB
 brew install dropbox # only 9GB with free plan, moved Screenshots <2021 to PC TODO replace with self-hosted alternative on RPi
 brew install telegram # 152MB, 96MB RAM, Swift, narrow: chats>chat
 brew install telegram-desktop # 216MB, 340MB RAM, C++ webkit?, chats on side, can export chat data (settings > advanced)
+brew install zoom # 98MB, some meetings can't be done in the browser?
 brew install libreoffice
 # mas install 1030461463 # PDFCombo: merge PDFs and preserve the TOC
 # brew install pdf-expert # 200MB, more features than Preview.app: annotations, edit text, merge, crop, clear, margins, OCR, better reduce file size export. Free version useless and full version 140€ or 80€/year.
