@@ -151,6 +151,10 @@ if [[ "$*" == *smart-home* ]]; then
     sudo systemctl start grafana-server
     sudo systemctl enable grafana-server
 
+    echo ">>> OctoPrint (TODO)" # see {octoprint,webcamd}.service - install via pip instead of source, link .octoprint, restore secrets from somewhere
+    agi haproxy # see vogler/smart-home/etc/haproxy/haproxy.cfg
+    # TODO replace with Caddy? https://caddyserver.com/docs/install#debian-ubuntu-raspbian
+
     echo ">>> sound detection"
     agi sox # Swiss army knife of sound processing -> record noise (silence filter) with OctoPrint webcam on rpi4, small/cheap USB microphones were not sensitive enough, but webcam mic is with ~50% when talking at desk (100% gain in alsamixer)
   else
