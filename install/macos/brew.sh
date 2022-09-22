@@ -146,6 +146,7 @@ brew install vnc-viewer # RealVNC viewer
 brew install cyberduck # client for FTP, SFTP, WebDAV, and cloud storage
 brew install teamviewer # 227 MB
 brew install http-toolkit # 327MB, HTTP(S) debugging proxy, analyzer, and client
+brew install caddy # 42MB, Go web server with automatic HTTPS (Let's Encrypt), HTTP/3, reverse proxy, load balancing, caching, https://caddyserver.com - `caddy file-server --domain example.com` `caddy reverse-proxy --from example.com --to localhost:9000`
 
 # goblint
 brew install gmp # needed to build deps
