@@ -86,6 +86,7 @@ brew install p7zip # 7z with support for Brotli, Fast LZMA2, LZ4, LZ5, Lizard an
 brew install the-unarchiver # unpack .rar
 brew install mosh # alternative for ssh, local echo, roaming, but UDP dyn. port alloc. 60000-61000
 brew install watch # Executes a program periodically, showing output fullscreen
+brew install watchexec # 5.7MB, Execute commands when watched files change. `watchexec --clear --notify -- ls -lah`, `watchexec -e js,css --restart -- npm start`
 brew install mmv # move/copy/append/link multiple files by wildcard patterns
 brew install figlet # Banner-like program prints strings as ASCII art
 brew install gum # 25MB, fancy input for shell scripts: choose a b, input, write, confirm
