@@ -115,6 +115,7 @@ brew install heroku/brew/heroku
 brew install devutils # 48MB, demo, GUI with converters for unix time, base64, URLs, regex, JSON, CSV, Markdown etc.
 brew install --cask docker # 1.5 GB, hate it, only gave in for avoiding captcha with headless playwright
 brew install dive # 10MB, explore layers in docker images
+brew install ctop # 8.9MB, Top-like interface for container metrics
 
 # git
 # brew install diff-so-fancy # within-line highlights
@@ -147,7 +148,7 @@ brew install vnc-viewer # RealVNC viewer
 brew install cyberduck # client for FTP, SFTP, WebDAV, and cloud storage
 brew install teamviewer # 227 MB
 brew install http-toolkit # 327MB, HTTP(S) debugging proxy, analyzer, and client
-brew install caddy # 42MB, Go web server with automatic HTTPS (Let's Encrypt), HTTP/3, reverse proxy, load balancing, caching, https://caddyserver.com - `caddy file-server --domain example.com` `caddy reverse-proxy --from example.com --to localhost:9000`
+brew install caddy # 42MB, Go web server with automatic HTTPS (Let's Encrypt), HTTP/3, reverse proxy, load balancing, caching, nicer to use but slower than nginx/haproxy/traefik, https://caddyserver.com - `caddy file-server --domain example.com` `caddy reverse-proxy --from example.com --to localhost:9000`
 
 # goblint
 brew install gmp # needed to build deps
