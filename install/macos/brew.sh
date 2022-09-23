@@ -60,6 +60,7 @@ brew install --cask r # 95MB, Environment for statistical computing and graphics
 
 # sys tools
 brew install neovim # editor, no need for vim, config in .vimrc
+brew install vimr # 77MB, VimR.app/`vimr` as GUI with file browser, markdown preview, macOS shortcuts - used for macOS `open`, nicer than neovide, neovim-qt, macvim
 brew install iterm2 # 78MB, better Terminal.app, https://sourabhbajaj.com/mac-setup/iTerm/
 curl -L https://iterm2.com/shell_integration/install_shell_integration_and_utilities.sh | bash
 brew install warp # 147MB, fast rust-based terminal, bit more modern than iterm, but pretty similar, TODO colors and font in vim are off
