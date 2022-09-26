@@ -193,5 +193,15 @@
   "workbench.experimental.layoutControl.enabled": true,
   "trunk.trunkGrayOutNonBlockingIssues": false,
   "window.titleBarStyle": "custom",
-  "editor.stickyScroll.enabled": true
+  "editor.stickyScroll.enabled": true,
+  "editor.stickyTabStops": true,
+  "editor.suggest.matchOnWordStartOnly": false,
+  "editor.smoothScrolling": true,
+  "terminal.integrated.smoothScrolling": true,
+  "workbench.list.smoothScrolling": true,
+  "workbench.editor.scrollToSwitchTabs": true,
+  "editor.experimental.pasteActions.enabled": true,
+  "ipynb.experimental.pasteImages.enabled": true,
+  "markdown.experimental.updateLinksOnFileMove.enabled": "prompt",
+  "workbench.experimental.editSessions.enabled": true
 }
