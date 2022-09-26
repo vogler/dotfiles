@@ -161,7 +161,7 @@
 },
   "latex-workshop.view.pdf.viewer": "tab",
   "latex-workshop.intellisense.package.enabled": true,
-  "latex-workshop.chktex.enabled": true,
+  "latex-workshop.linting.chktex.enabled": true,
   "latex-workshop.view.pdf.tab.editorGroup": "left",
   "problems.showCurrentInStatus": true,
   "spellright.notificationClass": "warning",
@@ -176,9 +176,6 @@
   "editor.glyphMargin": false,
   "emmet.showSuggestionsAsSnippets": true,
   "editor.snippetSuggestions": "bottom",
-  "workbench.editorAssociations": {
-    "*.ipynb": "jupyter.notebook.ipynb"
-  },
   "security.workspace.trust.untrustedFiles": "open",
   "workbench.editor.highlightModifiedTabs": true,
   "editor.renderWhitespace": "trailing",
@@ -190,7 +187,6 @@
   "editor.suggestSelection": "first",
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "quokka.showStartViewOnFeatureRelease": false,
-  "workbench.experimental.layoutControl.enabled": true,
   "trunk.trunkGrayOutNonBlockingIssues": false,
   "window.titleBarStyle": "custom",
   "editor.stickyScroll.enabled": true,
