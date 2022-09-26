@@ -207,5 +207,10 @@
   "window.commandCenter": true,
   "git.mergeEditor": true,
   "mergeEditor.diffAlgorithm": "experimental",
-  "markdown.experimental.validate.enabled": true
+  "markdown.experimental.validate.enabled": true,
+  "editor.quickSuggestions": {
+    "comments": "inline",
+    "strings": "inline"
+  },
+  "git.untrackedChanges": "separate"
 }
