@@ -203,5 +203,6 @@
   "editor.experimental.pasteActions.enabled": true,
   "ipynb.experimental.pasteImages.enabled": true,
   "markdown.experimental.updateLinksOnFileMove.enabled": "prompt",
-  "workbench.experimental.editSessions.enabled": true
+  "workbench.experimental.editSessions.enabled": true,
+  "window.commandCenter": true
 }
