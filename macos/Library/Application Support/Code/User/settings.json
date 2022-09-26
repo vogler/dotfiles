@@ -208,5 +208,7 @@
     "comments": "inline",
     "strings": "inline"
   },
-  "git.untrackedChanges": "separate"
+  "git.untrackedChanges": "separate",
+  "javascript.format.semicolons": "insert",
+  "typescript.format.semicolons": "insert"
 }
