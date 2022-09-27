@@ -153,6 +153,15 @@ if [[ "$*" == *smart-home* ]]; then
     sudo systemctl start grafana-server
     sudo systemctl enable grafana-server
 
+    echo ">>> Caddy reverse proxy"
+    curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/gpg.key' | sudo gpg --dearmor -o /usr/share/keyrings/caddy-stable-archive-keyring.gpg
+    curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/debian.deb.txt' | sudo tee /etc/apt/sources.list.d/caddy-stable.list
+    sudo apt update -qq
+    agi caddy
+    sudo setcap cap_net_bind_service=+ep $(which caddy) # allow binding to ports <=1024
+    sudo systemctl restart caddy # needed for lower ports
+    # caddy reload # loads ./Caddyfile; TODO link to /etc/caddy/Caddyfile used in service?
+
     echo ">>> OctoPrint (TODO)" # see {octoprint,webcamd}.service - install via pip instead of source, link .octoprint, restore secrets from somewhere
     agi haproxy # see vogler/smart-home/etc/haproxy/haproxy.cfg
     # TODO replace with Caddy? https://caddyserver.com/docs/install#debian-ubuntu-raspbian
