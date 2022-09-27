@@ -64,6 +64,7 @@ agi mosh # alternative for ssh, local echo, roaming, but UDP dyn. port alloc. 60
 agi mmv # move/copy/append/link multiple files by wildcard patterns
 agi neofetch # system information with OS + logo, host, kernel, uptime, packages, shell, resolution, DE, WM, terminal, CPU, memory
 agi fzf # Command-line fuzzy finder written in Go
+# agi net-tools # Debian `sudo netstat -nltp` = Ubuntu `sudo ss -nltp`; https://askubuntu.com/questions/1025568/has-netstat-been-replaced-with-a-new-tool
 
 # GitHub CLI: https://github.com/cli/cli/blob/trunk/docs/install_linux.md
 curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg
