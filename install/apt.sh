@@ -158,6 +158,18 @@ if [[ "$*" == *smart-home* ]]; then
 
     echo ">>> sound detection"
     agi sox # Swiss army knife of sound processing -> record noise (silence filter) with OctoPrint webcam on rpi4, small/cheap USB microphones were not sensitive enough, but webcam mic is with ~50% when talking at desk (100% gain in alsamixer)
+
+    echo ">>> Docker"
+    # https://docs.docker.com/engine/install/debian/
+    curl -fsSL https://get.docker.com -o /tmp/get-docker.sh
+    sudo sh /tmp/get-docker.sh
+    # ctop - Top-like interface for container metrics
+    curl -fsSL https://azlux.fr/repo.gpg.key | sudo gpg --dearmor -o /usr/share/keyrings/azlux-archive-keyring.gpg
+    echo \
+      "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/azlux-archive-keyring.gpg] http://packages.azlux.fr/debian \
+      $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/azlux.list >/dev/null
+    sudo apt-get update -qq
+    agi docker-ctop
   else
     echo "Unknown hostname: $(hostname)! Must be rpi3 or rpi4"
   fi
