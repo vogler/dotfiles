@@ -159,6 +159,8 @@ if [[ "$*" == *smart-home* ]]; then
     sudo apt update -qq
     agi caddy
     sudo setcap cap_net_bind_service=+ep $(which caddy) # allow binding to ports <=1024
+    sudo mv /etc/caddy/Caddyfile{,.org}
+    sudo ln -s ~/smart-home/etc/caddy/Caddyfile /etc/caddy/
     sudo systemctl restart caddy # needed for lower ports
     # caddy reload # loads ./Caddyfile; TODO link to /etc/caddy/Caddyfile used in service?
 
