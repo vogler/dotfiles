@@ -88,6 +88,7 @@ F24::send {Volume_Up}
 ; switch ctrl and cmd (done via SharpKeys instead)
 ; LWin::LCtrl
 ; LCtrl::LWin
+; RWin::RCtrl ; only needed because small couch keyboard with touchpad has no LWin
 ; win+q = alt+f4
 #q::Send {Alt Down}{F4}{Alt Up}
 ; win+tab = alt+tab
