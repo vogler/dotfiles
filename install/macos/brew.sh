@@ -67,6 +67,7 @@ brew install warp # 147MB, fast rust-based terminal, bit more modern than iterm,
 brew install tmux # terminal multiplexer
 brew install coreutils # newer than macOS
 brew install moreutils # more tools: ts for prefixing timestamps, parallel, combine, sponge etc.
+brew install findutils # GNU find, xargs, and locate - macOS find does not have -iname
 brew install gnu-time # gtime has more features than the builtin time command
 brew install grep # newer than macOS: 3.6 vs 2.5.1-FreeBSD
 brew install gnu-sed # newer than macOS: 4.8 vs 2017 BSD?
