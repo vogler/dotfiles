@@ -96,6 +96,7 @@ brew install fzf # 2.7MB, Command-line fuzzy finder written in Go
 brew install neofetch # system information with OS + logo, host, kernel, uptime, packages, shell, resolution, DE, WM, terminal, CPU, memory
 brew install nnn # terminal file manager: small and fast, but bare bones without plugins/config; use `nnn -e` to edit text in same terminal instead of via `open`
 brew install ranger # terminal file manager: slower, but nicer defaults with multi-column layout and automatic preview of many file types
+brew install dos2unix # Convert text between DOS, UNIX, and Mac formats; for git's fatal: CRLF would be replaced by LF
 
 # programming languages
 # macOS ships ruby 2.6.3, python 2.7.16; python3 installed as dep; typescript via npm
