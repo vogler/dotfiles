@@ -63,7 +63,7 @@ nmap <F8> :TagbarToggle<CR>
 let g:tagbar_compact = 1
 
 " # fuzzy finder
-Plug 'kien/ctrlp.vim' " Fuzzy file, buffer, mru, tag, etc finder
+Plug 'ctrlpvim/ctrlp.vim' " Fuzzy file, buffer, mru, tag, etc finder
   let g:ctrlp_map = '<c-p>'
   let g:ctrlp_cmd = 'CtrlPMixed'
   let g:ctrlp_by_filename = 1
@@ -133,11 +133,12 @@ Plug 'vim-airline/vim-airline' " status line with multiple sections and support 
       \ }
   let g:airline#extensions#hunks#non_zero_only = 1
   function! CustomBranchName(name)
-    if a:name == 'master' | return 'm' | else | return a:name | endif
+    if a:name == 'master' | return 'm ' | else | return a:name | endif
   endfunction
   let g:airline#extensions#branch#format = 'CustomBranchName'
 Plug 'vim-airline/vim-airline-themes' " :AirlineTheme solarized
 " Plug 'bling/vim-bufferline'
+Plug 'ryanoasis/vim-devicons' " adds file type icons to NERDTree, vim-airline, CtrlP, unite, Denite, lightline, vim-startify and many more. Has to be loaded after those plugins!
 
 Plug 'airblade/vim-gitgutter' " git diff markers in sign column; jump to next hunk with ]c, stage hunk with ,hs, undo with ,hu
 set updatetime=250 " terminal vim might have highlighting glitches for low times...
