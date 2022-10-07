@@ -97,7 +97,7 @@ Plug 'google/vim-searchindex' " display number of search matches & index of a cu
 Plug 'flazz/vim-colorschemes' " colorscheme pack including solarized
 Plug 'altercation/vim-colors-solarized' " :colorscheme solarized (overwrites the above?)
 " colorscheme must be set below after plugins are loaded
-set guifont=MesloLGS\ NF:h18
+set guifont=MesloLGS\ NF:h18 " Nerd Font downloaded by Powerlevel10k zsh prompt. Also set in iterm.
 set background=dark
 
 " # UI extensions
