@@ -47,7 +47,7 @@
   "editor.selectionHighlight": true,
   // "latex-workshop.linter": true,
   // @sync os=windows
-  "vim.useCtrlKeys": false, // want true on macOS, false on Windows...
+  "vim.useCtrlKeys": true, // want true on macOS, false on Windows...
   "vim.leader": ",",
   "vim.useSystemClipboard": true,
   "vim.overrideCopy": false, // otherwise cmd-c doesn't copy
