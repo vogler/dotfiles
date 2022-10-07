@@ -84,7 +84,7 @@ let g:ackprg = 'ag --vimgrep --smart-case'
 " let g:agprg="ag --nogroup --nocolor --column"
 
 " # yank, registers
-command YankStatusMsg let @+ = v:statusmsg " for copying error messages
+command! YankStatusMsg let @+ = v:statusmsg " for copying error messages
 Plug 'ojroques/vim-oscyank' " SSH: also copy to client clipboard
   autocmd TextYankPost * if $SSH_CLIENT != '' && v:event.operator is 'y' && v:event.regname is '' | execute 'OSCYankReg "' | endif
 
@@ -535,7 +535,9 @@ set wildignorecase
 set wildmode=list:longest,full
 augroup AutoReloadVimRC
   au!
-  au BufWritePost $MYVIMRC so $MYVIMRC " load new .vimrc on save (only adds :/)
+  " reload .vimrc on save - however, this still does not behave the same as reopening
+  " vim since it executes in the current config instead of clearing the state first.
+  au! BufWritePost $MYVIMRC,.vimrc source % | redraw | echom "Reloaded " . $MYVIMRC
 augroup END
 
 set ignorecase
