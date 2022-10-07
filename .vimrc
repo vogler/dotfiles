@@ -96,9 +96,9 @@ Plug 'google/vim-searchindex' " display number of search matches & index of a cu
 " # UI themes, font
 Plug 'flazz/vim-colorschemes' " colorscheme pack including solarized
 Plug 'altercation/vim-colors-solarized' " :colorscheme solarized (overwrites the above?)
-set guifont=Inconsolata\ for\ Powerline:h18'
-set background=dark
 " colorscheme must be set below after plugins are loaded
+set guifont=MesloLGS\ NF:h18
+set background=dark
 
 " # UI extensions
 Plug 'mhinz/vim-startify' " start screen (if opened without arg) instead of empty buffer with MRU, bookmarks, sessions
