@@ -175,7 +175,6 @@
   "workbench.editor.wrapTabs": true,
   "editor.glyphMargin": false,
   "emmet.showSuggestionsAsSnippets": true,
-  "editor.snippetSuggestions": "bottom",
   "security.workspace.trust.untrustedFiles": "open",
   "workbench.editor.highlightModifiedTabs": true,
   "editor.renderWhitespace": "trailing",
@@ -205,10 +204,13 @@
   "mergeEditor.diffAlgorithm": "experimental",
   "markdown.experimental.validate.enabled": true,
   "editor.quickSuggestions": {
+    "other": "inline",
     "comments": "inline",
     "strings": "inline"
   },
   "git.untrackedChanges": "separate",
   "javascript.format.semicolons": "insert",
-  "typescript.format.semicolons": "insert"
+  "typescript.format.semicolons": "insert",
+  "editor.suggestOnTriggerCharacters": false,
+  "editor.snippetSuggestions": "top"
 }
