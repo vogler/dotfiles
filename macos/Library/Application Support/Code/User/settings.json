@@ -200,7 +200,6 @@
   "markdown.experimental.updateLinksOnFileMove.enabled": "prompt",
   "workbench.experimental.editSessions.enabled": true,
   "window.commandCenter": true,
-  "git.mergeEditor": true,
   "mergeEditor.diffAlgorithm": "experimental",
   "markdown.experimental.validate.enabled": true,
   "editor.quickSuggestions": {
