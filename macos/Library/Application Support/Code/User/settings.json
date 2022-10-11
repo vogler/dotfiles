@@ -201,7 +201,7 @@
   "workbench.experimental.editSessions.enabled": true,
   "window.commandCenter": true,
   "mergeEditor.diffAlgorithm": "experimental",
-  "markdown.experimental.validate.enabled": true,
+  "markdown.validate.enabled": true,
   "editor.quickSuggestions": {
     "other": "inline",
     "comments": "inline",
