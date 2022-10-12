@@ -66,6 +66,7 @@ agi neofetch # system information with OS + logo, host, kernel, uptime, packages
 agi fzf # Command-line fuzzy finder written in Go
 # agi net-tools # Debian `sudo netstat -nltp` = Ubuntu `sudo ss -nltp`; https://askubuntu.com/questions/1025568/has-netstat-been-replaced-with-a-new-tool
 agi httpie # https://httpie.io User-friendly cURL replacement, ex: http POST pie.dev/post hello=world
+agi broot # `br` to navigate big file trees, alt+enter to cd, `br -s` to show sizes
 
 # GitHub CLI: https://github.com/cli/cli/blob/trunk/docs/install_linux.md
 curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg
