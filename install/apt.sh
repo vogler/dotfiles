@@ -66,6 +66,8 @@ agi neofetch # system information with OS + logo, host, kernel, uptime, packages
 agi fzf # Command-line fuzzy finder written in Go
 # agi net-tools # Debian `sudo netstat -nltp` = Ubuntu `sudo ss -nltp`; https://askubuntu.com/questions/1025568/has-netstat-been-replaced-with-a-new-tool
 agi httpie # https://httpie.io User-friendly cURL replacement, ex: http POST pie.dev/post hello=world
+agi nnn # terminal file manager: small and fast, but bare bones without plugins/config; use `nnn -e` to edit text in same terminal instead of via `open`
+agi ranger # terminal file manager: slower, but nicer defaults with multi-column layout and automatic preview of many file types
 agi broot # `br` to navigate big file trees, alt+enter to cd, `br -s` to show sizes
 
 # GitHub CLI: https://github.com/cli/cli/blob/trunk/docs/install_linux.md
