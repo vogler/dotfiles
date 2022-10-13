@@ -137,6 +137,8 @@ brew install gitwatch # use GitDoc in vscode instead? https://marketplace.visual
 brew install jq # JSON CLI processor
 brew install xsv # CSV CLI: cat count flatten frequency join search select slice sort split stats table
 brew install jid # Json incremental digger
+brew install htmlq # 2.5MB, jq for HTML, pretty basic, no pseudo-classes?, `htmlq --attribute href a`, `htmlq --text .main`
+brew install pup # 3.7MB, jq for HTML, many pseudo-classes, `pup 'a attr{href}'`, text{}, json{}, :contains(text), `pup ':parent-of([action="edit"])'`
 brew install postgresql # SQL DB; `brew services start postgresql` to enable start on login, `brew services run postgresql` to just start
 
 # network

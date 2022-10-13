@@ -57,6 +57,7 @@ agi python3-pip
 agi inotify-tools
 # agi clang
 agi jq # JSON CLI processor
+agi pup # jq for HTML, many pseudo-classes, `pup 'a attr{href}'`, text{}, json{}, :contains(text), `pup ':parent-of([action="edit"])'`
 agi moreutils # use ts (timestamp standard input) in systemd services for mqtt subs
 agi apt-file # which package provides a file? e.g. apt-file find libportaudio.so
 agi nq # lightweight job queue
