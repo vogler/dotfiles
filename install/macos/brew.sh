@@ -10,7 +10,8 @@
 # OS tools
 brew install mas # CLI for macOS App Store
 brew install m-cli # CLI for macOS and stock apps
-brew install dockutil # edit Dock (used in dock.sh)
+# brew install dockutil # edit Dock (used in dock.sh)
+brew install --cask hpedrorodrigues/tools/dockutil # need dockutil 3 for current macOS, temporary, see https://github.com/kcrawford/dockutil/issues/127
 # brew install cheatsheet # hold cmd key to show overlay with all shortcuts of current application
 brew install qlstephen qlimagesize qlvideo # https://github.com/sindresorhus/quick-look-plugins
 # Apple doc says quicklook generators are only called upon demand (so no overhead for mds?)
