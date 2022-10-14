@@ -74,6 +74,8 @@ Plug 'ctrlpvim/ctrlp.vim' " Fuzzy file, buffer, mru, tag, etc finder
     \ }
   " let g:ctrlp_clear_cache_on_exit = 0
   let g:ctrlp_user_command = ['.git', 'cd %s && {git ls-files & git ls-files -o --exclude-standard;} | cat', 'find %s -type f']
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim' " :Commits :BCommits :Ag :Lines :Blines :Files :GFiles :Buffers :Marks :Commands :Maps :Helptags :Filetypes :Colors
 
 " # text search across files, grep/ack
 " deprecated: https://github.com/rking/ag.vim/issues/124#issuecomment-227038003
