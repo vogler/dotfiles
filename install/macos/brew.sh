@@ -148,7 +148,12 @@ brew install postgresql # SQL DB; `brew services start postgresql` to enable sta
 # network
 brew install wget # alt for curl
 brew install httpie # 17MB, https://httpie.io User-friendly cURL replacement, ex: http POST pie.dev/post hello=world
-# brew install --cask httpie # 372MB, https://httpie.io Desktop App/GUI similar to Postman
+# API clients with GUI:
+  # online: https://hoppscotch.io, https://restfox.dev, https://httpie.io/app (no local network)
+  # brew install --cask httpie # 372MB, https://httpie.io GUI, only requests and collections
+  # brew install postman # 467MB, most features with account, Collections to save requests, create APIs, Mock servers, Monitors, Flows
+  # brew install insomnia # 507MB, simpler UI than Postman: Design (OpenAPI, Swagger), Debug (requests), Test (JS expect on requests)
+brew install http-toolkit # 327MB, HTTP(S) debugging proxy, analyzer, and client
 brew install mosquitto # MQTT pub/sub
 # brew install youtube-dl # download videos from many websites -> yt only ~70KB/s -> replaced with yt-dlp which dl from yt with full speed
 brew install yt-dlp/taps/yt-dlp # youtube-dl fork with additional features and fixes: full dl speed, SponsorBlock, yt-dlp --cookies-from-browser chrome --max-downloads 10 --sponsorblock-remove default :ytwatchlater
@@ -163,7 +168,6 @@ brew install cyberduck # client for FTP, SFTP, WebDAV, and cloud storage
 # brew install magic-wormhole # 34.6MB (+ 18MB openssl@1.1 + 57.3MB python@3.10), peer-to-peer file transfer
 brew install croc # 6.1MB, peer-to-peer file transfer
 brew install teamviewer # 227 MB
-brew install http-toolkit # 327MB, HTTP(S) debugging proxy, analyzer, and client
 brew install caddy # 42MB, Go web server with automatic HTTPS (Let's Encrypt), HTTP/3, reverse proxy, load balancing, caching, nicer to use but slower than nginx/haproxy/traefik, https://caddyserver.com - `caddy file-server --domain example.com` `caddy reverse-proxy --from example.com --to localhost:9000`
 
 # goblint
