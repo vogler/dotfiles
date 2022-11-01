@@ -102,6 +102,9 @@ defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 # System Preferences > Keyboard > Text > Capitalise words automatically
 defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false
 
+# System Preferences > Keyboard > Text > Add full stop with double-space (annoying in vscode)
+defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -bool false
+
 # System Preferences > Keyboard > Text > Use smart quotes and dashes
 defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
 defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
