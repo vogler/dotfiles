@@ -39,7 +39,6 @@
       "url": "http://json.schemastore.org/package"
     }
   ],
-  "editor.minimap.enabled": true,
   // "editor.dragAndDrop": true,
   "window.title": "${rootPath}${separator}${activeEditorMedium}",
   "workbench.editor.tabCloseButton": "off",
@@ -186,7 +185,6 @@
   "editor.suggestSelection": "first",
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "quokka.showStartViewOnFeatureRelease": false,
-  "trunk.trunkGrayOutNonBlockingIssues": false,
   "window.titleBarStyle": "custom",
   "editor.stickyScroll.enabled": true,
   "editor.stickyTabStops": true,
@@ -197,11 +195,9 @@
   "workbench.editor.scrollToSwitchTabs": true,
   "editor.experimental.pasteActions.enabled": true,
   "ipynb.experimental.pasteImages.enabled": true,
-  "markdown.experimental.updateLinksOnFileMove.enabled": "prompt",
-  "workbench.experimental.editSessions.enabled": true,
-  "window.commandCenter": true,
-  "mergeEditor.diffAlgorithm": "experimental",
   "markdown.validate.enabled": true,
+  "markdown.updateLinksOnFileMove.enabled": "prompt",
+  "window.commandCenter": true,
   "editor.quickSuggestions": {
     "other": "inline",
     "comments": "inline",
@@ -211,5 +207,6 @@
   "javascript.format.semicolons": "insert",
   "typescript.format.semicolons": "insert",
   "editor.suggestOnTriggerCharacters": false,
-  "editor.snippetSuggestions": "top"
+  "editor.snippetSuggestions": "top",
+  "workbench.experimental.editSessions.autoStore": "onShutdown"
 }
