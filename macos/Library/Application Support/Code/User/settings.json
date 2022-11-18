@@ -207,6 +207,5 @@
   "javascript.format.semicolons": "insert",
   "typescript.format.semicolons": "insert",
   "editor.suggestOnTriggerCharacters": false,
-  "editor.snippetSuggestions": "top",
-  "workbench.experimental.editSessions.autoStore": "onShutdown"
+  "editor.snippetSuggestions": "top"
 }
