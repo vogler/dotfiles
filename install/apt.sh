@@ -69,7 +69,7 @@ agi fzf # Command-line fuzzy finder written in Go
 agi httpie # https://httpie.io User-friendly cURL replacement, ex: http POST pie.dev/post hello=world
 agi nnn # terminal file manager: small and fast, but bare bones without plugins/config; use `nnn -e` to edit text in same terminal instead of via `open`
 agi ranger # terminal file manager: slower, but nicer defaults with multi-column layout and automatic preview of many file types
-agi broot # `br` to navigate big file trees, alt+enter to cd, `br -s` to show sizes
+agi broot || "broot not available (Chromebook Debian 11?)" # `br` to navigate big file trees, alt+enter to cd, `br -s` to show sizes
 
 # GitHub CLI: https://github.com/cli/cli/blob/trunk/docs/install_linux.md
 curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg
