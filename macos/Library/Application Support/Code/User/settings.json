@@ -207,5 +207,12 @@
   "javascript.format.semicolons": "insert",
   "typescript.format.semicolons": "insert",
   "editor.suggestOnTriggerCharacters": false,
-  "editor.snippetSuggestions": "top"
+  "editor.snippetSuggestions": "top",
+  "editor.inlineSuggest.enabled": true,
+  "github.copilot.enable": {
+    "*": false,
+    "yaml": false,
+    "plaintext": false,
+    "markdown": false
+  }
 }
