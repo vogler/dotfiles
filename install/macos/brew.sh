@@ -39,8 +39,9 @@ brew install raycast # 75MB, better launcher than Spotlight, Alfred etc., good s
 brew install google-chrome # 922MB
 brew install firefox # 344MB, don't really use it, but good to have options
 # brew install spotify # Intel, use Chrome App -> same (except no preferences & friends feed?) but more efficient
-brew install whatsapp # Intel, use Chrome App instead. Provided by Chrome account sync. To add to your account visit web.whatsapp.com, dot-menu > More Tools > Create Shortcut with open as window
-brew install slack
+brew install whatsapp # 270MB, Intel, use Chrome App instead. Provided by Chrome account sync. To add to your account visit web.whatsapp.com, dot-menu > More Tools > Create Shortcut with open as window
+brew install slack # 238MB
+brew install microsoft-teams # 507MB, only needed for stupid background image since browser version does not offer it (but this is also browser-based)...
 brew install visual-studio-code
 # brew install evernote # Intel; not worth the overhead, just use the web-app and eventually something nicer with history
 brew install tor-browser # 192MB
