@@ -87,5 +87,13 @@
       "key": "cmd+l cmd+l",
       "command": "latex-workshop.synctex",
       "when": "editorTextFocus && editorLangId == 'latex'"
+    },
+    {
+      "key": "cmd+k k",
+      "command": "workbench.action.focusNextGroup"
+    },
+    {
+      "key": "cmd+k j",
+      "command": "workbench.action.focusPreviousGroup"
     }
   ]
