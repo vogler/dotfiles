@@ -127,6 +127,7 @@ brew install devutils # 48MB, demo, GUI with converters for unix time, base64, U
 brew install --cask docker # 1.5 GB, hate it, only gave in for avoiding captcha with headless playwright
 brew install dive # 10MB, explore layers in docker images
 brew install ctop # 8.9MB, Top-like interface for container metrics
+# brew install hadolint # 73MB, Dockerfile linter to validate best practices, can just use online version to shows warnings inline: https://hadolint.github.io/hadolint/
 
 # git
 # brew install diff-so-fancy # within-line highlights
