@@ -61,6 +61,9 @@ brew install numi # 49MB, calculator app with unit conversions and variables
 brew install portfolioperformance # 168MB, Internal and True-Time Weighted Rate of Return, graphs etc., can import PDFs of transactions from ING, but needs manual work; probably works for degiro as well
 brew install --cask r # 95MB, Environment for statistical computing and graphics; https://www.coursera.org/learn/practical-time-series-analysis
 
+# games
+brew install openra # 136MB, open source Command & Conquer Red Alert, Tiberian Dawn, Dune 2000
+
 # sys tools
 brew install neovim # editor, no need for vim, config in .vimrc
 brew install vimr # 77MB, VimR.app/`vimr` as GUI with file browser, markdown preview, macOS shortcuts - used for macOS `open`, nicer than neovide, neovim-qt, macvim
