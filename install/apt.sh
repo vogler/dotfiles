@@ -28,6 +28,14 @@ if [[ -d /mnt/chromeos ]]; then
   agi gnome-keyring # needed to stay signed in to GitHub in vscode
 fi
 sudo snap install nvim --classic # Virtuozzo/OpenVZ: https://community.letsencrypt.org/t/system-does-not-fully-support-snapd-cannot-mount-squashfs-image-using-squashfs/132689/2
+
+# https://github.com/ClementTsang/bottom - Yet another cross-platform graphical process/system monitor (rust) - interactive with mouse and shortcuts
+sudo snap install bottom
+sudo snap connect bottom:mount-observe
+sudo snap connect bottom:hardware-observe
+sudo snap connect bottom:system-observe
+sudo snap connect bottom:process-control
+
 agi tig # Text interface for Git repositories
 # arch=$([[ $(uname -m) == "x86_64" ]] && echo "amd64" || echo "armhf")
 arch=$(dpkg --print-architecture)
