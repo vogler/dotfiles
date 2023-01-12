@@ -29,18 +29,14 @@ if [[ -d /mnt/chromeos ]]; then
 fi
 sudo snap install nvim --classic # Virtuozzo/OpenVZ: https://community.letsencrypt.org/t/system-does-not-fully-support-snapd-cannot-mount-squashfs-image-using-squashfs/132689/2
 
-# https://github.com/ClementTsang/bottom - Yet another cross-platform graphical process/system monitor (rust) - interactive with mouse and shortcuts
-sudo snap install bottom
-sudo snap connect bottom:mount-observe
-sudo snap connect bottom:hardware-observe
-sudo snap connect bottom:system-observe
-sudo snap connect bottom:process-control
-
 agi tig # Text interface for Git repositories
 # arch=$([[ $(uname -m) == "x86_64" ]] && echo "amd64" || echo "armhf")
 arch=$(dpkg --print-architecture)
 musl=$([[ $(lsb_release -r | cut -f2) == "19.10" ]] && echo "-musl" || echo "") # https://github.com/dandavison/delta/issues/504#issuecomment-1164600484
-curl -fsSL https://github.com/dandavison/delta/releases/download/0.14.0/git-delta${musl}_0.14.0_$arch.deb -o /tmp/git-delta_$arch.deb && sudo dpkg -i /tmp/git-delta_$arch.deb # A syntax-highlighting pager for git and diff output; TODO watch for update: https://github.com/dandavison/delta#installation
+curl -fsSL https://github.com/dandavison/delta/releases/download/0.14.0/git-delta${musl}_0.14.0_$arch.deb -o /tmp/git-delta.deb && sudo dpkg -i /tmp/git-delta.deb # A syntax-highlighting pager for git and diff output; TODO watch for update: https://github.com/dandavison/delta#installation
+# https://github.com/ClementTsang/bottom - Yet another cross-platform graphical process/system monitor (rust) - interactive with mouse and shortcuts
+arch_btm=$([[ $arch == *arm* ]] && echo armv7 || echo $arch)
+wget https://github.com/ClementTsang/bottom/releases/download/0.7.1/bottom_$arch_btm-unknown-linux-gnueabihf.deb -O /tmp/bottom.deb && sudo dpkg -i /tmp/bottom.deb
 agi tree # `exa --tree --level=2` has colors and can show meta-data with --long
 agi htop # nicer ncurses-based process viewer similar to top
 agi iotop # shows I/O usage
