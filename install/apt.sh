@@ -12,40 +12,19 @@ agi() {
 sudo apt -qq update && sudo apt -y -qq upgrade
 # apt list --installed | sed -e 's/\(.*\)\/.*/agi \1/' # TODO versions? do I really want all packages?
 
-# essentials
+# sections below: apt default sources, snap, apt additional sources, binary/.deb
+
+# packages installed via apt, default sources:
+
 agi curl # not installed on Ubuntu 20.04 LTS
 agi zsh # better shell than bash
 agi tmux # terminal multiplexer
-agi neovim # editor - Ubuntu 20.04 only ships 0.4.3, but coc extension requires >=0.5.0, however no more startup errors with coc and 0.4.3
-agi snapd # more/newer packages, https://snapcraft.io
-# needed on Chrome OS: via https://cyldx.de/snap-anwendungen-im-linux-modus-von-chrome-os-nutzen-p/ https://medium.com/@eduard_faus/installing-snap-on-chrome-os-d9876bb369c1
-if [[ -d /mnt/chromeos ]]; then
-  agi libsquashfuse0 squashfuse fuse
-  echo "Right click on Terminal > Shut down Linux -- really needed?"
-  sudo systemctl enable --now snapd
-  # systemctl status snapd
-  sudo snap install code --classic # Visual Studio Code
-  agi gnome-keyring # needed to stay signed in to GitHub in vscode
-fi
-sudo snap install nvim --classic # Virtuozzo/OpenVZ: https://community.letsencrypt.org/t/system-does-not-fully-support-snapd-cannot-mount-squashfs-image-using-squashfs/132689/2
-
+agi neovim # editor - Ubuntu 20.04 only ships 0.4.3, but coc extension requires >=0.5.0, however no more startup errors with coc and 0.4.3; installing newer version via snap below
 agi tig # Text interface for Git repositories
-# arch=$([[ $(uname -m) == "x86_64" ]] && echo "amd64" || echo "armhf")
-arch=$(dpkg --print-architecture)
-musl=$([[ $(lsb_release -r | cut -f2) == "19.10" ]] && echo "-musl" || echo "") # https://github.com/dandavison/delta/issues/504#issuecomment-1164600484
-curl -fsSL https://github.com/dandavison/delta/releases/download/0.14.0/git-delta${musl}_0.14.0_$arch.deb -o /tmp/git-delta.deb && sudo dpkg -i /tmp/git-delta.deb # A syntax-highlighting pager for git and diff output; TODO watch for update: https://github.com/dandavison/delta#installation
-# https://github.com/ClementTsang/bottom - Yet another cross-platform graphical process/system monitor (rust) - interactive with mouse and shortcuts
-arch_btm=$([[ $arch == *arm* ]] && echo armv7 || echo $arch)
-wget https://github.com/ClementTsang/bottom/releases/download/0.7.1/bottom_$arch_btm-unknown-linux-gnueabihf.deb -O /tmp/bottom.deb && sudo dpkg -i /tmp/bottom.deb
 agi tree # `exa --tree --level=2` has colors and can show meta-data with --long
 agi htop # nicer ncurses-based process viewer similar to top
 agi iotop # shows I/O usage
 agi iftop # shows network interface usage
-if ! hash node 2>/dev/null || ! (node --version | grep v18); then
-  curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash - # Debian's nodejs is too old: 10.24.0
-  agi nodejs # JavaScript
-fi
-# agi npm # node package manager; provided by nodejs from nodesource (8.1.2) vs. sep. package in Debian (5.8.0)
 agi fd-find # Simple, fast and user-friendly alternative to find
 sudo ln -sf /usr/bin/fdfind /usr/bin/fd
 agi silversearcher-ag # ag: Code-search similar to ack, but faster [C]
@@ -75,19 +54,37 @@ agi nnn # terminal file manager: small and fast, but bare bones without plugins/
 agi ranger # terminal file manager: slower, but nicer defaults with multi-column layout and automatic preview of many file types
 agi broot || "broot not available (Chromebook Debian 11?)" # `br` to navigate big file trees, alt+enter to cd, `br -s` to show sizes
 
+
+# packages installed via snap:
+
+agi snapd # more/newer packages, https://snapcraft.io
+# needed on Chrome OS: via https://cyldx.de/snap-anwendungen-im-linux-modus-von-chrome-os-nutzen-p/ https://medium.com/@eduard_faus/installing-snap-on-chrome-os-d9876bb369c1
+if [[ -d /mnt/chromeos ]]; then
+  agi libsquashfuse0 squashfuse fuse
+  echo "Right click on Terminal > Shut down Linux -- really needed?"
+  sudo systemctl enable --now snapd
+  # systemctl status snapd
+  sudo snap install code --classic # Visual Studio Code
+  agi gnome-keyring # needed to stay signed in to GitHub in vscode
+
+fi
+sudo snap install nvim --classic # Virtuozzo/OpenVZ: https://community.letsencrypt.org/t/system-does-not-fully-support-snapd-cannot-mount-squashfs-image-using-squashfs/132689/2
+
+
+# packages installed via apt, additional sources:
+
+if ! hash node 2>/dev/null || ! (node --version | grep v18); then
+  curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash - # Debian's nodejs is too old: 10.24.0
+  agi nodejs # JavaScript
+fi
+# agi npm # node package manager; provided by nodejs from nodesource (8.1.2) vs. sep. package in Debian (5.8.0)
+
 # GitHub CLI: https://github.com/cli/cli/blob/trunk/docs/install_linux.md
 curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg
 sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg
 echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
 sudo apt update -qq
 agi gh 
-
-agi youtube-dl
-# fork with more features and fixes:
-sudo curl -L https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -o /usr/local/bin/yt-dlp
-sudo chmod a+rx /usr/local/bin/yt-dlp
-# download YouTube Watch later videos: yt-dlp --cookies-from-browser chrome --max-downloads 10 --sponsorblock-remove default :ytwatchlater
-# Chrome OS: https://gist.github.com/vogler/5661b400a63e4c2437bc81a153ac454f
 
 # https://gitlab.com/volian/nala - nicer frontend around apt with pretty formatting, parallel downloads, `nala fetch` to select the fastest mirrors, and `nala history` to undo/redo
 echo "deb https://deb.volian.org/volian/ scar main" | sudo tee /etc/apt/sources.list.d/volian-archive-scar-unstable.list
@@ -100,6 +97,26 @@ agi nala 2>/dev/null || agi nala-legacy # nala for Ubuntu 22.04 / Debian Sid, le
 # echo 'deb [trusted=yes] https://repo.charm.sh/apt/ /' | sudo tee /etc/apt/sources.list.d/charm.list
 # sudo apt update && sudo apt install gum
 
+
+# packages installed via downloading binary or .deb
+
+agi youtube-dl
+# fork with more features and fixes:
+sudo curl -L https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -o /usr/local/bin/yt-dlp
+sudo chmod a+rx /usr/local/bin/yt-dlp
+# download YouTube Watch later videos: yt-dlp --cookies-from-browser chrome --max-downloads 10 --sponsorblock-remove default :ytwatchlater
+# Chrome OS: https://gist.github.com/vogler/5661b400a63e4c2437bc81a153ac454f
+
+arch=$(dpkg --print-architecture) # amd64, arm64, armhf on RPi (32bit userland)
+musl=$([[ $(lsb_release -r | cut -f2) == "19.10" ]] && echo "-musl" || echo "") # https://github.com/dandavison/delta/issues/504#issuecomment-1164600484
+curl -fsSL https://github.com/dandavison/delta/releases/download/0.14.0/git-delta${musl}_0.14.0_$arch.deb -o /tmp/git-delta.deb && sudo dpkg -i /tmp/git-delta.deb # A syntax-highlighting pager for git and diff output; TODO watch for update: https://github.com/dandavison/delta#installation
+
+# https://github.com/ClementTsang/bottom - Yet another cross-platform graphical process/system monitor (rust) - interactive with mouse and shortcuts
+arch_btm=$([[ $arch == *arm* ]] && echo armv7 || echo $arch)
+wget https://github.com/ClementTsang/bottom/releases/download/0.7.1/bottom_$arch_btm-unknown-linux-gnueabihf.deb -O /tmp/bottom.deb && sudo dpkg -i /tmp/bottom.deb
+
+
+# special sets of packages
 if [[ "$*" == *latex* ]]; then
   agi texlive-latex-extra
   agi texlive-bibtex-extra
