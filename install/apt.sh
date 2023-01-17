@@ -108,6 +108,8 @@ sudo chmod a+rx /usr/local/bin/yt-dlp
 # Chrome OS: https://gist.github.com/vogler/5661b400a63e4c2437bc81a153ac454f
 
 arch=$(dpkg --print-architecture) # amd64, arm64, armhf on RPi (32bit userland)
+# gh release download -R dandavison/delta -p '*armhf*' # requires `gh auth login`
+# using jq to get latest release from API JSON, see https://gist.github.com/steinwaywhw/a4cd19cda655b8249d908261a62687f8
 
 # https://github.com/dandavison/delta - A syntax-highlighting pager for git and diff output
 # musl=$([[ $(lsb_release -r | cut -f2) == "19.10" ]] && echo "-musl" || echo "") # https://github.com/dandavison/delta/issues/504#issuecomment-1164600484
