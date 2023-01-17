@@ -96,10 +96,11 @@ Plug 'google/vim-searchindex' " display number of search matches & index of a cu
 " noremap <plug>(slash-after) zz " Places the current match at the center of the window
 
 " # UI themes, font
-Plug 'flazz/vim-colorschemes' " colorscheme pack including solarized
-Plug 'altercation/vim-colors-solarized' " :colorscheme solarized (overwrites the above?)
+Plug 'flazz/vim-colorschemes' " colorscheme pack including solarized8_dark
+" Plug 'altercation/vim-colors-solarized' " :colorscheme solarized (overwrites the above?)
 " colorscheme must be set below after plugins are loaded
 set guifont=MesloLGS\ NF:h18 " Nerd Font downloaded by Powerlevel10k zsh prompt. Also set in iterm.
+set termguicolors " needed for solarized8_dark
 set background=dark
 
 " # UI extensions
@@ -430,7 +431,7 @@ call plug#end() " Automatically executes `filetype plugin indent on` and `syntax
 
 
 " color theme can only be set after plugins are loaded
-colorscheme solarized
+colorscheme solarized8_dark
 highlight! link SignColumn LineNr
 " call togglebg#map("<F5>") " seldomly used -> use ToggleBG instead
 
