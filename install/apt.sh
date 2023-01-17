@@ -108,12 +108,14 @@ sudo chmod a+rx /usr/local/bin/yt-dlp
 # Chrome OS: https://gist.github.com/vogler/5661b400a63e4c2437bc81a153ac454f
 
 arch=$(dpkg --print-architecture) # amd64, arm64, armhf on RPi (32bit userland)
-musl=$([[ $(lsb_release -r | cut -f2) == "19.10" ]] && echo "-musl" || echo "") # https://github.com/dandavison/delta/issues/504#issuecomment-1164600484
-curl -fsSL https://github.com/dandavison/delta/releases/download/0.14.0/git-delta${musl}_0.14.0_$arch.deb -o /tmp/git-delta.deb && sudo dpkg -i /tmp/git-delta.deb # A syntax-highlighting pager for git and diff output; TODO watch for update: https://github.com/dandavison/delta#installation
+
+# https://github.com/dandavison/delta - A syntax-highlighting pager for git and diff output
+# musl=$([[ $(lsb_release -r | cut -f2) == "19.10" ]] && echo "-musl" || echo "") # https://github.com/dandavison/delta/issues/504#issuecomment-1164600484
+# curl -fsSL https://github.com/dandavison/delta/releases/download/0.14.0/git-delta${musl}_0.14.0_$arch.deb -o /tmp/git-delta.deb && sudo dpkg -i /tmp/git-delta.deb
+curl -s https://api.github.com/repos/dandavison/delta/releases/latest | jq ".assets[] | select(.name|test(\"$arch\")) | .browser_download_url" -r | wget -q -O /tmp/git-delta.deb -i - && sudo dpkg -i /tmp/git-delta.deb
 
 # https://github.com/ClementTsang/bottom - Yet another cross-platform graphical process/system monitor (rust) - interactive with mouse and shortcuts
-arch_btm=$([[ $arch == *arm* ]] && echo armv7 || echo $arch)
-wget https://github.com/ClementTsang/bottom/releases/download/0.7.1/bottom_$arch_btm-unknown-linux-gnueabihf.deb -O /tmp/bottom.deb && sudo dpkg -i /tmp/bottom.deb
+curl -s https://api.github.com/repos/ClementTsang/bottom/releases/latest | jq ".assets[] | select(.name|test(\"$arch\")) | .browser_download_url" -r | wget -q -O /tmp/bottom.deb -i - && sudo dpkg -i /tmp/bottom.deb
 
 
 # special sets of packages
