@@ -206,6 +206,7 @@ brew install font-consolas-for-powerline font-menlo-for-powerline font-meslo-for
 brew install rescuetime # Intel, fails because it requires Rosetta 2 (`sudo softwareupdate --install-rosetta`). Why did the other Intel apps work without installing this?
 # WhatPulse neither on brew or app store. Download from https://whatpulse.org
 brew install clockify # 95MB, better (& more free features) than Toggl
+# install manually: https://whatpulse.org/downloads/ - neither in brew nor in App Store
 
 # image/video/books
 # brew install imagemagick
