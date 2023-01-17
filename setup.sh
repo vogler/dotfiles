@@ -1,5 +1,5 @@
 #!/bin/bash
-set -e # immediately exit if any command has a non-zero exit status
+set -euo pipefail # exit on error, error on undef var, error on any fail in pipe (not just last cmd); add -x to print each cmd; see https://gist.github.com/mohanpedala/1e2ff5661761d3abd0385e8223e16425
 
 trap 'echo "ERROR: $BASH_SOURCE:$LINENO $BASH_COMMAND" >&2' ERR
 
