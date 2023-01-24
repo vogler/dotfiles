@@ -139,6 +139,7 @@ if [[ "$*" == *smart-home* ]]; then
   agi mosquitto # MQTT server
   agi mosquitto-clients # mosqitto_{pub,sub}
   agi wakeonlan
+  curl -sSL https://raw.githubusercontent.com/PierreKieffer/pitop/master/install/install_pitop32.sh | bash # TODO use install_pitop64.sh for 64-bit OS
   if [[ $(hostname) == "rpi3" ]]; then
     agi cec-utils # check/control TV via HDMI
     echo ">>> node-red"
