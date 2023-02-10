@@ -203,7 +203,7 @@ if [[ "$*" == *smart-home* ]]; then
     agi sox # Swiss army knife of sound processing -> record noise (silence filter) with OctoPrint webcam on rpi4, small/cheap USB microphones were not sensitive enough, but webcam mic is with ~50% when talking at desk (100% gain in alsamixer)
 
     echo ">>> Docker"
-    # https://docs.docker.com/engine/install/debian/
+    # https://docs.docker.com/engine/install/debian/ - version 23.0.1 comes with `docker compose` plugin.
     curl -fsSL https://get.docker.com -o /tmp/get-docker.sh
     sudo sh /tmp/get-docker.sh
     # ctop - Top-like interface for container metrics
