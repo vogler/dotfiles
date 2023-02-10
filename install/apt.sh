@@ -170,7 +170,7 @@ if [[ "$*" == *smart-home* ]]; then
     sudo apt-get update
     agi influxdb telegraf chronograf
     sudo systemctl unmask influxdb.service
-    echo 'rsync exisiting /var/lib/{influxdb,chronograf} and link configs from smart-home/etc/{influxdb,telegraf}'
+    echo 'rsync existing /var/lib/{influxdb,chronograf} and link configs from smart-home/etc/{influxdb,telegraf}'
     sudo systemctl start influxdb telegraf chronograf
 
     echo ">>> grafana"

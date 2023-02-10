@@ -54,7 +54,7 @@
   - https://github.com/junegunn/goyo.vim' - distraction-free writing
   - https://github.com/junegunn/limelight.vim' - only do syntax highlighting for current paragraph
   - https://github.com/junegunn/rainbow_parentheses.vim' - same color for same bracket pairs
-  - https://github.com/junegunn/gv.vim' - :GV opens git commit browser, :GV! only commits for current file, :GV? fills location list the revisions of current file, can be used in visual mode to work on jsut lines
+  - https://github.com/junegunn/gv.vim' - :GV opens git commit browser, :GV! only commits for current file, :GV? fills location list the revisions of current file, can be used in visual mode to work on just lines
   - https://github.com/vim-airline/vim-airline - status line with multiple sections and support for many plugins
   - https://github.com/vim-airline/vim-airline-themes - :AirlineTheme solarized
   - https://github.com/airblade/vim-gitgutter - git diff markers in sign column; jump to next hunk with ]c, stage hunk with ,hs, undo with ,hu
