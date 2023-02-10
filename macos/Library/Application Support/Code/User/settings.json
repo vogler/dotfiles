@@ -13,7 +13,7 @@
   "files.insertFinalNewline": true,
   "files.trimFinalNewlines": true,
   "files.trimTrailingWhitespace": true,
-  "editor.renderFinalNewline": false, // seems to have no effect?
+  "editor.renderFinalNewline": "off", // seems to have no effect?
   "editor.wordWrap": "on",
   // "editor.cursorStyle": "block-outline",
   "editor.cursorBlinking": "solid",
