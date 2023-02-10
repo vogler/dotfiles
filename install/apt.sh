@@ -213,6 +213,10 @@ if [[ "$*" == *smart-home* ]]; then
       $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/azlux.list >/dev/null
     sudo apt-get update -qq
     agi docker-ctop
+    # Terminal UI for docker and docker-compose
+    curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | bash
+    # run containers
+    source install/docker.sh
   else
     echo "Unknown hostname: $(hostname)! Must be rpi3 or rpi4"
   fi
