@@ -48,6 +48,11 @@ agi mosh # alternative for ssh, local echo, roaming, but UDP dyn. port alloc. 60
 agi mmv # move/copy/append/link multiple files by wildcard patterns
 agi neofetch # system information with OS + logo, host, kernel, uptime, packages, shell, resolution, DE, WM, terminal, CPU, memory
 agi fzf # Command-line fuzzy finder written in Go
+# https://github.com/junegunn/fzf/issues/2790
+if [[ ! -f /usr/share/doc/fzf/examples/completion.zsh ]]; then
+  sudo curl https://raw.githubusercontent.com/junegunn/fzf/master/shell/completion.zsh -o /usr/share/doc/fzf/examples/completion.zsh
+  sudo curl https://raw.githubusercontent.com/junegunn/fzf/master/shell/key-bindings.zsh -o /usr/share/doc/fzf/examples/key-bindings.zsh
+fi
 # agi net-tools # Debian `sudo netstat -nltp` = Ubuntu `sudo ss -nltp`; https://askubuntu.com/questions/1025568/has-netstat-been-replaced-with-a-new-tool
 agi httpie # https://httpie.io User-friendly cURL replacement, ex: http POST pie.dev/post hello=world
 agi nnn # terminal file manager: small and fast, but bare bones without plugins/config; use `nnn -e` to edit text in same terminal instead of via `open`
