@@ -80,6 +80,9 @@ if [ "$(uname)" == "Darwin" ]; then
 elif has apt; then
   echo_bold ">> [Running apt-based Linux]" # current setup only for RPi or server (both via ssh)
 
+  # Set time zone for local time
+  sudo timedatectl set-timezone Europe/Berlin
+
   echo_bold ">> apt install ..."
   source install/apt.sh $*
 
