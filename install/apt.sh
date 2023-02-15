@@ -211,14 +211,13 @@ if [[ "$*" == *smart-home* ]]; then
     # https://docs.docker.com/engine/install/debian/ - version 23.0.1 comes with `docker compose` plugin.
     curl -fsSL https://get.docker.com -o /tmp/get-docker.sh
     sudo sh /tmp/get-docker.sh
-    # ctop - Top-like interface for container metrics
-    curl -fsSL https://azlux.fr/repo.gpg.key | sudo gpg --dearmor -o /usr/share/keyrings/azlux-archive-keyring.gpg
-    echo \
-      "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/azlux-archive-keyring.gpg] http://packages.azlux.fr/debian \
-      $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/azlux.list >/dev/null
-    sudo apt-get update -qq
-    agi docker-ctop
-    # Terminal UI for docker and docker-compose
+    # ctop - Top-like interface for container metrics - 404 Not Found
+      # curl -fsSL https://azlux.fr/repo.gpg.key | sudo gpg --dearmor -o /usr/share/keyrings/azlux-archive-keyring.gpg
+      # echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/azlux-archive-keyring.gpg] http://packages.azlux.fr/debian \
+      #   $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/azlux.list >/dev/null
+      # sudo apt-get update -qq
+      # agi docker-ctop
+    # lazydocker - Terminal UI for docker and docker-compose
     curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | bash
     # run containers
     source install/docker.sh
