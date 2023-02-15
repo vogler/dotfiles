@@ -211,6 +211,7 @@ if [[ "$*" == *smart-home* ]]; then
     # https://docs.docker.com/engine/install/debian/ - version 23.0.1 comes with `docker compose` plugin.
     curl -fsSL https://get.docker.com -o /tmp/get-docker.sh
     sudo sh /tmp/get-docker.sh
+    sudo usermod -aG docker $USER && newgrp docker # https://stackoverflow.com/questions/48568172/docker-sock-permission-denied
     # ctop - Top-like interface for container metrics - 404 Not Found
       # curl -fsSL https://azlux.fr/repo.gpg.key | sudo gpg --dearmor -o /usr/share/keyrings/azlux-archive-keyring.gpg
       # echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/azlux-archive-keyring.gpg] http://packages.azlux.fr/debian \
