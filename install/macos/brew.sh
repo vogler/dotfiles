@@ -172,7 +172,8 @@ brew install angry-ip-scanner
 mas install 1451685025 # WireGuard VPN client; brew's wireguard-tools has no GUI
 brew install tunnelblick # needed for RBG ovpn profile
 brew install vnc-viewer # RealVNC viewer
-brew install cyberduck # client for FTP, SFTP, WebDAV, and cloud storage
+brew install cyberduck # 237MB, client for FTP, SFTP, WebDAV, and cloud storage
+brew install forklift # 159MB, (trial) dual-pane finder with compare/sync for FTP, SFTP, WebDAV, and cloud storage
 # brew install rclone # 57.7MB, rsync for cloud storage, Google Drive, Dropbox, One Drive, S3, Mega, FTP, SMB
 # brew install pcp # 25.5MB, peer-to-peer file transfer based on libp2p - does not need central relay server, but may also not find any peers or take long
 # brew install magic-wormhole # 34.6MB (+ 18MB openssl@1.1 + 57.3MB python@3.10), peer-to-peer file transfer
