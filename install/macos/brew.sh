@@ -217,6 +217,7 @@ brew install --cask handbrake # video transcoder; also available as formula, but
 # https://gifcap.dev creates gif from screen recording in the browser
 # cmd+shift+5 can record screen or region and produces .mov
 brew install calibre # 366MB
+brew install macwhisper # 17MB + 500MB for small model; speech recognition with openai/whisper
 
 # CAD, 3D printing, electronics, IOT
 brew install autodesk-fusion360 # 3.6 GB in ~/Library/Application\ Support/Autodesk/
