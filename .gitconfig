@@ -99,3 +99,5 @@
     fwd = !git log --reverse --pretty=%H master | grep -A 1 $(git rev-parse HEAD) | tail -n1 | xargs git checkout
     addnw=!sh -c 'git diff -U0 -w --no-color "$@" | git apply --cached --ignore-whitespace --unidiff-zero -'
     branchr=branch --sort=-committerdate --format='%(HEAD) %(color:blue)%(refname:short)%(color:reset) %(color:green)%(committerdate:relative)%(color:reset) %(color:yellow)%(authorname)%(color:reset)\n  %(contents:subject)\n' # instead of `brew install git-recent`, this also accepts options for git branch like -a, edited from https://stackoverflow.com/questions/5188320/how-can-i-get-a-list-of-git-branches-ordered-by-most-recent-commit
+    # https://stackoverflow.com/questions/3161204/how-to-find-the-nearest-parent-of-a-git-branch
+    parent = "!git show-branch | grep '*' | grep -v \"$(git rev-parse --abbrev-ref HEAD)\" | head -n1 | sed 's/.*\\[\\(.*\\)\\].*/\\1/' | sed 's/[\\^~].*//' #"
