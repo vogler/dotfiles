@@ -162,7 +162,7 @@ Plug 'matze/vim-move' " A-k/A-j move line/selection up/down; A-h/A-l move char/s
 
 " # text objects
 Plug 'wellle/targets.vim' " text objects for pair, quote, separator, argument, tag
-Plug 'michaeljsmith/vim-indent-object' " text object for LOC at the same indent level: ii (inner indentation level), ai (incl. line above), iI, aI; e.g. vii
+Plug 'michaeljsmith/vim-indent-object' " text object for LOC at the same indent level: ii (inner indentation level), ai (incl. line above), aI (incl. line above/below); e.g. vii
 
 " # text edits
 Plug 'vim-scripts/DeleteTrailingWhitespace' " :DeleteTrailingWhitespace
