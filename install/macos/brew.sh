@@ -212,7 +212,8 @@ brew install clockify # 95MB, better (& more free features) than Toggl
 # image/video/books
 # brew install imagemagick
 brew install ffmpeg # ~1GB due to many codecs as deps
-brew install --cask handbrake # video transcoder; also available as formula, but: A full installation of Xcode.app 10.3 is required to compile
+brew install --cask handbrake # 113MB, video transcoder; also available as formula, but: A full installation of Xcode.app 10.3 is required to compile
+# brew install audacity # 77MB, cross-platform audio editor
 # brew install kap # Intel, 353MB; screen recorder built with web technology
 # https://gifcap.dev creates gif from screen recording in the browser
 # cmd+shift+5 can record screen or region and produces .mov
