@@ -88,7 +88,7 @@
   "git.autofetch": true,
   "diffEditor.ignoreTrimWhitespace": false,
   "latex-workshop.message.update.show": false,
-  "workbench.colorTheme": "One Dark Pro",
+  "workbench.colorTheme": "One Dark Pro Darker",
   // default terminal colors looked ugly in vim
   // https://glitchbone.github.io/vscode-base16-term/#/onedark
   // used the above and changed terminal.ansiBrightBlack (vim background)
