@@ -554,18 +554,19 @@ nnoremap <leader><space> :noh<cr>
 " nnoremap <tab> %
 " vnoremap <tab> %
 
-" set wrap
-set linebreak
-" set nolist
-" set textwidth=0
+" line wrapping, no line breaking
+set wrap " already set by some plugin?
+set linebreak " wrap lines at `breakat` (default whitespace) instead of just cutting of inside a word 
+let &showbreak = '⮑  ' " prefix for wrapped lines
 " set wrapmargin=0
-set 	formatoptions+=l
+set textwidth=0 " don't break lines on insert after e.g. 78 characters
+set formatoptions+=l " jtcrql
 
 " don't add newline at the end of files
 " set binary
 " set noeol
 
-set list
+set list " show tabs, trailing spaces etc.
 set listchars=tab:▸\ ,trail:\ 
 
 """"""""" Show superfluos spaces """""""""
