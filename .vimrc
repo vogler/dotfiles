@@ -36,7 +36,7 @@ set softtabstop=2
 set autoindent
 " set cindent
 Plug 'tpope/vim-obsession' " cont. updated session files; :Obsess starts recording, load with -S or :source
-Plug 'tpope/vim-vinegar' " file browser enhancements (- opens netrw), - goes up one directory but keeps file focused (enter to go back)
+Plug 'tpope/vim-vinegar' " file browser enhancements (- opens netrw), - goes up one directory but keeps file focused (enter to go back); nvim alternative: https://github.com/stevearc/oil.nvim
 " Plug 'tpope/vim-characterize' " Unicode character metadata (press ga on a character)
 Plug 'tpope/vim-speeddating' " increment (C-A) / decrement (C-X) for date/time formats
 Plug 'tpope/vim-jdaddy' " JSON text objects (aj, ij) and pretty printing (gqaj)
@@ -255,6 +255,7 @@ Plug 'lambdatoast/elm.vim', {'for': 'elm'}
   " let g:ale_linters = {'javascript': ['prettier', 'eslint']}
 
 " # IDE features (completion, linting/checking, formatting) done by coc
+" alternatives: https://github.com/hrsh7th/nvim-cmp https://github.com/ms-jpq/coq_nvim
 " below are the adjusted defaults until end of plugins section
   Plug 'neoclide/coc.nvim', {'branch': 'release'} " Nodejs extension host for vim & neovim, load extensions like VSCode and host language servers. TODO move out the below default config...
   " extensions :CocInstall coc-json coc-tsserver
