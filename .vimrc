@@ -158,7 +158,6 @@ let g:EasyMotion_smartcase   = 1
 let g:EasyMotion_startofline = 0 " keep cursor colum when JK motion
 " https://github.com/ggandor/lightspeed.nvim not my taste
 " https://github.com/phaazon/hop.nvim rewrite of EasyMotion for neovim which does not change buffer to annotate targes; but not as nice to use as EasyMotion
-Plug 'matze/vim-move' " A-k/A-j move line/selection up/down; A-h/A-l move char/selection left/right
 
 " # text objects
 Plug 'wellle/targets.vim' " text objects for pair, quote, separator, argument, tag
@@ -166,6 +165,7 @@ Plug 'michaeljsmith/vim-indent-object' " text object for LOC at the same indent 
 
 " # text edits
 Plug 'vim-scripts/DeleteTrailingWhitespace' " :DeleteTrailingWhitespace
+Plug 'matze/vim-move' " A-k/A-j move line/selection up/down; A-h/A-l move char/selection left/right
 " https://vi.stackexchange.com/questions/609/swap-function-arguments
 " Plug 'AndrewRadev/sideways.vim' " :SidewaysLeft/Right to move item (defined by delimiter) under the cursor left/right
 Plug 'machakann/vim-swap' " swap delimited items; g< left, g> right, gs interactive (h, l, j, k, 1-9, g/G group/ungroup, s sort, r reverse)
