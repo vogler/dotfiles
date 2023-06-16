@@ -146,6 +146,10 @@ Plug 'ryanoasis/vim-devicons' " adds file type icons to NERDTree, vim-airline, C
 Plug 'airblade/vim-gitgutter' " git diff markers in sign column; jump to next hunk with ]c, stage hunk with ,hs, undo with ,hu
 set updatetime=250 " terminal vim might have highlighting glitches for low times...
 
+" smooth scrolling
+Plug 'karb94/neoscroll.nvim' " a bit smoother than vim-smoothie...
+" Plug 'psliwka/vim-smoothie'
+
 " # motion
 " Plug 'bkad/CamelCaseMotion'
 Plug 'chaoren/vim-wordmotion' " more useful word motions incl. camel case, upper/lowercase, hex, numbers etc.
@@ -438,6 +442,7 @@ Plug 'lambdatoast/elm.vim', {'for': 'elm'}
 
 call plug#end() " Automatically executes `filetype plugin indent on` and `syntax enable`.
 
+lua require('neoscroll').setup()
 
 " color theme can only be set after plugins are loaded
 colorscheme solarized8_dark
