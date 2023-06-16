@@ -149,15 +149,23 @@ set updatetime=250 " terminal vim might have highlighting glitches for low times
 " # motion
 " Plug 'bkad/CamelCaseMotion'
 Plug 'chaoren/vim-wordmotion' " more useful word motions incl. camel case, upper/lowercase, hex, numbers etc.
-let g:wordmotion_prefix = '<Leader>'
+let g:wordmotion_prefix = '<Leader>' " e.g. ,w instead of w
 Plug 'unblevable/quick-scope' " highlight unique character to find in each word
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
-Plug 'Lokaltog/vim-easymotion' " highlights targets to jump to, e.g. ,,w forward word, ,,j down line
+" used easymotion for a long time, checked alternatives and now trying leap
+" Plug 'Lokaltog/vim-easymotion' " highlights targets to jump to, e.g. ,,w forward word, ,,j down line
 " map <Leader> <Plug>(easymotion-prefix) " default is <Leader><Leader> to avoid conflicts with other plugins
-let g:EasyMotion_smartcase   = 1
-let g:EasyMotion_startofline = 0 " keep cursor colum when JK motion
-" https://github.com/ggandor/lightspeed.nvim not my taste
-" https://github.com/phaazon/hop.nvim rewrite of EasyMotion for neovim which does not change buffer to annotate targes; but not as nice to use as EasyMotion
+" let g:EasyMotion_smartcase   = 1
+" let g:EasyMotion_startofline = 0 " keep cursor colum when JK motion
+" https://github.com/phaazon/hop.nvim rewrite of EasyMotion for neovim which does not change buffer to annotate targets; but not as nice to use as EasyMotion
+" https://github.com/justinmk/vim-sneak s{char}{char} for search/motion across multiple lines (repeat ;/,)
+" let g:sneak#label = 1 " label-mode for a minimalist alternative to EasyMotion
+" https://github.com/ggandor/lightspeed.nvim not my taste, superseded by leap
+" https://github.com/ggandor/leap.nvim better vim-sneak, successor of lightspeed
+Plug 'ggandor/leap.nvim' " example: go to text ab, where xy are labels: sabx with leap and ,,wxy with easymotion
+map s <Plug>(leap-forward-to) " s = cl or xi
+map S <Plug>(leap-backward-to) " S = cc
+map gh <Plug>(leap-from-window) " default is gs which is already used by vim-swap; gh starts Select-mode (like Visual-mode but replaces text) which we don't need
 
 " # text objects
 Plug 'wellle/targets.vim' " text objects for pair, quote, separator, argument, tag
