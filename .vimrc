@@ -571,7 +571,8 @@ nnoremap <leader><space> :noh<cr>
 " line wrapping, no line breaking
 set wrap " already set by some plugin?
 set linebreak " wrap lines at `breakat` (default whitespace) instead of just cutting of inside a word 
-let &showbreak = '⮑  ' " prefix for wrapped lines
+set breakindent " wrapped lines will continue at the same indentation level
+let &showbreak = '↪ ' " '⮑  ', prefix for wrapped lines
 " set wrapmargin=0
 set textwidth=0 " don't break lines on insert after e.g. 78 characters
 set formatoptions+=l " jtcrql
