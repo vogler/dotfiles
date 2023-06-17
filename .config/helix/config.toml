@@ -1,0 +1,36 @@
+# https://docs.helix-editor.com/usage.html
+# https://github.com/helix-editor/helix/wiki/Migrating-from-Vim
+
+# Cons:
+# - no plugin system yet: https://github.com/helix-editor/helix/wiki/FAQ#how-to-write-plugins--is-there-a-plugin-system-in-place-yet-
+# - has diff gutter integrated but no further integration for git: https://github.com/helix-editor/helix/issues/227
+
+# https://docs.helix-editor.com/configuration.html
+
+# theme = "solarized_dark"
+theme = "kanagawa"
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.file-picker]
+hidden = false
+
+[editor.whitespace]
+# render = "all"
+
+[editor.indent-guides]
+render = true
+character = "┊" # Some characters that work well: "▏", "╎", "┆", "┊", "⸽"
+
+[editor.soft-wrap]
+enable = true
+
+[editor.lsp]
+# display-inlay-hints = true
+
+[keys.normal.","] # some leader key shortcuts I use in vim
+s = ":write"
+q = ":quit!"

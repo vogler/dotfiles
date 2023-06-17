@@ -117,6 +117,7 @@ fi
 
 # js/npm
 sudo npm install -g npm-check-updates
+sudo npm install -g typescript typescript-language-server # used for lsp in helix and probably later also for nvim when changing from coc to nvim-cmp
 
 # python/pip
 mkdir -p "$config/ptpython" # not .config on macOS...
