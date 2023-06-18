@@ -10,6 +10,9 @@
 # theme = "solarized_dark"
 theme = "kanagawa"
 
+[editor]
+bufferline = "always"
+
 [editor.cursor-shape]
 insert = "bar"
 normal = "block"
@@ -31,6 +34,11 @@ enable = true
 [editor.lsp]
 # display-inlay-hints = true
 
+[keys.normal]
+C-p = ["scroll_up"]
+C-n = ["scroll_down"]
+
 [keys.normal.","] # some leader key shortcuts I use in vim
 s = ":write"
 q = ":quit!"
+"," = "keep_primary_selection" # remove additional selections (e.g. from s on selection)
