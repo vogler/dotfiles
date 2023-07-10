@@ -442,7 +442,10 @@ Plug 'lambdatoast/elm.vim', {'for': 'elm'}
 
 call plug#end() " Automatically executes `filetype plugin indent on` and `syntax enable`.
 
-lua require('neoscroll').setup()
+" if hostname =~ 'MacBook'
+if !(hostname() =~ '^rpi') " smooth scrolling is too slow on RPis via SSH
+  lua require('neoscroll').setup()
+endif
 
 " color theme can only be set after plugins are loaded
 colorscheme solarized8_dark
