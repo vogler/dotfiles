@@ -153,25 +153,27 @@ Plug 'karb94/neoscroll.nvim' " a bit smoother than vim-smoothie...
 " # motion
 " Plug 'bkad/CamelCaseMotion'
 Plug 'chaoren/vim-wordmotion' " more useful word motions incl. camel case, upper/lowercase, hex, numbers etc.
-let g:wordmotion_prefix = '<Leader>' " e.g. ,w instead of w
+  let g:wordmotion_prefix = '<Leader>' " e.g. ,w instead of w
 Plug 'unblevable/quick-scope' " highlight unique character to find in each word
-let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+  let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 " used easymotion for a long time, checked alternatives and now trying leap
 " Plug 'Lokaltog/vim-easymotion' " highlights targets to jump to, e.g. ,,w forward word, ,,j down line
-" map <Leader> <Plug>(easymotion-prefix) " default is <Leader><Leader> to avoid conflicts with other plugins
-" let g:EasyMotion_smartcase   = 1
-" let g:EasyMotion_startofline = 0 " keep cursor colum when JK motion
+  " map <Leader> <Plug>(easymotion-prefix) " default is <Leader><Leader> to avoid conflicts with other plugins
+  " let g:EasyMotion_smartcase   = 1
+  " let g:EasyMotion_startofline = 0 " keep cursor colum when JK motion
 " https://github.com/phaazon/hop.nvim rewrite of EasyMotion for neovim which does not change buffer to annotate targets; but not as nice to use as EasyMotion
 " https://github.com/justinmk/vim-sneak s{char}{char} for search/motion across multiple lines (repeat ;/,)
-" let g:sneak#label = 1 " label-mode for a minimalist alternative to EasyMotion
+  " let g:sneak#label = 1 " label-mode for a minimalist alternative to EasyMotion
 " https://github.com/ggandor/lightspeed.nvim not my taste, superseded by leap
 " https://github.com/ggandor/leap.nvim better vim-sneak, successor of lightspeed
 Plug 'ggandor/leap.nvim' " example: go to text ab, where xy are labels: sabx with leap and ,,wxy with easymotion
-" alternatives: s = cl or xi, S = cc
-map s <Plug>(leap-forward-to)
-map S <Plug>(leap-backward-to)
-map gh <Plug>(leap-from-window)
-" default is gs which is already used by vim-swap; gh starts Select-mode (like Visual-mode but replaces text) which we don't need
+  " alternatives: s = cl or xi, S = cc
+  map s <Plug>(leap-forward-to)
+  map S <Plug>(leap-backward-to)
+  map gh <Plug>(leap-from-window)
+  " default is gs which is already used by vim-swap; gh starts Select-mode (like Visual-mode but replaces text) which we don't need
+" https://github.com/folke/flash.nvim adds jump labels to regular search results, also supports ftFT motions, standalone jump, multi window jump, remote actions and treesitter; TODO easier to configure with lua
+Plug 'folke/flash.nvim'
 
 " # text objects
 Plug 'wellle/targets.vim' " text objects for pair, quote, separator, argument, tag
@@ -443,6 +445,9 @@ Plug 'lambdatoast/elm.vim', {'for': 'elm'}
 
 
 call plug#end() " Automatically executes `filetype plugin indent on` and `syntax enable`.
+
+" adds jump labels to regular search results
+lua require('flash').setup()
 
 " if hostname =~ 'MacBook'
 if !(hostname() =~ '^rpi') " smooth scrolling is too slow on RPis via SSH
