@@ -167,9 +167,11 @@ let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 " https://github.com/ggandor/lightspeed.nvim not my taste, superseded by leap
 " https://github.com/ggandor/leap.nvim better vim-sneak, successor of lightspeed
 Plug 'ggandor/leap.nvim' " example: go to text ab, where xy are labels: sabx with leap and ,,wxy with easymotion
-map s <Plug>(leap-forward-to) " s = cl or xi
-map S <Plug>(leap-backward-to) " S = cc
-map gh <Plug>(leap-from-window) " default is gs which is already used by vim-swap; gh starts Select-mode (like Visual-mode but replaces text) which we don't need
+" alternatives: s = cl or xi, S = cc
+map s <Plug>(leap-forward-to)
+map S <Plug>(leap-backward-to)
+map gh <Plug>(leap-from-window)
+" default is gs which is already used by vim-swap; gh starts Select-mode (like Visual-mode but replaces text) which we don't need
 
 " # text objects
 Plug 'wellle/targets.vim' " text objects for pair, quote, separator, argument, tag
