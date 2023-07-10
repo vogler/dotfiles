@@ -160,6 +160,7 @@ brew install tableplus # 183MB, Native GUI tool for databases (PostgreSQL, SQLit
 
 # network
 brew install wget # alt for curl
+brew install wakeonlan
 brew install httpie # 17MB, https://httpie.io User-friendly cURL replacement, ex: http POST pie.dev/post hello=world
 # API clients with GUI:
   # online: https://hoppscotch.io, https://restfox.dev, https://httpie.io/app (no local network)
