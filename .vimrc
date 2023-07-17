@@ -187,7 +187,8 @@ Plug 'matze/vim-move' " A-k/A-j move line/selection up/down; A-h/A-l move char/s
 " Plug 'AndrewRadev/sideways.vim' " :SidewaysLeft/Right to move item (defined by delimiter) under the cursor left/right
 Plug 'machakann/vim-swap' " swap delimited items; g< left, g> right, gs interactive (h, l, j, k, 1-9, g/G group/ungroup, s sort, r reverse)
 " Plug 'LunarWatcher/auto-pairs' " maintained fork of jiangmiao/auto-pairs; insert/delete brackets/parens/quotes in pairs
-Plug 'vim-scripts/auto-pairs-gentle' " auto-pairs had problems deleting pairs in .js files, this works.
+" Plug 'vim-scripts/auto-pairs-gentle' " auto-pairs had problems deleting pairs in .js files, this works. Also disabled since it inserted internal code on enter in lua code.
+Plug 'echasnovski/mini.pairs' " This finally seems to work without problems (but needs lua require... below)
 
 " # multiple cursors
 " Plug 'terryma/vim-multiple-cursors' " C-n to add match; TODO deprecated, use vim-visual-multi instead
@@ -451,6 +452,8 @@ call plug#end() " Automatically executes `filetype plugin indent on` and `syntax
 
 " adds jump labels to regular search results
 lua require('flash').setup()
+" insert/delete pairs of brackets/quotes
+lua require('mini.pairs').setup()
 
 " if hostname =~ 'MacBook'
 if !(hostname() =~ '^rpi') " smooth scrolling is too slow on RPis via SSH
