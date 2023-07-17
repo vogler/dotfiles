@@ -88,7 +88,7 @@ let g:ackprg = 'ag --vimgrep --smart-case'
 
 " # yank, registers
 command! YankStatusMsg let @+ = v:statusmsg " for copying error messages
-Plug 'ojroques/vim-oscyank' " SSH: also copy to client clipboard
+Plug 'ojroques/vim-oscyank' " SSH: also copy to client clipboard; alternative: https://github.com/jabirali/vim-tmux-yank
   autocmd TextYankPost * if $SSH_CLIENT != '' && v:event.operator is 'y' && v:event.regname is '' | execute 'OSCYankReg "' | endif
 
 " # UI search in buffer
