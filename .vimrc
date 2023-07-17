@@ -146,6 +146,10 @@ Plug 'ryanoasis/vim-devicons' " adds file type icons to NERDTree, vim-airline, C
 Plug 'airblade/vim-gitgutter' " git diff markers in sign column; jump to next hunk with ]c, stage hunk with ,hs, undo with ,hu
   set updatetime=250 " terminal vim might have highlighting glitches for low times...
 Plug 'wellle/context.vim' " show context (function, branch, indent, json path...) above buffer; alternative: https://github.com/nvim-treesitter/nvim-treesitter-context
+" Plug 'wfxr/minimap.vim' " fast minimap/scrollbar - not that useful, only dots, no git signs; but good as a scrollbar (e.g. width = 2)
+  " let g:minimap_width = 10
+  " let g:minimap_auto_start = 1
+  " let g:minimap_auto_start_win_enter = 1
 
 " smooth scrolling
 Plug 'karb94/neoscroll.nvim' " a bit smoother than vim-smoothie...
