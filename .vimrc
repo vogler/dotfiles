@@ -186,6 +186,8 @@ Plug 'matze/vim-move' " A-k/A-j move line/selection up/down; A-h/A-l move char/s
 " https://vi.stackexchange.com/questions/609/swap-function-arguments
 " Plug 'AndrewRadev/sideways.vim' " :SidewaysLeft/Right to move item (defined by delimiter) under the cursor left/right
 Plug 'machakann/vim-swap' " swap delimited items; g< left, g> right, gs interactive (h, l, j, k, 1-9, g/G group/ungroup, s sort, r reverse)
+" Plug 'LunarWatcher/auto-pairs' " maintained fork of jiangmiao/auto-pairs; insert/delete brackets/parens/quotes in pairs
+Plug 'vim-scripts/auto-pairs-gentle' " auto-pairs had problems deleting pairs in .js files, this works.
 
 " # multiple cursors
 " Plug 'terryma/vim-multiple-cursors' " C-n to add match; TODO deprecated, use vim-visual-multi instead
