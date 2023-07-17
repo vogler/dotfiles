@@ -37,6 +37,7 @@ set autoindent
 " set cindent
 Plug 'tpope/vim-obsession' " cont. updated session files; :Obsess starts recording, load with -S or :source
 Plug 'tpope/vim-vinegar' " file browser enhancements (- opens netrw), - goes up one directory but keeps file focused (enter to go back); nvim alternative: https://github.com/stevearc/oil.nvim
+let g:netrw_silent=1 " no "Press ENTER or type commend to continue" when editing a file via scp, e.g. nvim scp://pi@rpi3/dash.log
 " Plug 'tpope/vim-characterize' " Unicode character metadata (press ga on a character)
 Plug 'tpope/vim-speeddating' " increment (C-A) / decrement (C-X) for date/time formats
 Plug 'tpope/vim-jdaddy' " JSON text objects (aj, ij) and pretty printing (gqaj)
