@@ -178,7 +178,7 @@ Plug 'ggandor/leap.nvim' " example: go to text ab, where xy are labels: sabx wit
   map gh <Plug>(leap-from-window)
   " default is gs which is already used by vim-swap; gh starts Select-mode (like Visual-mode but replaces text) which we don't need
 " https://github.com/folke/flash.nvim adds jump labels to regular search results, also supports ftFT motions, standalone jump, multi window jump, remote actions and treesitter; TODO easier to configure with lua
-Plug 'folke/flash.nvim' " breaks df<space> + . to repeat, https://github.com/folke/flash.nvim/issues/40
+Plug 'folke/flash.nvim'
 
 " # text objects
 Plug 'wellle/targets.vim' " text objects for pair, quote, separator, argument, tag
