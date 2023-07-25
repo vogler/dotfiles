@@ -182,7 +182,8 @@ brew install forklift # 159MB, (trial) dual-pane finder with compare/sync for FT
 # brew install pcp # 25.5MB, peer-to-peer file transfer based on libp2p - does not need central relay server, but may also not find any peers or take long
 # brew install magic-wormhole # 34.6MB (+ 18MB openssl@1.1 + 57.3MB python@3.10), peer-to-peer file transfer
 brew install croc # 6.1MB, peer-to-peer file transfer
-brew install teamviewer # 227 MB
+brew install teamviewer # 227 MB, remote desktop
+brew install parsec # 6.5MB, fast remote desktop that works well enough for game streaming
 brew install caddy # 42MB, Go web server with automatic HTTPS (Let's Encrypt), HTTP/3, reverse proxy, load balancing, caching, nicer to use but slower than nginx/haproxy/traefik, https://caddyserver.com - `caddy file-server --domain example.com` `caddy reverse-proxy --from example.com --to localhost:9000`
 
 # goblint
