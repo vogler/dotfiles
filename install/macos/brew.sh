@@ -171,7 +171,8 @@ brew install http-toolkit # 327MB, HTTP(S) debugging proxy, analyzer, and client
 brew install mosquitto # MQTT pub/sub
 # brew install youtube-dl # download videos from many websites -> yt only ~70KB/s -> replaced with yt-dlp which dl from yt with full speed
 brew install yt-dlp/taps/yt-dlp # youtube-dl fork with additional features and fixes: full dl speed, SponsorBlock, yt-dlp --cookies-from-browser chrome --max-downloads 10 --sponsorblock-remove default :ytwatchlater
-brew install angry-ip-scanner
+brew install angry-ip-scanner # 26MB, Network scanner
+# brew install lulu # 26MB, Open-source firewall to block outgoing connections
 # brew install insomnia # Intel, 337MB; HTTP and GraphQL Client
 mas install 1451685025 # WireGuard VPN client; brew's wireguard-tools has no GUI
 brew install tunnelblick # needed for RBG ovpn profile
