@@ -5,7 +5,7 @@
 
 # Run script
 ## Terminal
-`osascript "iTerm save content as rtf.scpt"`
+`osascript "iTerm save content as rtf.applescript"`
 
 ## As Service with keyboard shortcut
 https://apple.stackexchange.com/questions/175215/how-do-i-assign-a-keyboard-shortcut-to-an-applescript-i-wrote
