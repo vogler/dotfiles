@@ -13,7 +13,7 @@
 	<key>AutoHideTmuxClientSession</key>
 	<false/>
 	<key>BracketedPasteMode</key>
-	<true/>
+	<false/>
 	<key>CheckTestRelease</key>
 	<true/>
 	<key>ClosingHotkeySwitchesSpaces</key>
@@ -27,7 +27,7 @@
 	<key>Control</key>
 	<integer>1</integer>
 	<key>ConvertDosNewlines</key>
-	<true/>
+	<false/>
 	<key>CopyLastNewline</key>
 	<false/>
 	<key>CopySelection</key>
@@ -33151,11 +33151,11 @@
 	<key>PasteFromClipboard</key>
 	<false/>
 	<key>PasteSpecialRegex</key>
-	<string></string>
+	<string>\n</string>
 	<key>PasteSpecialSubstitution</key>
-	<string></string>
+	<string> </string>
 	<key>PasteSpecialUseRegexSubstitution</key>
-	<false/>
+	<true/>
 	<key>PasteTabToStringTabStopSize</key>
 	<integer>4</integer>
 	<key>PointerActions</key>
