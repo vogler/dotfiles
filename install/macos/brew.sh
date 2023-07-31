@@ -92,6 +92,7 @@ brew install ripgrep # 5.8MB, rg: Code-search similar to ag, but faster [Rust]
 brew install ugrep # 1.2MB, ug: grep with interactive TUI (-Q), fuzzy search, hexdump, search binary, archives, compressed files (-z), documents (PDF, pandoc, office, exif...), output as JSON, CSV...
 brew install pdfgrep # `pdfgrep -nH PATTERN *.pdf` as alternative (with page number) to `ug --filter='pdf:pdftotext % -' PATTERN *.pdf`
 brew install ncdu # NCurses Disk Usage
+brew install diskus # 839KB, Rust, minimal, 3-10x faster alternative to `du -sh`
 brew install p7zip # 7z with support for Brotli, Fast LZMA2, LZ4, LZ5, Lizard and Zstd
 brew install the-unarchiver # unpack .rar
 brew install mosh # alternative for ssh, local echo, roaming, but UDP dyn. port alloc. 60000-61000
