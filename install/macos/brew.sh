@@ -235,8 +235,8 @@ brew install ultimaker-cura # 617MB
 brew install superslicer # 111MB, fork of PrusaSlicer
 brew install arduino # 500MB, use vscode/PlatformIO instead, but this has a nice Serial Plotter for simple sensor sketches
 brew install kicad # 6.5GB, schema and PCB editor for Gerber files
-brew install --cask homebrew/cask-drivers/qmk-toolbox # 1.8MB, GUI for flashing QMK keyboard firmware, supports most boards/bootloaders
-brew install qmk/qmk/qmk # ~900MB due to arm-/avr-gcc, CLI to build & flash QMK keyboard firmware
+# brew install --cask homebrew/cask-drivers/qmk-toolbox # 1.8MB, GUI for flashing QMK keyboard firmware, supports most boards/bootloaders
+# brew install qmk/qmk/qmk # ~900MB due to arm-/avr-gcc, CLI to build & flash QMK keyboard firmware
 
 # for more see install/macos/old-MBP/Brewfile
 # Brewfile in https://github.com/lunaryorn/dotfiles/commit/2d8531881c2bc61f091d83bc2cf02ad6ebb680c6
