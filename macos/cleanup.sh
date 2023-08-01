@@ -13,12 +13,12 @@
 # ~/Library/Logs/Homebrew/
 
 # heaviest folders to clean:
-# 40.7GB ~/Library/Application Support
+# 50.9GB ~/Library/Application Support
 # 19.2GB ~/Library/Application Support/Google/Chrome
 # 9.69GB ~/Library/Application Support/Google/Chrome/Default/File System
 # 7.02GB ~/Library/Application Support/Google/Chrome/Default/Service Worker
 # 1.2GB  ~/Library/Application Support/Google/Chrome/Default/IndexedDB
-# 14.3GB ~/Library/Application Support/Autodesk/webdeploy/production # has 4 versions of Autodesk Fusion 360.app
+# 24.5GB ~/Library/Application Support/Autodesk/webdeploy/production # has 5 versions of Autodesk Fusion 360.app
 # 1.3GB  ~/Library/Application Support/Slack/{Service Worker,Cache}
 # 1.1GB  ~/Library/Application Support/Microsoft/Teams/{Service Worker,Cache,tmp}
 # 15GB   ~/Library/Caches
@@ -88,8 +88,9 @@ trash() {
   # https://apple.stackexchange.com/questions/50844/how-to-move-files-to-trash-from-command-line
   # `brew install trash` verison did not have `Put Back` in context menu of deleted files
   # https://github.com/morgant/tools-osx/blob/71c2db389c48cee8d03931eeb083cfc68158f7ed/src/trash#L307C2-L307C2
-  for f in $@; do
-    osascript -e "tell application \"Finder\" to delete POSIX file \"$(realpath $f)\"" > /dev/null
+  for f in "$@"; do
+    p=$(realpath "$f")
+    osascript -e "tell application \"Finder\" to delete POSIX file \"$p\"" > /dev/null
   done
 }
 
@@ -112,6 +113,7 @@ clean() {
       return
     fi
   fi
+  # stat "$@" # to note Access, Uid, Gid
   if [ -z $dry_run ]; then
     if [ -z $use_trash ]; then
       rm -rfv "$@"
@@ -160,27 +162,55 @@ oldAvailable=$(df / | tail -1 | awk '{print $4}')
 # clean /Volumes/*/.Trashes
 # clean ~/.Trash # du: cannot read directory; only works if you give a path to something in the trash
 echo "> Temporary files"
-clean /tmp/*
+# /tmp -> private/tmp
+clean /private/tmp/* 
 clean /private/var/tmp/Processing/
 clean /private/var/tmp/Xcode/
 clean /private/var/tmp/tmp*
 echo "> Log files"
-clean /var/log/
-clean /private/var/log/
-clean /Library/Logs/
+# /var -> private/var
+# clean /private/var/log/ # drwxr-xr-x root wheel; recreated with group admin instead of wheel; small but will be nonempty fast
+clean /Library/Logs/ # drwxr-xr-x root wheel
+# all the folders in ~/Library are 0700/drwx------+ $USER:staff unless specified otherwise
 clean ~/Library/Logs/
 clean ~/Library/Containers/*/Data/Library/Logs
 echo "> Caches"
-clean /Library/Caches
+clean /Library/Caches # 1777/drwxrwxrwt root admin
 clean ~/Library/Caches
 clean ~/Library/Containers/*/Data/Library/Caches
 echo "> Caches (Application-specific)" # TODO check that apps are not running?
-clean ~/Library/Application\ Support/Google/Chrome/Default/{File\ System,Service\ Worker,IndexedDB}
+clean ~/Library/Application\ Support/Google/Chrome/Default/{File\ System,Service\ Worker,IndexedDB} # only issues noted: web.whatsapp.com need to link device again
 clean ~/Library/Application\ Support/Slack/{Service\ Worker,Cache}
-clean ~/Library/Application\ Support/Microsoft/Teams/{Service\ Worker,Cache,tmp}
+clean ~/Library/Application\ Support/Microsoft/Teams/{Service\ Worker,Cache,tmp} # tmp is 0755/drwxr-xr-x
+clean ~/Library/Application\ Support/zoom.us/AutoUpdater/Zoom.pkg # ~87MB, will be downloaded on update
+clean ~/Library/Application\ Support/Code/CachedExtensionVSIXs # ~372MB, will refill on extension updates
+clean ~/Library/Application\ Support/Code/CachedData # 298MB, 38MB after restart of workspace
+! has podman && [ -d ~/.local/share/containers/podman ] && clean ~/.local/share/containers/podman # leftover ~5GB qemu machine after `brew uninstall --zap podman`
+
+# Autodesk Fusion 360 kept old versions of the app (25GB) while the current one was 7.8GB; can just delete old ones
+if [ -d ~/Library/Application\ Support/Autodesk/webdeploy/production ]; then
+  echo "> Old versions of Autodesk Fusion 360"
+  echo "All versions:"
+  du -sh ~/Library/Application\ Support/Autodesk/webdeploy/production
+  current=$(readlink -f /Users/voglerr/Library/Application\ Support/Autodesk/webdeploy/production/Autodesk\ Fusion\ 360.app)
+  echo "Current version:"
+  du -sh "$current"
+  # c=$(echo "$current" | sed 's#.*/production/\(.*\)/.*#\1#')
+  c=$(dirname "$current")
+  for d in ~/Library/Application\ Support/Autodesk/webdeploy/production/*/; do
+    # skip anything that doesn't have the .app inside
+    if [ ! -d "$d/Autodesk Fusion 360.app" ]; then continue; fi
+    if [ "$d" = "$c/" ]; then
+      echo "Will not delete current version: $d"
+    else
+      clean "$d"
+    fi
+  done
+fi
 
 if [ -z $dry_run ]; then
-  echo "> dev pkg cache clean" # TODO just use paths as above?
+  echo "> pkg cache clean" # TODO just use paths as above?
+  # has brew && brew cleanup --prune=all # this will only delete downloads in ~/Library/Caches/Homebrew which is already deleted above
   has gem && gem cleanup
   has npm && npm cache clean --force
   has yarn && yarn cache clean
@@ -188,6 +218,8 @@ if [ -z $dry_run ]; then
   # echo "> Postprocessing"
   # brew tap --repair # TODO needed?
 fi
+# System Settings > Login Items
+# ls /Library/{LaunchAgents,LaunchDaemons} ~/Library/LaunchAgents # usually just disable them in the UI, but may want to delete some leftover items of uninstalled apps (happened with Keybase)
 
 echo
 newAvailable=$(df / | tail -1 | awk '{print $4}')
