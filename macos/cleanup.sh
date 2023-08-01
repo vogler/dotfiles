@@ -28,19 +28,21 @@
 # ls -lahS /opt/homebrew/Caskroom/**/*.pkg # brew maintainers say no, but I guess can be deleted
 # 9.97GB ~/Library/Group Containers/243LU875E5.groups.com.apple.podcasts/Library/Cache # automatic downloads disabled and deleted
 
-# existing scripts:
+# existing apps/scripts:
+# GUI app, paths: https://github.com/Kevin-De-Koninck/Clean-Me/blob/master/Clean%20Me/Paths.swift
 # good set, but just deletes everything: https://gist.github.com/mircobabini/7f944835c44374dd9fe01027e8857e23
 # has more stuff, but --dry-run just gives a sum: https://github.com/mac-cleanup/mac-cleanup-sh/blob/main/mac-cleanup
-# GUI app, paths: https://github.com/Kevin-De-Koninck/Clean-Me/blob/master/Clean%20Me/Paths.swift
+# modular implementation in python but still need to check each module for size since --dry-run will just show sum of all activated modules: https://github.com/mac-cleanup/mac-cleanup-py
 
 usage() {
   cat <<EOF
-Usage: $(basename "${BASH_SOURCE[0]}") [-c] [-d] [-e] [-t] [-h] [-v]
+Usage: $(basename "${BASH_SOURCE[0]}") [-c] [-d] [-e] [-p] [-t] [-h] [-v]
 
 -c, --checks     Check for last time machine backup, sudo etc.
 -d, --dry-run    Just report, but don't delete anything.
 -e, --empty      Also report and delete empty directories.
--t, --trash      Move folders to the trash instead of deleting them with rm.
+-p, --prompt     Prompt whether to delete for each entry.
+-t, --trash      Move folders to the trash instead of deleting them with rm. May ask for permission.
 
 -h, --help       Print this usage information.
 -v, --verbose    Enable verbose output.
@@ -54,6 +56,7 @@ parse_params() {
     -c | --checks) checks=true ;;
     -d | --dry-run) dry_run=true ;;
     -e | --empty) empty=true ;;
+    -p | --prompt) prompt=true ;;
     -t | --trash) use_trash=true ;;
     -h | --help) usage ;;
     -v | --verbose) set -x ;;
@@ -101,6 +104,12 @@ clean() {
       return
     else
       echo "$nonempty"
+    fi
+  fi
+  if [ $prompt ]; then
+    read -n1 -s -r -p $'Delete? (y/n)\n' key
+    if [ "$key" != 'y' ]; then
+      return
     fi
   fi
   if [ -z $dry_run ]; then
@@ -163,7 +172,7 @@ clean ~/Library/Logs/
 clean ~/Library/Containers/*/Data/Library/Logs
 echo "> Caches"
 clean /Library/Caches
-# clean ~/Library/Caches
+clean ~/Library/Caches
 clean ~/Library/Containers/*/Data/Library/Caches
 echo "> Caches (Application-specific)" # TODO check that apps are not running?
 clean ~/Library/Application\ Support/Google/Chrome/Default/{File\ System,Service\ Worker,IndexedDB}
