@@ -85,7 +85,9 @@ trash() {
   # https://apple.stackexchange.com/questions/50844/how-to-move-files-to-trash-from-command-line
   # `brew install trash` verison did not have `Put Back` in context menu of deleted files
   # https://github.com/morgant/tools-osx/blob/71c2db389c48cee8d03931eeb083cfc68158f7ed/src/trash#L307C2-L307C2
-  osascript -e "tell application \"Finder\" to delete POSIX file \"$(realpath $@)\"" > /dev/null
+  for f in $@; do
+    osascript -e "tell application \"Finder\" to delete POSIX file \"$(realpath $f)\"" > /dev/null
+  done
 }
 
 clean() {
