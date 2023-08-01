@@ -1,18 +1,6 @@
 #!/usr/bin/env bash
 
-# deleted manually without problems:
-# 7.01GB ~/Library/Application Support/Google/Chrome/Default/Service Worker/CacheStorage
-# 108MB ~/Library/Application Support/Google/Chrome/Default/Service Worker/ScriptCache
-# 1.2GB ~/Library/Application Support/Google/Chrome/Default/IndexedDB
-# 9.97GB ~/Library/Group Containers/243LU875E5.groups.com.apple.podcasts/Library/Cache
-# 354MB ~/Library/Caches/Raspberry\ Pi/Imager/lastdownload.cache
-
-# `brew cleanup` by default only removes downloads older than 120 days
-# `brew cleanup --prune=all -n` to show all that would eventually be removed:
-# ~/Library/Caches/Homebrew/
-# ~/Library/Logs/Homebrew/
-
-# heaviest folders to clean:
+# examples for heavy folders that can be cleaned up:
 # 50.9GB ~/Library/Application Support
 # 19.2GB ~/Library/Application Support/Google/Chrome
 # 9.69GB ~/Library/Application Support/Google/Chrome/Default/File System
@@ -27,6 +15,11 @@
 # https://apple.stackexchange.com/questions/359456/brew-cleanup-doesnt-scrub-the-caskroom
 # ls -lahS /opt/homebrew/Caskroom/**/*.pkg # brew maintainers say no, but I guess can be deleted
 # 9.97GB ~/Library/Group Containers/243LU875E5.groups.com.apple.podcasts/Library/Cache # automatic downloads disabled and deleted
+
+# `brew cleanup` by default only removes downloads older than 120 days
+# `brew cleanup --prune=all -n` to show all that would eventually be removed:
+# ~/Library/Caches/Homebrew/
+# ~/Library/Logs/Homebrew/
 
 # existing apps/scripts:
 # GUI app, paths: https://github.com/Kevin-De-Koninck/Clean-Me/blob/master/Clean%20Me/Paths.swift
