@@ -123,6 +123,7 @@ sudo npm install -g typescript typescript-language-server # used for lsp in heli
 mkdir -p "$config/ptpython" # not .config on macOS...
 # ln -sf {`pwd`,~}/.config/ptpython/config.py
 ln -sf `pwd`/.config/ptpython/config.py "$config/ptpython"
+# pip install pipdeptree # tree of deps: pipdeptree -p apprise; reverse: pipdeptree -r -p requests
 
 # TODO this needs to be rethought
 # echo_bold ">> Link *.symlink"

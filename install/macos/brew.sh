@@ -1,6 +1,9 @@
 # We could generate a Brewfile with `brew bundle dump` (even with cask & mas), but would lose format/comments every run.
 # So we just use a shell script to install each package. Also, sometimes there's some post-install linking to be done.
 
+# Show installed pkgs that are not deps of another installed formula or cask: brew leaves
+# Show reverse dependencies: brew uses --recursive --installed python@3.9
+
 # $HOMEBREW_PREFIX changed from /usr/local on Intel to /opt/homebrew on ARM
 # Some opam packages don't consider this yet, so we link it back on ARM (share is not needed for opam but for zsh completions to load):
 [[ $(uname -m) == "arm64" ]] && sudo ln -sfn /opt/homebrew/{include,lib,share} /usr/local/
