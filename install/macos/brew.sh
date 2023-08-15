@@ -160,7 +160,7 @@ brew install htmlq # 2.5MB, jq for HTML, pretty basic, no pseudo-classes?, `html
 brew install pup # 3.7MB, jq for HTML, many pseudo-classes, `pup 'a attr{href}'`, text{}, json{}, :contains(text), `pup ':parent-of([action="edit"])'`
 
 # databases
-brew install postgresql # SQL DB; `brew services start postgresql` to enable start on login, `brew services run postgresql` to just start
+# brew install postgresql@15 # 71MB, SQL DB; `brew services start postgresql@15` to enable start on login, `brew services run postgresql@15` to just start
 
 # database management
 brew install tableplus # 183MB, Native GUI tool for databases (PostgreSQL, SQLite, Mongo, Cassandra, Redis, Cockroach...) - free trial is limited to 2 opened tabs, 2 opened windows, 2 advanced filters
