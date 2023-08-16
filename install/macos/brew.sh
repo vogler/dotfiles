@@ -35,6 +35,7 @@ brew install hammerspoon # 39MB, automation, window management, key/mouse mappin
 # brew install usb-overdrive # 2.3MB, shareware, device driver for USB/Bluetooth input (mouse, keyboard, gamepad etc.) to configure globally or on a per-application, per-device basis - messed up left click..., per-application not good enough for Books.app
 brew install raycast # 75MB, better launcher than Spotlight, Alfred etc., good shortcuts incl. window management, community extensions/scripts
 brew install istat-menus # 68MB, trial, got key, menu bar: HW stats (combined: graph for CPU & memory, rest in dropdown), calendar, weather (subscription for 60min updates)
+# brew install stats # 12MB, simple free alternative to istat-menus, just HW, no calendar, weather
 
 # HW tools
 # brew install tg-pro # trial
