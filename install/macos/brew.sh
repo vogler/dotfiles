@@ -37,7 +37,6 @@ brew install raycast # 75MB, better launcher than Spotlight, Alfred etc., good s
 
 # HW tools
 # brew install tg-pro # trial
-# brew install sensei # trial
 
 # browser/-based apps
 brew install google-chrome # 922MB
@@ -98,7 +97,7 @@ brew install diskus # 839KB, Rust, minimal, 3-10x faster alternative to `du -sh`
 brew install ncdu # NCurses Disk Usage
 brew install disk-drill # 113MB, GUI, disk usage & clean up (filters for type, size, modified), data recovery, find duplicates
 brew install clean-me # 2.5MB, GUI analyze/clean caches, logs, temp files, trash, downloads etc., see https://github.com/Kevin-De-Koninck/Clean-Me/blob/master/Clean%20Me/Paths.swift
-brew install sensei # 72MB, 14d trial, GUI, system overview, menu bar monitor, optimize, clean, SSD stats/benchmark, battery health
+# brew install sensei # 72MB, 14d trial, GUI, system overview, menu bar monitor, optimize, clean, SSD stats/benchmark, battery health
 brew install p7zip # 7z with support for Brotli, Fast LZMA2, LZ4, LZ5, Lizard and Zstd
 brew install the-unarchiver # unpack .rar
 brew install mosh # alternative for ssh, local echo, roaming, but UDP dyn. port alloc. 60000-61000
