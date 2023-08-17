@@ -3,7 +3,10 @@
     email = ralf.vogler@gmail.com
     username = vogler
 [credential]
-    # helper = osxkeychain
+    # set via `sudo git credential-manager configure --system`
+    # auth via `git credential-manager github login`
+    # helper = /usr/local/share/gcm-core/git-credential-manager
+    # helper = osxkeychain # only macOS, requires creating a personal access token
     # helper = cache --timeout=604800 # 7 days in memory
     # Set this using `git config --system --add credential.helper ...` since I want keychain on macos but on other ssh linux boxes I'm stuck with cache (store is plaintext), and this global config would overwrite the system one.
 [credential "https://github.com"]
@@ -101,3 +104,5 @@
     branchr=branch --sort=-committerdate --format='%(HEAD) %(color:blue)%(refname:short)%(color:reset) %(color:green)%(committerdate:relative)%(color:reset) %(color:yellow)%(authorname)%(color:reset)\n  %(contents:subject)\n' # instead of `brew install git-recent`, this also accepts options for git branch like -a, edited from https://stackoverflow.com/questions/5188320/how-can-i-get-a-list-of-git-branches-ordered-by-most-recent-commit
     # https://stackoverflow.com/questions/3161204/how-to-find-the-nearest-parent-of-a-git-branch
     parent = "!git show-branch | grep '*' | grep -v \"$(git rev-parse --abbrev-ref HEAD)\" | head -n1 | sed 's/.*\\[\\(.*\\)\\].*/\\1/' | sed 's/[\\^~].*//' #"
+[credential "https://dev.azure.com"]
+	useHttpPath = true

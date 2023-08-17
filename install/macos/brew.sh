@@ -149,6 +149,7 @@ brew install git-delta # as diff-so-fancy but with language syntax highlighting,
 brew install tig # Text interface for Git repositories
 brew install hub
 brew install gh # https://github.com/cli/cli/blob/trunk/docs/gh-vs-hub.md
+brew install --cask git-credential-manager # 106MB, cross-platform secure storage with browser login and MFA - no need to manually create tokens at https://github.com/settings/tokens; `sudo git credential-manager configure --system; git credential-manager github login`
 # brew install --cask sourcetree smartgit gitkraken gitup # tried but don't use
 brew install gitwatch # use GitDoc in vscode instead? https://marketplace.visualstudio.com/items?itemName=vsls-contrib.gitdoc
 # brew install git-recent # recent branches; use `git branchr` (alias in .gitconfig) which is based on `git branch` and accepts its options like -a to show remote branches
