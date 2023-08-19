@@ -3,6 +3,7 @@
 
 # Show installed pkgs that are not deps of another installed formula or cask: brew leaves
 # Show reverse dependencies: brew uses --recursive --installed python@3.9
+brew tap martido/homebrew-graph # 232KB, example: `brew graph --installed --highlight-leaves | fdp -T png -o graph.png`, see https://blog.jpalardy.com/posts/untangling-your-homebrew-dependencies/
 
 # $HOMEBREW_PREFIX changed from /usr/local on Intel to /opt/homebrew on ARM
 # Some opam packages don't consider this yet, so we link it back on ARM (share is not needed for opam but for zsh completions to load):
