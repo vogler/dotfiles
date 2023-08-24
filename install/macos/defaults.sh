@@ -92,9 +92,11 @@ sudo nvram SystemAudioVolume=" " # no diff in defaults. 'Disable the sound effec
 # System Preferences > Sound > Sound Effects > Play user interface sound effects
 defaults write NSGlobalDomain com.apple.sound.uiaudio.enabled -bool false
 
-# System Preferences > Keyboard > Keyboard > Key Repeat (Fast = 2) / Delay Until Repat (Short = 15)
+# System Preferences > Keyboard > Keyboard > Key Repeat (Fast = 2 (30ms)) / Delay Until Repat (Short = 15 (225ms))
+# https://apple.stackexchange.com/questions/10467/how-to-increase-keyboard-key-repeat-rate-on-os-x
+# May need to redo this after system updates!
 defaults write NSGlobalDomain KeyRepeat -int 1
-defaults write NSGlobalDomain InitialKeyRepeat -int 10
+defaults write NSGlobalDomain InitialKeyRepeat -int 12
 
 # System Preferences > Keyboard > Text > Correct spelling automatically
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
