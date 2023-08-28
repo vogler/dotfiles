@@ -116,9 +116,10 @@ if [[ "$*" == *ocaml* ]]; then
 fi
 
 # js/npm
-sudo npm install -g npm-check-updates # ncu to check updates; ncu -u to update package.json; ncu -i for interactive; ncu -g for global packages
-sudo npm install -g typescript typescript-language-server # used for lsp in helix and probably later also for nvim when changing from coc to nvim-cmp
-sudo npm install -g howfat # show npm package size, #deps, #files, license as tree, table, json, simple - all info from npmjs.com, not local size on disk
+sudo npm install -g npm-check-updates # 17.1MB, ncu to check updates; ncu -u to update package.json; ncu -i for interactive; ncu -g for global packages
+sudo npm install -g typescript typescript-language-server # 38.7MB + 1.7MB, used for lsp in helix and probably later also for nvim when changing from coc to nvim-cmp
+sudo npm install -g howfat # 1.2MB, show npm package size, #deps, #files, license as tree, table, json, simple - all info from npmjs.com, not local size on disk
+sudo npm install -g zx # 12.7MB, JS as replacement for shell scripts, https://github.com/google/zx
 
 # python/pip
 mkdir -p "$config/ptpython" # not .config on macOS...
