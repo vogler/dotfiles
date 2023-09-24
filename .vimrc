@@ -152,7 +152,7 @@ Plug 'wellle/context.vim' " show context (function, branch, indent, json path...
   " let g:minimap_auto_start_win_enter = 1
 
 " smooth scrolling
-Plug 'karb94/neoscroll.nvim' " a bit smoother than vim-smoothie...
+" Plug 'karb94/neoscroll.nvim' " a bit smoother than vim-smoothie...
 " Plug 'psliwka/vim-smoothie'
 
 " # motion
@@ -178,7 +178,7 @@ Plug 'ggandor/leap.nvim' " example: go to text ab, where xy are labels: sabx wit
   map gh <Plug>(leap-from-window)
   " default is gs which is already used by vim-swap; gh starts Select-mode (like Visual-mode but replaces text) which we don't need
 " https://github.com/folke/flash.nvim adds jump labels to regular search results, also supports ftFT motions, standalone jump, multi window jump, remote actions and treesitter; TODO easier to configure with lua
-Plug 'folke/flash.nvim'
+" Plug 'folke/flash.nvim'
 
 " # text objects
 Plug 'wellle/targets.vim' " text objects for pair, quote, separator, argument, tag
@@ -456,14 +456,14 @@ Plug 'lambdatoast/elm.vim', {'for': 'elm'}
 call plug#end() " Automatically executes `filetype plugin indent on` and `syntax enable`.
 
 " adds jump labels to regular search results
-lua require('flash').setup()
+" lua require('flash').setup()
 " insert/delete pairs of brackets/quotes
 " lua require('mini.pairs').setup()
 lua require('nvim-autopairs').setup {}
 
 " if hostname =~ 'MacBook'
 if !(hostname() =~ '^rpi') " smooth scrolling is too slow on RPis via SSH
-  lua require('neoscroll').setup()
+  " lua require('neoscroll').setup()
 endif
 
 " color theme can only be set after plugins are loaded
