@@ -63,6 +63,7 @@ agi broot || "broot not available (Chromebook Debian 11?)" # `br` to navigate bi
 # packages installed via snap:
 
 agi snapd # more/newer packages, https://snapcraft.io
+sudo snap set system refresh.retain=2 # https://askubuntu.com/questions/1036633/how-to-remove-disabled-unused-snap-packages-with-a-single-line-of-command
 # needed on Chrome OS: via https://cyldx.de/snap-anwendungen-im-linux-modus-von-chrome-os-nutzen-p/ https://medium.com/@eduard_faus/installing-snap-on-chrome-os-d9876bb369c1
 if [[ -d /mnt/chromeos ]]; then
   agi libsquashfuse0 squashfuse fuse
