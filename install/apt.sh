@@ -180,9 +180,10 @@ if [[ "$*" == *smart-home* ]]; then
 
     echo ">>> grafana"
     # https://grafana.com/docs/grafana/latest/installation/debian/
-    agi software-properties-common
-    wget -q -O - https://packages.grafana.com/gpg.key | sudo apt-key add -
-    echo "deb https://packages.grafana.com/oss/deb beta main" | sudo tee -a /etc/apt/sources.list.d/grafana.list
+    agi apt-transport-https software-properties-common
+    sudo mkdir -p /etc/apt/keyrings/
+    wget -q -O - https://apt.grafana.com/gpg.key | gpg --dearmor | sudo tee /etc/apt/keyrings/grafana.gpg > /dev/null
+    echo "deb [signed-by=/etc/apt/keyrings/grafana.gpg] https://apt.grafana.com stable main" | sudo tee -a /etc/apt/sources.list.d/grafana.list
     sudo apt-get update
     agi grafana
     sudo systemctl daemon-reload
