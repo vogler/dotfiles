@@ -91,6 +91,7 @@ brew install htop # improved top (interactive process viewer)
 # brew install gtop # 11.6MB, System monitoring dashboard for terminal (nodejs) - not interactive and ~10% CPU on RPi3
 brew install bottom # 3.2MB, `btm`, Yet another cross-platform graphical process/system monitor (rust) - interactive with mouse and shortcuts
 brew install procs # 3MB, modern replacement for `ps aux | grep ..` in Rust, fields for open ports, throughput, container name; ex: procs --tree nvim; procs --watch
+brew install pueue # 11.9MB, Rust, manage sequential/parallel long-running tasks, `pueued`, `pueue add ls; pueue add sleep 100; pueue; pueue log`
 # brew install exa # 1.4MB, Modern replacement for 'ls' - now unmaintained, use eza
 brew install eza # 1MB, maintained fork of exa; `eza --long --header --icons --git`
 brew install lsd # 1.6MB, `ls` clone with colors, file type icons, `lsd --tree`; looks nicer than exa, but no git status
