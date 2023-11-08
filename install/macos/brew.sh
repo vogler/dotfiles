@@ -228,6 +228,7 @@ brew install nakabonne/ali/ali # 6.9MB, Generate HTTP load and plot (TUI) the re
 brew install dog # 650KB, DNS client like dig but with colors, DNS-over-TLS, DNS-over-HTTPS, json; `dog example.net A AAAA NS MX TXT @1.1.1.1`
 brew install wtfis # 8.4MB, Passive hostname, domain, and IP lookup tool - need to put VT_API_KEY in ~/.env.wtfis, https://www.virustotal.com/gui/my-apikey
 brew install gping # 2.1MB, Ping, but with a graph
+brew install trurl # 74KB, CLI for URL parsing and manipulation, see examples: https://github.com/curl/trurl
 
 # goblint
 brew install gmp # needed to build deps
