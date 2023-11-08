@@ -231,6 +231,7 @@ brew install dog # 650KB, DNS client like dig but with colors, DNS-over-TLS, DNS
 brew install wtfis # 8.4MB, Passive hostname, domain, and IP lookup tool - need to put VT_API_KEY in ~/.env.wtfis, https://www.virustotal.com/gui/my-apikey
 brew install gping # 2.1MB, Ping, but with a graph
 brew install trurl # 74KB, CLI for URL parsing and manipulation, see examples: https://github.com/curl/trurl
+brew install scilla # 12.3MB, Go, DNS, subdomain, port, directory enumeration tool; `scilla dns -target google.de`; `scilla port -target rpi4`
 
 # goblint
 brew install gmp # needed to build deps
