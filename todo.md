@@ -1,1 +1,2 @@
 - https://osquery.io/ SQL powered operating system instrumentation, monitoring, and analytics.
+- https://github.com/amix/vimrc integrate some stuff in my .vimrc or just switch to lua-based nvim config right away?
