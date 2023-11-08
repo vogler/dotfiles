@@ -7,5 +7,7 @@
       "args": ["config", "exec", "--", "ocamllsp"],
       "filetypes": ["ocaml", "reason"]
     }
-  }
+  },
+  "eslint.experimental.useFlatConfig": true,
+  "eslint.autoFixOnSave": true,
 }
