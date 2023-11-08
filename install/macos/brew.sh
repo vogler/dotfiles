@@ -126,6 +126,7 @@ brew install choose-rust # 2.0MB, Human-friendly and fast alternative to cut and
 brew install hck # 2.2MB, Rust, drop-in replacement for cut, but supports regex delimiter and reordering columns
 brew install clog # 173KB, Colorized pattern-matching log tail utility, https://taskwarrior.org/docs/clog/, `echo 'foo bar' | clog -d -t -f <(echo 'default rule /foo/ --> bold red match')`
 brew install tailspin # 5.2MB, Rust, automatic log file highligher, supports numbers, dates, IP-addresses, UUIDs, URLs and more; pipe to `tailspin` or `tspin`
+brew install spacer # 3.3MB, Rust, insert spacers with datetime+duration when command output stops, default is 1s, `tail -f some.log | spacer --after 5` (only after 5s instead); `log stream --predicate 'process == "Google Chrome"' | spacer`; 'If you're the type of person that habitually presses enter a few times in your log tail to know where the last request ended and the new one begins, this tool is for you!' :)
 brew install navi # 2.7MB, Interactive CLI cheatsheet tool; `navi` to start fuzzy finder; `eval "$(navi widget zsh)"` to launch with Ctrl+G to find/replace in-place
 
 # programming languages
