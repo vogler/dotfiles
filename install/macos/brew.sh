@@ -151,6 +151,7 @@ brew install hexyl # 781KB, Command-line hex viewer
 brew install hyperfine # 1.5MB, Command-line benchmarking tool, `hyperfine 'sleep 0.3'`, `hyperfine --warmup 3 --parameter-scan delay 0.3 0.7 -D 0.2 'sleep {delay}'`
 brew install typos-cli # 13.6MB, Source code spell checker (en) for many languages (identifiers, comments, filenames), low false positive rate; `typos` to see, `typos -w` to fix
 brew install just # 2.6MB, replacement for make, runs commands from `justfile`, `just -l` to list
+brew install meta-package-manager # ~58MB, Wrapper around all package managers with a unifying CLI; `mpm outdated`, `mpm upgrade`, `mpm --all-managers managers`; has apt, brew, cargo, choco, composer, dnf, emerge, flatpak, gem, mas, npm, opkg, pacaur, pacman, paru, pip, pipx, scoop, snap, steamcmd, vscode, yarn, yay, yum, zypper
 
 # containers
 brew install --cask docker # 1.5 GB, hate it, only gave in for avoiding captcha with headless playwright
