@@ -199,6 +199,7 @@ brew install croc # 6.1MB, peer-to-peer file transfer
 brew install teamviewer # 227 MB, remote desktop
 brew install parsec # 6.5MB, fast remote desktop that works well enough for game streaming
 brew install caddy # 42MB, Go web server with automatic HTTPS (Let's Encrypt), HTTP/3, reverse proxy, load balancing, caching, nicer to use but slower than nginx/haproxy/traefik, https://caddyserver.com - `caddy file-server --domain example.com` `caddy reverse-proxy --from example.com --to localhost:9000`
+brew install wtfis # 8.4MB, Passive hostname, domain, and IP lookup tool - need to put VT_API_KEY in ~/.env.wtfis, https://www.virustotal.com/gui/my-apikey
 
 # goblint
 brew install gmp # needed to build deps
