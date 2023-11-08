@@ -84,6 +84,7 @@ brew install findutils # GNU find, xargs, and locate - macOS find does not have 
 brew install gnu-time # gtime has more features than the builtin time command
 brew install grep # newer than macOS: 3.6 vs 2.5.1-FreeBSD
 brew install gnu-sed # newer than macOS: 4.8 vs 2017 BSD?
+brew install sad # 3.7MB, modern sed with preview via fzf and delta: `fd .sh | sad bash zsh` (TAB for multi-select), `... | delta`
 brew install less # newer than macOS: 590 vs 487
 brew install rsync # newer than macOS: 3.2.3 vs 2.6.9
 brew install htop # improved top (interactive process viewer)
