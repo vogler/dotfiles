@@ -123,6 +123,7 @@ brew install yazi # 7.8MB, Rust, terminal file manager: like ranger, but fast, s
 brew install broot # 6.2MB, `br` to navigate big file trees, alt+enter to cd, `br -s` to show sizes
 brew install dos2unix # Convert text between DOS, UNIX, and Mac formats; for git's fatal: CRLF would be replaced by LF
 brew install choose-rust # 2.0MB, Human-friendly and fast alternative to cut and (sometimes) awk, `choose -f ':' 0 3` prints the 0th and 3rd items sep by :, `choose -3:-1` prints the last 3 items sep by space
+brew install hck # 2.2MB, Rust, drop-in replacement for cut, but supports regex delimiter and reordering columns
 brew install clog # 173KB, Colorized pattern-matching log tail utility, https://taskwarrior.org/docs/clog/, `echo 'foo bar' | clog -d -t -f <(echo 'default rule /foo/ --> bold red match')`
 brew install navi # 2.7MB, Interactive CLI cheatsheet tool; `navi` to start fuzzy finder; `eval "$(navi widget zsh)"` to launch with Ctrl+G to find/replace in-place
 
