@@ -87,7 +87,12 @@ brew install gnu-sed # newer than macOS: 4.8 vs 2017 BSD?
 brew install less # newer than macOS: 590 vs 487
 brew install rsync # newer than macOS: 3.2.3 vs 2.6.9
 brew install htop # improved top (interactive process viewer)
-brew install exa # Modern replacement for 'ls'
+# brew install gtop # 11.6MB, System monitoring dashboard for terminal (nodejs) - not interactive and ~10% CPU on RPi3
+brew install bottom # 3.2MB, `btm`, Yet another cross-platform graphical process/system monitor (rust) - interactive with mouse and shortcuts
+brew install procs # 3MB, modern replacement for `ps aux | grep ..` in Rust, fields for open ports, throughput, container name; ex: procs --tree nvim; procs --watch
+# brew install exa # 1.4MB, Modern replacement for 'ls' - now unmaintained, use eza
+brew install eza # 1MB, maintained fork of exa; `eza --long --header --icons --git`
+brew install lsd # 1.6MB, `ls` clone with colors, file type icons, `lsd --tree`; looks nicer than exa, but no git status
 brew install tree # `exa --tree --level=2` has colors and can show meta-data with --long
 brew install tldr # `tldr tar` shorter than `curl cheat.sh/tar` and works offline
 brew install bat # cat with syntax highlighting and Git integration
@@ -116,6 +121,9 @@ brew install ranger # terminal file manager: slower, but nicer defaults with mul
 brew install yazi # 7.8MB, Rust, terminal file manager: like ranger, but fast, scrollable preview for images, videos, pdfs etc.
 brew install broot # 6.2MB, `br` to navigate big file trees, alt+enter to cd, `br -s` to show sizes
 brew install dos2unix # Convert text between DOS, UNIX, and Mac formats; for git's fatal: CRLF would be replaced by LF
+brew install choose-rust # 2.0MB, Human-friendly and fast alternative to cut and (sometimes) awk, `choose -f ':' 0 3` prints the 0th and 3rd items sep by :, `choose -3:-1` prints the last 3 items sep by space
+brew install clog # 173KB, Colorized pattern-matching log tail utility, https://taskwarrior.org/docs/clog/, `echo 'foo bar' | clog -d -t -f <(echo 'default rule /foo/ --> bold red match')`
+brew install navi # 2.7MB, Interactive CLI cheatsheet tool; `navi` to start fuzzy finder; `eval "$(navi widget zsh)"` to launch with Ctrl+G to find/replace in-place
 
 # programming languages
 # macOS ships ruby 2.6.3, python 2.7.16; python3 installed as dep; typescript via npm
@@ -137,6 +145,11 @@ brew install autoconf automake # autotools
 brew install heroku/brew/heroku
 # mas install 1388020431 # DevCleaner for Xcode: cleans cache files (none if not actually using Xcode)
 brew install devutils # 48MB, demo, GUI with converters for unix time, base64, URLs, regex, JSON, CSV, Markdown etc.
+brew install grex # 2.4MB, Command-line tool for generating regular expressions, `grex -c bar baz`
+brew install hexyl # 781KB, Command-line hex viewer
+brew install hyperfine # 1.5MB, Command-line benchmarking tool, `hyperfine 'sleep 0.3'`, `hyperfine --warmup 3 --parameter-scan delay 0.3 0.7 -D 0.2 'sleep {delay}'`
+brew install typos-cli # 13.6MB, Source code spell checker (en) for many languages (identifiers, comments, filenames), low false positive rate; `typos` to see, `typos -w` to fix
+brew install just # 2.6MB, replacement for make, runs commands from `justfile`, `just -l` to list
 
 # containers
 brew install --cask docker # 1.5 GB, hate it, only gave in for avoiding captcha with headless playwright
@@ -149,19 +162,25 @@ brew install act # 22MB, Run your GitHub Actions locally
 # git
 # brew install diff-so-fancy # within-line highlights
 brew install git-delta # as diff-so-fancy but with language syntax highlighting, side-by-side, etc.
-brew install tig # Text interface for Git repositories
+brew install tig # 1MB, mostly an interactive `git log --patch`
+brew install gitui # 6.8MB, Rust, fastest TUI for everything, shows hot-keys - Status/staging with hunks and lines, Log, Stashing, Stashes, push, fetch, branches
+brew install lazygit # 22MB, Go, alternative to gitui, maybe slower, but nicer workflow/keybindings, esp. for navigating/staging hunks
 brew install hub
 brew install gh # https://github.com/cli/cli/blob/trunk/docs/gh-vs-hub.md
 brew install --cask git-credential-manager # 106MB, cross-platform secure storage with browser login and MFA - no need to manually create tokens at https://github.com/settings/tokens; `sudo git credential-manager configure --system; git credential-manager github login`
 # brew install --cask sourcetree smartgit gitkraken gitup # tried but don't use
 brew install gitwatch # use GitDoc in vscode instead? https://marketplace.visualstudio.com/items?itemName=vsls-contrib.gitdoc
 # brew install git-recent # recent branches; use `git branchr` (alias in .gitconfig) which is based on `git branch` and accepts its options like -a to show remote branches
+brew install onefetch # 12.8MB, Rust, like neofetch but stats for git repos, shows name, description, HEAD, version, languages, deps, authors, changes, contributors, commits, LOC, size, license
 brew install git-quick-stats # 72KB, git statistics: commits per author, year, month, weekday, hour...
 
 # data processing
 brew install jq # JSON CLI processor
 brew install xsv # CSV CLI: cat count flatten frequency join search select slice sort split stats table
 brew install jid # Json incremental digger
+brew install jless # 2.6MB, JSON viewer for reading, exploring, and searching; shortcuts in :help
+brew install fx # 11MB, JSON viewer, collapsed by default, shortcuts on ?
+brew install dasel # 18.6MB, Select/modify/convert JSON, TOML, YAML, XML and CSV; 3x faster than jq? `echo '{"name": "Tom"}' | dasel put string '.foo' 'bar' -r json -w yaml`
 brew install htmlq # 2.5MB, jq for HTML, pretty basic, no pseudo-classes?, `htmlq --attribute href a`, `htmlq --text .main`
 brew install pup # 3.7MB, jq for HTML, many pseudo-classes, `pup 'a attr{href}'`, text{}, json{}, :contains(text), `pup ':parent-of([action="edit"])'`
 
@@ -175,12 +194,15 @@ brew install tableplus # 183MB, Native GUI tool for databases (PostgreSQL, SQLit
 brew install wget # alt for curl
 brew install wakeonlan
 brew install httpie # 17MB, https://httpie.io User-friendly cURL replacement, ex: http POST pie.dev/post hello=world
+brew install xh # 8MB, faster httpie in Rust, but only subset of commands, ex: xh httpbin.org/post name=ahmed age:=24; xh :3000/users -> GET http://localhost:3000/users
+# https://github.com/asciimoo/wuzz interactive CLI for HTTP request/response; not available in brew, binary only for amd64
 # API clients with GUI:
   # online: https://hoppscotch.io, https://restfox.dev, https://httpie.io/app (no local network)
   # brew install --cask httpie # 372MB, https://httpie.io GUI, only requests and collections
   # brew install postman # 467MB, most features with account, Collections to save requests, create APIs, Mock servers, Monitors, Flows
   # brew install insomnia # 507MB, simpler UI than Postman: Design (OpenAPI, Swagger), Debug (requests), Test (JS expect on requests)
 brew install http-toolkit # 327MB, HTTP(S) debugging proxy, analyzer, and client
+brew install hettysoft/tap/hetty # 20MB, MITM HTTP(S) proxy with web-ui for logs, search, intercept, edit, replay; `hetty --chrome` to Launch Chrome with proxy settings applied and certificate errors ignored.
 brew install mosquitto # MQTT pub/sub
 # brew install youtube-dl # download videos from many websites -> yt only ~70KB/s -> replaced with yt-dlp which dl from yt with full speed
 brew install yt-dlp/taps/yt-dlp # youtube-dl fork with additional features and fixes: full dl speed, SponsorBlock, yt-dlp --cookies-from-browser chrome --max-downloads 10 --sponsorblock-remove default :ytwatchlater
@@ -199,7 +221,10 @@ brew install croc # 6.1MB, peer-to-peer file transfer
 brew install teamviewer # 227 MB, remote desktop
 brew install parsec # 6.5MB, fast remote desktop that works well enough for game streaming
 brew install caddy # 42MB, Go web server with automatic HTTPS (Let's Encrypt), HTTP/3, reverse proxy, load balancing, caching, nicer to use but slower than nginx/haproxy/traefik, https://caddyserver.com - `caddy file-server --domain example.com` `caddy reverse-proxy --from example.com --to localhost:9000`
+brew install nakabonne/ali/ali # 6.9MB, Generate HTTP load and plot (TUI) the results in real-time
+brew install dog # 650KB, DNS client like dig but with colors, DNS-over-TLS, DNS-over-HTTPS, json; `dog example.net A AAAA NS MX TXT @1.1.1.1`
 brew install wtfis # 8.4MB, Passive hostname, domain, and IP lookup tool - need to put VT_API_KEY in ~/.env.wtfis, https://www.virustotal.com/gui/my-apikey
+brew install gping # 2.1MB, Ping, but with a graph
 
 # goblint
 brew install gmp # needed to build deps
@@ -253,6 +278,7 @@ brew install kicad # 6.5GB, schema and PCB editor for Gerber files
 # brew install --cask homebrew/cask-drivers/qmk-toolbox # 1.8MB, GUI for flashing QMK keyboard firmware, supports most boards/bootloaders
 # brew install qmk/qmk/qmk # ~900MB due to arm-/avr-gcc, CLI to build & flash QMK keyboard firmware
 
+# many of the rust and go system tools were found via https://github.com/innobead/huber/blob/main/doc/packages.md
 # for more see install/macos/old-MBP/Brewfile
 # Brewfile in https://github.com/lunaryorn/dotfiles/commit/2d8531881c2bc61f091d83bc2cf02ad6ebb680c6
 # https://sourabhbajaj.com/mac-setup/Apps/

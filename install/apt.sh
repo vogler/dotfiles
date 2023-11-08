@@ -21,6 +21,8 @@ agi zsh # better shell than bash
 agi tmux # terminal multiplexer
 agi neovim # editor - Ubuntu 20.04 only ships 0.4.3, but coc extension requires >=0.5.0, however no more startup errors with coc and 0.4.3; installing newer version via snap below
 agi tig # Text interface for Git repositories
+agi exa # Modern replacement for 'ls'; `exa --long --header --icons --git`; now unmaintained, use eza
+# agi rust-lsd # only in unstable so far, `ls` clone with colors, file type icons, `lsd --tree`; looks nicer than exa, but no git status
 agi tree # `exa --tree --level=2` has colors and can show meta-data with --long
 agi htop # nicer ncurses-based process viewer similar to top
 agi iotop # shows I/O usage
@@ -41,6 +43,7 @@ agi inotify-tools
 # agi clang
 agi jq # JSON CLI processor
 agi pup # jq for HTML, many pseudo-classes, `pup 'a attr{href}'`, text{}, json{}, :contains(text), `pup ':parent-of([action="edit"])'`
+agi install jless # JSON viewer for reading, exploring, and searching; shortcuts in :help
 agi moreutils # use ts (timestamp standard input) in systemd services for mqtt subs
 agi apt-file # which package provides a file? e.g. apt-file find libportaudio.so
 agi nq # lightweight job queue
@@ -58,6 +61,10 @@ agi httpie # https://httpie.io User-friendly cURL replacement, ex: http POST pie
 agi nnn # terminal file manager: small and fast, but bare bones without plugins/config; use `nnn -e` to edit text in same terminal instead of via `open`
 agi ranger # terminal file manager: slower, but nicer defaults with multi-column layout and automatic preview of many file types
 agi broot || "broot not available (Chromebook Debian 11?)" # `br` to navigate big file trees, alt+enter to cd, `br -s` to show sizes
+agi clog # Colorized pattern-matching log tail utility, https://taskwarrior.org/docs/clog/, `echo 'foo bar' | clog -d -t -f <(echo 'default rule /foo/ --> bold red match')`
+agi hexyl # Command-line hex viewer
+agi dog # DNS client like dig but with colors, DNS-over-TLS, DNS-over-HTTPS, json; `dog example.net A AAAA NS MX TXT @1.1.1.1`
+agi gping # Ping, but with a graph
 
 
 # packages installed via snap:
@@ -75,6 +82,7 @@ if [[ -d /mnt/chromeos ]]; then
 
 fi
 sudo snap install nvim --classic # Virtuozzo/OpenVZ: https://community.letsencrypt.org/t/system-does-not-fully-support-snapd-cannot-mount-squashfs-image-using-squashfs/132689/2
+sudo snap install procs # modern replacement for `ps aux | grep ..` in Rust, fields for open ports, throughput, container name; ex: procs --tree nvim; procs --watch
 
 
 # packages installed via apt, additional sources:
@@ -125,6 +133,14 @@ curl -s https://api.github.com/repos/dandavison/delta/releases/latest | jq ".ass
 # https://github.com/ClementTsang/bottom - Yet another cross-platform graphical process/system monitor (rust) - interactive with mouse and shortcuts
 curl -s https://api.github.com/repos/ClementTsang/bottom/releases/latest | jq ".assets[] | select(.name|test(\"$arch\")) | .browser_download_url" -r | wget -q -O /tmp/bottom.deb -i - && sudo dpkg -i /tmp/bottom.deb
 
+# https://github.com/jesseduffield/lazygit#ubuntu
+arch_alt=$([[ "$arch" == "armhf" ]] && echo "armv6" || echo "x86_64")
+LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
+curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_${arch_alt}.tar.gz"
+tar xf lazygit.tar.gz lazygit
+hash lazygit && lazygit --version
+sudo install lazygit /usr/local/bin
+rm -f lazygit.tar.gz lazygit
 
 # special sets of packages
 if [[ "$*" == *latex* ]]; then
