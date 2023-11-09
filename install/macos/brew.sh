@@ -233,6 +233,8 @@ brew install wtfis # 8.4MB, Passive hostname, domain, and IP lookup tool - need 
 brew install gping # 2.1MB, Ping, but with a graph
 brew install trurl # 74KB, CLI for URL parsing and manipulation, see examples: https://github.com/curl/trurl
 brew install scilla # 12.3MB, Go, DNS, subdomain, port, directory enumeration tool; `scilla dns -target google.de`; `scilla port -target rpi4`
+brew install subfinder # 27.9MB, Go, Subdomain discovery tool -> add Shodan API key to ~/.config/subfinder/provider-config.yaml
+brew install httpx # 39.2MB, Go, HTTP toolkit for probing title, status code, cert, tech based on wappalyzer; `echo golem.de | subfinder -silent | httpx -silent -status-code -location -title -server -ip -response-time -tech-detect`
 
 # goblint
 brew install gmp # needed to build deps
