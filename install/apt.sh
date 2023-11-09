@@ -12,7 +12,7 @@ agi() {
 sudo apt -qq update && sudo apt -y -qq upgrade
 # apt list --installed | sed -e 's/\(.*\)\/.*/agi \1/' # TODO versions? do I really want all packages?
 
-# sections below: apt default sources, snap, apt additional sources, binary/.deb
+# sections below: apt default sources, cargo, snap, apt additional sources, binary/.deb
 
 # packages installed via apt, default sources:
 
@@ -65,6 +65,36 @@ agi clog # Colorized pattern-matching log tail utility, https://taskwarrior.org/
 agi hexyl # Command-line hex viewer
 agi dog # DNS client like dig but with colors, DNS-over-TLS, DNS-over-HTTPS, json; `dog example.net A AAAA NS MX TXT @1.1.1.1`
 agi gping # Ping, but with a graph
+
+
+# packages installed via cargo:
+
+if [[ "$*" == *cargo* ]]; then # a lot failed or was too slow on rpi3
+  # agi cargo
+  # first install will update crates.io index which took 20 min on rpi4 and 29 min on rpi3...
+  # failed on rpi3 (cargo 1.46.0 via Debian 11): error: failed to parse manifest at `.../spacer.../Cargo.toml`; Caused by: this version of Cargo is older than the `2021` edition, and only supports `2015` and `2018` editions.
+  # failed on rpi4 (cargo 1.65.0 via Debian 12): package `eza v0.15.2` cannot be built because it requires rustc 1.70.0 or newer, while the currently active rustc version is 1.63.0
+  # curl https://sh.rustup.rs -sSf | sh
+  # rpi4: 'error: command failed: 'cargo': No such file or directory (os error 2)'
+  # -> need to change default host triple from the detected aarch64-unknown-linux-gnu to arm-unknown-linux-gnueabihf due to the 64bit kernel but 32bit userland, see https://github.com/rust-lang/rustup/issues/3342
+  [[ $(hostname) == "rpi4" ]] && (curl https://sh.rustup.rs -sSf | sh -s -- -y --default-host arm-unknown-linux-gnueabihf) # 1min
+  [[ $(hostname) == "rpi3" ]] && (curl https://sh.rustup.rs -sSf | sh -s -- -y) # 2m51s, the detected armv7-unknown-linux-gnueabihf is ok (still 32 bit kernel)
+  # -> cargo 1.73.0
+
+  # compilation on rpi3 failed for eza; build times are for rpi4
+
+  cargo install pueue # 17m, manage sequential/parallel long-running tasks, `pueued`, `pueue add ls; pueue add sleep 100; pueue; pueue log`
+  cargo install eza # 6m, maintained fork of exa; `eza --long --header --icons --git`
+  cargo install bottom # 17m, `btm`, Yet another cross-platform graphical process/system monitor (rust) - interactive with mouse and shortcuts
+  cargo install diskus # 3m, minimal, 3-10x faster alternative to `du -sh`
+  cargo install spacer # 8m, insert spacers with datetime+duration when command output stops, default is 1s, `tail -f some.log | spacer --after 5` (only after 5s instead); `log stream --predicate 'process == "Google Chrome"' | spacer`; 'If you're the type of person that habitually presses enter a few times in your log tail to know where the last request ended and the new one begins, this tool is for you!' :)
+  cargo install tailspin # 11m, automatic log file highligher, supports numbers, dates, IP-addresses, UUIDs, URLs and more; pipe to `tspin`
+  cargo install onefetch # 33m, like neofetch but stats for git repos, shows name, description, HEAD, version, languages, deps, authors, changes, contributors, commits, LOC, size, license
+  cargo install xh # 18m, faster httpie in Rust, but only subset of commands, ex: xh httpbin.org/post name=ahmed age:=24; xh :3000/users -> GET http://localhost:3000/users
+
+  # failed to compile on rpi4:
+  # cargo install yazi-fm # terminal file manager: like ranger, but fast, scrollable preview for images, videos, pdfs etc. # cc: error: unrecognized command-line option ‘-m32’; did you mean ‘-mbe32’?
+fi
 
 
 # packages installed via snap:
