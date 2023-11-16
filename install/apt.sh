@@ -81,7 +81,7 @@ if [[ "$*" == *cargo* ]]; then # a lot failed or was too slow on rpi3
   [[ $(hostname) == "rpi3" ]] && (curl https://sh.rustup.rs -sSf | sh -s -- -y) # 2m51s, the detected armv7-unknown-linux-gnueabihf is ok (still 32 bit kernel)
   # -> cargo 1.73.0
 
-  # compilation on rpi3 failed for eza; build times are for rpi4
+  # compilation on rpi3 failed for all but diskus; build times are for rpi4
 
   cargo install pueue # 17m, manage sequential/parallel long-running tasks, `pueued`, `pueue add ls; pueue add sleep 100; pueue; pueue log`
   cargo install eza # 6m, maintained fork of exa; `eza --long --header --icons --git`
