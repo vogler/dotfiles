@@ -1,0 +1,18 @@
+# https://gothenburgbitfactory.org/clog/docs/example_syslog/
+
+default rule /warn|debug/   --> yellow line
+default rule /error|severe/ --> red line
+default rule "critical"     --> bold red line
+default rule "critical"     --> blank
+default rule "ignore"       --> suppress
+
+# clog rule actions: line (color) match (color) blank (lines around) suppress (remove line)
+# use non-default sections: `clog z2m`
+
+# z2m: debug < info < warn < error
+z2m rule / [0-9][0-9]:[0-9][0-9]:[0-9][0-9]/ --> blue match
+z2m rule "error "     --> bold red match
+z2m rule "warn "     --> yellow match
+z2m rule "info "     --> green match
+z2m rule /"[^:]*"/     --> rgb311 match # json keys in faded red
+# z2m rule "failed with error" --> blank
