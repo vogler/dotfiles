@@ -119,9 +119,11 @@ brew install figlet # Banner-like program prints strings as ASCII art
 brew install gum # 25MB, fancy input for shell scripts: choose a b, input, write, confirm
 brew install fzf # 2.7MB, Command-line fuzzy finder written in Go
 brew install neofetch # system information with OS + logo, host, kernel, uptime, packages, shell, resolution, DE, WM, terminal, CPU, memory
-brew install nnn # terminal file manager: small and fast, but bare bones without plugins/config; use `nnn -e` to edit text in same terminal instead of via `open`
-brew install ranger # terminal file manager: slower, but nicer defaults with multi-column layout and automatic preview of many file types
-brew install yazi # 7.8MB, Rust, terminal file manager: like ranger, but fast, scrollable preview for images, videos, pdfs etc.
+# terminal file managers with vim keybindings, default single column
+brew install fff # 50KB, Bash, simple file manager, f in .zshrc changes dir on exit (q)
+brew install nnn # 280KB, C, file manager, small and fast, but bare bones without plugins/config, single column but tabs; use `nnn -e` to edit text in same terminal instead of via `open`
+brew install ranger # 2.8MB, Python, file manager, slower, but nicer defaults with multi-column layout and automatic preview of many file types
+brew install yazi # 7.8MB, Rust, file manager, like ranger, but faster, scrollable preview for images, videos, pdfs etc.
 brew install zoxide # 1MB, Rust, smarter cd command, inspired by z and autojump
 brew install broot # 6.2MB, `br` to navigate big file trees, alt+enter to cd, `br -s` to show sizes
 brew install dos2unix # Convert text between DOS, UNIX, and Mac formats; for git's fatal: CRLF would be replaced by LF
