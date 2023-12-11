@@ -282,6 +282,7 @@ brew install --cask handbrake # 113MB, video transcoder; also available as formu
 brew install keycastr # 7.2MB, show keystrokes on screen
 brew install calibre # 366MB
 brew install macwhisper # 17MB + 500MB for small model; speech recognition with openai/whisper
+brew install switchaudio-osx # 115KB, C, switch audio input/output devices; `SwitchAudioSource -a` lists all, `SwitchAudioSource -s 'MacBook Air Speakers'` to change output
 
 # CAD, 3D printing, electronics, IOT
 brew install autodesk-fusion360 # 3.6 GB in ~/Library/Application\ Support/Autodesk/
