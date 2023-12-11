@@ -110,6 +110,7 @@ brew install clean-me # 2.5MB, GUI analyze/clean caches, logs, temp files, trash
 # brew install sensei # 72MB, 14d trial, GUI, system overview, menu bar monitor, optimize, clean, SSD stats/benchmark, battery health
 brew install p7zip # 7z with support for Brotli, Fast LZMA2, LZ4, LZ5, Lizard and Zstd
 brew install the-unarchiver # unpack .rar
+brew install unar # 15MB, The Unarchiver CLI: `unar`, `lsar`
 brew install mosh # alternative for ssh, local echo, roaming, but UDP dyn. port alloc. 60000-61000
 brew install watch # Executes a program periodically, showing output fullscreen
 brew install watchexec # 5.7MB, Execute commands when watched files change. `watchexec --clear --notify -- ls -lah`, `watchexec -e js,css --restart -- npm start`
@@ -121,6 +122,7 @@ brew install neofetch # system information with OS + logo, host, kernel, uptime,
 brew install nnn # terminal file manager: small and fast, but bare bones without plugins/config; use `nnn -e` to edit text in same terminal instead of via `open`
 brew install ranger # terminal file manager: slower, but nicer defaults with multi-column layout and automatic preview of many file types
 brew install yazi # 7.8MB, Rust, terminal file manager: like ranger, but fast, scrollable preview for images, videos, pdfs etc.
+brew install zoxide # 1MB, Rust, smarter cd command, inspired by z and autojump
 brew install broot # 6.2MB, `br` to navigate big file trees, alt+enter to cd, `br -s` to show sizes
 brew install dos2unix # Convert text between DOS, UNIX, and Mac formats; for git's fatal: CRLF would be replaced by LF
 brew install choose-rust # 2.0MB, Human-friendly and fast alternative to cut and (sometimes) awk, `choose -f ':' 0 3` prints the 0th and 3rd items sep by :, `choose -3:-1` prints the last 3 items sep by space
@@ -267,6 +269,7 @@ brew install clockify # 95MB, better (& more free features) than Toggl
 # image/video/books
 # brew install imagemagick
 brew install ffmpeg # ~1GB due to many codecs as deps
+brew install ffmpegthumbnailer # 400KB, lightweight video thumbnailer using ffmpeg, `ffmpegthumbnailer -i *.mp4 -o foo.jpg -s0 -t20`
 brew install --cask handbrake # 113MB, video transcoder; also available as formula, but: A full installation of Xcode.app 10.3 is required to compile
 # brew install audacity # 77MB, cross-platform audio editor
 # brew install kap # Intel, 353MB; screen recorder built with web technology
