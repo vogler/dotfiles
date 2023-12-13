@@ -526,9 +526,16 @@ map! <C-Z> <C-O>:stop<C-M>
 " http://amix.dk/vim/vimrc.html
 let mapleader = ","
 let g:mapleader = ","
+
 " Fast saving
 nmap <leader>s :w!<cr>
 nmap <leader>q :q!<cr>
+" we want a keybinding to save that works in any mode, so that we can use it for bind-key in tmux
+" need some mapping I don't use in insert & normal mode: sometimes use C-W in insert mode to delete word backwards; C-X to decrease numbers in normal mode.
+imap <C-S> <esc>:w!<cr>a
+" this overwrites coc-range-select mapped above
+map <C-S> :w!<cr>
+
 nnoremap <silent><nowait> <space>q :q!<cr>
 nmap <leader>x :x!<cr> " same as ZZ (only write if changes have been made)
 nmap <leader>c :Git commit -v --quiet<cr> " just commit what is already staged
@@ -538,9 +545,6 @@ nmap <leader>y :%y+<cr> " yank whole buffer
 nmap <leader>p ggVGp " replace whole buffer by paste
 :nnoremap <F5> :put =strftime('%F %T')<cr>A 
 :inoremap <F5> <esc>:put =strftime('%F %T')<cr>A 
-
-" nmap <C-X> :w!<cr>
-" imap <C-X> <esc>:w!<cr>i
 
 nmap <leader>a :Ack <cword><cr>
 nmap <leader>A :AckWindow <cword><cr>
