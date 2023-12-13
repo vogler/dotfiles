@@ -537,12 +537,17 @@ imap <C-S> <esc>:w!<cr>a
 map <C-S> :w!<cr>
 
 nnoremap <silent><nowait> <space>q :q!<cr>
-nmap <leader>x :x!<cr> " same as ZZ (only write if changes have been made)
-nmap <leader>c :Git commit -v --quiet<cr> " just commit what is already staged
-nmap <leader>C :Gwrite<cr>:Git commit -v --quiet<cr> " stage file and commit
+" same as ZZ (only write if changes have been made)
+nmap <leader>x :x!<cr>
+" just commit what is already staged
+nmap <leader>c :Git commit -v --quiet<cr>
+" stage file and commit
+nmap <leader>C :Gwrite<cr>:Git commit -v --quiet<cr>
 nmap <leader>P :Git push<cr><cr>
-nmap <leader>y :%y+<cr> " yank whole buffer
-nmap <leader>p ggVGp " replace whole buffer by paste
+" yank whole buffer
+nmap <leader>y :%y+<cr>
+" replace whole buffer by paste
+nmap <leader>p ggVGp
 :nnoremap <F5> :put =strftime('%F %T')<cr>A 
 :inoremap <F5> <esc>:put =strftime('%F %T')<cr>A 
 
