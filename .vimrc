@@ -543,6 +543,8 @@ nmap <leader>x :x!<cr>
 nmap <leader>c :Git commit -v --quiet<cr>
 " stage file and commit
 nmap <leader>C :Gwrite<cr>:Git commit -v --quiet<cr>
+" automatically go into insert mode for commit messages; FugitiveEditor didn't work, but gitcommit is more general anyway
+au FileType gitcommit startinsert!
 nmap <leader>P :Git push<cr><cr>
 " yank whole buffer
 nmap <leader>y :%y+<cr>
