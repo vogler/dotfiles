@@ -177,7 +177,7 @@
   "workbench.editor.highlightModifiedTabs": true,
   "editor.renderWhitespace": "trailing",
   "editor.renderLineHighlight": "gutter",
-  "editor.occurrencesHighlight": true,
+  "editor.occurrencesHighlight": "singleFile",
   // "auto-build.defaultEnv.name": "mega2560", // Marlin env for MKS Gen L in Artillery Genius
   "editor.guides.bracketPairs": true,
   "editor.bracketPairColorization.enabled": true,
@@ -218,5 +218,6 @@
   "typescript.suggest.completeFunctionCalls": true,
   "javascript.suggest.completeFunctionCalls": true,
   "editor.snippetSuggestions": "bottom",
-  "emmet.showSuggestionsAsSnippets": true
+  "emmet.showSuggestionsAsSnippets": true,
+  "workbench.editor.tabActionCloseVisibility": false
 }
