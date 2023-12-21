@@ -556,6 +556,11 @@ nmap <leader>p ggVGp
 nmap <leader>a :Ack <cword><cr>
 nmap <leader>A :AckWindow <cword><cr>
 
+" delete without changing register contents (_ = black hole)
+nmap <leader>d "_D
+" like <leader>dp, but replaced text in register - often use Y to yank until EOL, but then the dual for pasting is an awkward v$hp
+nmap <leader>v v$hp
+
 " toggle comment with C-/
 "nmap  <leader>ci
 "imap  <esc><leader>ci
