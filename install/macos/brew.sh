@@ -26,6 +26,8 @@ brew install glance # TODO discontinued; need to open Glance.app first; replaces
 xattr -d -r com.apple.quarantine ~/Library/QuickLook # remove plugins from quarantine
 # brew install shortery # 6.9MB, triggers for Shortcuts, tried Sleep/Wake Up to log to file, but did not work
 # brew install sound-control # 23MB, 14d trial, allows to lower volume of speakers connected to display via HDMI/DisplayPort (macOS can't, so volume would need to be changed on speakers (no problem on Windows)) - sometimes made videos hang on sound until clicked on menu icon
+brew install MonitorControl # 42MB, Swift, simple app to control external monitor brightness & volume, also with keyboard - brightness works great, but volume via HDMI doesn't work on M1: https://github.com/MonitorControl/MonitorControl/issues/323#issuecomment-919882176 - could try DisplayPort
+brew install betterdisplay # 22MB, 14d trial, display management with many more options, but volume also doesn't work
 brew install karabiner-elements # 29MB, modify keyboard/mouse input, mostly use capslock mappings from https://github.com/Vonng/Capslock
 
 # Desktop tools
