@@ -168,7 +168,8 @@ clean /Library/Logs/ # drwxr-xr-x root wheel
 clean ~/Library/Logs/
 clean ~/Library/Containers/*/Data/Library/Logs
 echo "> Caches"
-clean /Library/Caches # 1777/drwxrwxrwt root admin
+# clean /Library/Caches # 1777/drwxrwxrwt root admin; DO NOT DELETE! Deleted com.apple.aned and then had to skip it every time on 'Empty Trash' until I booted into recovery mode to `rm -f` it (no way to delete/move it otherwise).
+# 390MB /Library/Caches/com.apple.iconservices.store; rest is <1MB or no access
 clean ~/Library/Caches
 clean ~/Library/Containers/*/Data/Library/Caches
 echo "> Caches (Application-specific)" # TODO check that apps are not running?
