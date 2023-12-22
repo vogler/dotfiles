@@ -735,7 +735,7 @@ let g:did_menu_trans = 1
 " nnoremap <leader>m :silent make\|redraw!\|cc<CR>
 " via vim-dispatch:
 autocmd FileType java let b:dispatch = 'javac %'
-nnoremap <leader>d :w<cr>:Dispatch!<cr>
+nnoremap <leader>m :w<cr>:Dispatch!<cr>
 
 " this needs to be at the end since it's (re)set when compatible is (re)set
 autocmd BufNewFile,BufRead * setlocal formatoptions-=o " disable comment continuation for o/O (use enter)
