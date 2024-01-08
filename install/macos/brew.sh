@@ -291,6 +291,9 @@ brew install switchaudio-osx # 115KB, C, switch audio input/output devices; `Swi
 # no simple midi player on brew?!
 #   https://github.com/benwiggy/APPlayMIDI offers a quick look extension (but w/o seek), only play/pause
 #   https://github.com/SamusAranX/MinimalMIDIPlayer no quick look extension, but more features (change speed, soundfont, good keybindings)
+  pipx run lastversion --assets download SamusAranX/MinimalMIDIPlayer
+  unzip -d /Applications MinimalMIDIPlayer*.zip
+  rm -f MinimalMIDIPlayer*.zip
 brew install aria-maestosa # 11.8MB, midi sequencer/editor with wxWidgets UI
 
 # CAD, 3D printing, electronics, IOT
