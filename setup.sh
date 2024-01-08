@@ -126,6 +126,7 @@ mkdir -p "$config/ptpython" # not .config on macOS...
 # ln -sf {`pwd`,~}/.config/ptpython/config.py
 ln -sf `pwd`/.config/ptpython/config.py "$config/ptpython"
 # pip install pipdeptree # tree of deps: pipdeptree -p apprise; reverse: pipdeptree -r -p requests
+pipx install lastversion # 11MB, find/download latest version of some software on GitHub, GitLab, BitBucket, PyPi, SourceForge, Wikipedia... better `export GITHUB_API_TOKEN=...` to avoid API rate limit
 
 # TODO this needs to be rethought
 # echo_bold ">> Link *.symlink"

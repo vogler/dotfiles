@@ -141,6 +141,7 @@ brew install navi # 2.7MB, Interactive CLI cheatsheet tool; `navi` to start fuzz
 # programming languages
 # macOS ships ruby 2.6.3, python 2.7.16; python3 installed as dep; typescript via npm
 brew install ptpython # better Python REPL
+brew install pipx # 1MB, like npx: run/install binaries from Python packages, easier than `python3 -m venv foo`; `pipx run lastversion` saves to '~/Library/Caches/pipx', `pipx install lastversion` saves to '~/Library/Application Support/pipx'...
 brew install node # JavaScript; includes npm
 brew install opam # OCaml
 brew install java
