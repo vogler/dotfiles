@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 
 # Print the Virtual Memory Resident Set Size (physical memory used) of a pid and all processes it spawned.
-# From https://github.com/ThePrimeagen/vmrss
+# From https://github.com/ThePrimeagen/vmrss; added fzf for PID selection
 # Details about types of memory: https://poby.medium.com/linux-memory-demystified-eb33e81699b2
 
-if [ $# -eq 0 ]; then
-    echo "Usage: $0 <pid>"
-    exit 1
-fi
+# if [ $# -eq 0 ]; then
+#     echo "Usage: $0 <pid>"
+#     exit 1
+# fi
 
 function print_vmrss() {
     declare -a arr
@@ -62,7 +62,11 @@ if [ ! -z "$VMRSS_MONITOR" ]; then
         fi
     done
     print_vmrss $1
+elif [ $# -eq 0 ]; then
+    ps=$(ps -ef | fzf)
+    pid=$(echo "$ps" | awk '{print $2}')
+    echo "Selected process: $ps"
+    print_vmrss $pid
 else
     print_vmrss $1
 fi
-
