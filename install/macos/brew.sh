@@ -283,6 +283,7 @@ brew install clockify # 95MB, better (& more free features) than Toggl
 brew install ffmpeg # ~1GB due to many codecs as deps
 brew install ffmpegthumbnailer # 400KB, lightweight video thumbnailer using ffmpeg, `ffmpegthumbnailer -i *.mp4 -o foo.jpg -s0 -t20`
 brew install --cask handbrake # 113MB, video transcoder; also available as formula, but: A full installation of Xcode.app 10.3 is required to compile
+# mas install 1351639930 # 4MB, Gifski: crop & convert videos to high-quality GIFs, https://github.com/sindresorhus/Gifski
 
 # screen recording
 # brew install kap # Intel, 353MB; screen recorder built with web technology
