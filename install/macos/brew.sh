@@ -274,28 +274,37 @@ brew install rescuetime # Intel, fails because it requires Rosetta 2 (`sudo soft
 brew install clockify # 95MB, better (& more free features) than Toggl
 # install manually: https://whatpulse.org/downloads/ - neither in brew nor in App Store
 
-# image/video/books
+# images, photos
 # brew install imagemagick
+
+# videos: editing, transcoding
 brew install ffmpeg # ~1GB due to many codecs as deps
 brew install ffmpegthumbnailer # 400KB, lightweight video thumbnailer using ffmpeg, `ffmpegthumbnailer -i *.mp4 -o foo.jpg -s0 -t20`
 brew install --cask handbrake # 113MB, video transcoder; also available as formula, but: A full installation of Xcode.app 10.3 is required to compile
-# brew install audacity # 77MB, cross-platform audio editor
+
+# screen recording
 # brew install kap # Intel, 353MB; screen recorder built with web technology
 # https://gifcap.dev creates gif from screen recording in the browser
 # cmd+shift+5 can record screen or region and produces .mov
 # mas install 1592987853 # Screen Recorder by Omi, 43MB, allows to easily record system sound and microphone (needs their audio driver and selecting it as output in e.g. Teams), also does screen recording (but only 1080p in free version) and has editor to cut video
-# brew install blackhole-2ch # 108KB, loopback driver that allows applications to pass audio to other applications with zero additional latency; see https://github.com/ExistentialAudio/BlackHole - also shows how to remove audio plug-ins from Audio Devices
 brew install keycastr # 7.2MB, show keystrokes on screen
-brew install calibre # 366MB
-brew install macwhisper # 17MB + 500MB for small model; speech recognition with openai/whisper
+
+# audio
+# brew install audacity # 77MB, cross-platform audio editor
+# brew install blackhole-2ch # 108KB, loopback driver that allows applications to pass audio to other applications with zero additional latency; see https://github.com/ExistentialAudio/BlackHole - also shows how to remove audio plug-ins from Audio Devices
 brew install switchaudio-osx # 115KB, C, switch audio input/output devices; `SwitchAudioSource -a` lists all, `SwitchAudioSource -s 'MacBook Air Speakers'` to change output
-# no simple midi player on brew?!
+brew install macwhisper # 17MB + 500MB for small model; speech recognition and transcription with openai/whisper
+
+# MIDI (for PianoVision): no simple midi player on brew?!
 #   https://github.com/benwiggy/APPlayMIDI offers a quick look extension (but w/o seek), only play/pause
 #   https://github.com/SamusAranX/MinimalMIDIPlayer no quick look extension, but more features (change speed, soundfont, good keybindings)
   pipx run lastversion --assets download SamusAranX/MinimalMIDIPlayer
   unzip -d /Applications MinimalMIDIPlayer*.zip
   rm -f MinimalMIDIPlayer*.zip
 brew install aria-maestosa # 11.8MB, midi sequencer/editor with wxWidgets UI
+
+# reading, books
+brew install calibre # 366MB
 
 # CAD, 3D printing, electronics, IOT
 brew install autodesk-fusion360 # 3.6 GB in ~/Library/Application\ Support/Autodesk/
