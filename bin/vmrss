@@ -1,21 +1,11 @@
 #!/usr/bin/env zsh
 
 # Print the Virtual Memory Resident Set Size (physical memory used) of a pid and all processes it spawned.
-# From https://github.com/ThePrimeagen/vmrss/issues/6 since original didn't work on macOS since it relied on /proc
+# From https://github.com/ThePrimeagen/vmrss/issues/6 since original didn't work on macOS since it relied on /proc; also added fzf for interactive PID selection if there are no arguments
 # Details about types of memory: https://poby.medium.com/linux-memory-demystified-eb33e81699b2
 
 # enable pid completion, e.g. `vmrss nvim<TAB>`, needs to be put in .zshrc
 # compdef _pids vmrss
-
-if [[ $# -eq 0 ]]; then
-    echo "usage: ${0:t} <pidlist>"
-    exit 1
-fi
-
-if ! kill -0 "$@" &>/dev/null; then
-    echo "error: invalid process ID(s)"
-    exit 1
-fi
 
 # $1= pid
 print_vmrss() {
@@ -43,7 +33,23 @@ run() {
 idx=0
 total=0
 pids=("$@")
+
+if [[ $# -eq 0 ]]; then
+    # echo "usage: ${0:t} <pidlist>"
+    # exit 1
+    ps=$(ps -ef | fzf)
+    # TODO support selecting multiple?
+    echo "Selected process: $ps"
+    pids=$(echo "$ps" | awk '{print $2}')
+fi
+
+if ! kill -0 "$pids" &>/dev/null; then
+    echo "error: invalid process ID(s)"
+    exit 1
+fi
+
 for pid in $pids; do
     run $idx $pid
 done
+
 printf 'total: %s MB\n' $total
