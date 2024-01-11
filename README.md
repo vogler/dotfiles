@@ -124,3 +124,6 @@ Profile nvim/vim with `v --startuptime v.log; tail v.log` (currently ~190ms).
 - https://github.com/thoughtbot/rcm
 - https://github.com/technicalpickles/homesick
 - https://www.gnu.org/software/stow/
+
+
+![Alt](https://repobeats.axiom.co/api/embed/5ac9ab25d5bb4d514e72e756f11daf56f172236e.svg "Repobeats analytics image")
