@@ -17,19 +17,22 @@ brew install m-cli # CLI for macOS and stock apps
 # brew install dockutil # edit Dock (used in dock.sh)
 brew install --cask hpedrorodrigues/tools/dockutil # need dockutil 3 for current macOS, temporary, see https://github.com/kcrawford/dockutil/issues/127
 # brew install cheatsheet # hold cmd key to show overlay with all shortcuts of current application
-brew install qlstephen qlimagesize qlvideo # https://github.com/sindresorhus/quick-look-plugins
-# Apple doc says quicklook generators are only called upon demand (so no overhead for mds?)
-# more: https://github.com/haokaiyang/Mac-QuickLook; macOS already handles: csv, stl; maybe interesting: quicklook-dot, QLMarkdownGFM (instead of qlmarkdown), QLPrettyPatch, QLMobi
-# qlcolorcode did not show text for .sh, .ml, etc. (stock macOS at least shows unhighlighted text); did not want to fiddle with content-types: https://github.com/anthonygelibert/QLColorCode#adding-language-types
-# glance highlights all those correctly, .ts can't be handled (.tsx, .js work): https://github.com/samuelmeuli/glance#faq, also said some .zip would be password-protected and did not show anything when it was not
-brew install glance # TODO discontinued; need to open Glance.app first; replaces qlcolorcode qlmarkdown quicklook-json
-xattr -d -r com.apple.quarantine ~/Library/QuickLook # remove plugins from quarantine
 # brew install shortery # 6.9MB, triggers for Shortcuts, tried Sleep/Wake Up to log to file, but did not work
 # brew install sound-control # 23MB, 14d trial, allows to lower volume of speakers connected to display via HDMI/DisplayPort (macOS can't, so volume would need to be changed on speakers (no problem on Windows)) - sometimes made videos hang on sound until clicked on menu icon
 brew install eqmac # 77MB, Swift, Audio Equalizer & Volume Mixer, needs to install audio driver and creates new audio device, but currently only way to (keyboard-)control volume on speakers (via display via HDMI)
 brew install MonitorControl # 42MB, Swift, simple app to control external monitor brightness & volume, also with keyboard - brightness works great, but volume via HDMI doesn't work on M1: https://github.com/MonitorControl/MonitorControl/issues/323#issuecomment-919882176 - could try DisplayPort
 brew install betterdisplay # 22MB, 14d trial, display management with many more options, but volume also doesn't work
 brew install karabiner-elements # 29MB, modify keyboard/mouse input, mostly use capslock mappings from https://github.com/Vonng/Capslock
+
+# Quick Look extensions - https://github.com/sindresorhus/quick-look-plugins, more: https://github.com/haokaiyang/Mac-QuickLook
+brew install qlimagesize qlvideo # <1MB, Apple doc says quicklook generators are only called upon demand (so no overhead for mds?)
+# brew install quicklook-json # can click to fold json, but light theme not as nice as json printed by syntax-highlight, also slower; folding in quickjson didn't work at all
+# The following install to /Applications and need to be opened once for their quick look extension to register.
+# brew install glance # discontinued; need to open Glance.app first; replaces qlcolorcode qlmarkdown quicklook-json
+brew install --no-quarantine syntax-highlight # 39MB, syntax highlighting for most source code files (just .ts not allowed by macOS), replaces qlstephen for plain files; changed config: Render engine RTF -> HTML because RTF always used light theme instead of dark, Font MesloLGS NF 16pt, Soft wrap, Line numbers, Window size 1000x1200
+brew install --no-quarantine qlmarkdown # 76MB, app has many options & extensions for markdown preview, window size 1000x1200, adjust font size via css: https://github.com/sbarex/QLMarkdown/issues/79
+xattr -d -r com.apple.quarantine ~/Library/QuickLook # remove plugins from quarantine
+qlmanage -r # refresh installed plugins
 
 # Desktop tools
 # brew install sizeup # Intel, unlimited trial
