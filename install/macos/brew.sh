@@ -114,7 +114,7 @@ brew install iozone # 300KB, file system benchmark tool, see https://www.pidramb
 brew install diskus # 839KB, Rust, minimal, 3-10x faster alternative to `du -sh`
 brew install ncdu # NCurses Disk Usage
 brew install disk-drill # 113MB, GUI, disk usage & clean up (filters for type, size, modified), data recovery, find duplicates
-brew install clean-me # 2.5MB, GUI analyze/clean caches, logs, temp files, trash, downloads etc., see https://github.com/Kevin-De-Koninck/Clean-Me/blob/master/Clean%20Me/Paths.swift
+# brew install clean-me # 2.5MB, GUI analyze/clean caches, logs, temp files, trash, downloads etc., see https://github.com/Kevin-De-Koninck/Clean-Me/blob/master/Clean%20Me/Paths.swift - integrated in macos/cleanup.sh, deprecated in brew
 # brew install sensei # 72MB, 14d trial, GUI, system overview, menu bar monitor, optimize, clean, SSD stats/benchmark, battery health
 brew install p7zip # 7z with support for Brotli, Fast LZMA2, LZ4, LZ5, Lizard and Zstd
 brew install the-unarchiver # unpack .rar
@@ -317,7 +317,7 @@ brew install autodesk-fusion360 # 3.6 GB in ~/Library/Application\ Support/Autod
 brew install openscad # 62MB
 brew install ultimaker-cura # 617MB
 brew install superslicer # 111MB, fork of PrusaSlicer
-brew install arduino # 500MB, use vscode/PlatformIO instead, but this has a nice Serial Plotter for simple sensor sketches
+brew install arduino-ide # 495MB, use vscode/PlatformIO instead, but this has a nice Serial Plotter for simple sensor sketches
 brew install kicad # 6.5GB, schema and PCB editor for Gerber files
 # brew install --cask homebrew/cask-drivers/qmk-toolbox # 1.8MB, GUI for flashing QMK keyboard firmware, supports most boards/bootloaders
 # brew install qmk/qmk/qmk # ~900MB due to arm-/avr-gcc, CLI to build & flash QMK keyboard firmware
