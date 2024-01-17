@@ -63,6 +63,7 @@ brew install tresorit # 225MB, encrypted cloud storage for TDD
 brew install telegram # 152MB, 96MB RAM, Swift, narrow: chats>chat
 brew install telegram-desktop # 216MB, 340MB RAM, C++ webkit?, chats on side, can export chat data (settings > advanced)
 brew install zoom # 98MB, some meetings can't be done in the browser?
+# brew install coscreen # 662MB, multi-user interactive screen sharing for pair programming
 brew install libreoffice
 # mas install 1030461463 # PDFCombo: merge PDFs and preserve the TOC
 # brew install pdf-expert # 200MB, more features than Preview.app: annotations, edit text, merge, crop, clear, margins, OCR, better reduce file size export. Free version useless and full version 140€ or 80€/year.
@@ -99,6 +100,7 @@ brew install htop # improved top (interactive process viewer)
 brew install bottom # 3.2MB, `btm`, Yet another cross-platform graphical process/system monitor (rust) - interactive with mouse and shortcuts
 brew install procs # 3MB, modern replacement for `ps aux | grep ..` in Rust, fields for open ports, throughput, container name; ex: procs --tree nvim; procs --watch
 brew install pueue # 11.9MB, Rust, manage sequential/parallel long-running tasks, `pueued`, `pueue add ls; pueue add sleep 100; pueue; pueue log`
+brew install pv # 186KB, pipe viewer shows progress, speed, ETA; `pv -cN source < foo | zip | pv -cN zip > foo.zip`
 # brew install exa # 1.4MB, Modern replacement for 'ls' - now unmaintained, use eza
 brew install eza # 1MB, maintained fork of exa; `eza --long --header --icons --git`
 brew install lsd # 1.6MB, `ls` clone with colors, file type icons, `lsd --tree`; looks nicer than exa, but no git status
@@ -111,8 +113,10 @@ brew install ripgrep # 5.8MB, rg: Code-search similar to ag, but faster [Rust]
 brew install ugrep # 1.2MB, ug: grep with interactive TUI (-Q), fuzzy search, hexdump, search binary, archives, compressed files (-z), documents (PDF, pandoc, office, exif...), output as JSON, CSV...
 brew install pdfgrep # `pdfgrep -nH PATTERN *.pdf` as alternative (with page number) to `ug --filter='pdf:pdftotext % -' PATTERN *.pdf`
 brew install iozone # 300KB, file system benchmark tool, see https://www.pidramble.com/wiki/benchmarks/microsd-cards
+brew install duf # 3.1MB, Go, Disk usage/free, nicer `df`
 brew install diskus # 839KB, Rust, minimal, 3-10x faster alternative to `du -sh`
-brew install ncdu # NCurses Disk Usage
+brew install dust # 2.2MB, Rust, prints overview (terminal height) of the biggest folders and their subfolders with percentage bars
+brew install ncdu # 588KB, interactive NCurses Disk Usage; archive: `ncdu -o export.json; ncdu -f export.json`
 brew install disk-drill # 113MB, GUI, disk usage & clean up (filters for type, size, modified), data recovery, find duplicates
 # brew install clean-me # 2.5MB, GUI analyze/clean caches, logs, temp files, trash, downloads etc., see https://github.com/Kevin-De-Koninck/Clean-Me/blob/master/Clean%20Me/Paths.swift - integrated in macos/cleanup.sh, deprecated in brew
 # brew install sensei # 72MB, 14d trial, GUI, system overview, menu bar monitor, optimize, clean, SSD stats/benchmark, battery health
@@ -123,7 +127,9 @@ brew install mosh # alternative for ssh, local echo, roaming, but UDP dyn. port 
 brew install watch # Executes a program periodically, showing output fullscreen
 brew install watchexec # 5.7MB, Execute commands when watched files change. `watchexec --clear --notify -- ls -lah`, `watchexec -e js,css --restart -- npm start`
 brew install mmv # move/copy/append/link multiple files by wildcard patterns
+brew install f2 # 11.5MB, Go, batch renaming tool with variables for file metadata like dates, Exif, ID3
 brew install figlet # Banner-like program prints strings as ASCII art
+brew install cmatrix # 78KB, console matrix screensaver
 brew install gum # 25MB, fancy input for shell scripts: choose a b, input, write, confirm
 brew install fzf # 2.7MB, Command-line fuzzy finder written in Go
 brew install neofetch # system information with OS + logo, host, kernel, uptime, packages, shell, resolution, DE, WM, terminal, CPU, memory
