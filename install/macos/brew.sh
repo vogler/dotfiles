@@ -218,6 +218,9 @@ brew install tableplus # 183MB, Native GUI tool for databases (PostgreSQL, SQLit
 # network
 brew install wget # alt for curl
 brew install wakeonlan
+# brew install speedtest-cli # 87KB, Python, unoffical CLI for speedtest.net (down/up/ping), `speedtest-cli --json | jq`
+brew tap teamookla/speedtest
+brew install speedtest # 2.8MB, native, closed source, official CLI for speedtest.net, better than Python one since it shows more info (high/low/jitter) and url of saved results, `speedtest -f json-pretty`
 brew install httpie # 17MB, https://httpie.io User-friendly cURL replacement, ex: http POST pie.dev/post hello=world
 brew install xh # 8MB, faster httpie in Rust, but only subset of commands, ex: xh httpbin.org/post name=ahmed age:=24; xh :3000/users -> GET http://localhost:3000/users
 # https://github.com/asciimoo/wuzz interactive CLI for HTTP request/response; not available in brew, binary only for amd64
