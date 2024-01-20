@@ -23,7 +23,7 @@ set autochdir " https://vim.fandom.com/wiki/Set_working_directory_to_the_current
 Plug 'tpope/vim-fugitive' " provides :G (:Git), :GMove, :GBrowse etc.
 Plug 'tpope/vim-rhubarb' " GitHub extension for fugitive.vim: :GBrowse, omni-complete issues etc. in commit messages
 Plug 'tpope/vim-endwise' " end certain structures (if, do, etc.) automatically
-Plug 'tpope/vim-surround' " add/change/delete surrounding parentheses, brackets, quotes, XML tags
+Plug 'tpope/vim-surround' " add/change/delete surrounding parentheses, brackets, quotes, XML tags; cs: change, ds: delete, ys: add, yss: add line, S: add visual
 Plug 'tpope/vim-repeat' " make . also repeat plugin maps instead of just native commands
 Plug 'tpope/vim-eunuch' " UNIX shell commands :Delete, :Move, :SudoWrite etc.
 Plug 'tpope/vim-unimpaired' " Pairs of handy bracket mappings
@@ -653,8 +653,9 @@ set hidden " allows switching to another buffer with unsaved buffer open
 " map ö "+gP
 set clipboard=unnamed " use the system clipboard per default (must be compiled with +clipboard, if not try gvim -v)
 
-""""""""" gp = select pasted text """"""""
+""""""""" gp = select last changed/pasted text """"""""
 nnoremap gp `[v`]
+" use gv to select the last visually-selected text
 
 set pastetoggle=<F12>
 
