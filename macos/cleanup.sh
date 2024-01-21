@@ -174,6 +174,8 @@ clean ~/Library/Caches
 clean ~/Library/Containers/*/Data/Library/Caches
 echo "> Caches (Application-specific)" # TODO check that apps are not running?
 clean ~/Library/Application\ Support/Google/Chrome/Default/{File\ System,Service\ Worker,IndexedDB} # only issues noted: web.whatsapp.com need to link device again
+# TODO Chrome extensions keep around old versions after update; total du was 5.4GB
+# e.g. ~/Library/Application\ Support/Google/Chrome/Default/Extensions/cjpalhdlnbpafiamejdnhcphjbkeiagm/ (uBlock) is 2.12GB while the latest version 1.54.0_0 is only 14.27MB; SponsorBlock is 1.3GB; React Developer Tools is 1.1GB -> manually deleted old versions for now (which only made uBlock lose its settings since it was apparently still using an old version while the new one was already installed?!)
 clean ~/Library/Application\ Support/Slack/{Service\ Worker,Cache}
 clean ~/Library/Application\ Support/Microsoft/Teams/{Service\ Worker,Cache,tmp} # tmp is 0755/drwxr-xr-x
 clean ~/Library/Application\ Support/zoom.us/AutoUpdater/Zoom.pkg # ~87MB, will be downloaded on update
