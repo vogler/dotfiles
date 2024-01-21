@@ -175,7 +175,19 @@ clean ~/Library/Containers/*/Data/Library/Caches
 echo "> Caches (Application-specific)" # TODO check that apps are not running?
 clean ~/Library/Application\ Support/Google/Chrome/Default/{File\ System,Service\ Worker,IndexedDB} # only issues noted: web.whatsapp.com need to link device again
 # TODO Chrome extensions keep around old versions after update; total du was 5.4GB
-# e.g. ~/Library/Application\ Support/Google/Chrome/Default/Extensions/cjpalhdlnbpafiamejdnhcphjbkeiagm/ (uBlock) is 2.12GB while the latest version 1.54.0_0 is only 14.27MB; SponsorBlock is 1.3GB; React Developer Tools is 1.1GB -> manually deleted old versions for now (which only made uBlock lose its settings since it was apparently still using an old version while the new one was already installed?!)
+# e.g. ~/Library/Application\ Support/Google/Chrome/Default/Extensions/cjpalhdlnbpafiamejdnhcphjbkeiagm/ (uBlock) is 2.12GB while the latest version 1.54.0_0 is only 14.27MB; SponsorBlock is 1.3GB; React Developer Tools is 1.1GB -> manually deleted old versions for now (which made uBlock lose its settings since it was apparently still using an old version while the new one was already installed?!, uBlock only switched from 1.54.0 to 1.55.0 after I disabled/reenabled the extension)
+# extended https://stackoverflow.com/questions/17141917/chrome-keeps-all-versions-of-my-hosted-app-extension-takes-up-mbs-how-tell-i
+for i in ~/Library/Application\ Support/Google/Chrome/Default/Extensions/*(/); do
+  if [[ ${#$(ls -1 $i)} -gt 2 ]]; then # >=3 versions exist
+    # rm -r $i/*^(Om[1,-2]) # deletes all but the first (0 sorts in desc order by m (modification time)), requires extendedglob
+    echo $i
+    cat $i/$(ls $i | tail -1)/manifest.json | jq '{name, version}' # TODO last version may not be the currently used one
+    for j in $(ls -t $i | tail -n +3); do # delete all but the last 2 modified versions
+      clean $i/$j
+    done
+    echo
+  fi
+done
 clean ~/Library/Application\ Support/Slack/{Service\ Worker,Cache}
 clean ~/Library/Application\ Support/Microsoft/Teams/{Service\ Worker,Cache,tmp} # tmp is 0755/drwxr-xr-x
 clean ~/Library/Application\ Support/zoom.us/AutoUpdater/Zoom.pkg # ~87MB, will be downloaded on update
