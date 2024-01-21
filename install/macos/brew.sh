@@ -49,6 +49,7 @@ brew install istat-menus # 68MB, trial, got key, menu bar: HW stats (combined: g
 
 # browser/-based apps
 brew install google-chrome # 922MB
+brew install chrome-cli # 125KB, control chrome via scripting bridge, `OUTPUT_FORMAT=json chrome-cli list tabs`
 brew install firefox # 344MB, don't really use it, but good to have options
 # brew install spotify # Intel, use Chrome App -> same (except no preferences & friends feed?) but more efficient
 brew install whatsapp # 270MB, Intel, use Chrome App instead. Provided by Chrome account sync. To add to your account visit web.whatsapp.com, dot-menu > More Tools > Create Shortcut with open as window
@@ -144,9 +145,11 @@ brew install dos2unix # Convert text between DOS, UNIX, and Mac formats; for git
 brew install choose-rust # 2.0MB, Human-friendly and fast alternative to cut and (sometimes) awk, `choose -f ':' 0 3` prints the 0th and 3rd items sep by :, `choose -3:-1` prints the last 3 items sep by space
 brew install hck # 2.2MB, Rust, drop-in replacement for cut, but supports regex delimiter and reordering columns
 brew install clog # 173KB, Colorized pattern-matching log tail utility, https://taskwarrior.org/docs/clog/, `echo 'foo bar' | clog -d -t -f <(echo 'default rule /foo/ --> bold red match')`
+brew install grc # 114KB, Colorize logfiles and command output; `\grc ping google.com; \grc tail /var/log/system.log; man grcat`
 brew install tailspin # 5.2MB, Rust, automatic log file highligher, supports numbers, dates, IP-addresses, UUIDs, URLs and more; pipe to `tailspin` or `tspin`
 brew install spacer # 3.3MB, Rust, insert spacers with datetime+duration when command output stops, default is 1s, `tail -f some.log | spacer --after 5` (only after 5s instead); `log stream --predicate 'process == "Google Chrome"' | spacer`; 'If you're the type of person that habitually presses enter a few times in your log tail to know where the last request ended and the new one begins, this tool is for you!' :)
 brew install navi # 2.7MB, Interactive CLI cheatsheet tool; `navi` to start fuzzy finder; `eval "$(navi widget zsh)"` to launch with Ctrl+G to find/replace in-place
+brew install yank # 49KB, Copy terminal output to clipboard; `env | yank -d =`, can also be used as picker in pipe: `ps ux | yank -g ' [0-9]+ ' | xargs kill`
 
 # programming languages
 # macOS ships ruby 2.6.3, python 2.7.16; python3 installed as dep; typescript via npm
