@@ -334,6 +334,10 @@ brew install kicad # 6.5GB, schema and PCB editor for Gerber files
 # brew install --cask homebrew/cask-drivers/qmk-toolbox # 1.8MB, GUI for flashing QMK keyboard firmware, supports most boards/bootloaders
 # brew install qmk/qmk/qmk # ~900MB due to arm-/avr-gcc, CLI to build & flash QMK keyboard firmware
 
+# not available in brew or mas:
+# https://www.meta.com/en-gb/help/quest/articles/horizon/getting-started-in-horizon-workrooms/use-computer-in-VR-workrooms/ - Meta Quest Remote Desktop
+# https://immersed.com - remote/virtual AR desktop for Meta Quest 3
+
 # many of the rust and go system tools were found via https://github.com/innobead/huber/blob/main/doc/packages.md
 # for more see install/macos/old-MBP/Brewfile
 # Brewfile in https://github.com/lunaryorn/dotfiles/commit/2d8531881c2bc61f091d83bc2cf02ad6ebb680c6
