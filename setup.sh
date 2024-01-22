@@ -141,6 +141,7 @@ ln -sf `pwd`/.gitconfig ~
 [ "$(uname)" == "Linux" ] && sudo git config --system --replace-all credential.helper store # plain-text in ~/.git-credentials ! --global instead of --system sets it in ~/.gitconfig
 ln -sf `pwd`/.gitignore_global ~
 # sudo install install/repos/gitwatch/gitwatch.sh /usr/local/bin/gitwatch # installed via brew
+mkdir -p "$config/lazygit" && ln -sf {`pwd`/.config,"$config"}/lazygit/config.yml
 
 # zsh: fork of https://github.com/sorin-ionescu/prezto
 echo_bold ">> Get submodules"
