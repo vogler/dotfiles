@@ -204,9 +204,10 @@ brew install onefetch # 12.8MB, Rust, like neofetch but stats for git repos, sho
 brew install git-quick-stats # 72KB, git statistics: commits per author, year, month, weekday, hour...
 
 # data processing
-brew install jq # JSON CLI processor
-brew install xsv # CSV CLI: cat count flatten frequency join search select slice sort split stats table
-brew install jid # Json incremental digger
+brew install jq # 1.5MB, C, JSON CLI processor
+brew install xsv # 3.1MB, Rust, CSV CLI: cat count flatten frequency join search select slice sort split stats table
+brew install csvlens # 3MB, Rust, CSV viewer with vim navigation; H for help, Tab to switch row/col/cell selection, Enter to print cell and exit
+brew install jid # 2.4MB, Go, Json incremental digger
 brew install jless # 2.6MB, JSON viewer for reading, exploring, and searching; shortcuts in :help
 brew install fx # 11MB, JSON viewer, collapsed by default, shortcuts on ?
 brew install dasel # 18.6MB, Select/modify/convert JSON, TOML, YAML, XML and CSV; 3x faster than jq? `echo '{"name": "Tom"}' | dasel put string '.foo' 'bar' -r json -w yaml`
