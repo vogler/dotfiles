@@ -129,6 +129,7 @@ brew install watch # Executes a program periodically, showing output fullscreen
 brew install watchexec # 5.7MB, Execute commands when watched files change. `watchexec --clear --notify -- ls -lah`, `watchexec -e js,css --restart -- npm start`
 brew install mmv # move/copy/append/link multiple files by wildcard patterns
 brew install f2 # 11.5MB, Go, batch renaming tool with variables for file metadata like dates, Exif, ID3
+# use vidir from moreutils for interactive batch rename in vim
 brew install figlet # Banner-like program prints strings as ASCII art
 brew install cmatrix # 78KB, console matrix screensaver
 brew install gum # 25MB, fancy input for shell scripts: choose a b, input, write, confirm
