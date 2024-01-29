@@ -41,6 +41,8 @@ qlmanage -r # refresh installed plugins
 brew install hammerspoon # 39MB, automation, window management, key/mouse mapping - see .hammerspoon/init.lua
 # brew install usb-overdrive # 2.3MB, shareware, device driver for USB/Bluetooth input (mouse, keyboard, gamepad etc.) to configure globally or on a per-application, per-device basis - messed up left click..., per-application not good enough for Books.app
 brew install raycast # 75MB, better launcher than Spotlight, Alfred etc., good shortcuts incl. window management, community extensions/scripts
+  # brew install smudge/smudge/nightlight # just downloaded bin (476K) from releases at https://github.com/smudge/nightlight since this tried to build and install rust and its deps, see https://github.com/smudge/nightlight/issues/22
+  pipx run lastversion --pre --assets unzip smudge/nightlight && chmod +x nightlight && mv -f nightlight ~/.local/bin/
 brew install istat-menus # 68MB, trial, got key, menu bar: HW stats (combined: graph for CPU & memory, rest in dropdown), calendar, weather (subscription for 60min updates)
 # brew install stats # 12MB, simple free alternative to istat-menus, just HW, no calendar, weather
 
