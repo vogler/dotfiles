@@ -1,7 +1,8 @@
 // Place your settings in this file to overwrite the default settings
 {
   "files.associations": {
-    "*.pml": "c"
+    "*.pml": "c",
+    ".env*": "dotenv"
   },
   "files.exclude": {
     "**/.gtm": true,
@@ -168,7 +169,6 @@
   "latex-utilities.message.update.show": false,
   "editor.acceptSuggestionOnEnter": "off",
   "git.smartCommitChanges": "tracked",
-  "workbench.sideBar.location": "right",
   "latex-workshop.view.pdf.zoom": "page-width",
   "explorer.confirmDragAndDrop": false,
   "workbench.editor.wrapTabs": true,
@@ -219,5 +219,9 @@
   "javascript.suggest.completeFunctionCalls": true,
   "editor.snippetSuggestions": "bottom",
   "emmet.showSuggestionsAsSnippets": true,
-  "workbench.editor.tabActionCloseVisibility": false
+  "workbench.editor.tabActionCloseVisibility": false,
+  "editor.tokenColorCustomizations": {
+    "textMateRules": []
+  },
+  "dotenv.enableAutocloaking": false
 }
