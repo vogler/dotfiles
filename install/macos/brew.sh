@@ -69,7 +69,8 @@ brew install libreoffice
 # mas install 1030461463 # PDFCombo: merge PDFs and preserve the TOC
 # brew install pdf-expert # 200MB, more features than Preview.app: annotations, edit text, merge, crop, clear, margins, OCR, better reduce file size export. Free version useless and full version 140€ or 80€/year.
 # https://outbankapp.com neither in brew nor mas (but finds outbank in App Store)
-brew install iina # media player
+brew install iina # 145MB, media player, nicer than VLC
+brew install vlc # 134MB, media player, only needed for .m3u streaming of DVB-C TV from FritzBox
 brew install raspberry-pi-imager # install different OSes to microSD
 brew install numi # 49MB, calculator app with unit conversions and variables
 brew install portfolioperformance # 168MB, Internal and True-Time Weighted Rate of Return, graphs etc., can import PDFs of transactions from ING, but needs manual work; probably works for degiro as well
@@ -315,10 +316,10 @@ brew install keycastr # 7.2MB, show keystrokes on screen
 brew install switchaudio-osx # 115KB, C, switch audio input/output devices; `SwitchAudioSource -a` lists all, `SwitchAudioSource -s 'MacBook Air Speakers'` to change output
 brew install macwhisper # 17MB + 500MB for small model; speech recognition and transcription with openai/whisper
 
-# MIDI (for PianoVision): no simple midi player on brew?!
+# MIDI (for PianoVision): no simple midi player on brew?! -> VLC can play midi files
 #   https://github.com/benwiggy/APPlayMIDI offers a quick look extension (but w/o seek), only play/pause
 #   https://github.com/SamusAranX/MinimalMIDIPlayer no quick look extension, but more features (change speed, soundfont, good keybindings)
-  pipx run lastversion --assets download SamusAranX/MinimalMIDIPlayer
+  pipx run lastversion --assets download SamusAranX/MinimalMIDIPlayer # its unzip is broken: https://github.com/dvershinin/lastversion/issues/98
   unzip -d /Applications MinimalMIDIPlayer*.zip
   rm -f MinimalMIDIPlayer*.zip
 brew install aria-maestosa # 11.8MB, midi sequencer/editor with wxWidgets UI
