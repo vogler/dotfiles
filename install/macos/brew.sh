@@ -52,7 +52,8 @@ brew install google-chrome # 922MB
 brew install chrome-cli # 125KB, control chrome via scripting bridge, `OUTPUT_FORMAT=json chrome-cli list tabs`
 brew install firefox # 344MB, don't really use it, but good to have options
 # brew install spotify # Intel, use Chrome App -> same (except no preferences & friends feed?) but more efficient
-brew install whatsapp # 270MB, Intel, use Chrome App instead. Provided by Chrome account sync. To add to your account visit web.whatsapp.com, dot-menu > More Tools > Create Shortcut with open as window
+brew install whatsapp # 330MB, now Apple Silicon and no longer Intel, can do calls, has cmd+shift+[] for switching chats, but UI slightly different from web app and needs more memory.
+# Alternative: WhatsApp Chrome App. Needs less memory, but can't do calls and no good shortcuts. Provided by Chrome account sync. To add to your account visit web.whatsapp.com, dot-menu > More Tools > Create Shortcut with open as window
 brew install slack # 238MB
 brew install microsoft-teams # 507MB, only needed for stupid background image since browser version does not offer it (but this is also browser-based)...
 brew install visual-studio-code
