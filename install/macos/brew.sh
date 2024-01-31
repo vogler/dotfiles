@@ -74,6 +74,7 @@ brew install libreoffice
 # https://outbankapp.com neither in brew nor mas (but finds outbank in App Store)
 brew install iina # 145MB, media player, nicer than VLC
 brew install vlc # 134MB, media player, only needed for .m3u streaming of DVB-C TV from FritzBox
+# mas install 1612400976 # 89MB, media player, installed as /Applications/PotPlayerX.app, can generate poster, gif, subtitles via whisper, do OCR, PIP, but some features like changing speed with shortcuts require VIP..., also can't play .m3u for DVB-C TV from FritzBox
 brew install raspberry-pi-imager # install different OSes to microSD
 brew install numi # 49MB, calculator app with unit conversions and variables
 brew install portfolioperformance # 168MB, Internal and True-Time Weighted Rate of Return, graphs etc., can import PDFs of transactions from ING, but needs manual work; probably works for degiro as well
