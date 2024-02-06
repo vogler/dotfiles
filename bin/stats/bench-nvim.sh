@@ -1,3 +1,7 @@
+#!/bin/bash
+# set -x # Print command traces before executing command.
+set -v # Prints shell input lines as they are read.
+
 # For benchmark of startup time see README.md
 
 # 06.02.24 - coc.nvim spawns many node processes
