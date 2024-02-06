@@ -61,6 +61,7 @@ brew install microsoft-teams # 507MB, only needed for stupid background image si
 brew install visual-studio-code
 # brew install evernote # Intel; not worth the overhead, just use the web-app and eventually something nicer with history
 brew install tor-browser # 192MB
+brew install obsidian # 412MB, PKM, just keeps folders of .md files, nice markdown editor, sometimes slow/annoying (Electron), not perfect, but at least customizable with lots of community plugins (core not OSS)
 
 brew install dropbox # only 9GB with free plan, moved Screenshots <2021 to PC TODO replace with self-hosted alternative on RPi
 brew install tresorit # 225MB, encrypted cloud storage for TDD
