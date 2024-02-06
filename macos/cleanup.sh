@@ -79,7 +79,7 @@ has(){ # check if a command is available
 
 trash() {
   # https://apple.stackexchange.com/questions/50844/how-to-move-files-to-trash-from-command-line
-  # `brew install trash` verison did not have `Put Back` in context menu of deleted files
+  # `brew install trash` version did not have `Put Back` in context menu of deleted files
   # https://github.com/morgant/tools-osx/blob/71c2db389c48cee8d03931eeb083cfc68158f7ed/src/trash#L307C2-L307C2
   for f in "$@"; do
     p=$(realpath "$f")
