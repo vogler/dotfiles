@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+# `brew install trash macos-trash` both had the problem that `Put Back` in context menu of trash did not work (either missing or put file back in the wrong location if file of same name was trashed before)
+# https://apple.stackexchange.com/questions/50844/how-to-move-files-to-trash-from-command-line
+# https://github.com/morgant/tools-osx/blob/71c2db389c48cee8d03931eeb083cfc68158f7ed/src/trash#L307C2-L307C2
+for f in "$@"; do
+  p=$(realpath "$f")
+  osascript -e "tell application \"Finder\" to delete POSIX file \"$p\"" > /dev/null
+done
