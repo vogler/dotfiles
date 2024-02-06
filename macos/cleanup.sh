@@ -189,7 +189,10 @@ for i in ~/Library/Application\ Support/Google/Chrome/Default/Extensions/*(/); d
   fi
 done
 clean ~/Library/Application\ Support/Slack/{Service\ Worker,Cache}
+# old Teams
 clean ~/Library/Application\ Support/Microsoft/Teams/{Service\ Worker,Cache,tmp} # tmp is 0755/drwxr-xr-x
+# new Teams 'Microsoft Teams (work or school)'
+clean ~/Library/Containers/com.microsoft.teams2/Data/Library/Application\ Support/Microsoft/MSTeams/EBWebView/*Profile*/{Service\ Worker,WebStorage} # was ~2.7GB
 clean ~/Library/Application\ Support/zoom.us/AutoUpdater/Zoom.pkg # ~87MB, will be downloaded on update
 clean ~/Library/Application\ Support/Code/CachedExtensionVSIXs # ~372MB, will refill on extension updates
 clean ~/Library/Application\ Support/Code/CachedData # 298MB, 38MB after restart of workspace
