@@ -28,12 +28,14 @@
     safecrlf = true
     ignorecase = true
     # pager = diff-so-fancy | less --tabs=4 -RFX --pattern='^(added|deleted|modified): '
-# less:
-  # -+S Wrap lines instead of the default chop-long-lines which breaks mouse select & copy in terminal (also, horizontal scrolling is annoying).
-  # -F Quit if entire file fits on first screen.
-  # -E Quit at end of file.
-  # -R Output "raw" control characters.
-  # -X Don't use init/deinit strings.
+    # less options:
+      # -+S Wrap lines instead of the default chop-long-lines which breaks mouse select & copy in terminal (also, horizontal scrolling is annoying).
+      # -F Quit if entire file fits on first screen. Otherwise have to press q.
+      # -E Quit at end of file. E.g. when reaching it via G.
+      # -R Output "raw" control characters.
+      # -X Don't use init/deinit strings.
+    pager = delta # also set individually below
+    # setting options in DELTA_PAGER in ~/.zshenv such that they're also used when using delta for rg etc.
 [pager]
     # diff = diff-so-fancy | less --tabs=4 -RFX --pattern='^(added|deleted|modified): ' # the problem with this is that it also jumps directly to the first match and fills rest of screen with ~ for empty lines.
     diff = diff-so-fancy | less --tabs=4 -RXFE -+S
