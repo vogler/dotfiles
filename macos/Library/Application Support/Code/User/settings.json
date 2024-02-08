@@ -223,5 +223,6 @@
   "editor.tokenColorCustomizations": {
     "textMateRules": []
   },
-  "dotenv.enableAutocloaking": false
+  "dotenv.enableAutocloaking": false,
+  "security.promptForLocalFileProtocolHandling": false
 }
