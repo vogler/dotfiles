@@ -52,7 +52,11 @@
     syntax-theme = Solarized (dark)
     # line-numbers = true
     # side-by-side = true
-    features = decorations navigate # navigate: n/N
+    navigate = true    # use n and N to move between diff sections
+    hyperlinks = true # iTerm will also open files on cmd+click without this, but this will add proper links for commits, line numbers (also in rgd for search) etc.
+    # from https://dandavison.github.io/delta/grep.html
+    # by default opens in VimR, but line numbers did not work, so using vscode instead:
+    hyperlinks-file-link-format = "vscode://file/{path}:{line}"
 [delta "decorations"]
     # file-style = omit
     # file-style = bold yellow ul
