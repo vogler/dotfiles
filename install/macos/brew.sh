@@ -338,7 +338,7 @@ brew install aria-maestosa # 11.8MB, midi sequencer/editor with wxWidgets UI
 brew install calibre # 366MB
 
 # CAD, 3D printing, electronics, IOT
-brew install autodesk-fusion360 # 3.6 GB in ~/Library/Application\ Support/Autodesk/
+brew install autodesk-fusion # 3.6 GB in ~/Library/Application\ Support/Autodesk/
 brew install openscad # 62MB
 brew install ultimaker-cura # 617MB
 brew install superslicer # 111MB, fork of PrusaSlicer
