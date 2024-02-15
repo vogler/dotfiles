@@ -166,7 +166,7 @@ curl -s https://api.github.com/repos/dandavison/delta/releases/latest | jq ".ass
 curl -s https://api.github.com/repos/ClementTsang/bottom/releases/latest | jq ".assets[] | select(.name|test(\"$arch\")) | .browser_download_url" -r | wget -q -O /tmp/bottom.deb -i - && sudo dpkg -i /tmp/bottom.deb
 
 # https://github.com/jesseduffield/lazygit#ubuntu
-arch_alt=$([[ "$arch" == "armhf" ]] && echo "armv6" || echo "x86_64")
+arch_alt=$([[ "$arch" == "armhf" ]] && echo "armv6" || [[ "$arch" == "arm64" ]] && echo $arch || echo "x86_64")
 LAZYGIT_VERSION=$(curl -s "https://api.github.com/repos/jesseduffield/lazygit/releases/latest" | grep -Po '"tag_name": "v\K[^"]*')
 curl -Lo lazygit.tar.gz "https://github.com/jesseduffield/lazygit/releases/latest/download/lazygit_${LAZYGIT_VERSION}_Linux_${arch_alt}.tar.gz"
 tar xf lazygit.tar.gz lazygit
