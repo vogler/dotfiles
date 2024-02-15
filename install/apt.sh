@@ -42,8 +42,8 @@ agi python3-pip
 agi inotify-tools
 # agi clang
 agi jq # JSON CLI processor
-agi pup # jq for HTML, many pseudo-classes, `pup 'a attr{href}'`, text{}, json{}, :contains(text), `pup ':parent-of([action="edit"])'`
-agi install jless # JSON viewer for reading, exploring, and searching; shortcuts in :help
+agi pup || echo "pup not available (Ubuntu 22.04)" # jq for HTML, many pseudo-classes, `pup 'a attr{href}'`, text{}, json{}, :contains(text), `pup ':parent-of([action="edit"])'`
+agi jless || echo "jless not available (Ubuntu 22.04)" # JSON viewer for reading, exploring, and searching; shortcuts in :help
 agi moreutils # use ts (timestamp standard input) in systemd services for mqtt subs
 agi apt-file # which package provides a file? e.g. apt-file find libportaudio.so
 agi nq # lightweight job queue
@@ -60,11 +60,11 @@ fi
 agi httpie # https://httpie.io User-friendly cURL replacement, ex: http POST pie.dev/post hello=world
 agi nnn # terminal file manager: small and fast, but bare bones without plugins/config; use `nnn -e` to edit text in same terminal instead of via `open`
 agi ranger # terminal file manager: slower, but nicer defaults with multi-column layout and automatic preview of many file types
-agi broot || "broot not available (Chromebook Debian 11?)" # `br` to navigate big file trees, alt+enter to cd, `br -s` to show sizes
+agi broot || echo "broot not available (Ubuntu 22.04, Chromebook Debian 11?)" # `br` to navigate big file trees, alt+enter to cd, `br -s` to show sizes
 agi clog # Colorized pattern-matching log tail utility, https://taskwarrior.org/docs/clog/, `echo 'foo bar' | clog -d -t -f <(echo 'default rule /foo/ --> bold red match')`
 agi hexyl # Command-line hex viewer
-agi dog # DNS client like dig but with colors, DNS-over-TLS, DNS-over-HTTPS, json; `dog example.net A AAAA NS MX TXT @1.1.1.1`
-agi gping # Ping, but with a graph
+agi dog || echo "dog not available (Ubuntu 22.04)" # DNS client like dig but with colors, DNS-over-TLS, DNS-over-HTTPS, json; `dog example.net A AAAA NS MX TXT @1.1.1.1`
+agi gping || echo "gping not available (Ubuntu 22.04)" # Ping, but with a graph
 
 
 # packages installed via cargo:
