@@ -117,31 +117,31 @@ autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
 Plug 'junegunn/rainbow_parentheses.vim', {'on': 'RainbowParentheses'} " same color for same bracket pairs
 Plug 'junegunn/gv.vim', {'on': 'GV'} " :GV opens git commit browser, :GV! only commits for current file, :GV? fills location list the revisions of current file, can be used in visual mode to work on jsut lines
-" Plug 'vim-airline/vim-airline' " status line with multiple sections and support for many plugins -> replaced by faster lualine.nvim
-"   let g:airline_powerline_fonts = 1
-"   let g:airline#extensions#tabline#enabled = 1
-"   let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
-"   let g:airline#extensions#tagbar#flags = 'f'  " show full tag hierarchy
-"   let g:airline_mode_map = {
-"       \ '__' : '-',
-"       \ 'n'  : 'N',
-"       \ 'i'  : 'I',
-"       \ 'R'  : 'R',
-"       \ 'c'  : 'C',
-"       \ 'v'  : 'V',
-"       \ 'V'  : 'V',
-"       \ '' : 'V',
-"       \ 's'  : 'S',
-"       \ 'S'  : 'S',
-"       \ '' : 'S',
-"       \ }
-"   let g:airline#extensions#hunks#non_zero_only = 1
-"   function! CustomBranchName(name)
-"     if a:name == 'master' | return 'm ' | else | return a:name | endif
-"   endfunction
-"   let g:airline#extensions#branch#format = 'CustomBranchName'
-" Plug 'vim-airline/vim-airline-themes' " :AirlineTheme solarized
-Plug 'nvim-lualine/lualine.nvim'
+Plug 'vim-airline/vim-airline' " status line with multiple sections and support for many plugins -> replaced by faster lualine.nvim
+  let g:airline_powerline_fonts = 1
+  let g:airline#extensions#tabline#enabled = 1
+  let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
+  let g:airline#extensions#tagbar#flags = 'f'  " show full tag hierarchy
+  let g:airline_mode_map = {
+      \ '__' : '-',
+      \ 'n'  : 'N',
+      \ 'i'  : 'I',
+      \ 'R'  : 'R',
+      \ 'c'  : 'C',
+      \ 'v'  : 'V',
+      \ 'V'  : 'V',
+      \ '' : 'V',
+      \ 's'  : 'S',
+      \ 'S'  : 'S',
+      \ '' : 'S',
+      \ }
+  let g:airline#extensions#hunks#non_zero_only = 1
+  function! CustomBranchName(name)
+    if a:name == 'master' | return 'm ' | else | return a:name | endif
+  endfunction
+  let g:airline#extensions#branch#format = 'CustomBranchName'
+Plug 'vim-airline/vim-airline-themes' " :AirlineTheme solarized
+" Plug 'nvim-lualine/lualine.nvim'
 " Plug 'bling/vim-bufferline' " show list of buffers in the command bar or statusline
 Plug 'ryanoasis/vim-devicons' " adds file type icons to NERDTree, vim-airline, CtrlP, unite, Denite, lightline, vim-startify and many more. Has to be loaded after those plugins!
 Plug 'airblade/vim-gitgutter' " git diff markers in sign column; jump to next hunk with ]c, stage hunk with ,hs, undo with ,hu
@@ -471,15 +471,15 @@ endif
 
 " https://neovim.io/doc/user/lua-guide.html
 " sadly, :lua-heredoc messes up syntax-highlighting for everything after it...
-lua << EOF
-require('lualine').setup {
-  options = { theme = 'gruvbox' },
-  sections = {
-    lualine_a = { { 'mode', fmt = function(str) return str:sub(1,1) end } }, -- only show first char of vim mode
-    lualine_c = { { 'filename', path = 3, } } -- absolute path with tilde as home; default is 0: just the filename
-  }
-}
-EOF
+" lua << EOF
+" require('lualine').setup {
+"   options = { theme = 'gruvbox' },
+"   sections = {
+"     lualine_a = { { 'mode', fmt = function(str) return str:sub(1,1) end } }, -- only show first char of vim mode
+"     lualine_c = { { 'filename', path = 3, } } -- absolute path with tilde as home; default is 0: just the filename
+"   }
+" }
+" EOF
 
 " color theme can only be set after plugins are loaded
 colorscheme solarized8_dark
