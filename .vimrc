@@ -144,6 +144,10 @@ Plug 'vim-airline/vim-airline-themes' " :AirlineTheme solarized
 " Plug 'nvim-lualine/lualine.nvim'
 " Plug 'bling/vim-bufferline' " show list of buffers in the command bar or statusline
 Plug 'akinsho/bufferline.nvim', { 'tag': '*' } " fancy buffer line with numbers for tabs on the right, close buttons, hover, colored file type icons, diagnostics etc.
+Plug 'tiagovla/scope.nvim' " scope buffers to tab
+nnoremap <space><tab> :tabnew<cr>
+nnoremap <tab> :tabnext<cr>
+nnoremap <s-tab> :tabprevious<cr>
 Plug 'ryanoasis/vim-devicons' " adds file type icons to NERDTree, vim-airline, CtrlP, unite, Denite, lightline, vim-startify and many more. Has to be loaded after those plugins!
 Plug 'nvim-tree/nvim-web-devicons' " Colored file type icons for bufferline.nvim
 Plug 'airblade/vim-gitgutter' " git diff markers in sign column; jump to next hunk with ]c, stage hunk with ,hs, undo with ,hu
@@ -486,6 +490,8 @@ endif
 lua require('nvim-web-devicons').setup {}
 lua require('bufferline').setup { options = { buffer_close_icon = '', diagnostics = 'coc' } }
 nnoremap <space>b :BufferLinePick<cr>
+
+lua require('scope').setup {}
 
 " color theme can only be set after plugins are loaded
 colorscheme solarized8_dark
