@@ -119,7 +119,7 @@ Plug 'junegunn/rainbow_parentheses.vim', {'on': 'RainbowParentheses'} " same col
 Plug 'junegunn/gv.vim', {'on': 'GV'} " :GV opens git commit browser, :GV! only commits for current file, :GV? fills location list the revisions of current file, can be used in visual mode to work on jsut lines
 Plug 'vim-airline/vim-airline' " status line with multiple sections and support for many plugins -> replaced by faster lualine.nvim
   let g:airline_powerline_fonts = 1
-  let g:airline#extensions#tabline#enabled = 1
+  let g:airline#extensions#tabline#enabled = 0 " buffers/tabs -> replaced by bufferline.nvim
   let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
   let g:airline#extensions#tagbar#flags = 'f'  " show full tag hierarchy
   let g:airline_mode_map = {
@@ -143,7 +143,9 @@ Plug 'vim-airline/vim-airline' " status line with multiple sections and support 
 Plug 'vim-airline/vim-airline-themes' " :AirlineTheme solarized
 " Plug 'nvim-lualine/lualine.nvim'
 " Plug 'bling/vim-bufferline' " show list of buffers in the command bar or statusline
+Plug 'akinsho/bufferline.nvim', { 'tag': '*' } " fancy buffer line with numbers for tabs on the right, close buttons, hover, colored file type icons, diagnostics etc.
 Plug 'ryanoasis/vim-devicons' " adds file type icons to NERDTree, vim-airline, CtrlP, unite, Denite, lightline, vim-startify and many more. Has to be loaded after those plugins!
+Plug 'nvim-tree/nvim-web-devicons' " Colored file type icons for bufferline.nvim
 Plug 'airblade/vim-gitgutter' " git diff markers in sign column; jump to next hunk with ]c, stage hunk with ,hs, undo with ,hu
   set updatetime=250 " terminal vim might have highlighting glitches for low times...
 Plug 'sindrets/diffview.nvim' " show tab to cycle through all diffs with :DiffviewOpen [git rev] [options] [ -- {paths...}]
@@ -480,6 +482,10 @@ endif
 "   }
 " }
 " EOF
+
+lua require('nvim-web-devicons').setup {}
+lua require('bufferline').setup { options = { buffer_close_icon = '', diagnostics = 'coc' } }
+nnoremap <space>b :BufferLinePick<cr>
 
 " color theme can only be set after plugins are loaded
 colorscheme solarized8_dark
