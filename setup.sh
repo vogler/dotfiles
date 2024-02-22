@@ -142,8 +142,6 @@ ln -sf `pwd`/.gitconfig ~
 ln -sf `pwd`/.gitignore_global ~
 # sudo install install/repos/gitwatch/gitwatch.sh /usr/local/bin/gitwatch # installed via brew
 mkdir -p "$config/lazygit" && ln -sf {`pwd`/.config,"$config"}/lazygit/config.yml
-# https://github.com/awslabs/git-secrets
-(cd ~/.local/bin && wget https://raw.githubusercontent.com/awslabs/git-secrets/master/git-secrets && chmod +x git-secrets)
 
 # zsh: fork of https://github.com/sorin-ionescu/prezto
 echo_bold ">> Get submodules"
