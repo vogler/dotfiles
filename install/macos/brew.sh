@@ -214,6 +214,12 @@ brew install gitwatch # use GitDoc in vscode instead? https://marketplace.visual
 brew install onefetch # 12.8MB, Rust, like neofetch but stats for git repos, shows name, description, HEAD, version, languages, deps, authors, changes, contributors, commits, LOC, size, license
 brew install git-quick-stats # 72KB, git statistics: commits per author, year, month, weekday, hour...
 
+# secret scanning
+brew install gitleaks # 9.2MB, Go, finds hardcoded secrets like passwords, api keys, and tokens in git repos
+brew install trufflehog # 95.7MB, Go, can also verify secrets and scan GitHub (orgs, issues, PRs), S3...
+brew install git-secrets # 66KB, Shell, mostly for AWS secrets and hooks for repos
+(cd /tmp && pipx run lastversion --pre --assets --filter arm64 unzip praetorian-inc/noseyparker && mv -f bin/noseyparker ~/.local/bin/) # 20MB, Rust, download binary or docker: https://github.com/praetorian-inc/noseyparker
+
 # data processing
 brew install jq # 1.5MB, C, JSON CLI processor
 brew install xsv # 3.1MB, Rust, CSV CLI: cat count flatten frequency join search select slice sort split stats table
