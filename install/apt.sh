@@ -38,6 +38,7 @@ agi libterm-readkey-perl # needed for git config interactive.singleKey on Raspbi
 # agi unzip bubblewrap m4 # required for opam (m4 only recommended since most packages rely on it)
 agi python3-pip
 agi pipx # like npx: run/install binaries from Python packages, easier than `python3 -m venv foo`; `pipx run lastversion` saves to '~/.local/pipx/cache', `pipx install lastversion` saves to '~/.local/pipx/venvs'...
+agi command-not-found # used by command-not-found module in ~/.zpreztorc
 
 # agi golang
 # agi ruby

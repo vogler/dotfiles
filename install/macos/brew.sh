@@ -162,6 +162,7 @@ brew install tailspin # 5.2MB, Rust, automatic log file highligher, supports num
 brew install spacer # 3.3MB, Rust, insert spacers with datetime+duration when command output stops, default is 1s, `tail -f some.log | spacer --after 5` (only after 5s instead); `log stream --predicate 'process == "Google Chrome"' | spacer`; 'If you're the type of person that habitually presses enter a few times in your log tail to know where the last request ended and the new one begins, this tool is for you!' :)
 brew install navi # 2.7MB, Interactive CLI cheatsheet tool; `navi` to start fuzzy finder; `eval "$(navi widget zsh)"` to launch with Ctrl+G to find/replace in-place
 brew install yank # 49KB, Copy terminal output to clipboard; `env | yank -d =`, can also be used as picker in pipe: `ps ux | yank -g ' [0-9]+ ' | xargs kill`
+brew tap homebrew/command-not-found # 8.56MB, used by command-not-found module in ~/.zpreztorc
 
 # programming languages
 # macOS ships ruby 2.6.3, python 2.7.16; python3 installed as dep; typescript via npm
