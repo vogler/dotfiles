@@ -263,6 +263,8 @@ Plug 'kchmck/vim-coffee-script', {'for': 'coffee'}
 " Plug 'digitaltoad/vim-jade'
 Plug 'leafgarland/typescript-vim' " syntax files
 Plug 'Quramy/tsuquyomi' " client for TSServer: Completion, Navigate, etc.
+" Plug 'leafOfTree/vim-svelte-plugin' " syntax-highlighting for ts did not work
+Plug 'evanleck/vim-svelte', {'branch': 'main'} 
 " Plug 'jcf/vim-latex'
 Plug 'idris-hackers/idris-vim', {'for': 'idris'}
 Plug 'FStarLang/VimFStar', {'for': 'fstar'}
