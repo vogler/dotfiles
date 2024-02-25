@@ -93,6 +93,10 @@ command! YankStatusMsg let @+ = v:statusmsg " for copying error messages
 Plug 'ojroques/vim-oscyank' " SSH: also copy to client clipboard; alternative: https://github.com/jabirali/vim-tmux-yank
   autocmd TextYankPost * if $SSH_CLIENT != '' && v:event.operator is 'y' && v:event.regname is '' | execute 'OSCYankRegister "' | endif
 
+" # start screen and session
+Plug 'mhinz/vim-startify' " start screen (if opened without arg) instead of empty buffer with MRU, bookmarks, sessions
+Plug 'rmagatti/auto-session' " `nvim` will save & restore last session (buffers etc.) for `cwd`
+
 " # UI search in buffer
 Plug 'google/vim-searchindex' " display number of search matches & index of a current match
 " Plug 'junegunn/vim-slash' " Automatically clears search highlight when cursor is moved; Improved star-search (visual-mode, highlighting without moving)
@@ -107,7 +111,6 @@ set termguicolors " needed for solarized8_dark
 set background=dark
 
 " # UI extensions
-Plug 'mhinz/vim-startify' " start screen (if opened without arg) instead of empty buffer with MRU, bookmarks, sessions
 " Plug 'sjl/gundo.vim'
 Plug 'simnalamburt/vim-mundo' " undo tree visualizer, fork of Gundo, :MundoToggle TODO init error: A supported python version was not found.
 Plug 'junegunn/vim-peekaboo' " shows contents of registers on the right in sidebar on \" and @ in normal mode and C-r in insert mode
@@ -468,6 +471,8 @@ Plug 'github/copilot.vim' " inline code suggestion via GitHub Copilot, needs sub
 
 
 call plug#end() " Automatically executes `filetype plugin indent on` and `syntax enable`.
+
+lua require('auto-session').setup {}
 
 " adds jump labels to regular search results
 " lua require('flash').setup()
