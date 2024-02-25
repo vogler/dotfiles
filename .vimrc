@@ -278,6 +278,7 @@ Plug 'lambdatoast/elm.vim', {'for': 'elm'}
 " Plug 'MLstate/opalang', {'rtp': 'tools/editors/vim/'} " just copy to .vim/ since this rtp option doesn't seem to work, also the repo is huge
 " Plug 'typedebugger' " see http://pllab.is.ocha.ac.jp/~asai/TypeDebugger/
 
+Plug 'github/copilot.vim' " inline code suggestion via GitHub Copilot, needs subscription, `:Copilot setup`, then acccept with tab (overrides coc.nvim accept, can go through its completion menu with C-n/C-p), suggestions are more distracting than helpful most of the time, `:Copilot disable`
 
 " linting / syntax checking -- replaced by coc below
   " Plug 'scrooloose/syntastic'
