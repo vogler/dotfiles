@@ -44,6 +44,7 @@ Plug 'tpope/vim-jdaddy' " JSON text objects (aj, ij) and pretty printing (gqaj)
 " Plug 'tpope/vim-markdown' # better markdown plugins below
 Plug 'tpope/vim-dispatch' " Asynchronous build and test dispatcher :Make
 Plug 'tpope/vim-dadbod' " interface for many databases :DB postgresql:///foobar, :DB sqlite:myfile.sqlite3 select count(*) from widgets
+Plug 'tpope/vim-abolish' " variants of words, :Abolish to create multiple abbreviations to fix typos, :Subvert for substitution, Coercion: crs snake_case, crm MixedCase, crc camelCase, cru UPPER_CASE, cr- dash-case, cr. dot.case
 
 " # Comments
 "Plug 'tpope/vim-commentary'
