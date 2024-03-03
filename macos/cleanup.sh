@@ -176,6 +176,7 @@ echo "> Caches"
 # clean /Library/Caches # 1777/drwxrwxrwt root admin; DO NOT DELETE! Deleted com.apple.aned and then had to skip it every time on 'Empty Trash' until I booted into recovery mode to `rm -f` it (no way to delete/move it otherwise).
 # 390MB /Library/Caches/com.apple.iconservices.store; rest is <1MB or no access
 clean ~/Library/Caches
+# ~/Library/Caches/com.apple.bird is some iCloud cache; https://apple.stackexchange.com/questions/220007/what-is-com-apple-bird-why-does-it-grow-so-big; -> check which apps use it with `python3 <(curl -fs https://raw.githubusercontent.com/bwesterb/blame-bird/master/blame-bird.py)`
 clean ~/Library/Containers/*/Data/Library/Caches
 echo "> Caches (Application-specific)" # TODO check that apps are not running?
 clean ~/Library/Application\ Support/Google/Chrome/Default/{File\ System,Service\ Worker,IndexedDB} # only issues noted: web.whatsapp.com need to link device again
