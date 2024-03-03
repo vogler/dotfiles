@@ -1,4 +1,8 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
+
+# bash does not care if glob expr doesn't give any matches, but zsh gives error 'zsh: no matches found: ...'; https://unix.stackexchange.com/questions/310540/how-to-get-rid-of-no-match-found-when-running-rm
+# setopt +o nullglob # delete patterns which don’t match anything
+setopt +o nomatch # leave globbing expressions which don't match anything as-is
 
 # examples for heavy folders that can be cleaned up:
 # 50.9GB ~/Library/Application Support
@@ -88,6 +92,7 @@ trash() {
 }
 
 clean() {
+  # if [[ -z "${@// }" ]]; then echo "no match: $@"; return; fi
   space=$(du -sh "$@" 2> /dev/null)
   nonempty=$(echo "$space" | grep -v "^0")
   if [ $empty ]; then
