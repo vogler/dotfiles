@@ -53,7 +53,7 @@ agi nq # lightweight job queue
 agi mosh # alternative for ssh, local echo, roaming, but UDP dyn. port alloc. 60000-61000
 agi mmv # move/copy/append/link multiple files by wildcard patterns
 agi neofetch # system information with OS + logo, host, kernel, uptime, packages, shell, resolution, DE, WM, terminal, CPU, memory
-agi fzf # Command-line fuzzy finder written in Go
+# agi fzf # Command-line fuzzy finder written in Go. apt's fzf 0.29 is too old -> installed with lastversion below.
 # https://github.com/junegunn/fzf/issues/2790
 if [[ ! -f /usr/share/doc/fzf/examples/completion.zsh ]]; then
   sudo curl https://raw.githubusercontent.com/junegunn/fzf/master/shell/completion.zsh -o /usr/share/doc/fzf/examples/completion.zsh
@@ -174,6 +174,9 @@ tar xf lazygit.tar.gz lazygit
 hash lazygit && lazygit --version
 sudo install lazygit /usr/local/bin
 rm -f lazygit.tar.gz lazygit
+
+# apt's fzf 0.29 is too old vs. current 0.47: Ctrl-R fzf-history-widget did not work -> use pipx to install latest version; https://github.com/junegunn/fzf/issues/1190
+(cd /tmp && pipx run lastversion --pre --assets --filter linux_${arch_alt} unzip junegunn/fzf && mv -f fzf ~/.local/bin/)
 
 # special sets of packages
 if [[ "$*" == *latex* ]]; then
