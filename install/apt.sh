@@ -56,6 +56,7 @@ agi neofetch # system information with OS + logo, host, kernel, uptime, packages
 # agi fzf # Command-line fuzzy finder written in Go. apt's fzf 0.29 is too old -> installed with lastversion below.
 # https://github.com/junegunn/fzf/issues/2790
 if [[ ! -f /usr/share/doc/fzf/examples/completion.zsh ]]; then
+  sudo mkdir -p /usr/share/doc/fzf/examples # needed since no longer created by apt above
   sudo curl https://raw.githubusercontent.com/junegunn/fzf/master/shell/completion.zsh -o /usr/share/doc/fzf/examples/completion.zsh
   sudo curl https://raw.githubusercontent.com/junegunn/fzf/master/shell/key-bindings.zsh -o /usr/share/doc/fzf/examples/key-bindings.zsh
 fi
