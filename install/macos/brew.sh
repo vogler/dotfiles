@@ -240,6 +240,7 @@ brew install tableplus # 183MB, Native GUI tool for databases (PostgreSQL, SQLit
 
 # network
 brew install wget # alt for curl
+brew install monolith # 6.6MB, Rust, CLI tool for saving complete web pages as a single HTML file
 brew install wakeonlan
 # brew install speedtest-cli # 87KB, Python, unoffical CLI for speedtest.net (down/up/ping), `speedtest-cli --json | jq`
 brew tap teamookla/speedtest
