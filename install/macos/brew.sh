@@ -137,7 +137,6 @@ brew install p7zip # 7z with support for Brotli, Fast LZMA2, LZ4, LZ5, Lizard an
 brew install the-unarchiver # unpack .rar
 brew install unar # 15MB, The Unarchiver CLI: `unar`, `lsar`
 brew install ouch # 3.5MB, Rust, (de)compress/list based on extension (tar, zip, 7z, gz, xz, lzma, bz, bz2, lz4, sz, zst, rar): `ouch d a.zip b.tar.gz`, `ouch c foo bar baz.7z`, `ouch l foo.rar`
-brew install mosh # alternative for ssh, local echo, roaming, but UDP dyn. port alloc. 60000-61000
 brew install watch # Executes a program periodically, showing output fullscreen
 brew install watchexec # 5.7MB, Execute commands when watched files change. `watchexec --clear --notify -- ls -lah`, `watchexec -e js,css --restart -- npm start`
 brew install mmv # move/copy/append/link multiple files by wildcard patterns
@@ -243,6 +242,8 @@ brew install pup # 3.7MB, jq for HTML, many pseudo-classes, `pup 'a attr{href}'`
 brew install tableplus # 183MB, Native GUI tool for databases (PostgreSQL, SQLite, Mongo, Cassandra, Redis, Cockroach...) - free trial is limited to 2 opened tabs, 2 opened windows, 2 advanced filters
 
 # network
+brew install mosh # 1.1MB, alternative for ssh, local echo, roaming, but UDP dyn. port alloc. 60000-61000
+brew install xxh # 806KB, Python, copy shell (zsh, fish, osquery) and plugins to remote host and connect via ssh; `xxh server +s fish`
 brew install wget # alt for curl
 brew install monolith # 6.6MB, Rust, CLI tool for saving complete web pages as a single HTML file
 brew install wakeonlan
