@@ -33283,6 +33283,8 @@
 	<true/>
 	<key>QuitWhenAllWindowsClosed</key>
 	<true/>
+	<key>RemapModifiersWithoutEventTap</key>
+	<true/>
 	<key>RestoreWindowsToSameSpaces</key>
 	<true/>
 	<key>RightCommand</key>
