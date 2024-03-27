@@ -129,6 +129,7 @@ brew install duf # 3.1MB, Go, Disk usage/free, nicer `df`
 brew install diskus # 839KB, Rust, minimal, 3-10x faster alternative to `du -sh`
 brew install dust # 2.2MB, Rust, prints overview (terminal height) of the biggest folders and their subfolders with percentage bars
 brew install ncdu # 588KB, interactive NCurses Disk Usage; archive: `ncdu -o export.json; ncdu -f export.json`
+brew install dua-cli # 1.9MB, Rust, `dua` space for all files/folders, `dua *` for non-hidden, `dua i` for interactive mode like ncdu
 brew install disk-drill # 113MB, GUI, disk usage & clean up (filters for type, size, modified), data recovery, find duplicates
 # brew install clean-me # 2.5MB, GUI analyze/clean caches, logs, temp files, trash, downloads etc., see https://github.com/Kevin-De-Koninck/Clean-Me/blob/master/Clean%20Me/Paths.swift - integrated in macos/cleanup.sh, deprecated in brew
 # brew install sensei # 72MB, 14d trial, GUI, system overview, menu bar monitor, optimize, clean, SSD stats/benchmark, battery health
