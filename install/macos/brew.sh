@@ -23,6 +23,7 @@ brew install eqmac # 77MB, Swift, Audio Equalizer & Volume Mixer, needs to insta
 brew install MonitorControl # 42MB, Swift, simple app to control external monitor brightness & volume, also with keyboard - brightness works great, but volume via HDMI doesn't work on M1: https://github.com/MonitorControl/MonitorControl/issues/323#issuecomment-919882176 - could try DisplayPort
 brew install betterdisplay # 22MB, 14d trial, display management with many more options, but volume also doesn't work
 brew install karabiner-elements # 29MB, modify keyboard/mouse input, mostly use capslock mappings from https://github.com/Vonng/Capslock
+brew install alt-tab # 26MB, Swift, alt-tab like on Windows, with previews, Raycast's 'Switch Windows' has search but can't just alt-tab to switch between recent windows
 
 # Quick Look extensions - https://github.com/sindresorhus/quick-look-plugins, more: https://github.com/haokaiyang/Mac-QuickLook
 brew install qlimagesize qlvideo # <1MB, Apple doc says quicklook generators are only called upon demand (so no overhead for mds?)
