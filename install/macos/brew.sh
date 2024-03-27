@@ -110,6 +110,7 @@ brew install rsync # newer than macOS: 3.2.3 vs 2.6.9
 brew install htop # improved top (interactive process viewer)
 # brew install gtop # 11.6MB, System monitoring dashboard for terminal (nodejs) - not interactive and ~10% CPU on RPi3
 brew install bottom # 3.2MB, `btm`, Yet another cross-platform graphical process/system monitor (rust) - interactive with mouse and shortcuts
+brew install osquery # 24MB, C++, SQL powered operating system instrumentation and analytics; `osqueryi` to start REPL; .tables; select * from shell_history order by time desc limit 10; https://osquery.io/schema
 brew install procs # 3MB, modern replacement for `ps aux | grep ..` in Rust, fields for open ports, throughput, container name; ex: procs --tree nvim; procs --watch
 brew install pueue # 11.9MB, Rust, manage sequential/parallel long-running tasks, `pueued`, `pueue add ls; pueue add sleep 100; pueue; pueue log`
 brew install pv # 186KB, pipe viewer shows progress, speed, ETA; `pv -cN source < foo | zip | pv -cN zip > foo.zip`
