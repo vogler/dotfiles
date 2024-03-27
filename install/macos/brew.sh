@@ -152,6 +152,7 @@ brew install nnn # 280KB, C, file manager, small and fast, but bare bones withou
 brew install ranger # 2.8MB, Python, file manager, slower, but nicer defaults with multi-column layout and automatic preview of many file types
 brew install yazi # 7.8MB, Rust, file manager, like ranger, but faster, scrollable preview for images, videos, pdfs etc.
 brew install lf # 3.8MB, Go, file manager, like ranger, https://github.com/gokcehan/lf/wiki/Tutorial
+brew install xplr # 4.7MB, Rust, file manager, hackable with Lua, nice interactive help, plugins: https://xplr.dev/en/awesome-plugins
 brew install zoxide # 1MB, Rust, smarter cd command, inspired by z and autojump
 brew install broot # 6.2MB, `br` to navigate big file trees, alt+enter to cd, `br -s` to show sizes
 brew install dos2unix # Convert text between DOS, UNIX, and Mac formats; for git's fatal: CRLF would be replaced by LF
