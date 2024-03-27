@@ -206,7 +206,8 @@ brew install act # 22MB, Run your GitHub Actions locally
 
 # git
 # brew install diff-so-fancy # within-line highlights
-brew install git-delta # as diff-so-fancy but with language syntax highlighting, side-by-side, etc.
+brew install git-delta # as diff-so-fancy but with language syntax highlighting, side-by-side, etc.; https://dandavison.github.io/delta/related-projects.html
+brew install difftastic # 79.6MB, Rust, structural diff that understands syntax, >30 languages parsed with tree-sitter; `difft v1 v2`, `git dft` for diff, `git dlog` for log, see .gitconfig
 brew install tig # 1MB, mostly an interactive `git log --patch`
 brew install gitui # 6.8MB, Rust, fastest TUI for everything, shows hot-keys - Status/staging with hunks and lines, Log, Stashing, Stashes, push, fetch, branches
 brew install lazygit # 22MB, Go, alternative to gitui, maybe slower, but nicer workflow/keybindings, esp. for navigating/staging hunks

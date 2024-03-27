@@ -110,5 +110,8 @@
     branchr=branch --sort=-committerdate --format='%(HEAD) %(color:blue)%(refname:short)%(color:reset) %(color:green)%(committerdate:relative)%(color:reset) %(color:yellow)%(authorname)%(color:reset)\n  %(contents:subject)\n' # instead of `brew install git-recent`, this also accepts options for git branch like -a, edited from https://stackoverflow.com/questions/5188320/how-can-i-get-a-list-of-git-branches-ordered-by-most-recent-commit
     # https://stackoverflow.com/questions/3161204/how-to-find-the-nearest-parent-of-a-git-branch
     parent = "!git show-branch | grep '*' | grep -v \"$(git rev-parse --abbrev-ref HEAD)\" | head -n1 | sed 's/.*\\[\\(.*\\)\\].*/\\1/' | sed 's/[\\^~].*//' #"
+    # https://difftastic.wilfred.me.uk/git.html
+    dft = "!f() { GIT_EXTERNAL_DIFF=difft git diff $@; }; f" # `git diff` with difftastic.
+    dlog = "!f() { : git log ; GIT_EXTERNAL_DIFF=difft git log -p --ext-diff $@; }; f" # `git dlog` to show `git log -p` with difftastic.
 [credential "https://dev.azure.com"]
 	useHttpPath = true
