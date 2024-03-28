@@ -3,6 +3,8 @@
 // This script measures the time it takes to open a new [tab]/window in Chrome, load some [html] and execute [js] which then closes the server and the window.
 // Requires the `chrome-cli` package to be installed globally: `npm install -g chrome-cli` or `brew install chrome-cli`.
 
+// With a long-running Chrome that accumulated lots of memory, the browser time ranged from 1.5s to 11.5s, probably due to swapping on a 8GB MBA.
+
 var http = require('http');
 const port = process.env.PORT || 8080;
 
