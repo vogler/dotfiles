@@ -143,6 +143,10 @@ ln -sf `pwd`/.gitignore_global ~
 # sudo install install/repos/gitwatch/gitwatch.sh /usr/local/bin/gitwatch # installed via brew
 mkdir -p "$config/lazygit" && ln -sf {`pwd`/.config,"$config"}/lazygit/config.yml
 
+# gh (GitHub CLI) extensions
+# https://docs.github.com/en/copilot/github-copilot-in-the-cli/using-github-copilot-in-the-cli
+gh extension install github/gh-copilot # `gh copilot suggest`, `gh copilot explain "tar -xvf foo.tar.xz"`
+
 # zsh: fork of https://github.com/sorin-ionescu/prezto
 echo_bold ">> Get submodules"
 echo_bold ">> zsh: clone fork of prezto to ~/.zprezto"
