@@ -179,6 +179,9 @@ rm -f lazygit.tar.gz lazygit
 # apt's fzf 0.29 is too old vs. current 0.47: Ctrl-R fzf-history-widget did not work -> use pipx to install latest version; https://github.com/junegunn/fzf/issues/1190
 (cd /tmp && pipx run lastversion --pre --assets --filter linux_${arch_alt} unzip junegunn/fzf && mv -f fzf ~/.local/bin/)
 
+# https://github.com/Byron/dua-cli
+(cd /tmp && lastversion --assets unzip Byron/dua-cli && sudo install dua /usr/local/bin)
+
 # special sets of packages
 if [[ "$*" == *latex* ]]; then
   agi texlive-latex-extra
