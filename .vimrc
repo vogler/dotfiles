@@ -79,7 +79,7 @@ Plug 'ctrlpvim/ctrlp.vim' " Fuzzy file, buffer, mru, tag, etc finder
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim' " :Commits :BCommits :Ag :Lines :Blines :Files :GFiles :Buffers :Marks :Commands :Maps :Helptags :Filetypes :Colors
 Plug 'nvim-lua/plenary.nvim' " needed for telescope
-Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.5' } " finder with preview, :Telescope find_files, live_grep, buffers, git_commits, keymaps, lsp_*
+Plug 'nvim-telescope/telescope.nvim' ", { 'tag': '0.1.5' } " finder with preview, :Telescope find_files, live_grep, buffers, git_commits, keymaps, lsp_*
 
 " # text search across files, grep/ack
 " deprecated: https://github.com/rking/ag.vim/issues/124#issuecomment-227038003
