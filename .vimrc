@@ -286,6 +286,17 @@ Plug 'lambdatoast/elm.vim', {'for': 'elm'}
 
 Plug 'github/copilot.vim' " inline code suggestion via GitHub Copilot, needs subscription, `:Copilot setup`, then acccept with tab (overrides coc.nvim accept, can go through its completion menu with C-n/C-p), suggestions are more distracting than helpful most of the time, `:Copilot disable`
 
+" Rethinking Neovim as a Tool For Writers - https://www.youtube.com/watch?v=oLpGahrsSGQ
+" https://github.com/folke/twilight.nvim
+" https://github.com/folke/zen-mode.nvim
+" https://github.com/preservim/vim-pencil#see-also
+  " https://github.com/preservim/vim-litecorrect
+  " https://github.com/preservim/vim-lexical
+  " https://github.com/preservim/vim-wordy
+  " https://github.com/dbmrq/vim-ditto
+  " https://github.com/rhysd/vim-grammarous
+  " https://github.com/tpope/vim-abolish
+
 " linting / syntax checking -- replaced by coc below
   " Plug 'scrooloose/syntastic'
   " let g:ale_disable_lsp = 1 " https://github.com/dense-analysis/ale#5iii-how-can-i-use-ale-and-cocnvim-together
