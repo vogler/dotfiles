@@ -114,6 +114,8 @@ if [[ -d /mnt/chromeos ]]; then
   sudo snap install code --classic # Visual Studio Code
   agi gnome-keyring # needed to stay signed in to GitHub in vscode
 
+  agi kitty # much nicer than stock Terminal and very customizable, see ~/.config/kitty/kitty.conf
+  ln -s ~/dotfiles/.config/kitty ~/.config/
 fi
 sudo snap install nvim --classic # Virtuozzo/OpenVZ: https://community.letsencrypt.org/t/system-does-not-fully-support-snapd-cannot-mount-squashfs-image-using-squashfs/132689/2
 sudo snap install procs # modern replacement for `ps aux | grep ..` in Rust, fields for open ports, throughput, container name; ex: procs --tree nvim; procs --watch
