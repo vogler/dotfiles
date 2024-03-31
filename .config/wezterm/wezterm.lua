@@ -10,6 +10,10 @@ config.front_end = "OpenGL"
 config.window_padding = { left = 5, right = 0, top = 0, bottom = 0 }
 
 -- config.font = wezterm.font("DejaVu Sans Mono") -- default was 'JetBrains Mono' which somehow looks better here than in kitty; DejaVu looks too cramped
+config.font_size = 11.0 -- default is 12.0
+config.adjust_window_size_when_changing_font_size = false
+
+config.use_fancy_tab_bar = false
 
 -- 965 themes with preview: https://wezfurlong.org/wezterm/colorschemes
 -- Nicer overview: https://gogh-co.github.io/Gogh/
