@@ -1,19 +1,29 @@
 -- https://wezfurlong.org/wezterm/config/files.html
-
--- Pull in the wezterm API
+-- config will be reloaded when this file is changed, if not force with ctrl-shift-r
 local wezterm = require 'wezterm'
-
--- This will hold the configuration.
 local config = wezterm.config_builder()
 
--- This is where you actually apply your config choices
-
--- For example, changing the color scheme:
-config.color_scheme = 'AdventureTime'
-
--- https://github.com/wez/wezterm/issues/3958#issuecomment-1908436077
+-- Needed to start on ChromeOS: https://github.com/wez/wezterm/issues/3958#issuecomment-1908436077
 config.enable_wayland = false
 config.front_end = "OpenGL"
 
--- and finally, return the configuration to wezterm
+config.window_padding = { left = 5, right = 0, top = 0, bottom = 0 }
+
+-- config.font = wezterm.font("DejaVu Sans Mono") -- default was 'JetBrains Mono' which somehow looks better here than in kitty; DejaVu looks too cramped
+
+-- 965 themes with preview: https://wezfurlong.org/wezterm/colorschemes
+-- Nicer overview: https://gogh-co.github.io/Gogh/
+config.color_scheme = 'Chalk (Gogh)'
+config.color_scheme = 'Dracula (Gogh)'
+config.color_scheme = 'Nord (Gogh)'
+config.color_scheme = 'SpaceGray Eighties'
+config.color_scheme = 'Everforest Dark (Gogh)'
+config.color_scheme = 'Gruvbox Dark (Gogh)'
+config.color_scheme = 'Catppuccin Macchiato (Gogh)'
+config.color_scheme = 'Catppuccin Frappé (Gogh)'
+config.color_scheme = 'Solarized Dark (Gogh)'
+
+-- save/restore session
+-- https://github.com/wez/wezterm/issues/3237 https://github.com/danielcopper/wezterm-session-manager
+
 return config
