@@ -30,4 +30,15 @@ config.color_scheme = 'Solarized Dark (Gogh)'
 -- save/restore session
 -- https://github.com/wez/wezterm/issues/3237 https://github.com/danielcopper/wezterm-session-manager
 
+-- Session manager above not needed, can attach to a socket/server like in tmux: https://wezfurlong.org/wezterm/multiplexing.html#unix-domains
+config.unix_domains = { { name = 'unix', }, }
+-- This causes `wezterm` to act as though it was started as `wezterm connect unix` by default, connecting to the unix domain on startup. However, this doesn't work when starting the Linux app from ChromeOS instead of a terminal.
+config.default_gui_startup_args = { 'connect', 'unix' }
+-- fix for start from menu: https://github.com/wez/wezterm/issues/2933#issuecomment-1375829700
+wezterm.on('gui-startup', function(cmd)
+  local unix = wezterm.mux.get_domain("unix")
+  wezterm.mux.set_default_domain(unix)
+  unix:attach()
+end)
+
 return config
