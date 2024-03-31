@@ -116,6 +116,10 @@ if [[ -d /mnt/chromeos ]]; then
 
   agi kitty # much nicer than stock Terminal and very customizable, see ~/.config/kitty/kitty.conf
   ln -s ~/dotfiles/.config/kitty ~/.config/
+  # https://wezfurlong.org/wezterm/install/linux.html
+  curl -fsSL https://apt.fury.io/wez/gpg.key | sudo gpg --yes --dearmor -o /usr/share/keyrings/wezterm-fury.gpg
+  echo 'deb [signed-by=/usr/share/keyrings/wezterm-fury.gpg] https://apt.fury.io/wez/ * *' | sudo tee /etc/apt/sources.list.d/wezterm.list
+  sudo apt update && agi wezterm
 fi
 sudo snap install nvim --classic # Virtuozzo/OpenVZ: https://community.letsencrypt.org/t/system-does-not-fully-support-snapd-cannot-mount-squashfs-image-using-squashfs/132689/2
 sudo snap install procs # modern replacement for `ps aux | grep ..` in Rust, fields for open ports, throughput, container name; ex: procs --tree nvim; procs --watch
