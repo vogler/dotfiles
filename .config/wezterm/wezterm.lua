@@ -9,11 +9,11 @@ config.front_end = "OpenGL"
 
 config.window_padding = { left = 5, right = 0, top = 0, bottom = 0 }
 
--- config.font = wezterm.font("DejaVu Sans Mono") -- default was 'JetBrains Mono' which somehow looks better here than in kitty; DejaVu looks too cramped
+-- config.font = wezterm.font("DejaVu Sans Mono") -- default 'JetBrains Mono' looked better here than in kitty; DejaVu looks too cramped
+-- https://wezfurlong.org/wezterm/config/fonts.html WezTerm bundles JetBrains Mono, Nerd Font Symbols and Noto Color Emoji fonts and uses those for the default font configuration.
+
 config.font_size = 11.0 -- default is 12.0
 config.adjust_window_size_when_changing_font_size = false
-
-config.use_fancy_tab_bar = false
 
 -- 965 themes with preview: https://wezfurlong.org/wezterm/colorschemes
 -- Nicer overview: https://gogh-co.github.io/Gogh/
@@ -41,4 +41,27 @@ wezterm.on('gui-startup', function(cmd)
   unix:attach()
 end)
 
+config.use_fancy_tab_bar = false
+config.hide_tab_bar_if_only_one_tab = true
+
+config.enable_scroll_bar = true
+
+-- config.window_background_opacity = 0.95
+
+-- https://wezfurlong.org/wezterm/config/lua/keyassignment
+local act = wezterm.action
+config.keys = {
+  { key = 'v', mods = 'CTRL|ALT', action = act.SplitVertical },
+  { key = 'c', mods = 'CTRL|ALT', action = act.SplitHorizontal },
+  { key = 'j', mods = 'CTRL|ALT', action = act.ActivatePaneDirection 'Down' },
+  { key = 'k', mods = 'CTRL|ALT', action = act.ActivatePaneDirection 'Up' },
+  { key = 'h', mods = 'CTRL|ALT', action = act.ActivatePaneDirection 'Left' },
+  { key = 'l', mods = 'CTRL|ALT', action = act.ActivatePaneDirection 'Right' },
+  { key = '[', mods = 'CTRL|ALT', action = act.ActivatePaneDirection 'Prev' },
+  { key = ']', mods = 'CTRL|ALT', action = act.ActivatePaneDirection 'Next' },
+  -- https://wezfurlong.org/wezterm/config/lua/keyassignment/PaneSelect.html
+  { key = 's', mods = 'CTRL|ALT',   action = act.PaneSelect },
+  { key = 's', mods = 'SHIFT|CTRL', action = act.PaneSelect { mode = 'SwapWithActiveKeepFocus' } },
+  { key = 'd', mods = 'SHIFT|CTRL', action = act.PaneSelect { mode = 'MoveToNewTab' } },
+}
 return config
