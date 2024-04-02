@@ -45,6 +45,7 @@ let g:netrw_silent=1 " no "Press ENTER or type commend to continue" when editing
   " let g:dirvish_git_show_icons = 0 " disable icons since they misalign entries and just rely on color for git status
   " https://github.com/roginfarrer/vim-dirvish-dovish file manipulation commands for dirvish
 Plug 'stevearc/oil.nvim' " nicer than dirvish: icons, sorting, can edit filesystem in buffer and shows operations on :w, splits (^s, ^h), preview (^p); just not git status.
+Plug 'refractalize/oil-git-status.nvim' " git status for oil.nvim, https://github.com/stevearc/oil.nvim/issues/85
 " However, oil.nvim disables netrw and thereby `gx` to open links: https://github.com/stevearc/oil.nvim/issues/182
 Plug 'chrishrb/gx.nvim' " `gx` without netrw, but also supports links without protocol, vim plugins, github issues, npm deps, and web search as a fallback, shows menu if there are alternatives :)
 " Plug 'tpope/vim-characterize' " Unicode character metadata (press ga on a character)
@@ -500,9 +501,11 @@ Plug 'github/copilot.vim' " inline code suggestion via GitHub Copilot, needs sub
 
 call plug#end() " Automatically executes `filetype plugin indent on` and `syntax enable`.
 
-lua require("oil").setup()
+" signcolumn 2 instead of 0 needed for oil-git-status (index, working tree)
+lua require("oil").setup({ win_options = { signcolumn = "yes:2", } })
 " nmap - :Oil --float<CR> " can :q floating window, but preview does not work; also had grey background
 nmap - :Oil<CR>
+lua require("oil-git-status").setup()
 
 lua require('gx').setup()
 map gx :Browse<CR>
