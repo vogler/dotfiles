@@ -65,6 +65,7 @@ Plug 'scrooloose/nerdtree', {'on': ['NERDTreeToggle', 'NERDTreeFind']}
 map <C-l> :NERDTreeFind<CR> " open sidebar on the left and focus current file
 " let NERDTreeMinimalUI=1
 Plug 'Xuyuanp/nerdtree-git-plugin'
+" Explorer alternatives: https://github.com/nvim-tree/nvim-tree.lua https://github.com/nvim-neo-tree/neo-tree.nvim
 autocmd BufReadPre * if getfsize(@%) > 100000 | let b:tagbar_ignore = 1 | endif
 Plug 'majutsushi/tagbar' " sidebar with outline viewer / ctags of current file
 nmap <F8> :TagbarToggle<CR>
