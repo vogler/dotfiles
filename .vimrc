@@ -38,11 +38,12 @@ set autoindent
 Plug 'tpope/vim-obsession' " cont. updated session files; :Obsess starts recording, load with -S or :source
 let g:netrw_silent=1 " no "Press ENTER or type commend to continue" when editing a file via scp, e.g. nvim scp://pi@rpi3/dash.log
 " Plug 'tpope/vim-vinegar' " file browser enhancements (- opens netrw), - goes up one directory but keeps file focused (enter to go back); nice default sorting, otherwise few features
-Plug 'justinmk/vim-dirvish' " nicer than vim-vinegar, 'autochdir' is not supported
-Plug 'kristijanhusak/vim-dirvish-git' " show git status in dirvish
+" Plug 'justinmk/vim-dirvish' " nicer than vim-vinegar, 'autochdir' is not supported
+" Plug 'kristijanhusak/vim-dirvish-git' " show git status in dirvish
   " let g:dirvish_git_show_ignored = 1 " puts ☒ before ignored files, but also does so for dirs that contain ignored files...
-  let g:dirvish_git_show_icons = 0 " disable icons since they misalign entries and just rely on color for git status
-" alternative: https://github.com/stevearc/oil.nvim
+  " let g:dirvish_git_show_icons = 0 " disable icons since they misalign entries and just rely on color for git status
+  " https://github.com/roginfarrer/vim-dirvish-dovish file manipulation commands for dirvish
+Plug 'stevearc/oil.nvim' " nicer than dirvish: icons, sorting, can edit filesystem in buffer and shows operations on :w, splits (^s, ^h), preview (^p); just not git status
 " Plug 'tpope/vim-characterize' " Unicode character metadata (press ga on a character)
 Plug 'tpope/vim-speeddating' " increment (C-A) / decrement (C-X) for date/time formats
 Plug 'tpope/vim-jdaddy' " JSON text objects (aj, ij) and pretty printing (gqaj)
@@ -494,6 +495,10 @@ Plug 'github/copilot.vim' " inline code suggestion via GitHub Copilot, needs sub
 
 
 call plug#end() " Automatically executes `filetype plugin indent on` and `syntax enable`.
+
+lua require("oil").setup()
+" nmap - :Oil --float<CR> " can :q floating window, but preview does not work; also had grey background
+nmap - :Oil<CR>
 
 lua require('auto-session').setup {}
 
