@@ -19,7 +19,7 @@ set backupdir=~/.vim/backup//
 set directory=~/.vim/swap//
 set undodir=~/.vim/undo//
 set shortmess+=A " don't give the "ATTENTION" message when an existing swap file is found
-set autochdir " https://vim.fandom.com/wiki/Set_working_directory_to_the_current_file
+" set autochdir " https://vim.fandom.com/wiki/Set_working_directory_to_the_current_file - originally only added to show full path in airline? not supported by vim-dirvish, may also break other plugins; pwd shows dir of file also without this
 Plug 'tpope/vim-fugitive' " provides :G (:Git), :GMove, :GBrowse etc.
 Plug 'tpope/vim-rhubarb' " GitHub extension for fugitive.vim: :GBrowse, omni-complete issues etc. in commit messages
 Plug 'tpope/vim-endwise' " end certain structures (if, do, etc.) automatically
@@ -36,8 +36,13 @@ set softtabstop=2
 set autoindent
 " set cindent
 Plug 'tpope/vim-obsession' " cont. updated session files; :Obsess starts recording, load with -S or :source
-Plug 'tpope/vim-vinegar' " file browser enhancements (- opens netrw), - goes up one directory but keeps file focused (enter to go back); nvim alternative: https://github.com/stevearc/oil.nvim
 let g:netrw_silent=1 " no "Press ENTER or type commend to continue" when editing a file via scp, e.g. nvim scp://pi@rpi3/dash.log
+" Plug 'tpope/vim-vinegar' " file browser enhancements (- opens netrw), - goes up one directory but keeps file focused (enter to go back); nice default sorting, otherwise few features
+Plug 'justinmk/vim-dirvish' " nicer than vim-vinegar, 'autochdir' is not supported
+Plug 'kristijanhusak/vim-dirvish-git' " show git status in dirvish
+  " let g:dirvish_git_show_ignored = 1 " puts ☒ before ignored files, but also does so for dirs that contain ignored files...
+  let g:dirvish_git_show_icons = 0 " disable icons since they misalign entries and just rely on color for git status
+" alternative: https://github.com/stevearc/oil.nvim
 " Plug 'tpope/vim-characterize' " Unicode character metadata (press ga on a character)
 Plug 'tpope/vim-speeddating' " increment (C-A) / decrement (C-X) for date/time formats
 Plug 'tpope/vim-jdaddy' " JSON text objects (aj, ij) and pretty printing (gqaj)
@@ -146,6 +151,7 @@ Plug 'vim-airline/vim-airline' " status line with multiple sections and support 
     if a:name == 'master' | return 'm ' | else | return a:name | endif
   endfunction
   let g:airline#extensions#branch#format = 'CustomBranchName'
+  let g:airline_section_c = '%F' " show full path instead of just file in statusline; was not needed with autochdir
 Plug 'vim-airline/vim-airline-themes' " :AirlineTheme solarized
 " Plug 'nvim-lualine/lualine.nvim'
 " Plug 'bling/vim-bufferline' " show list of buffers in the command bar or statusline
