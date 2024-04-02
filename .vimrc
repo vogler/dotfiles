@@ -250,9 +250,9 @@ let g:csv_autocmd_arrange = 1 " ArrangeColumn for all *.csv and only UnArrangeCo
 let g:csv_autocmd_arrange_size = 1024*1024 " only do it for files up to 1 MB (slow for big files)
 
 " # Markdown
-Plug 'gabrielelana/vim-markdown' " syntax highlighting for GitHub Markdown flavor
-" Plug 'preservim/vim-markdown' " syntax highlighting but not as nice as the above, folding, concealing; requires tabular?
-Plug 'SidOfc/mkdx' " functions for lists, checkboxes, code, shortcuts, headers, links
+Plug 'gabrielelana/vim-markdown' " syntax highlighting for GitHub Markdown flavor; started throwing error for some time
+" Plug 'preservim/vim-markdown' " syntax highlighting but not as nice as the above, folding, concealing; requires tabular?; wrongly indents lists
+" Plug 'SidOfc/mkdx' " functions for lists, checkboxes, code, shortcuts, headers, links; remaps/breaks `gx` for opening links in browser
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']} " :MarkdownPreview opens in browser with synchronized scrolling - at some point did not open anything anymore, using `yarn install` instead of the above fixed it - https://github.com/iamcco/markdown-preview.nvim/issues/188
 
 " # LaTeX - using vscode with https://github.com/James-Yu/LaTeX-Workshop
