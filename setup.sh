@@ -121,11 +121,12 @@ sudo npm install -g typescript typescript-language-server # 38.7MB + 1.7MB, used
 sudo npm install -g howfat # 1.2MB, show npm package size, #deps, #files, license as tree, table, json, simple - all info from npmjs.com, not local size on disk
 sudo npm install -g zx # 12.7MB, JS as replacement for shell scripts, https://github.com/google/zx
 
-# python/pip
+# python/pipx
 mkdir -p "$config/ptpython" # not .config on macOS...
 # ln -sf {`pwd`,~}/.config/ptpython/config.py
 ln -sf `pwd`/.config/ptpython/config.py "$config/ptpython"
-# pip install pipdeptree # tree of deps: pipdeptree -p apprise; reverse: pipdeptree -r -p requests
+# Only install packages via pipx and not with pip! Only use pipx where brew's version of package is too old or not available at all.
+# pipx install pipdeptree # tree of deps: pipdeptree -p apprise; reverse: pipdeptree -r -p requests -> brew install pipdeptree
 pipx install lastversion # 11MB, find/download latest version of some software on GitHub, GitLab, BitBucket, PyPi, SourceForge, Wikipedia... better `export GITHUB_API_TOKEN=...` to avoid API rate limit
 
 # TODO this needs to be rethought

@@ -128,6 +128,7 @@ autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
 Plug 'junegunn/rainbow_parentheses.vim', {'on': 'RainbowParentheses'} " same color for same bracket pairs
 Plug 'junegunn/gv.vim', {'on': 'GV'} " :GV opens git commit browser, :GV! only commits for current file, :GV? fills location list the revisions of current file, can be used in visual mode to work on jsut lines
+" ## statusline
 Plug 'vim-airline/vim-airline' " status line with multiple sections and support for many plugins -> replaced by faster lualine.nvim
   let g:airline_powerline_fonts = 1
   let g:airline#extensions#tabline#enabled = 0 " buffers/tabs -> replaced by bufferline.nvim
@@ -154,8 +155,12 @@ Plug 'vim-airline/vim-airline' " status line with multiple sections and support 
   let g:airline_section_c = '%F' " show full path instead of just file in statusline; was not needed with autochdir
 Plug 'vim-airline/vim-airline-themes' " :AirlineTheme solarized
 " Plug 'nvim-lualine/lualine.nvim'
-" Plug 'bling/vim-bufferline' " show list of buffers in the command bar or statusline
+" Plug 'bling/vim-bufferline' " to save space: show list of buffers in the command bar or statusline
+" ## bufferline
 Plug 'akinsho/bufferline.nvim', { 'tag': '*' } " fancy buffer line with numbers for tabs on the right, close buttons, hover, colored file type icons, diagnostics etc.
+" alternative: https://github.com/romgrk/barbar.nvim
+  " more via https://nix-community.github.io/nixvim/plugins/barbecue/index.html
+" alternative: https://github.com/utilyre/barbecue.nvim
 Plug 'tiagovla/scope.nvim' " scope buffers to tab
 nnoremap <space><tab> :tabnew<cr>
 nnoremap <tab> :tabnext<cr>
