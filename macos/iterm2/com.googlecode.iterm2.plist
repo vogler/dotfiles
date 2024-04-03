@@ -32169,6 +32169,8 @@
 			<true/>
 			<key>Send Session Ended Alert</key>
 			<true/>
+			<key>Session Close Undo Timeout</key>
+			<integer>300</integer>
 			<key>Set Local Environment Vars</key>
 			<integer>0</integer>
 			<key>Shortcut</key>
