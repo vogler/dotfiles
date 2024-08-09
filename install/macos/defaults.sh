@@ -231,6 +231,9 @@ defaults write com.apple.Terminal 'Startup Window Settings' -string SolarizedDar
 defaults write com.googlecode.iterm2.plist PrefsCustomFolder -string "~/dotfiles/macos/iterm2"
 # Tell iTerm2 to use the custom preferences in the directory
 defaults write com.googlecode.iterm2.plist LoadPrefsFromCustomFolder -bool true
+# By default iTerm2 will only resize in increments of character widths. -> disable
+# https://github.com/rxhanson/Rectangle#window-resizing-is-off-slightly-for-iterm2
+defaults write com.googlecode.iterm2 DisableWindowSizeSnap -integer 1
 
 # https://github.com/VSCodeVim/Vim/#mac enable key-repeating in normal mode
 defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
