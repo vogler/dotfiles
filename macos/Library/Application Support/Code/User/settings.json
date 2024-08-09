@@ -224,5 +224,6 @@
     "textMateRules": []
   },
   "dotenv.enableAutocloaking": false,
-  "security.promptForLocalFileProtocolHandling": false
+  "security.promptForLocalFileProtocolHandling": false,
+  "prisma.showPrismaDataPlatformNotification": false
 }
