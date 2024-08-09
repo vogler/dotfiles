@@ -6,6 +6,10 @@
 	<false/>
 	<key>AllowClipboardAccess</key>
 	<true/>
+	<key>AlternateMouseScroll</key>
+	<false/>
+	<key>AlwaysAcceptFirstMouse</key>
+	<false/>
 	<key>AnimateDimming</key>
 	<false/>
 	<key>AutoCommandHistory</key>
