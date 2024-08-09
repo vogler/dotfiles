@@ -1,7 +1,8 @@
 date --rfc-3339=seconds
 
-. system-stats.sh
+d=$(dirname "$0")
+. "$d/system-stats.sh"
 echo
-. chrome-stats.sh
+. "$d/chrome-stats.sh"
 echo
-. TabsOutliner.sh
+. "$d/TabsOutliner.sh"
