@@ -24,6 +24,8 @@ agi tig # Text interface for Git repositories
 agi exa # Modern replacement for 'ls'; `exa --long --header --icons --git`; now unmaintained, use eza
 # agi rust-lsd # only in unstable so far, `ls` clone with colors, file type icons, `lsd --tree`; looks nicer than exa, but no git status
 agi tree # `exa --tree --level=2` has colors and can show meta-data with --long
+agi bat # `cat` clone with syntax highlighting and git integration
+ln -sf /usr/bin/batcat /usr/local/bin/bat
 agi htop # nicer ncurses-based process viewer similar to top
 agi iotop # shows I/O usage
 agi iftop # shows network interface usage

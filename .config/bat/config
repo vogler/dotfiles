@@ -1,1 +1,5 @@
---theme="Monokai Extended Light"
+--pager="less -RFX --mouse" # also set via $BAT_PAGER in zshenv, same for $DELTA_PAGER
+# --theme="Monokai Extended Light"
+# --theme="Solarized (dark)"
+# https://github.com/catppuccin/bat
+--theme="Catppuccin Mocha"
