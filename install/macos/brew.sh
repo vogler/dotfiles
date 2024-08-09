@@ -290,6 +290,9 @@ brew install trurl # 74KB, CLI for URL parsing and manipulation, see examples: h
 brew install scilla # 12.3MB, Go, DNS, subdomain, port, directory enumeration tool; `scilla dns -target google.de`; `scilla port -target rpi4`
 brew install subfinder # 27.9MB, Go, Subdomain discovery tool -> add Shodan API key to ~/.config/subfinder/provider-config.yaml
 brew install httpx # 39.2MB, Go, HTTP toolkit for probing title, status code, cert, tech based on wappalyzer; `echo golem.de | subfinder -silent | httpx -silent -status-code -location -title -server -ip -response-time -tech-detect`
+brew install iftop # 138KB, interactive bandwidth monitor, shows connections with RX/TX bars
+brew install bmon # 393KB, interactive bandwidth monitor, only shows graphs per interface
+# brew install nethogs # 136KB, interactive bandwidth monitor, groups per process - did not work with sudo; use nettop to at least show connections per process
 
 # goblint
 brew install gmp # needed to build deps
