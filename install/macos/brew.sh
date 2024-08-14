@@ -305,6 +305,7 @@ brew install httpx # 39.2MB, Go, HTTP toolkit for probing title, status code, ce
 brew install iftop # 138KB, interactive bandwidth monitor, shows connections with RX/TX bars
 brew install bmon # 393KB, interactive bandwidth monitor, only shows graphs per interface
 # brew install nethogs # 136KB, interactive bandwidth monitor, groups per process - did not work with sudo; use nettop to at least show connections per process
+brew install bandwhich # 5.9MB, Rust, bandwidth per process, remote address, connection
 
 # goblint
 brew install gmp # needed to build deps
