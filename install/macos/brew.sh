@@ -157,7 +157,8 @@ brew install f2 # 11.5MB, Go, batch renaming tool with variables for file metada
 brew install figlet # Banner-like program prints strings as ASCII art
 brew install cmatrix # 78KB, console matrix screensaver
 brew install gum # 25MB, fancy input for shell scripts: choose a b, input, write, confirm
-brew install fzf # 2.7MB, Command-line fuzzy finder written in Go
+brew install fzf # 2.7MB, Command-line fuzzy finder written in Go, search shell history with ctrl-r
+brew install atuin # 25.4MB, Rust, records shell history in sqlite with cwd, hostname etc., TUI for interactive search on ctrl-r, Enter to execute, Tab to edit first; `atuin import auto` to import from zsh history, integration loaded in zshrc; overrides fzf history binding ctrl-r, also starts on cursor up, but not on ctrl-p
 brew install neofetch # system information with OS + logo, host, kernel, uptime, packages, shell, resolution, DE, WM, terminal, CPU, memory
 # terminal file managers with vim keybindings, default single column
 brew install fff # 50KB, Bash, simple file manager, f in .zshrc changes dir on exit (q)
