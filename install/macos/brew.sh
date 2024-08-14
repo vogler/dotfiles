@@ -171,6 +171,7 @@ brew install zoxide # 1MB, Rust, smarter cd command, inspired by z and autojump
 brew install broot # 6.2MB, `br` to navigate big file trees, alt+enter to cd, `br -s` to show sizes
 brew install dos2unix # Convert text between DOS, UNIX, and Mac formats; for git's fatal: CRLF would be replaced by LF
 brew install choose-rust # 2.0MB, Human-friendly and fast alternative to cut and (sometimes) awk, `choose -f ':' 0 3` prints the 0th and 3rd items sep by :, `choose -3:-1` prints the last 3 items sep by space
+brew install tuc # 1MB, Rust, like cut, but can do more than one character, negative index, work on lines and emit as --json
 brew install hck # 2.2MB, Rust, drop-in replacement for cut, but supports regex delimiter and reordering columns
 brew install clog # 173KB, Colorized pattern-matching log tail utility, https://taskwarrior.org/docs/clog/, `echo 'foo bar' | clog -d -t -f <(echo 'default rule /foo/ --> bold red match')`
 brew install grc # 114KB, Colorize logfiles and command output; `\grc ping google.com; \grc tail /var/log/system.log; man grcat`
