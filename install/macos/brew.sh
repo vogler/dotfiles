@@ -106,6 +106,7 @@ curl -L https://iterm2.com/shell_integration/install_shell_integration_and_utili
 brew install warp # 147MB, fast rust-based terminal, bit more modern than iterm, but pretty similar, TODO colors and font in vim are off
 # brew install tabby # 346MB, TS, customizable terminal, SSH and serial client; nice UI, but colors in vim are off, feels slower than iTerm and no additional features I currently need
 brew install tmux # terminal multiplexer
+brew install zellij # 23MB, Rust, like tmux, but more modern, shows keybindings (default binds things like ctrl-p for panes, but can lock with ctrl-g), built-in session restore
 brew install coreutils # newer than macOS
 brew install moreutils # more tools: ts for prefixing timestamps, parallel, combine, sponge etc.
 brew install findutils # GNU find, xargs, and locate - macOS find does not have -iname
