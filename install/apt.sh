@@ -12,6 +12,8 @@ agi() {
 sudo apt -qq update && sudo apt -y -qq upgrade
 # apt list --installed | sed -e 's/\(.*\)\/.*/agi \1/' # TODO versions? do I really want all packages?
 
+# Packages below are for usage with ssh/servers. Opinionated Ubuntu setup for dekstop web dev: https://omakub.org
+
 # sections below: apt default sources, cargo, snap, apt additional sources, binary/.deb
 
 # packages installed via apt, default sources:
