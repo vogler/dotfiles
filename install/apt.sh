@@ -28,6 +28,7 @@ agi exa # Modern replacement for 'ls'; `exa --long --header --icons --git`; now 
 agi tree # `exa --tree --level=2` has colors and can show meta-data with --long
 agi bat # `cat` clone with syntax highlighting and git integration
 ln -sf /usr/bin/batcat /usr/local/bin/bat
+agi duf # Go, Disk usage/free, nicer `df`
 agi htop # nicer ncurses-based process viewer similar to top
 agi iotop # shows I/O usage
 agi iftop # shows network interface usage
