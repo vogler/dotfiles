@@ -134,7 +134,7 @@ sudo snap install procs # modern replacement for `ps aux | grep ..` in Rust, fie
 # packages installed via apt, additional sources:
 
 if ! hash node 2>/dev/null || ! (node --version | grep v18); then
-  curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash - # Debian's nodejs is too old: 10.24.0
+  curl -fsSL https://deb.nodesource.com/setup_22.x -o | sudo -E bash # Debian's nodejs is too old
   agi nodejs # JavaScript
 fi
 # agi npm # node package manager; provided by nodejs from nodesource (8.1.2) vs. sep. package in Debian (5.8.0)
