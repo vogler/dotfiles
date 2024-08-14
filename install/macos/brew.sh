@@ -83,6 +83,12 @@ brew install numi # 49MB, calculator app with unit conversions and variables
 brew install portfolioperformance # 168MB, Internal and True-Time Weighted Rate of Return, graphs etc., can import PDFs of transactions from ING, but needs manual work; probably works for degiro as well
 brew install --cask r # 95MB, Environment for statistical computing and graphics; https://www.coursera.org/learn/practical-time-series-analysis
 
+# Android
+brew install android-platform-tools # 30MB, adb etc., `adb shell/push/pull`
+brew install android-file-transfer # 6.71MB, simple default app for MTP file transfer by Google, can copy/delete
+# brew install macdroid # 45.39MB, can also mount as disk (and via ADB besides MTP), but read-only in free version...
+# brew install openmtp # 395MB, same as android-file-transfer, just other UI
+
 # Terminal Spotify client
 brew install ncspot # 12MB, Rust, can just login, nice UI and shortcuts but had some issues with displaying progress bar and doesn't scrobble to Last.fm, fills up ~/.cache/ncspot/librespot
 # brew install spotify-tui # 12MB, Rust, `spt`, just uses Web API to control other devices/clients (need to create app for Client ID/secret) or play using spotifyd (requires dbus)
