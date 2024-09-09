@@ -322,13 +322,32 @@ brew install skim # does not jump around as Preview.app on reload
 brew install qpdf # qpdf --show-npages; instead of pdfinfo from xpdf
 # brew install hook # copy links to files, web pages, etc., deep links to text selection in PDF only supported for Skim, not Preview; 30d trial, afterwards only links to emails & web pages. Thought about this before and like the idea, but not its execution.
 
-# fonts
-brew tap homebrew/cask-fonts
-brew install svn # needed for installing some fonts...
-brew install font-inconsolata font-open-sans font-source-code-pro font-source-sans-pro font-anonymous-pro
-brew install font-dejavu-sans-mono-for-powerline font-droid-sans-mono-for-powerline font-inconsolata-for-powerline font-inconsolata-for-powerline font-source-code-pro-for-powerline
-brew install font-consolas-for-powerline font-menlo-for-powerline font-meslo-for-powerline font-monofur-for-powerline font-noto-mono-for-powerline font-anonymice-powerline
-# brew install font-meslo-lg-nerd-font # relevant variants are downloaded via https://github.com/romkatv/powerlevel10k#fonts - see https://www.nerdfonts.com for glyphs
+# fonts - installed to ~/Library/Fonts/ (currently 980MB, ~120MB not due to the below)
+# brew tap homebrew/cask-fonts # has been moved to homebrew
+# normal fonts
+brew install font-inconsolata font-open-sans font-source-code-pro font-anonymous-pro # 347KB 1.1MB 367KB 598KB
+# brew install font-consolas-for-powerline font-menlo-for-powerline font-meslo-for-powerline font-monofur-for-powerline font-noto-mono-for-powerline font-anonymice-powerline
+# fonts patched for powerline have been replaced by https://www.nerdfonts.com for glyphs
+# relevant variants like font-meslo-lg-nerd-font are downloaded via https://github.com/romkatv/powerlevel10k#fonts
+# install via brew instead for easy updates
+# first size was reported by brew (download?), second is in Finder
+# brew install font-noto-nerd-font # 529.7MB - too big
+brew install font-jetbrains-mono-nerd-font # 112.4MB 214.2MB
+brew install font-meslo-lg-nerd-font # 95.6MB 190.3MB
+# brew install font-overpass-nerd-font # 84.6MB
+brew install font-geist-mono-nerd-font # 61.0MB 146.6MB, used in iTerm: size 16, anti-aliased, no ligatures
+# brew install font-sauce-code-pro-nerd-font # 48.5MB
+brew install font-commit-mono-nerd-font # 27.2MB 66MB
+brew install font-fira-code-nerd-font # 23.8MB 43.5MB
+brew install font-ubuntu-nerd-font # 21.6MB 41.1MB
+brew install font-dejavu-sans-mono-nerd-font # 15.5MB 28.8MB
+brew install font-hack-nerd-font # 15.3MB 29.1MB
+brew install font-anonymice-nerd-font # 14.7MB 26.9MB
+brew install font-ubuntu-mono-nerd-font # 13.8MB 26MB
+brew install font-gohufont-nerd-font # 13.8MB 26.5MB
+brew install font-proggy-clean-tt-nerd-font # 10.5MB 19.2MB
+brew install font-droid-sans-mono-nerd-font # 6.8MB 16.4MB
+brew install font-inconsolata-nerd-font # 6.7MB 13MB
 
 # tracking
 brew install rescuetime # Intel, fails because it requires Rosetta 2 (`sudo softwareupdate --install-rosetta`). Why did the other Intel apps work without installing this?
