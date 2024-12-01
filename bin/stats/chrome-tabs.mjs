@@ -20,4 +20,5 @@ for (const tab of j.tabs) {
   window.tabs[tab.id] = { title: tab.title, url: tab.url }
 }
 
-console.dir(windows, { depth: null })
+// console.dir(windows, { depth: null })
+console.log(JSON.stringify(windows))
