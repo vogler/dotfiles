@@ -212,6 +212,8 @@ brew install meta-package-manager # ~58MB, Wrapper around all package managers w
 # containers
 brew install --cask docker # 1.5 GB, hate it, only gave in for avoiding captcha with headless playwright
 # brew install podman # 55 M + 588 MB deps + 590MB fedora-coreos-qemu = 1.23 GB, daemon-less alternative to docker, but only runs QEMU-VMs on macOS which takes time to boot -> not interesting on macOS
+brew install orbstack # 770MB, faster drop-in replacement for Docker Desktop, `orb`, https://orbstack.dev
+brew install lazydocker # 16MB, Go, TUI to manage containers, images, volumes and networks
 brew install dive # 10MB, explore layers in docker images
 brew install ctop # 8.9MB, Top-like interface for container metrics
 # brew install hadolint # 73MB, Dockerfile linter to validate best practices, can just use online version to shows warnings inline: https://hadolint.github.io/hadolint/
