@@ -53,6 +53,10 @@ defaults write com.apple.dock autohide-delay -float 0
 # Make Dock icons of hidden applications translucent
 defaults write com.apple.dock showhidden -bool true
 
+# https://superuser.com/questions/670252/cmdtab-app-switcher-is-on-the-wrong-monitor
+# Show app switcher on all displays (by default only on display where dock was last shown (which is external display on left when dock on left, but my primary display is right))
+defaults write com.apple.dock appswitcher-all-displays -bool true
+
 # System Preferences > Dock & Menu Bar > Bluetooth
 defaults write com.apple.controlcenter 'NSStatusItem Visible Bluetooth' -bool true
 
