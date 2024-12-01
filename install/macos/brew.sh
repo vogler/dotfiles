@@ -220,6 +220,7 @@ brew install ctop # 8.9MB, Top-like interface for container metrics
 brew install act # 22MB, Run your GitHub Actions locally
 
 # git
+brew install git # 57.7MB, Apple Git is only updated together with Xcode and some versions behind
 # brew install diff-so-fancy # within-line highlights
 brew install git-delta # as diff-so-fancy but with language syntax highlighting, side-by-side, etc.; https://dandavison.github.io/delta/related-projects.html
 brew install difftastic # 79.6MB, Rust, structural diff that understands syntax, >30 languages parsed with tree-sitter; `difft v1 v2`, `git dft` for diff, `git dlog` for log, see .gitconfig
@@ -234,6 +235,9 @@ brew install gitwatch # use GitDoc in vscode instead? https://marketplace.visual
 # brew install git-recent # recent branches; use `git branchr` (alias in .gitconfig) which is based on `git branch` and accepts its options like -a to show remote branches
 brew install onefetch # 12.8MB, Rust, like neofetch but stats for git repos, shows name, description, HEAD, version, languages, deps, authors, changes, contributors, commits, LOC, size, license
 brew install git-quick-stats # 72KB, git statistics: commits per author, year, month, weekday, hour...
+brew install git-extras # 418KB, git statistics like `git summary --line` and utilities like `git fork user/repo`
+brew install ugit --force # 43KB, Bash, Undo for 20+ git scenarios, either ugit` or `git undo`, --force due to conflict with git-extras/git-undo
+brew link --overwrite ugit # overwrites git-extras/git-undo which just undoes commits
 brew install jj # 14.5MB, Rust, git-compatible VCS, no index, working copy is auto-committed, conflicts can be committed -> rebase easier, https://martinvonz.github.io/jj/v0.15.1/git-comparison/ - not as polished as sapling but more improvements over git
 
 # secret scanning
