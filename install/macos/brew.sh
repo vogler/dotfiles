@@ -186,6 +186,7 @@ brew tap homebrew/command-not-found # 8.56MB, used by command-not-found module i
 brew install ptpython # better Python REPL
 brew install pipx # 1MB, like npx: run/install binaries from Python packages, easier than `python3 -m venv foo`; `pipx run lastversion` saves to '~/Library/Caches/pipx', `pipx install lastversion` saves to '~/Library/Application Support/pipx'...
 brew install node # JavaScript; includes npm
+# use fnm as node version manager? https://github.com/Schniz/fnm
 brew install opam # OCaml
 brew install java
 sudo ln -sfn /opt/homebrew/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk # For the system Java wrappers to find this JDK
