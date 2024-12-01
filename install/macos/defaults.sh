@@ -117,6 +117,10 @@ defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 # System Preferences > Keyboard > Shortcuts > Input Sources > disable Select the previous input source (using `bindkey '^ ' autosuggest-execute` in .zshrc, also the alternative ctrl+alt+space is immediate without UI for switching to the next input source)
 /usr/libexec/PlistBuddy -c "Set :AppleSymbolicHotKeys:60:enabled false" ~/Library/Preferences/com.apple.symbolichotkeys.plist
 
+# Disable little input source indicator overlay since it was showing up in WhatsApp and even neovim in iTerm without switching input sources
+# https://www.reddit.com/r/MacOS/comments/1443fsa/input_source_indicating_bubble_on_senoma/
+defaults write kCFPreferencesAnyApplication TSMLanguageIndicatorEnabled 0
+
 # System Preferences > Keyboard > Shortcuts > App Shortcuts (All Applications)
 # ctrl-alt-cmd- left, right, o, m
 defaults write -g NSUserKeyEquivalents '{
