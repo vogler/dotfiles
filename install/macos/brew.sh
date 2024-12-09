@@ -50,6 +50,7 @@ brew install istat-menus # 68MB, trial, got key, menu bar: HW stats (combined: g
 
 # HW tools
 # brew install tg-pro # trial
+brew install logi-options+ # 460MB, software for Logitech mice M350s (Pebble 2) and M650
 
 # browser/-based apps
 brew install google-chrome # 922MB
