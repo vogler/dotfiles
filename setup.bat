@@ -20,6 +20,8 @@ winget install -e --id QL-Win.QuickLook
 Rem https://www.nirsoft.net/utils/wifi_channel_monitor.html - install failed due to wrong checksum
 Rem choco install --ignore-checksums wifichannelmonitor
 
+winget install LibreOffice
+
 Rem Upgrade
 choco upgrade all
 winget upgrade --all
