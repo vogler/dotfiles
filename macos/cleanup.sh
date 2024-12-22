@@ -232,10 +232,21 @@ fi
 if [ -z $dry_run ]; then
   echo "> pkg cache clean" # TODO just use paths as above?
   # has brew && brew cleanup --prune=all # this will only delete downloads in ~/Library/Caches/Homebrew which is already deleted above
-  has gem && gem cleanup
-  has npm && npm cache clean --force
-  has yarn && yarn cache clean
+  has gem && sudo gem cleanup # /Library/Ruby/Gems
+  has pipx && rm -rf ~/Library/Caches/pipx && rm -rf ~/Library/Application\ Support/pipx/.cache
+
+  # rm -rf ~/.npm/_npx; rm -rf ~/.npm/_cacache
+  has npm && sudo chown -R 501:20 ~/.npm && npm cache clean --force
+  if has corepack then
+    corepack cache clean
+    # corepack creates proxies, so the binaries would be found and then it would ask to download it if not installed
+  else # I now have corepack disabled and installed the following via `npm i -g`
+    has yarn && yarn cache clean
+    has pnpm && pnpm store prune
+  fi
+
   # has docker && docker system prune -f # -a removes all images, not just dangling ones
+
   # echo "> Postprocessing"
   # brew tap --repair # TODO needed?
 fi
