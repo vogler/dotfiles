@@ -239,9 +239,11 @@ if [ -z $dry_run ]; then
 
   # rm -rf ~/.npm/_npx; rm -rf ~/.npm/_cacache
   has npm && sudo chown -R 501:20 ~/.npm && npm cache clean --force
-  if has corepack then
+  # check if corepack is installed and enabled (then it sets symlinks for yarn and pnpm - corepack has no own way to check if it is enabled...)
+  if has corepack && readlink "$(which yarn)" | grep -q "corepack" then
     corepack cache clean
     # corepack creates proxies, so the binaries would be found and then it would ask to download it if not installed
+    # could use COREPACK_ENABLE_DOWNLOAD_PROMPT=0 to avoid download prompt, but maybe don't want to have it downloaded...
   else # I now have corepack disabled and installed the following via `npm i -g`
     has yarn && yarn cache clean
     has pnpm && pnpm store prune
