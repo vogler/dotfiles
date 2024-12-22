@@ -180,6 +180,7 @@ clean ~/Library/Caches
 clean ~/Library/Containers/*/Data/Library/Caches
 echo "> Caches (Application-specific)" # TODO check that apps are not running?
 clean ~/Library/Application\ Support/Google/Chrome/Default/{File\ System,Service\ Worker,IndexedDB} # only issues noted: web.whatsapp.com need to link device again
+# Overview of storage used by sites (delete there includes cookies!): chrome://settings/content/all?sort=data-stored
 # TODO Chrome extensions keep around old versions after update; total du was 5.4GB
 # e.g. ~/Library/Application\ Support/Google/Chrome/Default/Extensions/cjpalhdlnbpafiamejdnhcphjbkeiagm/ (uBlock) is 2.12GB while the latest version 1.54.0_0 is only 14.27MB; SponsorBlock is 1.3GB; React Developer Tools is 1.1GB -> manually deleted old versions for now (which made uBlock lose its settings since it was apparently still using an old version while the new one was already installed?!, uBlock only switched from 1.54.0 to 1.55.0 after I disabled/reenabled the extension)
 # extended https://stackoverflow.com/questions/17141917/chrome-keeps-all-versions-of-my-hosted-app-extension-takes-up-mbs-how-tell-i
