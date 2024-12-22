@@ -202,6 +202,7 @@ clean ~/Library/Containers/com.microsoft.teams2/Data/Library/Application\ Suppor
 clean ~/Library/Application\ Support/zoom.us/AutoUpdater/Zoom.pkg # ~87MB, will be downloaded on update
 clean ~/Library/Application\ Support/Code/CachedExtensionVSIXs # ~372MB, will refill on extension updates
 clean ~/Library/Application\ Support/Code/CachedData # 298MB, 38MB after restart of workspace
+clean ~/Library/Application\ Support/Code/Cache # 198MB, 32MB after restart of workspace
 # https://github.com/niklasberglund/xcode-clean.sh
 clean ~/Library/Developer/Xcode/{Archives,DerivedData,DocumentationCache}
 clean ~/Library/Developer/CoreSimulator/{Caches,Devices}
