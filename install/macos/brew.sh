@@ -306,7 +306,8 @@ brew install parsec # 6.5MB, fast remote desktop that works well enough for game
 brew install microsoft-remote-desktop # 176MB, Windows Remote Desktop client
 brew install caddy # 42MB, Go web server with automatic HTTPS (Let's Encrypt), HTTP/3, reverse proxy, load balancing, caching, nicer to use but slower than nginx/haproxy/traefik, https://caddyserver.com - `caddy file-server --domain example.com` `caddy reverse-proxy --from example.com --to localhost:9000`
 brew install nakabonne/ali/ali # 6.9MB, Generate HTTP load and plot (TUI) the results in real-time
-brew install dog # 650KB, DNS client like dig but with colors, DNS-over-TLS, DNS-over-HTTPS, json; `dog example.net A AAAA NS MX TXT @1.1.1.1`
+# brew install dog # 650KB, DNS client like dig but with colors, DNS-over-TLS, DNS-over-HTTPS, json; `dog example.net A AAAA NS MX TXT @1.1.1.1` - deprecated
+brew install doggo # 10.7MB, DNS client like dog (like dig), but maintained
 brew install wtfis # 8.4MB, Passive hostname, domain, and IP lookup tool - need to put VT_API_KEY in ~/.env.wtfis, https://www.virustotal.com/gui/my-apikey
 brew install gping # 2.1MB, Ping, but with a graph
 brew install trurl # 74KB, CLI for URL parsing and manipulation, see examples: https://github.com/curl/trurl
