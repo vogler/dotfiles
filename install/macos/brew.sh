@@ -259,7 +259,8 @@ brew install jless # 2.6MB, JSON viewer for reading, exploring, and searching; s
 brew install fx # 11MB, JSON viewer, collapsed by default, shortcuts on ?
 brew install dasel # 18.6MB, Select/modify/convert JSON, TOML, YAML, XML and CSV; 3x faster than jq? `echo '{"name": "Tom"}' | dasel put string '.foo' 'bar' -r json -w yaml`
 brew install htmlq # 2.5MB, jq for HTML, pretty basic, no pseudo-classes?, `htmlq --attribute href a`, `htmlq --text .main`
-brew install pup # 3.7MB, jq for HTML, many pseudo-classes, `pup 'a attr{href}'`, text{}, json{}, :contains(text), `pup ':parent-of([action="edit"])'`
+brew install pup # 3.7MB, jq for HTML, many pseudo-classes, `pup 'a attr{href}'`, text{}, json{}, :contains(text), `pup ':parent-of([action="edit"])'` - deprecated
+brew install xidel # 3.7MB, jq for HTML/XML/JSON; supports CSS selectors, XPath 3.0, XQuery 3.0, JSONiq or pattern matching; `xidel https://golem.de -e '//a/@href'`; just output extracted html: `xidel https://golem.de --css 'a' -s --printed-node-format=html`; can also follow links: `xidel https://golem.de --follow //a --extract //title`
 
 # databases
 # brew install postgresql@15 # 71MB, SQL DB; `brew services start postgresql@15` to enable start on login, `brew services run postgresql@15` to just start
