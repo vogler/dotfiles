@@ -26,7 +26,7 @@ brew install karabiner-elements # 29MB, modify keyboard/mouse input, mostly use 
 brew install alt-tab # 26MB, Swift, alt-tab like on Windows, with previews, Raycast's 'Switch Windows' has search but can't just alt-tab to switch between recent windows
 
 # Quick Look extensions - https://github.com/sindresorhus/quick-look-plugins, more: https://github.com/haokaiyang/Mac-QuickLook
-brew install qlimagesize qlvideo # <1MB, Apple doc says quicklook generators are only called upon demand (so no overhead for mds?)
+brew install qlvideo # <1MB, Apple doc says quicklook generators are only called upon demand (so no overhead for mds?); deprecated: qlimagesize
 # brew install quicklook-json # can click to fold json, but light theme not as nice as json printed by syntax-highlight, also slower; folding in quickjson didn't work at all
 # The following install to /Applications and need to be opened once for their quick look extension to register.
 # brew install glance # discontinued; need to open Glance.app first; replaces qlcolorcode qlmarkdown quicklook-json
