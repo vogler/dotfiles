@@ -161,7 +161,7 @@ brew install cmatrix # 78KB, console matrix screensaver
 brew install gum # 25MB, fancy input for shell scripts: choose a b, input, write, confirm
 brew install fzf # 2.7MB, Command-line fuzzy finder written in Go, search shell history with ctrl-r
 brew install atuin # 25.4MB, Rust, records shell history in sqlite with cwd, hostname etc., TUI for interactive search on ctrl-r, Enter to execute, Tab to edit first; `atuin import auto` to import from zsh history, integration loaded in zshrc; overrides fzf history binding ctrl-r, also starts on cursor up, but not on ctrl-p
-brew install neofetch # system information with OS + logo, host, kernel, uptime, packages, shell, resolution, DE, WM, terminal, CPU, memory
+brew install fastfetch # 2.5MB, system information with OS + logo, host, kernel, uptime, packages, shell, displays, terminal, CPU, GPU, memory, swap, disk, IP, battery - neofetch was deprecated
 # terminal file managers with vim keybindings, default single column
 brew install fff # 50KB, Bash, simple file manager, f in .zshrc changes dir on exit (q)
 brew install nnn # 280KB, C, file manager, small and fast, but bare bones without plugins/config, single column but tabs; use `nnn -e` to edit text in same terminal instead of via `open`
