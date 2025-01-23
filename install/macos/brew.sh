@@ -209,6 +209,7 @@ brew install heroku/brew/heroku
 brew install devutils # 48MB, demo, GUI with converters for unix time, base64, URLs, regex, JSON, CSV, Markdown etc.
 brew install grex # 2.4MB, Command-line tool for generating regular expressions, `grex -c bar baz`
 brew install hexyl # 781KB, Command-line hex viewer
+brew install binocle # 8.6MB, Rust, GUI tool to visualize binary data
 brew install hyperfine # 1.5MB, Command-line benchmarking tool, `hyperfine 'sleep 0.3'`, `hyperfine --warmup 3 --parameter-scan delay 0.3 0.7 -D 0.2 'sleep {delay}'`
 brew install typos-cli # 13.6MB, Source code spell checker (en) for many languages (identifiers, comments, filenames), low false positive rate; `typos` to see, `typos -w` to fix
 brew install just # 2.6MB, replacement for make, runs commands from `justfile`, `just -l` to list
