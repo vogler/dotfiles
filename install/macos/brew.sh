@@ -66,6 +66,8 @@ brew install visual-studio-code
 brew install tor-browser # 192MB
 brew install obsidian # 412MB, PKM, just keeps folders of .md files, nice markdown editor, sometimes slow/annoying (Electron), not perfect, but at least customizable with lots of community plugins (core not OSS)
 brew install cursor # 390MB, fork of vscode focused on AI features
+brew install windsurf # 512MB, alternative to cursor
+# brew install trae # does not exist yet; 546MB downloaded from https://www.trae.ai
 
 brew install dropbox # only 9GB with free plan, moved Screenshots <2021 to PC TODO replace with self-hosted alternative on RPi
 brew install tresorit # 225MB, encrypted cloud storage for TDD
