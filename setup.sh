@@ -127,7 +127,7 @@ mkdir -p "$config/ptpython" # not .config on macOS...
 ln -sf `pwd`/.config/ptpython/config.py "$config/ptpython"
 # Only install packages via pipx and not with pip! Only use pipx where brew's version of package is too old or not available at all.
 # pipx install pipdeptree # tree of deps: pipdeptree -p apprise; reverse: pipdeptree -r -p requests -> brew install pipdeptree
-pipx install lastversion # 11MB, find/download latest version of some software on GitHub, GitLab, BitBucket, PyPi, SourceForge, Wikipedia... better `export GITHUB_API_TOKEN=...` to avoid API rate limit
+pipx install lastversion # 11MB, find/download latest version of some software on GitHub, GitLab, BitBucket, PyPi, SourceForge, Wikipedia... better `export GITHUB_API_TOKEN=...` to avoid API rate limit; https://github.com/dvershinin/lastversion
 
 # TODO this needs to be rethought
 # echo_bold ">> Link *.symlink"
