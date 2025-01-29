@@ -312,7 +312,8 @@ brew install forklift # 159MB, (trial) dual-pane finder with compare/sync for FT
 brew install croc # 6.1MB, peer-to-peer file transfer
 brew install teamviewer # 227 MB, remote desktop
 brew install parsec # 6.5MB, fast remote desktop that works well enough for game streaming
-brew install microsoft-remote-desktop # 176MB, Windows Remote Desktop client
+# brew install microsoft-remote-desktop # 176MB, Windows Remote Desktop client; a bit laggy, but works, has remote sound -> deprecated by windows-app, will be disabled 2025-09-30
+brew install windows-app # 246MB, Windows Remote Desktop (replaces microsoft-remote-desktop)
 brew install caddy # 42MB, Go web server with automatic HTTPS (Let's Encrypt), HTTP/3, reverse proxy, load balancing, caching, nicer to use but slower than nginx/haproxy/traefik, https://caddyserver.com - `caddy file-server --domain example.com` `caddy reverse-proxy --from example.com --to localhost:9000`
 brew install nakabonne/ali/ali # 6.9MB, Generate HTTP load and plot (TUI) the results in real-time
 # brew install dog # 650KB, DNS client like dig but with colors, DNS-over-TLS, DNS-over-HTTPS, json; `dog example.net A AAAA NS MX TXT @1.1.1.1` - deprecated
