@@ -233,7 +233,9 @@ brew install act # 22MB, Run your GitHub Actions locally
 # git
 brew install git # 57.7MB, Apple Git is only updated together with Xcode and some versions behind
 # brew install diff-so-fancy # within-line highlights
+# https://terminaltrove.com/categories/diff/
 brew install git-delta # as diff-so-fancy but with language syntax highlighting, side-by-side, etc.; https://dandavison.github.io/delta/related-projects.html
+brew install dlvhdr/formulae/diffnav # 31M, diff pager based on delta but with a file tree (2025-01-29T20:21:31+01:00)
 brew install difftastic # 79.6MB, Rust, structural diff that understands syntax, >30 languages parsed with tree-sitter; `difft v1 v2`, `git dft` for diff, `git dlog` for log, see .gitconfig
 brew install tig # 1MB, mostly an interactive `git log --patch`
 brew install gitui # 6.8MB, Rust, fastest TUI for everything, shows hot-keys - Status/staging with hunks and lines, Log, Stashing, Stashes, push, fetch, branches

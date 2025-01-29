@@ -43,7 +43,7 @@
     log = diff-so-fancy | less --tabs=4 -RFX -+S
     show = diff-so-fancy | less --tabs=4 -RXFE -+S
     # use delta instead of diff-so-fancy for syntax highlighting and more: https://github.com/dandavison/delta
-    diff = delta
+    diff = diffnav # uses delta but adds file tree (collapse with e, move through files with j/k); TODO only use if there are several changed files or more than one page output
     log = delta
     show = delta
     blame = delta
