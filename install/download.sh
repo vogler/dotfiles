@@ -4,6 +4,8 @@
 # These should be available for both macos and apt-based systems.
 # Download either with https://github.com/devmatteini/dra (brew, .deb) or https://github.com/dvershinin/lastversion (pipx, RPM).
 
+# TODO check stuff that is downloaded/installed with lastversion, curl, pipx, cargo etc. in setup.sh, brew.sh, apt.sh
+
 # spawn subshell and cd to target in $PATH
 (cd ~/.local/bin &&
 
