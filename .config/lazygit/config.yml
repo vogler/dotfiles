@@ -4,3 +4,5 @@ git:
     pager: delta --dark --paging=never
   commit:
     autoWrapCommitMessage: false
+gui:
+  skipDiscardChangeWarning: true
