@@ -107,6 +107,7 @@ brew install openra # 136MB, open source Command & Conquer Red Alert, Tiberian D
 # sys tools
 brew install neovim # editor, no need for vim, config in .vimrc
 brew install vimr # 77MB, VimR.app/`vimr` as GUI with file browser, markdown preview, macOS shortcuts - used for macOS `open`, nicer than neovide, neovim-qt, macvim
+brew install vv # 409M, VV.app/`vv` like VimR, but based on Electron, tried since VimR had some error on startup with my old .vimrc, bit slow with big files, but otherwise ok (2025-01-29T21:44:47+01:00)
 brew install helix # 135MB, modern vim-like modal editor, mostly similar, but selection -> action model, words selected by default on motion; many things like surround and git-gutter included, but no plugin system yet; see .config/helix/config.toml
 brew install iterm2 # 78MB, better Terminal.app, https://sourabhbajaj.com/mac-setup/iTerm/
 curl -L https://iterm2.com/shell_integration/install_shell_integration_and_utilities.sh | bash
