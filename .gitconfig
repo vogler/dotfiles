@@ -43,7 +43,7 @@
     log = diff-so-fancy | less --tabs=4 -RFX -+S
     show = diff-so-fancy | less --tabs=4 -RXFE -+S
     # use delta instead of diff-so-fancy for syntax highlighting and more: https://github.com/dandavison/delta
-    diff = diffnav # uses delta but adds file tree (collapse with e, move through files with j/k); TODO only use if there are several changed files or more than one screen of output; disable side-by-side if terminal is not wide enough; show untracked files
+    ; diff = diffnav # uses delta but adds file tree (collapse with e, move through files with j/k); TODO only use if there are several changed files or more than one screen of output; disable side-by-side if terminal is not wide enough; show untracked files - https://github.com/dlvhdr/diffnav
     diff = delta # use delta again and diffnav only on demand
     log = delta
     show = delta
@@ -117,6 +117,10 @@
     # https://difftastic.wilfred.me.uk/git.html
     dft = "!f() { GIT_EXTERNAL_DIFF=difft git diff $@; }; f" # `git diff` with difftastic.
     dlog = "!f() { : git log ; GIT_EXTERNAL_DIFF=difft git log -p --ext-diff $@; }; f" # `git dlog` to show `git log -p` with difftastic.
+    # https://github.com/dlvhdr/diffnav shows file tree, collapse with e
+    dn = "!f() { git diff $@ | diffnav; }; f"
+    # https://github.com/banga/git-split-diffs shows unified diff if width <160 characters
+    ds = "!f() { git diff $@ | git-split-diffs --color | less -RFX; }; f"
 [credential "https://dev.azure.com"]
 	useHttpPath = true
 

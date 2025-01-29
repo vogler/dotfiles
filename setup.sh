@@ -121,6 +121,7 @@ npm install -g typescript typescript-language-server # 38.7MB + 1.7MB, used for 
 npm install -g howfat # 1.2MB, show npm package size, #deps, #files, license as tree, table, json, simple - all info from npmjs.com, not local size on disk
 npm install -g zx # 12.7MB, JS as replacement for shell scripts, https://github.com/google/zx
 npm install -g daff # 1.8MB, align and compare tables, can produce and apply tabular diffs, `daff a.csv b.csv`; git: works with `GIT_PAGER=less git diff` (can't have delta as pager); see .gitconfig and .config/git/attributes
+npm install -g git-split-diffs # 20MB, TS, Syntax highlighted side-by-side diffs in your terminal; alternative to delta (Rust)
 
 # python/pipx
 mkdir -p "$config/ptpython" # not .config on macOS...
