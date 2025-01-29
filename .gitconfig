@@ -43,7 +43,8 @@
     log = diff-so-fancy | less --tabs=4 -RFX -+S
     show = diff-so-fancy | less --tabs=4 -RXFE -+S
     # use delta instead of diff-so-fancy for syntax highlighting and more: https://github.com/dandavison/delta
-    diff = diffnav # uses delta but adds file tree (collapse with e, move through files with j/k); TODO only use if there are several changed files or more than one page output
+    diff = diffnav # uses delta but adds file tree (collapse with e, move through files with j/k); TODO only use if there are several changed files or more than one screen of output; disable side-by-side if terminal is not wide enough; show untracked files
+    diff = delta # use delta again and diffnav only on demand
     log = delta
     show = delta
     blame = delta
@@ -88,17 +89,17 @@
     colorMoved = default
 [merge]
     tool = nvim # vimdiff; https://www.grzegorowski.com/using-vim-or-neovim-nvim-as-a-git-mergetool
+    conflictstyle = zdiff3 # from https://dandavison.github.io/delta/configuration.html
 [mergetool "nvim"]
     cmd = nvim -f -c \"Gvdiffsplit!\" \"$MERGED\"
 [mergetool]
     prompt = false
 [submodule]
     fetchJobs = 0
-#This will add the fixup command to git
-#git fixup $commit will use your current index to fixup the specified commit
-#This is done by doing git commit --fixup $commit and then using rebase with autosquash
-#Based upon http://stackoverflow.com/a/21148981/460564
 [alias]
+    # git fixup $commit will use your current index to fixup the specified commit
+    # This is done by doing git commit --fixup $commit and then using rebase with autosquash
+    # Based upon http://stackoverflow.com/a/21148981/460564
     fixup = "!sh -c '(git diff-files --quiet || (echo Unstaged changes, please commit or stash with --keep-index; exit 1)) && COMMIT=$(git rev-parse $1) && git commit --fixup=$COMMIT && git rebase -i --autosquash $COMMIT~1' -"
     root = !pwd
     exec = "!exec "
