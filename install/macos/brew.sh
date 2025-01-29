@@ -13,6 +13,7 @@ brew tap martido/homebrew-graph # 232KB, example: `brew graph --installed --high
 
 # OS tools
 brew install mas # CLI for macOS App Store
+brew install dra # 3.1M, Rust, Command-line tool to download release assets from GitHub (2025-01-29T18:08:42+01:00). Alternative to https://github.com/dvershinin/lastversion `pipx install lastversion` in setup.sh; interactive by default, failed for smudge/nightlight while lastversion worked...
 brew install m-cli # CLI for macOS and stock apps
 # brew install dockutil # edit Dock (used in dock.sh)
 brew install --cask hpedrorodrigues/tools/dockutil # need dockutil 3 for current macOS, temporary, see https://github.com/kcrawford/dockutil/issues/127
