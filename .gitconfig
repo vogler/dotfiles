@@ -51,6 +51,9 @@
     reflog = delta
 [delta]
     syntax-theme = Solarized (dark)
+    file-decoration-style = none
+    ; hunk-header-decoration-style = blue dim box
+    hunk-header-decoration-style = none
     # line-numbers = true
     # side-by-side = true
     navigate = true    # use n and N to move between diff sections
