@@ -115,3 +115,23 @@
     dlog = "!f() { : git log ; GIT_EXTERNAL_DIFF=difft git log -p --ext-diff $@; }; f" # `git dlog` to show `git log -p` with difftastic.
 [credential "https://dev.azure.com"]
 	useHttpPath = true
+
+# added by `daff git csv`/tsv/sqlite
+[diff "daff-csv"]
+	command = daff diff --git # delta defined as pager above screws up daff's output...
+    # `GIT_PAGER=less git diff` works in terminal with the above
+	# pager = less # does not work
+	# command = GIT_PAGER=less daff diff --git # does not work
+[merge "daff-csv"]
+	name = daff tabular csv merge
+	driver = daff merge --output %A %O %A %B
+[diff "daff-tsv"]
+	command = daff diff --git
+[merge "daff-tsv"]
+	name = daff tabular tsv merge
+	driver = daff merge --output %A %O %A %B
+[diff "daff-sqlite"]
+	command = daff diff --git
+[merge "daff-sqlite"]
+	name = daff tabular sqlite merge
+	driver = daff merge --output %A %O %A %B

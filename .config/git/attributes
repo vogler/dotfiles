@@ -1,0 +1,12 @@
+# https://stackoverflow.com/questions/28026767/where-should-i-place-my-global-gitattributes-file
+
+# https://github.com/paulfitz/daff#using-with-git
+# copied from local .gitattributes created by `daff git csv`/tsv/sqlite
+*.csv diff=daff-csv
+*.csv merge=daff-csv
+
+*.tsv diff=daff-tsv
+*.tsv merge=daff-tsv
+
+*.sqlite diff=daff-sqlite
+*.sqlite merge=daff-sqlite
