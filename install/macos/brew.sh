@@ -50,6 +50,7 @@ brew install raycast # 75MB, better launcher than Spotlight, Alfred etc., good s
   # `file` says 'Mach-O 64-bit executable x86_64' instead of 'arm64e'
 brew install istat-menus # 68MB, trial, got key, menu bar: HW stats (combined: graph for CPU & memory, rest in dropdown), calendar, weather (subscription for 60min updates)
 # brew install stats # 12MB, simple free alternative to istat-menus, just HW, no calendar, weather
+brew install leader-key # 5.1M, Application launcher with nice UI/json for config with groups, e.g. <leader>rc for raycast://confetti, but can only set leader to a normal key combination, so would need Karabiner to map one key to that combination (2025-02-03T14:13:15+01:00)
 
 # HW tools
 # brew install tg-pro # trial
