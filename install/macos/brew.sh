@@ -11,9 +11,12 @@ brew tap martido/homebrew-graph # 232KB, example: `brew graph --installed --high
 
 # Intel (Activity Montior > Kind) means it runs with Rosetta which is a bit slower and results in more memory pressure
 
+# package managers first which may be used below
+brew install pipx # 1MB, like npx: run/install binaries from Python packages, easier than `python3 -m venv foo`; `pipx run lastversion` saves to '~/Library/Caches/pipx', `pipx install lastversion` saves to '~/Library/Application Support/pipx'...
+brew install dra # 3.1M, Rust, Command-line tool to download release assets from GitHub (2025-01-29T18:08:42+01:00). Alternative to https://github.com/dvershinin/lastversion `pipx install lastversion` in setup.sh; interactive by default, failed for smudge/nightlight while lastversion worked...
+
 # OS tools
 brew install mas # CLI for macOS App Store
-brew install dra # 3.1M, Rust, Command-line tool to download release assets from GitHub (2025-01-29T18:08:42+01:00). Alternative to https://github.com/dvershinin/lastversion `pipx install lastversion` in setup.sh; interactive by default, failed for smudge/nightlight while lastversion worked...
 brew install m-cli # CLI for macOS and stock apps
 # brew install dockutil # edit Dock (used in dock.sh)
 brew install --cask hpedrorodrigues/tools/dockutil # need dockutil 3 for current macOS, temporary, see https://github.com/kcrawford/dockutil/issues/127
@@ -194,7 +197,6 @@ brew tap homebrew/command-not-found # 8.56MB, used by command-not-found module i
 # programming languages
 # macOS ships ruby 2.6.3, python 2.7.16; python3 installed as dep; typescript via npm
 brew install ptpython # better Python REPL
-brew install pipx # 1MB, like npx: run/install binaries from Python packages, easier than `python3 -m venv foo`; `pipx run lastversion` saves to '~/Library/Caches/pipx', `pipx install lastversion` saves to '~/Library/Application Support/pipx'...
 brew install node # JavaScript; includes npm
 # use fnm as node version manager? https://github.com/Schniz/fnm
 brew install opam # OCaml
