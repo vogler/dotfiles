@@ -22,6 +22,9 @@ Rem choco install --ignore-checksums wifichannelmonitor
 
 winget install LibreOffice
 
+Rem https://github.com/astral-sh/uv Rust, fast Python package installer and resolver, `uv tool install lastversion`, `uvx lastversion`, replaces most other Python tools incl. Poetry, macOS: `uvx` -> `.cache/uv`, `uv tool install` -> `.local/{bin,share/uv/tools}`
+winget install --id=astral-sh.uv  -e
+
 Rem Upgrade
 choco upgrade all
 winget upgrade --all

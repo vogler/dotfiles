@@ -13,7 +13,8 @@ brew tap martido/homebrew-graph # 232KB, example: `brew graph --installed --high
 
 # package managers first which may be used below
 brew install pipx # 1MB, like npx: run/install binaries from Python packages, easier than `python3 -m venv foo`; `pipx run lastversion` saves to '~/Library/Caches/pipx', `pipx install lastversion` saves to '~/Library/Application Support/pipx'...
-brew install dra # 3.1M, Rust, Command-line tool to download release assets from GitHub (2025-01-29T18:08:42+01:00). Alternative to https://github.com/dvershinin/lastversion `pipx install lastversion` in setup.sh; interactive by default, failed for smudge/nightlight while lastversion worked...
+brew install uv # 36M, Rust, fast Python package installer and resolver, `uv tool install lastversion`, `uvx lastversion`, replaces most other Python tools incl. Poetry, `uvx` -> `.cache/uv`, `uv tool install` -> `.local/{bin,share/uv/tools}` (2025-02-03T14:37:51+01:00)
+brew install dra # 3.1M, Rust, Command-line tool to download release assets from GitHub (2025-01-29T18:08:42+01:00). Alternative to https://github.com/dvershinin/lastversion `uv tool install lastversion` in setup.sh; interactive by default, failed for smudge/nightlight while lastversion worked...
 
 # OS tools
 brew install mas # CLI for macOS App Store
@@ -48,7 +49,7 @@ brew install hammerspoon # 39MB, automation, window management, key/mouse mappin
 # brew install usb-overdrive # 2.3MB, shareware, device driver for USB/Bluetooth input (mouse, keyboard, gamepad etc.) to configure globally or on a per-application, per-device basis - messed up left click..., per-application not good enough for Books.app
 brew install raycast # 75MB, better launcher than Spotlight, Alfred etc., good shortcuts incl. window management, community extensions/scripts
   # brew install smudge/smudge/nightlight # just downloaded bin (476K) from releases at https://github.com/smudge/nightlight since this tried to build and install rust and its deps, see https://github.com/smudge/nightlight/issues/22
-  pipx run lastversion --pre --assets unzip smudge/nightlight && chmod +x nightlight && mv -f nightlight ~/.local/bin/
+  uvx lastversion --pre --assets unzip smudge/nightlight && chmod +x nightlight && mv -f nightlight ~/.local/bin/
   # `nightlight status` fails with 'zsh: bad CPU type in executable: nightlight'
   # `file` says 'Mach-O 64-bit executable x86_64' instead of 'arm64e'
 brew install istat-menus # 68MB, trial, got key, menu bar: HW stats (combined: graph for CPU & memory, rest in dropdown), calendar, weather (subscription for 60min updates)
@@ -261,7 +262,7 @@ brew install jj # 14.5MB, Rust, git-compatible VCS, no index, working copy is au
 brew install gitleaks # 9.2MB, Go, finds hardcoded secrets like passwords, api keys, and tokens in git repos
 brew install trufflehog # 95.7MB, Go, can also verify secrets and scan GitHub (orgs, issues, PRs), S3...
 brew install git-secrets # 66KB, Shell, mostly for AWS secrets and hooks for repos
-(cd /tmp && pipx run lastversion --pre --assets --filter arm64 unzip praetorian-inc/noseyparker && mv -f bin/noseyparker ~/.local/bin/) # 20MB, Rust, download binary or docker: https://github.com/praetorian-inc/noseyparker
+(cd /tmp && uvx lastversion --pre --assets --filter arm64 unzip praetorian-inc/noseyparker && mv -f bin/noseyparker ~/.local/bin/) # 20MB, Rust, download binary or docker: https://github.com/praetorian-inc/noseyparker
 
 # data processing
 brew install jq # 1.5MB, C, JSON CLI processor
@@ -412,7 +413,7 @@ brew install macwhisper # 17MB + 500MB for small model; speech recognition and t
 # MIDI (for PianoVision): no simple midi player on brew?! -> VLC can play midi files
 #   https://github.com/benwiggy/APPlayMIDI offers a quick look extension (but w/o seek), only play/pause
 #   https://github.com/SamusAranX/MinimalMIDIPlayer no quick look extension, but more features (change speed, soundfont, good keybindings)
-  pipx run lastversion --assets download SamusAranX/MinimalMIDIPlayer # its unzip is broken: https://github.com/dvershinin/lastversion/issues/98
+  uvx lastversion --assets download SamusAranX/MinimalMIDIPlayer # its unzip is broken: https://github.com/dvershinin/lastversion/issues/98
   unzip -d /Applications MinimalMIDIPlayer*.zip
   rm -f MinimalMIDIPlayer*.zip
 brew install aria-maestosa # 11.8MB, midi sequencer/editor with wxWidgets UI
