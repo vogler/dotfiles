@@ -291,6 +291,7 @@ brew install speedtest # 2.8MB, native, closed source, official CLI for speedtes
 brew install httpie # 17MB, https://httpie.io User-friendly cURL replacement, ex: http POST pie.dev/post hello=world
 brew install xh # 8MB, faster httpie in Rust, but only subset of commands, ex: xh httpbin.org/post name=ahmed age:=24; xh :3000/users -> GET http://localhost:3000/users
 # https://github.com/asciimoo/wuzz interactive CLI for HTTP request/response; not available in brew, binary only for amd64
+brew install curlie # 2.4M, Power of curl, ease of use of httpie (2025-02-03T14:01:10+01:00)
 # API clients with GUI:
   # online: https://hoppscotch.io, https://restfox.dev, https://httpie.io/app (no local network)
   # brew install --cask httpie # 372MB, https://httpie.io GUI, only requests and collections
