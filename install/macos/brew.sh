@@ -109,17 +109,26 @@ brew install spotify_player # 26MB, Rust, most features, everything works, can j
 # games
 brew install openra # 136MB, open source Command & Conquer Red Alert, Tiberian Dawn, Dune 2000
 
-# sys tools
+# editors
 brew install neovim # editor, no need for vim, config in .vimrc
 brew install vimr # 77MB, VimR.app/`vimr` as GUI with file browser, markdown preview, macOS shortcuts - used for macOS `open`, nicer than neovide, neovim-qt, macvim
 brew install vv # 409M, VV.app/`vv` like VimR, but based on Electron, tried since VimR had some error on startup with my old .vimrc, bit slow with big files, but otherwise ok (2025-01-29T21:44:47+01:00)
 brew install helix # 135MB, modern vim-like modal editor, mostly similar, but selection -> action model, words selected by default on motion; many things like surround and git-gutter included, but no plugin system yet; see .config/helix/config.toml
+
+# terminals
 brew install iterm2 # 78MB, better Terminal.app, https://sourabhbajaj.com/mac-setup/iTerm/
 curl -L https://iterm2.com/shell_integration/install_shell_integration_and_utilities.sh | bash
 brew install warp # 147MB, fast rust-based terminal, bit more modern than iterm, but pretty similar, TODO colors and font in vim are off
 # brew install tabby # 346MB, TS, customizable terminal, SSH and serial client; nice UI, but colors in vim are off, feels slower than iTerm and no additional features I currently need
-brew install tmux # terminal multiplexer
+
+# terminal multiplexers
+brew install tmux # terminal multiplexer, used for ssh by default via prezto
 brew install zellij # 23MB, Rust, like tmux, but more modern, shows keybindings (default binds things like ctrl-p for panes, but can lock with ctrl-g), built-in session restore
+
+# shells
+# zsh fish nushell
+
+# sys tools
 brew install coreutils # newer than macOS
 brew install moreutils # more tools: ts for prefixing timestamps, parallel, combine, sponge etc.
 brew install findutils # GNU find, xargs, and locate - macOS find does not have -iname
