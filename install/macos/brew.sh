@@ -126,7 +126,9 @@ brew install tmux # terminal multiplexer, used for ssh by default via prezto
 brew install zellij # 23MB, Rust, like tmux, but more modern, shows keybindings (default binds things like ctrl-p for panes, but can lock with ctrl-g), built-in session restore
 
 # shells
-# zsh fish nushell
+# brew install zsh # no need since macOS /bin/zsh is version 5.9, same as this
+brew install fish # 20M, User-friendly command-line shell for UNIX-like operating systems (2025-02-08T15:36:49+01:00) - not really needed with nushell?
+brew install nushell # 141M, Rust, Modern shell for the GitHub era (2025-02-08T15:37:34+01:00) start with `nu`, also nice for data processing since it has structured/table output to select/filter/sort, `get` supports JSON, YAML, SQLite etc. - https://www.nushell.sh
 
 # sys tools
 brew install coreutils # newer than macOS
