@@ -277,6 +277,7 @@ brew install git-secrets # 66KB, Shell, mostly for AWS secrets and hooks for rep
 
 # data processing
 brew install jq # 1.5MB, C, JSON CLI processor
+# Rust alternatives: https://github.com/01mf02/jaq, https://github.com/yamafaktory/jql
 brew install jid # 2.4MB, Go, TUI for jq
 # brew install noahgorstein/tap/jqp # 11.8MB, Go, TUI for jq
 brew install xsv # 3.1MB, Rust, CSV CLI: cat count flatten frequency join search select slice sort split stats table
