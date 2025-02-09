@@ -331,6 +331,7 @@ brew install forklift # 159MB, (trial) dual-pane finder with compare/sync for FT
 # brew install magic-wormhole # 34.6MB (+ 18MB openssl@1.1 + 57.3MB python@3.10), peer-to-peer file transfer
 brew install croc # 6.1MB, peer-to-peer file transfer
 brew install teamviewer # 227 MB, remote desktop
+brew install rustdesk # 55M, Rust, Open source virtual/remote desktop application (2025-02-08T16:14:02+01:00) https://rustdesk.com, can also self-host, has clients for macOS/Windows/Linux/Android/Web
 brew install parsec # 6.5MB, fast remote desktop that works well enough for game streaming
 # brew install microsoft-remote-desktop # 176MB, Windows Remote Desktop client; a bit laggy, but works, has remote sound -> deprecated by windows-app, will be disabled 2025-09-30
 brew install windows-app # 246MB, Windows Remote Desktop (replaces microsoft-remote-desktop)
