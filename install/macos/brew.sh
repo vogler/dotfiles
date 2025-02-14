@@ -401,7 +401,8 @@ brew install clockify # 95MB, better (& more free features) than Toggl
 # images, photos
 # brew install imagemagick
 # brew install krita # 981MB, painting and sketching, bit nicer than GIMP
-# brew install affinity-photo # 2.95GB, nicer photo editing than krita; got Photo, Designer and Publisher in 2021, but on Windows store, unclear if universal license
+# brew install affinity-photo # 2.95GB, nicer photo editing than krita; got Photo, Designer and Publisher in 2021, but on Windows store, no universal license for macOS
+brew install gimp # 892M, Free and open-source image editor (2025-02-15T00:35:38+01:00)
 
 # videos: editing, transcoding
 brew install ffmpeg # ~1GB due to many codecs as deps
