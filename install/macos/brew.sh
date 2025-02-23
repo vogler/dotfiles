@@ -109,6 +109,7 @@ brew install spotify_player # 26MB, Rust, most features, everything works, can j
 
 # games
 brew install openra # 136MB, open source Command & Conquer Red Alert, Tiberian Dawn, Dune 2000
+brew install steam # 6.7M + ~1.2GB in ~/Library/Application\ Support/Steam (games in ./steamapps/common), requires Rosetta, only used for Factorio (2024-10-21)
 
 # editors
 brew install neovim # editor, no need for vim, config in .vimrc
