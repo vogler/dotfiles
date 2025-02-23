@@ -447,6 +447,13 @@ brew install kicad # 6.5GB, schema and PCB editor for Gerber files
 # brew install --cask homebrew/cask-drivers/qmk-toolbox # 1.8MB, GUI for flashing QMK keyboard firmware, supports most boards/bootloaders
 # brew install qmk/qmk/qmk # ~900MB due to arm-/avr-gcc, CLI to build & flash QMK keyboard firmware
 
+# AI, ML, LLMs
+brew install ollama # 25M, Create, run, and share large language models (LLMs) (2025-02-23T14:00:08+01:00) port 11434, but no UI; e.g. `ollama run deepseek-r1:8b` (4bit, 4.9GB) - default 7b, 14b model already made mouse lag and slow output
+# brew install --cask ollama # 438MB, just a wrapper to run the server via an app that has a menu item where it can be quit - no further UI -> useless
+# brew install ollamac # 11M, Interact with Ollama models (2025-02-23T14:56:37+01:00) needs server running, Swift app with UI with log, parameters etc., however, doesn't show text inside <think> and auto-naming of chats is also bad (<think> instead of prompt)
+# `uvx open-webui serve` failed to resolve deps...
+# probably best to run NextChat or lobe-chat (both TS) via docker
+
 # not available in brew or mas:
 # https://www.meta.com/en-gb/help/quest/articles/horizon/getting-started-in-horizon-workrooms/use-computer-in-VR-workrooms/ - Meta Quest Remote Desktop
 # https://immersed.com - remote/virtual AR desktop for Meta Quest 3
