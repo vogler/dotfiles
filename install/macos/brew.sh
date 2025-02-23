@@ -58,7 +58,8 @@ brew install leader-key # 5.1M, Application launcher with nice UI/json for confi
 
 # HW tools
 # brew install tg-pro # trial
-brew install logi-options+ # 460MB, software for Logitech mice M350s (Pebble 2) and M650
+brew install logi-options+ # 460MB, software for Logitech mouse M350s (Pebble 2)
+# brew install logitech-g-hub # software for G305 - not used since configured on Windows and stored on mouse
 
 # browser/-based apps
 brew install google-chrome # 922MB
