@@ -123,6 +123,7 @@ brew install iterm2 # 78MB, better Terminal.app, https://sourabhbajaj.com/mac-se
 curl -L https://iterm2.com/shell_integration/install_shell_integration_and_utilities.sh | bash
 brew install warp # 147MB, fast rust-based terminal, bit more modern than iterm, but pretty similar, TODO colors and font in vim are off
 # brew install tabby # 346MB, TS, customizable terminal, SSH and serial client; nice UI, but colors in vim are off, feels slower than iTerm and no additional features I currently need
+brew install ghostty # 48M, nice, but pretty minimal features, only restores tabs without contents (2025-03-03T23:28:15+01:00)
 
 # terminal multiplexers
 brew install tmux # terminal multiplexer, used for ssh by default via prezto
