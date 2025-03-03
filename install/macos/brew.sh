@@ -207,6 +207,7 @@ brew install spacer # 3.3MB, Rust, insert spacers with datetime+duration when co
 brew install navi # 2.7MB, Interactive CLI cheatsheet tool; `navi` to start fuzzy finder; `eval "$(navi widget zsh)"` to launch with Ctrl+G to find/replace in-place
 brew install yank # 49KB, Copy terminal output to clipboard; `env | yank -d =`, can also be used as picker in pipe: `ps ux | yank -g ' [0-9]+ ' | xargs kill`
 brew tap homebrew/command-not-found # 8.56MB, used by command-not-found module in ~/.zpreztorc
+brew install zet # 1.5M, CLI utility to find the union, intersection, and set difference of files (2025-03-03T22:49:56+01:00)
 
 # programming languages
 # macOS ships ruby 2.6.3, python 2.7.16; python3 installed as dep; typescript via npm
