@@ -156,7 +156,9 @@ brew install pv # 186KB, pipe viewer shows progress, speed, ETA; `pv -cN source 
 brew install eza # 1MB, maintained fork of exa; `eza --long --header --icons --git`
 brew install lsd # 1.6MB, `ls` clone with colors, file type icons, `lsd --tree`; looks nicer than exa, but no git status
 brew install tree # `exa --tree --level=2` has colors and can show meta-data with --long
-brew install tldr # `tldr tar` shorter than `curl cheat.sh/tar` and works offline
+# brew install tldr # 105KB, `tldr tar` shorter than `curl cheat.sh/tar` and works offline - deprecated and will be disabled; alternatives: tealdeer, tlrc
+# brew install tealdeer # 3.2M, Rust, `tldr`, but didn't like colors and didn't automatically create/update cache w/o creating config (2025-03-04T10:08:39+01:00)
+brew install tlrc # 2.2M, Rust, official `tldr` client (2025-03-04T10:09:55+01:00)
 brew install bat # cat with syntax highlighting and Git integration
 brew install fd # Simple, fast and user-friendly alternative to find
 brew install the_silver_searcher # 172KB, ag: Code-search similar to ack, but faster [C]
