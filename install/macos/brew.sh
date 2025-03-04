@@ -50,7 +50,7 @@ brew install hammerspoon # 39MB, automation, window management, key/mouse mappin
 brew install raycast # 75MB, better launcher than Spotlight, Alfred etc., good shortcuts incl. window management, community extensions/scripts
   # brew install smudge/smudge/nightlight # just downloaded bin (476K) from releases at https://github.com/smudge/nightlight since this tried to build and install rust and its deps, see https://github.com/smudge/nightlight/issues/22
   uvx lastversion --pre --assets unzip smudge/nightlight && chmod +x nightlight && mv -f nightlight ~/.local/bin/
-  # `nightlight status` fails with 'zsh: bad CPU type in executable: nightlight'
+  # `nightlight status` fails with 'zsh: bad CPU type in executable: nightlight' -> works with Rosetta enabled (was disabled again after macOS update)
   # `file` says 'Mach-O 64-bit executable x86_64' instead of 'arm64e'
 brew install istat-menus # 68MB, trial, got key, menu bar: HW stats (combined: graph for CPU & memory, rest in dropdown), calendar, weather (subscription for 60min updates)
 # brew install stats # 12MB, simple free alternative to istat-menus, just HW, no calendar, weather
