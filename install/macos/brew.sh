@@ -175,6 +175,7 @@ brew install gdu # 13MB, Go, `gdu-go` (`gdu` is GNU du) for interactive mode lik
 ln -sfn /opt/homebrew/bin/gdu-go ~/.local/bin/gdu # overridden by prezto alias for `git ls-files --other --exclude-standard`
 brew install disk-drill # 113MB, GUI, disk usage & clean up (filters for type, size, modified), data recovery, find duplicates
 # brew install clean-me # 2.5MB, GUI analyze/clean caches, logs, temp files, trash, downloads etc., see https://github.com/Kevin-De-Koninck/Clean-Me/blob/master/Clean%20Me/Paths.swift - integrated in macos/cleanup.sh, deprecated in brew
+brew install pearcleaner # 6.7M, Utility to uninstall apps and remove leftover files from old/uninstalled apps (2025-03-04T10:25:12+01:00)
 # brew install sensei # 72MB, 14d trial, GUI, system overview, menu bar monitor, optimize, clean, SSD stats/benchmark, battery health
 brew install p7zip # 7z with support for Brotli, Fast LZMA2, LZ4, LZ5, Lizard and Zstd
 brew install the-unarchiver # unpack .rar
