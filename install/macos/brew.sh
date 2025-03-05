@@ -226,6 +226,11 @@ sudo ln -sfn /opt/homebrew/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVir
 mkdir -p ~/.local/bin
 ln -sfn /Library/Developer/CommandLineTools/usr/bin/clangd ~/.local/bin/ # used for coc-clangd in nvim
 
+# linters
+brew install shellcheck # 68M, Static analysis and lint tool, for (ba)sh scripts (2025-03-05T14:43:21+01:00)
+brew install actionlint # 5.0M, Static checker for GitHub Actions workflow files (2025-03-05T14:40:23+01:00)
+brew install hadolint # 78MB, Dockerfile linter to validate best practices, can also just use online version to shows warnings inline: https://hadolint.github.io/hadolint/ (2025-03-05T14:44:18+01:00)
+
 # dev tools
 brew install tokei # count code lines fast and by language
 brew install semgrep # semantic grep: lightweight static analysis for many languages
