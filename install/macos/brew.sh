@@ -230,6 +230,7 @@ ln -sfn /Library/Developer/CommandLineTools/usr/bin/clangd ~/.local/bin/ # used 
 brew install shellcheck # 68M, Static analysis and lint tool, for (ba)sh scripts (2025-03-05T14:43:21+01:00)
 brew install actionlint # 5.0M, Static checker for GitHub Actions workflow files (2025-03-05T14:40:23+01:00)
 brew install hadolint # 78MB, Dockerfile linter to validate best practices, can also just use online version to shows warnings inline: https://hadolint.github.io/hadolint/ (2025-03-05T14:44:18+01:00)
+brew install typos-cli # 13.6MB, Source code spell checker (en) for many languages (identifiers, comments, filenames), low false positive rate; `typos` to see, `typos -w` to fix
 
 # dev tools
 brew install tokei # count code lines fast and by language
@@ -245,7 +246,6 @@ brew install hexyl # 781KB, Command-line hex viewer
 brew install binocle # 8.6MB, Rust, GUI tool to visualize binary data
 brew install diffoscope # 13MB (12.1MB libmagic), In-depth comparison of files, archives, and directories (2025-01-29T17:33:28+01:00)
 brew install hyperfine # 1.5MB, Command-line benchmarking tool, `hyperfine 'sleep 0.3'`, `hyperfine --warmup 3 --parameter-scan delay 0.3 0.7 -D 0.2 'sleep {delay}'`
-brew install typos-cli # 13.6MB, Source code spell checker (en) for many languages (identifiers, comments, filenames), low false positive rate; `typos` to see, `typos -w` to fix
 brew install just # 2.6MB, replacement for make, runs commands from `justfile`, `just -l` to list
 brew install meta-package-manager # ~58MB, Wrapper around all package managers with a unifying CLI; `mpm outdated`, `mpm upgrade`, `mpm --all-managers managers`; has apt, brew, cargo, choco, composer, dnf, emerge, flatpak, gem, mas, npm, opkg, pacaur, pacman, paru, pip, pipx, scoop, snap, steamcmd, vscode, yarn, yay, yum, zypper
 
@@ -256,7 +256,6 @@ brew install orbstack # 770MB, faster drop-in replacement for Docker Desktop, `o
 brew install lazydocker # 16MB, Go, TUI to manage containers, images, volumes and networks
 brew install dive # 10MB, explore layers in docker images
 brew install ctop # 8.9MB, Top-like interface for container metrics
-# brew install hadolint # 73MB, Dockerfile linter to validate best practices, can just use online version to shows warnings inline: https://hadolint.github.io/hadolint/
 brew install act # 22MB, Run your GitHub Actions locally
 
 # git
