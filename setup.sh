@@ -129,8 +129,10 @@ mkdir -p "$config/ptpython" # not .config on macOS...
 ln -sf `pwd`/.config/ptpython/config.py "$config/ptpython"
 # Only install packages via ~pipx~ uv and not with pip! Only use it where brew's version of package is too old or not available at all.
 # `uv tool install lastversion`, `uvx lastversion`, replaces most other Python tools incl. Poetry, `uvx` -> `.cache/uv`, `uv tool install` -> `.local/{bin,share/uv/tools}`
-# pipx install pipdeptree # tree of deps: pipdeptree -p apprise; reverse: pipdeptree -r -p requests -> brew install pipdeptree
-uv tool install lastversion # 11MB, find/download latest version of some software on GitHub, GitLab, BitBucket, PyPi, SourceForge, Wikipedia... better `export GITHUB_API_TOKEN=...` to avoid API rate limit; https://github.com/dvershinin/lastversion
+uv tool install pipdeptree # 7MB, tree of deps: pipdeptree -p apprise; reverse: pipdeptree -r -p requests
+uv tool install lastversion # 6.5MBMB, find/download latest version of some software on GitHub, GitLab, BitBucket, PyPi, SourceForge, Wikipedia... better `export GITHUB_API_TOKEN=...` to avoid API rate limit; https://github.com/dvershinin/lastversion
+uv tool install fritzconnection # 2.6MB, control FritzBox, executables: fritzcall, fritzconnection, fritzhomeauto, fritzhosts, fritzmonitor, fritzphonebook, fritzstatus, fritzwlan
+uv tool install tqdm # 0.4MB, progress meter, `seq 9999999 | tqdm --bytes | wc -l`
 
 # TODO this needs to be rethought
 # echo_bold ">> Link *.symlink"
