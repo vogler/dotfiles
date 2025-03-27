@@ -151,7 +151,25 @@ mkdir -p "$config/lazygit" && ln -sf {`pwd`/.config,"$config"}/lazygit/config.ym
 
 # gh (GitHub CLI) extensions
 # https://docs.github.com/en/copilot/github-copilot-in-the-cli/using-github-copilot-in-the-cli
-gh extension install github/gh-copilot # `gh copilot suggest`, `gh copilot explain "tar -xvf foo.tar.xz"`
+# list: `gh ext ls`
+# browse in TUI: `gh ext browse`
+gh ext install dlvhdr/gh-dash # CLI dashboard for PRs, issues
+gh ext install github/gh-copilot # `gh copilot suggest`, `gh copilot explain "tar -xvf foo.tar.xz"`
+gh ext install yusukebe/gh-markdown-preview # use GitHub's API to render Markdown
+gh ext install gennaro-tedesco/gh-f # uses fzf for staging, workflow runs, grep, prs, branches, diffs, tags, issues
+gh ext install meiji163/gh-notify # display notifications, e.g. `gh notify -e goblint -p` (only participating or mentione)
+gh ext install mona-actions/gh-repo-stats # statistics for an organization's repos as .csv
+gh ext install advanced-security/gh-sbom # generate SBOMs as SPDX json including 'licenseConcluded' for npm deps
+gh ext install korosuke613/gh-user-stars # fzf list of starred repos, doesn't cache the >1k repos...
+gh ext install matt-bartel/gh-clone-org # clone all repositories in an organization (optional filters), if exists, switch to default branch and pull
+gh ext install fchimpan/gh-workflow-stats # success rate & execution time (min, max, avg, med, std) of workflows & jobs, e.g. `gh workflow-stats --org vogler --repo free-games-claimer -f docker.yml`
+gh ext install sheepla/gh-userfetch # like neofetch for a GitHub profile
+gh ext install nektos/gh-act # run GitHub actions locally using nektos/act
+gh ext install gennaro-tedesco/gh-i # search issues, `gh i` (default state:any author:@me where:any), `gh i -s open --me=false -u=@me`
+# gh ext install hectcastro/gh-metrics # metrics for PRs: commits, changes, files, comments, participants, time to first/last review, merge
+gh ext install HaywardMorihara/gh-tidy # check out & pull, `git gc` to optimize local repo, check for merged branches/PRs and asks to delete them
+gh ext install mtoohey31/gh-foreach # clone and execute commands across multiple repos, `gh foreach run --regex='chrom.*' tokei` --languages=c
+# gh ext install schleiden/gh-actionlint # just runs actionlint which needs to be installed
 
 # zsh: fork of https://github.com/sorin-ionescu/prezto
 echo_bold ">> Get submodules"
