@@ -288,6 +288,9 @@ brew install trufflehog # 95.7MB, Go, can also verify secrets and scan GitHub (o
 brew install git-secrets # 66KB, Shell, mostly for AWS secrets and hooks for repos
 (cd /tmp && uvx lastversion --pre --assets --filter arm64 unzip praetorian-inc/noseyparker && mv -f bin/noseyparker ~/.local/bin/) # 20MB, Rust, download binary or docker: https://github.com/praetorian-inc/noseyparker
 
+# vulnerability/license scanning
+brew install trivy # 184M, Vulnerability scanner for container images, file systems, and Git repos (2025-04-03T20:50:11+02:00)
+
 # data processing
 brew install jq # 1.5MB, C, JSON CLI processor
 # Rust alternatives: https://github.com/01mf02/jaq, https://github.com/yamafaktory/jql
