@@ -17,6 +17,7 @@ brew install uv # 36M, Rust, fast Python package installer and resolver, `uv too
 brew install dra # 3.1M, Rust, Command-line tool to download release assets from GitHub (2025-01-29T18:08:42+01:00). Alternative to https://github.com/dvershinin/lastversion `uv tool install lastversion` in setup.sh; interactive by default, failed for smudge/nightlight while lastversion worked...
 
 # OS tools
+# list all apps installed from the App Store: `mdfind kMDItemAppStoreHasReceipt=1` 
 brew install mas # CLI for macOS App Store
 brew install m-cli # CLI for macOS and stock apps
 # brew install dockutil # edit Dock (used in dock.sh)
