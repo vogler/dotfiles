@@ -81,6 +81,7 @@
     defaultBranch = main
 [push]
     default = current
+    recurseSubmodules = on-demand
 [pull]
     rebase = true
 [rebase]
@@ -99,6 +100,7 @@
     prompt = false
 [submodule]
     fetchJobs = 0
+    recurse = true
 [alias]
     # git fixup $commit will use your current index to fixup the specified commit
     # This is done by doing git commit --fixup $commit and then using rebase with autosquash
