@@ -123,6 +123,8 @@
     dn = "!f() { git diff $@ | diffnav; }; f"
     # https://github.com/banga/git-split-diffs shows unified diff if width <160 characters
     ds = "!f() { git diff $@ | git-split-diffs --color | less -RFX; }; f"
+    sms = "submodule status"
+    smu = "submodule update --init --recursive"
 [credential "https://dev.azure.com"]
 	useHttpPath = true
 
