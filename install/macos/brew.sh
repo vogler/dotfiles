@@ -17,7 +17,8 @@ brew install uv # 36M, Rust, fast Python package installer and resolver, `uv too
 brew install dra # 3.1M, Rust, Command-line tool to download release assets from GitHub (2025-01-29T18:08:42+01:00). Alternative to https://github.com/dvershinin/lastversion `uv tool install lastversion` in setup.sh; interactive by default, failed for smudge/nightlight while lastversion worked...
 
 # OS tools
-# list all apps installed from the App Store: `mdfind kMDItemAppStoreHasReceipt=1` 
+# list all apps installed from the App Store: `mdfind kMDItemAppStoreHasReceipt=1`
+# list manually installed packages: `pkgutil --pkgs`
 brew install mas # CLI for macOS App Store
 brew install m-cli # CLI for macOS and stock apps
 # brew install dockutil # edit Dock (used in dock.sh)
@@ -228,7 +229,10 @@ sudo ln -sfn /opt/homebrew/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVir
 # brew install cling # C++ REPL based on LLVM and Clang
 mkdir -p ~/.local/bin
 ln -sfn /Library/Developer/CommandLineTools/usr/bin/clangd ~/.local/bin/ # used for coc-clangd in nvim
-brew install dotnet-sdk # 744MB, .NET CLI (2025-04-30T12:06:58+02:00)
+brew install dotnet-sdk # 793MB, .NET CLI (2025-04-30T12:06:58+02:00)
+  # 793MB = 199MB /opt/homebrew/Caskroom/dotnet-sdk + 594MB /usr/local/share//dotnet + 0 ~/.dotnet + 0 ~/.nuget
+  # uninstall anything non-brew first: curl -sSL https://raw.githubusercontent.com/dotnet/sdk/refs/heads/main/scripts/obtain/uninstall/dotnet-uninstall-pkgs.sh | sudo bash
+  # cleanup SDKs and runtimes with dotnet/cli-lab: https://learn.microsoft.com/en-us/dotnet/core/additional-tools/uninstall-tool-overview?pivots=os-macos
 brew install z3 # 33M, High-performance theorem prover (2025-04-30T22:21:06+02:00)
 
 # linters
