@@ -228,6 +228,8 @@ sudo ln -sfn /opt/homebrew/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVir
 # brew install cling # C++ REPL based on LLVM and Clang
 mkdir -p ~/.local/bin
 ln -sfn /Library/Developer/CommandLineTools/usr/bin/clangd ~/.local/bin/ # used for coc-clangd in nvim
+brew install dotnet-sdk # 744MB, .NET CLI (2025-04-30T12:06:58+02:00)
+brew install z3 # 33M, High-performance theorem prover (2025-04-30T22:21:06+02:00)
 
 # linters
 brew install shellcheck # 68M, Static analysis and lint tool, for (ba)sh scripts (2025-03-05T14:43:21+01:00)
