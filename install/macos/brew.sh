@@ -60,8 +60,9 @@ brew install leader-key # 5.1M, Application launcher with nice UI/json for confi
 
 # HW tools
 # brew install tg-pro # trial
-brew install logi-options+ # 460MB, software for Logitech mouse M350s (Pebble 2)
+# brew install logi-options+ # 460MB, software for Logitech mouse M350s (Pebble 2); scroll speed 100%, pointer speed 80%; RAM: logioptionsplus_agent (46MB), logioptionsplus_updater (7MB)
 # brew install logitech-g-hub # software for G305 - not used since configured on Windows and stored on mouse
+brew install bettermouse # 13M, adjust smooth scroll with curve, accel, DPI, custom buttons, exceptions etc., replaces logi-options+ (2025-05-18T19:54:45+02:00)
 
 # browser/-based apps
 brew install google-chrome # 922MB
@@ -169,7 +170,7 @@ brew install ripgrep # 5.8MB, rg: Code-search similar to ag, but faster [Rust]
 brew install ugrep # 1.2MB, ug: grep with interactive TUI (-Q), fuzzy search, hexdump, search binary, archives, compressed files (-z), documents (PDF, pandoc, office, exif...), output as JSON, CSV...
 brew install pdfgrep # `pdfgrep -nH PATTERN *.pdf` as alternative (with page number) to `ug --filter='pdf:pdftotext % -' PATTERN *.pdf`
 brew install iozone # 300KB, file system benchmark tool, see https://www.pidramble.com/wiki/benchmarks/microsd-cards
-brew install duf # 3.1MB, Go, Disk usage/free, nicer `df`
+brew install duf # 3.1MB, Go, Disk usage/free, nicer `df`; alternative in Rust: dysk
 brew install diskus # 839KB, Rust, minimal, 3-10x faster alternative to `du -sh`
 brew install dust # 2.2MB, Rust, prints overview (terminal height) of the biggest folders and their subfolders with percentage bars
 brew install ncdu # 588KB, interactive NCurses Disk Usage; archive: `ncdu -o export.json; ncdu -f export.json`
@@ -362,6 +363,7 @@ brew install parsec # 6.5MB, fast remote desktop that works well enough for game
 # brew install microsoft-remote-desktop # 176MB, Windows Remote Desktop client; a bit laggy, but works, has remote sound -> deprecated by windows-app, will be disabled 2025-09-30
 brew install windows-app # 246MB, Windows Remote Desktop (replaces microsoft-remote-desktop)
 brew install caddy # 42MB, Go web server with automatic HTTPS (Let's Encrypt), HTTP/3, reverse proxy, load balancing, caching, nicer to use but slower than nginx/haproxy/traefik, https://caddyserver.com - `caddy file-server --domain example.com` `caddy reverse-proxy --from example.com --to localhost:9000`
+brew install dufs # 3.4M, Rust, Static file server with upload/edit/search/zip-download (2025-05-18T19:34:01+02:00)
 brew install ali # 6.9MB, Generate HTTP load and plot (TUI) the results in real-time
 # brew install dog # 650KB, DNS client like dig but with colors, DNS-over-TLS, DNS-over-HTTPS, json; `dog example.net A AAAA NS MX TXT @1.1.1.1` - deprecated
 brew install doggo # 10.7MB, DNS client like dog (like dig), but maintained
