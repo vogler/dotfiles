@@ -74,11 +74,13 @@ brew install whatsapp # 330MB, now Apple Silicon and no longer Intel, can do cal
 # Alternative: WhatsApp Chrome App. Needs less memory, but can't do calls and no good shortcuts. Provided by Chrome account sync. To add to your account visit web.whatsapp.com, dot-menu > More Tools > Create Shortcut with open as window
 brew install slack # 238MB
 brew install microsoft-teams # 507MB, only needed for stupid background image since browser version does not offer it (but this is also browser-based)...
-brew install visual-studio-code
 # brew install evernote # Intel; not worth the overhead, just use the web-app and eventually something nicer with history
 brew install tor-browser # 192MB
 brew install obsidian # 412MB, PKM, just keeps folders of .md files, nice markdown editor, sometimes slow/annoying (Electron), not perfect, but at least customizable with lots of community plugins (core not OSS)
-brew install cursor # 390MB, fork of vscode focused on AI features
+
+# vscode and AI-derivatives
+brew install visual-studio-code # 370MB, `code .`
+brew install cursor # 390MB, fork of vscode focused on AI features, has nice Tab-complete, but now only in paid plan
 brew install windsurf # 512MB, alternative to cursor
 # brew install trae # does not exist yet; 546MB downloaded from https://www.trae.ai
 
