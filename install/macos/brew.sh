@@ -83,6 +83,7 @@ brew install visual-studio-code # 370MB, `code .`
 brew install cursor # 390MB, fork of vscode focused on AI features, has nice Tab-complete, but now only in paid plan
 brew install windsurf # 512MB, alternative to cursor
 brew install trae # 555M, Adaptive AI IDE (2025-05-21T16:13:34+02:00)
+brew install void # 432M, open source, can add API keys with free quota for Gemini and OpenRouter (2025-05-21T16:15:33+02:00)
 
 brew install dropbox # only 9GB with free plan, moved Screenshots <2021 to PC TODO replace with self-hosted alternative on RPi
 brew install tresorit # 225MB, encrypted cloud storage for TDD
