@@ -84,12 +84,13 @@ brew install microsoft-teams # 507MB, only needed for stupid background image si
 brew install tor-browser # 192MB
 brew install obsidian # 412MB, PKM, just keeps folders of .md files, nice markdown editor, sometimes slow/annoying (Electron), not perfect, but at least customizable with lots of community plugins (core not OSS)
 
-# vscode and AI-derivatives
+# vscode and forks focused on AI features
 brew install visual-studio-code # 370MB, `code .`
-brew install cursor # 390MB, fork of vscode focused on AI features, has nice Tab-complete, but now only in paid plan
-brew install windsurf # 512MB, alternative to cursor
-brew install trae # 555M, Adaptive AI IDE (2025-05-21T16:13:34+02:00)
-brew install void # 432M, open source, can add API keys with free quota for Gemini and OpenRouter (2025-05-21T16:15:33+02:00)
+brew install cursor # 436M, has best tab-complete for small AI-based edits and jumping, available in free plan again (2025-05-22T19:03:43+02:00)
+brew install trae # 555M, works but no cursor-like tab, inline was hit and miss (2025-05-21T16:13:34+02:00)
+brew install windsurf # 549M, haven't really tried (2025-05-22T19:07:22+02:00)
+# brew install void # 432M, open source, can add API keys with free quota for Gemini and OpenRouter -> quota was used up right away, looks like just vscode (2025-05-21T16:15:33+02:00)
+  # just use vscode extension? https://github.com/RooCodeInc/Roo-Code
 
 # other desktop apps
 brew install dropbox # only 9GB with free plan, moved Screenshots <2021 to PC TODO replace with self-hosted alternative on RPi
