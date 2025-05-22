@@ -58,6 +58,12 @@ brew install istat-menus # 68MB, trial, got key, menu bar: HW stats (combined: g
 # brew install stats # 12MB, simple free alternative to istat-menus, just HW, no calendar, weather
 brew install leader-key # 5.1M, Application launcher with nice UI/json for config with groups, e.g. <leader>rc for raycast://confetti, but can only set leader to a normal key combination, so would need Karabiner to map one key to that combination (2025-02-03T14:13:15+01:00)
 
+# ~/Screenshots
+# usually (ctrl+)cmd+shift+3/4/5 is enough, but even after disabling 'Show Floating Thumbnail' it still takes a couple of seconds for the file to show up which is annoying; also, it can't do scrolling screenshots (Chrome can via DevTools or GoFullPage extension, but sometimes I need it for other windows as well)
+# both shottr and cleanshot can only do scrolling screenshot for area instead of window/app (like on Windows and Android), maybe that's a macOS restriction
+brew install shottr # 6.0M, 12$, 30d free, then popups, not a replacement since can't adjust filename (SCR-20250522-qami.png -> no time, but random letters), QuickLook opens its screenshots at ~50% size despite files being slightly bigger; good: editor for annotations (arrows, blur etc.), OCR to clipboard, can save jpg if better fit than png (2025-05-22T17:54:29+02:00)
+# brew install cleanshot # 59M, $34.51, can't try without buying a license, looks similar to shottr but also has video editor/keystrokes/camera, custom filename incl. app/window title, TODO try (2025-05-22T18:31:13+02:00)
+
 # HW tools
 # brew install tg-pro # trial
 # brew install logi-options+ # 460MB, software for Logitech mouse M350s (Pebble 2); scroll speed 100%, pointer speed 80%; RAM: logioptionsplus_agent (46MB), logioptionsplus_updater (7MB)
@@ -85,6 +91,7 @@ brew install windsurf # 512MB, alternative to cursor
 brew install trae # 555M, Adaptive AI IDE (2025-05-21T16:13:34+02:00)
 brew install void # 432M, open source, can add API keys with free quota for Gemini and OpenRouter (2025-05-21T16:15:33+02:00)
 
+# other desktop apps
 brew install dropbox # only 9GB with free plan, moved Screenshots <2021 to PC TODO replace with self-hosted alternative on RPi
 brew install tresorit # 225MB, encrypted cloud storage for TDD
 brew install telegram # 152MB, 96MB RAM, Swift, narrow: chats>chat
