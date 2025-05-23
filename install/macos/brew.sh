@@ -68,7 +68,7 @@ brew install shottr # 6.0M, 12$, 30d free, then popups, not a replacement since 
 # brew install tg-pro # trial
 # brew install logi-options+ # 460MB, software for Logitech mouse M350s (Pebble 2); scroll speed 100%, pointer speed 80%; RAM: logioptionsplus_agent (46MB), logioptionsplus_updater (7MB)
 # brew install logitech-g-hub # software for G305 - not used since configured on Windows and stored on mouse
-brew install bettermouse # 13M, adjust smooth scroll with curve, accel, DPI, custom buttons, exceptions etc., replaces logi-options+ (2025-05-18T19:54:45+02:00)
+brew install bettermouse # 13M, adjust smooth scroll with curve, accel, DPI, custom buttons, fixes left click-through (by default per control, e.g. Chrome would register click on 'new tab' in unfocused window (also middle click, scroll), but require two clicks for button on webpage), exceptions etc., replaces logi-options+ (2025-05-18T19:54:45+02:00)
 
 # browser/-based apps
 brew install google-chrome # 922MB
