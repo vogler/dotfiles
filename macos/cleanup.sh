@@ -236,6 +236,7 @@ if [ -z $dry_run ]; then
   # has brew && brew cleanup --prune=all # this will only delete downloads in ~/Library/Caches/Homebrew which is already deleted above
   has gem && sudo gem cleanup # /Library/Ruby/Gems
   has pipx && rm -rf ~/Library/Caches/pipx && rm -rf ~/Library/Application\ Support/pipx/.cache
+  has poetry && rm -rf ~/Library/Caches/pypoetry
 
   # rm -rf ~/.npm/_npx; rm -rf ~/.npm/_cacache
   has npm && sudo chown -R 501:20 ~/.npm && npm cache clean --force

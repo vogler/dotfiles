@@ -231,6 +231,7 @@ brew install zet # 1.5M, CLI utility to find the union, intersection, and set di
 
 # programming languages
 # macOS ships ruby 2.6.3, python 2.7.16; python3 installed as dep; typescript via npm
+brew install pyenv # 7.6M, Python version management (2025-05-24T10:53:15+02:00) creates virtualenv in ~/Library/Caches/pypoetry/
 brew install ptpython # better Python REPL
 brew install node # JavaScript; includes npm
 # use fnm as node version manager? https://github.com/Schniz/fnm
