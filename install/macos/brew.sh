@@ -122,6 +122,11 @@ brew install ncspot # 12MB, Rust, can just login, nice UI and shortcuts but had 
 # brew install spotify-tui # 12MB, Rust, `spt`, just uses Web API to control other devices/clients (need to create app for Client ID/secret) or play using spotifyd (requires dbus)
 brew install spotify_player # 26MB, Rust, most features, everything works, can just login, scrobbles to Last.fm, even shows album art und lyrics, doesn't fill up cache
 
+# Terminal markdown viewers
+brew install glow # 17M, Go, Render markdown on the CLI (2025-05-24T20:27:09+02:00) `glow -a` to select local md files with edit date, `glow -p foo.md` to open a single file with pager, `glow github.com/charmbracelet/glow` to fetch README from GitHub/GitLab
+# `uv tool run frogmouth` Python TUI with mouse support, contents, bookmarks, history
+# more: https://www.adamsdesk.com/posts/linux-markdown-viewers/
+
 # games
 brew install openra # 136MB, open source Command & Conquer Red Alert, Tiberian Dawn, Dune 2000
 brew install steam # 6.7M + ~1.2GB in ~/Library/Application\ Support/Steam (games in ./steamapps/common), requires Rosetta, only used for Factorio (2024-10-21)
