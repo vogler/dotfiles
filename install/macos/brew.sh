@@ -462,6 +462,7 @@ brew install losslesscut # 320M, Trims video and audio files losslessly (2025-02
 # cmd+shift+5 can record screen or region and produces .mov
 # mas install 1592987853 # Screen Recorder by Omi, 43MB, allows to easily record system sound and microphone (needs their audio driver and selecting it as output in e.g. Teams), also does screen recording (but only 1080p in free version) and has editor to cut video
 brew install keycastr # 7.2MB, show keystrokes on screen
+brew install cap # 120M, Screen recording software (2025-05-26T20:06:10+02:00) open source alternative to Loom etc.
 
 # audio
 # brew install audacity # 77MB, cross-platform audio editor
