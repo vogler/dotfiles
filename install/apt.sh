@@ -4,6 +4,13 @@ set -e # immediately exit if any command has a non-zero exit status
 
 trap 'echo "ERROR: $BASH_SOURCE:$LINENO $BASH_COMMAND" >&2' ERR
 
+# disable ads for Ubuntu Pro: https://askubuntu.com/questions/1434512/how-to-get-rid-of-ubuntu-pro-advertisement-when-updating-apt
+if [[ $(lsb_release -is) == "Ubuntu" ]]; then
+  sudo mv /etc/apt/apt.conf.d/20apt-esm-hook.conf{,.bak}
+  sudo touch /etc/apt/apt.conf.d/20apt-esm-hook.conf
+  sudo systemctl disable ubuntu-advantage
+fi
+
 agi() {
   # https://askubuntu.com/questions/258219/how-do-i-make-apt-get-install-less-noisy
   echo "install $@"
