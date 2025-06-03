@@ -731,7 +731,7 @@ set clipboard=unnamed " use the system clipboard per default (must be compiled w
 nnoremap gp `[v`]
 " use gv to select the last visually-selected text
 
-set pastetoggle=<F12>
+" set pastetoggle=<F12> " removed since handled automatically in nvim: https://neovim.io/doc/user/vim_diff.html#'pastetoggle'
 
 " tab navigation
 " map <C-j> :tabprevious<CR>
