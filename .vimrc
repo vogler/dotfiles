@@ -189,7 +189,7 @@ Plug 'wellle/context.vim' " show context (function, branch, indent, json path...
 " # motion
 " Plug 'bkad/CamelCaseMotion'
 Plug 'chaoren/vim-wordmotion' " more useful word motions incl. camel case, upper/lowercase, hex, numbers etc.
-  let g:wordmotion_prefix = '<Leader>' " e.g. ,w instead of w
+  let g:wordmotion_prefix = ',' " e.g. ,w instead of w
 Plug 'unblevable/quick-scope' " highlight unique character to find in each word
   let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 " used easymotion for a long time, checked alternatives and now trying leap
@@ -267,10 +267,20 @@ let g:csv_autocmd_arrange = 1 " ArrangeColumn for all *.csv and only UnArrangeCo
 let g:csv_autocmd_arrange_size = 1024*1024 " only do it for files up to 1 MB (slow for big files)
 
 " # Markdown
-Plug 'gabrielelana/vim-markdown' " syntax highlighting for GitHub Markdown flavor; started throwing error for some time
-" Plug 'preservim/vim-markdown' " syntax highlighting but not as nice as the above, folding, concealing; requires tabular?; wrongly indents lists
+" Plug 'gabrielelana/vim-markdown' " syntax highlighting for GitHub Markdown flavor; started throwing error for some time; last updated 03/2020
+" Plug 'preservim/vim-markdown' " syntax highlighting but not as nice as the above, folding, concealing; requires tabular for some features; bad auto-indent for lists: https://github.com/preservim/vim-markdown/issues/126
+let g:vim_markdown_new_list_item_indent = 2
+let g:vim_markdown_auto_insert_bullets = 0 " disable since it wasn't working right anyway
+" default in vim: use <C-t> to increase and <C-d> to decrease indent level in insert mode
+let g:markdown_recommended_style = 0 " otherwise ftplugin/markdown.vim (comes with neovim) resets shiftwidth=4, found out via :verbose set shiftwidth?; also see :help ft-markdown-plugin; however, this also disables list continuation on enter
+Plug 'bullets-vim/bullets.vim' " enable list continuation on enter or o for - or * in [markdown, text, gitcommit, scratch]; behaves as it should and also ends lists on enter*2; new line without list with <C-Enter>; renumber in visual with gN; ,x to toggle checklist
+" no multilevel numbered lists yet: https://github.com/bullets-vim/bullets.vim/issues/136
+let g:bullets_outline_levels = ['num', 'abc', 'std-'] " override default levels, otherwise - continues nesting with * and +
 " Plug 'SidOfc/mkdx' " functions for lists, checkboxes, code, shortcuts, headers, links; remaps/breaks `gx` for opening links in browser
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']} " :MarkdownPreview opens in browser with synchronized scrolling - at some point did not open anything anymore, using `yarn install` instead of the above fixed it - https://github.com/iamcco/markdown-preview.nvim/issues/188
+" alternative markdown preview: https://github.com/toppair/peek.nvim
+let g:mkdp_auto_close = 0 " default 1: nvim will auto close current preview window when changing from Markdown buffer to another buffer
+" Plug 'lukas-reineke/headlines.nvim' " adds horizontal highlights for text filetypes, like markdown, orgmode, and neorg
 
 " # LaTeX - using vscode with https://github.com/James-Yu/LaTeX-Workshop
 Plug 'lervag/vimtex', {'for': 'tex'}
@@ -284,8 +294,8 @@ Plug 'lervag/vimtex', {'for': 'tex'}
 " Plug 'Twinside/vim-hoogle' " query hoogle, the haskell search engine
 Plug 'kchmck/vim-coffee-script', {'for': 'coffee'}
 " Plug 'digitaltoad/vim-jade'
-Plug 'leafgarland/typescript-vim' " syntax files
-Plug 'Quramy/tsuquyomi' " client for TSServer: Completion, Navigate, etc.
+" Plug 'leafgarland/typescript-vim' " syntax highlighting for old TypeScript, now included in vim
+" Plug 'Quramy/tsuquyomi' " client for TSServer: Completion, Navigate, etc.
 " Plug 'leafOfTree/vim-svelte-plugin' " syntax-highlighting for ts did not work
 Plug 'evanleck/vim-svelte', {'branch': 'main'} 
 " Plug 'jcf/vim-latex'
@@ -598,14 +608,18 @@ au FileType tex call SetupLatex()
 map! <C-Z> <C-O>:stop<C-M>
 
 " http://amix.dk/vim/vimrc.html
-let mapleader = ","
-let g:mapleader = ","
+let mapleader = " "
+let g:mapleader = " "
 
 " Fast saving
 nmap <leader>s :w!<cr>
 nmap <leader>q :q!<cr>
+" same as in AstroNvim
+nmap <leader>w :w!<cr>
+map <C-q> :q!<cr>
 " we want a keybinding to save that works in any mode, so that we can use it for bind-key in tmux
 " need some mapping I don't use in insert & normal mode: sometimes use C-W in insert mode to delete word backwards; C-X to decrease numbers in normal mode.
+" briefly shows error with coc
 imap <C-S> <esc>:w!<cr>a
 " this overwrites coc-range-select mapped above
 map <C-S> :w!<cr>
@@ -632,6 +646,7 @@ nmap <leader>A :AckWindow <cword><cr>
 
 " delete without changing register contents (_ = black hole)
 nmap <leader>d "_D
+" TODO makes more sense to have a paste-replace that can be repeated like C-V: https://github.com/vim-scripts/ReplaceWithRegister
 " like <leader>dp, but replaced text in register - often use Y to yank until EOL, but then the dual for pasting is an awkward v$hp
 nmap <leader>v v$hp
 
