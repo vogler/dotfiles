@@ -177,9 +177,19 @@ echo "> Caches"
 # 390MB /Library/Caches/com.apple.iconservices.store; rest is <1MB or no access
 clean ~/Library/Caches
 # ~/Library/Caches/com.apple.bird is some iCloud cache; https://apple.stackexchange.com/questions/220007/what-is-com-apple-bird-why-does-it-grow-so-big; -> check which apps use it with `python3 <(curl -fs https://raw.githubusercontent.com/bwesterb/blame-bird/master/blame-bird.py)`
+
 clean ~/Library/Containers/*/Data/Library/Caches
+# above includes 21.2GB in ~/Library/Containers/com.apple.mediaanalysisd/Data/Library/Caches/com.apple.mediaanalysisd/com.apple.e5rt.e5bundlecache
+# https://www.reddit.com/r/MacOS/comments/1h79rv2/what_is_this_can_i_safely_delete_this/
+# https://pawisoon.medium.com/debunked-the-truth-about-mediaanalysisd-and-apples-access-to-your-local-photos-on-macos-a42215e713d1
+# "The process is designed to run machine learning algorithms to detect objects in photos and make object-based search possible in the Photos app. It also helps Finder to detect text and QR codes in photos. Even if a user does not use the Photos app or have an iCloud account, the process will still run."
+# Seems to be a bug with their caching: https://github.com/apple/coremltools/issues/2108
+# Emptied folder. Couldn't select text in preview (<space> in Finder) of some screenshot then, but OCR worked fine again after ~1min and then the above folder was only 56KB! Also didn't grow when doing it for several other images.
+# TODO https://github.com/apple/coremltools/issues/2108#issuecomment-2563809486
+# TODO https://www.reddit.com/r/MacOS/comments/1h79rv2/comment/m41nepm/
+
 echo "> Caches (Application-specific)" # TODO check that apps are not running?
-clean ~/Library/Application\ Support/Google/Chrome/Default/{File\ System,Service\ Worker,IndexedDB} # only issues noted: web.whatsapp.com need to link device again
+clean ~/Library/Application\ Support/Google/Chrome/Default/{File\ System,Service\ Worker,IndexedDB,WebStorage} # only issues noted: web.whatsapp.com need to link device again
 # Overview of storage used by sites (delete there includes cookies!): chrome://settings/content/all?sort=data-stored
 # TODO Chrome extensions keep around old versions after update; total du was 5.4GB
 # e.g. ~/Library/Application\ Support/Google/Chrome/Default/Extensions/cjpalhdlnbpafiamejdnhcphjbkeiagm/ (uBlock) is 2.12GB while the latest version 1.54.0_0 is only 14.27MB; SponsorBlock is 1.3GB; React Developer Tools is 1.1GB -> manually deleted old versions for now (which made uBlock lose its settings since it was apparently still using an old version while the new one was already installed?!, uBlock only switched from 1.54.0 to 1.55.0 after I disabled/reenabled the extension)
