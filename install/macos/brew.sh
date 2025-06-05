@@ -117,6 +117,8 @@ brew install android-file-transfer # 6.71MB, simple default app for MTP file tra
 # brew install macdroid # 45.39MB, can also mount as disk (and via ADB besides MTP), but read-only in free version...
 # brew install openmtp # 395MB, same as android-file-transfer, just other UI
 brew install android-studio # 2.8G, Tools for building Android applications (2025-05-29T18:08:53+02:00) need Android emulator for HTTP-Toolkit or rooted device
+brew install jadx # 122M, Dex to Java decompiler (2025-06-05T16:41:45+02:00)
+brew install apktool # 24M, Tool for reverse engineering 3rd party, closed, binary Android apps (2025-06-05T16:42:09+02:00)
 
 # Terminal Spotify client
 brew install ncspot # 12MB, Rust, can just login, nice UI and shortcuts but had some issues with displaying progress bar and doesn't scrobble to Last.fm, fills up ~/.cache/ncspot/librespot
