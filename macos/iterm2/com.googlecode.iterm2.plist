@@ -33321,6 +33321,8 @@
 	<false/>
 	<key>StretchTabsToFillBar</key>
 	<true/>
+	<key>SuppressRestartAnnouncement</key>
+	<true/>
 	<key>SwitchPaneModifier</key>
 	<integer>5</integer>
 	<key>SwitchTabModifier</key>
