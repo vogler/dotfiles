@@ -21,8 +21,7 @@ brew install dra # 3.1M, Rust, Command-line tool to download release assets from
 # list manually installed packages: `pkgutil --pkgs`
 brew install mas # CLI for macOS App Store
 brew install m-cli # CLI for macOS and stock apps
-# brew install dockutil # edit Dock (used in dock.sh)
-brew install --cask hpedrorodrigues/tools/dockutil # need dockutil 3 for current macOS, temporary, see https://github.com/kcrawford/dockutil/issues/127
+brew install dockutil # edit Dock (used in dock.sh)
 # brew install cheatsheet # hold cmd key to show overlay with all shortcuts of current application
 # brew install shortery # 6.9MB, triggers for Shortcuts, tried Sleep/Wake Up to log to file, but did not work
 # brew install sound-control # 23MB, 14d trial, allows to lower volume of speakers connected to display via HDMI/DisplayPort (macOS can't, so volume would need to be changed on speakers (no problem on Windows)) - sometimes made videos hang on sound until clicked on menu icon
