@@ -129,6 +129,11 @@ brew install glow # 17M, Go, Render markdown on the CLI (2025-05-24T20:27:09+02:
 # `uv tool run frogmouth` Python TUI with mouse support, contents, bookmarks, history
 # more: https://www.adamsdesk.com/posts/linux-markdown-viewers/
 
+# Terminal browser
+# brew install lynx # 2.3M, Text-based web browser (2025-06-08T22:02:15+02:00)
+brew install links # 1.8M, Lynx-like WWW browser that supports tables, menus, etc. (2025-06-08T22:02:27+02:00)
+brew install w3m # 2.0M, Pager/text based browser (2025-06-08T22:02:34+02:00)
+
 # games
 brew install openra # 136MB, open source Command & Conquer Red Alert, Tiberian Dawn, Dune 2000
 brew install steam # 6.7M + ~1.2GB in ~/Library/Application\ Support/Steam (games in ./steamapps/common), requires Rosetta, only used for Factorio (2024-10-21)
