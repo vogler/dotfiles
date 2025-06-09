@@ -318,6 +318,7 @@ brew install git-extras # 418KB, git statistics like `git summary --line` and ut
 brew install ugit --force # 43KB, Bash, Undo for 20+ git scenarios, either ugit` or `git undo`, --force due to conflict with git-extras/git-undo
 brew link --overwrite ugit # overwrites git-extras/git-undo which just undoes commits
 brew install jj # 14.5MB, Rust, git-compatible VCS, no index, working copy is auto-committed, conflicts can be committed -> rebase easier, https://martinvonz.github.io/jj/v0.15.1/git-comparison/ - not as polished as sapling but more improvements over git
+brew install git-absorb # 1.5M, Automatic git commit --fixup (2025-06-09T11:06:50+02:00)
 
 # secret scanning
 brew install gitleaks # 9.2MB, Go, finds hardcoded secrets like passwords, api keys, and tokens in git repos
