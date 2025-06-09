@@ -248,6 +248,7 @@ brew install ptpython # better Python REPL
 brew install node # JavaScript; includes npm
 # use fnm as node version manager? https://github.com/Schniz/fnm
 brew install oven-sh/bun/bun # 54M, alternative to node/deno (both v8; bun uses WebKit), faster, bun replaces npm/pnpm, bigger/nicer stdlib (sqlite, pg, S3, $ like zx, Bun.file, ...) (2025-04-05T20:14:13+02:00)
+brew install deno # 117M, Secure runtime for JavaScript and TypeScript (2025-06-08T22:20:02+02:00)
 brew install opam # OCaml
 brew install java
 sudo ln -sfn /opt/homebrew/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk # For the system Java wrappers to find this JDK
