@@ -6,3 +6,4 @@ git:
     autoWrapCommitMessage: false
 gui:
   skipDiscardChangeWarning: true
+  skipNoStagedFilesWarning: true
