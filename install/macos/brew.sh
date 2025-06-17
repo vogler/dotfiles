@@ -142,7 +142,6 @@ brew install steam # 6.7M + ~1.2GB in ~/Library/Application\ Support/Steam (game
 brew install neovim # editor, no need for vim, config in .vimrc
 brew install vimr # 77MB, VimR.app/`vimr` as GUI with file browser, markdown preview, macOS shortcuts - used for macOS `open`, nicer than neovide, neovim-qt, macvim
 brew install vv # 409M, VV.app/`vv` like VimR, but based on Electron, tried since VimR had some error on startup with my old .vimrc, bit slow with big files, but otherwise ok (2025-01-29T21:44:47+01:00)
-brew install pngpaste # 80K, Paste PNG into files (2025-06-17T15:35:34+02:00) needed for img-clip.nvim to :PasteImage from clipboard
 brew install helix # 135MB, modern vim-like modal editor, mostly similar, but selection -> action model, words selected by default on motion; many things like surround and git-gutter included, but no plugin system yet; see .config/helix/config.toml
 
 # terminals
@@ -151,6 +150,10 @@ curl -L https://iterm2.com/shell_integration/install_shell_integration_and_utili
 brew install warp # 147MB, fast rust-based terminal, bit more modern than iterm, but pretty similar, TODO colors and font in vim are off
 # brew install tabby # 346MB, TS, customizable terminal, SSH and serial client; nice UI, but colors in vim are off, feels slower than iTerm and no additional features I currently need
 brew install ghostty # 48M, nice, but pretty minimal features, only restores tabs without contents (2025-03-03T23:28:15+01:00)
+
+# terminal images
+brew install pngpaste # 80K, Paste PNG into files (2025-06-17T15:35:34+02:00) needed for img-clip.nvim to :PasteImage from clipboard (saves to assets/2025-06-17-15-40-53.png)
+brew install chafa # 2.7M, Versatile and fast Unicode/ASCII/ANSI graphics renderer (2025-06-17T16:18:58+02:00) supposedly higher-quality alternative to iTerm's imgcat
 
 # terminal multiplexers
 brew install tmux # terminal multiplexer, used for ssh by default via prezto
