@@ -410,6 +410,7 @@ brew install iftop # 138KB, interactive bandwidth monitor, shows connections wit
 brew install bmon # 393KB, interactive bandwidth monitor, only shows graphs per interface
 # brew install nethogs # 136KB, interactive bandwidth monitor, groups per process - did not work with sudo; use nettop to at least show connections per process
 brew install bandwhich # 5.9MB, Rust, bandwidth per process, remote address, connection
+brew install rustscan # 3.8M, Modern Day Portscanner (2025-07-06T18:11:05+02:00) also installs lua and nmap; `rustscan --ulimit 5000 -a rpi4`
 
 # goblint
 brew install gmp # needed to build deps
