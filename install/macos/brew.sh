@@ -284,13 +284,16 @@ brew install heroku/brew/heroku
 # mas install 1388020431 # DevCleaner for Xcode: cleans cache files (none if not actually using Xcode)
 brew install devutils # 48MB, demo, GUI with converters for unix time, base64, URLs, regex, JSON, CSV, Markdown etc.
 brew install grex # 2.4MB, Command-line tool for generating regular expressions, `grex -c bar baz`
-brew install hexyl # 781KB, Command-line hex viewer
-brew install wader/tap/fq # 12MB, Go, jq for binary formats (2025-07-10T11:56:14+02:00)
 brew install binocle # 8.6MB, Rust, GUI tool to visualize binary data
 brew install diffoscope # 13MB (12.1MB libmagic), In-depth comparison of files, archives, and directories (2025-01-29T17:33:28+01:00)
 brew install hyperfine # 1.5MB, Command-line benchmarking tool, `hyperfine 'sleep 0.3'`, `hyperfine --warmup 3 --parameter-scan delay 0.3 0.7 -D 0.2 'sleep {delay}'`
 brew install just # 2.6MB, replacement for make, runs commands from `justfile`, `just -l` to list
 brew install meta-package-manager # ~58MB, Wrapper around all package managers with a unifying CLI; `mpm outdated`, `mpm upgrade`, `mpm --all-managers managers`; has apt, brew, cargo, choco, composer, dnf, emerge, flatpak, gem, mas, npm, opkg, pacaur, pacman, paru, pip, pipx, scoop, snap, steamcmd, vscode, yarn, yay, yum, zypper
+
+# binary data, hex viewer...
+brew install hexyl # 781KB, Command-line hex viewer
+brew install wader/tap/fq # 12MB, Go, jq for binary formats (2025-07-10T11:56:14+02:00)
+brew install imhex # 116M, Hex editor for reverse engineers (2025-07-10T11:57:56+02:00) unsigned -> macOS denies to open -> System Settings > Privacy & Security > Open anyway
 
 # containers
 brew install --cask docker # 1.5 GB, hate it, only gave in for avoiding captcha with headless playwright
