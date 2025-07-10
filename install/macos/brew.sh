@@ -285,6 +285,7 @@ brew install heroku/brew/heroku
 brew install devutils # 48MB, demo, GUI with converters for unix time, base64, URLs, regex, JSON, CSV, Markdown etc.
 brew install grex # 2.4MB, Command-line tool for generating regular expressions, `grex -c bar baz`
 brew install hexyl # 781KB, Command-line hex viewer
+brew install wader/tap/fq # 12MB, Go, jq for binary formats (2025-07-10T11:56:14+02:00)
 brew install binocle # 8.6MB, Rust, GUI tool to visualize binary data
 brew install diffoscope # 13MB (12.1MB libmagic), In-depth comparison of files, archives, and directories (2025-01-29T17:33:28+01:00)
 brew install hyperfine # 1.5MB, Command-line benchmarking tool, `hyperfine 'sleep 0.3'`, `hyperfine --warmup 3 --parameter-scan delay 0.3 0.7 -D 0.2 'sleep {delay}'`
