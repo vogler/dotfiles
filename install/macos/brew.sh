@@ -340,6 +340,7 @@ brew install trivy # 184M, Vulnerability scanner for container images, file syst
 # data processing
 brew install jq # 1.5MB, C, JSON CLI processor
 # Rust alternatives: https://github.com/01mf02/jaq, https://github.com/yamafaktory/jql
+brew install jaq # 1.9M, JQ clone focussed on correctness, speed, and simplicity (2025-07-10T12:11:25+02:00)
 brew install jid # 2.4MB, Go, TUI for jq
 # brew install noahgorstein/tap/jqp # 11.8MB, Go, TUI for jq
 brew install xsv # 3.1MB, Rust, CSV CLI: cat count flatten frequency join search select slice sort split stats table
