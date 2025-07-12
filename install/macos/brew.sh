@@ -197,6 +197,10 @@ brew install ripgrep # 5.8MB, rg: Code-search similar to ag, but faster [Rust]
 brew install ugrep # 1.2MB, ug: grep with interactive TUI (-Q), fuzzy search, hexdump, search binary, archives, compressed files (-z), documents (PDF, pandoc, office, exif...), output as JSON, CSV...
 brew install pdfgrep # `pdfgrep -nH PATTERN *.pdf` as alternative (with page number) to `ug --filter='pdf:pdftotext % -' PATTERN *.pdf`
 brew install iozone # 300KB, file system benchmark tool, see https://www.pidramble.com/wiki/benchmarks/microsd-cards
+# brew install amorphousdiskmark # Cask 'amorphousdiskmark' has been disabled because it is now exclusively distributed on the Mac App Store! It was disabled on 2024-12-16.
+# mas install 1168254295 # AmorphousDiskMark can't be installed in DE: "This app is currently not available in your country or region."; https://apps.apple.com/us/app/amorphousdiskmark/id1168254295
+# -> download from https://archive.org/details/amorphous-disk-mark
+# -> 3402R 3155W on 1TB M1 MBA
 brew install duf # 3.1MB, Go, Disk usage/free, nicer `df`; alternative in Rust: dysk
 brew install diskus # 839KB, Rust, minimal, 3-10x faster alternative to `du -sh`
 brew install dust # 2.2MB, Rust, prints overview (terminal height) of the biggest folders and their subfolders with percentage bars
