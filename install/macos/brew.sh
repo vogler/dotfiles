@@ -28,6 +28,7 @@ brew install dockutil # edit Dock (used in dock.sh)
 brew install eqmac # 77MB, Swift, Audio Equalizer & Volume Mixer, needs to install audio driver and creates new audio device, but currently only way to (keyboard-)control volume on speakers (via display via HDMI)
 brew install MonitorControl # 42MB, Swift, simple app to control external monitor brightness & volume, also with keyboard - brightness works great, but volume via HDMI doesn't work on M1: https://github.com/MonitorControl/MonitorControl/issues/323#issuecomment-919882176 - could try DisplayPort
 brew install betterdisplay # 22MB, 14d trial, display management with many more options, but volume also doesn't work
+# brew install stillcolor # 484K, Tool to disable temporal dithering on Apple Silicon Macs (2025-07-14T14:52:26+02:00) - did not notice a difference
 brew install karabiner-elements # 29MB, modify keyboard/mouse input, mostly use capslock mappings from https://github.com/Vonng/Capslock
 brew install alt-tab # 26MB, Swift, alt-tab like on Windows, with previews, Raycast's 'Switch Windows' has search but can't just alt-tab to switch between recent windows
 
