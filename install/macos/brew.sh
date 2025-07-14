@@ -516,6 +516,7 @@ brew install arduino-ide # 495MB, use vscode/PlatformIO instead, but this has a 
 brew install kicad # 6.5GB, schema and PCB editor for Gerber files
 # brew install --cask homebrew/cask-drivers/qmk-toolbox # 1.8MB, GUI for flashing QMK keyboard firmware, supports most boards/bootloaders
 # brew install qmk/qmk/qmk # ~900MB due to arm-/avr-gcc, CLI to build & flash QMK keyboard firmware
+brew install kbt # 1.6M, Keyboard tester in terminal (2025-07-14T12:50:34+02:00)
 
 # AI, ML, LLMs
 brew install ollama # 25M, Create, run, and share large language models (LLMs) (2025-02-23T14:00:08+01:00) port 11434, but no UI; e.g. `ollama run deepseek-r1:8b` (4bit, 4.9GB) - default 7b, 14b model already made mouse lag and slow output
