@@ -276,7 +276,8 @@ brew install shellcheck # 68M, Static analysis and lint tool, for (ba)sh scripts
 brew install actionlint # 5.0M, Static checker for GitHub Actions workflow files (2025-03-05T14:40:23+01:00)
 brew install hadolint # 78MB, Dockerfile linter to validate best practices, can also just use online version to shows warnings inline: https://hadolint.github.io/hadolint/ (2025-03-05T14:44:18+01:00)
 brew install typos-cli # 13.6MB, Source code spell checker (en) for many languages (identifiers, comments, filenames), low false positive rate; `typos` to see, `typos -w` to fix
-brew install lychee # 23M, Rust, Fast, async, resource-friendly link checker (2025-05-24T12:24:12+02:00)
+brew install lychee # 23M, Rust, Fast, async, resource-friendly link checker (2025-05-24T12:24:12+02:00) `lychee file/glob/url`
+brew install mlc # 6.9M, Rust, Check for broken links in markup files (2025-07-14T13:02:55+02:00) `mlc README.md`
 
 # dev tools
 brew install tokei # count code lines fast and by language
