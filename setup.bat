@@ -25,6 +25,9 @@ winget install LibreOffice
 Rem https://github.com/astral-sh/uv Rust, fast Python package installer and resolver, `uv tool install lastversion`, `uvx lastversion`, replaces most other Python tools incl. Poetry, macOS: `uvx` -> `.cache/uv`, `uv tool install` -> `.local/{bin,share/uv/tools}`
 winget install --id=astral-sh.uv  -e
 
+Rem https://www.hwinfo.com System Information and Diagnostics
+winget install HWiNFO
+
 Rem Upgrade
 choco upgrade all
 winget upgrade --all
