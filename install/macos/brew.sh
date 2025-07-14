@@ -360,8 +360,9 @@ brew install xidel # 3.7MB, jq for HTML/XML/JSON; supports CSS selectors, XPath 
 # databases
 # brew install postgresql@15 # 71MB, SQL DB; `brew services start postgresql@15` to enable start on login, `brew services run postgresql@15` to just start
 
-# database management
+# database management, clients
 brew install tableplus # 183MB, Native GUI tool for databases (PostgreSQL, SQLite, Mongo, Cassandra, Redis, Cockroach...) - free trial is limited to 2 opened tabs, 2 opened windows, 2 advanced filters
+brew install rsql # 45M, CLI for relational databases and common data file formats (2025-07-14T13:08:33+02:00) replaces sqlite3 as terminal client since it has highlighting, auto-completion etc.: `rsql --url "sqlite://sqlite3.db"`; supports PostgreSQL, MySQL, SQLite, DuckDB, Parquet, CSV, TSV, Excel, S3, https... and most output formats (json, yml, csv, html, md): `rsql --url "csv://sales.csv" --format html -- "SELECT region, SUM(revenue) FROM table GROUP BY region"`
 
 # network
 brew install mosh # 1.1MB, alternative for ssh, local echo, roaming, but UDP dyn. port alloc. 60000-61000
