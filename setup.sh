@@ -116,12 +116,14 @@ if [[ "$*" == *ocaml* ]]; then
 fi
 
 # js/npm
-npm install -g npm-check-updates # 17.1MB, ncu to check updates; ncu -u to update package.json; ncu -i for interactive; ncu -g for global packages
+npm install -g npm-check-updates # 17.1MB, ncu to check dependencies for updates; ncu -u to update package.json; ncu -i for interactive; ncu -g for global packages
+npm install -g taze # 6.2MB, newer alternative, `taze` to check within range, `taze major -w` to update package.json to newest deps
 npm install -g typescript typescript-language-server # 38.7MB + 1.7MB, used for lsp in helix and probably later also for nvim when changing from coc to nvim-cmp
 npm install -g howfat # 1.2MB, show npm package size, #deps, #files, license as tree, table, json, simple - all info from npmjs.com, not local size on disk
 npm install -g zx # 12.7MB, JS as replacement for shell scripts, https://github.com/google/zx
 npm install -g daff # 1.8MB, align and compare tables, can produce and apply tabular diffs, `daff a.csv b.csv`; git: works with `GIT_PAGER=less git diff` (can't have delta as pager); see .gitconfig and .config/git/attributes
 npm install -g git-split-diffs # 20MB, TS, Syntax highlighted side-by-side diffs in your terminal; alternative to delta (Rust)
+# npm install -g marked # 410KB, markdown parser/compiler: `marked -o foo.html foo.md`
 
 # python/pipx
 mkdir -p "$config/ptpython" # not .config on macOS...
