@@ -1,3 +1,5 @@
+# This installs all macOS packages. Before xx on a 256GB MBA, afterwards 1TB.
+
 # We could generate a Brewfile with `brew bundle dump` (even with cask & mas), but would lose format/comments every run.
 # So we just use a shell script to install each package. Also, sometimes there's some post-install linking to be done.
 
@@ -415,7 +417,14 @@ brew install parsec # 6.5MB, fast remote desktop that works well enough for game
 brew install windows-app # 246MB, Windows Remote Desktop (replaces microsoft-remote-desktop)
 brew install caddy # 42MB, Go web server with automatic HTTPS (Let's Encrypt), HTTP/3, reverse proxy, load balancing, caching, nicer to use but slower than nginx/haproxy/traefik, https://caddyserver.com - `caddy file-server --domain example.com` `caddy reverse-proxy --from example.com --to localhost:9000`
 brew install dufs # 3.4M, Rust, Static file server with upload/edit/search/zip-download (2025-05-18T19:34:01+02:00)
-brew install ali # 6.9MB, Generate HTTP load and plot (TUI) the results in real-time
+
+# benchmark, load testing - https://gist.github.com/denji/8333630
+brew install ali # 6.9MB, Generate HTTP load and plot (TUI) the results in real-time (?) Go
+brew install wrk # 160K, HTTP benchmarking tool (2025-07-29T10:08:44+02:00) C; `wrk -t12 -c400 -d30s https://...` to run 12 threads and 400 connections for 30s
+# brew install vegeta # 11M, HTTP load testing tool and library (2025-07-29T10:08:53+02:00) Go; flexible CLI but too complicated for simple tests
+brew install oha # 15M, HTTP load generator, inspired by rakyll/hey with tui animation (2025-07-29T10:09:00+02:00) Rust
+brew install hurl # 6.3M, Run and Test HTTP Requests with plain text and curl (2025-07-29T10:09:09+02:00) Rust
+
 # brew install dog # 650KB, DNS client like dig but with colors, DNS-over-TLS, DNS-over-HTTPS, json; `dog example.net A AAAA NS MX TXT @1.1.1.1` - deprecated
 brew install doggo # 10.7MB, DNS client like dog (like dig), but maintained
 brew install wtfis # 8.4MB, Passive hostname, domain, and IP lookup tool - need to put VT_API_KEY in ~/.env.wtfis, https://www.virustotal.com/gui/my-apikey
