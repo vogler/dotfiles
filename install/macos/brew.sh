@@ -85,6 +85,7 @@ brew install microsoft-teams # 507MB, only needed for stupid background image si
 # brew install evernote # Intel; not worth the overhead, just use the web-app and eventually something nicer with history
 brew install tor-browser # 192MB
 brew install obsidian # 412MB, PKM, just keeps folders of .md files, nice markdown editor, sometimes slow/annoying (Electron), not perfect, but at least customizable with lots of community plugins (core not OSS)
+brew install 1password # 432M, Password manager that keeps all passwords secure behind one password (2025-07-31T08:31:20+02:00)
 
 # vscode and forks focused on AI features
 brew install visual-studio-code # 370MB, `code .`
