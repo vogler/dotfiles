@@ -95,6 +95,9 @@ brew install windsurf # 549M, haven't really tried (2025-05-22T19:07:22+02:00)
 # brew install void # 432M, open source, can add API keys with free quota for Gemini and OpenRouter -> quota was used up right away, looks like just vscode (2025-05-21T16:15:33+02:00)
   # just use vscode extension? https://github.com/RooCodeInc/Roo-Code
 
+# other IDEs
+brew install phpstorm # 2.7G, PHP IDE by JetBrains (2025-08-04T10:41:57+02:00)
+
 # other desktop apps
 brew install dropbox # only 9GB with free plan, moved Screenshots <2021 to PC TODO replace with self-hosted alternative on RPi
 brew install tresorit # 225MB, encrypted cloud storage for TDD
