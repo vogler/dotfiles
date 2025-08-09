@@ -82,10 +82,13 @@
 [push]
     default = current
     recurseSubmodules = on-demand
+    autoSetupRemote = true
 [pull]
     rebase = true
 [rebase]
     autostash = true
+[branch]
+	autoSetupMerge = simple
 [diff]
     compactionHeuristic = true # https://github.blog/2016-06-13-git-2-9-has-been-released/#beautiful-diffs
     submodule = log
@@ -125,6 +128,7 @@
     ds = "!f() { git diff $@ | git-split-diffs --color | less -RFX; }; f"
     sms = "submodule status"
     smu = "submodule update --init --recursive"
+    set-upstream = !git branch --set-upstream-to=origin/`git symbolic-ref --short HEAD`
 [credential "https://dev.azure.com"]
 	useHttpPath = true
 
