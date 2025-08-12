@@ -86,6 +86,7 @@ brew install microsoft-teams # 507MB, only needed for stupid background image si
 brew install tor-browser # 192MB
 brew install obsidian # 412MB, PKM, just keeps folders of .md files, nice markdown editor, sometimes slow/annoying (Electron), not perfect, but at least customizable with lots of community plugins (core not OSS)
 brew install 1password # 432M, Password manager that keeps all passwords secure behind one password (2025-07-31T08:31:20+02:00)
+brew install motrix # 210M, Open-source download manager (2025-08-12T18:05:04+02:00) Electron/JS/Vue/aria2; Chrome's download manager sucks; much faster with this due to 64 con/server, speed in cmd+tab & tray, speed limit, advanced config like allocation (uses org file name with fin size by default...) and time (use `remote-time=false` since my ~/Downloads are sorted by mtime in Finder) need to be configred in aria2.conf
 
 # vscode and forks focused on AI features
 brew install visual-studio-code # 370MB, `code .`
