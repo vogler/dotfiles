@@ -33,6 +33,7 @@ brew install betterdisplay # 22MB, 14d trial, display management with many more 
 # brew install stillcolor # 484K, Tool to disable temporal dithering on Apple Silicon Macs (2025-07-14T14:52:26+02:00) - did not notice a difference
 brew install karabiner-elements # 29MB, modify keyboard/mouse input, mostly use capslock mappings from https://github.com/Vonng/Capslock
 brew install alt-tab # 26MB, Swift, alt-tab like on Windows, with previews, Raycast's 'Switch Windows' has search but can't just alt-tab to switch between recent windows
+brew install kindavim # 11M, Use Vim in input fields and non input fields (2025-08-12T23:58:30+02:00) ^[ for normal mode; works well for text inputs via macOS accessibility, but falls back to key-remapping (e.g. does not show diff. caret for normal mode) for inputs that are not readable like for Electron apps like Slack; also works for other UI elements like lists
 
 # Quick Look extensions - https://github.com/sindresorhus/quick-look-plugins, more: https://github.com/haokaiyang/Mac-QuickLook
 brew install qlvideo # <1MB, Apple doc says quicklook generators are only called upon demand (so no overhead for mds?); deprecated: qlimagesize
