@@ -171,6 +171,7 @@ gh ext install gennaro-tedesco/gh-i # search issues, `gh i` (default state:any a
 # gh ext install hectcastro/gh-metrics # metrics for PRs: commits, changes, files, comments, participants, time to first/last review, merge
 gh ext install HaywardMorihara/gh-tidy # check out & pull, `git gc` to optimize local repo, check for merged branches/PRs and asks to delete them
 gh ext install mtoohey31/gh-foreach # clone and execute commands across multiple repos, `gh foreach run --regex='chrom.*' tokei` --languages=c
+gh extension install InditexTech/gh-sherpa # Streamline branch and pull request creation for Jira or GitHub issues; `gh sherpa create-pr --issue 42`
 # gh ext install schleiden/gh-actionlint # just runs actionlint which needs to be installed
 
 # zsh: fork of https://github.com/sorin-ionescu/prezto
