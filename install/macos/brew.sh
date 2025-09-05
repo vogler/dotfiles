@@ -99,6 +99,7 @@ brew install windsurf # 549M, haven't really tried (2025-05-22T19:07:22+02:00)
 
 # other IDEs
 brew install phpstorm # 2.7G, PHP IDE by JetBrains (2025-08-04T10:41:57+02:00)
+brew install rider # 5.0G, .NET IDE (2025-09-05T16:15:08+02:00)
 
 # other desktop apps
 brew install dropbox # only 9GB with free plan, moved Screenshots <2021 to PC TODO replace with self-hosted alternative on RPi
@@ -344,6 +345,7 @@ brew install ugit --force # 43KB, Bash, Undo for 20+ git scenarios, either ugit`
 brew link --overwrite ugit # overwrites git-extras/git-undo which just undoes commits
 brew install jj # 14.5MB, Rust, git-compatible VCS, no index, working copy is auto-committed, conflicts can be committed -> rebase easier, https://martinvonz.github.io/jj/v0.15.1/git-comparison/ - not as polished as sapling but more improvements over git
 brew install git-absorb # 1.5M, Automatic git commit --fixup (2025-06-09T11:06:50+02:00)
+brew install jira-cli # 19M, Feature-rich interactive Jira CLI (2025-09-05T11:12:30+02:00)
 
 # secret scanning
 brew install gitleaks # 9.2MB, Go, finds hardcoded secrets like passwords, api keys, and tokens in git repos
