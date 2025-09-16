@@ -267,6 +267,7 @@ brew install zet # 1.5M, CLI utility to find the union, intersection, and set di
 brew install pyenv # 7.6M, Python version management (2025-05-24T10:53:15+02:00) creates virtualenv in ~/Library/Caches/pypoetry/
 brew install ptpython # better Python REPL
 brew install node # JavaScript; includes npm
+brew install nvm # 228K, Manage multiple Node.js versions (2025-09-16T13:24:57+02:00)
 # use fnm as node version manager? https://github.com/Schniz/fnm
 brew install oven-sh/bun/bun # 54M, alternative to node/deno (both v8; bun uses WebKit), faster, bun replaces npm/pnpm, bigger/nicer stdlib (sqlite, pg, S3, $ like zx, Bun.file, ...) (2025-04-05T20:14:13+02:00)
 brew install deno # 117M, Secure runtime for JavaScript and TypeScript (2025-06-08T22:20:02+02:00)
