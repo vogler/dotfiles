@@ -78,6 +78,7 @@ brew install google-chrome # 922MB
 brew install chrome-cli # 125KB, control chrome via scripting bridge, `OUTPUT_FORMAT=json chrome-cli list tabs`
 brew install firefox # 344MB, don't really use it, but good to have options
 brew install zen # 430M, Arc-like Firefox, open-source, customizable (2025-03-03T23:03:19+01:00)
+brew install helium-browser # 340M, Chromium-based web browser (2025-10-21T20:37:16+02:00)
 brew install spotify # 298MB, was Intel but now Apple Electron (or similar) -> use Chrome App: same (except no recently played and friends feed, diff. shortcuts) and can share resources with Chrome (19MB vs 476MB RSS)
 brew install whatsapp # 330MB, now Apple Silicon and no longer Intel, can do calls, has cmd+shift+[] for switching chats, but UI slightly different from web app and needs more memory.
 # Alternative: WhatsApp Chrome App. Needs less memory, but can't do calls and no good shortcuts. Provided by Chrome account sync. To add to your account visit web.whatsapp.com, dot-menu > More Tools > Create Shortcut with open as window
