@@ -284,8 +284,9 @@ brew install dotnet-sdk # 793MB, .NET CLI (2025-04-30T12:06:58+02:00)
 brew install z3 # 33M, High-performance theorem prover (2025-04-30T22:21:06+02:00)
 # brew install dart-sdk # 526M, Dart Language SDK, including the VM, dart2js, core libraries, and more (2025-05-30T15:59:18+02:00)
 # brew install flutter # 4.13G, UI toolkit for building applications for mobile, web and desktop (2025-05-30T16:12:49+02:00)
-brew install php # 124M, General-purpose scripting language (2025-09-18T17:02:06+02:00)
-brew install composer # 3.1M, Dependency Manager for PHP (2025-09-18T17:15:55+02:00)
+# brew install php # 124M, General-purpose scripting language (2025-09-18T17:02:06+02:00)
+# brew install composer # 3.1M, Dependency Manager for PHP (2025-09-18T17:15:55+02:00) # not available for 8.3 - https://getcomposer.org/installer
+brew install php@8.3 # 91M, General-purpose scripting language (2025-09-18T18:03:27+02:00)
 
 # linters
 brew install shellcheck # 68M, Static analysis and lint tool, for (ba)sh scripts (2025-03-05T14:43:21+01:00)
