@@ -438,6 +438,7 @@ brew install wrk # 160K, HTTP benchmarking tool (2025-07-29T10:08:44+02:00) C; `
 # brew install vegeta # 11M, HTTP load testing tool and library (2025-07-29T10:08:53+02:00) Go; flexible CLI but too complicated for simple tests
 brew install oha # 15M, HTTP load generator, inspired by rakyll/hey with tui animation (2025-07-29T10:09:00+02:00) Rust
 brew install hurl # 6.3M, Run and Test HTTP Requests with plain text and curl (2025-07-29T10:09:09+02:00) Rust
+brew install ttyd # 676K, Command-line tool for sharing terminal over the web (2025-10-28T08:21:01+01:00) C, `ttyd -W zsh` to share terminal via web UI
 
 # brew install dog # 650KB, DNS client like dig but with colors, DNS-over-TLS, DNS-over-HTTPS, json; `dog example.net A AAAA NS MX TXT @1.1.1.1` - deprecated
 brew install doggo # 10.7MB, DNS client like dog (like dig), but maintained
