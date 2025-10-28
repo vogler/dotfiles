@@ -470,6 +470,9 @@ brew install skim # does not jump around as Preview.app on reload
 brew install qpdf # qpdf --show-npages; instead of pdfinfo from xpdf
 # brew install hook # copy links to files, web pages, etc., deep links to text selection in PDF only supported for Skim, not Preview; 30d trial, afterwards only links to emails & web pages. Thought about this before and like the idea, but not its execution.
 
+# LaTeX/Markdown alternatives
+brew install typst # 33M, Markup-based typesetting system (2025-10-28T08:26:08+01:00) Rust, `typst compile doc.typ` to create doc.pdf, `typst watch doc.typ`; similar to Markdown but with functions/scripting, Latex-like math, faster comipilation and better errors
+
 # fonts - installed to ~/Library/Fonts/ (currently 980MB, ~120MB not due to the below)
 # brew tap homebrew/cask-fonts # has been moved to homebrew
 # normal fonts
