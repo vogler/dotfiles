@@ -556,6 +556,7 @@ brew install ollama # 25M, Create, run, and share large language models (LLMs) (
 # brew install ollamac # 11M, Interact with Ollama models (2025-02-23T14:56:37+01:00) needs server running, Swift app with UI with log, parameters etc., however, doesn't show text inside <think> and auto-naming of chats is also bad (<think> instead of prompt)
 # `uvx open-webui serve` failed to resolve deps...
 # probably best to run NextChat or lobe-chat (both TS) via docker
+brew install opencode # 85M, AI coding agent, built for the terminal (2025-10-21T19:07:16+02:00)
 
 # not available in brew or mas:
 # https://www.meta.com/en-gb/help/quest/articles/horizon/getting-started-in-horizon-workrooms/use-computer-in-VR-workrooms/ - Meta Quest Remote Desktop
