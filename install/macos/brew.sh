@@ -562,6 +562,7 @@ brew install ollama # 25M, Create, run, and share large language models (LLMs) (
 # `uvx open-webui serve` failed to resolve deps...
 # probably best to run NextChat or lobe-chat (both TS) via docker
 brew install opencode # 85M, AI coding agent, built for the terminal (2025-10-21T19:07:16+02:00)
+brew install lm-studio # 1.5G, Discover, download, and run local LLMs (2025-11-08T11:54:27+01:00)
 
 # not available in brew or mas:
 # https://www.meta.com/en-gb/help/quest/articles/horizon/getting-started-in-horizon-workrooms/use-computer-in-VR-workrooms/ - Meta Quest Remote Desktop
