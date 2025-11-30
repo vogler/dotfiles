@@ -1,6 +1,9 @@
 // Place your settings in this file to overwrite the default settings
 {
   "files.associations": {
+    "*.page-template": "vue",
+    "*.layout-template": "vue",
+    "*.vue": "vue",
     "*.pml": "c",
     ".env*": "dotenv"
   },
@@ -220,11 +223,49 @@
   "emmet.showSuggestionsAsSnippets": true,
   "workbench.editor.tabActionCloseVisibility": false,
   "editor.tokenColorCustomizations": {
+    "[*Light*]": {
+      "textMateRules": [
+        {
+          "scope": "ref.matchtext",
+          "settings": {
+            "foreground": "#000"
+          }
+        }
+      ]
+    },
+    "[*Dark*]": {
+      "textMateRules": [
+        {
+          "scope": "ref.matchtext",
+          "settings": {
+            "foreground": "#fff"
+          }
+        }
+      ]
+    },
     "textMateRules": []
   },
   "dotenv.enableAutocloaking": false,
   "security.promptForLocalFileProtocolHandling": false,
   "prisma.showPrismaDataPlatformNotification": false,
   "redhat.telemetry.enabled": false,
-  "git.openRepositoryInParentFolders": "always"
+  "git.openRepositoryInParentFolders": "always",
+  "github.copilot.nextEditSuggestions.enabled": true,
+  "[dockercompose]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.autoIndent": "advanced",
+    "editor.quickSuggestions": {
+      "other": true,
+      "comments": false,
+      "strings": true
+    },
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+  "[github-actions-workflow]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+  "githubPullRequests.pullBranch": "never",
+  "docker.extension.enableComposeLanguageServer": false,
+  "chat.mcp.gallery.enabled": true
 }
