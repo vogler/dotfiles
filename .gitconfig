@@ -17,6 +17,8 @@
     username = vogler
 [credential "https://gitlab.lrz.de"]
     username = gu95foc
+[credential "https://dev.azure.com"]
+	useHttpPath = true
 [github]
     user = vogler
 [hub] # https://hub.github.com - newer: https://cli.github.com
@@ -129,9 +131,7 @@
     sms = "submodule status"
     smu = "submodule update --init --recursive"
     set-upstream = !git branch --set-upstream-to=origin/`git symbolic-ref --short HEAD`
-[credential "https://dev.azure.com"]
-	useHttpPath = true
-
+    co = !"git stash push && git checkout \"$@\" && git stash pop --index #" # stash before checkout and pop afterwards, but keep index (staged changes)
 # added by `daff git csv`/tsv/sqlite
 [diff "daff-csv"]
 	command = daff diff --git # delta defined as pager above screws up daff's output: https://github.com/paulfitz/daff/issues/207
