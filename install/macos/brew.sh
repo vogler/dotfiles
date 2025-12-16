@@ -412,7 +412,7 @@ brew install mosquitto # MQTT pub/sub
 brew install yt-dlp/taps/yt-dlp # youtube-dl fork with additional features and fixes: full dl speed, SponsorBlock, yt-dlp --cookies-from-browser chrome --max-downloads 10 --sponsorblock-remove default :ytwatchlater
 brew install angry-ip-scanner # 26MB, Network scanner
 brew install arp-scan-rs # 1.5M, Rust, ARP scan tool written in Rust for fast local network scans (2025-07-14T12:07:37+02:00) `arp-scan -l`; `sudo arp-scan`
-brew install zenmap # 59MB, GUI for Nmap Security Scanner (2025-03-03T22:56:16+01:00)
+# brew install zenmap # 59MB, GUI for Nmap Security Scanner (2025-03-03T22:56:16+01:00)
 # brew install lulu # 26MB, Open-source firewall to block outgoing connections
 # brew install insomnia # Intel, 337MB; HTTP and GraphQL Client
 mas install 1451685025 # WireGuard VPN client; brew's wireguard-tools has no GUI
