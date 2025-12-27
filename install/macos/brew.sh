@@ -288,6 +288,7 @@ brew install z3 # 33M, High-performance theorem prover (2025-04-30T22:21:06+02:0
 # brew install php # 124M, General-purpose scripting language (2025-09-18T17:02:06+02:00)
 # brew install composer # 3.1M, Dependency Manager for PHP (2025-09-18T17:15:55+02:00) # not available for 8.3 - https://getcomposer.org/installer
 brew install php@8.3 # 91M, General-purpose scripting language (2025-09-18T18:03:27+02:00)
+brew link php@8.3 # alternate versions are keg-only and not symlinked; don't want to modify $PATH
 
 # linters
 brew install shellcheck # 68M, Static analysis and lint tool, for (ba)sh scripts (2025-03-05T14:43:21+01:00)
