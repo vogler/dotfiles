@@ -17,6 +17,7 @@ brew tap martido/homebrew-graph # 232KB, example: `brew graph --installed --high
 brew install pipx # 1MB, like npx: run/install binaries from Python packages, easier than `python3 -m venv foo`; `pipx run lastversion` saves to '~/Library/Caches/pipx', `pipx install lastversion` saves to '~/Library/Application Support/pipx'...
 brew install uv # 36M, Rust, fast Python package installer and resolver, `uv tool install lastversion`, `uvx lastversion`, replaces most other Python tools incl. Poetry, `uvx` -> `.cache/uv`, `uv tool install` -> `.local/{bin,share/uv/tools}` (2025-02-03T14:37:51+01:00)
 brew install dra # 3.1M, Rust, Command-line tool to download release assets from GitHub (2025-01-29T18:08:42+01:00). Alternative to https://github.com/dvershinin/lastversion `uv tool install lastversion` in setup.sh; interactive by default, failed for smudge/nightlight while lastversion worked...
+brew install taphouse # 31M, Native GUI for Homebrew package management (2025-12-30T16:16:09+01:00)
 
 # OS tools
 # list all apps installed from the App Store: `mdfind kMDItemAppStoreHasReceipt=1`
