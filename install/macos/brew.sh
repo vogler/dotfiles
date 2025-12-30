@@ -74,19 +74,24 @@ brew install shottr # 6.0M, 12$, 30d free, then popups, not a replacement since 
 # brew install logitech-g-hub # software for G305 - not used since configured on Windows and stored on mouse
 brew install bettermouse # 13M, adjust smooth scroll with curve, accel, DPI, custom buttons, fixes left click-through (by default per control, e.g. Chrome would register click on 'new tab' in unfocused window (also middle click, scroll), but require two clicks for button on webpage), exceptions etc., replaces logi-options+ (2025-05-18T19:54:45+02:00)
 
-# browser/-based apps
+# browsers
 brew install google-chrome # 922MB
 brew install chrome-cli # 125KB, control chrome via scripting bridge, `OUTPUT_FORMAT=json chrome-cli list tabs`
 brew install firefox # 344MB, don't really use it, but good to have options
-brew install zen # 430M, Arc-like Firefox, open-source, customizable (2025-03-03T23:03:19+01:00)
+brew install tor-browser # 192MB
+brew install arc # 820M, Chromium based browser (2025-12-30T16:48:43+01:00) Taphouse-adopted
+brew install zen # 449M, Gecko based web browser (2025-03-03T23:03:19+01:00) Arc-like Firefox, open-source, customizable
 brew install helium-browser # 340M, Chromium-based web browser (2025-10-21T20:37:16+02:00)
+brew install comet # 606M, Web browser with integrated AI assistant (2025-12-30T16:49:57+01:00) Taphouse-adopted
+
+# browser-based apps
 brew install spotify # 298MB, was Intel but now Apple Electron (or similar) -> use Chrome App: same (except no recently played and friends feed, diff. shortcuts) and can share resources with Chrome (19MB vs 476MB RSS)
 brew install whatsapp # 330MB, now Apple Silicon and no longer Intel, can do calls, has cmd+shift+[] for switching chats, but UI slightly different from web app and needs more memory.
 # Alternative: WhatsApp Chrome App. Needs less memory, but can't do calls and no good shortcuts. Provided by Chrome account sync. To add to your account visit web.whatsapp.com, dot-menu > More Tools > Create Shortcut with open as window
 brew install slack # 238MB
 brew install microsoft-teams # 507MB, only needed for stupid background image since browser version does not offer it (but this is also browser-based)...
+brew install figma # 282M, Collaborative team software (2025-12-30T17:28:09+01:00) Taphouse-adopted
 # brew install evernote # Intel; not worth the overhead, just use the web-app and eventually something nicer with history
-brew install tor-browser # 192MB
 brew install obsidian # 412MB, PKM, just keeps folders of .md files, nice markdown editor, sometimes slow/annoying (Electron), not perfect, but at least customizable with lots of community plugins (core not OSS)
 brew install 1password # 432M, Password manager that keeps all passwords secure behind one password (2025-07-31T08:31:20+02:00)
 brew install motrix # 210M, Open-source download manager (2025-08-12T18:05:04+02:00) Electron/JS/Vue/aria2; Chrome's download manager sucks; much faster with this due to 64 con/server, speed in cmd+tab & tray, speed limit, some config only via aria2.conf: allocation (uses org file name with fin size by default...); time (default `remote-time=true` sets Date Created/Modified in Finder to server file date, false sets both to current -> keep default but use 'Date Added' for sorting in Finder which is the time the download started) 
@@ -120,7 +125,7 @@ brew install vlc # 134MB, media player, only needed for .m3u streaming of DVB-C 
 brew install raspberry-pi-imager # install different OSes to microSD
 brew install numi # 49MB, calculator app with unit conversions and variables
 brew install portfolioperformance # 168MB, Internal and True-Time Weighted Rate of Return, graphs etc., can import PDFs of transactions from ING, but needs manual work; probably works for degiro as well
-brew install --cask r # 95MB, Environment for statistical computing and graphics; https://www.coursera.org/learn/practical-time-series-analysis
+brew install r-app # 95MB, Environment for statistical computing and graphics; https://www.coursera.org/learn/practical-time-series-analysis
 
 # Android
 brew install android-platform-tools # 30MB, adb etc., `adb shell/push/pull`
@@ -161,6 +166,7 @@ brew install helix # 135MB, modern vim-like modal editor, mostly similar, but se
 # terminals
 brew install iterm2 # 78MB, better Terminal.app, https://sourabhbajaj.com/mac-setup/iTerm/
 curl -L https://iterm2.com/shell_integration/install_shell_integration_and_utilities.sh | bash
+brew install itermbrowserplugin # 2.9M, Enables an integrated web browser in iTerm2 (2025-12-30T17:12:15+01:00)
 brew install warp # 147MB, fast rust-based terminal, bit more modern than iterm, but pretty similar, TODO colors and font in vim are off
 # brew install tabby # 346MB, TS, customizable terminal, SSH and serial client; nice UI, but colors in vim are off, feels slower than iTerm and no additional features I currently need
 brew install ghostty # 48M, nice, but pretty minimal features, only restores tabs without contents (2025-03-03T23:28:15+01:00)
@@ -320,9 +326,9 @@ brew install wader/tap/fq # 12MB, Go, jq for binary formats (2025-07-10T11:56:14
 brew install imhex # 116M, Hex editor for reverse engineers (2025-07-10T11:57:56+02:00) unsigned -> macOS denies to open -> System Settings > Privacy & Security > Open anyway
 
 # containers
-brew install --cask docker # 1.5 GB, hate it, only gave in for avoiding captcha with headless playwright
+brew install docker-desktop # 2.2G, App to build and share containerised applications and microservices (2025-12-30T17:03:32+01:00) Taphouse-adopted; using orbstack instead, but sometimes the extensions are useful
 # brew install podman # 55 M + 588 MB deps + 590MB fedora-coreos-qemu = 1.23 GB, daemon-less alternative to docker, but only runs QEMU-VMs on macOS which takes time to boot -> not interesting on macOS
-brew install orbstack # 770MB, faster drop-in replacement for Docker Desktop, `orb`, https://orbstack.dev
+brew install orbstack # 770MB, faster drop-in replacement for Docker Desktop and `docker` cli, `orb`, https://orbstack.dev
 brew install lazydocker # 16MB, Go, TUI to manage containers, images, volumes and networks
 brew install dive # 10MB, explore layers in docker images
 brew install ctop # 8.9MB, Top-like interface for container metrics
@@ -516,7 +522,7 @@ brew install gimp # 892M, Free and open-source image editor (2025-02-15T00:35:38
 # videos: editing, transcoding
 brew install ffmpeg # ~1GB due to many codecs as deps
 brew install ffmpegthumbnailer # 400KB, lightweight video thumbnailer using ffmpeg, `ffmpegthumbnailer -i *.mp4 -o foo.jpg -s0 -t20`
-brew install --cask handbrake # 113MB, video transcoder; also available as formula, but: A full installation of Xcode.app 10.3 is required to compile
+brew install handbrake-app # 126M, Open-source video transcoder (2025-12-30T17:24:07+01:00) Taphouse-adopted
 # mas install 1351639930 # 4MB, Gifski: crop & convert videos to high-quality GIFs, https://github.com/sindresorhus/Gifski
 brew install losslesscut # 320M, Trims video and audio files losslessly (2025-02-03T14:03:55+01:00)
 
