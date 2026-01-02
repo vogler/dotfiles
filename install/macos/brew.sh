@@ -136,6 +136,11 @@ brew install android-studio # 2.8G, Tools for building Android applications (202
 brew install jadx # 122M, Dex to Java decompiler (2025-06-05T16:41:45+02:00)
 brew install apktool # 24M, Tool for reverse engineering 3rd party, closed, binary Android apps (2025-06-05T16:42:09+02:00)
 
+# Spotify in menu bar: https://share.google/aimode/7IGmSBl3ybEmpdY8g https://macmenubar.com/?s=spotify
+# brew install spotmenu # only works on Tahoe, don't want to upgrade, Spotify and iTunes in the menu bar (2026-01-02T23:55:33+01:00)
+brew install lyric-fever # 71M, Lyrics for Apple Music and Spotify (2026-01-02T23:55:54+01:00) nice if you want lyrics, but not nice to just show title/artist in menu bar due to "Now Playing:" prefix, also no scrubbing
+mas install 570549457 # 25M, Spotica Menu https://spoti.ca - can be customized to have enverything I want: shows album art and track info in menu bar, popover allows scrubbing, like, add to playlist etc., has 3 themes (player type > modern) and even a mini player
+
 # Terminal Spotify client
 brew install ncspot # 12MB, Rust, can just login, nice UI and shortcuts but had some issues with displaying progress bar and doesn't scrobble to Last.fm, fills up ~/.cache/ncspot/librespot
 # brew install spotify-tui # 12MB, Rust, `spt`, just uses Web API to control other devices/clients (need to create app for Client ID/secret) or play using spotifyd (requires dbus)
