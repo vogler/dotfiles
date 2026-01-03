@@ -61,6 +61,7 @@ brew install raycast # 75MB, better launcher than Spotlight, Alfred etc., good s
 brew install istat-menus # 68MB, trial, got key, menu bar: HW stats (combined: graph for CPU & memory, rest in dropdown), calendar, weather (subscription for 60min updates)
 # brew install stats # 12MB, simple free alternative to istat-menus, just HW, no calendar, weather
 brew install leader-key # 5.1M, Application launcher with nice UI/json for config with groups, e.g. <leader>rc for raycast://confetti, but can only set leader to a normal key combination, so would need Karabiner to map one key to that combination (2025-02-03T14:13:15+01:00)
+brew install jordanbaird-ice # 7.9M, Menu bar manager (2026-01-03T16:45:35+01:00) allows to hide menu bar items in drawer and show on click/hover and adjust menu bar shape which looks nice, but needs Accessibility and Screen Recording permissions...
 
 # ~/Screenshots
 # usually (ctrl+)cmd+shift+3/4/5 is enough, but even after disabling 'Show Floating Thumbnail' it still takes a couple of seconds for the file to show up which is annoying; also, it can't do scrolling screenshots (Chrome can via DevTools or GoFullPage extension, but sometimes I need it for other windows as well)
