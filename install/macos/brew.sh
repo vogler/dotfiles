@@ -104,6 +104,7 @@ brew install trae # 555M, works but no cursor-like tab, inline was hit and miss 
 brew install windsurf # 549M, haven't really tried (2025-05-22T19:07:22+02:00)
 # brew install void # 432M, open source, can add API keys with free quota for Gemini and OpenRouter -> quota was used up right away, looks like just vscode (2025-05-21T16:15:33+02:00)
   # just use vscode extension? https://github.com/RooCodeInc/Roo-Code
+brew install antigravity # 766M, AI Coding Agent IDE (2026-02-13T12:38:48+01:00) vscode fork similar to Cursor, but basically free AI plan now with Pixel 10 Pro
 
 # other IDEs
 brew install phpstorm # 2.7G, PHP IDE by JetBrains (2025-08-04T10:41:57+02:00)
