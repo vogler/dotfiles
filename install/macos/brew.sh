@@ -301,6 +301,7 @@ brew install dotnet-sdk # 793MB, .NET CLI (2025-04-30T12:06:58+02:00)
   # uninstall anything non-brew first: curl -sSL https://raw.githubusercontent.com/dotnet/sdk/refs/heads/main/scripts/obtain/uninstall/dotnet-uninstall-pkgs.sh | sudo bash
   # cleanup SDKs and runtimes with dotnet/cli-lab: https://learn.microsoft.com/en-us/dotnet/core/additional-tools/uninstall-tool-overview?pivots=os-macos
 brew install z3 # 33M, High-performance theorem prover (2025-04-30T22:21:06+02:00)
+brew install minizincide # 294M, Open-source constraint modelling language and IDE (2026-02-23T11:22:30+01:00) supports several solvers, package includes Gecode, Chuffed, Google OR-Tools CP-SAT, HiGHS, COIN-OR CBC
 # brew install dart-sdk # 526M, Dart Language SDK, including the VM, dart2js, core libraries, and more (2025-05-30T15:59:18+02:00)
 # brew install flutter # 4.13G, UI toolkit for building applications for mobile, web and desktop (2025-05-30T16:12:49+02:00)
 # brew install php # 124M, General-purpose scripting language (2025-09-18T17:02:06+02:00)
