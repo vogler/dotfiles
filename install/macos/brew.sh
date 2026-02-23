@@ -37,12 +37,14 @@ brew install alt-tab # 26MB, Swift, alt-tab like on Windows, with previews, Rayc
 brew install kindavim # 11M, Use Vim in input fields and non input fields (2025-08-12T23:58:30+02:00) ^[ for normal mode; works well for text inputs via macOS accessibility, but falls back to key-remapping (e.g. does not show diff. caret for normal mode) for inputs that are not readable like for Electron apps like Slack; also works for other UI elements like lists
 
 # Quick Look extensions - https://github.com/sindresorhus/quick-look-plugins, more: https://github.com/haokaiyang/Mac-QuickLook
+# list with `pluginkit -m -p com.apple.quicklook.preview`
 brew install qlvideo # <1MB, Apple doc says quicklook generators are only called upon demand (so no overhead for mds?); deprecated: qlimagesize
 # brew install quicklook-json # can click to fold json, but light theme not as nice as json printed by syntax-highlight, also slower; folding in quickjson didn't work at all
 # The following install to /Applications and need to be opened once for their quick look extension to register.
 # brew install glance # discontinued; need to open Glance.app first; replaces qlcolorcode qlmarkdown quicklook-json
 brew install --no-quarantine syntax-highlight # 39MB, syntax highlighting for most source code files (just .ts not allowed by macOS), replaces qlstephen for plain files; changed config: Render engine RTF -> HTML because RTF always used light theme instead of dark, Font MesloLGS NF 16pt, Soft wrap, Line numbers, Window size 1000x1200
 brew install --no-quarantine qlmarkdown # 76MB, app has many options & extensions for markdown preview, window size 1000x1200, adjust font size via css: https://github.com/sbarex/QLMarkdown/issues/79
+# epub: https://github.com/arytek/epub-quicklook-extension needs to be build from source...
 xattr -d -r com.apple.quarantine ~/Library/QuickLook # remove plugins from quarantine
 qlmanage -r # refresh installed plugins
 
@@ -561,6 +563,7 @@ brew install aria-maestosa # 11.8MB, midi sequencer/editor with wxWidgets UI
 
 # reading, books
 brew install calibre # 366MB
+brew install bookokrat # 13M, Terminal EPUB Book Reader (2026-02-13T19:23:20+01:00) Rust, just run `bookokrat` in directory with epub/pdf files; many vim-like shortcuts and features, but a bit slow
 
 # CAD, 3D printing, electronics, IOT
 brew install autodesk-fusion # 3.6 GB in ~/Library/Application\ Support/Autodesk/
