@@ -247,6 +247,7 @@ brew install pearcleaner # 6.7M, Utility to uninstall apps and remove leftover f
 brew install p7zip # 7z with support for Brotli, Fast LZMA2, LZ4, LZ5, Lizard and Zstd
 brew install the-unarchiver # unpack .rar
 brew install unar # 15MB, The Unarchiver CLI: `unar`, `lsar`
+brew install keka # 40M, File archiver (2026-02-27T11:52:34+01:00) alternative to The Unarchiver which started showing ads stayed open after extraction
 brew install ouch # 3.5MB, Rust, (de)compress/list based on extension (tar, zip, 7z, gz, xz, lzma, bz, bz2, lz4, sz, zst, rar): `ouch d a.zip b.tar.gz`, `ouch c foo bar baz.7z`, `ouch l foo.rar`
 brew install watch # Executes a program periodically, showing output fullscreen
 brew install watchexec # 5.7MB, Execute commands when watched files change. `watchexec --clear --notify -- ls -lah`, `watchexec -e js,css --restart -- npm start`
