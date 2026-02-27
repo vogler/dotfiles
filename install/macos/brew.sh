@@ -372,6 +372,7 @@ brew install jj # 14.5MB, Rust, git-compatible VCS, no index, working copy is au
 brew install git-absorb # 1.5M, Automatic git commit --fixup (2025-06-09T11:06:50+02:00)
 brew install jira-cli # 19M, Feature-rich interactive Jira CLI (2025-09-05T11:12:30+02:00)
 brew install gitbutler # 49M, Git client for simultaneous branches on top of your existing workflow (2026-02-08T13:55:21+01:00)
+brew install git-filter-repo # 376K, Quickly rewrite git repository history (2026-02-23T22:06:03+01:00)
 
 # secret scanning
 brew install gitleaks # 9.2MB, Go, finds hardcoded secrets like passwords, api keys, and tokens in git repos
