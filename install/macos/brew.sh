@@ -455,6 +455,7 @@ brew install parsec # 6.5MB, fast remote desktop that works well enough for game
 brew install windows-app # 246MB, Windows Remote Desktop (replaces microsoft-remote-desktop)
 brew install caddy # 42MB, Go web server with automatic HTTPS (Let's Encrypt), HTTP/3, reverse proxy, load balancing, caching, nicer to use but slower than nginx/haproxy/traefik, https://caddyserver.com - `caddy file-server --domain example.com` `caddy reverse-proxy --from example.com --to localhost:9000`
 brew install dufs # 3.4M, Rust, Static file server with upload/edit/search/zip-download (2025-05-18T19:34:01+02:00)
+brew install pinentry-mac # 600K, Pinentry for GPG on Mac (2026-04-09T12:59:45+02:00)
 
 # benchmark, load testing - https://gist.github.com/denji/8333630
 brew install ali # 6.9MB, Generate HTTP load and plot (TUI) the results in real-time (?) Go
