@@ -440,7 +440,8 @@ brew install arp-scan-rs # 1.5M, Rust, ARP scan tool written in Rust for fast lo
 # brew install lulu # 26MB, Open-source firewall to block outgoing connections
 # brew install insomnia # Intel, 337MB; HTTP and GraphQL Client
 mas install 1451685025 # WireGuard VPN client; brew's wireguard-tools has no GUI
-brew install tunnelblick # needed for RBG ovpn profile
+# brew install tunnelblick # needed for RBG ovpn profile -> annoying, use official openvpn-connect app instead
+brew install openvpn-connect # 290M, Client program for the OpenVPN Access Server (2026-04-13T18:37:10+02:00)
 brew install vnc-viewer # RealVNC viewer
 brew install cyberduck # 237MB, client for FTP, SFTP, WebDAV, and cloud storage
 brew install forklift # 159MB, (trial) dual-pane finder with compare/sync for FTP, SFTP, WebDAV, and cloud storage
