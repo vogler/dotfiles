@@ -209,6 +209,7 @@ brew install less # newer than macOS: 590 vs 487
 brew install rsync # newer than macOS: 3.2.3 vs 2.6.9
 brew install htop # improved top (interactive process viewer)
 # brew install gtop # 11.6MB, System monitoring dashboard for terminal (nodejs) - not interactive and ~10% CPU on RPi3
+brew install btop # 1.4M, Resource monitor. C++ version and continuation of bashtop and bpytop (2026-04-16T11:59:10+02:00)
 brew install bottom # 3.2MB, `btm`, Yet another cross-platform graphical process/system monitor (rust) - interactive with mouse and shortcuts
 brew install gotop # 11M, Go, inspired by gtop and vtop; sums up and counts processes of same executable (2025-03-19T16:53:17+01:00)
 brew install nvtop # 224K, Interactive GPU process monitor, supports Apple (experimental, does not show much), AMD, Nvidia, Intel, Qualcomm, Broadcom... (2025-01-29T17:48:45+01:00)
