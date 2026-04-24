@@ -395,6 +395,7 @@ brew install jid # 2.4MB, Go, TUI for jq
 brew install xsv # 3.1MB, Rust, CSV CLI: cat count flatten frequency join search select slice sort split stats table
 brew install csvlens # 3MB, Rust, TUI CSV viewer with vim navigation; H for help, Tab to switch row/col/cell selection, Enter to print cell and exit
 brew install smoothcsv # 62M, CSV editor (2025-07-22T16:49:07+02:00) vscode-based spreadsheet-alternative to view/edit/sort/filter/SQL CSV files - https://smoothcsv.com
+brew install CodeOne45/tap/vex # 8.3M, Beautiful terminal Excel and CSV viewer & editor with vim-style keybindings (2026-04-24T13:02:58+02:00)
 brew install jless # 2.6MB, JSON viewer for reading, exploring, and searching; shortcuts in :help
 brew install fx # 11MB, JSON viewer, collapsed by default, shortcuts on ?
 brew install dasel # 18.6MB, Select/modify/convert JSON, TOML, YAML, XML and CSV; 3x faster than jq? `echo '{"name": "Tom"}' | dasel put string '.foo' 'bar' -r json -w yaml`
