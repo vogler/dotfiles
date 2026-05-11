@@ -586,16 +586,20 @@ brew install kicad # 6.5GB, schema and PCB editor for Gerber files
 brew install kbt # 1.6M, Keyboard tester in terminal (2025-07-14T12:50:34+02:00)
 # https://squareline.io # 399MB, UI editor for embedded that can export C/MicroPython code for https://lvgl.io
 
-# AI, ML, LLMs
+# LLM backends
 brew install ollama # 25M, Create, run, and share large language models (LLMs) (2025-02-23T14:00:08+01:00) port 11434, but no UI; e.g. `ollama run deepseek-r1:8b` (4bit, 4.9GB) - default 7b, 14b model already made mouse lag and slow output
 # brew install --cask ollama # 438MB, just a wrapper to run the server via an app that has a menu item where it can be quit - no further UI -> useless
 # brew install ollamac # 11M, Interact with Ollama models (2025-02-23T14:56:37+01:00) needs server running, Swift app with UI with log, parameters etc., however, doesn't show text inside <think> and auto-naming of chats is also bad (<think> instead of prompt)
 # `uvx open-webui serve` failed to resolve deps...
 # probably best to run NextChat or lobe-chat (both TS) via docker
-brew install opencode # 85M, AI coding agent, built for the terminal (2025-10-21T19:07:16+02:00)
 brew install lm-studio # 1.5G, Discover, download, and run local LLMs (2025-11-08T11:54:27+01:00)
 # brew tap jundot/omlx https://github.com/jundot/omlx
 # brew install omlx # LLM inference server with continuous batching & SSD caching for Apple Silicon — managed from the macOS menu bar
+# LLM clients
+brew install opencode # 101M, AI coding agent, built for the terminal (2025-10-21T19:07:16+02:00)
+brew install gemini-cli # 116M, Interact with Google Gemini AI models from the command-line (2026-05-11T19:00:13+02:00) - already annoying (randomly cleared terminal...)
+brew install google-gemini # 174M, Native desktop AI assistant from Google (2026-05-11T19:05:04+02:00)
+brew install pi-coding-agent # 157M, AI agent toolkit (2026-05-11T19:09:46+02:00) - simpler than claude/opencode etc., but has things like /tree for branching and can be customized via TS
 
 # not available in brew or mas:
 # https://www.meta.com/en-gb/help/quest/articles/horizon/getting-started-in-horizon-workrooms/use-computer-in-VR-workrooms/ - Meta Quest Remote Desktop
