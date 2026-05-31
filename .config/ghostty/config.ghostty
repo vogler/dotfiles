@@ -1,0 +1,44 @@
+# https://ghostty.org/docs/config
+# open with cmd+, and reload with cmd+shift+,
+# This config is also loaded my cmux (based on libghostty)
+
+# otherwise ssh/tmux will complain about the default xterm-ghostty
+term = xterm-256color
+
+# 50MB scrollback buffer (default 10MB?); sadly there's no infinite since only kept in RAM
+scrollback-limit = 52428800
+
+# save window state whenever Ghostty is exited. However, this only restores layouts and CWDs, not scrollback contents...
+window-save-state = always
+
+# background-opacity = 0.9
+# background-blur=16
+macos-titlebar-style = tabs
+
+# font-family = "JetBrainsMono Nerd Font"
+font-size = 16
+# font-thicken = true
+# font-thicken-strength = 1
+adjust-cell-height = 1
+
+# ghostty +list-themes
+# theme = Catppuccin Frappe
+# theme = Catppuccin Mocha
+# theme = Everforest Dark Hard
+# theme = Gruvbox Material Dark
+# theme = iTerm2 Solarized Dark
+
+# default is only true for US Standard/International, but I'm using ABC - Extended
+# need alt for key bindings in nvim (accept suggestion etc.), only need opt+u for making umlauts,
+# so I could also set this to only left/right to have the option to do that as well instead of using nvim's `ctrl+k :u` digraph thing (which doesn't seem to work in AstroNvim)
+macos-option-as-alt = true
+# alternative: map umlauts directly:
+# alt+a does nothing in nvim
+# alt+o in insert mode = normal mode + o (open new line below)
+# alt+u in insert mode = normal mode + u (undo)
+keybind = alt+a=text:ä
+keybind = alt+shift+a=text:Ä
+keybind = alt+o=text:ö
+keybind = alt+shift+o=text:Ö
+keybind = alt+u=text:ü
+keybind = alt+shift+u=text:Ü
