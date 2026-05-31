@@ -176,13 +176,22 @@ brew install vv # 409M, VV.app/`vv` like VimR, but based on Electron, tried sinc
 brew install helix # 135MB, modern vim-like modal editor, mostly similar, but selection -> action model, words selected by default on motion; many things like surround and git-gutter included, but no plugin system yet; see .config/helix/config.toml
 
 # terminals
-brew install iterm2 # 78MB, better Terminal.app, https://sourabhbajaj.com/mac-setup/iTerm/
+# want: basically all the features from iTerm, but something lighter/faster (iTerm has memory leaks) and with a reliable session restoration (anything based on AppKit may fail due to race conditions due to the macOS API's broken design)
+# Terminal.app has session restore but is out since it doesn't even have proper split panes?!
+# tried Kitty and Alacritty on Chromebook some time ago, but didn't like them enough
+# https://www.reddit.com/r/neovim/comments/1iboe7n/comment/m9oaijn/ recommends wezterm
+brew install wezterm # 254M, GPU-accelerated cross-platform terminal emulator and multiplexer (2026-05-26T11:53:50+02:00) cross-platform lua config ~/.wezterm.lua - however, weird shortcuts compared to the macOS defaults from the other terminals below, too much to configure to make it look acceptable and opening new tabs is pretty slow
+brew install iterm2 # 78MB, better Terminal.app, https://sourabhbajaj.com/mac-setup/iTerm/ - used for the most time, but had memory leaks and unstable session restore (based on broken macOS API)
 curl -L https://iterm2.com/shell_integration/install_shell_integration_and_utilities.sh | bash
 brew install itermbrowserplugin # 2.9M, Enables an integrated web browser in iTerm2 (2025-12-30T17:12:15+01:00)
 brew install itermai # 576K, Enable generative AI features in iTerm2 (2025-12-30T18:05:11+01:00) enable in Preferences > General > AI and set API key, then cmd+shift+. to open prompt, cmd+y to query and cmd+enter to insert
-brew install warp # 147MB, fast rust-based terminal, bit more modern than iterm, but pretty similar, TODO colors and font in vim are off
+brew install warp # 147MB, fast rust-based terminal, bit more modern than iterm, but pretty similar, colors and font in vim were off - abandoned since it had too may weird issues; after updates some of it seems fixed or no longer an issue with AstroNvim, but UI seems too noisy with all their AI features and popups
 # brew install tabby # 346MB, TS, customizable terminal, SSH and serial client; nice UI, but colors in vim are off, feels slower than iTerm and no additional features I currently need
-brew install ghostty # 48M, nice, but pretty minimal features, only restores tabs without contents (2025-03-03T23:28:15+01:00)
+brew install ghostty # 48M, nice, but pretty minimal features, only restores tabs with CWD but no session content (2025-03-03T23:28:15+01:00)
+brew install cmux # 172M, Ghostty-based terminal with vertical tabs and notifications for AI coding agents (2026-05-26T11:52:14+02:00) nice, also restores session contents, but without any marker and duplicated prompt and "Last login" lines; still seems like the best option currently
+# there's also soloterm.com and 
+# standalone session persistance (attach/detach per process -> no problem with native scrollback like in tmux): https://github.com/shell-pool/shpool, https://github.com/neurosnap/zmx
+# https://github.com/mrjones2014/smart-splits.nvim - directional navigation and resizing of Neovim + terminal multiplexer splits. Supports Zellij, Tmux, Wezterm, and Kitty.
 
 # terminal images
 brew install pngpaste # 80K, Paste PNG into files (2025-06-17T15:35:34+02:00) needed for img-clip.nvim to :PasteImage from clipboard (saves to assets/2025-06-17-15-40-53.png)
