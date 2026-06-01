@@ -27,6 +27,8 @@ adjust-cell-height = 1
 # theme = Everforest Dark Hard
 # theme = Gruvbox Material Dark
 # theme = iTerm2 Solarized Dark
+# Hardcode default Ghostty theme for cmux compatibility, otherwise cmux uses some ugly defaul colors
+theme = default
 
 # default is only true for US Standard/International, but I'm using ABC - Extended
 # need alt for key bindings in nvim (accept suggestion etc.), only need opt+u for making umlauts,
