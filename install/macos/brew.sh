@@ -445,32 +445,38 @@ brew install http-toolkit # 327MB, HTTP(S) debugging proxy, analyzer, and client
 brew install hettysoft/tap/hetty # 20MB, MITM HTTP(S) proxy with web-ui for logs, search, intercept, edit, replay; `hetty --chrome` to Launch Chrome with proxy settings applied and certificate errors ignored.
 brew install mosquitto # MQTT pub/sub
 # brew install youtube-dl # download videos from many websites -> yt only ~70KB/s -> replaced with yt-dlp which dl from yt with full speed
-brew install yt-dlp/taps/yt-dlp # youtube-dl fork with additional features and fixes: full dl speed, SponsorBlock, yt-dlp --cookies-from-browser chrome --max-downloads 10 --sponsorblock-remove default :ytwatchlater
 brew install angry-ip-scanner # 26MB, Network scanner
 brew install arp-scan-rs # 1.5M, Rust, ARP scan tool written in Rust for fast local network scans (2025-07-14T12:07:37+02:00) `arp-scan -l`; `sudo arp-scan`
 # brew install zenmap # 59MB, GUI for Nmap Security Scanner (2025-03-03T22:56:16+01:00)
 # brew install lulu # 26MB, Open-source firewall to block outgoing connections
-# brew install insomnia # Intel, 337MB; HTTP and GraphQL Client
-mas install 1451685025 # WireGuard VPN client; brew's wireguard-tools has no GUI
-# brew install tunnelblick # needed for RBG ovpn profile -> annoying, use official openvpn-connect app instead
-brew install openvpn-connect # 290M, Client program for the OpenVPN Access Server (2026-04-13T18:37:10+02:00)
-brew install vnc-viewer # RealVNC viewer
+brew install caddy # 42MB, Go web server with automatic HTTPS (Let's Encrypt), HTTP/3, reverse proxy, load balancing, caching, nicer to use but slower than nginx/haproxy/traefik, https://caddyserver.com - `caddy file-server --domain example.com` `caddy reverse-proxy --from example.com --to localhost:9000`
+brew install dufs # 3.4M, Rust, Static file server with upload/edit/search/zip-download (2025-05-18T19:34:01+02:00)
+brew install pinentry-mac # 600K, Pinentry for GPG on Mac (2026-04-09T12:59:45+02:00)
+
+# network.dl
+brew install yt-dlp/taps/yt-dlp # youtube-dl fork with additional features and fixes: full dl speed, SponsorBlock, yt-dlp --cookies-from-browser chrome --max-downloads 10 --sponsorblock-remove default :ytwatchlater
+# https://github.com/pyload/pyload
+
+# network.sync
 brew install cyberduck # 237MB, client for FTP, SFTP, WebDAV, and cloud storage
 brew install forklift # 159MB, (trial) dual-pane finder with compare/sync for FTP, SFTP, WebDAV, and cloud storage
 # brew install rclone # 57.7MB, rsync for cloud storage, Google Drive, Dropbox, One Drive, S3, Mega, FTP, SMB
 # brew install pcp # 25.5MB, peer-to-peer file transfer based on libp2p - does not need central relay server, but may also not find any peers or take long
 # brew install magic-wormhole # 34.6MB (+ 18MB openssl@1.1 + 57.3MB python@3.10), peer-to-peer file transfer
 brew install croc # 6.1MB, peer-to-peer file transfer
+
+# network.remote
+mas install 1451685025 # WireGuard VPN client; brew's wireguard-tools has no GUI
+# brew install tunnelblick # needed for RBG ovpn profile -> annoying, use official openvpn-connect app instead
+brew install openvpn-connect # 290M, Client program for the OpenVPN Access Server (2026-04-13T18:37:10+02:00)
+brew install vnc-viewer # RealVNC viewer
 brew install teamviewer # 227 MB, remote desktop
 brew install rustdesk # 55M, Rust, Open source virtual/remote desktop application (2025-02-08T16:14:02+01:00) https://rustdesk.com, can also self-host, has clients for macOS/Windows/Linux/Android/Web
 brew install parsec # 6.5MB, fast remote desktop that works well enough for game streaming
 # brew install microsoft-remote-desktop # 176MB, Windows Remote Desktop client; a bit laggy, but works, has remote sound -> deprecated by windows-app, will be disabled 2025-09-30
 brew install windows-app # 246MB, Windows Remote Desktop (replaces microsoft-remote-desktop)
-brew install caddy # 42MB, Go web server with automatic HTTPS (Let's Encrypt), HTTP/3, reverse proxy, load balancing, caching, nicer to use but slower than nginx/haproxy/traefik, https://caddyserver.com - `caddy file-server --domain example.com` `caddy reverse-proxy --from example.com --to localhost:9000`
-brew install dufs # 3.4M, Rust, Static file server with upload/edit/search/zip-download (2025-05-18T19:34:01+02:00)
-brew install pinentry-mac # 600K, Pinentry for GPG on Mac (2026-04-09T12:59:45+02:00)
 
-# benchmark, load testing - https://gist.github.com/denji/8333630
+# network.bench, load testing - https://gist.github.com/denji/8333630
 brew install ali # 6.9MB, Generate HTTP load and plot (TUI) the results in real-time (?) Go
 brew install wrk # 160K, HTTP benchmarking tool (2025-07-29T10:08:44+02:00) C; `wrk -t12 -c400 -d30s https://...` to run 12 threads and 400 connections for 30s
 # brew install vegeta # 11M, HTTP load testing tool and library (2025-07-29T10:08:53+02:00) Go; flexible CLI but too complicated for simple tests
