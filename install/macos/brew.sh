@@ -456,6 +456,8 @@ brew install pinentry-mac # 600K, Pinentry for GPG on Mac (2026-04-09T12:59:45+0
 # network.dl
 brew install yt-dlp/taps/yt-dlp # youtube-dl fork with additional features and fixes: full dl speed, SponsorBlock, yt-dlp --cookies-from-browser chrome --max-downloads 10 --sponsorblock-remove default :ytwatchlater
 # https://github.com/pyload/pyload
+# brew install megacmd # 5.7M, Command-line client for mega.co.nz storage service (2026-06-29T11:33:00+02:00)
+brew install megacmd-app # 102M, Command-line access to MEGA services (2026-06-29T11:40:17+02:00) mega-get https://mega.nz/file/xyz
 
 # network.sync
 brew install cyberduck # 237MB, client for FTP, SFTP, WebDAV, and cloud storage
