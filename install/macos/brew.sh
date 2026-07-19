@@ -367,6 +367,7 @@ brew install lazydocker # 16MB, Go, TUI to manage containers, images, volumes an
 brew install dive # 10MB, explore layers in docker images
 brew install ctop # 8.9MB, Top-like interface for container metrics
 brew install act # 22MB, Run your GitHub Actions locally
+brew install oxker # 3.7M, Terminal User Interface (TUI) to view & control docker containers (2026-07-19T17:50:02+02:00)
 
 # git
 brew install git # 57.7MB, Apple Git is only updated together with Xcode and some versions behind
