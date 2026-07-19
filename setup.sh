@@ -131,10 +131,13 @@ mkdir -p "$config/ptpython" # not .config on macOS...
 ln -sf `pwd`/.config/ptpython/config.py "$config/ptpython"
 # Only install packages via ~pipx~ uv and not with pip! Only use it where brew's version of package is too old or not available at all.
 # `uv tool install lastversion`, `uvx lastversion`, replaces most other Python tools incl. Poetry, `uvx` -> `.cache/uv`, `uv tool install` -> `.local/{bin,share/uv/tools}`
-uv tool install pipdeptree # 7MB, tree of deps: pipdeptree -p apprise; reverse: pipdeptree -r -p requests
-uv tool install lastversion # 6.5MBMB, find/download latest version of some software on GitHub, GitLab, BitBucket, PyPi, SourceForge, Wikipedia... better `export GITHUB_API_TOKEN=...` to avoid API rate limit; https://github.com/dvershinin/lastversion
-uv tool install fritzconnection # 2.6MB, control FritzBox, executables: fritzcall, fritzconnection, fritzhomeauto, fritzhosts, fritzmonitor, fritzphonebook, fritzstatus, fritzwlan
+uv tool install pipdeptree # 8.7M, tree of deps: pipdeptree -p apprise; reverse: pipdeptree -r -p requests
+uv tool install lastversion # 6.8M, find/download latest version of some software on GitHub, GitLab, BitBucket, PyPi, SourceForge, Wikipedia... better `export GITHUB_API_TOKEN=...` to avoid API rate limit; https://github.com/dvershinin/lastversion
+uv tool install fritzconnection # 3.9M, control FritzBox, executables: fritzcall, fritzconnection, fritzhomeauto, fritzhosts, fritzmonitor, fritzphonebook, fritzstatus, fritzwlan
 uv tool install tqdm # 0.4MB, progress meter, `seq 9999999 | tqdm --bytes | wc -l`
+uv tool install harlequin # 289M, Easy, fast, and beautiful database client for the terminal (2026-07-19T16:21:53+02:00) - also available via brew but wanted to install llvm and some other deps while this doesn't
+uv tool install toolong # 16.1M, A terminal application to view, tail, merge, and search log files (plus JSONL). (2026-07-19T16:37:53+02:00) `tl foo.log`
+uv tool install -U batrachian-toad --python 3.14 # 48.4M, A unified interface for AI in your terminal. (2026-07-19T16:37:53+02:00) 
 
 # TODO this needs to be rethought
 # echo_bold ">> Link *.symlink"
