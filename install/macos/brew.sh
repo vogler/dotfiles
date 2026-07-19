@@ -453,6 +453,7 @@ brew install curlie # 2.4M, Power of curl, ease of use of httpie (2025-02-03T14:
   # brew install bruno # 369M, Open source IDE for exploring and testing APIs (2025-07-22T22:37:15+02:00) Electron/JS; stores collections/requests as text files which can be tracked with git
   brew install yaak # 161M, REST, GraphQL and gRPC client (2025-07-22T22:37:36+02:00) Tauri/Rust/TS; also supports WebSockets & SSE
 brew install posting # 21M, Python (Textual), TUI API client like Postman (2025-02-03T14:28:51+01:00)
+brew install openapi-tui # 12M, TUI to list, browse and run APIs defined with openapi spec (2026-07-19T17:43:25+02:00) `openapi-tui -i https://raw.githubusercontent.com/github/rest-api-description/main/descriptions-next/api.github.com/api.github.com.yaml`
 brew install http-toolkit # 327MB, HTTP(S) debugging proxy, analyzer, and client
 brew install hettysoft/tap/hetty # 20MB, MITM HTTP(S) proxy with web-ui for logs, search, intercept, edit, replay; `hetty --chrome` to Launch Chrome with proxy settings applied and certificate errors ignored.
 brew install mosquitto # MQTT pub/sub
