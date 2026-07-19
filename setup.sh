@@ -137,7 +137,8 @@ uv tool install fritzconnection # 3.9M, control FritzBox, executables: fritzcall
 uv tool install tqdm # 0.4MB, progress meter, `seq 9999999 | tqdm --bytes | wc -l`
 uv tool install harlequin # 289M, Easy, fast, and beautiful database client for the terminal (2026-07-19T16:21:53+02:00) - also available via brew but wanted to install llvm and some other deps while this doesn't
 uv tool install toolong # 16.1M, A terminal application to view, tail, merge, and search log files (plus JSONL). (2026-07-19T16:37:53+02:00) `tl foo.log`
-uv tool install -U batrachian-toad --python 3.14 # 48.4M, A unified interface for AI in your terminal. (2026-07-19T16:37:53+02:00) 
+uv tool install -U batrachian-toad --python 3.14 # 48.4M, A unified interface for AI in your terminal. (2026-07-19T16:43:53+02:00) `toad`
+uv tool install sqlit-tui # 222.9M, A user friendly TUI for SQL databases. Written in python. Supports SQL server, Mysql, PostreSQL, SQLite, Turso and more. (2026-07-19T16:52:53+02:00) `sqlit-tui connect sqlite --file-path sqlite.db`
 
 # TODO this needs to be rethought
 # echo_bold ">> Link *.symlink"

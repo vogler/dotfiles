@@ -419,6 +419,7 @@ brew install dasel # 18.6MB, Select/modify/convert JSON, TOML, YAML, XML and CSV
 brew install htmlq # 2.5MB, jq for HTML, pretty basic, no pseudo-classes?, `htmlq --attribute href a`, `htmlq --text .main`
 brew install pup # 3.7MB, jq for HTML, many pseudo-classes, `pup 'a attr{href}'`, text{}, json{}, :contains(text), `pup ':parent-of([action="edit"])'` - deprecated
 brew install xidel # 3.7MB, jq for HTML/XML/JSON; supports CSS selectors, XPath 3.0, XQuery 3.0, JSONiq or pattern matching; `xidel https://golem.de -e '//a/@href'`; just output extracted html: `xidel https://golem.de --css 'a' -s --printed-node-format=html`; can also follow links: `xidel https://golem.de --follow //a --extract //title`
+brew install --cask tad # 678M, Desktop application for viewing and analyzing tabular data (2026-07-19T16:17:01+02:00)
 
 # databases
 # brew install postgresql@15 # 71MB, SQL DB; `brew services start postgresql@15` to enable start on login, `brew services run postgresql@15` to just start
@@ -426,6 +427,8 @@ brew install xidel # 3.7MB, jq for HTML/XML/JSON; supports CSS selectors, XPath 
 # database management, clients
 brew install tableplus # 183MB, Native GUI tool for databases (PostgreSQL, SQLite, Mongo, Cassandra, Redis, Cockroach...) - free trial is limited to 2 opened tabs, 2 opened windows, 2 advanced filters
 brew install rsql # 45M, CLI for relational databases and common data file formats (2025-07-14T13:08:33+02:00) replaces sqlite3 as terminal client since it has highlighting, auto-completion etc.: `rsql --url "sqlite://sqlite3.db"`; supports PostgreSQL, MySQL, SQLite, DuckDB, Parquet, CSV, TSV, Excel, S3, https... and most output formats (json, yml, csv, html, md): `rsql --url "csv://sales.csv" --format html -- "SELECT region, SUM(revenue) FROM table GROUP BY region"`
+brew install lazysql # 16M, Cross-platform TUI database management tool (2026-07-19T16:52:50+02:00) `lazysql sqlite.db`
+# also installed via uv: harlequin, sqlit-tui
 
 # network
 brew install mosh # 1.1MB, alternative for ssh, local echo, roaming, but UDP dyn. port alloc. 60000-61000
