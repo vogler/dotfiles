@@ -170,6 +170,7 @@ brew install openra # 136MB, open source Command & Conquer Red Alert, Tiberian D
 brew install steam # 6.7M + ~1.2GB in ~/Library/Application\ Support/Steam (games in ./steamapps/common), requires Rosetta, only used for Factorio (2024-10-21)
 # brew install retroarch # 170M, Frontend for emulators, game engines and media players (OpenGL graphics API) (2025-07-14T13:52:22+02:00) needed to download emulator cores for es-de
 # brew install es-de # 150M, Frontend for browsing and launching games from your multi-platform collection (2025-07-14T13:37:43+02:00) EmulationStation Desktop Edition; has nice themes and allows to scrape images/videos; does not automatically download needed emulators in retroarch...
+brew install  thomas-mauran/tap/chess-tui # 5.1M, Play chess in your terminal 🦀 (2026-07-19T17:37:36+02:00)
 
 # editors
 brew install neovim # editor, no need for vim, config in .vimrc
