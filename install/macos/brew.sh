@@ -387,9 +387,9 @@ brew install gitwatch # use GitDoc in vscode instead? https://marketplace.visual
 # brew install git-recent # recent branches; use `git branchr` (alias in .gitconfig) which is based on `git branch` and accepts its options like -a to show remote branches
 brew install onefetch # 12.8MB, Rust, like neofetch but stats for git repos, shows name, description, HEAD, version, languages, deps, authors, changes, contributors, commits, LOC, size, license
 brew install git-quick-stats # 72KB, git statistics: commits per author, year, month, weekday, hour...
-brew install git-extras # 418KB, git statistics like `git summary --line` and utilities like `git fork user/repo`
-brew install ugit --force # 43KB, Bash, Undo for 20+ git scenarios, either ugit` or `git undo`, --force due to conflict with git-extras/git-undo
-brew link --overwrite ugit # overwrites git-extras/git-undo which just undoes commits
+brew install git-extras # 418KB, git statistics like `git summary --line` and utilities like `git fork user/repo`, but also `git undo` for the latest commit
+# brew install ugit --force # 43KB, Bash, Undo for 20+ git scenarios, either ugit` or `git undo`, --force due to conflict with git-extras/git-undo
+# brew link --overwrite ugit # overwrites git-extras/git-undo which just undoes commits
 brew install jj # 14.5MB, Rust, git-compatible VCS, no index, working copy is auto-committed, conflicts can be committed -> rebase easier, https://martinvonz.github.io/jj/v0.15.1/git-comparison/ - not as polished as sapling but more improvements over git
 brew install git-absorb # 1.5M, Automatic git commit --fixup (2025-06-09T11:06:50+02:00)
 brew install jira-cli # 19M, Feature-rich interactive Jira CLI (2025-09-05T11:12:30+02:00)
