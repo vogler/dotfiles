@@ -505,9 +505,11 @@ brew install ttyd # 676K, Command-line tool for sharing terminal over the web (2
 # brew install dog # 650KB, DNS client like dig but with colors, DNS-over-TLS, DNS-over-HTTPS, json; `dog example.net A AAAA NS MX TXT @1.1.1.1` - deprecated
 brew install doggo # 10.7MB, DNS client like dog (like dig), but maintained
 brew install wtfis # 8.4MB, Passive hostname, domain, and IP lookup tool - need to put VT_API_KEY in ~/.env.wtfis, https://www.virustotal.com/gui/my-apikey
-brew install inetutils # 3.4M, GNU utilities for networking (2025-09-08T22:02:13+02:00) ftp, rcp, rsh, telnet, etc. and more prefixed with g in /opt/homebrew/opt/inetutils/libexec/gnubin/
-brew install gping --force # 2.1MB, Ping, but with a graph
-brew link --overwrite gping # conflicts with inetutils
+# brew install inetutils # 3.4M, GNU utilities for networking (2025-09-08T22:02:13+02:00) ftp, rcp, rsh, telnet, etc. and more prefixed with g in /opt/homebrew/opt/inetutils/libexec/gnubin/ - uninstalled due to many conflicts (gping etc.)
+brew install gping # 2.8M, Ping, but with a graph (2026-08-03T11:37:16+02:00)
+brew install prettyping # 48K, Wrapper to colorize and simplify ping's output (2026-08-03T11:39:00+02:00) `prettyping google.de`
+brew install mtr # 280K, 'traceroute' and 'ping' in a single tool (2026-08-03T11:38:22+02:00) `sudo mtr google.de`
+brew install trippy # 8.2M, Network diagnostic tool, inspired by mtr (2026-08-03T11:38:53+02:00) `sudo trip google.de` - mtr with interactive TUI and graph
 brew install trurl # 74KB, CLI for URL parsing and manipulation, see examples: https://github.com/curl/trurl
 brew install scilla # 12.3MB, Go, DNS, subdomain, port, directory enumeration tool; `scilla dns -target google.de`; `scilla port -target rpi4`
 brew install subfinder # 27.9MB, Go, Subdomain discovery tool -> add Shodan API key to ~/.config/subfinder/provider-config.yaml
