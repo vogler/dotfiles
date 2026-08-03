@@ -396,6 +396,7 @@ brew install jira-cli # 19M, Feature-rich interactive Jira CLI (2025-09-05T11:12
 brew install gitbutler # 49M, Git client for simultaneous branches on top of your existing workflow (2026-02-08T13:55:21+01:00)
 brew install git-filter-repo # 376K, Quickly rewrite git repository history (2026-02-23T22:06:03+01:00)
 brew install agavra/tap/tuicr # 13M, Terminal UI for Code Reviews - review AI-generated diffs like a GitHub PR (2026-07-29T15:16:52+02:00)
+brew install forgit # 116K, Interactive git commands in the terminal (2026-08-03T11:21:24+02:00) git-forgit has all the sub-commands, comes with zsh aliases for all of them, but not sourced since it would overwrite many prezto git aliases, also mostly handle git via lazygit or nvim
 
 # secret scanning
 brew install gitleaks # 9.2MB, Go, finds hardcoded secrets like passwords, api keys, and tokens in git repos
