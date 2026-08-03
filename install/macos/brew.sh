@@ -86,7 +86,7 @@ brew install chrome-cli # 125KB, control chrome via scripting bridge, `OUTPUT_FO
 brew install firefox # 344MB, don't really use it, but good to have options
 brew install tor-browser # 192MB
 brew install arc # 820M, Chromium based browser (2025-12-30T16:48:43+01:00) Taphouse-adopted
-brew install zen # 449M, Gecko based web browser (2025-03-03T23:03:19+01:00) Arc-like Firefox, open-source, customizable
+brew install --cask zen # 539M, Gecko based web browser (2025-03-03T23:03:19+01:00) Arc-like Firefox, open-source, customizable
 brew install helium-browser # 340M, Chromium-based web browser (2025-10-21T20:37:16+02:00)
 brew install comet # 606M, Web browser with integrated AI assistant (2025-12-30T16:49:57+01:00) Taphouse-adopted
 
