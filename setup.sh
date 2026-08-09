@@ -144,6 +144,7 @@ uv tool install sqlit-tui # 222.9M, A user friendly TUI for SQL databases. Writt
 # echo_bold ">> Link *.symlink"
 # source install/link.sh $*
 ln -sf `pwd`/.dir_colors ~
+ln -sf `pwd`/.shellcheckrc ~
 
 # git
 ln -sf `pwd`/.gitconfig ~
