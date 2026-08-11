@@ -177,10 +177,8 @@ brew install neovim # editor, no need for vim, config in .vimrc
 # brew install vimr # 77MB, VimR.app/`vimr` as GUI with file browser, markdown preview, macOS shortcuts - used for macOS `open`, nicer than neovide, neovim-qt, macvim
 # brew install vv # 409M, VV.app/`vv` like VimR, but based on Electron (WebGL), tried since VimR had some error on startup with my old .vimrc, bit slow with big files, but otherwise ok (2025-01-29T21:44:47+01:00)
 # brew install neovide # 28M, No Nonsense Neovim Client in Rust (2026-07-14T12:13:25+02:00) - this only provides the neovide command, but no app
-brew install --cask neovide # 30M, Neovim Client (2026-07-14T13:50:15+02:00)
-brew tap 0x1b2c/veil
-brew trust --cask 0x1b2c/veil/veil
-brew install --cask veil # 4.2M, A Neovim GUI built for efficiency, not for cool (2026-07-14T16:42:24+02:00)
+brew install --cask neovide # 30M, Neovim Client (2026-07-14T13:50:15+02:00) Rust, has some cursor animations by default
+brew install --cask 0x1b2c/veil/veil # 4.3M, A Neovim GUI built for efficiency, not for cool (2026-07-14T16:42:24+02:00) Swift, macOS-style bindings: https://github.com/0x1b2c/Veil/blob/master/KEYBOARD.md
 brew install helix # 135MB, modern vim-like modal editor, mostly similar, but selection -> action model, words selected by default on motion; many things like surround and git-gutter included, but no plugin system yet; see .config/helix/config.toml
 
 # terminals
