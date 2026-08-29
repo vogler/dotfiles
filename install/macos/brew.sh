@@ -155,6 +155,7 @@ mas install 570549457 # 25M, Spotica Menu https://spoti.ca - can be customized t
 brew install ncspot # 12MB, Rust, can just login, nice UI and shortcuts but had some issues with displaying progress bar and doesn't scrobble to Last.fm, fills up ~/.cache/ncspot/librespot
 # brew install spotify-tui # 12MB, Rust, `spt`, just uses Web API to control other devices/clients (need to create app for Client ID/secret) or play using spotifyd (requires dbus)
 brew install spotify_player # 26MB, Rust, most features, everything works, can just login, scrobbles to Last.fm, even shows album art und lyrics, doesn't fill up cache
+brew install bjarneo/cliamp/cliamp # 30M, A retro terminal music player inspired by Winamp 2.x (2026-08-29T14:19:54+02:00) Go, nice UI with visualizations, `cliamp setup` to setup Spotify, can play from YouTube and Radio OOTB
 
 # Terminal markdown viewers
 brew install glow # 17M, Go, Render markdown on the CLI (2025-05-24T20:27:09+02:00) `glow -a` to select local md files with edit date, `glow -p foo.md` to open a single file with pager, `glow github.com/charmbracelet/glow` to fetch README from GitHub/GitLab
