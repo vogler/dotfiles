@@ -259,6 +259,7 @@ if [ -z $dry_run ]; then
     has yarn && yarn cache clean
     has pnpm && pnpm store prune
   fi
+  has bun && rm -rf ~/.bun/install/cache # `bun pm -g cache rm` fails without ~/.bun/install/global, but the cache from bunx was already 15GB...
 
   # has docker && docker system prune -f # -a removes all images, not just dangling ones
 
