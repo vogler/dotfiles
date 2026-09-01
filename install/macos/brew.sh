@@ -330,6 +330,7 @@ brew install minizincide # 294M, Open-source constraint modelling language and I
 # brew install composer # 3.1M, Dependency Manager for PHP (2025-09-18T17:15:55+02:00) # not available for 8.3 - https://getcomposer.org/installer
 brew install php@8.3 # 91M, General-purpose scripting language (2025-09-18T18:03:27+02:00)
 brew link php@8.3 # alternate versions are keg-only and not symlinked; don't want to modify $PATH
+brew install rust # 430M, +1.6GB for llvm@22, Safe, concurrent, practical language (2026-09-01T17:00:43+02:00)
 
 # linters
 brew install shellcheck # 68M, Static analysis and lint tool, for (ba)sh scripts (2025-03-05T14:43:21+01:00)
