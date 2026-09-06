@@ -439,6 +439,7 @@ brew install lazysql # 16M, Cross-platform TUI database management tool (2026-07
 
 # network
 brew install mosh # 1.1MB, alternative for ssh, local echo, roaming, but UDP dyn. port alloc. 60000-61000
+# brew install --cask secretive # 36M, Store SSH keys in the Secure Enclave (2026-09-06T14:26:41+02:00) requires app running and fingerprint for every connection
 brew install xxh # 806KB, Python, copy shell (zsh, fish, osquery) and plugins to remote host and connect via ssh; `xxh server +s fish`
 brew install wget # alt for curl
 brew install monolith # 6.6MB, Rust, CLI tool for saving complete web pages as a single HTML file
