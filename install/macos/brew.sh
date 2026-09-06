@@ -272,6 +272,7 @@ brew install keka # 40M, File archiver (2026-02-27T11:52:34+01:00) alternative t
 brew install ouch # 3.5MB, Rust, (de)compress/list based on extension (tar, zip, 7z, gz, xz, lzma, bz, bz2, lz4, sz, zst, rar): `ouch d a.zip b.tar.gz`, `ouch c foo bar baz.7z`, `ouch l foo.rar`
 brew install watch # Executes a program periodically, showing output fullscreen
 brew install watchexec # 5.7MB, Execute commands when watched files change. `watchexec --clear --notify -- ls -lah`, `watchexec -e js,css --restart -- npm start`
+brew install terminal-notifier # 552K, Send macOS User Notifications from the command-line (2026-09-06T11:21:07+02:00)
 brew install mmv # move/copy/append/link multiple files by wildcard patterns
 brew install f2 # 11.5MB, Go, batch renaming tool with variables for file metadata like dates, Exif, ID3
 # use vidir from moreutils for interactive batch rename in vim
