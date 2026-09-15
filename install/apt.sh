@@ -140,16 +140,17 @@ sudo snap install procs # modern replacement for `ps aux | grep ..` in Rust, fie
 
 # packages installed via apt, additional sources:
 
-if ! hash node 2>/dev/null || ! (node --version | grep v18); then
-  curl -fsSL https://deb.nodesource.com/setup_22.x -o | sudo -E bash # Debian's nodejs is too old
+if ! hash node 2>/dev/null || ! (node --version | grep v22); then
+  curl -fsSL https://deb.nodesource.com/setup_22.x | sudo -E bash - # Debian's nodejs is too old
   agi nodejs # JavaScript
 fi
 # agi npm # node package manager; provided by nodejs from nodesource (8.1.2) vs. sep. package in Debian (5.8.0)
 
 # GitHub CLI: https://github.com/cli/cli/blob/trunk/docs/install_linux.md
-curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg
-sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg
-echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
+sudo mkdir -p -m 755 /etc/apt/keyrings
+curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo tee /etc/apt/keyrings/githubcli-archive-keyring.gpg > /dev/null
+sudo chmod go+r /etc/apt/keyrings/githubcli-archive-keyring.gpg
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null
 sudo apt update -qq
 agi gh 
 
@@ -267,7 +268,7 @@ if [[ "$*" == *smart-home* ]]; then
     sudo systemctl enable grafana-server
 
     echo ">>> Caddy reverse proxy"
-    curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/gpg.key' | sudo gpg --dearmor -o /usr/share/keyrings/caddy-stable-archive-keyring.gpg
+    curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/gpg.key' | sudo gpg --dearmor --yes -o /usr/share/keyrings/caddy-stable-archive-keyring.gpg
     curl -1sLf 'https://dl.cloudsmith.io/public/caddy/stable/debian.deb.txt' | sudo tee /etc/apt/sources.list.d/caddy-stable.list
     sudo apt update -qq
     agi caddy
