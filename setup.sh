@@ -156,6 +156,9 @@ ln -sf `pwd`/.gitignore_global ~
 # sudo install install/repos/gitwatch/gitwatch.sh /usr/local/bin/gitwatch # installed via brew
 mkdir -p "$config/lazygit" && ln -sf {`pwd`/.config,"$config"}/lazygit/config.yml
 
+# gemini / antigravity
+mkdir -p ~/.gemini && ln -sf `pwd`/.gemini/GEMINI.md ~/.gemini/GEMINI.md
+
 # gh (GitHub CLI) extensions
 # https://docs.github.com/en/copilot/github-copilot-in-the-cli/using-github-copilot-in-the-cli
 # list: `gh ext ls`
