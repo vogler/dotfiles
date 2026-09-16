@@ -486,6 +486,7 @@ brew install croc # 6.1MB, peer-to-peer file transfer
 
 # network.remote
 mas install 1451685025 # WireGuard VPN client; brew's wireguard-tools has no GUI
+brew install tailscale-app # 21M, Mesh VPN based on WireGuard (2026-09-16T12:54:01+02:00)
 # brew install tunnelblick # needed for RBG ovpn profile -> annoying, use official openvpn-connect app instead
 brew install openvpn-connect # 290M, Client program for the OpenVPN Access Server (2026-04-13T18:37:10+02:00)
 brew install vnc-viewer # RealVNC viewer
