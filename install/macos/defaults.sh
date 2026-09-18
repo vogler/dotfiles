@@ -57,6 +57,14 @@ defaults write com.apple.dock autohide-time-modifier -float 0.1
 # System Preferences > Dock > Automatically hide and show the Dock (delay)
 defaults write com.apple.dock autohide-delay -float 0
 
+# No more bouncing!
+# System Preferences > Desktop & Dock > Animate opening applications: false
+# launchanim handles the deliberate, initial animation when you click an application icon in the Dock to open it.
+defaults write com.apple.dock launchanim -bool false
+# no-bouncing handles the aggressive, continuous jumping an application does later on when it wants to alert you to a notification, window popup, or dialogue box.
+# https://www.reddit.com/r/MacOS/comments/qsf4nh/does_anyone_else_find_the_bouncing_dock_icon/
+defaults write com.apple.dock no-bouncing -bool true
+
 # Make Dock icons of hidden applications translucent
 defaults write com.apple.dock showhidden -bool true
 
@@ -255,6 +263,10 @@ defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false
 
 # Skim: auto reload by default instead of asking in dialog
 defaults write -app Skim SKAutoReloadFileUpdate -boolean true
+
+# Safely stop background capture service and tools to avoid permission loops
+killall -9 replayd &> /dev/null
+pkill -9 -i -f "vorssaint"
 
 # Kill affected apps
 for app in "Dock" "Finder" "SystemUIServer"; do
