@@ -1,0 +1,9 @@
+# gdu configuration
+# Documentation: https://github.com/dundee/gdu/blob/master/configuration.md
+
+# Do not ask for confirmation before quitting after a long scan
+no-confirm-quit: true
+
+# Note: Disabling confirmation for delete/empty across sessions is intentionally
+# not possible in gdu (it is hardcoded to ask upon startup to prevent accidental data loss).
+# In an active session, selecting "don't ask me again" suppresses prompts for that session only.

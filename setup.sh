@@ -155,6 +155,7 @@ ln -sf `pwd`/.gitconfig ~
 ln -sf `pwd`/.gitignore_global ~
 # sudo install install/repos/gitwatch/gitwatch.sh /usr/local/bin/gitwatch # installed via brew
 mkdir -p "$config/lazygit" && ln -sf {`pwd`/.config,"$config"}/lazygit/config.yml
+mkdir -p ~/.config/gdu && ln -sf `pwd`/.config/gdu/gdu.yaml ~/.config/gdu/gdu.yaml
 
 # gemini / antigravity
 mkdir -p ~/.gemini && ln -sf `pwd`/.gemini/GEMINI.md ~/.gemini/GEMINI.md
