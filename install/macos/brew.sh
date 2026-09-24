@@ -589,6 +589,9 @@ brew install ffmpegthumbnailer # 400KB, lightweight video thumbnailer using ffmp
 brew install handbrake-app # 126M, Open-source video transcoder (2025-12-30T17:24:07+01:00) Taphouse-adopted
 # mas install 1351639930 # 4MB, Gifski: crop & convert videos to high-quality GIFs, https://github.com/sindresorhus/Gifski
 brew install losslesscut # 320M, Trims video and audio files losslessly (2025-02-03T14:03:55+01:00)
+# brew install --cask capcut # 2.8G, Video editing and image design platform (2026-09-24T12:18:09+02:00)
+brew install --cask shotcut # 553M, Video editor (2026-09-24T12:36:31+02:00)
+mas install 571213070 # 3.0GB DaVinci Resolve
 
 # screen recording
 # brew install kap # Intel, 353MB; screen recorder built with web technology
