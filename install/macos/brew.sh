@@ -592,6 +592,7 @@ brew install losslesscut # 320M, Trims video and audio files losslessly (2025-02
 # brew install --cask capcut # 2.8G, Video editing and image design platform (2026-09-24T12:18:09+02:00)
 brew install --cask shotcut # 553M, Video editor (2026-09-24T12:36:31+02:00)
 mas install 571213070 # 3.0GB DaVinci Resolve
+brew install --cask obs # 441M, Open-source software for live streaming and screen recording (2026-10-02T09:20:48+02:00)
 
 # screen recording
 # brew install kap # Intel, 353MB; screen recorder built with web technology
