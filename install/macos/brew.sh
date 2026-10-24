@@ -209,7 +209,9 @@ brew install chafa # 2.7M, Versatile and fast Unicode/ASCII/ANSI graphics render
 # terminal multiplexers
 brew install tmux # terminal multiplexer, used for ssh by default via prezto
 brew install zellij # 23MB, Rust, like tmux, but more modern, shows keybindings (default binds things like ctrl-p for panes, but can lock with ctrl-g), built-in session restore
-brew install herdr # 16M, Agent multiplexer that lives in your terminal (2026-07-14T16:48:43+02:00)
+brew install herdr # 16M, Agent multiplexer that lives in your terminal (2026-07-14T16:48:43+02:00) Rust
+# brew install workmux # 12M, Git worktrees + tmux windows for zero-friction parallel dev (2026-10-24T15:43:50+02:00)
+brew install tuios # 34M, Terminal UI OS (Terminal Multiplexer) (2026-10-24T15:45:16+02:00) Go, even more features than herdr, such as bsp tiling, floating windows etc.
 
 # shells
 # brew install zsh # no need since macOS /bin/zsh is version 5.9, same as this
