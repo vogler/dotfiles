@@ -172,7 +172,7 @@ brew install openra # 136MB, open source Command & Conquer Red Alert, Tiberian D
 brew install steam # 6.7M + ~1.2GB in ~/Library/Application\ Support/Steam (games in ./steamapps/common), requires Rosetta, only used for Factorio (2024-10-21)
 # brew install retroarch # 170M, Frontend for emulators, game engines and media players (OpenGL graphics API) (2025-07-14T13:52:22+02:00) needed to download emulator cores for es-de
 # brew install es-de # 150M, Frontend for browsing and launching games from your multi-platform collection (2025-07-14T13:37:43+02:00) EmulationStation Desktop Edition; has nice themes and allows to scrape images/videos; does not automatically download needed emulators in retroarch...
-brew install  thomas-mauran/tap/chess-tui # 5.1M, Play chess in your terminal 🦀 (2026-07-19T17:37:36+02:00)
+brew install thomas-mauran/tap/chess-tui # 5.1M, Play chess in your terminal 🦀 (2026-07-19T17:37:36+02:00)
 brew install --cask nvidia-geforce-now # 878M, Cloud gaming platform (2026-08-28T22:01:39+02:00)
 
 # editors
@@ -209,7 +209,7 @@ brew install chafa # 2.7M, Versatile and fast Unicode/ASCII/ANSI graphics render
 # terminal multiplexers
 brew install tmux # terminal multiplexer, used for ssh by default via prezto
 brew install zellij # 23MB, Rust, like tmux, but more modern, shows keybindings (default binds things like ctrl-p for panes, but can lock with ctrl-g), built-in session restore
-brew install  herdr # 16M, Agent multiplexer that lives in your terminal (2026-07-14T16:48:43+02:00)
+brew install herdr # 16M, Agent multiplexer that lives in your terminal (2026-07-14T16:48:43+02:00)
 
 # shells
 # brew install zsh # no need since macOS /bin/zsh is version 5.9, same as this
@@ -286,7 +286,7 @@ brew install ranger # 2.8MB, Python, file manager, slower, but nicer defaults wi
 brew install yazi # 7.8MB, Rust, file manager, like ranger, but faster, scrollable preview for images, videos, pdfs etc.
 brew install lf # 3.8MB, Go, file manager, like ranger, https://github.com/gokcehan/lf/wiki/Tutorial
 brew install xplr # 4.7MB, Rust, file manager, hackable with Lua, nice interactive help, plugins: https://xplr.dev/en/awesome-plugins
-brew install superfile # 16M, Modern and pretty fancy file manager for the terminal (2025-08-12T23:46:09+02:00) Go, nice UI with sidebar with favorites and disks like Finder, preview, metadata, clipboard
+brew install superfile # 16M, Modern and pretty fancy file manager for the terminal (2025-08-12T23:46:09+02:00) Go, nice UI with sidebar with favorites and disks like Finder, preview, metadata, clipboard; `spf`
 brew install zoxide # 1MB, Rust, smarter cd command, inspired by z and autojump
 brew install broot # 6.2MB, `br` to navigate big file trees, alt+enter to cd, `br -s` to show sizes
 brew install dos2unix # Convert text between DOS, UNIX, and Mac formats; for git's fatal: CRLF would be replaced by LF
@@ -641,7 +641,7 @@ brew install ollama # 25M, Create, run, and share large language models (LLMs) (
 brew install lm-studio # 1.5G, Discover, download, and run local LLMs (2025-11-08T11:54:27+01:00)
 # brew tap jundot/omlx https://github.com/jundot/omlx
 # brew install omlx # LLM inference server with continuous batching & SSD caching for Apple Silicon — managed from the macOS menu bar
-# LLM desktop clients
+# LLM desktop clients (for vscode forks, see above)
 brew install google-gemini # 174M, Native desktop AI assistant from Google (2026-05-11T19:05:04+02:00)
 brew install claude # 707M, Anthropic's official Claude AI desktop app (2026-06-18T13:39:06+02:00)
 # LLM CLI clients
