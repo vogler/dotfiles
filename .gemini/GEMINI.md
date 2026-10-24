@@ -4,6 +4,9 @@
 - **Never use machine-specific absolute paths**: Do not use local, user-specific filesystem paths (e.g. `/Users/<username>/...`, `C:\...`, or `file:///Users/...`) in generated documentation, plans, slide content, markdown links, code comments, or task outputs.
 - **Always use relative paths**: Always format file references and links as portable relative paths (relative to the project root or the referencing file) so the folder structure and documents can be seamlessly shared across teammates, different machines, and version control.
 
+## Workspace Safety & File Management
+- **Never delete user or untracked files without confirmation**: Do not delete, remove (`rm`), or truncate existing workspace files, untracked files, or files not created by the agent itself during the current action without explicit user confirmation. Even if a file appears to be an unneeded duplicate, stray artifact, or temporary copy, ask the user before removing it.
+
 ## Modern Tooling & Languages (New Projects)
 - **Language Preference**: Default to strongly-typed languages with static checking. Prefer **TypeScript** over JavaScript over Python.
 - **JS / TS Runtime & Package Manager**: Prefer **`bun`** over `node`, `npm`, or `pnpm`.
