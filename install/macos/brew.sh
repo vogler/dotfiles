@@ -113,7 +113,7 @@ brew install windsurf # 549M, haven't really tried (2025-05-22T19:07:22+02:00)
 brew install antigravity # 766M, AI Coding Agent IDE (2026-02-13T12:38:48+01:00) vscode fork similar to Cursor, but basically free AI plan now with Pixel 10 Pro
 
 # other IDEs
-brew install phpstorm # 2.7G, PHP IDE by JetBrains (2025-08-04T10:41:57+02:00)
+# brew install phpstorm # 2.7G, PHP IDE by JetBrains (2025-08-04T10:41:57+02:00)
 brew install rider # 5.0G, .NET IDE (2025-09-05T16:15:08+02:00)
 
 # other desktop apps
@@ -316,7 +316,7 @@ sudo ln -sfn /opt/homebrew/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVir
 # brew install cling # C++ REPL based on LLVM and Clang
 mkdir -p ~/.local/bin
 ln -sfn /Library/Developer/CommandLineTools/usr/bin/clangd ~/.local/bin/ # used for coc-clangd in nvim
-brew install dotnet-sdk # 793MB, .NET CLI (2025-04-30T12:06:58+02:00)
+# brew install dotnet-sdk # 793MB, .NET CLI (2025-04-30T12:06:58+02:00)
   # 793MB = 199MB /opt/homebrew/Caskroom/dotnet-sdk + 594MB /usr/local/share//dotnet + 0 ~/.dotnet + 0 ~/.nuget
   # uninstall anything non-brew first: curl -sSL https://raw.githubusercontent.com/dotnet/sdk/refs/heads/main/scripts/obtain/uninstall/dotnet-uninstall-pkgs.sh | sudo bash
   # cleanup SDKs and runtimes with dotnet/cli-lab: https://learn.microsoft.com/en-us/dotnet/core/additional-tools/uninstall-tool-overview?pivots=os-macos
@@ -326,8 +326,8 @@ brew install minizincide # 294M, Open-source constraint modelling language and I
 # brew install flutter # 4.13G, UI toolkit for building applications for mobile, web and desktop (2025-05-30T16:12:49+02:00)
 # brew install php # 124M, General-purpose scripting language (2025-09-18T17:02:06+02:00)
 # brew install composer # 3.1M, Dependency Manager for PHP (2025-09-18T17:15:55+02:00) # not available for 8.3 - https://getcomposer.org/installer
-brew install php@8.3 # 91M, General-purpose scripting language (2025-09-18T18:03:27+02:00)
-brew link php@8.3 # alternate versions are keg-only and not symlinked; don't want to modify $PATH
+# brew install php@8.3 # 91M, General-purpose scripting language (2025-09-18T18:03:27+02:00)
+# brew link php@8.3 # alternate versions are keg-only and not symlinked; don't want to modify $PATH
 brew install rust # 430M, +1.6GB for llvm@22, Safe, concurrent, practical language (2026-09-01T17:00:43+02:00)
 
 # linters
