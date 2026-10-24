@@ -121,3 +121,17 @@
 tiled = true
 daemon = true
 layout = "bsp"
+open_default_window = true
+start_in_terminal_mode = true
+
+[appearance]
+window_button_position = "right"
+window_title_style = "plain"
+show_clock = true
+show_cpu = true
+dock_compact = true
+animation_speed = 125
+
+[appearance.sidebar]
+header_style = "icon"
+show_numbers = true
