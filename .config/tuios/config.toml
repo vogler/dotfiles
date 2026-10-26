@@ -135,3 +135,6 @@ animation_speed = 125
 [appearance.sidebar]
 header_style = "icon"
 show_numbers = true
+
+[plugins]
+enabled = ["herdr-caffeinate"]
