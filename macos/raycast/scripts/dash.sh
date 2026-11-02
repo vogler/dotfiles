@@ -15,7 +15,9 @@
 
 cd
 
-vimr --nvim scp://pi@rpi3.voglerr.de/dash.log & # opens VimR.app
+neovide scp://pi@rpi3.voglerr.de/dash.log &
+# veil scp://pi@rpi3.voglerr.de/dash.log &
+# vimr --nvim scp://pi@rpi3.voglerr.de/dash.log & # opens VimR.app
 
 # The following were experiments to open nvim in iTerm:
 # nvim scp://pi@rpi3/dash.log # only works in terminal, shows nothing in Raycast
