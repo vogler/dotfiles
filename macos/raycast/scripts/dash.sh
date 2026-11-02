@@ -15,8 +15,8 @@
 
 cd
 
-neovide scp://pi@rpi3.voglerr.de/dash.log &
-# veil scp://pi@rpi3.voglerr.de/dash.log &
+neovide --fork scp://pi@rpi3.voglerr.de/dash.log >/dev/null 2>&1 </dev/null &
+# veil scp://pi@rpi3.voglerr.de/dash.log >/dev/null 2>&1 </dev/null &
 # vimr --nvim scp://pi@rpi3.voglerr.de/dash.log & # opens VimR.app
 
 # The following were experiments to open nvim in iTerm:
