@@ -130,6 +130,7 @@ mkdir -p "$config/ptpython" # not .config on macOS...
 # ln -sf {`pwd`,~}/.config/ptpython/config.py
 ln -sf `pwd`/.config/ptpython/config.py "$config/ptpython"
 # Only install packages via ~pipx~ uv and not with pip! Only use it where brew's version of package is too old or not available at all.
+# https://jacobtomlinson.dev/posts/2025/python-package-managers-uv-vs-pixi/
 # `uv tool install lastversion`, `uvx lastversion`, replaces most other Python tools incl. Poetry, `uvx` -> `.cache/uv`, `uv tool install` -> `.local/{bin,share/uv/tools}`
 uv tool install pipdeptree # 8.7M, tree of deps: pipdeptree -p apprise; reverse: pipdeptree -r -p requests
 uv tool install lastversion # 6.8M, find/download latest version of some software on GitHub, GitLab, BitBucket, PyPi, SourceForge, Wikipedia... better `export GITHUB_API_TOKEN=...` to avoid API rate limit; https://github.com/dvershinin/lastversion
