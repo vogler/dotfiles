@@ -645,18 +645,24 @@ brew install ollama # 25M, Create, run, and share large language models (LLMs) (
 brew install lm-studio # 1.5G, Discover, download, and run local LLMs (2025-11-08T11:54:27+01:00)
 # brew tap jundot/omlx https://github.com/jundot/omlx
 # brew install omlx # LLM inference server with continuous batching & SSD caching for Apple Silicon — managed from the macOS menu bar
+
 # LLM desktop clients (for vscode forks, see above)
 brew install google-gemini # 174M, Native desktop AI assistant from Google (2026-05-11T19:05:04+02:00)
 brew install claude # 707M, Anthropic's official Claude AI desktop app (2026-06-18T13:39:06+02:00)
+brew install --cask t3-code # 456M, Minimal GUI for AI code agents (2026-11-10T16:29:04+01:00) allows to manage multiple devices and subs, usage etc., but need to add projects/threads instead of import from agy
+
 # LLM CLI clients
 # brew install gemini-cli # 116M, Interact with Google Gemini AI models from the command-line (2026-05-11T19:00:13+02:00) - already annoying (randomly cleared terminal...)
 brew install antigravity-cli # 137M, Terminal interface for Antigravity agents (2026-07-10T17:03:29+02:00)
 brew install claude-code # 53G, Terminal-based AI coding assistant (2026-06-18T13:44:55+02:00)
 brew install opencode # 101M, AI coding agent, built for the terminal (2025-10-21T19:07:16+02:00)
 brew install pi-coding-agent # 157M, AI agent toolkit (2026-05-11T19:09:46+02:00) - simpler than claude/opencode etc., but has things like /tree for branching and can be customized via TS
+
 # LLM usage
 brew install codexbar # 162M, Menu bar usage monitor for Codex and Claude (2026-06-18T14:01:24+02:00)
 # brew install claudebar # 31M, Menu bar app for monitoring AI coding assistant usage quotas (2026-06-18T14:10:23+02:00)
+# brew install codeburn # 69M, See where your AI coding tokens go - by task, tool, model, and project (2026-11-10T16:49:16+01:00) `codeburn`
+brew install --cask codeburn-app # 362M, Track AI coding token usage and cost (2026-11-10T16:54:28+01:00) nice usage stats, but not great for usage prediction
 
 # not available in brew or mas:
 # https://www.meta.com/en-gb/help/quest/articles/horizon/getting-started-in-horizon-workrooms/use-computer-in-VR-workrooms/ - Meta Quest Remote Desktop
