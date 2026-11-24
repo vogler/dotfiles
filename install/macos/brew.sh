@@ -15,7 +15,7 @@ brew tap martido/homebrew-graph # 232KB, example: `brew graph --installed --high
 
 # package managers first which may be used below
 brew install pipx # 1MB, like npx: run/install binaries from Python packages, easier than `python3 -m venv foo`; `pipx run lastversion` saves to '~/Library/Caches/pipx', `pipx install lastversion` saves to '~/Library/Application Support/pipx'...
-brew install uv # 36M, Rust, fast Python package installer and resolver, `uv tool install lastversion`, `uvx lastversion`, replaces most other Python tools incl. Poetry, `uvx` -> `.cache/uv`, `uv tool install` -> `.local/{bin,share/uv/tools}` (2025-02-03T14:37:51+01:00)
+SSH=1 brew install uv # 36M, Rust, fast Python package installer and resolver, `uv tool install lastversion`, `uvx lastversion`, replaces most other Python tools incl. Poetry, `uvx` -> `.cache/uv`, `uv tool install` -> `.local/{bin,share/uv/tools}` (2025-02-03T14:37:51+01:00)
 brew install dra # 3.1M, Rust, Command-line tool to download release assets from GitHub (2025-01-29T18:08:42+01:00). Alternative to https://github.com/dvershinin/lastversion `uv tool install lastversion` in setup.sh; interactive by default, failed for smudge/nightlight while lastversion worked...
 brew install taphouse # 31M, Native GUI for Homebrew package management (2025-12-30T16:16:09+01:00)
 
@@ -176,7 +176,7 @@ brew install thomas-mauran/tap/chess-tui # 5.1M, Play chess in your terminal ðŸ¦
 brew install --cask nvidia-geforce-now # 878M, Cloud gaming platform (2026-08-28T22:01:39+02:00)
 
 # editors
-brew install neovim # editor, no need for vim, config in .vimrc
+SSH=1 brew install neovim # editor, no need for vim, config in .vimrc
 # brew install vimr # 77MB, VimR.app/`vimr` as GUI with file browser, markdown preview, macOS shortcuts - used for macOS `open`, nicer than neovide, neovim-qt, macvim
 # brew install vv # 409M, VV.app/`vv` like VimR, but based on Electron (WebGL), tried since VimR had some error on startup with my old .vimrc, bit slow with big files, but otherwise ok (2025-01-29T21:44:47+01:00)
 # brew install neovide # 28M, No Nonsense Neovim Client in Rust (2026-07-14T12:13:25+02:00) - this only provides the neovide command, but no app
@@ -207,12 +207,12 @@ brew install pngpaste # 80K, Paste PNG into files (2025-06-17T15:35:34+02:00) ne
 brew install chafa # 2.7M, Versatile and fast Unicode/ASCII/ANSI graphics renderer (2025-06-17T16:18:58+02:00) supposedly higher-quality alternative to iTerm's imgcat
 
 # terminal multiplexers
-brew install tmux # terminal multiplexer, used for ssh by default via prezto
+SSH=1 brew install tmux # terminal multiplexer, used for ssh by default via prezto
 brew install zellij # 23MB, Rust, like tmux, but more modern, shows keybindings (default binds things like ctrl-p for panes, but can lock with ctrl-g), built-in session restore
 brew install herdr # 16M, Agent multiplexer that lives in your terminal (2026-07-14T16:48:43+02:00) Rust
   herdr plugin install nwarwick/herdr-caffeinate --yes # prevent macOS sleep while agents in Herdr are working
 # brew install workmux # 12M, Git worktrees + tmux windows for zero-friction parallel dev (2026-10-24T15:43:50+02:00)
-brew install tuios # 34M, Terminal UI OS (Terminal Multiplexer) (2026-10-24T15:45:16+02:00) Go, even more features than herdr, such as bsp tiling, floating windows etc.
+SSH=1 brew install tuios # 34M, Terminal UI OS (Terminal Multiplexer) (2026-10-24T15:45:16+02:00) Go, even more features than herdr, such as bsp tiling, floating windows etc.
   tuios plugins enable herdr-caffeinate # enable the herdr-caffeinate plugin in tuios as well
 
 # shells
@@ -230,9 +230,9 @@ brew install gnu-sed # newer than macOS: 4.8 vs 2017 BSD?
 brew install sad # 3.7MB, modern sed with preview via fzf and delta: `fd .sh | sad bash zsh` (TAB for multi-select), `... | delta`
 brew install less # newer than macOS: 590 vs 487
 brew install rsync # newer than macOS: 3.2.3 vs 2.6.9
-brew install htop # improved top (interactive process viewer)
+SSH=1 brew install htop # improved top (interactive process viewer)
 # brew install gtop # 11.6MB, System monitoring dashboard for terminal (nodejs) - not interactive and ~10% CPU on RPi3
-brew install btop # 1.4M, Resource monitor. C++ version and continuation of bashtop and bpytop (2026-04-16T11:59:10+02:00)
+SSH=1 brew install btop # 1.4M, Resource monitor. C++ version and continuation of bashtop and bpytop (2026-04-16T11:59:10+02:00)
 brew install bottom # 3.2MB, `btm`, Yet another cross-platform graphical process/system monitor (rust) - interactive with mouse and shortcuts
 brew install gotop # 11M, Go, inspired by gtop and vtop; sums up and counts processes of same executable (2025-03-19T16:53:17+01:00)
 brew install nvtop # 224K, Interactive GPU process monitor, supports Apple (experimental, does not show much), AMD, Nvidia, Intel, Qualcomm, Broadcom... (2025-01-29T17:48:45+01:00)
@@ -241,26 +241,26 @@ brew install procs # 3MB, modern replacement for `ps aux | grep ..` in Rust, fie
 brew install pueue # 11.9MB, Rust, manage sequential/parallel long-running tasks, `pueued`, `pueue add ls; pueue add sleep 100; pueue; pueue log`
 brew install pv # 186KB, pipe viewer shows progress, speed, ETA; `pv -cN source < foo | zip | pv -cN zip > foo.zip`
 # brew install exa # 1.4MB, Modern replacement for 'ls' - now unmaintained, use eza
-brew install eza # 1MB, maintained fork of exa; `eza --long --header --icons --git`
+SSH=1 brew install eza # 1MB, maintained fork of exa; `eza --long --header --icons --git`
 brew install lsd # 1.6MB, `ls` clone with colors, file type icons, `lsd --tree`; looks nicer than exa, but no git status
-brew install tree # `exa --tree --level=2` has colors and can show meta-data with --long
+SSH=1 brew install tree # `exa --tree --level=2` has colors and can show meta-data with --long
 # brew install tldr # 105KB, `tldr tar` shorter than `curl cheat.sh/tar` and works offline - deprecated and will be disabled; alternatives: tealdeer, tlrc
 # brew install tealdeer # 3.2M, Rust, `tldr`, but didn't like colors and didn't automatically create/update cache w/o creating config (2025-03-04T10:08:39+01:00)
 brew install tlrc # 2.2M, Rust, official `tldr` client (2025-03-04T10:09:55+01:00)
-brew install bat # cat with syntax highlighting and Git integration
-brew install fd # Simple, fast and user-friendly alternative to find
-brew install the_silver_searcher # 172KB, ag: Code-search similar to ack, but faster [C]
-brew install ripgrep # 5.8MB, rg: Code-search similar to ag, but faster [Rust]
+SSH=1 brew install bat # cat with syntax highlighting and Git integration
+SSH=1 brew install fd # Simple, fast and user-friendly alternative to find
+SSH=1 brew install the_silver_searcher # 172KB, ag: Code-search similar to ack, but faster [C]
+SSH=1 brew install ripgrep # 5.8MB, rg: Code-search similar to ag, but faster [Rust]
 brew install ugrep # 1.2MB, ug: grep with interactive TUI (-Q), fuzzy search, hexdump, search binary, archives, compressed files (-z), documents (PDF, pandoc, office, exif...), output as JSON, CSV...
 brew install pdfgrep # `pdfgrep -nH PATTERN *.pdf` as alternative (with page number) to `ug --filter='pdf:pdftotext % -' PATTERN *.pdf`
 brew install iozone # 300KB, file system benchmark tool, see https://www.pidramble.com/wiki/benchmarks/microsd-cards
 source "$(dirname "${BASH_SOURCE[0]:-$0}")/AmorphousDiskMark.sh"
 brew install duf # 3.1MB, Go, Disk usage/free, nicer `df`; alternative in Rust: dysk
-brew install diskus # 839KB, Rust, minimal, 3-10x faster alternative to `du -sh`
+SSH=1 brew install diskus # 839KB, Rust, minimal, 3-10x faster alternative to `du -sh`
 brew install dust # 2.2MB, Rust, prints overview (terminal height) of the biggest folders and their subfolders with percentage bars
-brew install ncdu # 588KB, interactive NCurses Disk Usage; archive: `ncdu -o export.json; ncdu -f export.json`
+SSH=1 brew install ncdu # 588KB, interactive NCurses Disk Usage; archive: `ncdu -o export.json; ncdu -f export.json`
 brew install dua-cli # 1.9MB, Rust, `dua` space for all files/folders, `dua *` for non-hidden, `dua i` for interactive mode like ncdu
-brew install gdu # 13MB, Go, `gdu-go` (`gdu` is GNU du) for interactive mode like ncdu; used for <space>tu in AstroNvim; alternatives: https://github.com/dundee/gdu#alternatives
+SSH=1 brew install gdu # 13MB, Go, `gdu-go` (`gdu` is GNU du) for interactive mode like ncdu; used for <space>tu in AstroNvim; alternatives: https://github.com/dundee/gdu#alternatives
 ln -sfn /opt/homebrew/bin/gdu-go ~/.local/bin/gdu # overridden by prezto alias for `git ls-files --other --exclude-standard`
 brew install disk-drill # 113MB, GUI, disk usage & clean up (filters for type, size, modified), data recovery, find duplicates
 # brew install clean-me # 2.5MB, GUI analyze/clean caches, logs, temp files, trash, downloads etc., see https://github.com/Kevin-De-Koninck/Clean-Me/blob/master/Clean%20Me/Paths.swift - integrated in macos/cleanup.sh, deprecated in brew
@@ -280,18 +280,18 @@ brew install f2 # 11.5MB, Go, batch renaming tool with variables for file metada
 brew install figlet # Banner-like program prints strings as ASCII art
 brew install cmatrix # 78KB, console matrix screensaver
 brew install gum # 25MB, fancy input for shell scripts: choose a b, input, write, confirm
-brew install fzf # 2.7MB, Command-line fuzzy finder written in Go, search shell history with ctrl-r
-brew install atuin # 25.4MB, Rust, records shell history in sqlite with cwd, hostname etc., TUI for interactive search on ctrl-r, Enter to execute, Tab to edit first; `atuin import auto` to import from zsh history, integration loaded in zshrc; overrides fzf history binding ctrl-r, also starts on cursor up, but not on ctrl-p
+SSH=1 brew install fzf # 2.7MB, Command-line fuzzy finder written in Go, search shell history with ctrl-r
+SSH=1 brew install atuin # 25.4MB, Rust, records shell history in sqlite with cwd, hostname etc., TUI for interactive search on ctrl-r, Enter to execute, Tab to edit first; `atuin import auto` to import from zsh history, integration loaded in zshrc; overrides fzf history binding ctrl-r, also starts on cursor up, but not on ctrl-p
 brew install fastfetch # 2.5MB, system information with OS + logo, host, kernel, uptime, packages, shell, displays, terminal, CPU, GPU, memory, swap, disk, IP, battery - neofetch was deprecated
 # terminal file managers with vim keybindings, default single column
 # brew install fff # 50KB, Bash, simple file manager, f in .zshrc changes dir on exit (q) - deprecated
 brew install nnn # 280KB, C, file manager, small and fast, but bare bones without plugins/config, single column but tabs; use `nnn -e` to edit text in same terminal instead of via `open`
 brew install ranger # 2.8MB, Python, file manager, slower, but nicer defaults with multi-column layout and automatic preview of many file types
-brew install yazi # 7.8MB, Rust, file manager, like ranger, but faster, scrollable preview for images, videos, pdfs etc.
+SSH=1 brew install yazi # 7.8MB, Rust, file manager, like ranger, but faster, scrollable preview for images, videos, pdfs etc.
 brew install lf # 3.8MB, Go, file manager, like ranger, https://github.com/gokcehan/lf/wiki/Tutorial
 brew install xplr # 4.7MB, Rust, file manager, hackable with Lua, nice interactive help, plugins: https://xplr.dev/en/awesome-plugins
 brew install superfile # 16M, Modern and pretty fancy file manager for the terminal (2025-08-12T23:46:09+02:00) Go, nice UI with sidebar with favorites and disks like Finder, preview, metadata, clipboard; `spf`
-brew install zoxide # 1MB, Rust, smarter cd command, inspired by z and autojump
+SSH=1 brew install zoxide # 1MB, Rust, smarter cd command, inspired by z and autojump
 brew install broot # 6.2MB, `br` to navigate big file trees, alt+enter to cd, `br -s` to show sizes
 brew install dos2unix # Convert text between DOS, UNIX, and Mac formats; for git's fatal: CRLF would be replaced by LF
 brew install choose-rust # 2.0MB, Human-friendly and fast alternative to cut and (sometimes) awk, `choose -f ':' 0 3` prints the 0th and 3rd items sep by :, `choose -3:-1` prints the last 3 items sep by space
@@ -309,10 +309,10 @@ brew install zet # 1.5M, CLI utility to find the union, intersection, and set di
 # macOS ships ruby 2.6.3, python 2.7.16; python3 installed as dep; typescript via npm
 brew install pyenv # 7.6M, Python version management (2025-05-24T10:53:15+02:00) creates virtualenv in ~/Library/Caches/pypoetry/
 brew install ptpython # better Python REPL
-brew install node # JavaScript; includes npm
+SSH=1 brew install node # JavaScript; includes npm
 brew install nvm # 228K, Manage multiple Node.js versions (2025-09-16T13:24:57+02:00)
 # use fnm as node version manager? https://github.com/Schniz/fnm
-brew install oven-sh/bun/bun # 54M, alternative to node/deno (both v8; bun uses WebKit), faster, bun replaces npm/pnpm, bigger/nicer stdlib (sqlite, pg, S3, $ like zx, Bun.file, ...) (2025-04-05T20:14:13+02:00)
+SSH=1 brew install oven-sh/bun/bun # 54M, alternative to node/deno (both v8; bun uses WebKit), faster, bun replaces npm/pnpm, bigger/nicer stdlib (sqlite, pg, S3, $ like zx, Bun.file, ...) (2025-04-05T20:14:13+02:00)
 brew install deno # 117M, Secure runtime for JavaScript and TypeScript (2025-06-08T22:20:02+02:00)
 brew install opam # OCaml
 brew install java
@@ -367,6 +367,7 @@ brew install imhex # 116M, Hex editor for reverse engineers (2025-07-10T11:57:56
 brew install docker-desktop # 2.2G, App to build and share containerised applications and microservices (2025-12-30T17:03:32+01:00) Taphouse-adopted; using orbstack instead, but sometimes the extensions are useful
 # brew install podman # 55 M + 588 MB deps + 590MB fedora-coreos-qemu = 1.23 GB, daemon-less alternative to docker, but only runs QEMU-VMs on macOS which takes time to boot -> not interesting on macOS
 brew install orbstack # 770MB, faster drop-in replacement for Docker Desktop and `docker` cli, `orb`, https://orbstack.dev
+SSH=1 has docker || brew install colima docker # headless docker for SSH dev boxes (GUI apps above need a login session); here orbstack above already provides docker; `colima start` once
 brew install lazydocker # 16MB, Go, TUI to manage containers, images, volumes and networks
 brew install dive # 10MB, explore layers in docker images
 brew install ctop # 8.9MB, Top-like interface for container metrics
@@ -374,17 +375,17 @@ brew install act # 22MB, Run your GitHub Actions locally
 brew install oxker # 3.7M, Terminal User Interface (TUI) to view & control docker containers (2026-07-19T17:50:02+02:00)
 
 # git
-brew install git # 57.7MB, Apple Git is only updated together with Xcode and some versions behind
+SSH=1 brew install git # 57.7MB, Apple Git is only updated together with Xcode and some versions behind
 # brew install diff-so-fancy # within-line highlights
 # https://terminaltrove.com/categories/diff/
-brew install git-delta # as diff-so-fancy but with language syntax highlighting, side-by-side, etc.; https://dandavison.github.io/delta/related-projects.html
+SSH=1 brew install git-delta # as diff-so-fancy but with language syntax highlighting, side-by-side, etc.; https://dandavison.github.io/delta/related-projects.html
 brew install dlvhdr/formulae/diffnav # 31M, diff pager based on delta but with a file tree (2025-01-29T20:21:31+01:00)
 brew install difftastic # 79.6MB, Rust, structural diff that understands syntax, >30 languages parsed with tree-sitter; `difft v1 v2`, `git dft` for diff, `git dlog` for log, see .gitconfig
 brew install tig # 1MB, mostly an interactive `git log --patch`
 brew install gitui # 6.8MB, Rust, fastest TUI for everything, shows hot-keys - Status/staging with hunks and lines, Log, Stashing, Stashes, push, fetch, branches
-brew install lazygit # 22MB, Go, alternative to gitui, maybe slower, but nicer workflow/keybindings, esp. for navigating/staging hunks
+SSH=1 brew install lazygit # 22MB, Go, alternative to gitui, maybe slower, but nicer workflow/keybindings, esp. for navigating/staging hunks
 brew install hub
-brew install gh # https://github.com/cli/cli/blob/trunk/docs/gh-vs-hub.md
+SSH=1 brew install gh # https://github.com/cli/cli/blob/trunk/docs/gh-vs-hub.md
 brew install --cask git-credential-manager # 106MB, cross-platform secure storage with browser login and MFA - no need to manually create tokens at https://github.com/settings/tokens; `sudo git credential-manager configure --system; git credential-manager github login`
 # brew install --cask sourcetree smartgit gitkraken gitup # tried but don't use
 brew install gitwatch # use GitDoc in vscode instead? https://marketplace.visualstudio.com/items?itemName=vsls-contrib.gitdoc
@@ -412,7 +413,7 @@ brew install git-secrets # 66KB, Shell, mostly for AWS secrets and hooks for rep
 brew install trivy # 184M, Vulnerability scanner for container images, file systems, and Git repos (2025-04-03T20:50:11+02:00)
 
 # data processing
-brew install jq # 1.5MB, C, JSON CLI processor
+SSH=1 brew install jq # 1.5MB, C, JSON CLI processor
 # Rust alternatives: https://github.com/01mf02/jaq, https://github.com/yamafaktory/jql
 brew install jaq # 1.9M, JQ clone focussed on correctness, speed, and simplicity (2025-07-10T12:11:25+02:00)
 brew install jid # 2.4MB, Go, TUI for jq
@@ -442,7 +443,7 @@ brew install lazysql # 16M, Cross-platform TUI database management tool (2026-07
 brew install mosh # 1.1MB, alternative for ssh, local echo, roaming, but UDP dyn. port alloc. 60000-61000
 # brew install --cask secretive # 36M, Store SSH keys in the Secure Enclave (2026-09-06T14:26:41+02:00) requires app running and fingerprint for every connection
 brew install xxh # 806KB, Python, copy shell (zsh, fish, osquery) and plugins to remote host and connect via ssh; `xxh server +s fish`
-brew install wget # alt for curl
+SSH=1 brew install wget # alt for curl
 brew install monolith # 6.6MB, Rust, CLI tool for saving complete web pages as a single HTML file
 brew install wakeonlan
 # brew install speedtest-cli # 87KB, Python, unoffical CLI for speedtest.net (down/up/ping), `speedtest-cli --json | jq`
@@ -588,7 +589,7 @@ brew install clockify # 95MB, better (& more free features) than Toggl
 brew install gimp # 892M, Free and open-source image editor (2025-02-15T00:35:38+01:00)
 
 # videos: editing, transcoding
-brew install ffmpeg # ~1GB due to many codecs as deps
+SSH=1 brew install ffmpeg # ~1GB due to many codecs as deps
 brew install ffmpegthumbnailer # 400KB, lightweight video thumbnailer using ffmpeg, `ffmpegthumbnailer -i *.mp4 -o foo.jpg -s0 -t20`
 brew install handbrake-app # 126M, Open-source video transcoder (2025-12-30T17:24:07+01:00) Taphouse-adopted
 # mas install 1351639930 # 4MB, Gifski: crop & convert videos to high-quality GIFs, https://github.com/sindresorhus/Gifski
@@ -654,8 +655,8 @@ brew install --cask stablyai/orca/orca # 760M, IDE for orchestrating AI coding a
 
 # LLM CLI clients
 # brew install gemini-cli # 116M, Interact with Google Gemini AI models from the command-line (2026-05-11T19:00:13+02:00) - already annoying (randomly cleared terminal...)
-brew install antigravity-cli # 137M, Terminal interface for Antigravity agents (2026-07-10T17:03:29+02:00)
-brew install claude-code # 53G, Terminal-based AI coding assistant (2026-06-18T13:44:55+02:00)
+SSH=1 brew install antigravity-cli # 137M, Terminal interface for Antigravity agents (2026-07-10T17:03:29+02:00)
+SSH=1 brew install claude-code # 53G, Terminal-based AI coding assistant (2026-06-18T13:44:55+02:00)
 brew install opencode # 101M, AI coding agent, built for the terminal (2025-10-21T19:07:16+02:00)
 brew install pi-coding-agent # 157M, AI agent toolkit (2026-05-11T19:09:46+02:00) - simpler than claude/opencode etc., but has things like /tree for branching and can be customized via TS
 

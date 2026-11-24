@@ -8,6 +8,11 @@ echo "Possible arguments for extended setup: linuxbrew latex smart-home ocaml"
 # https://github.com/charmbracelet/gum - nice, but would need to install package first...
 # mods=$(gum choose --no-limit base linuxbrew latex smart-home ocaml)
 
+# Env vars to limit what gets installed (configs are always linked):
+INSTALL=${INSTALL:-1} # INSTALL=0: don't install anything (skip install/*, wakatime.sh)
+SSH=${SSH:-0}         # SSH=1: dev box used via SSH: only install lines marked with `SSH=1` in install/macos/brew.sh (bottles only), skip the rest of install/*
+full_install(){ [ "$INSTALL" == 1 ] && [ "$SSH" == 0 ]; }
+
 # Ask for the administrator password upfront. From https://mths.be/macos
 sudo -v
 
@@ -45,21 +50,33 @@ if [ "$(uname)" == "Darwin" ]; then
   fi
 
   [[ -f /opt/homebrew/bin/brew ]] && eval "$(/opt/homebrew/bin/brew shellenv)"
-  if ! has brew; then
+  if [ "$INSTALL" == 1 ] && ! has brew; then
     echo_bold ">> Install homebrew"
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     [[ $(uname -m) == "arm64" ]] && eval "$(/opt/homebrew/bin/brew shellenv)"
   fi
 
-  echo_bold ">> brew install ..."
-  source install/macos/brew.sh $*
+  if [ "$INSTALL" == 0 ]; then
+    echo_bold ">> INSTALL=0: skip brew install, defaults, dock"
+  elif [ "$SSH" == 1 ]; then
+    echo_bold ">> SSH=1: brew install lines marked with SSH=1 (only bottles, no compiling)"
+    brew(){ [ "$1" == install ] && set -- install --force-bottle "${@:2}"; command brew "$@"; }
+    brew_failed=""
+    while read -r line; do
+      eval "$line" || brew_failed+="$line"$'\n'
+    done < <(grep -E '^\s*SSH=1 ' install/macos/brew.sh)
+    unset -f brew
+  else
+    echo_bold ">> brew install ..."
+    source install/macos/brew.sh $*
 
-  echo_bold ">> set defaults"
-  # can't change settings before installing an application! e.g. 'Couldn't find an application named "Skim"; defaults unchanged'
-  source install/macos/defaults.sh # TODO sourcing this seems not enough, after execute afterwards the defaults were set
+    echo_bold ">> set defaults"
+    # can't change settings before installing an application! e.g. 'Couldn't find an application named "Skim"; defaults unchanged'
+    source install/macos/defaults.sh # TODO sourcing this seems not enough, after execute afterwards the defaults were set
 
-  echo_bold ">> remove/add apps in dock"
-  source install/macos/dock.sh
+    echo_bold ">> remove/add apps in dock"
+    source install/macos/dock.sh
+  fi
 
   if [ ! -d ~/.ssh ]; then # only generate if it was not copied before
     echo_bold ">> generate ssh key for this machine and copy it to rpi3/rpi4"
@@ -84,10 +101,10 @@ elif has apt; then
   sudo timedatectl set-timezone Europe/Berlin
 
   echo_bold ">> apt install ..."
-  source install/apt.sh $*
+  [ "$INSTALL" == 0 ] || source install/apt.sh $*
 
   # only has binary packages for x86_64, https://docs.brew.sh/Homebrew-on-Linux#arm
-  if [[ "$*" == *linuxbrew* ]] && ! has brew && [ "$(uname -m)" == "x86_64" ]; then
+  if [[ "$*" == *linuxbrew* ]] && [ "$INSTALL" == 1 ] && ! has brew && [ "$(uname -m)" == "x86_64" ]; then
     echo ">> Install linuxbrew"
     CI=1 sh -c "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install.sh)"
     eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
@@ -116,7 +133,9 @@ if [[ "$*" == *ocaml* ]]; then
 fi
 
 # global packages for npm, uv and gh extensions
-source install/extras.sh
+if full_install; then
+  source install/extras.sh
+fi
 
 # python/pipx
 mkdir -p "$config/ptpython" # not .config on macOS...
@@ -132,7 +151,7 @@ ln -sf `pwd`/.shellcheckrc ~
 # git
 ln -sf `pwd`/.gitconfig ~
 # no branching in .gitconfig -> set OS-specific config via commands:
-[ "$(uname)" == "Darwin" ] &&  sudo git credential-manager configure --system # sudo git config --system --replace-all credential.helper osxkeychain
+[ "$(uname)" == "Darwin" ] && has git-credential-manager && sudo git credential-manager configure --system # sudo git config --system --replace-all credential.helper osxkeychain
 # [ "$(uname)" == "Linux" ] && sudo git config --system --replace-all credential.helper 'cache --timeout=604800' # keep in memory for 7 days
 [ "$(uname)" == "Linux" ] && sudo git config --system --replace-all credential.helper store # plain-text in ~/.git-credentials ! --global instead of --system sets it in ~/.gitconfig
 ln -sf `pwd`/.gitignore_global ~
@@ -140,7 +159,6 @@ ln -sf `pwd`/.gitignore_global ~
 mkdir -p "$config/lazygit" && ln -sf {`pwd`/.config,"$config"}/lazygit/config.yml
 mkdir -p ~/.config/gdu && ln -sf `pwd`/.config/gdu/gdu.yaml ~/.config/gdu/gdu.yaml
 mkdir -p "$config/tuios" && ln -sf {`pwd`/.config,"$config"}/tuios/config.toml
-
 # gemini / antigravity
 mkdir -p ~/.gemini && ln -sf `pwd`/.gemini/GEMINI.md ~/.gemini/GEMINI.md
 
@@ -171,7 +189,9 @@ echo_bold ">> Install Tmux Plugin Manager"
 git-get https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 echo_bold ">> Install Tmux plugins"
 # `tmux source-file` fails if not in tmux with 'no server running on /private/tmp/tmux-501/default'
-if { [ "$TERM" = "screen" ] && [ -n "$TMUX" ]; } then
+if ! has tmux; then
+  echo "tmux not installed, skip"
+elif { [ "$TERM" = "screen" ] && [ -n "$TMUX" ]; } then
   tmux source-file ~/.tmux.conf # need to reload config before tpm can install plugins
   ~/.tmux/plugins/tpm/bin/install_plugins
 else
@@ -190,11 +210,15 @@ mkdir -p ~/.vim/{swap,backup,undo} # otherwise https://github.com/tpope/vim-sens
 echo_bold ">> Install vim-plug"
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 echo_bold ">> Install vim plugins"
-nvim +PlugInstall +qall
-nvim +CocUpdateSync +qall
+if has nvim; then
+  nvim +PlugInstall +qall
+  nvim +CocUpdateSync +qall
+fi
 
 # vim already asks for the WakaTime API-key, but still need pip package for zsh integration
-source wakatime.sh
+if full_install; then
+  source wakatime.sh
+fi
 
 if [[ "$*" == *smart-home* ]]; then
   # this is done in install/apt.sh for rpi3 and rpi4
@@ -203,3 +227,4 @@ fi
 
 date
 echo_bold ">> Done"
+[ -z "${brew_failed:-}" ] || echo -e "Failed (no bottle?), install prebuilt manually:\n$brew_failed"
