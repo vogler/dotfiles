@@ -384,7 +384,7 @@ brew install difftastic # 79.6MB, Rust, structural diff that understands syntax,
 brew install tig # 1MB, mostly an interactive `git log --patch`
 brew install gitui # 6.8MB, Rust, fastest TUI for everything, shows hot-keys - Status/staging with hunks and lines, Log, Stashing, Stashes, push, fetch, branches
 SSH=1 brew install lazygit # 22MB, Go, alternative to gitui, maybe slower, but nicer workflow/keybindings, esp. for navigating/staging hunks
-brew install hub
+# brew install hub # replaced by gh (below); last release 2.14.2 in 2020. As `alias git=hub` (zshrc) it also expands some args as GitHub repo names, e.g. `git remote set-url --push upstream DISABLED` queried the API for <user>/DISABLED and failed with an expired token (~/.config/hub from 2021)
 SSH=1 brew install gh # https://github.com/cli/cli/blob/trunk/docs/gh-vs-hub.md
 brew install --cask git-credential-manager # 106MB, cross-platform secure storage with browser login and MFA - no need to manually create tokens at https://github.com/settings/tokens; `sudo git credential-manager configure --system; git credential-manager github login`
 # brew install --cask sourcetree smartgit gitkraken gitup # tried but don't use
