@@ -32,7 +32,7 @@ git-get(){ # as git clone, but skip instead of fail if target exists # TODO upda
 lnsf(){ # make a symbolic link in home to dotfiles, create directories if needed
   d=$(dirname "$@")
   mkdir -p ~/"$d"
-  ln -sf `pwd`/"$@" ~/"$@"
+  ln -sfn `pwd`/"$@" ~/"$@" # -n: replace existing link to a dir instead of creating a link inside it
 }
 
 echo_bold(){ echo -e '\033[1;32m'"$1"'\033[0m'; } # should be bold green, but is bold white. green somehow only works with 0 (regular) instead of 1 (bold).
