@@ -1,0 +1,12 @@
+{
+  "theme": "auto",
+  "editorMode": "normal",
+  "preferredNotifChannel": "auto",
+  "autoCompactEnabled": true,
+  "agentPushNotifEnabled": true,
+  "feedbackDrafts": "notify",
+  "enableWorkflows": true,
+  "worktree": {
+    "baseRef": "fresh"
+  }
+}

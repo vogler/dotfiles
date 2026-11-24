@@ -159,6 +159,14 @@ ln -sf `pwd`/.gitignore_global ~
 mkdir -p "$config/lazygit" && ln -sf {`pwd`/.config,"$config"}/lazygit/config.yml
 mkdir -p ~/.config/gdu && ln -sf `pwd`/.config/gdu/gdu.yaml ~/.config/gdu/gdu.yaml
 mkdir -p "$config/tuios" && ln -sf {`pwd`/.config,"$config"}/tuios/config.toml
+# claude code: merge portable settings instead of symlinking, since tuios/herdr/orca add machine-specific hooks/statusLine to ~/.claude/settings.json
+if has jq; then
+  mkdir -p ~/.claude
+  merge_json(){ [ -s "$1" ] || echo '{}' > "$1"; jq -s '.[0] * .[1]' "$1" - > "$1.tmp" && mv -f "$1.tmp" "$1"; }
+  merge_json ~/.claude/settings.json < .claude/settings.json
+  echo '{"hasCompletedOnboarding": true}' | merge_json ~/.claude.json # skip theme picker on first start
+fi
+
 # gemini / antigravity
 mkdir -p ~/.gemini && ln -sf `pwd`/.gemini/GEMINI.md ~/.gemini/GEMINI.md
 
