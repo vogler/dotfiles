@@ -612,6 +612,7 @@ brew install cap # 120M, Screen recording software (2025-05-26T20:06:10+02:00) o
 # brew install blackhole-2ch # 108KB, loopback driver that allows applications to pass audio to other applications with zero additional latency; see https://github.com/ExistentialAudio/BlackHole - also shows how to remove audio plug-ins from Audio Devices
 brew install switchaudio-osx # 115KB, C, switch audio input/output devices; `SwitchAudioSource -a` lists all, `SwitchAudioSource -s 'MacBook Air Speakers'` to change output
 brew install macwhisper # 17MB + 500MB for small model; speech recognition and transcription with openai/whisper
+brew install whisper-cpp # 6.3M, Port of OpenAI's Whisper model in C/C++ (2026-11-24T19:36:39+01:00)
 
 # MIDI (for PianoVision): no simple midi player on brew?! -> VLC can play midi files
 #   https://github.com/benwiggy/APPlayMIDI offers a quick look extension (but w/o seek), only play/pause
