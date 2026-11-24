@@ -63,7 +63,7 @@ if [ "$(uname)" == "Darwin" ]; then
     brew(){ [ "$1" == install ] && set -- install --force-bottle "${@:2}"; command brew "$@"; }
     brew_failed=""
     while read -r line; do
-      eval "$line" || brew_failed+="$line"$'\n'
+      eval "$line" </dev/null || brew_failed+="$line"$'\n' # </dev/null: otherwise commands may consume the rest of the lines
     done < <(grep -E '^\s*SSH=1 ' install/macos/brew.sh)
     unset -f brew
   else
