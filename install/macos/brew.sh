@@ -650,6 +650,7 @@ brew install lm-studio # 1.5G, Discover, download, and run local LLMs (2025-11-0
 brew install google-gemini # 174M, Native desktop AI assistant from Google (2026-05-11T19:05:04+02:00)
 brew install claude # 707M, Anthropic's official Claude AI desktop app (2026-06-18T13:39:06+02:00)
 brew install --cask t3-code # 456M, Minimal GUI for AI code agents (2026-11-10T16:29:04+01:00) allows to manage multiple devices and subs, usage etc., but need to add projects/threads instead of import from agy
+brew install --cask stablyai/orca/orca # 760M, IDE for orchestrating AI coding agents across terminals and worktrees (2026-11-22T15:16:21+01:00)
 
 # LLM CLI clients
 # brew install gemini-cli # 116M, Interact with Google Gemini AI models from the command-line (2026-05-11T19:00:13+02:00) - already annoying (randomly cleared terminal...)
