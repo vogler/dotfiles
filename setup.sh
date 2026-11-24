@@ -26,7 +26,7 @@ git-get(){ # as git clone, but skip instead of fail if target exists # TODO upda
 
 lnsf(){ # make a symbolic link in home to dotfiles, create directories if needed
   d=$(dirname "$@")
-  mkdir -p "~/$d"
+  mkdir -p ~/"$d"
   ln -sf `pwd`/"$@" ~/"$@"
 }
 
